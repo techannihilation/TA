@@ -1,408 +1,501 @@
-function widget:GetInfo()
-	return {
-		name = "Red Tooltip", --version 4
-		desc = "Requires Red UI Framework",
-		author = "Regret",
-		date = "August 11, 2009", --last change September 10,2009
-		license = "GNU GPL, v2 or later",
-		layer = -100,
-		enabled = true, --enabled by default
-		handler = true, --can use widgetHandler:x()
+--------------------------------------------------------------------------------
+--  Red Tooltip (Refactored + Armor Info)
+--  Requires: Red UI Framework
+--  Author:   Regret, modded by [ur]uncle
+--  License:  GNU GPL, v2 or later
+--------------------------------------------------------------------------------
 
-	}
+--------------------------------------------------------------------------------
+--  Widget Info
+--------------------------------------------------------------------------------
+function widget:GetInfo()
+  return {
+    name    = "Red Tooltip", -- version 5 (with armor info)
+    desc    = "Requires, [ur]uncle",
+    date    = "January 4, 2025",
+    license = "GNU GPL, v2 or later",
+    layer   = -100,
+    enabled = true,
+    handler = true,
+  }
 end
 
-local NeededFrameworkVersion = 8
-local CanvasX, CanvasY = 0, 800
-local iconsizeMaster = 96
-local iconsize = iconsizeMaster
-local oldUnitpicsDir = LUAUI_DIRNAME .. "Images/oldunitpics/"
-local unitDefID
+--------------------------------------------------------------------------------
+--  Constants & Config
+--------------------------------------------------------------------------------
+local NEEDED_FRAMEWORK_VERSION = 8
+
+local CANVAS_X, CANVAS_Y = 0, 800
+local ICON_SIZE_MASTER = 96
+local iconSize = ICON_SIZE_MASTER
+
+local OLD_UNIT_PICS_DIR = LUAUI_DIRNAME .. "Images/oldunitpics/"
 local CMD_MORPH = 31410
---1272,734 == 1280,768 windowed
---todo: sy adjustment
-local OtaIconExist = {}
+
+local otaIconCache = {}
 
 for i = 1, #UnitDefs do
-	if VFS.FileExists(oldUnitpicsDir .. UnitDefs[i].name .. '.png') then
-		OtaIconExist[i] = oldUnitpicsDir .. UnitDefs[i].name .. '.png'
-		--Spring.Echo("Icon Path ",oldUnitpicsDir..UnitDefs[i].name..'.png')
-	end
+  if VFS.FileExists(OLD_UNIT_PICS_DIR .. UnitDefs[i].name .. ".png") then
+    otaIconCache[i] = OLD_UNIT_PICS_DIR .. UnitDefs[i].name .. ".png"
+  end
 end
 
-local cbackground, cborder = include("Configs/ui_config.lua")
-local sy_offset = 94
-local clampY = CanvasY - sy_offset
+local backgroundColor, borderColor = include("Configs/ui_config.lua")
+local SY_OFFSET = 94
+local CLAMP_Y   = CANVAS_Y - SY_OFFSET
 
 local Config = {
-	tooltip = {
-		px = 0, --default start position
-		py = clampY,
-		sx = 320, --background size
-		sy = sy_offset,
-		fontsize = 13,
-		margin = 5, --distance from background border
-		cbackground = cbackground,
-		cborder = cborder,
-		dragbutton = {2}, --middle mouse button
-		tooltip = {
-			background = "Hold \255\255\255\1middle mouse button\255\255\255\255 to drag the tooltip display around.",
-		},
-	},
+  tooltip = {
+    px          = 0,
+    py          = CLAMP_Y,
+    sx          = 320,
+    sy          = SY_OFFSET,
+    fontsize    = 13,
+    margin      = 5,
+    cbackground = backgroundColor,
+    cborder     = borderColor,
+    dragbutton  = {2}, -- middle mouse button
+    tooltip = {
+      background = "Hold \255\255\255\1middle mouse button\255\255\255\255 to drag the tooltip display around.",
+    },
+  },
 }
 
-local sGetCurrentTooltip = Spring.GetCurrentTooltip
-local sGetSelectedUnitsCount = Spring.GetSelectedUnitsCount
+--------------------------------------------------------------------------------
+--  Locals for Spring Functions
+--------------------------------------------------------------------------------
+local spGetCurrentTooltip      = Spring.GetCurrentTooltip
+local spGetSelectedUnitsCount  = Spring.GetSelectedUnitsCount
+local spGetSelectedUnits       = Spring.GetSelectedUnits
+local spGetUnitDefID           = Spring.GetUnitDefID
+local spGetMouseState          = Spring.GetMouseState
+local spTraceScreenRay         = Spring.TraceScreenRay
+local spSetDrawSelectionInfo   = Spring.SetDrawSelectionInfo
+local spSendCommands           = Spring.SendCommands
+local spGetUnitHealth          = Spring.GetUnitHealth
+local spGetUnitArmored         = Spring.GetUnitArmored
+local spValidUnitID            = Spring.ValidUnitID
 
-local function IncludeRedUIFrameworkFunctions()
-	New = WG.Red.New(widget)
-	Copy = WG.Red.Copytable
-	SetTooltip = WG.Red.SetTooltip
-	GetSetTooltip = WG.Red.GetSetTooltip
-	Screen = WG.Red.Screen
-	GetWidgetObjects = WG.Red.GetWidgetObjects
+--------------------------------------------------------------------------------
+--  Framework Helper References
+--------------------------------------------------------------------------------
+local New, Copy, SetTooltip, GetSetTooltip, Screen, GetWidgetObjs
+
+local function initRedUIFrameworkFunctions()
+  New           = WG.Red.New(widget)
+  Copy          = WG.Red.Copytable
+  SetTooltip    = WG.Red.SetTooltip
+  GetSetTooltip = WG.Red.GetSetTooltip
+  Screen        = WG.Red.Screen
+  GetWidgetObjs = WG.Red.GetWidgetObjects
 end
 
-local function RedUIchecks()
-	local color = "\255\255\255\1"
-	local passed = true
+--------------------------------------------------------------------------------
+--  Red UI Framework Checks
+--------------------------------------------------------------------------------
+local function checkRedUIFramework()
+  local color  = "\255\255\255\1"
+  local passed = true
 
-	if type(WG.Red) ~= "table" then
-		Spring.Echo(color .. widget:GetInfo().name .. " requires Red UI Framework.")
-		passed = false
-	elseif type(WG.Red.Screen) ~= "table" then
-		Spring.Echo(color .. widget:GetInfo().name .. ">> strange error.")
-		passed = false
-	elseif WG.Red.Version < NeededFrameworkVersion then
-		Spring.Echo(color .. widget:GetInfo().name .. ">> update your Red UI Framework.")
-		passed = false
-	end
+  if type(WG.Red) ~= "table" then
+    Spring.Echo(color .. widget:GetInfo().name .. " requires Red UI Framework.")
+    passed = false
+  elseif type(WG.Red.Screen) ~= "table" then
+    Spring.Echo(color .. widget:GetInfo().name .. " >> strange error.")
+    passed = false
+  elseif WG.Red.Version < NEEDED_FRAMEWORK_VERSION then
+    Spring.Echo(color .. widget:GetInfo().name .. " >> update your Red UI Framework.")
+    passed = false
+  end
 
-	if not passed then
-		widgetHandler:ToggleWidget(widget:GetInfo().name)
+  if not passed then
+    widgetHandler:ToggleWidget(widget:GetInfo().name)
+    return false
+  end
 
-		return false
-	end
-
-	IncludeRedUIFrameworkFunctions()
-
-	return true
+  initRedUIFrameworkFunctions()
+  return true
 end
 
---autoresize v2
-local function AutoResizeObjects()
-	if LastAutoResizeX == nil then
-		LastAutoResizeX = CanvasX
-		LastAutoResizeY = CanvasY
-	end
+--------------------------------------------------------------------------------
+--  Auto-Resize Objects
+--------------------------------------------------------------------------------
+local lastAutoResizeX, lastAutoResizeY
 
-	local lx, ly = LastAutoResizeX, LastAutoResizeY
-	local vsx, vsy = Screen.vsx, Screen.vsy
+local function autoResizeObjects()
+  if not lastAutoResizeX then
+    lastAutoResizeX = CANVAS_X
+    lastAutoResizeY = CANVAS_Y
+  end
 
-	if (lx ~= vsx) or (ly ~= vsy) then
-		local objects = GetWidgetObjects(widget)
-		local scale = vsy / ly
-		local skippedobjects = {}
+  local lx, ly = lastAutoResizeX, lastAutoResizeY
+  local vsx, vsy = Screen.vsx, Screen.vsy
 
-		for i = 1, #objects do
-			local o = objects[i]
-			local adjust = 0
+  if (lx ~= vsx) or (ly ~= vsy) then
+    local objects = GetWidgetObjs(widget)
+    local scale   = vsy / ly
 
-			if o.movableslaves and (#o.movableslaves > 0) then
-				adjust = (o.px * scale + o.sx * scale) - vsx
+    for i = 1, #objects do
+      local o = objects[i]
+      local adjust = 0
 
-				if ((o.px + o.sx) - lx) == 0 then
-					o._moveduetoresize = true
-				end
-			end
+      if o.movableslaves and (#o.movableslaves > 0) then
+        adjust = (o.px * scale + o.sx * scale) - vsx
+        if ((o.px + o.sx) - lx) == 0 then
+          o._moveduetoresize = true
+        end
+      end
 
-			if o.px then
-				o.px = o.px * scale
-			end
+      if o.px       then o.px       = o.px       * scale end
+      if o.py       then o.py       = o.py       * scale end
+      if o.sx       then o.sx       = o.sx       * scale end
+      if o.sy       then o.sy       = o.sy       * scale end
+      if o.fontsize then o.fontsize = o.fontsize * scale end
 
-			if o.py then
-				o.py = o.py * scale
-			end
+      if adjust > 0 then
+        o._moveduetoresize = true
+        o.px = o.px - adjust
+        for j = 1, #o.movableslaves do
+          local s = o.movableslaves[j]
+          s.px = s.px - (adjust / scale)
+        end
+      elseif (adjust < 0) and o._moveduetoresize then
+        o._moveduetoresize = nil
+        o.px = o.px - adjust
+        for j = 1, #o.movableslaves do
+          local s = o.movableslaves[j]
+          s.px = s.px - (adjust / scale)
+        end
+      end
+    end
 
-			if o.sx then
-				o.sx = o.sx * scale
-			end
-
-			if o.sy then
-				o.sy = o.sy * scale
-			end
-
-			if o.fontsize then
-				o.fontsize = o.fontsize * scale
-			end
-
-			if adjust > 0 then
-				o._moveduetoresize = true
-				o.px = o.px - adjust
-
-				for j = 1, #o.movableslaves do
-					local s = o.movableslaves[j]
-					s.px = s.px - adjust / scale
-				end
-			elseif (adjust < 0) and o._moveduetoresize then
-				o._moveduetoresize = nil
-				o.px = o.px - adjust
-
-				for j = 1, #o.movableslaves do
-					local s = o.movableslaves[j]
-					s.px = s.px - adjust / scale
-				end
-			end
-		end
-
-		LastAutoResizeX, LastAutoResizeY = vsx, vsy
-	end
+    lastAutoResizeX, lastAutoResizeY = vsx, vsy
+  end
 end
 
-local function getEditedCurrentTooltip()
-	local text = sGetCurrentTooltip()
-	--Prune RC tech list
-	local lvl1tech = text:match("advanced t1 unit research centre") or nil
-	local lvl2tech = text:match("advanced t2 unit research centre") or nil
-	local lvl3tech = text:match("advanced t3 unit research centre") or nil
-	local lvl4tech = text:match("advanced t4 unit research centre") or nil
-	local provides = text:match("Provides") or nil
+--------------------------------------------------------------------------------
+--  Armor Info Helper
+--------------------------------------------------------------------------------
+local function getArmorInfo(uID)
+  if (not uID) or (not spValidUnitID(uID)) then
+    return ""
+  end
+  local uDefID = spGetUnitDefID(uID)
+  if not uDefID then
+    return ""
+  end
 
-	if provides then
-		if lvl4tech then
-			text = text:gsub(lvl3tech, string.format("")) or text
-			text = text:gsub(lvl2tech, string.format("")) or text
-			text = text:gsub(lvl1tech, string.format("")) or text
-			text = text:gsub(",", string.format(""), 3) or text
-			text = text:gsub(lvl4tech, string.format("Advanced T4 Unit Research Centre")) or text
-		elseif lvl3tech then
-			text = text:gsub(lvl2tech, string.format("")) or text
-			text = text:gsub(lvl1tech, string.format("")) or text
-			text = text:gsub(",", string.format(""), 2) or text
-			text = text:gsub(lvl3tech, string.format("Advanced T3 Unit Research Centre")) or text
-		elseif lvl2tech then
-			text = text:gsub(lvl1tech, string.format("")) or text
-			text = text:gsub(",", string.format(""), 1) or text
-			text = text:gsub(lvl2tech, string.format("Advanced T2 Unit Research Centre")) or text
-		elseif lvl1tech then
-			text = text:gsub(lvl1tech, string.format("Advanced T1 Unit Research Centre")) or text
-		end
-	end
+  local uDef      = UnitDefs[uDefID]
+  local armorType = (Game.armorTypes[uDef.armorType or 0]) or "???"
+  local _, spMaxHP = spGetUnitHealth(uID)
+  local maxHP     = spMaxHP or uDef.health
 
-	-- Prune hidden unitID
-	--[[
-	local expUnitPat = "UnitID (%d+)\n"
-	local UnitID = tonumber(text:match(expUnitPat)) or nil
-	if UnitID ~= nil then
-    	text = text:gsub(expUnitPat,string.format("")) or text
-	end
-	--]]
-	--extract the exp value with regexp
-	local expMorphPat = "UnitDefID (%d+)\n"
-	local MorphDefID = tonumber(text:match(expMorphPat)) or nil
+  -- Some units have an 'armoredMultiple' which changes their effective HP when "closed"
+  local _, armoredMultiple = spGetUnitArmored(uID)
+  local aMult = armoredMultiple or uDef.armoredMultiple or 1
 
-	if MorphDefID ~= nil then
-		text = text:gsub(expMorphPat, string.format("")) or text
-	end
+  -- Build the lines
+  local lines = {}
+  lines[#lines+1] = "\255\245\245\245" .. "Armor:  \255\255\255\255" .. "class " .. armorType
+  lines[#lines+1] = "\255\245\245\245" .. "Open:   \255\255\255\255" .. string.format("maxHP: %d", maxHP)
 
-	local expPattern = "Experience (%d+%.%d%d)"
-	local currentExp = tonumber(text:match(expPattern))
-	local limExp = currentExp and currentExp / (1 + currentExp) or 1
-	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
-	text = currentExp and text:gsub(expPattern, string.format("Experience %.2f", currentExp)) or text
+  if aMult ~= 1 then
+    local closedBonus   = (1 / aMult - 1) * 100
+    local closedMaxHP   = maxHP / aMult
+    lines[#lines+1] = "\255\245\245\245" 
+       .. "Closed: \255\255\255\255" 
+       .. string.format("+%d%%, maxHP: %d", closedBonus, closedMaxHP)
+  end
 
-	if WG.Music and WG.Music.curTrack then
-		text = text .. "\nPlaying : " .. WG.Music.curTrack
-	end
-
-	local mx, my, gx, gy, gz, tooltipID
-	mx, my = Spring.GetMouseState()
-
-	if mx and my then
-		local _, pos = Spring.TraceScreenRay(mx, my, true, true)
-
-		if pos then
-			gx, gy, gz = unpack(pos)
-		end
-
-		local kind, var1 = Spring.TraceScreenRay(mx, my, false, true)
-
-		if kind == "unit" then
-			tooltipID = var1
-		end
-	end
-
-	if MorphDefID then
-		unitDefID = MorphDefID
-		iconsize = tooltip.background.sy
-	elseif tooltipID then
-		unitDefID = Spring.GetUnitDefID(tooltipID)
-		iconsize = tooltip.background.sy
-	elseif WG["hoverID"] and WG["hoverID"] < 0 then
-		unitDefID = math.abs(WG["hoverID"])
-		iconsize = tooltip.background.sy
-	elseif Spring.GetSelectedUnitsCount() == 1 then
-		unitID = Spring.GetSelectedUnits()[1]
-
-		if Spring.ValidUnitID(unitID) then
-			unitDefID = Spring.GetUnitDefID(unitID)
-			iconsize = tooltip.background.sy
-		end
-	else
-		unitDefID = nil
-		iconsize = 0
-	end
-
-	return text
+  return table.concat(lines, "\n")
 end
 
-local function createtooltip(r)
-	local text = {
-		"text", px = r.px + r.margin,
-		py = r.py + r.margin,
-		fontsize = r.fontsize,
-		caption = "",
-		options = "o",
-		onupdate = function(self)
-			local unitcount = sGetSelectedUnitsCount()
+--------------------------------------------------------------------------------
+--  Tooltip Processing
+--------------------------------------------------------------------------------
+local currentUnitDefID
 
-			if unitcount ~= 0 then
-				self.caption = "Selected units: " .. unitcount .. "\n"
-			else
-				self.caption = "\n"
-			end
+-- Original function that customizes the "basic" tooltip text
+local function getCustomizedCurrentTooltip()
+  local text = spGetCurrentTooltip()
 
-			if self._mouseoverself then
-				self.caption = self.caption .. r.tooltip.background
-			else
-				self.caption = self.caption .. (getEditedCurrentTooltip() or sGetCurrentTooltip())
-			end
-		end
-	}
+  -- Example: remove or rename advanced T1/2/3/4 unit research centre text
+  local lvl1tech = text:match("advanced t1 unit research centre") or nil
+  local lvl2tech = text:match("advanced t2 unit research centre") or nil
+  local lvl3tech = text:match("advanced t3 unit research centre") or nil
+  local lvl4tech = text:match("advanced t4 unit research centre") or nil
+  local provides = text:match("Provides") or nil
 
-	local background = {
-		"rectangle", px = r.px,
-		py = r.py,
-		sx = r.sx,
-		sy = r.sy,
-		color = r.cbackground,
-		border = r.cborder,
-		movable = r.dragbutton,
-		movableslaves = {text},
-		obeyscreenedge = true,
-		--overridecursor = true,
-		overrideclick = {2},
-		onupdate = function(self)
-			--left side of screen
-			if self.px < (Screen.vsx / 2) then
-				if (self.sx - r.margin * 2) <= text.getwidth() then
-					self.sx = ((text.getwidth() + r.margin * 2) - 1) + (iconsize * 1.95)
-				else
-					self.sx = (r.sx * Screen.vsy / CanvasY) + (iconsize * 1.95)
-				end
+  if provides then
+    if lvl4tech then
+      text = text:gsub(lvl3tech or "", "")
+      text = text:gsub(lvl2tech or "", "")
+      text = text:gsub(lvl1tech or "", "")
+      text = text:gsub(",", "", 3)
+      text = text:gsub(lvl4tech, "Advanced T4 Unit Research Centre")
+    elseif lvl3tech then
+      text = text:gsub(lvl2tech or "", "")
+      text = text:gsub(lvl1tech or "", "")
+      text = text:gsub(",", "", 2)
+      text = text:gsub(lvl3tech, "Advanced T3 Unit Research Centre")
+    elseif lvl2tech then
+      text = text:gsub(lvl1tech or "", "")
+      text = text:gsub(",", "", 1)
+      text = text:gsub(lvl2tech, "Advanced T2 Unit Research Centre")
+    elseif lvl1tech then
+      text = text:gsub(lvl1tech, "Advanced T1 Unit Research Centre")
+    end
+  end
 
-				text.px = self.px + r.margin + iconsize
-			else --right side of screen
-				if (self.sx - r.margin * 2 - 1) <= text.getwidth() then
-					self.px = self.px - ((text.getwidth() + r.margin * 2) - self.sx)
-					self.sx = (text.getwidth() + r.margin * 2) + (iconsize * 1.95)
-				else
-					self.px = self.px - ((r.sx * Screen.vsy / CanvasY) - self.sx)
-					self.sx = (r.sx * Screen.vsy / CanvasY) + (iconsize * 1.95)
-				end
+  -- Remove hidden UnitDefID from morph text
+  local expMorphPat = "UnitDefID (%d+)\n"
+  local morphDefID  = tonumber(text:match(expMorphPat)) or nil
+  if morphDefID then
+    text = text:gsub(expMorphPat, "")
+  end
 
-				text.px = self.px + r.margin + iconsize
-			end
-		end,
-		mouseover = function(mx, my, self)
-			text._mouseoverself = true
-		end,
-		mousenotover = function(mx, my, self)
-			text._mouseoverself = nil
-		end,
-	}
+  -- Restrict experience decimals
+  local expPattern = "Experience (%d+%.%d%d)"
+  local currentExp = tonumber(text:match(expPattern))
+  if currentExp then
+    text = text:gsub(expPattern, string.format("Experience %.2f", currentExp))
+  end
 
-	New(background)
-	New(text)
+  -- Add current playing track (if Music widget is present)
+  if WG.Music and WG.Music.curTrack then
+    text = text .. "\nPlaying : " .. WG.Music.curTrack
+  end
 
-	return {
-		["background"] = background,
-		["text"] = text,
-		margin = r.margin,
-	}
+  -- Figure out which UnitDef is under the mouse or selected
+  if morphDefID then
+    currentUnitDefID = morphDefID
+    iconSize = Config.tooltip.sy
+  else
+    local mx, my = spGetMouseState()
+    local hoveredUnitDefID
+
+    if mx and my then
+      local _, pos = spTraceScreenRay(mx, my, true, true)  -- ground pass
+      if pos then
+        -- If you need the ground coords, they're in pos[1..3]
+      end
+
+      local kind, var1 = spTraceScreenRay(mx, my, false, true)
+      if kind == "unit" then
+        hoveredUnitDefID = spGetUnitDefID(var1)
+      end
+    end
+
+    if hoveredUnitDefID then
+      currentUnitDefID = hoveredUnitDefID
+      iconSize = Config.tooltip.sy
+    elseif WG["hoverID"] and WG["hoverID"] < 0 then
+      currentUnitDefID = math.abs(WG["hoverID"])
+      iconSize = Config.tooltip.sy
+    elseif spGetSelectedUnitsCount() == 1 then
+      local selUnits = spGetSelectedUnits()
+      if selUnits and selUnits[1] and spValidUnitID(selUnits[1]) then
+        currentUnitDefID = spGetUnitDefID(selUnits[1])
+        iconSize = Config.tooltip.sy
+      end
+    else
+      currentUnitDefID = nil
+      iconSize = 0
+    end
+  end
+
+  return text
 end
 
-function widget:DrawScreen()
-	if unitDefID then
-		gl.Color(1, 1, 1, 1)
+--------------------------------------------------------------------------------
+--  Tooltip UI Creation
+--------------------------------------------------------------------------------
+local tooltipUI = {}
 
-		--Spring.Echo(VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png'),unitDefID,UnitDefs[unitDefID].name )
-		if WG['OtaIcons'] and OtaIconExist[unitDefID] then
-			gl.Texture(OtaIconExist[unitDefID])
-		else
-			gl.Texture('#' .. unitDefID) -- Screen.vsx,Screen.vsy
-		end
+local function createTooltipUI(r)
+  local textElement = {
+    "text",
+    px       = r.px + r.margin,
+    py       = r.py + r.margin,
+    fontsize = r.fontsize,
+    caption  = "",
+    options  = "o",
+    onupdate = function(self)
+      local count = spGetSelectedUnitsCount()
+      -- Example: show how many units are selected
+      if count ~= 0 then
+        self.caption = "Selected units: " .. count .. "\n"
+      else
+        self.caption = "\n"
+      end
 
-		gl.TexRect(tooltip.background.px, Screen.vsy - tooltip.background.py - iconsize, tooltip.background.px + iconsize, Screen.vsy - tooltip.background.py)
-		gl.Texture(false)
-	end
+      -- If we hover the tooltip itself, show "drag instructions" or else show normal text
+      if self._mouseoverself then
+        self.caption = self.caption .. r.tooltip.background
+      else
+        local baseTooltip = getCustomizedCurrentTooltip() or spGetCurrentTooltip()
+        self.caption = self.caption .. (baseTooltip or "")
+      end
+
+      -- If exactly one unit is hovered or selected, add armor info
+      local hoveredUnitID
+      do
+        local mx, my = spGetMouseState()
+        local kind, var1 = spTraceScreenRay(mx, my, false, true)
+        if kind == "unit" then
+          hoveredUnitID = var1
+        end
+      end
+      local selUnits = spGetSelectedUnits()
+      local singleUnitID
+      if hoveredUnitID then
+        singleUnitID = hoveredUnitID
+      elseif (#selUnits == 1) and spValidUnitID(selUnits[1]) then
+        singleUnitID = selUnits[1]
+      end
+      if singleUnitID then
+        self.caption = self.caption .. "\n\n" .. getArmorInfo(singleUnitID)
+      end
+    end,
+  }
+
+  local background = {
+    "rectangle",
+    px             = r.px,
+    py             = r.py,
+    sx             = r.sx,
+    sy             = r.sy,
+    color          = r.cbackground,
+    border         = r.cborder,
+    movable        = r.dragbutton,
+    movableslaves  = { textElement },
+    obeyscreenedge = true,
+    overrideclick  = {2},
+    onupdate       = function(self)
+      -- Dynamically resize width (existing logic)
+      if self.px < (Screen.vsx / 2) then
+        -- Left side of screen
+        if (self.sx - r.margin * 2) <= textElement.getwidth() then
+          self.sx = ((textElement.getwidth() + r.margin * 2) - 1) + (iconSize * 1.95)
+        else
+          self.sx = (r.sx * Screen.vsy / CANVAS_Y) + (iconSize * 1.95)
+        end
+        textElement.px = self.px + r.margin + iconSize
+      else
+        -- Right side of screen
+        if (self.sx - r.margin * 2 - 1) <= textElement.getwidth() then
+          self.px = self.px - ((textElement.getwidth() + r.margin * 2) - self.sx)
+          self.sx = (textElement.getwidth() + r.margin * 2) + (iconSize * 1.95)
+        else
+          self.px = self.px - ((r.sx * Screen.vsy / CANVAS_Y) - self.sx)
+          self.sx = (r.sx * Screen.vsy / CANVAS_Y) + (iconSize * 1.95)
+        end
+        textElement.px = self.px + r.margin + iconSize
+      end
+
+      -- NEW: Dynamically resize height if text is taller than current box
+      local neededHeight = textElement.getheight() + (r.margin * 2)
+      if neededHeight > self.sy then
+        self.sy = neededHeight
+      else
+        -- Or revert to default scaled height if text is smaller
+        local scaledDefault = r.sy * (Screen.vsy / CANVAS_Y)
+        if self.sy > scaledDefault then
+          self.sy = scaledDefault
+        end
+      end
+    end,
+    mouseover    = function(mx, my, self)
+      textElement._mouseoverself = true
+    end,
+    mousenotover = function(mx, my, self)
+      textElement._mouseoverself = nil
+    end,
+  }
+
+  New(background)
+  New(textElement)
+
+  return {
+    background = background,
+    text       = textElement,
+    margin     = r.margin,
+  }
 end
 
+--------------------------------------------------------------------------------
+--  Widget Callins
+--------------------------------------------------------------------------------
 function widget:Initialize()
-	PassedStartupCheck = RedUIchecks()
-	if not PassedStartupCheck then return end
-	tooltip = createtooltip(Config.tooltip)
-	Spring.SetDrawSelectionInfo(false) --disables springs default display of selected units count
-	Spring.SendCommands("tooltip 0")
-	AutoResizeObjects()
+  if not checkRedUIFramework() then return end
+
+  tooltipUI = createTooltipUI(Config.tooltip)
+  spSetDrawSelectionInfo(false)  -- disables default engine's selection info
+  spSendCommands("tooltip 0")    -- disable default engine tooltip
+  autoResizeObjects()
 end
 
 function widget:Shutdown()
-	Spring.SendCommands("tooltip 1")
+  spSendCommands("tooltip 1")    -- re-enable default engine tooltip
+end
+
+function widget:DrawScreen()
+  if currentUnitDefID then
+    gl.Color(1, 1, 1, 1)
+    if WG["OtaIcons"] and otaIconCache[currentUnitDefID] then
+      gl.Texture(otaIconCache[currentUnitDefID])
+    else
+      gl.Texture("#" .. currentUnitDefID)
+    end
+    -- Draw unit icon next to the tooltip background
+    gl.TexRect(
+      tooltipUI.background.px,
+      Screen.vsy - tooltipUI.background.py - iconSize,
+      tooltipUI.background.px + iconSize,
+      Screen.vsy - tooltipUI.background.py
+    )
+    gl.Texture(false)
+  end
 end
 
 function widget:Update()
-	AutoResizeObjects()
+  autoResizeObjects()
 end
 
---save/load stuff
---currently only position
---save config
+--------------------------------------------------------------------------------
+--  Save/Load Widget State
+--------------------------------------------------------------------------------
+local PassedStartupCheck = true
+
 function widget:GetConfigData()
-	if PassedStartupCheck then
-		local vsx = Screen.vsx
-		local vsy = Screen.vsy
-		local unscale = CanvasY / vsy --needed due to autoresize, stores unresized variables
+  if not PassedStartupCheck then
+    return
+  end
 
-		if (tooltip.background.px * unscale > -50) and (tooltip.background.py * unscale > -50) and (tooltip.background.py * unscale) < vsy and (tooltip.background.px * unscale) < vsx then
-			Config.tooltip.px = tooltip.background.px * unscale
-			Config.tooltip.py = tooltip.background.py * unscale
+  local vsx, vsy = Screen.vsx, Screen.vsy
+  local unscale  = CANVAS_Y / vsy
 
-			return {
-				Config = Config
-			}
-		else
-			Config.tooltip.px = 0
-			Config.tooltip.py = 0
+  local bg = tooltipUI.background
+  if (bg.px * unscale > -50) and (bg.py * unscale > -50)
+     and (bg.py * unscale) < vsy and (bg.px * unscale) < vsx
+  then
+    Config.tooltip.px = bg.px * unscale
+    Config.tooltip.py = bg.py * unscale
+  else
+    Config.tooltip.px = 0
+    Config.tooltip.py = 0
+  end
 
-			return {
-				Config = Config
-			}
-		end
-	end
+  return { Config = Config }
 end
 
---load config
 function widget:SetConfigData(data)
-	if data.Config ~= nil then
-		Config.tooltip.px = data.Config.tooltip.px
-		Config.tooltip.py = data.Config.tooltip.py
+  if data.Config then
+    Config.tooltip.px = data.Config.tooltip.px
+    Config.tooltip.py = data.Config.tooltip.py
 
-		if Config.tooltip.py < 1 then
-			Config.tooltip.py = clampY
-		end
-		if Config.tooltip.py > clampY then
-			Config.tooltip.py = clampY
-		end
-	end
+    -- Clamp Y coordinate
+    if Config.tooltip.py < 1        then Config.tooltip.py = CLAMP_Y end
+    if Config.tooltip.py > CLAMP_Y  then Config.tooltip.py = CLAMP_Y end
+  end
 end
