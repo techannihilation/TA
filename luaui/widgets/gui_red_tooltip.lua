@@ -11,8 +11,9 @@
 function widget:GetInfo()
   return {
     name    = "Red Tooltip", -- version 5 (with armor info)
-    desc    = "Requires, [ur]uncle",
-    date    = "January 4, 2025",
+    desc = "Requires Red UI Framework",
+    author = "Regret",
+    date = "August 11, 2009", --last change January 4, 2025
     license = "GNU GPL, v2 or later",
     layer   = -100,
     enabled = true,
