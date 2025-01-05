@@ -112,7 +112,7 @@ function widget:DrawWorld()
 
         if heading and px then
           local teamID    = spGetUnitTeam(uID) or -1
-          local accumPaid = spGetUnitRulesParam(uID, "upgrade_accumPaid") or 0
+          local accumPaid = spGetUnitRulesParam(uID, "upgrade_accumCost") or 0
           local totalCost = spGetUnitRulesParam(uID, "upgrade_totalCost") or 1
           local ratio     = math.min(accumPaid / math.max(totalCost, 0.0001), 1)
           local defID     = spGetUnitDefID(uID) or -1

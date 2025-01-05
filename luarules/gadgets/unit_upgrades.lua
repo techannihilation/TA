@@ -45,7 +45,6 @@ local CLOAK_COST_MULT    = 0.40
 local DECLAK_DISTANCE_MULT = 0.05
 
 -- CEG
-local REPAIR_PAD_FX       = "repairpad_effect"
 local SPEED_MOVING_CEG    = "speedboost_effect"
 local ARMOR_MOVING_CEG    = "armorboost_effect"
 local CLOAK_MOVING_CEG    = "cloak_effect"
@@ -67,7 +66,7 @@ end
 --------------------------------------------------------------------------------
 
 local upgradedUnits      = {}  -- [unitID] = true if upgrade is completed
-local inProgress         = {}  -- [unitID] = { cmdID, teamID, totalCost, accumPaid, baseDefID, cmdDescID }
+local inProgress         = {}  -- [unitID] = { cmdID, teamID, totalCost, accumCost, baseDefID, cmdDescID }
 local speedBoostedUnits  = {}
 local armorBoostedUnits  = {}
 local cloakedUnits       = {}
@@ -143,22 +142,16 @@ local function StartUpgrade(unitID, cmdID, teamID, totalCost, cmdDescID)
     cmdID     = cmdID,
     teamID    = teamID,
     totalCost = totalCost,
-    accumPaid = 0,
+    accumCost = 0,
     baseDefID = Spring.GetUnitDefID(unitID),
     cmdDescID = cmdDescID,
   }
   ParalyzeUnit(unitID, true)
   Spring.SetUnitRulesParam(unitID, "upgrade_inProgress", 1)
   Spring.SetUnitRulesParam(unitID, "upgrade_totalCost",  totalCost)
-  Spring.SetUnitRulesParam(unitID, "upgrade_accumPaid",  0)
+  Spring.SetUnitRulesParam(unitID, "upgrade_accumCost",  0)
 
   SetCmdDescToStop(unitID, cmdDescID)
-
-  -- spawn CEG
-  local x,y,z = Spring.GetUnitPosition(unitID)
-  if x then
-    Spring.SpawnCEG(REPAIR_PAD_FX, x,y,z, 0,0,0,0)
-  end
 
   -- **Unsynced**: call UpgradeStart
   SendToUnsynced("UpgradeStart", unitID)
@@ -188,6 +181,11 @@ local function StopUpgrade(unitID)
 
   -- **Unsynced**: call UpgradeStop
   SendToUnsynced("UpgradeStop", unitID)
+end
+
+local function ReturnMetal(unitID)
+  local data = inProgress[unitID]
+  Spring.AddTeamResource(data.teamID,"metal",data.accumCost)
 end
 
 local function FinishUpgrade(unitID, data)
@@ -223,7 +221,6 @@ local function FinishUpgrade(unitID, data)
       end
     else
       -- Ground or ship
-      --if ud.yardmap == nil and ud.workertime == true then return end -- nano turret (not uDef.yardmap and not uDef.workertime)
       Spring.MoveCtrl.SetGroundMoveTypeData(unitID, {
         maxSpeed = baseSpeed * SPEED_BOOST_FACTOR,
         maxWantedSpeed = baseSpeed * SPEED_BOOST_FACTOR
@@ -244,12 +241,6 @@ local function FinishUpgrade(unitID, data)
     end
   end
 
-  -- some special-effect
-  local x,y,z = Spring.GetUnitPosition(unitID)
-  if x then
-    Spring.SpawnCEG(REPAIR_PAD_FX, x,y,z, 0,0,0,0)
-  end
-
   -- remove all upgrade commands so there's no second purchase
   local removeList = {CMD_BUY_SPEED_BOOST, CMD_BUY_ARMOR_BOOST, CMD_BUY_CLOAK}
   for _, cID in ipairs(removeList) do
@@ -267,30 +258,22 @@ end
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
   if not validUnitDefs[unitDefID] then return true end
 
-  if cmdID == CMD.STOP then
-    if inProgress[unitID] then
-      StopUpgrade(unitID)
-    end
+  if cmdID ~= CMD.STOP and not UPGRADE_COMMANDS[cmdID] then
     return true
   end
 
-  if not UPGRADE_COMMANDS[cmdID] then
-    return true
-  end
-
-  if upgradedUnits[unitID] then
-    Spring.SendMessageToTeam(teamID, "\255\255\64\64This unit already completed an upgrade.")
-    return false
-  end
-
-  local data = inProgress[unitID]
-  if data then
-    -- toggling => STOP
+  if inProgress[unitID] then
+    -- if upgrade in progress and stop or any upg button pressed then toggling => STOP
+    ReturnMetal(unitID)
     StopUpgrade(unitID)
     return false
   end
 
-  -- else => start
+  if upgradedUnits[unitID] then -- already upgraded
+    --Spring.SendMessageToTeam(teamID, "\255\255\64\64This unit already completed an upgrade.")
+    return false
+  end
+
   local ud = UnitDefs[unitDefID]
   if not ud then return false end
 
@@ -316,7 +299,7 @@ end
 
 function gadget:GameFrame(f)
   -- Basic effects for completed upgrades
-  if f % 20 == 0 then
+  if f % 30 == 0 then
     for uID in pairs(speedBoostedUnits) do
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
@@ -335,7 +318,7 @@ function gadget:GameFrame(f)
     end
   end
 
-  if f % 180 == 0 then
+  if f % 120 == 0 then
     for uID in pairs(cloakedUnits) do
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
@@ -354,11 +337,11 @@ function gadget:GameFrame(f)
       local costRate = data.totalCost / TARGET_FRAMES_FULL
       local canPay   = Spring.UseTeamResource(data.teamID, "metal", costRate)
       if canPay then
-        data.accumPaid = data.accumPaid + costRate
+        data.accumCost = data.accumCost + costRate
       end
-      Spring.SetUnitRulesParam(unitID, "upgrade_accumPaid", data.accumPaid)
+      Spring.SetUnitRulesParam(unitID, "upgrade_accumCost", data.accumCost)
 
-      if data.accumPaid >= data.totalCost then
+      if data.accumCost >= data.totalCost then
         FinishUpgrade(unitID, data)
       end
     end
