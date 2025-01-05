@@ -7,7 +7,7 @@ function widget:GetInfo()
 		license = "GNU GPL, v2 or later",
 		layer   = -100,
 		enabled = true,
-		--handler = true,
+		handler = true,
 	}
 end
 
@@ -81,12 +81,6 @@ local function armorInfo(unitID, text)
 	return text
 end
 
-
--- local function expInfo(unitID, text)
--- 	exp = Spring.GetUnitExperience(unitID)
--- 	"Exp:", format("+%d%% health", (uMaxHp/uDef.health-1)*100)
--- end
-
 local function getEditedCurrentTooltip()
 	local text = sGetCurrentTooltip()
 	--Spring.Echo(text)
@@ -148,16 +142,7 @@ local function createtooltip(cfg)
 				self.caption = ""
 			end
 			self.caption = self.caption .. (getEditedCurrentTooltip() or "")
-
-
-	
-
-
-
-
-
 		end,
-	
 	}
 
 local backgroundObj = {
