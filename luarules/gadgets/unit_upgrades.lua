@@ -3,14 +3,13 @@ function gadget:GetInfo()
     name    = "UnitUpgrades",
     desc    = "Units purchase upgrades over time.",
     author  = "[ur]uncle",
-    date    = "2024-12-29",
-    version = "1.7",
+    date    = "06.01.2025",
+    version = "1.8",
     license = "GNU GPL v2 or later",
     layer   = 0,
     enabled = true
   }
 end
-
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -49,15 +48,22 @@ local SPEED_MOVING_CEG    = "speedboost_effect"
 local ARMOR_MOVING_CEG    = "armorboost_effect"
 local CLOAK_MOVING_CEG    = "cloak_effect"
 
-local TARGET_FRAMES_FULL = 12 * 30
+local TARGET_FRAMES_FULL = 12 * 30  -- 12 seconds * 30fps = 360 frames
 
+-- We store for each UnitDef ID a small table describing which upgrades are allowed
 local validUnitDefs = {}
+
+--------------------------------------------------------------------------------
+--  HELPER / INITIALIZE
+--------------------------------------------------------------------------------
 
 function gadget:Initialize()
   for udid, ud in pairs(UnitDefs) do
-    if not ud.isBomberAirUnit then --(not ud.isFactory) and
-      validUnitDefs[udid] = true
-    end
+      validUnitDefs[udid] = {
+        canUpgSpeed = not ud.isImmobile,
+        canUpgArmor = true,
+        canUpgCloak = not ud.isBomberAirUnit,
+      }
   end
 end
 
@@ -65,11 +71,16 @@ end
 --  UPGRADE STATE
 --------------------------------------------------------------------------------
 
-local upgradedUnits      = {}  -- [unitID] = true if upgrade is completed
+-- Track units that are fully upgraded, in progress, or have a particular upgrade
+local upgradedUnits      = {}  -- [unitID] = true if some upgrade has completed
 local inProgress         = {}  -- [unitID] = { cmdID, teamID, totalCost, accumCost, baseDefID, cmdDescID }
 local speedBoostedUnits  = {}
 local armorBoostedUnits  = {}
 local cloakedUnits       = {}
+
+--------------------------------------------------------------------------------
+--  COMMAND DESCRIPTORS
+--------------------------------------------------------------------------------
 
 local function MakeSpeedCmdDesc(cost)
   return {
@@ -129,10 +140,15 @@ local function SetCmdDescToBuy(unitID, cmdDescID, oldName)
   })
 end
 
+--------------------------------------------------------------------------------
+--  UPGRADE PROCESS
+--------------------------------------------------------------------------------
+
 local function ParalyzeUnit(unitID, yes)
   if yes then
     Spring.SetUnitHealth(unitID, { paralyze = 1.0e9 })
   else
+    -- negative un-paralyzes
     Spring.SetUnitHealth(unitID, { paralyze = -1 })
   end
 end
@@ -161,16 +177,15 @@ local function StopUpgrade(unitID)
   local data = inProgress[unitID]
   if not data then return end
 
-  -- un-paralyze
   ParalyzeUnit(unitID, false)
 
-  -- revert name
+  -- revert name on the cmdDesc
   local cmdDescID = data.cmdDescID
   if cmdDescID then
     if data.cmdID == CMD_BUY_SPEED_BOOST then
       SetCmdDescToBuy(unitID, cmdDescID, "Buy\nSpeed")
     elseif data.cmdID == CMD_BUY_ARMOR_BOOST then
-      SetCmdDescToBuy(unitID, cmdDescID, "Buy\nARMOR")
+      SetCmdDescToBuy(unitID, cmdDescID, "Buy\nArmor")
     elseif data.cmdID == CMD_BUY_CLOAK then
       SetCmdDescToBuy(unitID, cmdDescID, "Buy\nCloak")
     end
@@ -185,7 +200,9 @@ end
 
 local function ReturnMetal(unitID)
   local data = inProgress[unitID]
-  Spring.AddTeamResource(data.teamID,"metal",data.accumCost)
+  if data then
+    Spring.AddTeamResource(data.teamID, "metal", data.accumCost)
+  end
 end
 
 local function FinishUpgrade(unitID, data)
@@ -194,7 +211,7 @@ local function FinishUpgrade(unitID, data)
   ParalyzeUnit(unitID, false)
 
   Spring.SetUnitRulesParam(unitID, "upgrade_inProgress", 0)
-  SendToUnsynced("UpgradeStop", unitID) -- notify unsynced (Stop once it's completed)
+  SendToUnsynced("UpgradeStop", unitID)  -- notify unsynced
 
   local cmdID = data.cmdID
   local currDefID = Spring.GetUnitDefID(unitID)
@@ -222,7 +239,7 @@ local function FinishUpgrade(unitID, data)
     else
       -- Ground or ship
       Spring.MoveCtrl.SetGroundMoveTypeData(unitID, {
-        maxSpeed = baseSpeed * SPEED_BOOST_FACTOR,
+        maxSpeed       = baseSpeed * SPEED_BOOST_FACTOR,
         maxWantedSpeed = baseSpeed * SPEED_BOOST_FACTOR
       })
     end
@@ -256,26 +273,40 @@ end
 --------------------------------------------------------------------------------
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
-  if not validUnitDefs[unitDefID] then return true end
+  local def = validUnitDefs[unitDefID]
+  if not def then
+    return true
+  end
 
   if cmdID ~= CMD.STOP and not UPGRADE_COMMANDS[cmdID] then
     return true
   end
 
+  -- If upgrade is in progress and we press STOP or the same upgrade cmd => stop/cancel it
   if inProgress[unitID] then
-    -- if upgrade in progress and stop or any upg button pressed then toggling => STOP
     ReturnMetal(unitID)
     StopUpgrade(unitID)
     return false
   end
 
-  if upgradedUnits[unitID] then -- already upgraded
+  -- If the unit has already completed an upgrade, disallow further upgrades
+  if upgradedUnits[unitID] then
     return false
   end
 
+  if (cmdID == CMD_BUY_SPEED_BOOST) and (not def.canUpgSpeed) then
+    return false
+  end
+  if (cmdID == CMD_BUY_ARMOR_BOOST) and (not def.canUpgArmor) then
+    return false
+  end
+  if (cmdID == CMD_BUY_CLOAK) and (not def.canUpgCloak) then
+    return false
+  end
+
+  -- compute cost
   local ud = UnitDefs[unitDefID]
   if not ud then return false end
-
   local baseMetal = ud.metalCost or 0
   local totalCost = 0
   local cmdDescID = Spring.FindUnitCmdDesc(unitID, cmdID)
@@ -303,7 +334,7 @@ function gadget:GameFrame(f)
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
         if x then
-          Spring.SpawnCEG(SPEED_MOVING_CEG, x, y+(Spring.GetUnitHeight(uID) or 50), z)
+          Spring.SpawnCEG(SPEED_MOVING_CEG, x, y + (Spring.GetUnitHeight(uID) or 50), z)
         end
       end
     end
@@ -311,7 +342,7 @@ function gadget:GameFrame(f)
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
         if x then
-          Spring.SpawnCEG(ARMOR_MOVING_CEG, x, y+(Spring.GetUnitHeight(uID) or 50), z)
+          Spring.SpawnCEG(ARMOR_MOVING_CEG, x, y + (Spring.GetUnitHeight(uID) or 50), z)
         end
       end
     end
@@ -322,13 +353,13 @@ function gadget:GameFrame(f)
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
         if x then
-          Spring.SpawnCEG(CLOAK_MOVING_CEG, x, y+(Spring.GetUnitHeight(uID) or 50), z)
+          Spring.SpawnCEG(CLOAK_MOVING_CEG, x, y + (Spring.GetUnitHeight(uID) or 50), z)
         end
       end
     end
   end
 
-  -- Pay partial cost
+  -- Pay partial cost each frame
   for unitID, data in pairs(inProgress) do
     if (not Spring.ValidUnitID(unitID)) or Spring.GetUnitIsDead(unitID) then
       StopUpgrade(unitID)
@@ -348,16 +379,26 @@ function gadget:GameFrame(f)
 end
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
-  if not validUnitDefs[unitDefID] then return end
-  local ud = UnitDefs[unitDefID]
-  local baseMetal = ud.metalCost or 0
-  local speedCost = baseMetal * SPEED_COST_MULT
-  local armorCost = baseMetal * ARMOR_COST_MULT
-  local cloakCost = baseMetal * CLOAK_COST_MULT
+  local def = validUnitDefs[unitDefID]
+  if not def then return end
 
-  Spring.InsertUnitCmdDesc(unitID, MakeSpeedCmdDesc(speedCost))
-  Spring.InsertUnitCmdDesc(unitID, MakeARMORCmdDesc(armorCost))
-  Spring.InsertUnitCmdDesc(unitID, MakeCloakCmdDesc(cloakCost))
+  local ud = UnitDefs[unitDefID]
+  if not ud then return end
+
+  -- Insert command desc only for allowed upgrades
+  local baseMetal = ud.metalCost or 0
+  if def.canUpgSpeed then
+    local speedCost = baseMetal * SPEED_COST_MULT
+    Spring.InsertUnitCmdDesc(unitID, MakeSpeedCmdDesc(speedCost))
+  end
+  if def.canUpgArmor then
+    local armorCost = baseMetal * ARMOR_COST_MULT
+    Spring.InsertUnitCmdDesc(unitID, MakeARMORCmdDesc(armorCost))
+  end
+  if def.canUpgCloak then
+    local cloakCost = baseMetal * CLOAK_COST_MULT
+    Spring.InsertUnitCmdDesc(unitID, MakeCloakCmdDesc(cloakCost))
+  end
 end
 
 function gadget:UnitDestroyed(unitID)
@@ -369,6 +410,7 @@ function gadget:UnitDestroyed(unitID)
   armorBoostedUnits[unitID] = nil
   cloakedUnits[unitID]      = nil
 end
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
@@ -376,25 +418,25 @@ end
 --
 --------------------------------------------------------------------------------
 else
-    local function HandleUpgradeStart(_, unitID)
-      if Script and Script.LuaUI and Script.LuaUI.UpgradeStart then
-        Script.LuaUI.UpgradeStart(unitID)
-      end
+  local function HandleUpgradeStart(_, unitID)
+    if Script and Script.LuaUI and Script.LuaUI.UpgradeStart then
+      Script.LuaUI.UpgradeStart(unitID)
     end
+  end
 
-    local function HandleUpgradeStop(_, unitID)
-      if Script and Script.LuaUI and Script.LuaUI.UpgradeStop then
-        Script.LuaUI.UpgradeStop(unitID)
-      end
+  local function HandleUpgradeStop(_, unitID)
+    if Script and Script.LuaUI and Script.LuaUI.UpgradeStop then
+      Script.LuaUI.UpgradeStop(unitID)
     end
+  end
 
-    function gadget:Initialize()
-      gadgetHandler:AddSyncAction("UpgradeStart", HandleUpgradeStart)
-      gadgetHandler:AddSyncAction("UpgradeStop",  HandleUpgradeStop)
-    end
+  function gadget:Initialize()
+    gadgetHandler:AddSyncAction("UpgradeStart", HandleUpgradeStart)
+    gadgetHandler:AddSyncAction("UpgradeStop",  HandleUpgradeStop)
+  end
 
-    function gadget:Shutdown()
-      gadgetHandler:RemoveSyncAction("UpgradeStart")
-      gadgetHandler:RemoveSyncAction("UpgradeStop")
-    end
+  function gadget:Shutdown()
+    gadgetHandler:RemoveSyncAction("UpgradeStart")
+    gadgetHandler:RemoveSyncAction("UpgradeStop")
+  end
 end
