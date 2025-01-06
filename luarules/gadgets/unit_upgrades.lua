@@ -270,7 +270,6 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
   end
 
   if upgradedUnits[unitID] then -- already upgraded
-    --Spring.SendMessageToTeam(teamID, "\255\255\64\64This unit already completed an upgrade.")
     return false
   end
 
@@ -348,7 +347,7 @@ function gadget:GameFrame(f)
   end
 end
 
-function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+function gadget:UnitCreated(unitID, unitDefID, unitTeam)
   if not validUnitDefs[unitDefID] then return end
   local ud = UnitDefs[unitDefID]
   local baseMetal = ud.metalCost or 0
