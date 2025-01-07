@@ -153,5 +153,59 @@ return {
     },
   },
 
+  --------------------------------------------------------------------------------
+  -- MAGICUPG EFFECT
+  --------------------------------------------------------------------------------
+  ["magicUpg_effect"] = {
+      sparklespawn = {
+        air                = true,
+        class              = [[CExpGenSpawner]],
+        count              = 12,
+        ground             = true,
+        water              = false,
+        properties = {
+          delay              = [[0 i0.13 r1]],
+          explosiongenerator = [[custom:magicUpg_effect_control]],
+          pos                = [[-3 r6, 0 r38, -3 r6]],
+        },
+      },
+    },
+
+  ["magicUpg_effect_control"] = {
+    poof01 = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      properties = {
+        airdrag            = 0.5,
+        alwaysvisible      = true,
+        colormap           = [[
+          0.8 0.2 1.0 0.15
+          0.4 0.6 1.0 0.12
+          0.2 1.0 0.5 0.09
+          0.1 0.5 0.8 0.06
+          0.0 0.3 0.5 0.03
+        ]],
+        directional        = false,
+        emitrot            = 90,
+        emitrotspread      = 60,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, 10, 0]],
+        numparticles       = 5,
+        particlelife       = [[0.5 i0.5 r0.5]],
+        particlelifespread = 8,
+        particlesize       = 2.5,
+        particlesizespread = 1.5,
+        particlespeed      = 20,
+        particlespeedspread = 3,
+        pos                = [[0, 0, 0]],
+        sizegrowth         = -0.35,
+        sizemod            = 1.0,
+        texture            = [[nanonew]],
+        useairlos          = false,
+      },
+    },
+  },
 
  }
