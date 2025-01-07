@@ -103,9 +103,9 @@ return {
 
 
   --------------------------------------------------------------------------------
-  -- CLOAK EFFECT
+  -- BUILDPWR EFFECT
   --------------------------------------------------------------------------------
-  ["cloak_effect"] = {
+  ["buildpwr_effect"] = {
     sparklespawn = {
       air                = true,
       class              = [[CExpGenSpawner]],
@@ -114,13 +114,13 @@ return {
       water              = false,
       properties = {
         delay              = [[0 i0.13 r1]],
-        explosiongenerator = [[custom:cloak_effect_control]],
+        explosiongenerator = [[custom:buildpwr_effect_control]],
         pos                = [[-3 r6, 0 r38, -3 r6]],
       },
     },
   },
 
-  ["cloak_effect_control"] = {
+  ["buildpwr_effect_control"] = {
     poof01 = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
@@ -129,8 +129,9 @@ return {
       properties = {
         airdrag            = 0.2,
         alwaysvisible      = false,
-        -- A purple-centric colormap
-        colormap           = [[0.8 0.3 0.9 0.07   0.6 0.2 0.7 0.011   0.3 0.1 0.4 0.001   0.1 0.1 0.1 0.001]],
+
+        --colormap           = [[0.3 0.9 0.3 0.07   0.2 0.7 0.2 0.011   0.1 0.4 0.1 0.001   0.05 0.15 0.05 0.001]],
+        colormap           = [[0.0 1.0 0.5 0.07   0.0 0.8 0.4 0.011   0.0 0.6 0.3 0.001   0.0 0.3 0.1 0.001]],
         directional        = false,
         emitrot            = 45,
         emitrotspread      = 32,

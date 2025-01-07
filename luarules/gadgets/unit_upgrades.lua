@@ -3,8 +3,8 @@ function gadget:GetInfo()
     name    = "UnitUpgrades",
     desc    = "Units purchase upgrades over time.",
     author  = "[ur]uncle",
-    date    = "06.01.2025",
-    version = "1.9",
+    date    = "07.01.2025",
+    version = "2.0",
     license = "GNU GPL v2 or later",
     layer   = 0,
     enabled = true
@@ -45,14 +45,13 @@ local CLOAK_COST_MULT       = 0.40
 local DECLAK_DISTANCE_MULT  = 0.05
 
 -- NEW: Build Speed Upgrade
-local BUILDPWR_BOOST_FACTOR = 2.00
+local BUILDPWR_BOOST_FACTOR = 3.00
 local BUILDPWR_COST_MULT    = 0.50
 
 -- CEG
 local SPEED_MOVING_CEG    = "speedboost_effect"
 local ARMOR_MOVING_CEG    = "armorboost_effect"
-local CLOAK_MOVING_CEG    = "cloak_effect"
-local BUILDPWR_MOVING_CEG = "cloak_effect"  -- optional CEG for build power upgrade
+local BUILDPWR_MOVING_CEG = "buildpwr_effect"
 
 local TARGET_FRAMES_FULL = 12 * 30  -- 12 seconds * 30fps = 360 frames
 
@@ -65,10 +64,20 @@ local validUnitDefs = {}
 function gadget:Initialize()
   for udid, ud in pairs(UnitDefs) do
       validUnitDefs[udid] = {
+        -- Excludes units that can't move
         canUpgSpeed     = not ud.isImmobile,
+
+        -- All units can upgrade armor
         canUpgArmor     = true,
-        canUpgCloak     = not ud.isBomberAirUnit,
-        canUpgBuildPwr  = (ud.buildSpeed > 0) or ud.isBuilder or ud.isFactory,
+
+        -- Excludes bomber air units and units that already have cloaking capability
+        canUpgCloak     = not ud.isBomberAirUnit and not ud.canCloak,
+
+        -- Allows Build Power upgrade for units with buildSpeed > 0, builders, or factories
+        -- Excludes static builders that are not buildings (e.g., Nano Towers) and commanders
+        canUpgBuildPwr  = (ud.buildSpeed > 0 or ud.isBuilder or ud.isFactory)
+                           and not (ud.isStaticBuilder and not ud.isBuilding)
+                           and not ud.customParams.iscommander,
       }
   end
 end
@@ -97,21 +106,21 @@ local function SpeedCmdDesc(cost)
     type    = CMDTYPE.ICON,
     name    = string.format(" Speed\n +%.0f%% ",speedPercent),
     tooltip = string.format(
-      "\255\1\255\1Purchase a +%.0f%% Speed upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
+      "\255\1\255\1Purchase a +%.0f%% move speed upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
       speedPercent, cost
     ),
     disabled = false,
   }
 end
 
-local function ARMORCmdDesc(cost)
+local function ArmorCmdDesc(cost)
   local armorPercent = (ARMOR_BOOST_FACTOR - 1) * 100
   return {
     id      = CMD_BUY_ARMOR_BOOST,
     type    = CMDTYPE.ICON,
     name    = string.format(" Armor\n +%.0f%% ",armorPercent),
     tooltip = string.format(
-      "\255\1\255\1Purchase a +%.0f%% Armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
+      "\255\1\255\1Purchase a +%.0f%% armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
       armorPercent, cost
     ),
     disabled = false,
@@ -152,10 +161,27 @@ local function SetCmdDescToStop(unitID, cmdDescID)
   })
 end
 
-local function SetCmdDescToBuy(unitID, cmdDescID, oldName)
-  Spring.EditUnitCmdDesc(unitID, cmdDescID, {
-    name    = oldName,
-  })
+local function RevertCmdDesc(unitID, data)
+  local cmdDescID = data.cmdDescID
+  local cmdID     = data.cmdID
+  local cost      = data.totalCost
+
+  if not cmdDescID then
+    return
+  end
+
+  if cmdID == CMD_BUY_SPEED_BOOST then
+    Spring.EditUnitCmdDesc(unitID, cmdDescID, SpeedCmdDesc(cost))
+
+  elseif cmdID == CMD_BUY_ARMOR_BOOST then
+    Spring.EditUnitCmdDesc(unitID, cmdDescID, ArmorCmdDesc(cost))
+
+  elseif cmdID == CMD_BUY_CLOAK then
+    Spring.EditUnitCmdDesc(unitID, cmdDescID, CloakCmdDesc(cost))
+
+  elseif cmdID == CMD_BUY_BUILDPWR_BOOST then
+    Spring.EditUnitCmdDesc(unitID, cmdDescID, BuildPwrCmdDesc(cost))
+  end
 end
 
 --------------------------------------------------------------------------------
@@ -190,33 +216,28 @@ local function StartUpgrade(unitID, cmdID, teamID, totalCost, cmdDescID)
   SendToUnsynced("UpgradeStart", unitID)
 end
 
+local function ReturnMetal(unitID)
+  local data = inProgress[unitID]
+  if data then
+    Spring.AddTeamResource(data.teamID, "metal", data.accumCost)
+  end
+end
+
+
 local function StopUpgrade(unitID)
   local data = inProgress[unitID]
   if not data then return end
 
   ParalyzeUnit(unitID, false)
 
-  local cmdDescID = data.cmdDescID
-  if cmdDescID then
-    if     data.cmdID == CMD_BUY_SPEED_BOOST    then SetCmdDescToBuy(unitID, cmdDescID, "Buy\nSpeed")
-    elseif data.cmdID == CMD_BUY_ARMOR_BOOST    then SetCmdDescToBuy(unitID, cmdDescID, "Buy\nArmor")
-    elseif data.cmdID == CMD_BUY_CLOAK          then SetCmdDescToBuy(unitID, cmdDescID, "Buy\nCloak")
-    elseif data.cmdID == CMD_BUY_BUILDPWR_BOOST then SetCmdDescToBuy(unitID, cmdDescID, "Buy\nBuildPwr")
-    end
-  end
+  RevertCmdDesc(unitID, data)
+  ReturnMetal(unitID)
 
   inProgress[unitID] = nil
   Spring.SetUnitRulesParam(unitID, "upgrade_inProgress", 0)
 
   -- **Unsynced**: call UpgradeStop
   SendToUnsynced("UpgradeStop", unitID)
-end
-
-local function ReturnMetal(unitID)
-  local data = inProgress[unitID]
-  if data then
-    Spring.AddTeamResource(data.teamID, "metal", data.accumCost)
-  end
 end
 
 local function FinishUpgrade(unitID, data)
@@ -308,7 +329,6 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 
   -- If upgrade is in progress and we press STOP or the same upgrade cmd => stop/cancel it
   if inProgress[unitID] then
-    ReturnMetal(unitID)
     StopUpgrade(unitID)
     return false
   end
@@ -320,7 +340,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 
   if (cmdID == CMD_BUY_SPEED_BOOST)    and (not def.canUpgSpeed)     then return false end
   if (cmdID == CMD_BUY_ARMOR_BOOST)    and (not def.canUpgArmor)     then return false end
-  if (cmdID == CMD_BUY_CLOAK)          and (not def.canUpgCloak)      then return false end
+  if (cmdID == CMD_BUY_CLOAK)          and (not def.canUpgCloak)     then return false end
   if (cmdID == CMD_BUY_BUILDPWR_BOOST) and (not def.canUpgBuildPwr)  then return false end
 
   -- compute cost
@@ -330,14 +350,10 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
   local totalCost = 0
   local cmdDescID = Spring.FindUnitCmdDesc(unitID, cmdID)
 
-  if cmdID == CMD_BUY_SPEED_BOOST then
-    totalCost = baseMetal * SPEED_COST_MULT
-  elseif cmdID == CMD_BUY_ARMOR_BOOST then
-    totalCost = baseMetal * ARMOR_COST_MULT
-  elseif cmdID == CMD_BUY_CLOAK then
-    totalCost = baseMetal * CLOAK_COST_MULT
-  elseif cmdID == CMD_BUY_BUILDPWR_BOOST then
-    totalCost = baseMetal * BUILDPWR_COST_MULT
+  if cmdID == CMD_BUY_SPEED_BOOST then totalCost = baseMetal * SPEED_COST_MULT
+  elseif cmdID == CMD_BUY_ARMOR_BOOST then totalCost = baseMetal * ARMOR_COST_MULT
+  elseif cmdID == CMD_BUY_CLOAK then totalCost = baseMetal * CLOAK_COST_MULT
+  elseif cmdID == CMD_BUY_BUILDPWR_BOOST then totalCost = baseMetal * BUILDPWR_COST_MULT
   end
 
   if totalCost <= 0 then
@@ -367,23 +383,11 @@ function gadget:GameFrame(f)
         end
       end
     end
-    -- NEW: Build Power effect (optional)
     for uID in pairs(buildPwrBoostedUnits) do
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
         if x then
           Spring.SpawnCEG(BUILDPWR_MOVING_CEG, x, y + (Spring.GetUnitHeight(uID) or 50), z)
-        end
-      end
-    end
-  end
-
-  if f % 120 == 0 then
-    for uID in pairs(cloakedUnits) do
-      if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
-        local x,y,z = Spring.GetUnitPosition(uID)
-        if x then
-          Spring.SpawnCEG(CLOAK_MOVING_CEG, x, y + (Spring.GetUnitHeight(uID) or 50), z)
         end
       end
     end
@@ -425,7 +429,7 @@ function gadget:UnitCreated(unitID, unitDefID, unitTeam)
 
   if def.canUpgArmor then
     local armorCost = baseMetal * ARMOR_COST_MULT
-    Spring.InsertUnitCmdDesc(unitID, ARMORCmdDesc(armorCost))
+    Spring.InsertUnitCmdDesc(unitID, ArmorCmdDesc(armorCost))
   end
 
   if def.canUpgCloak then
@@ -443,11 +447,11 @@ function gadget:UnitDestroyed(unitID)
   if inProgress[unitID] then
     StopUpgrade(unitID)
   end
-  upgradedUnits[unitID]       = nil
-  speedBoostedUnits[unitID]   = nil
-  armorBoostedUnits[unitID]   = nil
-  cloakedUnits[unitID]        = nil
-  buildPwrBoostedUnits[unitID]= nil
+  upgradedUnits[unitID]         = nil
+  speedBoostedUnits[unitID]     = nil
+  armorBoostedUnits[unitID]     = nil
+  cloakedUnits[unitID]          = nil
+  buildPwrBoostedUnits[unitID]  = nil
 end
 
 --------------------------------------------------------------------------------
