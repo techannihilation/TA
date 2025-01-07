@@ -4,7 +4,7 @@ function gadget:GetInfo()
     desc    = "Units purchase upgrades over time.",
     author  = "[ur]uncle",
     date    = "07.01.2025",
-    version = "2.0",
+    version = "2.1",
     license = "GNU GPL v2 or later",
     layer   = 0,
     enabled = true
@@ -22,17 +22,10 @@ if gadgetHandler:IsSyncedCode() then
 --  CONFIG / CONSTANTS
 --------------------------------------------------------------------------------
 
-local CMD_BUY_SPEED_BOOST     = 34797
-local CMD_BUY_ARMOR_BOOST     = 34798
-local CMD_BUY_CLOAK           = 34799
-local CMD_BUY_BUILDPWR_BOOST  = 34800
-
-local UPGRADE_COMMANDS = {
-  [CMD_BUY_SPEED_BOOST]    = true,
-  [CMD_BUY_ARMOR_BOOST]    = true,
-  [CMD_BUY_CLOAK]          = true,
-  [CMD_BUY_BUILDPWR_BOOST] = true,
-}
+local CMD_UPG_SPEED_BOOST     = 1000
+local CMD_UPG_ARMOR_BOOST     = 1001
+local CMD_UPG_CLOAK           = 1002
+local CMD_UPG_BUILDPWR_BOOST  = 1003
 
 -- Multipliers
 local SPEED_BOOST_FACTOR    = 1.80
@@ -47,6 +40,14 @@ local DECLAK_DISTANCE_MULT  = 0.05
 -- NEW: Build Speed Upgrade
 local BUILDPWR_BOOST_FACTOR = 3.00
 local BUILDPWR_COST_MULT    = 0.50
+
+
+local CMD_TO_COST = {
+  [CMD_UPG_SPEED_BOOST]    = SPEED_COST_MULT,
+  [CMD_UPG_ARMOR_BOOST]    = ARMOR_COST_MULT,
+  [CMD_UPG_CLOAK]          = CLOAK_COST_MULT,
+  [CMD_UPG_BUILDPWR_BOOST] = BUILDPWR_COST_MULT,
+}
 
 -- CEG
 local SPEED_MOVING_CEG    = "speedboost_effect"
@@ -65,17 +66,17 @@ function gadget:Initialize()
   for udid, ud in pairs(UnitDefs) do
       validUnitDefs[udid] = {
         -- Excludes units that can't move
-        canUpgSpeed     = not ud.isImmobile,
+        [CMD_UPG_SPEED_BOOST] = not ud.isImmobile,
 
         -- All units can upgrade armor
-        canUpgArmor     = true,
+        [CMD_UPG_ARMOR_BOOST]     = true,
 
         -- Excludes bomber air units and units that already have cloaking capability
-        canUpgCloak     = not ud.isBomberAirUnit and not ud.canCloak,
+        [CMD_UPG_CLOAK]     = not ud.isBomberAirUnit and not ud.canCloak,
 
         -- Allows Build Power upgrade for units with buildSpeed > 0, builders, or factories
         -- Excludes static builders that are not buildings (e.g., Nano Towers) and commanders
-        canUpgBuildPwr  = (ud.buildSpeed > 0 or ud.isBuilder or ud.isFactory)
+        [CMD_UPG_BUILDPWR_BOOST]  = (ud.buildSpeed > 0 or ud.isBuilder or ud.isFactory)
                            and not (ud.isStaticBuilder and not ud.isBuilding)
                            and not ud.customParams.iscommander,
       }
@@ -92,7 +93,64 @@ local inProgress            = {}  -- [unitID] = { cmdID, teamID, totalCost, accu
 local speedBoostedUnits     = {}
 local armorBoostedUnits     = {}
 local cloakedUnits          = {}
-local buildPwrBoostedUnits  = {}  -- NEW
+local buildPwrBoostedUnits  = {}
+
+--------------------------------------------------------------------------------
+--  COROUTINE-BASED CEG SYSTEM
+--------------------------------------------------------------------------------
+
+local coroutinesTable = {}  -- [co] = { unitID = x, effect = "speedboost_effect", interval = 90, ... }
+local unitCoroutines = {}   -- [unitID] = co or {co1, co2, ...}
+local coroutineWaitFrame = {}  -- [co] = number (the engine frame on which we resume the coroutine)
+
+local function Sleep(frames)
+  local co = coroutine.running()
+  coroutineWaitFrame[co] = Spring.GetGameFrame() + (frames or 0)
+  return coroutine.yield()
+end
+
+local function UnitEffectCoroutine(unitID, cegName, interval)
+  while true do
+    -- Get unit position & spawn the effect
+    local x, y, z = Spring.GetUnitPosition(unitID)
+    if x then
+      Spring.SpawnCEG(cegName, x, y + (Spring.GetUnitHeight(unitID) or 20), z)
+    end
+    Sleep(interval)
+  end
+end
+
+-- Start up a coroutine that repeatedly spawns the given CEG for the given unit
+local function StartUnitCEGCoroutine(unitID, cegName, interval)
+  local co = coroutine.create(UnitEffectCoroutine)
+  unitCoroutines[unitID] = unitCoroutines[unitID] or {}
+  -- Keep track of the new coroutine
+  coroutinesTable[co] = {
+    unitID   = unitID,
+    effect   = cegName,
+    interval = interval,
+  }
+  table.insert(unitCoroutines[unitID], co)
+  -- Start it
+  local ok, err = coroutine.resume(co, unitID, cegName, interval)
+  if not ok then
+    Spring.Echo("[UnitUpgradesWithCoroutineEffects] Error starting coroutine:", err)
+  end
+end
+
+-- Stop all coroutines for a unit
+local function StopAllUnitCoroutines(unitID)
+  if not unitCoroutines[unitID] then
+    return
+  end
+  for _, co in ipairs(unitCoroutines[unitID]) do
+    coroutinesTable[co] = nil
+    coroutineWaitFrame[co] = nil
+    -- effectively kills the coroutine
+  end
+  unitCoroutines[unitID] = nil
+end
+
 
 --------------------------------------------------------------------------------
 --  COMMAND DESCRIPTORS
@@ -102,7 +160,7 @@ local function SpeedCmdDesc(cost)
   local speedPercent = (SPEED_BOOST_FACTOR - 1) * 100
   cost = cost or 0
   return {
-    id      = CMD_BUY_SPEED_BOOST,
+    id      = CMD_UPG_SPEED_BOOST,
     type    = CMDTYPE.ICON,
     name    = string.format(" Speed\n +%.0f%% ",speedPercent),
     tooltip = string.format(
@@ -116,7 +174,7 @@ end
 local function ArmorCmdDesc(cost)
   local armorPercent = (ARMOR_BOOST_FACTOR - 1) * 100
   return {
-    id      = CMD_BUY_ARMOR_BOOST,
+    id      = CMD_UPG_ARMOR_BOOST,
     type    = CMDTYPE.ICON,
     name    = string.format(" Armor\n +%.0f%% ",armorPercent),
     tooltip = string.format(
@@ -129,7 +187,7 @@ end
 
 local function CloakCmdDesc(cost)
   return {
-    id      = CMD_BUY_CLOAK,
+    id      = CMD_UPG_CLOAK,
     type    = CMDTYPE.ICON,
     name    = " Make\n Cloak ",
     tooltip = string.format(
@@ -143,7 +201,7 @@ end
 local function BuildPwrCmdDesc(cost)
   local buildPwrPercent = (BUILDPWR_BOOST_FACTOR - 1) * 100
   return {
-    id      = CMD_BUY_BUILDPWR_BOOST,
+    id      = CMD_UPG_BUILDPWR_BOOST,
     type    = CMDTYPE.ICON,
     name    = string.format(" Build\n +%.0f%% ",buildPwrPercent),
     tooltip = string.format(
@@ -170,16 +228,16 @@ local function RevertCmdDesc(unitID, data)
     return
   end
 
-  if cmdID == CMD_BUY_SPEED_BOOST then
+  if cmdID == CMD_UPG_SPEED_BOOST then
     Spring.EditUnitCmdDesc(unitID, cmdDescID, SpeedCmdDesc(cost))
 
-  elseif cmdID == CMD_BUY_ARMOR_BOOST then
+  elseif cmdID == CMD_UPG_ARMOR_BOOST then
     Spring.EditUnitCmdDesc(unitID, cmdDescID, ArmorCmdDesc(cost))
 
-  elseif cmdID == CMD_BUY_CLOAK then
+  elseif cmdID == CMD_UPG_CLOAK then
     Spring.EditUnitCmdDesc(unitID, cmdDescID, CloakCmdDesc(cost))
 
-  elseif cmdID == CMD_BUY_BUILDPWR_BOOST then
+  elseif cmdID == CMD_UPG_BUILDPWR_BOOST then
     Spring.EditUnitCmdDesc(unitID, cmdDescID, BuildPwrCmdDesc(cost))
   end
 end
@@ -252,7 +310,7 @@ local function FinishUpgrade(unitID, data)
   local currDefID = Spring.GetUnitDefID(unitID)
   local ud        = UnitDefs[currDefID or -1]
 
-  if cmdID == CMD_BUY_SPEED_BOOST then
+  if cmdID == CMD_UPG_SPEED_BOOST then
     speedBoostedUnits[unitID] = true
 
     local moveData  = Spring.GetUnitMoveTypeData(unitID)
@@ -278,11 +336,17 @@ local function FinishUpgrade(unitID, data)
       })
     end
 
-  elseif cmdID == CMD_BUY_ARMOR_BOOST then
+    -- Start a coroutine to spawn the Speed CEG effect for this unit
+    StartUnitCEGCoroutine(unitID, SPEED_MOVING_CEG, math.random(30,60))
+
+  elseif cmdID == CMD_UPG_ARMOR_BOOST then
     armorBoostedUnits[unitID] = true
     Spring.SetUnitArmored(unitID, true, 1 / ARMOR_BOOST_FACTOR)
 
-  elseif cmdID == CMD_BUY_CLOAK then
+    -- Start a coroutine to spawn the Armor CEG effect for this unit
+    StartUnitCEGCoroutine(unitID, ARMOR_MOVING_CEG, math.random(30,60))
+
+  elseif cmdID == CMD_UPG_CLOAK then
     cloakedUnits[unitID] = true
 
     if ud then
@@ -291,19 +355,22 @@ local function FinishUpgrade(unitID, data)
       Spring.SetUnitCloak(unitID, 2, decloakDistance)
     end
 
-  elseif cmdID == CMD_BUY_BUILDPWR_BOOST then
+  elseif cmdID == CMD_UPG_BUILDPWR_BOOST then
     buildPwrBoostedUnits[unitID] = true
     local baseBuildSpeed = ud.buildSpeed or 0
     local newBuildSpeed  = baseBuildSpeed * BUILDPWR_BOOST_FACTOR
     Spring.SetUnitBuildSpeed(unitID, newBuildSpeed)
+
+    -- Start a coroutine to spawn the Build Power CEG effect for this unit
+    StartUnitCEGCoroutine(unitID, BUILDPWR_MOVING_CEG, math.random(30,60))
   end
 
   -- remove all upgrade commands so there's no second purchase
   local removeList = {
-    CMD_BUY_SPEED_BOOST,
-    CMD_BUY_ARMOR_BOOST,
-    CMD_BUY_CLOAK,
-    CMD_BUY_BUILDPWR_BOOST,
+    CMD_UPG_SPEED_BOOST,
+    CMD_UPG_ARMOR_BOOST,
+    CMD_UPG_CLOAK,
+    CMD_UPG_BUILDPWR_BOOST,
   }
   for _, cID in ipairs(removeList) do
     local cDesc = Spring.FindUnitCmdDesc(unitID, cID)
@@ -318,81 +385,37 @@ end
 --------------------------------------------------------------------------------
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
-  local def = validUnitDefs[unitDefID]
-  if not def then
-    return true
-  end
+  if cmdID == 16 then return true end
 
-  if cmdID ~= CMD.STOP and not UPGRADE_COMMANDS[cmdID] then
+  if cmdID ~= CMD.STOP and not validUnitDefs[unitDefID][cmdID] then
     return true
   end
 
   -- If upgrade is in progress and we press STOP or the same upgrade cmd => stop/cancel it
   if inProgress[unitID] then
     StopUpgrade(unitID)
-    return false
+    return true
+  elseif cmdID == CMD.STOP then
+    return true
   end
 
   -- If the unit has already completed an upgrade, disallow further upgrades
   if upgradedUnits[unitID] then
-    return false
+    return true
   end
-
-  if (cmdID == CMD_BUY_SPEED_BOOST)    and (not def.canUpgSpeed)     then return false end
-  if (cmdID == CMD_BUY_ARMOR_BOOST)    and (not def.canUpgArmor)     then return false end
-  if (cmdID == CMD_BUY_CLOAK)          and (not def.canUpgCloak)     then return false end
-  if (cmdID == CMD_BUY_BUILDPWR_BOOST) and (not def.canUpgBuildPwr)  then return false end
 
   -- compute cost
   local ud = UnitDefs[unitDefID]
-  if not ud then return false end
   local baseMetal = ud.metalCost or 0
   local totalCost = 0
+  totalCost = baseMetal * CMD_TO_COST[cmdID]
+
   local cmdDescID = Spring.FindUnitCmdDesc(unitID, cmdID)
-
-  if cmdID == CMD_BUY_SPEED_BOOST then totalCost = baseMetal * SPEED_COST_MULT
-  elseif cmdID == CMD_BUY_ARMOR_BOOST then totalCost = baseMetal * ARMOR_COST_MULT
-  elseif cmdID == CMD_BUY_CLOAK then totalCost = baseMetal * CLOAK_COST_MULT
-  elseif cmdID == CMD_BUY_BUILDPWR_BOOST then totalCost = baseMetal * BUILDPWR_COST_MULT
-  end
-
-  if totalCost <= 0 then
-    return false
-  end
-
   StartUpgrade(unitID, cmdID, teamID, totalCost, cmdDescID)
-  return false
+  return true
 end
 
 function gadget:GameFrame(f)
-  -- Basic effects for completed upgrades
-  if f % 30 == 0 then
-    for uID in pairs(speedBoostedUnits) do
-      if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
-        local x,y,z = Spring.GetUnitPosition(uID)
-        if x then
-          Spring.SpawnCEG(SPEED_MOVING_CEG, x, y + (Spring.GetUnitHeight(uID) or 50), z)
-        end
-      end
-    end
-    for uID in pairs(armorBoostedUnits) do
-      if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
-        local x,y,z = Spring.GetUnitPosition(uID)
-        if x then
-          Spring.SpawnCEG(ARMOR_MOVING_CEG, x, y + (Spring.GetUnitHeight(uID) or 50), z)
-        end
-      end
-    end
-    for uID in pairs(buildPwrBoostedUnits) do
-      if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
-        local x,y,z = Spring.GetUnitPosition(uID)
-        if x then
-          Spring.SpawnCEG(BUILDPWR_MOVING_CEG, x, y + (Spring.GetUnitHeight(uID) or 50), z)
-        end
-      end
-    end
-  end
-
   -- Pay partial cost each frame
   for unitID, data in pairs(inProgress) do
     if (not Spring.ValidUnitID(unitID)) or Spring.GetUnitIsDead(unitID) then
@@ -410,6 +433,13 @@ function gadget:GameFrame(f)
       end
     end
   end
+  -- Resume coroutines that need to run this frame
+    for co in pairs(coroutinesTable) do
+      local resumeFrame = coroutineWaitFrame[co]
+      if (not resumeFrame) or (f >= resumeFrame) then
+         coroutine.resume(co)
+      end
+    end
 end
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
@@ -422,22 +452,22 @@ function gadget:UnitCreated(unitID, unitDefID, unitTeam)
   -- Insert command desc only for allowed upgrades
   local baseMetal = ud.metalCost or 0
 
-  if def.canUpgSpeed then
+  if def[CMD_UPG_SPEED_BOOST] then
     local speedCost = baseMetal * SPEED_COST_MULT
     Spring.InsertUnitCmdDesc(unitID, SpeedCmdDesc(speedCost))
   end
 
-  if def.canUpgArmor then
+  if def[CMD_UPG_ARMOR_BOOST] then
     local armorCost = baseMetal * ARMOR_COST_MULT
     Spring.InsertUnitCmdDesc(unitID, ArmorCmdDesc(armorCost))
   end
 
-  if def.canUpgCloak then
+  if def[CMD_UPG_CLOAK] then
     local cloakCost = baseMetal * CLOAK_COST_MULT
     Spring.InsertUnitCmdDesc(unitID, CloakCmdDesc(cloakCost))
   end
 
-  if def.canUpgBuildPwr then
+  if def[CMD_UPG_BUILDPWR_BOOST] then
     local buildPwrCost = baseMetal * BUILDPWR_COST_MULT
     Spring.InsertUnitCmdDesc(unitID, BuildPwrCmdDesc(buildPwrCost))
   end
@@ -452,6 +482,8 @@ function gadget:UnitDestroyed(unitID)
   armorBoostedUnits[unitID]     = nil
   cloakedUnits[unitID]          = nil
   buildPwrBoostedUnits[unitID]  = nil
+  -- Stop coroutines for this unit
+  StopAllUnitCoroutines(unitID)
 end
 
 --------------------------------------------------------------------------------
