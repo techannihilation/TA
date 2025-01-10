@@ -419,22 +419,11 @@ local morphDefs = {
 		time = 120,
 		tech = 4,
 	},
-
-	armgrape = {
-		into = 'armbeamer',
-		time = 30,
-		tech = 0,
-		metal = 509,
-		energy = 4916,
-	},
-
 	armnanotc = {
 		into = 'armnanotc1',
 		time = 30,
 		tech = 1,
 	},
-
-
 	armnanotc1 = {
 		into = 'armnanotc2',
 		tech = 2,
