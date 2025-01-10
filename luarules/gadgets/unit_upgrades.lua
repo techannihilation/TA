@@ -61,15 +61,15 @@ local CMD_UPG_BUILDPWR  = Spring.Utilities.CMD.UPG_BUILDPWR
 local SPEED_BOOST_FACTOR    = 1.80
 local SPEED_COST_MULT       = 1.50
 
-local ARMOR_BOOST_FACTOR    = 2.50
-local ARMOR_COST_MULT       = 1.00
+local ARMOR_BOOST_FACTOR    = 3.00
+local ARMOR_COST_MULT       = 1.50
 
 local CLOAK_COST_MULT       = 0.40
 local DECLAK_DISTANCE_MULT  = 0.05
 
 -- NEW: Build Speed Upgrade
-local BUILDPWR_BOOST_FACTOR = 3.00
-local BUILDPWR_COST_MULT    = 0.50
+local BUILDPWR_BOOST_FACTOR = 7.00
+local BUILDPWR_COST_MULT    = 0.80
 
 local CMD_TO_COST = {
   [CMD_UPG_SPEED]     = SPEED_COST_MULT,
@@ -95,7 +95,7 @@ function gadget:Initialize()
   for udid, ud in pairs(UnitDefs) do
       validUnitDefs[udid] = {
         -- Excludes units that can't move
-        [CMD_UPG_SPEED] = false -- disable for now -- not ud.isImmobile,
+        [CMD_UPG_SPEED] = false, -- disable for now -- not ud.isImmobile,
 
         -- All units can upgrade armor
         [CMD_UPG_ARMOR]     = true,
