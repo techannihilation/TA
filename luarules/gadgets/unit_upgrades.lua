@@ -95,7 +95,7 @@ function gadget:Initialize()
   for udid, ud in pairs(UnitDefs) do
       validUnitDefs[udid] = {
         -- Excludes units that can't move
-        [CMD_UPG_SPEED] = not ud.isImmobile,
+        [CMD_UPG_SPEED] = false -- disable for now -- not ud.isImmobile,
 
         -- All units can upgrade armor
         [CMD_UPG_ARMOR]     = true,
