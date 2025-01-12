@@ -108,6 +108,7 @@ end
 
 local function armorInfo(unitID, text)
 	local health, maxHealth = Spring.GetUnitHealth(unitID)
+    if not health then return "" end
 	local _, armoredMultiple = Spring.GetUnitArmored(unitID)
 	if armoredMultiple and armoredMultiple ~= 1 then
 		local closedHP = math.floor(health / armoredMultiple)
