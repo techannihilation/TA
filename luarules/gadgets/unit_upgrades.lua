@@ -61,7 +61,7 @@ local CMD_UPG_BUILDPWR  = Spring.Utilities.CMD.UPG_BUILDPWR
 local SPEED_BOOST_FACTOR    = 1.80
 local SPEED_COST_MULT       = 1.50
 
-local ARMOR_BOOST_FACTOR    = 5.00
+local ARMOR_BOOST_FACTOR    = 6.00
 local ARMOR_COST_MULT       = 3.00
 
 local CLOAK_COST_MULT       = 0.40
