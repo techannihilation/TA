@@ -1,12 +1,12 @@
 return {
 	armtabi = {
 		buildangle = 4096,
-		buildcostenergy = 624999999,
-		buildcostmetal = 36387146,
+		buildcostenergy = 17361111,
+		buildcostmetal = 1010754,
 		-- cost: 36387146 + (624999999/1000) × 16 = 46.38 million
 		builder = false,
 		buildpic = "armtabi.dds",
-		buildtime = 60000000,
+		buildtime = 1666666,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -77,7 +77,7 @@ return {
 		weapondefs = {
 			arm_tabithacannon = {
 				accuracy = 120,
-				areaofeffect = 60000,
+				areaofeffect = 1000,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
@@ -92,7 +92,7 @@ return {
 				model = "weapon_tsar.s3o",
 				name = "Tabitha Cannon",
 				nogap = 1,
-				range = 720000,
+				range = 6000,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,

@@ -1,12 +1,12 @@
 return {
 	gok_cain = {
 		buildangle = 4096,
-		buildcostenergy = 819628166,
-		buildcostmetal = 33182140,
+		buildcostenergy = 22767449,
+		buildcostmetal = 921726,
 		-- cost: 33182140 + (819628166/1000) × 16 = 46.30 million
 		builder = false,
 		buildpic = "gok_cain.dds",
-		buildtime = 60000000,
+		buildtime = 1666666,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -77,7 +77,7 @@ return {
 		weapondefs = {
 			ultimate_weapon = {
 				accuracy = 120,
-				areaofeffect = 60000,
+				areaofeffect = 1000,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
@@ -92,7 +92,7 @@ return {
 				model = "weapon_tsar_gok.s3o",
 				name = "Influence Cannon",
 				nogap = 1,
-				range = 720000,
+				range = 6000,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,

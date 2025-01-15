@@ -1,12 +1,12 @@
 return {
 	tllvanya = {
 		buildangle = 4096,
-		buildcostenergy = 237543951,
-		buildcostmetal = 42965866,
+		buildcostenergy = 6598443,
+		buildcostmetal = 1193496,
 		-- cost: 42965866 + (237543951/1000) × 16 = 46.76 million
 		builder = false,
 		buildpic = "tllvanya.dds",
-		buildtime = 60000000,
+		buildtime = 1666666,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -77,7 +77,7 @@ return {
 		weapondefs = {
 			arm_tabithacannon = {
 				accuracy = 120,
-				areaofeffect = 60000,
+				areaofeffect = 1000,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
@@ -92,7 +92,7 @@ return {
 				model = "weapon_tsar.s3o",
 				name = "Tabitha Cannon",
 				nogap = 1,
-				range = 720000,
+				range = 6000,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,

@@ -1,12 +1,12 @@
 return {
 	corflu = {
 		buildangle = 4096,
-		buildcostenergy = 15870946,
-		buildcostmetal = 47110118,
+		buildcostenergy = 440859,
+		buildcostmetal = 1308614,
 		-- cost: 47110118 + (15870946/1000) × 16 = 47.36 million
 		builder = false,
 		buildpic = "corflu.dds",
-		buildtime = 60000000,
+		buildtime = 1666666,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -77,7 +77,7 @@ return {
 		weapondefs = {
 			cor_flucannon = {
 				accuracy = 120,
-				areaofeffect = 60000,
+				areaofeffect = 1000,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
@@ -92,7 +92,7 @@ return {
 				model = "weapon_tsar.s3o",
 				name = "Influence Cannon",
 				nogap = 1,
-				range = 720000,
+				range = 6000,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,
