@@ -77,7 +77,7 @@ return {
 		weapondefs = {
 			ultimate_weapon = {
 				accuracy = 120,
-				areaofeffect = 1000,
+				areaofeffect = 2000,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
