@@ -26,7 +26,7 @@ return {
 		idletime = 2200,
 		losemitheight = 162,
 		mass = 30387146,
-		maxdamage = 1500000,
+		maxdamage = 100000.0,
 		maxslope = 16,
 		maxwaterdepth = 0,
 		name = "Tabitha",
@@ -77,7 +77,7 @@ return {
 		weapondefs = {
 			arm_tabithacannon = {
 				accuracy = 120,
-				areaofeffect = 2000,
+				areaofeffect = 600,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",

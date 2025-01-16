@@ -26,7 +26,7 @@ return {
 		idletime = 2200,
 		losemitheight = 148,
 		mass = 39777014,
-		maxdamage = 1500000,
+		maxdamage = 100000.0,
 		maxslope = 26,
 		maxwaterdepth = 0,
 		name = "Influence",
@@ -77,7 +77,7 @@ return {
 		weapondefs = {
 			cor_flucannon = {
 				accuracy = 120,
-				areaofeffect = 2000,
+				areaofeffect = 600,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
