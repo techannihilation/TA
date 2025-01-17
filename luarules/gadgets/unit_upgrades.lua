@@ -40,6 +40,8 @@ local spGetUnitPosition     = Spring.GetUnitPosition
 local spSpawnCEG            = Spring.SpawnCEG
 local spGetGameFrame        = Spring.GetGameFrame
 local spGetUnitMoveTypeData = Spring.GetUnitMoveTypeData
+
+-- MoveCtrl calls (to re-apply speeds)
 local spMoveCtrlSetGroundMoveTypeData = Spring.MoveCtrl.SetGroundMoveTypeData
 local spMoveCtrlSetAirMoveTypeData     = Spring.MoveCtrl.SetAirMoveTypeData
 local spMoveCtrlSetGunshipMoveTypeData = Spring.MoveCtrl.SetGunshipMoveTypeData
@@ -63,8 +65,9 @@ local CMD_UPG_STEALTH       = Spring.Utilities.CMD.UPG_STEALTH
 local SPEED_BOOST_FACTOR    = 1.80
 local SPEED_COST_MULT       = 1.50
 
-local ARMOR_BOOST_FACTOR    = 51.00
+local ARMOR_BOOST_FACTOR    = 81.00
 local ARMOR_COST_MULT       = 100.00
+local ARMOR_SPEED_PENALTY   = 0.50
 
 local CLOAK_COST_MULT       = 1.00
 local DECLAK_DISTANCE_MULT  = 0.05
@@ -92,7 +95,7 @@ local SPEED_MOVING_CEG    = "speedboost_effect"
 local ARMOR_MOVING_CEG    = "armorboost_effect"
 local BUILDPWR_MOVING_CEG = "buildpwr_effect"
 
-local TARGET_FRAMES_FULL = 12 * 30  -- 12 seconds * 30fps = 360 frames
+local TARGET_FRAMES_FULL  = 12 * 30  -- 12 seconds * 30fps = 360 frames
 
 --------------------------------------------------------------------------------
 --  For each unitDef, determine what upgrades are allowed
@@ -102,9 +105,9 @@ local validUnitDefs = {}
 function gadget:Initialize()
   for udid, ud in pairs(UnitDefs) do
     validUnitDefs[udid] = {
-      [CMD_UPG_SPEED]    = false,  -- `not ud.isImmobile` if you want them to have Speed
+      [CMD_UPG_SPEED]    = false,  -- set true if you wish non-immobile units to get Speed
       [CMD_UPG_ARMOR]    = ud.armoredMultiple == 1.0,
-      [CMD_UPG_CLOAK]    = false, --not ud.isBomberAirUnit and not ud.canCloak,
+      [CMD_UPG_CLOAK]    = false, -- set true if you want cloaking
       [CMD_UPG_BUILDPWR] = (ud.buildSpeed > 0 or ud.isBuilder or ud.isFactory)
                            and not (ud.isStaticBuilder and not ud.isBuilding)
                            and not ud.customParams.iscommander,
@@ -132,8 +135,8 @@ local stealthUnits          = {}  -- track new stealth
 --  (We won't use it for the stealth upgrade—no effects requested)
 --------------------------------------------------------------------------------
 
-local coroutinesTable = {}  
-local unitCoroutines = {}
+local coroutinesTable = {}
+local unitCoroutines  = {}
 local coroutineWaitFrame = {}
 
 local function Sleep(frames)
@@ -172,7 +175,7 @@ local function StopAllUnitCoroutines(unitID)
     return
   end
   for _, co in ipairs(unitCoroutines[unitID]) do
-    coroutinesTable[co] = nil
+    coroutinesTable[co]    = nil
     coroutineWaitFrame[co] = nil
   end
   unitCoroutines[unitID] = nil
@@ -270,16 +273,11 @@ local function RevertCmdDesc(unitID, data)
     return
   end
 
-  if cmdID == CMD_UPG_SPEED then
-    spEditUnitCmdDesc(unitID, cmdDescID, SpeedCmdDesc(cost))
-  elseif cmdID == CMD_UPG_ARMOR then
-    spEditUnitCmdDesc(unitID, cmdDescID, ArmorCmdDesc(cost))
-  elseif cmdID == CMD_UPG_CLOAK then
-    spEditUnitCmdDesc(unitID, cmdDescID, CloakCmdDesc(cost))
-  elseif cmdID == CMD_UPG_BUILDPWR then
-    spEditUnitCmdDesc(unitID, cmdDescID, BuildPwrCmdDesc(cost))
-  elseif cmdID == CMD_UPG_STEALTH then
-    spEditUnitCmdDesc(unitID, cmdDescID, StealthCmdDesc(cost))
+  if     cmdID == CMD_UPG_SPEED    then spEditUnitCmdDesc(unitID, cmdDescID, SpeedCmdDesc(cost))
+  elseif cmdID == CMD_UPG_ARMOR    then spEditUnitCmdDesc(unitID, cmdDescID, ArmorCmdDesc(cost))
+  elseif cmdID == CMD_UPG_CLOAK    then spEditUnitCmdDesc(unitID, cmdDescID, CloakCmdDesc(cost))
+  elseif cmdID == CMD_UPG_BUILDPWR then spEditUnitCmdDesc(unitID, cmdDescID, BuildPwrCmdDesc(cost))
+  elseif cmdID == CMD_UPG_STEALTH  then spEditUnitCmdDesc(unitID, cmdDescID, StealthCmdDesc(cost))
   end
 end
 
@@ -358,11 +356,13 @@ local function FinishUpgrade(unitID, data)
     if ud.canFly then
       if ud.isHoveringAirUnit or ud.hoverAttack then
         spMoveCtrlSetGunshipMoveTypeData(unitID, {
-          maxSpeed = baseSpeed * SPEED_BOOST_FACTOR
+          maxSpeed = baseSpeed * SPEED_BOOST_FACTOR,
+          maxWantedSpeed = baseSpeed * SPEED_BOOST_FACTOR
         })
       else
         spMoveCtrlSetAirMoveTypeData(unitID, {
-          maxSpeed = baseSpeed * SPEED_BOOST_FACTOR
+          maxSpeed = baseSpeed * SPEED_BOOST_FACTOR,
+          maxWantedSpeed = baseSpeed * SPEED_BOOST_FACTOR
         })
       end
     else
@@ -375,8 +375,32 @@ local function FinishUpgrade(unitID, data)
 
   elseif cmdID == CMD_UPG_ARMOR then
     armorBoostedUnits[unitID] = true
+    -- Apply the armor
     spSetUnitArmored(unitID, true, 1 / ARMOR_BOOST_FACTOR)
     StartUnitCEGCoroutine(unitID, ARMOR_MOVING_CEG, math_random(15,35))
+
+    local moveData  = spGetUnitMoveTypeData(unitID)
+    local baseSpeed = (moveData and moveData.maxSpeed) or (ud and ud.speed) or 0
+    local newSpeed  = baseSpeed * ARMOR_SPEED_PENALTY
+
+    if ud.canFly then
+      if ud.isHoveringAirUnit or ud.hoverAttack then
+        spMoveCtrlSetGunshipMoveTypeData(unitID, {
+          maxSpeed = newSpeed,
+          maxWantedSpeed = newSpeed
+        })
+      else
+        spMoveCtrlSetAirMoveTypeData(unitID, {
+          maxSpeed = newSpeed,
+          maxWantedSpeed = newSpeed
+        })
+      end
+    else
+      spMoveCtrlSetGroundMoveTypeData(unitID, {
+        maxSpeed       = newSpeed,
+        maxWantedSpeed = newSpeed
+      })
+    end
 
   elseif cmdID == CMD_UPG_CLOAK then
     cloakedUnits[unitID] = true
