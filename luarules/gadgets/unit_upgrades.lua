@@ -383,23 +383,25 @@ local function FinishUpgrade(unitID, data)
     local baseSpeed = (moveData and moveData.maxSpeed) or (ud and ud.speed) or 0
     local newSpeed  = baseSpeed * ARMOR_SPEED_PENALTY
 
-    if ud.canFly then
-      if ud.isHoveringAirUnit or ud.hoverAttack then
-        spMoveCtrlSetGunshipMoveTypeData(unitID, {
-          maxSpeed = newSpeed,
-          maxWantedSpeed = newSpeed
-        })
-      else
-        spMoveCtrlSetAirMoveTypeData(unitID, {
-          maxSpeed = newSpeed,
-          maxWantedSpeed = newSpeed
-        })
-      end
-    else
-      spMoveCtrlSetGroundMoveTypeData(unitID, {
-        maxSpeed       = newSpeed,
-        maxWantedSpeed = newSpeed
-      })
+    if not ud.isImmobile then
+        if ud.canFly then
+          if ud.isHoveringAirUnit or ud.hoverAttack then
+            spMoveCtrlSetGunshipMoveTypeData(unitID, {
+              maxSpeed = newSpeed,
+              maxWantedSpeed = newSpeed
+            })
+          else
+            spMoveCtrlSetAirMoveTypeData(unitID, {
+              maxSpeed = newSpeed,
+              maxWantedSpeed = newSpeed
+            })
+          end
+        else
+          spMoveCtrlSetGroundMoveTypeData(unitID, {
+            maxSpeed       = newSpeed,
+            maxWantedSpeed = newSpeed
+          })
+        end
     end
 
   elseif cmdID == CMD_UPG_CLOAK then
