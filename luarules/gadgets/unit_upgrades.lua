@@ -3,7 +3,6 @@ function gadget:GetInfo()
     name    = "UnitUpgrades",
     desc    = "Units purchase upgrades over time.",
     author  = "[ur]uncle",
-    date    = "07.01.2025",
     version = "2.2",
     license = "GNU GPL v2 or later",
     layer   = 0,
@@ -44,7 +43,6 @@ local spMoveCtrlSetAirMoveTypeData     = Spring.MoveCtrl.SetAirMoveTypeData
 local spMoveCtrlSetGunshipMoveTypeData = Spring.MoveCtrl.SetGunshipMoveTypeData
 
 -- Localizing standard Lua functions
-local string_format = string.format
 local table_insert  = table.insert
 local pairs         = pairs
 local math_random   = math.random
@@ -56,6 +54,8 @@ local CMD_UPG_SPEED     = Spring.Utilities.CMD.UPG_SPEED
 local CMD_UPG_ARMOR     = Spring.Utilities.CMD.UPG_ARMOR
 local CMD_UPG_CLOAK     = Spring.Utilities.CMD.UPG_CLOAK
 local CMD_UPG_BUILDPWR  = Spring.Utilities.CMD.UPG_BUILDPWR
+local CMD_UPG_CLOAK         = Spring.Utilities.CMD.UPG_CLOAK
+local CMD_UPG_BUILDPWR      = Spring.Utilities.CMD.UPG_BUILDPWR
 
 -- Multipliers
 local SPEED_BOOST_FACTOR    = 1.80
