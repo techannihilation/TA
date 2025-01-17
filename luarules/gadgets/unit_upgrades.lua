@@ -100,7 +100,7 @@ function gadget:Initialize()
         [CMD_UPG_SPEED] = false, -- disable for now -- not ud.isImmobile,
 
         -- All units can upgrade armor
-        [CMD_UPG_ARMOR]     = ud.armoredMultiple == 1.0,
+        [CMD_UPG_ARMOR]     = false,-- ud.armoredMultiple == 1.0,
 
         -- Excludes bomber air units and units that already have cloaking capability
         [CMD_UPG_CLOAK]     = not ud.isBomberAirUnit and not ud.canCloak,
