@@ -67,8 +67,8 @@ local SPEED_BOOST_FACTOR    = 1.80
 local SPEED_COST_MULT       = 1.50
 
 local ARMOR_BOOST_FACTOR    = 91.00
-local ARMOR_COST_MULT       = 100.00
-local ARMOR_SPEED_PENALTY   = 0.60
+local ARMOR_COST_MULT       = 80.00
+local ARMOR_SPEED_PENALTY   = 1.00
 
 local CLOAK_COST_MULT       = 1.00
 local DECLAK_DISTANCE_MULT  = 0.05
