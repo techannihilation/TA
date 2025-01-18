@@ -19,9 +19,10 @@ if not gadgetHandler:IsSyncedCode() then return false end
 -- Speedups
 --------------------------------------------------------------------------------
 local TSAR = {
-	[UnitDefNames["armtabi"].id] = true,
-	[UnitDefNames["tllvanya"].id] = true,
-	[UnitDefNames["corflu"].id] = true
+    [UnitDefNames["armtabi"].id] = true,
+    [UnitDefNames["corflu"].id] = true,
+    [UnitDefNames["tllvanya"].id] = true,
+    [UnitDefNames["gok_cain"].id] = true,
 }
 
 local SetUnitStockpile = Spring.SetUnitStockpile
