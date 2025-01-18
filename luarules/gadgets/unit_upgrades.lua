@@ -30,6 +30,7 @@ local spRemoveUnitCmdDesc   = Spring.RemoveUnitCmdDesc
 local spSetUnitRulesParam   = Spring.SetUnitRulesParam
 local spSetUnitHealth       = Spring.SetUnitHealth
 local spSetUnitCloak        = Spring.SetUnitCloak
+local spSetUnitCosts        = Spring.SetUnitCosts
 local spSetUnitArmored      = Spring.SetUnitArmored
 local spSetUnitStealth      = Spring.SetUnitStealth
 local spUseTeamResource     = Spring.UseTeamResource
@@ -377,6 +378,7 @@ local function FinishUpgrade(unitID, data)
     armorBoostedUnits[unitID] = true
     -- Apply the armor
     spSetUnitArmored(unitID, true, 1 / ARMOR_BOOST_FACTOR)
+    spSetUnitCosts(unitID,{buildTime = ud.buildTime * ARMOR_BOOST_FACTOR })
     StartUnitCEGCoroutine(unitID, ARMOR_MOVING_CEG, math_random(15,35))
 
     local moveData  = spGetUnitMoveTypeData(unitID)
@@ -451,19 +453,17 @@ end
 --------------------------------------------------------------------------------
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
-  -- let MOVE/PATROL/ATTACK/etc pass
-  if cmdID == CMD.STOP or cmdID < 0 or cmdID == 16 then
-    return true
-  end
+  if cmdID == 16 then return true end
 
-  -- If the command is not one of our upgrade commands, allow it
-  if not CMD_TO_COST[cmdID] then
+  if cmdID ~= CMD.STOP and not validUnitDefs[unitDefID][cmdID] then
     return true
   end
 
   -- If an upgrade is in progress for this unit, pressing the same or STOP cancels it
   if inProgress[unitID] then
     StopUpgrade(unitID)
+    return true
+  elseif cmdID == CMD.STOP then
     return true
   end
 
