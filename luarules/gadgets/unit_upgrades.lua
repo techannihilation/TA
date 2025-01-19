@@ -109,9 +109,10 @@ function gadget:Initialize()
       [CMD_UPG_SPEED]    = false,  -- set true if you wish non-immobile units to get Speed
       [CMD_UPG_ARMOR]    = false,--ud.armoredMultiple == 1.0,
       [CMD_UPG_CLOAK]    = false, -- set true if you want cloaking
-      [CMD_UPG_BUILDPWR] = (ud.buildSpeed > 0 or ud.isBuilder or ud.isFactory)
+      [CMD_UPG_BUILDPWR] = (ud.buildSpeed > 0 or ud.isBuilder)
                            and not (ud.isStaticBuilder and not ud.isBuilding)
-                           and not ud.customParams.iscommander,
+                           and not ud.customParams.iscommander
+                           and not ud.isFactory,
 
       -- NEW stealth: only for units that cannot cloak
       [CMD_UPG_STEALTH]  = not ud.canCloak,
