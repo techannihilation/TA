@@ -273,6 +273,14 @@ local options = {
     section = "ta_exp",
   },
   {
+    key = "disable_bombers",
+    name = "Disable bombers",
+    desc = "Removes the build-menu commands for bombers",
+    type = "bool",
+    def = false,
+    section = "ta_exp",
+  },
+  {
     key = "expscaleenabled",
     name = "Experience health/power/reload scaling",
     desc = "",
