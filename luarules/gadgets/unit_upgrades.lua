@@ -7,7 +7,7 @@ function gadget:GetInfo()
     version = "2.4", -- bump the version
     license = "GNU GPL v2 or later",
     layer   = 0,
-    enabled = true
+    enabled = false,
   }
 end
 
