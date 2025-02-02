@@ -281,6 +281,14 @@ local options = {
     section = "ta_exp",
   },
   {
+    key = "noair",
+    name = "Disable Air",
+    desc = "Removes the build-menu commands for all air units",
+    type = "bool",
+    def = false,
+    section = "ta_exp",
+  },
+  {
     key = "expscaleenabled",
     name = "Experience health/power/reload scaling",
     desc = "",
