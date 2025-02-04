@@ -7,7 +7,7 @@ function gadget:GetInfo()
     version = "2.4", -- bump the version
     license = "GNU GPL v2 or later",
     layer   = 0,
-    enabled = false,
+    enabled = true,
   }
 end
 
@@ -63,21 +63,21 @@ local CMD_UPG_BUILDPWR      = Spring.Utilities.CMD.UPG_BUILDPWR
 local CMD_UPG_STEALTH       = Spring.Utilities.CMD.UPG_STEALTH
 
 -- Multipliers
-local SPEED_BOOST_FACTOR    = 1.80
-local SPEED_COST_MULT       = 1.50
+local SPEED_BOOST_FACTOR    = 1.30
+local SPEED_COST_MULT       = 1.00
 
-local ARMOR_BOOST_FACTOR    = 11.00
-local ARMOR_COST_MULT       = 30.00
-local ARMOR_SPEED_PENALTY   = 1.00
+local ARMOR_BOOST_FACTOR    = 2.50
+local ARMOR_COST_MULT       = 4.00
+local ARMOR_SPEED_PENALTY   = 0.90
 
 local CLOAK_COST_MULT       = 1.00
 local DECLAK_DISTANCE_MULT  = 0.05
-local MIN_DECLAK_DISTANCE   = 50
+local MIN_DECLAK_DISTANCE   = 100
 
-local BUILDPWR_BOOST_FACTOR = 8.00
+local BUILDPWR_BOOST_FACTOR = 3.00
 local BUILDPWR_COST_MULT    = 1.00
 
-local STEALTH_COST_MULT     = 0.8
+local STEALTH_COST_MULT     = 0.80
 
 --------------------------------------------------------------------------------
 -- Map each CMD to the associated cost multiplier
@@ -107,12 +107,13 @@ function gadget:Initialize()
   for udid, ud in pairs(UnitDefs) do
     validUnitDefs[udid] = {
       [CMD_UPG_SPEED]    = false,  -- set true if you wish non-immobile units to get Speed
-      [CMD_UPG_ARMOR]    = false,--ud.armoredMultiple == 1.0,
-      [CMD_UPG_CLOAK]    = false, -- set true if you want cloaking
-      [CMD_UPG_BUILDPWR] = (ud.buildSpeed > 0 or ud.isBuilder)
-                           and not (ud.isStaticBuilder and not ud.isBuilding)
-                           and not ud.customParams.iscommander
-                           and not ud.isFactory,
+      [CMD_UPG_ARMOR]    = false, --ud.armoredMultiple == 1.0,
+      [CMD_UPG_CLOAK]    = not ud.canFly and not ud.customParams.iscommander,
+      [CMD_UPG_BUILDPWR] = false,
+                           --(ud.buildSpeed > 0 or ud.isBuilder)
+                           -- and not (ud.isStaticBuilder and not ud.isBuilding)
+                           -- and not ud.customParams.iscommander
+                           -- and not ud.isFactory,
 
       -- NEW stealth: only for units that cannot cloak
       [CMD_UPG_STEALTH]  = not ud.canCloak,
