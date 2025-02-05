@@ -11,10 +11,10 @@ return {
         name = 'TLL',
         startunit = 'tllcom',
     },
-    {
-        name = 'TALON',
-        startunit = 'talon_com',
-    },
+    -- {
+    --     name = 'TALON',
+    --     startunit = 'talon_com',
+    -- },
     {
         name = 'GOK',
         startunit = 'gok_com',

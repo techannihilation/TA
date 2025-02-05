@@ -51,7 +51,7 @@ local validStartUnits = {
     [armcomDefID] = true,
     [corcomDefID] = true,
     [tllcomDefID] = true,
-    [taloncomDefID] = true,
+    --[taloncomDefID] = true,
 	[gokcomDefID] = true,
 	[rumadcomDefID] = true,
 }
