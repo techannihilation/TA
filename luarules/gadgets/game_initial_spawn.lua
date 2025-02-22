@@ -56,7 +56,7 @@ local validStartUnits = {
 	[rumadcomDefID] = true,
 }
 
-local superEcoEnabled = Spring.GetModOptions().mo_superecostart
+local superEcoEnabled = Spring.GetModOptions().mo_superecostart and 1 or 0
 
 local superEco = {
 	[UnitDefNames.corufus.id] = 1,
@@ -483,9 +483,6 @@ end
 function SpawnStartUnit(teamID, x, z)
 	--get starting unit
 	local startUnit = spGetTeamRulesParam(teamID, startUnitParamName)
-    if superEcoEnabled then
-        --startUnit = 6
-    end
 
 	--overwrite startUnit with random faction for newbies
 	if Spring.GetTeamRulesParam(teamID, 'isNewbie') == 1 then
