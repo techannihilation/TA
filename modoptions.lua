@@ -241,7 +241,14 @@ local options = {
       },
     }
   },
-
+  {
+    key = "mo_superecostart",
+    name = "Super Economy",
+    desc = "Start with Super Economy\nAutoHost Usage :- mo_superEcoStart",
+    type = "bool",
+    def = false,
+    section = "ta_modes",
+  },
   {
     key = "exp_flankdefaultmin",
     name = "Min flanking bonus",

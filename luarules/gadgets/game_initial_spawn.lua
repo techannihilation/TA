@@ -56,9 +56,11 @@ local validStartUnits = {
 	[rumadcomDefID] = true,
 }
 
+local superEcoEnabled = Spring.GetModOptions().mo_superecostart
+
 local superEco = {
-	[UnitDefNames.talon_ufus.id] = 1,
-	[UnitDefNames.ametalmakerlvl4.id] = 2,
+	[UnitDefNames.corufus.id] = 1,
+	[UnitDefNames.ametalmakerlvl4.id] = 0,
 }
 
 
@@ -190,19 +192,36 @@ function gadget:Initialize()
 		if teamID ~= gaiaTeamID then
 			--set & broadcast (current) start unit
 			local _, _, _, _, teamSide, teamAllyID = spGetTeamInfo(teamID)
-			if teamSide == 'core' then
-				spSetTeamRulesParam(teamID, startUnitParamName, corcomDefID)
-			elseif teamSide == 'tll' then
-				spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
-			elseif teamSide == 'talon' then
-				spSetTeamRulesParam(teamID, startUnitParamName, taloncomDefID)
-			elseif teamSide == 'gok' then
-				spSetTeamRulesParam(teamID, startUnitParamName, gokcomDefID)
-			elseif teamSide == 'rumad' then
-				spSetTeamRulesParam(teamID, startUnitParamName, rumadcomDefID)
-			else
-				spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
-			end
+            if superEcoEnabled then
+                if teamSide == 'core' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["corck"].id)
+                elseif teamSide == 'tll' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["tllck"].id)
+                elseif teamSide == 'talon' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["talon_psyker"].id)
+                elseif teamSide == 'gok' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["gok_ck"].id)
+                elseif teamSide == 'rumad' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["rumad_ck"].id)
+                else
+                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["armck"].id)
+                end
+            else
+                if teamSide == 'core' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, corcomDefID)
+                elseif teamSide == 'tll' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
+                elseif teamSide == 'talon' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, taloncomDefID)
+                elseif teamSide == 'gok' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, gokcomDefID)
+                elseif teamSide == 'rumad' then
+                    spSetTeamRulesParam(teamID, startUnitParamName, rumadcomDefID)
+                else
+                    spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
+                end
+            end
+
 			spawnTeams[teamID] = teamAllyID
 
 			--broadcast if newbie
@@ -464,6 +483,9 @@ end
 function SpawnStartUnit(teamID, x, z)
 	--get starting unit
 	local startUnit = spGetTeamRulesParam(teamID, startUnitParamName)
+    if superEcoEnabled then
+        --startUnit = 6
+    end
 
 	--overwrite startUnit with random faction for newbies
 	if Spring.GetTeamRulesParam(teamID, 'isNewbie') == 1 then
@@ -480,6 +502,30 @@ function SpawnStartUnit(teamID, x, z)
 	if startUnit == rumadcomDefID then
 		spCreateUnit(UnitDefNames["rumad_king"].id, x + 40, y, z + 40, 0, teamID)
 	end
+
+    if superEcoEnabled then
+        local maxRows = 3
+        local maxCol = 3
+        local i, j = 1, 0
+        local separation = 500
+
+        for unitDefID, val in pairs(superEco) do
+            for n = 1, val do
+                spCreateUnit(unitDefID, x + (separation * i), y, z + (separation * j), 0, teamID)
+
+                if i >= maxRows then
+                    i = 0
+                    j = j + 1
+                end
+
+                if j >= maxCol then
+                    j = 0
+                end
+
+                i = i + 1
+            end
+        end
+    end
 
 	--spawn halloween
 	  -- spCreateUnit(UnitDefNames["halloween"].id, x + 40 * (-1 * math.random(0,1)), y, z + 40 * (-1 * math.random(0,1)), 0, teamID)
