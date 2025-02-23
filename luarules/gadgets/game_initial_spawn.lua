@@ -192,36 +192,19 @@ function gadget:Initialize()
 		if teamID ~= gaiaTeamID then
 			--set & broadcast (current) start unit
 			local _, _, _, _, teamSide, teamAllyID = spGetTeamInfo(teamID)
-            if superEcoEnabled then
-                if teamSide == 'core' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["corck"].id)
-                elseif teamSide == 'tll' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["tllck"].id)
-                elseif teamSide == 'talon' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["talon_psyker"].id)
-                elseif teamSide == 'gok' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["gok_ck"].id)
-                elseif teamSide == 'rumad' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["rumad_ck"].id)
-                else
-                    spSetTeamRulesParam(teamID, startUnitParamName, UnitDefNames["armck"].id)
-                end
+            if teamSide == 'core' then
+                spSetTeamRulesParam(teamID, startUnitParamName, corcomDefID)
+            elseif teamSide == 'tll' then
+                spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
+            elseif teamSide == 'talon' then
+                spSetTeamRulesParam(teamID, startUnitParamName, taloncomDefID)
+            elseif teamSide == 'gok' then
+                spSetTeamRulesParam(teamID, startUnitParamName, gokcomDefID)
+            elseif teamSide == 'rumad' then
+                spSetTeamRulesParam(teamID, startUnitParamName, rumadcomDefID)
             else
-                if teamSide == 'core' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, corcomDefID)
-                elseif teamSide == 'tll' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
-                elseif teamSide == 'talon' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, taloncomDefID)
-                elseif teamSide == 'gok' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, gokcomDefID)
-                elseif teamSide == 'rumad' then
-                    spSetTeamRulesParam(teamID, startUnitParamName, rumadcomDefID)
-                else
-                    spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
-                end
+                spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
             end
-
 			spawnTeams[teamID] = teamAllyID
 
 			--broadcast if newbie
@@ -500,7 +483,7 @@ function SpawnStartUnit(teamID, x, z)
 		spCreateUnit(UnitDefNames["rumad_king"].id, x + 40, y, z + 40, 0, teamID)
 	end
 
-    if superEcoEnabled then
+    if superEcoEnabled == 1 then
         local maxRows = 3
         local maxCol = 3
         local i, j = 1, 0
