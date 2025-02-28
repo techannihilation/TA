@@ -39,22 +39,22 @@ jumpCategory = {
 }
 
 jumpClassGroups = {
-	starcom = {
-  	"armcom2",
-  	"corcom2",
-  	"tllcom2",
-  	"talon_com2",
-    "gok_com2",
-    "rumad_king2",
-	},
-	supremecom = {
-  	"armcom3",
-  	"corcom3",
-  	"tllcom3",
-  	"talon_com3",
-    "gok_com3",
-    "rumad_king3",
-	},
+	-- starcom = {
+  	-- "armcom2",
+  	-- "corcom2",
+  	-- "tllcom2",
+  	-- "talon_com2",
+    -- "gok_com2",
+    -- "rumad_king2",
+	-- },
+	-- supremecom = {
+  	-- "armcom3",
+  	-- "corcom3",
+  	-- "tllcom3",
+  	-- "talon_com3",
+    -- "gok_com3",
+    -- "rumad_king3",
+	-- },
 	jumpbot = {
   	"tlldischarge",
     "armjugg",
