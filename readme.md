@@ -5,18 +5,18 @@ This Mode looks like to Balanced Annihilation with more units and a morph system
 
 ## Getting Started
 
-Nixtux and Finky start to work on the mode in 2010 on github.
-The game use a rapid tool with springlobby. All commits update the game in real time.
+Nixtux and Finky started to work on the mode in 2010 on github.
+The game uses a rapid tool with springlobby. All commits update the game in real time.
 
 ### Prerequisites & Installing
 
 To install the game, 2 options : 
-1 - Download the spring/recoil Engine (https://github.com/beyond-all-reason/spring/releases). And Donload this repository and paste on spring/games/TA.SDD folder. You could play alone to test the mode.
+1 - Download the spring/recoil Engine (https://github.com/beyond-all-reason/spring/releases). And Download this repository and paste on spring/games/TA.SDD folder. You could play alone to test the mode.
 2 - Download a lobby, for example : https://github.com/skynet-gh/skylobby/releases . then you will find a battleroom with Tech-annihilation mention. You can enter in the battleroom and maps and last version will be automatically download. You can also use new lobby.techa-rts.com server. To signup visit https://lobby.techa-rts.com/signup.php .
 
 ## Versioning
 
-Actually, the Tech annihilation mode, have no version. All commits done are automatically upload on Rapid (http://tard.repo.springrts.com/builds/).
+Actually, the Tech annihilation mode, have no version. All commits done are automatically uploaded on Rapid (http://tard.repo.springrts.com/builds/).
 
 ## Authors
 
