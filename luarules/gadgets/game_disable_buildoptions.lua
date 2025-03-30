@@ -15,7 +15,6 @@ local disableCmds = {
 	[CMD.DEATHWAIT] = true,
 	[CMD.SQUADWAIT] = true,
 	[CMD.GATHERWAIT] = true,
-	[CMD.AISELECT] = true,
 	[CMD.LOAD_ONTO] = true,
 	[CMD.SETBASE] = true,
 }
