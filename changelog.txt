@@ -1,4 +1,81 @@
- 4.66 => 4.67
+ 4.67 => 4.80
+2025-03-31
+
+Balance:
+• Unit: Core Core (Admiral AeroShip)
+  - MaxDamage (HP) increased by +25.6% (from 7,950,000 to 9,990,000)
+
+• Air Units (General):
+  - Increased build time for most T1/T2/T3 fighters and gunships by +50%.
+    (Affected: ArmFig, ArmHawk, ArmWolf, ArmStratus, CorVeng, CorVamp, CorShrike, Gok_Angel, Gok_Sucub, Gok_Wraith, Gok_Zakul, Rumad_Fighter_Lvl1/2/3, Talon_Token, Talon_Echelon, Talon_Hornet, TLLFight, TLLAdvFight, TLLShu, TLLCondor)
+
+• Unit: Arm MLRS (Barrage weapon):
+  - Increased damage (Default: +75% [2000->3500], Commanders: +100% [1000->2000])
+  - Reduced flight time (-33% [6->4])
+  - Increased spray angle (+33% [300->400])
+  - Area of Effect initially increased (256 -> 425), then reduced (425 -> 272). Net change: +6.25%.
+
+• Unit: Arm Mygalo (Multi-Laser):
+  - Range increased (1400 -> 1450)
+
+• Unit: Gok Azaroth (Mounted antimatter accelerator):
+  - Range increased (1400 -> 1500)
+
+• Unit: TLL Saurus (RapidBlaster):
+  - Range increased (1000 -> 1200)
+
+• Unit: Arm Beamer:
+  - Reworked into 'Beamer Mk II'.
+  - Build Cost: Energy +136% (3666->8666), Metal +170% (291->785)
+  - Build Time: +183% (6000->17000)
+  - MaxDamage (HP): +92.5% (1340->2580)
+  - Sight Distance: +4.2% (475->495)
+  - Weapon Range: +4% (500->520)
+  - Weapon Energy Cost: +150% (10->25)
+  - Weapon Damage: Default set to 80, Damage vs Commanders +50% (80->120)
+  - Removed from Arm Construction Aircraft build list.
+
+• Units: TSAR-likes (Arm Tabitha, Core Influence, Gok Cain, TLL Vanya):
+  - Reverted experimental rework from mid-January 2025.
+  - Costs, build times, HP (1.5m), and stockpile time (240s) returned to high values similar to pre-4.67 state.
+  - Range set to 72,000.
+  - Area of Effect adjusted (now ~4360-4630).
+  - Weapon Damage set to 750,000 (default).
+  - Firing costs adjusted (significant Energy and Metal per shot).
+  - Crater effects added/adjusted.
+
+• Unit: Rumad Parasite:
+  - Reverted build costs to previous values (~38.2m total).
+  - Increased build distance (7500 -> 8000).
+  - Increased LOS (7500 -> 8000).
+
+• Unit: Talon Planet Killer:
+  - Reverted build costs to previous values (~35.9m total).
+  - Increased range (3500 -> 4000).
+  - Decreased DPS (200k -> 150k).
+  - Removed crater effect.
+
+Content:
+• Added new unit: Arm Beamer (T1 Beam Laser Turret - subsequently reworked into Mk II version, see Balance).
+
+Visuals / Performance:
+• Removed smoke trails from numerous missile/rocket projectiles.
+• Removed custom explosion generators (`custom:FLASH2`, `custom:ARM_FIRE_SMALL`, `custom:CORE_FIRE_SMALL`, `custom:GOK-AIR`, etc.) from numerous projectiles, defaulting to standard effects or none.
+• Added temporary Halloween skins for all Commanders (Oct 30 - Nov 16).
+• Removed temporary Halloween skins for all Commanders.
+• Updated build picture for Core Ultimate Lab (now Core Hexapod Lab?).
+
+Fixes:
+• Corrected dead model path for Rumad RLRPT.
+• Corrected dead model path for Arm Beamer Mk II.
+• Adjusted collision volume for Portal unit.
+
+Misc / Event:
+• Updated description for Xmas structure (Dec 13).
+• Reverted Xmas structure description (Jan 10).
+
+
+4.66 => 4.67
 2024-09-11
 Balance:
   Unit: Core Core (Admiral AeroShip)
