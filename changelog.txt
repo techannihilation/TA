@@ -2,6 +2,10 @@
 2025-03-31
 
 Balance:
+
+• Unit: Cybran Monkeylord (Experimental Shield Hexapod):  
+  - Weapon Damage: +20% (2500 → 3000)
+
 • Unit: Core Core (Admiral AeroShip)
   - MaxDamage (HP) increased by +25.6% (from 7,950,000 to 9,990,000)
 

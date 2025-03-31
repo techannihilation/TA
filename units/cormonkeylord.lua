@@ -166,7 +166,7 @@ return {
 				},
 				damage = {
 					commanders = 1250,
-					default = 2500,
+					default = 3000,
 					subs = 5,
 				},
 				tracks = false,
