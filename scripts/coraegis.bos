@@ -3,113 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, missile, doora1, doora2, collar, doorb5, doorb6, doorb2,
-       doorb4, doorb1, doorb3, lnchpad;
+piece  base, box, collar;
 
-static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				2
-
-
-activatescr()
-{
-	if( TRUE )
-	{
-		move doora1 to x-axis [0.000000] now;
-		move doora1 to x-axis [3.300000] speed [4.800000];
-		move doora2 to x-axis [0.000000] now;
-		move doora2 to x-axis [-3.300000] speed [4.800000];
-		move collar to y-axis [0.000000] now;
-		move collar to y-axis [0.000000] speed [0.000000];
-		move doorb5 to y-axis [0.000000] now;
-		move doorb5 to y-axis [0.000000] speed [0.000000];
-		move doorb6 to y-axis [0.000000] now;
-		move doorb6 to y-axis [0.000000] speed [0.000000];
-		move missile to x-axis [0.000000] now;
-		move missile to y-axis [0.000000] now;
-		move missile to z-axis [0.000000] now;
-		sleep 941;
-	}
-	if( TRUE )
-	{
-		move collar to y-axis [3.900000] speed [6.800000];
-		move doorb5 to y-axis [0.000000] speed [0.000000];
-		move doorb6 to y-axis [0.000000] speed [0.000000];
-		sleep 802;
-	}
-	if( TRUE )
-	{
-		move collar to y-axis [3.900000] speed [0.000000];
-		move doorb5 to y-axis [0.000000] speed [0.000000];
-		move doorb6 to y-axis [0.000000] speed [0.000000];
-		turn doorb5 to z-axis <89.000000> speed <151.000000>;
-		turn doorb6 to z-axis <-90.000000> speed <152.000000>;
-		turn doorb2 to x-axis <-181.000000> speed <305.000000>;
-		turn doorb4 to x-axis <181.000000> speed <304.000000>;
-		turn doorb1 to x-axis <-181.000000> speed <305.000000>;
-		turn doorb3 to x-axis <180.000000> speed <303.000000>;
-		sleep 594;
-	}
-	if( TRUE )
-	{
-		move lnchpad to y-axis [10.800000] speed [9.200000];
-		sleep 1591;
-	}
-	sleep 28;
-}
-
-deactivatescr()
-{
-	if( TRUE )
-	{
-		move doora1 to x-axis [3.300000] now;
-		move doora2 to x-axis [-3.300000] now;
-		move collar to y-axis [3.900000] now;
-		move lnchpad to y-axis [10.800000] now;
-		move lnchpad to y-axis [0.000000] speed [8.400000];
-		move missile to x-axis [0.000000] now;
-		move missile to y-axis [0.000000] now;
-		move missile to z-axis [0.000000] now;
-		turn doorb5 to z-axis <89.000000> now;
-		turn doorb6 to z-axis <-90.000000> now;
-		turn doorb2 to x-axis <-181.000000> now;
-		turn doorb4 to x-axis <181.000000> now;
-		turn doorb1 to x-axis <-181.000000> now;
-		turn doorb3 to x-axis <180.000000> now;
-		sleep 1746;
-	}
-	if( TRUE )
-	{
-		move collar to y-axis [3.900000] speed [0.000000];
-		move doorb5 to y-axis [0.000000] speed [0.000000];
-		move doorb6 to y-axis [0.000000] speed [0.000000];
-		turn doorb5 to z-axis <0.000000> speed <191.000000>;
-		turn doorb6 to z-axis <0.000000> speed <192.000000>;
-		turn doorb2 to x-axis <0.000000> speed <387.000000>;
-		turn doorb4 to x-axis <0.000000> speed <385.000000>;
-		turn doorb1 to x-axis <0.000000> speed <386.000000>;
-		turn doorb3 to x-axis <0.000000> speed <383.000000>;
-		sleep 469;
-	}
-	if( TRUE )
-	{
-		move collar to y-axis [0.000000] speed [6.400000];
-		move doorb5 to y-axis [0.000000] speed [0.000000];
-		move doorb6 to y-axis [0.000000] speed [0.000000];
-		sleep 836;
-	}
-	if( TRUE )
-	{
-		move doora1 to x-axis [0.000000] speed [8.000000];
-		move doora2 to x-axis [0.000000] speed [8.000000];
-		move collar to y-axis [0.000000] speed [0.000000];
-		move doorb5 to y-axis [0.000000] speed [0.000000];
-		move doorb6 to y-axis [0.000000] speed [0.000000];
-		sleep 576;
-	}
-	sleep 49;
-}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -138,138 +36,26 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Go()
-{
-	show missile;
-	call-script activatescr();
-	gun_1 = missile;
-}
-
-Stop()
-{
-	gun_1 = base;
-	sleep 4000;
-	call-script deactivatescr();
-}
-
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
-
 Create()
 {
-	call-script InitState();
-	gun_1 = base;
-	dont-shade collar;
-	dont-shade doora1;
-	dont-shade doora2;
-	dont-shade doorb1;
-	dont-shade doorb2;
-	dont-shade doorb3;
-	dont-shade doorb4;
-	dont-shade doorb5;
-	dont-shade doorb6;
-	dont-shade lnchpad;
-	dont-shade missile;
-	restore_delay = 3000;
 	start-script SmokeUnit();
-}
-
-Activate()
-{
-	dont-cache collar;
-	dont-cache doora1;
-	dont-cache doora2;
-	dont-cache doorb1;
-	dont-cache doorb2;
-	dont-cache doorb3;
-	dont-cache doorb4;
-	dont-cache doorb5;
-	dont-cache doorb6;
-	dont-cache lnchpad;
-	dont-cache missile;
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
-	cache collar;
-	cache doora1;
-	cache doora2;
-	cache doorb1;
-	cache doorb2;
-	cache doorb3;
-	cache doorb4;
-	cache doorb5;
-	cache doorb6;
-	cache lnchpad;
-	cache missile;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
-}
-
-RestoreAfterDelay()
-{
-	sleep restore_delay;
-	set-signal-mask 0;
-	start-script RequestState(1);
 }
 
 AimPrimary(heading, pitch)
 {
-	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( !gun_1 )
-	{
-		sleep 250;
-	}
-	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	hide missile;
-	gun_1 = base;
-	start-script RequestState(1);
+
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = missile;
+	piecenum = box;
 }
 
 SweetSpot(piecenum)
@@ -284,16 +70,6 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode base type NOHEATCLOUD;
 		explode collar type NOHEATCLOUD;
-		explode doora1 type NOHEATCLOUD;
-		explode doora2 type NOHEATCLOUD;
-		explode doorb1 type NOHEATCLOUD;
-		explode doorb2 type NOHEATCLOUD;
-		explode doorb3 type NOHEATCLOUD;
-		explode doorb4 type NOHEATCLOUD;
-		explode doorb5 type NOHEATCLOUD;
-		explode doorb6 type NOHEATCLOUD;
-		explode lnchpad type NOHEATCLOUD;
-		explode missile type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -301,47 +77,10 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode base type NOHEATCLOUD;
 		explode collar type NOHEATCLOUD | SHATTER;
-		explode doora1 type NOHEATCLOUD | FALL;
-		explode doora2 type NOHEATCLOUD | FALL;
-		explode doorb1 type NOHEATCLOUD | FALL;
-		explode doorb2 type NOHEATCLOUD | FALL;
-		explode doorb3 type NOHEATCLOUD | FALL;
-		explode doorb4 type NOHEATCLOUD | FALL;
-		explode doorb5 type NOHEATCLOUD | FALL;
-		explode doorb6 type NOHEATCLOUD | FALL;
-		explode lnchpad type NOHEATCLOUD;
-		explode missile type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode collar type NOHEATCLOUD | SHATTER;
-		explode doora1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode doora2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode doorb1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode doorb2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode doorb3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode doorb4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode doorb5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode doorb6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lnchpad type NOHEATCLOUD;
-		explode missile type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type NOHEATCLOUD;
 	explode collar type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode doora1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode doora2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode doorb1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode doorb2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode doorb3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode doorb4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode doorb5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode doorb6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode lnchpad type NOHEATCLOUD;
-	explode missile type NOHEATCLOUD;
 	return (corpsetype);
 }

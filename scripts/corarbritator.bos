@@ -4,87 +4,73 @@
 #include "exptype.h"
 
 piece  base, body, legs, rupleg1, rupleg2, rupleg3, lupleg1, lupleg2, lupleg3,
-	   butt, fliptop, riser, emit, aimpoint1, aimpoint2, aimpoint3, flame, beamweapon;
+	   butt, top, emit;
 
-static-var  moving, firing, turning, gun_1, gun_2, statechg_DesiredState, statechg_StateChanging ;
+static-var  moving, turning;
 
 // Signal definitions
-#define SIG_AIM_1			2
-#define SIG_AIM_2			4
-#define SIG_AIM_3			8
-#define SIG_ACTIVATE		16
-#define SIG_MOVE			32
+#define SIG_AIM			2
+#define SIG_MOVE		32
 
 
 walk()
 {
 	if(( moving || turning ))
 	{
-		TURN rupleg1 to y-axis <0> SPEED <50>;
-		TURN rupleg1 to z-axis <0> SPEED <50>;
-		TURN rupleg2 to z-axis <15> SPEED <50>;
-		TURN rupleg3 to y-axis <16.5> SPEED <50>;
-		TURN rupleg3 to z-axis <0> SPEED <50>;
-		TURN lupleg1 to y-axis <-19.5> SPEED <50>;
-		TURN lupleg1 to z-axis <0> SPEED <50>;
-		TURN lupleg2 to y-axis <0> SPEED <50>;
-		TURN lupleg2 to z-axis <0> SPEED <50>;
-		TURN lupleg3 to y-axis <-14.5> SPEED <50>;
-		TURN lupleg3 to z-axis <-22.5> SPEED <50>;
-		SLEEP 120;
+		turn rupleg1 to y-axis <0> speed <50>;
+		turn rupleg1 to z-axis <0> speed <50>;
+		turn rupleg2 to z-axis <15> speed <50>;
+		turn rupleg3 to y-axis <16.5> speed <50>;
+		turn rupleg3 to z-axis <0> speed <50>;
+		turn lupleg1 to y-axis <-19.5> speed <50>;
+		turn lupleg1 to z-axis <0> speed <50>;
+		turn lupleg2 to y-axis <0> speed <50>;
+		turn lupleg2 to z-axis <0> speed <50>;
+		turn lupleg3 to y-axis <-14.5> speed <50>;
+		turn lupleg3 to z-axis <-22.5> speed <50>;
+		sleep 120;
 	}
 	if(( moving || turning ))
 	{
-		TURN rupleg2 to y-axis <16.5> SPEED <50>;
-		TURN rupleg2 to z-axis <15> SPEED <50>;
-		TURN lupleg1 to y-axis <0> SPEED <50>;
-		TURN lupleg2 to z-axis <-15> SPEED <50>;
-		TURN lupleg3 to z-axis <1> SPEED <50>;
-		TURN rupleg1 to z-axis <15> SPEED <50>;
-		TURN rupleg3 to y-axis <0> SPEED <50>;
-		TURN rupleg3 to z-axis <0> SPEED <50>;
-		SLEEP 120;
+		turn rupleg2 to y-axis <16.5> speed <50>;
+		turn rupleg2 to z-axis <15> speed <50>;
+		turn lupleg1 to y-axis <0> speed <50>;
+		turn lupleg2 to z-axis <-15> speed <50>;
+		turn lupleg3 to z-axis <1> speed <50>;
+		turn rupleg1 to z-axis <15> speed <50>;
+		turn rupleg3 to y-axis <0> speed <50>;
+		turn rupleg3 to z-axis <0> speed <50>;
+		sleep 120;
 	}
 	if(( moving || turning ))
 	{
-		TURN lupleg2 to y-axis <-15> SPEED <50>;
-		TURN lupleg2 to z-axis <-15> SPEED <50>;
-		TURN lupleg3 to y-axis <1.5> SPEED <50>;
-		TURN rupleg2 to y-axis <16.5> SPEED <50>;
-		TURN rupleg2 to z-axis <0> SPEED <50>;
-		TURN rupleg3 to z-axis <15> SPEED <50>;
-		TURN rupleg1 to y-axis <27> SPEED <50>;
-		TURN rupleg1 to z-axis <15> SPEED <50>;
-		TURN lupleg1 to y-axis <0> SPEED <50>;
-		TURN lupleg1 to z-axis <-15> SPEED <50>;
-		SLEEP 120;
+		turn lupleg2 to y-axis <-15> speed <50>;
+		turn lupleg2 to z-axis <-15> speed <50>;
+		turn lupleg3 to y-axis <1.5> speed <50>;
+		turn rupleg2 to y-axis <16.5> speed <50>;
+		turn rupleg2 to z-axis <0> speed <50>;
+		turn rupleg3 to z-axis <15> speed <50>;
+		turn rupleg1 to y-axis <27> speed <50>;
+		turn rupleg1 to z-axis <15> speed <50>;
+		turn lupleg1 to y-axis <0> speed <50>;
+		turn lupleg1 to z-axis <-15> speed <50>;
+		sleep 120;
 	}
 	if(( moving || turning ))
 	{
-		TURN lupleg2 to y-axis <-18> SPEED <50>;
-		TURN lupleg2 to z-axis <0> SPEED <50>;
-		TURN lupleg3 to y-axis <0> SPEED <50>;
-		TURN lupleg3 to z-axis <-22.5> SPEED <50>;
-		TURN rupleg2 to y-axis <0> SPEED <50>;
-		TURN rupleg2 to z-axis <0> SPEED <50>;
-		TURN rupleg3 to y-axis <16.5> SPEED <50>;
-		TURN rupleg1 to y-axis <21> SPEED <50>;
-		TURN rupleg1 to z-axis <0> SPEED <50>;
-		TURN rupleg3 to z-axis <15> SPEED <50>;
-		TURN lupleg1 to y-axis <-19.5> SPEED <50>;
-		TURN lupleg1 to z-axis <-15> SPEED <50>;
-		SLEEP 120;
-	}
-}
-
-PilotLight(Func_Var_1)
-{
-	while( TRUE )
-	{
-		Func_Var_1 = 200 + Rand( 150, 600 );
-		sleep Func_Var_1;
-		emit-sfx 1024 from flame;
-	
+		turn lupleg2 to y-axis <-18> speed <50>;
+		turn lupleg2 to z-axis <0> speed <50>;
+		turn lupleg3 to y-axis <0> speed <50>;
+		turn lupleg3 to z-axis <-22.5> speed <50>;
+		turn rupleg2 to y-axis <0> speed <50>;
+		turn rupleg2 to z-axis <0> speed <50>;
+		turn rupleg3 to y-axis <16.5> speed <50>;
+		turn rupleg1 to y-axis <21> speed <50>;
+		turn rupleg1 to z-axis <0> speed <50>;
+		turn rupleg3 to z-axis <15> speed <50>;
+		turn lupleg1 to y-axis <-19.5> speed <50>;
+		turn lupleg1 to z-axis <-15> speed <50>;
+		sleep 120;
 	}
 }
 
@@ -122,7 +108,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep 400;
 	}
 	
-	start-script PilotLight();
 	start-script MotionControl();
 	while( TRUE )
 	{
@@ -145,140 +130,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-activatescr()
-{
-
-	if( TRUE )
-	{
-		turn fliptop to z-axis <41.000000> speed <93.000000>;
-		sleep 425;
-	}
-	if( TRUE )
-	{
-		move riser to y-axis [5.000000] speed [7.000000];
-		turn fliptop to z-axis <72.000000> speed <70.000000>;
-		sleep 425;
-	}
-	if( TRUE )
-	{
-		move riser to y-axis [10.000000] speed [7.000000];
-		turn fliptop to z-axis <160.000000> speed <200.000000>;
-		sleep 425;
-	}
-	if( TRUE )
-	{
-		move riser to y-axis [15.000000] speed [7.000000];
-		sleep 425;
-	}
-	if( TRUE )
-	{
-		move riser to y-axis [17.500000] speed [3.500000];
-		sleep 425;
-	}
-	sleep 50;
-}
-
-deactivatescr()
-{
-	if( TRUE )
-	{
-		move riser to y-axis [15.000000] speed [8.000000];
-		sleep 425;
-	}
-	if( TRUE )
-	{	
-		move riser to y-axis [10.000000] speed [8.000000];
-		sleep 425;
-	}
-	if( TRUE )
-	{
-		move riser to y-axis [5.000000] speed [8.000000];
-		turn fliptop to z-axis <90.000000> speed <55.000000>;
-		sleep 425;
-	}
-	if( TRUE )
-	{
-		move riser to y-axis [0.000000] speed [8.000000];
-		turn fliptop to z-axis <0.000000> speed <75.000000>;
-		sleep 425;
-		wait-for-turn fliptop around z-axis;
-		
-	}
-	
-	move riser to y-axis [0.000000] now;
-	show riser;
-}
-
-Go()
-{
-	call-script activatescr();
-	gun_1 = emit;
-}
-
-Stop()
-{
-	gun_1 = base;
-	sleep 4000;
-	call-script deactivatescr();
-	show riser;
-}
-
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
-
-lua_FlameShot(Func_Var_1)
-{
-}
-
 Create()
 {
 	moving = 0;
-	firing = 0;
 	turning = 0;
-	hide flame;
-	call-script InitState();
 	start-script SmokeUnit();
 }
-
-Activate()
-{
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
-}
-
 
 StartMoving()
 {
@@ -294,105 +151,21 @@ StopMoving()
 	signal SIG_MOVE;
 }
 
-
-RestoreAfterDelay()
-{
-	sleep 5000;
-	set-signal-mask 0;
-	start-script RequestState(1);
-	sleep 500;
-}
-
 AimPrimary(heading, pitch)
 {
-	start-script RequestState(0);
-	signal SIG_AIM_1;
-	set-signal-mask SIG_AIM_1;
-	while( !gun_1 )
-	{
-		sleep 250;
-	}
-	start-script RestoreAfterDelay();
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
 	return (1);
-
 }
 
 FirePrimary()
 {
-	hide riser;
-	gun_1 = base;
-	start-script RequestState(1);
+
 }
 
 QueryPrimary(piecenum)
 {
 	piecenum = emit;
-}
-
-
-AimFromSecondary(piecenum)
-{
-	piecenum = beamweapon;
-}
-
-AimSecondary(heading, pitch)
-{
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	return (1);
-}
-FireSecondary()
-{
-	
-	move beamweapon to z-axis [-1.000000] now;
-	sleep 250;
-	move beamweapon to z-axis [0.000000] speed [0.500000];
-	sleep 750;
-	++gun_2;
-	
-	if (gun_2 == 3) 
-	{
-		gun_2 = 0;
-	}
-}
-
-QuerySecondary(piecenum)
-{
-	if (gun_2 == 0) 
-	{
-		piecenum = aimpoint1;
-	}	
-	if (gun_2 == 1) 
-	{
-		piecenum = aimpoint2;
-	}	
-	if (gun_2 == 2) 
-	{
-		piecenum = aimpoint3;
-	}	
-}
-
-AimTertiary(heading, pitch)
-{
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	return (1);
-}
-
-Shot3()
-{
-	call-script lua_FlameShot(3);
-	return (1);
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = body;
-}
-
-QueryTertiary(piecenum)
-{
-	piecenum = flame;
 }
 
 SweetSpot(piecenum)
@@ -402,8 +175,6 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	
-	hide flame;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
@@ -426,18 +197,6 @@ Killed(severity, corpsetype)
 		explode rupleg1 type FALL | NOHEATCLOUD;
 		explode rupleg2 type FALL | NOHEATCLOUD;
 		explode rupleg3 type FALL | NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode body type NOHEATCLOUD;
-		explode lupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
