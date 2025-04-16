@@ -1,7 +1,7 @@
 return {
 	core_uncle = {
 		acceleration = 0.12,
-		activatewhenbuilt = true,
+		autoheal = 100,
 		brakerate = 3.0,
 		buildcostenergy = 99500,
 		buildcostmetal = 12850,
@@ -23,7 +23,6 @@ return {
 		firestandorders = 1,
 		footprintx = 5,
 		footprintz = 5,
-		icontype = "spider",
 		idleautoheal = 5,
 		idletime = 30,
 		losemitheight = 78,
@@ -50,7 +49,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.8,
-		turnrate = 250,
+		turnrate = 200,
 		unitname = "core_uncle",
 		upright = true,
 		customparams = {

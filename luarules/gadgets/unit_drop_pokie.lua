@@ -3,8 +3,8 @@
 
 function gadget:GetInfo()
   return {
-    name      = "drop",
-    desc      = "drop",
+    name      = "drop_pokie",
+    desc      = "drop_pokie",
     author    = "Nixtux",
     date      = "Jun 3, 2017",
     license   = "GNU GPL, v2 or later",

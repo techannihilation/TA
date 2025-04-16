@@ -1,7 +1,6 @@
 return {
 	corpokie = {
 		acceleration = 0.2,
-		activatewhenbuilt = true,
 		autoheal = 250,
 		brakerate = 1.05,
 		buildcostenergy = 1200174,
@@ -26,7 +25,6 @@ return {
 		firestandorders = 1,
 		footprintx = 7,
 		footprintz = 7,
-		icontype = "Krogoth",
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 133,
@@ -41,9 +39,8 @@ return {
 		name = "Pokie",
 		noautofire = false,
 		objectname = "core/corpokie.s3o",
-		onoffable = true,
 		radardistance = 0,
-		radaremitheight = 76,
+		radaremitheight = 133,
 		seismicsignature = 0,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,
