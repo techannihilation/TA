@@ -1,10 +1,10 @@
 --------------------------------------------------------------------------------
--- gadget: dmg_skill_penalty.lua
+-- gadget: dmg_skill_penalty.lua  (now: High TS DEALS less damage)
 --------------------------------------------------------------------------------
 function gadget:GetInfo()
     return {
         name = "DamagePenaltyBySkill",
-        desc = "Players with higher skill (TS) take increased damage as a balancing measure.",
+        desc = "Players with higher skill (TS) deal reduced damage as a balancing measure.",
         author    = "[ur]uncle",
         date      = "2025-04-21",
         license   = "GNU GPL, v2 or later",
@@ -15,8 +15,8 @@ end
 
 if not gadgetHandler:IsSyncedCode() then return end
 
-local BASE_TS = 25 -- Players below 25 TS are not affected; a player with 35 TS receives a 10% penalty.
-local penaltyMultiplier = 2.5  -- Multiplies the penalty: a player with 35 TS receives a 25% damage penalty.
+local BASE_TS = 22
+local penaltyMultiplier = 3.0
 
 local Spring_GetTeamList      = Spring.GetTeamList
 local Spring_GetTeamInfo      = Spring.GetTeamInfo
@@ -34,7 +34,8 @@ local function UpdateTeamScales()
             local playerTS = tonumber(custom and custom.skill)
             if playerTS and playerTS > BASE_TS then
                 local penalty = ((playerTS - BASE_TS) / 100) * penaltyMultiplier
-                teamScale[teamID] = 1 + penalty
+                teamScale[teamID] = 1 - penalty   -- <--- NOTE: 1 - penalty here!
+                if teamScale[teamID] < 0 then teamScale[teamID] = 0 end -- don't go negative
             else
                 teamScale[teamID] = 1
             end
@@ -44,12 +45,13 @@ end
 
 function gadget:GameStart()
     UpdateTeamScales()
+    -- Spring_Echo("[DmgSkillPenalty] Initialized (High TS deals less dmg)")
 end
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam)
-    local scale = teamScale[unitTeam] or 1
-    if scale ~= 1 then
-        return damage * scale, 1
+    local scale = 1
+    if attackerTeam then
+        scale = teamScale[attackerTeam] or 1
     end
-    return damage, 1
+    return damage * scale, 1
 end
