@@ -250,15 +250,6 @@ local options = {
     section = "ta_modes",
   },
   {
-    key     = "dmg_player_bonus",
-    name    = "Player Damage Scale",
-    desc    = "Base‑64‑encoded Lua chunk",
-    type    = "string",
-    def     = "",
-    section = "ta_exp",
-  },
-
-  {
     key = "exp_flankdefaultmin",
     name = "Min flanking bonus",
     desc = "Multiplier for min flanking bonus",
