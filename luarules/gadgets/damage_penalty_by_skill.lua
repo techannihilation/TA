@@ -29,7 +29,6 @@ local function UpdateTeamScales()
     teamScale = {}
     for _, teamID in ipairs(Spring_GetTeamList()) do
         local leaderID = Spring_GetTeamInfo(teamID)
-        Spring_Echo(leaderID)
         if leaderID then
             local _, name, _, _, _, _, _, _, _, _, custom = Spring_GetPlayerInfo(leaderID)
             local playerTS = tonumber(custom and custom.skill)
@@ -45,7 +44,6 @@ end
 
 function gadget:GameStart()
     UpdateTeamScales()
-    Spring_Echo("[DmgSkillPenalty] Initialized")
 end
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam)
