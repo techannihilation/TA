@@ -16,7 +16,7 @@ end
 if not gadgetHandler:IsSyncedCode() then return end
 
 local BASE_TS = 22
-local penaltyMultiplier = 3.0
+local penaltyMultiplier = 2.0
 
 local Spring_GetTeamList      = Spring.GetTeamList
 local Spring_GetTeamInfo      = Spring.GetTeamInfo
