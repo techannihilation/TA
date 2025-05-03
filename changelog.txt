@@ -1,4 +1,18 @@
- 4.67 => 4.80
+ 4.80 => 4.81
+2025-05-03
+
+Balance:
+
+• Unit: Armfor (Amphibious Atomic Geothermal Powerplant)
+  - Renamed from “Unstable Geothermal Powerplant” to “Critically Unstable – Atomic Geothermal Powerplant”
+  - Build Cost (Energy): +55.4% (144 585 → 224 585)
+  - Build Time: +200% (125 000 → 375 000)
+  - Energy Generation: +90% (5 000 → 9 500)
+  - Energy Storage: +400% (5 000 → 25 000)
+  - Health (MaxDamage): 2500 → 2300
+  - Explosion: Changed from FUSION_BLAST to KROG_BLAST 
+
+4.67 => 4.80
 2025-03-31
 
 Balance:
