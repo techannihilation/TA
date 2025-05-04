@@ -1,4 +1,15 @@
- 4.80 => 4.81
+ 4.81 => 4.82
+2025-05-04
+
+Balance:
+
+• Unit: Armfor (Amphibious Atomic Geothermal Powerplant)
+  - Build Cost (Energy): +189% (224,585 → 649,400)
+  - Energy Production: +26.3% (9,500 → 12,000)
+  - Explosion Effect: Changed from KROG_BLAST → FUSION_BLAST_BIG
+  - Self-Destruct Effect: Changed from KROG_BLAST → FUSION_BLAST_BIG
+
+4.80 => 4.81
 2025-05-03
 
 Balance:
