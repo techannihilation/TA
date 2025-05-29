@@ -53,6 +53,7 @@ return {
 		unitname = "core_uncle",
 		upright = true,
 		customparams = {
+			isairbase = true,
 			buildpic = "core_uncle.dds",
 			faction = "Core",
 			normaltex = "unittextures/core_normals.dds",
