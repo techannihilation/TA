@@ -19,7 +19,6 @@ walk()
 {
 	if(( moving || turning ))
 	{
-		turn tail to x-axis <4> speed <1.0>;
 		turn rupleg1 to y-axis <0> speed <75>;
 		turn rupleg1 to z-axis <0> speed <75>;
 		turn rupleg2 to z-axis <15> speed <75>;
@@ -47,7 +46,6 @@ walk()
 	}
 	if(( moving || turning ))
 	{
-		turn tail to x-axis <-4> speed <1.0>;
 		turn lupleg2 to y-axis <-15> speed <75>;
 		turn lupleg2 to z-axis <-15> speed <75>;
 		turn lupleg3 to y-axis <1.5> speed <75>;
@@ -97,7 +95,6 @@ MotionControl(Func_Var_1)
 		if( Func_Var_1 )
 		{
 			call-script walk();
-			turn tail to x-axis <0> speed <4.0>;
 		}
 		if( !Func_Var_1 )
 		{
@@ -113,7 +110,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	turn tail to x-axis <0> speed <4.0>;
+	turn tail to x-axis <0> speed <7.0>;
 	start-script MotionControl();
 	while( TRUE )
 	{
