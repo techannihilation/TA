@@ -242,36 +242,34 @@ return {
 			},
 		},
 		weapons = {
-			{
+			[1] = {
 				def = "ARM_BERTHACANNON1",
 				onlytargetcategory = "SURFACE",
 			},
-			{
-				badtargetcategory = "MINOR",
+			[2] = {
 				def = "MULTI_ROCKET",
-				onlytargetcategory = "SURFACE",
 			},
-			{
+			[4] = {
 				def = "ARM_BATSAFTX",
-				maindir = "0.8 0 1",
+				maindir = "0.5 0 0.5",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
-			{
+			[5] = {
 				def = "ARM_BATSAFTX",
-				maindir = "0.8 0 -1",
+				maindir = "0.5 0 -0.5",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
-			{
+			[6] = {
 				def = "ARM_BATSAFTX",
-				maindir = "-0.8 0 1",
+				maindir = "-0.5 0 0.5",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
-			{
+			[7] = {
 				def = "ARM_BATSAFTX",
-				maindir = "-0.8 0 -1",
+				maindir = "-0.5 0 -0.5",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
