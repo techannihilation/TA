@@ -1,137 +1,183 @@
+--------------------------------------------------------------------------------
+--  mo_noowner.lua – destroys (or erases) abandoned teams in FFA
+--  Updated for Spring / Recoil 105+ (June 2025)                     v2.0
+--------------------------------------------------------------------------------
+
 function gadget:GetInfo()
 	return {
-		name			= "mo_noowner",
-		desc			= "Noowner code for FFA games. Removes abandoned teams",
-		author		= "TheFatController",
-		date			= "19 Jan 2008",
-		license	 = "GNU GPL, v2 or later",
-		layer		 = 0,
-		enabled	 = true	--	loaded by default?
+		name      = "mo_noowner",
+		desc      = "No-owner mode for FFA games – removes abandoned teams",
+		author    = "TheFatController",
+		date      = "08 Jun 2025",
+		license   = "GNU GPL v2+",
+		layer     = 0,
+		enabled   = true
 	}
 end
 
 --------------------------------------------------------------------------------
+-- EARLY OUT (unsynced / modoption disabled)
 --------------------------------------------------------------------------------
 
-if (not gadgetHandler:IsSyncedCode()) then
+if not gadgetHandler:IsSyncedCode() then
 	return
 end
 
-local enabled = tonumber(Spring.GetModOptions().mo_noowner) or 0
-
---teams dying before this mark don't leave wrecks
-local noWrecksLimit = Game.gameSpeed * 60 * 5--in frames
-local earlyDropLimit = Game.gameSpeed * 60 * 2 -- in frames
-local earlyDropGrace = Game.gameSpeed * 60 * 1 -- in frames
-local lateDropGrace = Game.gameSpeed * 60 * 3 -- in frames
-
-if (enabled == 0) then
+local enabled = tonumber(Spring.GetModOption("mo_noowner") or 0)
+if enabled == 0 then
 	return false
 end
 
-local GetPlayerInfo = Spring.GetPlayerInfo
-local GetPlayerList = Spring.GetPlayerList
-local GetTeamList = Spring.GetTeamList
-local GetTeamUnits = Spring.GetTeamUnits
-local DestroyUnit = Spring.DestroyUnit
-local GetUnitTransporter = Spring.GetUnitTransporter
-local GetAIInfo = Spring.GetAIInfo
-local GetGameFrame = Spring.GetGameFrame
-local GetTeamLuaAI = Spring.GetTeamLuaAI
-local Echo = Spring.Echo
-local deadTeam = {}
-local droppedTeam = {}
-local teamsWithUnitsToKill = {}
-local gaiaTeamID = Spring.GetGaiaTeamID()
+--------------------------------------------------------------------------------
+--  SHALLOW IMPORTS / SHORTCUTS
+--------------------------------------------------------------------------------
 
-function GetTeamIsTakeable(teamID)
-	local players = GetPlayerList(teamID)
-	local allResigned = true
-	local noneControlling = true
-	if teamID == gaiaTeamID or GetTeamLuaAI(teamID) ~= "" then
-		--team is handled by lua scripts
-		allResigned,noneControlling = false,false
-	end
-	for _, playerID in pairs(players) do
-		local name, active, spec = GetPlayerInfo(playerID)
-		allResigned = allResigned and spec
-		noneControlling = noneControlling and ( not active or spec )
-	end
-	if GetAIInfo(teamID) then
-		--team is handled by skirmish AI, make sure the hosting player is present
-		allResigned = false
-		local hostingPlayerID = select(3,GetAIInfo(teamID))
-		local _,hostingPlayerActive = GetPlayerInfo(hostingPlayerID)
-		noneControlling = noneControlling and not hostingPlayerActive
-	end
-	return noneControlling, allResigned
+local GetGameFrame        = Spring.GetGameFrame
+local GetPlayerInfo       = Spring.GetPlayerInfo
+local GetPlayerList       = Spring.GetPlayerList
+local GetTeamList         = Spring.GetTeamList
+local GetTeamUnits        = Spring.GetTeamUnits
+local DestroyUnit         = Spring.DestroyUnit
+local GetUnitTransporter  = Spring.GetUnitTransporter
+local GetAIInfo           = Spring.GetAIInfo
+local GetTeamLuaAI        = Spring.GetTeamLuaAI
+local GetTeamRulesParam   = Spring.GetTeamRulesParam
+local SetTeamRulesParam   = Spring.SetTeamRulesParam
+
+--------------------------------------------------------------------------------
+--  CONSTANTS (frames)
+--------------------------------------------------------------------------------
+
+local FPS             = Game.gameSpeed         -- sim frames per second
+local MIN             = 60 * FPS               -- helper: 1 minute in frames
+local NOWRECKS_LIMIT  = 5 * MIN                -- no wrecks if team dies early
+local EARLY_DROP_END  = 2 * MIN                -- “early” window ends here
+local EARLY_GRACE     = 1 * MIN                -- reconnect grace (early)
+local LATE_GRACE      = 3 * MIN                -- reconnect grace (late)
+
+--------------------------------------------------------------------------------
+--  STATE TABLES
+--------------------------------------------------------------------------------
+
+local gaiaID              = Spring.GetGaiaTeamID()
+local deadTeam            = {}   -- [teamID] = true    (permanently gone)
+local droppedTeamFrame    = {}   -- [teamID] = frame   (first detected drop)
+local teamsQueuedToDie    = {}   -- [teamID] = true    (unit kill waiting list)
+
+--------------------------------------------------------------------------------
+--  UTILITIES
+--------------------------------------------------------------------------------
+
+local function teamIsAI(teamID)
+	local shortName = select(1, GetAIInfo(teamID))
+	return shortName ~= nil
 end
+
+local function iterTeams()
+	local t = GetTeamList()
+	for i = 1, (t and #t or 0) do
+		coroutine.yield(t[i])
+	end
+end
+
+local function getTeamControlState(teamID)
+	if teamID == gaiaID or GetTeamLuaAI(teamID) ~= "" then
+		return false, false
+	end
+
+	local players     = GetPlayerList(teamID) or {}
+	local noneControl = true
+	local allResigned = true
+
+	for _, pID in ipairs(players) do
+		local _, active, spectating = GetPlayerInfo(pID)
+		if active and not spectating then
+			noneControl = false
+		end
+		if not spectating then
+			allResigned = false
+		end
+	end
+
+	if teamIsAI(teamID) then
+		allResigned = false
+		local hostID = select(3, GetAIInfo(teamID))
+		if hostID then
+			local _, hostActive, hostSpec = GetPlayerInfo(hostID)
+			if hostActive and not hostSpec then
+				noneControl = false
+			end
+		end
+	end
+
+	return noneControl, allResigned
+end
+
+local function destroyTeamUnits(teamID, atFrame)
+	local wipeWrecks = (atFrame < NOWRECKS_LIMIT)
+	local units      = GetTeamUnits(teamID)
+
+	for _, uID in ipairs(units) do
+		if not GetUnitTransporter(uID) then
+			if wipeWrecks then
+				DestroyUnit(uID, true, false)
+			else
+				DestroyUnit(uID)
+			end
+		end
+	end
+
+	deadTeam[teamID] = true
+	droppedTeamFrame[teamID] = nil
+end
+
+--------------------------------------------------------------------------------
+--  CALL-INS
+--------------------------------------------------------------------------------
 
 function gadget:TeamDied(teamID)
-	--make sure units are killed properly
-	--we cannot kill units here directly or it'd complain about recursion
-	teamsWithUnitsToKill[teamID] = true
+	teamsQueuedToDie[teamID] = true
 end
 
-
-function destroyTeam(teamID,dropTime)
-	local teamUnits = GetTeamUnits(teamID)
-	local nowrecks = dropTime < noWrecksLimit
-	for _, unitID in pairs(teamUnits) do
-		if not GetUnitTransporter(unitID) then
-			if nowrecks then
-				DestroyUnit(unitID,false, true)
-			else
-				DestroyUnit(unitID)
-			end
-		end
+function gadget:GameFrame(frame)
+	-- finish off teams already marked dead
+	for tID in pairs(teamsQueuedToDie) do
+		destroyTeamUnits(tID, frame)
+		teamsQueuedToDie[tID] = nil
 	end
-	if nowrecks then
-		Spring.Echo("No Owner Mode: Removing Team " .. teamID)
-	else
-		Spring.Echo("No Owner Mode: Destroying Team " .. teamID)
-	end
-	deadTeam[teamID] = true
-end
 
-
-function gadget:GameFrame(gameFrame)
-	for teamID in pairs(teamsWithUnitsToKill) do
-		destroyTeam(teamID,gameFrame)
-		teamsWithUnitsToKill[teamID] = nil
-	end
-	for _, teamID in pairs(GetTeamList()) do
+	-- detect new drops or reconnections
+	for teamID in coroutine.wrap(iterTeams) do
 		if not deadTeam[teamID] then
-			local noneControlling, allResigned = GetTeamIsTakeable(teamID)
-			if noneControlling then
+			local noneControl, allResigned = getTeamControlState(teamID)
+
+			if noneControl then
 				if allResigned then
-					destroyTeam(teamID,gameFrame) -- destroy the team immediately if all players in it resigned
-				elseif not droppedTeam[teamID] then
-					local gracePeriod = gameFrame < earlyDropLimit and earlyDropGrace or lateDropGrace
-					Echo("No Owner Mode: Team " .. teamID .. " has " .. math.floor(gracePeriod/(Game.gameSpeed * 60)) .. " minute(s) to reconnect")
-					droppedTeam[teamID] = gameFrame
+					destroyTeamUnits(teamID, frame)
+				elseif not droppedTeamFrame[teamID] then
+					local grace = (frame < EARLY_DROP_END) and EARLY_GRACE or LATE_GRACE
+					droppedTeamFrame[teamID] = frame
 				end
-			elseif droppedTeam[teamID] then
-				Echo("No Owner Mode: Team " .. teamID .. " reconnected")
-				droppedTeam[teamID] = nil
+
+			elseif droppedTeamFrame[teamID] then
+				droppedTeamFrame[teamID] = nil
 			end
 		end
 	end
-	for teamID,time in pairs(droppedTeam) do
-		if (gameFrame - time) > ( time < earlyDropLimit and earlyDropGrace or lateDropGrace ) then
-			destroyTeam(teamID,time)
-			droppedTeam[teamID] = nil
+
+	-- expire grace periods
+	for teamID, startFrame in pairs(droppedTeamFrame) do
+		local grace = (startFrame < EARLY_DROP_END) and EARLY_GRACE or LATE_GRACE
+		if frame - startFrame > grace then
+			destroyTeamUnits(teamID, frame)
 		end
 	end
 end
 
-function gadget:AllowUnitTransfer(unitID, unitDefID, oldTeam, newTeam, capture)
+function gadget:AllowUnitTransfer(_, _, _, newTeam)
 	return not deadTeam[newTeam]
 end
 
 function gadget:GameOver()
 	gadgetHandler:RemoveGadget()
 end
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
