@@ -1099,7 +1099,7 @@ function gadget:GameFrame(n)
     end
 
   -- start pending morphs
-    if (n % 2 == 0) then
+    if (n % 8 == 0) then
     local i = 0
     for unitid, data in pairs(morphToStart) do
       if i == 5 then break end
