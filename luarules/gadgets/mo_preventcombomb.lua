@@ -1,186 +1,251 @@
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+-- luarules/gadgets/mo_preventcombomb.lua
 
 function gadget:GetInfo()
-  return {
-    name      = "mo_preventcombomb",
-    desc      = "Commanders survive commander blast and DGun",
-    author    = "TheFatController",
-    date      = "Aug 31, 2009",
-    license   = "GNU GPL, v2 or later",
-    layer     = 0,
-    enabled   = true  --  loaded by default?
-  }
+    return {
+        name      = "mo_preventcombomb",
+        desc      = "Makes commanders survive their own blast / DGun and punishes abusers",
+        author    = "TheFatController, Silver",
+        date      = "2025‑06‑11",
+        license   = "GPLv2 or later",
+        layer     = 0,
+        enabled   = true,
+    }
 end
 
 --------------------------------------------------------------------------------
+--  Synced‑only gadget (needs to touch health & MoveCtrl)
 --------------------------------------------------------------------------------
 
-if (not gadgetHandler:IsSyncedCode()) then
-	return false
+if not gadgetHandler:IsSyncedCode() then
+    return  -- unsynced portion not required
 end
 
+local math               = math
+local spEcho             = Spring.Echo
+local spGetModOptions    = Spring.GetModOptions
+local spGetUnitHealth    = Spring.GetUnitHealth
+local spGetUnitDefID     = Spring.GetUnitDefID
+local spDestroyUnit      = Spring.DestroyUnit
+local spGetProjectileOwnerID = Spring.GetProjectileOwnerID
+local spGetGameFrame     = Spring.GetGameFrame
+local spMoveCtrlEnable   = Spring.MoveCtrl.Enable
+local spMoveCtrlDisable  = Spring.MoveCtrl.Disable
+local spMoveCtrlSetPos   = Spring.MoveCtrl.SetPosition
+local spMoveCtrlSetVel   = Spring.MoveCtrl.SetVelocity
+local spMoveCtrlSetRelPos = Spring.MoveCtrl.SetRelativeVelocity
+local spAreTeamsAllied   = Spring.AreTeamsAllied
 
-local oneOnone = false
-local Health = false
+--------------------------------------------------------------------------------
+--  Configuration (mod‑options & constants)
+--------------------------------------------------------------------------------
 
--- remove gadget if modoption is not set
-function gadget:Initialize()
-	if (Spring.GetModOptions().mo_preventcombomb == "1v1") then
-		Spring.Echo("1v1")
-		oneOnone = true
-	elseif (Spring.GetModOptions().mo_preventcombomb == "hp") then
-		Spring.Echo("Health")
-		Health = true
-	elseif (Spring.GetModOptions().mo_preventcombomb == "off") then
-		gadgetHandler:RemoveGadget(self)
-		return false
-	end
+local MODOPT = (spGetModOptions() or {}).mo_preventcombomb or "off"
+
+if MODOPT == "off" then
+    spEcho("[mo_preventcombomb] Disabled via mod‑option.")
+    gadgetHandler:RemoveGadget(self)
+    return
 end
 
-local GetTeamInfos = Spring.GetTeamInfos
-local GetUnitPosition = Spring.GetUnitPosition
-local GetGroundHeight = Spring.GetGroundHeight
-local MoveCtrl = Spring.MoveCtrl
-local GetGameFrame = Spring.GetGameFrame
-local DestroyUnit = Spring.DestroyUnit
-local ValidUnitID = Spring.ValidUnitID
+-- Mode flags
+local IS_MODE_1V1 = MODOPT == "1v1"
+local IS_MODE_HP  = MODOPT == "hp"  -- also true for 1v1 (inherits HP capping)
 
-local COM_BLAST = {
-  [WeaponDefNames['commander_blast'].id] = true,
-}
+--------------------------------------------------------------------------------
+--  Look‑up tables for weapons & commander defs
+--------------------------------------------------------------------------------
 
-local DGUN = {
-  --Arm
-  [WeaponDefNames['armcom_arm_disintegrator'].id] = true,
-  [WeaponDefNames['armcom1_arm_disintegrator2'].id] = true,
-  [WeaponDefNames['armcom2_arm_disintegrator2'].id] = true,
-  [WeaponDefNames['armcom3_arm_disintegrator2'].id] = true,
-  --Core
-  [WeaponDefNames['corcom_arm_disintegrator'].id] = true,
-  [WeaponDefNames['corcom1_arm_disintegrator2'].id] = true,
-  [WeaponDefNames['corcom2_arm_disintegrator2'].id] = true,
-  [WeaponDefNames['corcom3_arm_disintegrator2'].id] = true,
-  --The Lost Legacy
-  [WeaponDefNames['tllcom_tll_disintegrator'].id] = true,
-  [WeaponDefNames['tllcom1_tll_disintegrator2'].id] = true,
-  [WeaponDefNames['tllcom2_tll_disintegrator2'].id] = true,
-  [WeaponDefNames['tllcom3_tll_disintegrator2'].id] = true,
-  --Talon
-  [WeaponDefNames['talon_com_tal_disintegrator'].id] = true,
-  [WeaponDefNames['talon_com1_tal_disintegrator'].id] = true,
-  [WeaponDefNames['talon_com2_tal_disintegrator'].id] = true,
-  [WeaponDefNames['talon_com3_tal_disintegrator'].id] = true,
-  --Gok
-  [WeaponDefNames['gok_com_gok_disintegrator'].id] = true,
-  [WeaponDefNames['gok_com1_gok_disintegrator'].id] = true,
-  [WeaponDefNames['gok_com2_gok_disintegrator'].id] = true,
-  [WeaponDefNames['gok_com3_gok_disintegrator'].id] = true,
+local blastWeapons = {}  -- commander_blast weapons
+local dgunWeapons  = {}  -- disintegrator weapons
 
-  --Rumad
-  [WeaponDefNames['rumad_king_rumad_disintegrator'].id] = true,
-  [WeaponDefNames['rumad_king1_rumad_disintegrator2'].id] = true,
-  [WeaponDefNames['rumad_king2_rumad_disintegrator3'].id] = true,
-  [WeaponDefNames['rumad_king3_rumad_disintegrator4'].id] = true,
-}
-
-local COMMANDER = VFS.Include("luarules/configs/comDefIDs.lua")
-
-local immuneDgunList = {}
-local ctrlCom = {}
-local cantFall = {}
-
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
-                            weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
-	--falling & debris damage
-	if weaponID < 0 and cantFall[unitID] then
-		return 0, 0
-	end
-
-	--New Commander with greatest hp survives blast option
-	if COM_BLAST[weaponID] and COMMANDER[unitDefID] and ValidUnitID(attackerID) and Health then
-
-	local hp = Spring.GetUnitHealth(unitID)
-	hp = hp or 0
-	local combombDamage = math.min(hp*0.33, math.max(0,hp-200-math.random(1,10))) -- lose hp*0.4 damage but don't let health get <200
-	combombDamage = math.min(damage,combombDamage)
-		local targethp = Spring.GetUnitHealth(attackerID)
-		if unitID ~= attackerID then
-			if hp > targethp then
-				--Spring.Echo("Commander Damage Reduced")
-				return combombDamage, 0
-			else
-				--Spring.Echo("Commander Blast Default Damage Dealt")
-				return damage
-			end
-		end
-	else
-		--Spring.Echo("Normal Damage")
-		return damage
-	end
-
-	--Default settings for 1v1
-	if DGUN[weaponID] and oneOnone then
-	local hp = Spring.GetUnitHealth(unitID)
-	hp = hp or 0
-	local combombDamage = math.min(hp*0.33, math.max(0,hp-200-math.random(1,10))) -- lose hp*0.4 damage but don't let health get <200
-	combombDamage = math.min(damage,combombDamage)
-		if immuneDgunList[unitID] then
-			-- immune
-			return 0, 0
-		elseif COMMANDER[attackerDefID] and COMMANDER[unitDefID] then
-			-- make unitID immune to DGun, kill attackedID
-			immuneDgunList[unitID] = GetGameFrame() + 45
-			DestroyUnit(attackerID,false,false,unitID)
-			return combombDamage, 0
-		end
-	elseif COM_BLAST[weaponID] and COMMANDER[unitDefID] and oneOnone then
-		if unitID ~= attackerID then
-			--prevent falling damage to the unitID, and lock position
-			MoveCtrl.Enable(unitID)
-			ctrlCom[unitID] = GetGameFrame() + 30
-			cantFall[unitID] = GetGameFrame() + 30
-			return combombDamage, 0
-		else
-			--com blast hurts the attackerID
-			return damage
-		end
-	end
-	return damage
-
+for wdid, wd in pairs(WeaponDefs) do
+    if wd.customParams and wd.customParams.stats_is_plane then
+        -- skip plane bombs (some mods call them *blast*)
+    end
+    local wname = wd.name:lower()
+    if wname:find("commander_blast", 1, true) then
+        blastWeapons[wdid] = true
+        spEcho("[mo_preventcombomb] Commander‑blast weapon detected: " .. wname .. " (id " .. wdid .. ")")
+    elseif wname:find("disintegrator", 1, true) then
+        dgunWeapons[wdid] = true
+        spEcho("[mo_preventcombomb] DGun weapon detected: " .. wname .. " (id " .. wdid .. ")")
+    end
 end
 
-function gadget:GameFrame(currentFrame)
-  if oneOnone then
-	for unitID,expirationTime in pairs(immuneDgunList) do
-		if currentFrame > expirationTime then
-			immuneDgunList[unitID] = nil
-		end
-	end
-	for unitID,expirationTime in pairs(ctrlCom) do
-		if currentFrame > expirationTime then
-			--if the game was actually a draw then this unitID is not valid anymore
-			--if that is the case then just remove it from the cantFall list and clear the ctrlCom flag
-			local x,_,z = GetUnitPosition(unitID)
-			if x then
-				local y = GetGroundHeight(x,z)
-				MoveCtrl.SetPosition(unitID, x,y,z)
-				MoveCtrl.Disable(unitID)
-				cantFall[unitID] = currentFrame + 220
-			else
-				cantFall[unitID] = nil
-			end
+-- Commander definitions
+local COMMANDERS = VFS.Include("luarules/configs/comDefIDs.lua") or {}
 
-			ctrlCom[unitID] = nil
-		end
-	end
-	for unitID,expirationTime in pairs(cantFall) do
-		if currentFrame > expirationTime then
-			cantFall[unitID] = nil
-		end
-	end
-  end
+--------------------------------------------------------------------------------
+--  State tracking tables
+--------------------------------------------------------------------------------
+
+local cantFall   = {}  -- [unitID] = expireFrame (ignore negative weapon‑ID dmg)
+local moveLock   = {}  -- [unitID] = expireFrame (MoveCtrl lock after blast)
+local dgunImmune = {}  -- [unitID] = expireFrame (ignore repeat DGun damage)
+
+local CANT_FALL_FRAMES = 220
+local MOVE_LOCK_FRAMES = 30
+local DGUN_IMMUNE_FRAMES = 10   -- frames of immunity to chained DGun hits
+
+--------------------------------------------------------------------------------
+--  Utility helpers
+--------------------------------------------------------------------------------
+
+local function IsCommander(defID)
+    return COMMANDERS[defID]
+end
+
+local function CapDamage(unitID, hp, raw)
+    -- Cap damage so commander always survives with ~200hp left
+    local capHP   = hp * 0.33
+    local capFlat = hp - 200 - math.random(1, 10)
+    local capped  = math.min(raw, capHP, capFlat)
+    return math.max(0, capped)
+end
+
+local function LockUnit(unitID, frame)
+    if moveLock[unitID] then return end
+    local x, y, z = Spring.GetUnitPosition(unitID)
+    if not x then return end
+    spMoveCtrlEnable(unitID)
+    spMoveCtrlSetPos(unitID, x, y, z)
+    spMoveCtrlSetVel(unitID, 0, 0, 0)
+    moveLock[unitID] = frame + MOVE_LOCK_FRAMES
+    --spEcho("[mo_preventcombomb] MoveCtrl lock applied to commander " .. unitID)
 end
 
 --------------------------------------------------------------------------------
+--  Main damage interception
 --------------------------------------------------------------------------------
+
+function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID,
+                               attackerID, attackerDefID, attackerTeam, projectileID)
+    if not IsCommander(unitDefID) then
+        -- Non‑commander unit: early‑out unless it is *attacker* commander doing DGun abuse (ignored here)
+        return damage, 1
+    end
+
+    local frame = spGetGameFrame()
+
+    ------------------------------------------------------------
+    -- Falling debris immunity (weaponIDs are negative)
+    ------------------------------------------------------------
+    if weaponID < 0 and cantFall[unitID] then
+        if frame <= cantFall[unitID] then
+            return 0, 0
+        else
+            cantFall[unitID] = nil
+        end
+    end
+
+    ------------------------------------------------------------
+    -- DGun protection & punishment (always active in hp & 1v1)
+    ------------------------------------------------------------
+    if dgunWeapons[weaponID] then
+        -- ignore repeat DGun damage within grace window
+        if dgunImmune[unitID] and frame <= dgunImmune[unitID] then
+            return 0, 0
+        end
+
+        -- Identify shooter even if attackerID is nil (ground‑fire case)
+        local shooterID = attackerID
+        if (not shooterID or shooterID <= 0) and projectileID and projectileID > 0 then
+            shooterID = spGetProjectileOwnerID(projectileID)
+        end
+
+        -- Punish shooter if valid and is a commander and not self
+        if shooterID and shooterID ~= unitID then
+            local shooterDefID = spGetUnitDefID(shooterID)
+            if shooterDefID and IsCommander(shooterDefID) then
+                --spEcho("[mo_preventcombomb] Commander " .. shooterID .. " DGunned enemy commander " .. unitID .. "; punishing!")
+                spDestroyUnit(shooterID, true, false)
+            end
+        end
+
+        -- Make victim live
+        local hp = select(1, spGetUnitHealth(unitID))
+        if hp and hp > 0 then
+            damage = CapDamage(unitID, hp, damage)
+        end
+
+        dgunImmune[unitID] = frame + DGUN_IMMUNE_FRAMES
+        return damage, 0
+    end
+
+    ------------------------------------------------------------
+    -- Commander blast protection (only when hit by commander_blast)
+    ------------------------------------------------------------
+    if blastWeapons[weaponID] and (IS_MODE_HP or IS_MODE_1V1) then
+        -- If attacker is the commander itself, allow suicide (com‑bomb)
+        if attackerID and attackerID == unitID then
+            return damage, 1
+        end
+
+        local hp = select(1, spGetUnitHealth(unitID))
+        if hp and hp > 0 then
+            damage = CapDamage(unitID, hp, damage)
+        end
+
+        if IS_MODE_1V1 then
+            -- Positional lock and no‑fall window
+            LockUnit(unitID, frame)
+            cantFall[unitID] = frame + CANT_FALL_FRAMES
+        end
+        return damage, 0
+    end
+
+    ------------------------------------------------------------
+    -- Default: untouched
+    ------------------------------------------------------------
+    return damage, 1
+end
+
+--------------------------------------------------------------------------------
+--  Frame‑based maintenance
+--------------------------------------------------------------------------------
+
+function gadget:GameFrame(frame)
+    -- Unlock MoveCtrl
+    for unitID, expire in pairs(moveLock) do
+        if frame >= expire then
+            spMoveCtrlDisable(unitID)
+            moveLock[unitID] = nil
+            --spEcho("[mo_preventcombomb] MoveCtrl unlock for commander " .. unitID)
+        end
+    end
+
+    -- Expire cant‑fall immunity
+    for unitID, expire in pairs(cantFall) do
+        if frame >= expire then
+            cantFall[unitID] = nil
+        end
+    end
+
+    -- Expire DGun immunity
+    for unitID, expire in pairs(dgunImmune) do
+        if frame >= expire then
+            dgunImmune[unitID] = nil
+        end
+    end
+end
+
+--------------------------------------------------------------------------------
+--  Clean‑up on death & gadget shutdown
+--------------------------------------------------------------------------------
+
+local function Purge(unitID)
+    moveLock[unitID]   = nil
+    cantFall[unitID]   = nil
+    dgunImmune[unitID] = nil
+end
+
+function gadget:UnitDestroyed(unitID, unitDefID, teamID)
+    Purge(unitID)
+end
+
+function gadget:Shutdown()
+    -- Ensure all MoveCtrl is disabled (safety)
+    for unitID in pairs(moveLock) do
+        spMoveCtrlDisable(unitID)
+    end
+end
