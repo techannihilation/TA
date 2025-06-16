@@ -87,8 +87,7 @@ local function commanderDeath(teamID, x, z)
       if not TeamIsDead(t) then Spring.KillTeam(t) end
     end
   else
-    --echo(("Commander down!  Ally-team %d: %d remaining  |  Team %d: %d remaining")
-         :format(ally, aliveComCount[ally], teamID, aliveTeamComCount[teamID]))
+    --echo(("Commander down!  Ally-team %d: %d remaining  |  Team %d: %d remaining"):format(ally, aliveComCount[ally], teamID, aliveTeamComCount[teamID]))
   end
 end
 
