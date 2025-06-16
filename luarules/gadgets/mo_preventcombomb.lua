@@ -41,12 +41,6 @@ local spAreTeamsAllied   = Spring.AreTeamsAllied
 
 local MODOPT = (spGetModOptions() or {}).mo_preventcombomb or "off"
 
-if MODOPT == "off" then
-    spEcho("[mo_preventcombomb] Disabled via mod‑option.")
-    gadgetHandler:RemoveGadget(self)
-    return
-end
-
 -- Mode flags
 local IS_MODE_1V1 = MODOPT == "1v1"
 local IS_MODE_HP  = MODOPT == "hp"  -- also true for 1v1 (inherits HP capping)
@@ -117,6 +111,14 @@ end
 --------------------------------------------------------------------------------
 --  Main damage interception
 --------------------------------------------------------------------------------
+
+function gadget:Initialize()
+    if MODOPT == "off" then
+        spEcho("[mo_preventcombomb] Disabled via mod-option.")
+        gadgetHandler:RemoveGadget()
+        return
+    end
+end
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID,
                                attackerID, attackerDefID, attackerTeam, projectileID)
