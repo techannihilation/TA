@@ -44,7 +44,7 @@ end
 function avoidOverviewCam()
     local camState = Spring.GetCameraState()
     if camState.name == 'ov' then -- dirty workaround for https://springrts.com/mantis/view.php?id=5028
-        Spring.Echo("Warning: you have Overview camera as default. This camera is not intended to start game with. Switching to TA camera.");
+        --Spring.Echo("Warning: you have Overview camera as default. This camera is not intended to start game with. Switching to TA camera.");
         camState.name = defaultCamName
         camState.mode = GetModeFromName(defaultCamName)
         Spring.SetCameraState(camState, 0)
