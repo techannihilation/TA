@@ -266,7 +266,7 @@ end
 
 local function AutoResizeObjects()
 	if not LastAutoResizeX then
-		-- Initialize the “previous known” resolution to our design resolution
+		-- Initialize the "previous known" resolution to our design resolution
 		LastAutoResizeX = BASE_X
 		LastAutoResizeY = BASE_Y
 	end
@@ -323,7 +323,7 @@ local function AutoResizeObjects()
 		-- Always recalc 'iconsizeMaster' based on the new scale
 		iconsizeMaster = iconsizeMaster * scale
 
-		-- Update “last known” resolution to the new one
+		-- Update "last known" resolution to the new one
 		LastAutoResizeX, LastAutoResizeY = vsx, vsy
 	end
 end

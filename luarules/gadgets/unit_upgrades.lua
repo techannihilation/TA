@@ -135,7 +135,7 @@ local stealthUnits          = {}  -- track new stealth
 
 --------------------------------------------------------------------------------
 --  COROUTINE-BASED CEG SYSTEM
---  (We won't use it for the stealth upgrade—no effects requested)
+--  (We won't use it for the stealth upgrade - no effects requested)
 --------------------------------------------------------------------------------
 
 local coroutinesTable = {}

@@ -5,7 +5,7 @@ function gadget:GetInfo()
         name      = "mo_preventcombomb",
         desc      = "Makes commanders survive their own blast / DGun and punishes abusers",
         author    = "TheFatController, Silver",
-        date      = "2025‑06‑11",
+        date      = "2025-06-11",
         license   = "GPLv2 or later",
         layer     = 0,
         enabled   = true,
@@ -13,7 +13,7 @@ function gadget:GetInfo()
 end
 
 --------------------------------------------------------------------------------
---  Synced‑only gadget (needs to touch health & MoveCtrl)
+--  Synced-only gadget (needs to touch health & MoveCtrl)
 --------------------------------------------------------------------------------
 
 if not gadgetHandler:IsSyncedCode() then
@@ -36,7 +36,7 @@ local spMoveCtrlSetRelPos = Spring.MoveCtrl.SetRelativeVelocity
 local spAreTeamsAllied   = Spring.AreTeamsAllied
 
 --------------------------------------------------------------------------------
---  Configuration (mod‑options & constants)
+--  Configuration (mod-options & constants)
 --------------------------------------------------------------------------------
 
 local MODOPT = (spGetModOptions() or {}).mo_preventcombomb or "off"
@@ -46,7 +46,7 @@ local IS_MODE_1V1 = MODOPT == "1v1"
 local IS_MODE_HP  = MODOPT == "hp"  -- also true for 1v1 (inherits HP capping)
 
 --------------------------------------------------------------------------------
---  Look‑up tables for weapons & commander defs
+--  Look-up tables for weapons & commander defs
 --------------------------------------------------------------------------------
 
 local blastWeapons = {}  -- commander_blast weapons
@@ -59,7 +59,7 @@ for wdid, wd in pairs(WeaponDefs) do
     local wname = wd.name:lower()
     if wname:find("commander_blast", 1, true) then
         blastWeapons[wdid] = true
-        spEcho("[mo_preventcombomb] Commander‑blast weapon detected: " .. wname .. " (id " .. wdid .. ")")
+        spEcho("[mo_preventcombomb] Commander-blast weapon detected: " .. wname .. " (id " .. wdid .. ")")
     elseif wname:find("disintegrator", 1, true) then
         dgunWeapons[wdid] = true
         spEcho("[mo_preventcombomb] DGun weapon detected: " .. wname .. " (id " .. wdid .. ")")
@@ -73,7 +73,7 @@ local COMMANDERS = VFS.Include("luarules/configs/comDefIDs.lua") or {}
 --  State tracking tables
 --------------------------------------------------------------------------------
 
-local cantFall   = {}  -- [unitID] = expireFrame (ignore negative weapon‑ID dmg)
+local cantFall   = {}  -- [unitID] = expireFrame (ignore negative weapon-ID dmg)
 local moveLock   = {}  -- [unitID] = expireFrame (MoveCtrl lock after blast)
 local dgunImmune = {}  -- [unitID] = expireFrame (ignore repeat DGun damage)
 
@@ -123,7 +123,7 @@ end
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID,
                                attackerID, attackerDefID, attackerTeam, projectileID)
     if not IsCommander(unitDefID) then
-        -- Non‑commander unit: early‑out unless it is *attacker* commander doing DGun abuse (ignored here)
+        -- Non-commander unit: early-out unless it is *attacker* commander doing DGun abuse (ignored here)
         return damage, 1
     end
 
@@ -149,7 +149,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
             return 0, 0
         end
 
-        -- Identify shooter even if attackerID is nil (ground‑fire case)
+        -- Identify shooter even if attackerID is nil (ground-fire case)
         local shooterID = attackerID
         if (not shooterID or shooterID <= 0) and projectileID and projectileID > 0 then
             shooterID = spGetProjectileOwnerID(projectileID)
@@ -178,7 +178,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
     -- Commander blast protection (only when hit by commander_blast)
     ------------------------------------------------------------
     if blastWeapons[weaponID] and (IS_MODE_HP or IS_MODE_1V1) then
-        -- If attacker is the commander itself, allow suicide (com‑bomb)
+        -- If attacker is the commander itself, allow suicide (com-bomb)
         if attackerID and attackerID == unitID then
             return damage, 1
         end
@@ -189,7 +189,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
         end
 
         if IS_MODE_1V1 then
-            -- Positional lock and no‑fall window
+            -- Positional lock and no-fall window
             LockUnit(unitID, frame)
             cantFall[unitID] = frame + CANT_FALL_FRAMES
         end
@@ -203,7 +203,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 end
 
 --------------------------------------------------------------------------------
---  Frame‑based maintenance
+--  Frame-based maintenance
 --------------------------------------------------------------------------------
 
 function gadget:GameFrame(frame)
@@ -216,7 +216,7 @@ function gadget:GameFrame(frame)
         end
     end
 
-    -- Expire cant‑fall immunity
+    -- Expire cant-fall immunity
     for unitID, expire in pairs(cantFall) do
         if frame >= expire then
             cantFall[unitID] = nil
@@ -232,7 +232,7 @@ function gadget:GameFrame(frame)
 end
 
 --------------------------------------------------------------------------------
---  Clean‑up on death & gadget shutdown
+--  Clean-up on death & gadget shutdown
 --------------------------------------------------------------------------------
 
 local function Purge(unitID)

@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 --  Team Com Ends  (AI-aware, echo-verbose, 2025-ready)
---  •  deathmode == "com"      →  ally-team loses when its LAST commander dies
---  •  deathmode == "own_com"  →  a team resigns when *its* last commander dies,
+--  deathmode == "com"      ->  ally-team loses when its LAST commander dies
+--  deathmode == "own_com"  ->  a team resigns when *its* last commander dies,
 --                                even if allied commanders survive
 --------------------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ end
 if not gadgetHandler:IsSyncedCode() then return end
 
 --------------------------------------------------------------------------------
---  •  Helpers & API shims
+--  Helpers & API shims
 --------------------------------------------------------------------------------
 local echo = function(...) Spring.Echo("\255\255\180\000[ComEnds]\008", ...) end
 
@@ -42,21 +42,21 @@ local function TeamIsDead(teamID) return TeamInfo(teamID).isDead end
 
 
 --------------------------------------------------------------------------------
---  •  Commander look-up
+--  Commander look-up
 --------------------------------------------------------------------------------
 local comDefs = assert(VFS.Include("luarules/configs/comDefIDs.lua"),
                        "Missing configs/comDefIDs.lua (list of commander UnitDefIDs)")
 
 --------------------------------------------------------------------------------
---  •  Book-keeping tables
+--  Book-keeping tables
 --------------------------------------------------------------------------------
 local gaiaID              = Spring.GetGaiaTeamID()
-local aliveComCount       = {}   -- allyTeamID → integer
-local aliveTeamComCount   = {}   -- teamID     → integer
-local commanderDeathQueue = {}   -- unitID     → {team,x,z}
+local aliveComCount       = {}   -- allyTeamID -> integer
+local aliveTeamComCount   = {}   -- teamID     -> integer
+local commanderDeathQueue = {}   -- unitID     -> {team,x,z}
 
 --------------------------------------------------------------------------------
---  •  Core logic
+--  Core logic
 --------------------------------------------------------------------------------
 local function commanderDeath(teamID, x, z)
   local ally = GetAllyTeamID(teamID)
@@ -68,21 +68,21 @@ local function commanderDeath(teamID, x, z)
                  or "com"
 
   ----------------------------------------------------------------------
-  --  own_com  ⇒  eliminate *this* team if it lost every commander
+  --  own_com  ->  eliminate *this* team if it lost every commander
   ----------------------------------------------------------------------
   if deathmode == "own_com" and aliveTeamComCount[teamID] <= 0 then
     if not TeamIsDead(teamID) then
-      echo(("Team %d lost its last commander at <%d,%d> → eliminated.")
+      echo(("Team %d lost its last commander at <%d,%d> -> eliminated.")
            :format(teamID, x or 0, z or 0))
       Spring.KillTeam(teamID)
     end
   end
 
   ----------------------------------------------------------------------
-  --  both modes  ⇒  eliminate ally-team if NO commanders remain
+  --  both modes  ->  eliminate ally-team if NO commanders remain
   ----------------------------------------------------------------------
   if aliveComCount[ally] <= 0 then
-    echo(("Ally-team %d has no commanders left → all its teams resign."):format(ally))
+    echo(("Ally-team %d has no commanders left -> all its teams resign."):format(ally))
     for _, t in ipairs(Spring.GetTeamList(ally)) do
       if not TeamIsDead(t) then Spring.KillTeam(t) end
     end
@@ -93,7 +93,7 @@ end
 
 
 --------------------------------------------------------------------------------
---  •  Call-ins
+--  Call-ins
 --------------------------------------------------------------------------------
 function gadget:GameFrame()
   -- one-frame delay (handles transfer/reclaim edge-cases safely)
@@ -142,7 +142,7 @@ end
 
 
 --------------------------------------------------------------------------------
---  •  Initialise / reload safety
+--  Initialise / reload safety
 --------------------------------------------------------------------------------
 function gadget:Initialize()
   local dm = (Spring.GetModOption and Spring.GetModOption("deathmode"))
@@ -173,7 +173,7 @@ function gadget:Initialize()
   -- announce initial counts
   echo("Initial commander counts per ally-team:")
   for ally, n in pairs(aliveComCount) do
-    echo(("  Ally-team %d → %d commanders alive"):format(ally, n))
+    echo(("  Ally-team %d -> %d commanders alive"):format(ally, n))
   end
 
   -- if a reload happens mid-game, finish off already-dead sides now
@@ -181,7 +181,7 @@ function gadget:Initialize()
   if (frame > 1) or (day and day > 0) then
     for ally, n in pairs(aliveComCount) do
       if n <= 0 then
-        echo(("Ally-team %d already has zero commanders – eliminating its teams"):format(ally))
+        echo(("Ally-team %d already has zero commanders - eliminating its teams"):format(ally))
         for _, t in ipairs(Spring.GetTeamList(ally)) do commanderDeath(t) end
       end
     end

@@ -1,12 +1,12 @@
 --------------------------------------------------------------------------------
---  mo_noowner.lua – destroys (or erases) abandoned teams in FFA
+--  mo_noowner.lua - destroys (or erases) abandoned teams in FFA
 --  Updated for Spring / Recoil 105+ (June 2025)                     v2.0
 --------------------------------------------------------------------------------
 
 function gadget:GetInfo()
 	return {
 		name      = "mo_noowner",
-		desc      = "No-owner mode for FFA games – removes abandoned teams",
+		desc      = "No-owner mode for FFA games - removes abandoned teams",
 		author    = "TheFatController",
 		date      = "08 Jun 2025",
 		license   = "GNU GPL v2+",
@@ -51,7 +51,7 @@ local SetTeamRulesParam   = Spring.SetTeamRulesParam
 local FPS             = Game.gameSpeed         -- sim frames per second
 local MIN             = 60 * FPS               -- helper: 1 minute in frames
 local NOWRECKS_LIMIT  = 5 * MIN                -- no wrecks if team dies early
-local EARLY_DROP_END  = 2 * MIN                -- “early” window ends here
+local EARLY_DROP_END  = 2 * MIN                -- "early" window ends here
 local EARLY_GRACE     = 1 * MIN                -- reconnect grace (early)
 local LATE_GRACE      = 3 * MIN                -- reconnect grace (late)
 
