@@ -96,7 +96,7 @@ local modrules = {
 
   system = {
     allowTake = true, -- Enables and disables the /take UI command.
-    LuaAllocLimit = 2560, -- default: 1536.  Global Lua alloc limit (in megabytes)
+    LuaAllocLimit = 4095, -- default: 1536.  Global Lua alloc limit (in megabytes)
     enableSmoothMesh = true;
     smoothMeshResDivider = 4;     -- default: 2 -- Reduce the resolution of the smooth mesh by the divider value. Increasing the value reduces the accuracy of the smooth mesh, but improves performance. Minimum 1, default 2.
     smoothMeshSmoothRadius = 40;  -- default: 40 -- Radius in heightmap squares to use the smooth the mesh gradients. Increasing value increases the area that a given point uses to find the local heighest point, and the distance of the slope. Default is 40.
