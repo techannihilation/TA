@@ -33,6 +33,9 @@ Spring.SetConfigInt("MaxDynamicModelLights", 0)
 Spring.SetConfigInt("AllowDeferredMapRendering", 1)
 Spring.SetConfigInt("AllowDeferredModelRendering", 1)
 
+-- Enables the DrawGroundDeferred event, which is needed for deferred map edge rendering
+Spring.SetConfigInt("AllowDrawMapDeferredEvents", 1)
+
 -- experimental option to load the game in separate thread.
 Spring.SetConfigInt("LoadingMT", 0) -- defaults to 0
 
@@ -40,7 +43,7 @@ Spring.SetConfigInt("LoadingMT", 0) -- defaults to 0
 Spring.SetConfigFloat("LuaGarbageCollectionMemLoadMult", 1.10) -- defaults to 1.33
 
 --how many milliseconds the garbage collected can run for in each gc cycle
-Spring.SetConfigFloat("LuaGarbageCollectionRunTimeMult", 2.0) -- defaults to 5.0
+Spring.SetConfigFloat("LuaGarbageCollectionRunTimeMult", 1.5) -- defaults to 5.0
 
 -- ground mesh detail
 Spring.SetConfigInt("ROAM", 1)
@@ -62,7 +65,6 @@ Spring.SetConfigInt("SmoothTimeOffset", 3) -- defaults to 0
 Spring.SetConfigInt("UseHighResTimer", 1)  -- default to 0
 
 -- number of milliseconds to sleep per tick for the server thread. lower values have marginally higher cpu load, while high values can introduce additional latency.
-Spring.SetConfigInt("ServerSleepTime", 2) -- defaults to 5
 
 Spring.SetConfigFloat("CrossAlpha", 0)	-- will be in effect next launch
 
@@ -73,3 +75,8 @@ Spring.SetConfigInt("MaxNanoParticles", 0)
 
 Spring.SetConfigInt("MiniMapDrawProjectiles", 0)
 Spring.SetConfigInt("UnitIconsAsUI", 0)
+
+-- These config ints control some multithreading functionality, and are now set to their enabled state for performance
+Spring.SetConfigInt("AnimationMT", 1)
+Spring.SetConfigInt("UpdateBoundingVolumeMT", 1)
+Spring.SetConfigInt("UpdateWeaponVectorsMT", 1)
