@@ -14,7 +14,6 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "500 30 100",
 		collisionvolumetype = "Box",
-		--corpse = "dead",
 		description = "Dragon Gate",
 		energyuse = 0,
 		explodeas = "SMALL_BUILDING",

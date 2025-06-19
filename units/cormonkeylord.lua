@@ -70,7 +70,7 @@ return {
 				damage = 33488,
 				description = "Cybran cormonkeylord Shielded Mech Wreckage",
 				energy = 0,
-				featuredead = "cormonkeylord_heap",
+				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,

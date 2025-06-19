@@ -18,7 +18,6 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
-		corpse = "heap",
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_Standby",
 		description = "Tech Level 2",

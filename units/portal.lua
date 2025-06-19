@@ -14,7 +14,6 @@ return {
 		collisionvolumeoffsets = "0 50 -70",
 		collisionvolumescales = "100 100 20",
 		collisionvolumetype = "box",
-		--corpse = "dead",
 		description = "Unit Portal",
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST_CORE",

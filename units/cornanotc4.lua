@@ -19,7 +19,6 @@ return {
 		collisionvolumeoffsets = "-2 0 0",
 		collisionvolumescales = "50 45 50",
 		collisionvolumetype = "CylY",
-		--corpse = "dead",
 		defaultmissiontype = "patrol",
 		description = "Repairs and builds in large radius",
 		explodeas = "NANOBOOM6C",

@@ -64,7 +64,7 @@ return {
 				damage = 33488,
 				description = "Gold Wreckage",
 				energy = 0,
-				featuredead = "gok_pandora_heap",
+				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,

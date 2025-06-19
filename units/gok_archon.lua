@@ -69,7 +69,7 @@ return {
 				damage = 33488,
 				description = "Archon Wreckage",
 				energy = 0,
-				featuredead = "gok_archon_heap",
+				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,

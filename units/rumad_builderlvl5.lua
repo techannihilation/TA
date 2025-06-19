@@ -20,7 +20,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
-		corpse = "heap",
+		corpse = "dead",
 		cruisealt = 180,
 		description = "Tech Level 5",
 		dontland = 0,
