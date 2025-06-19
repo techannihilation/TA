@@ -65,6 +65,7 @@ Spring.SetConfigInt("SmoothTimeOffset", 3) -- defaults to 0
 Spring.SetConfigInt("UseHighResTimer", 1)  -- default to 0
 
 -- number of milliseconds to sleep per tick for the server thread. lower values have marginally higher cpu load, while high values can introduce additional latency.
+Spring.SetConfigInt("ServerSleepTime", 1) -- defaults to 5
 
 Spring.SetConfigFloat("CrossAlpha", 0)	-- will be in effect next launch
 
