@@ -600,50 +600,39 @@ end
 
 
 local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
-  if not Spring.ValidUnitID(unitID) then
-    return
-  end
-  -- do not allow morph for unfinsihed units
-  -- Spring.Echo(unitID,Spring.GetUnitRulesParam(unitID,"jumpReload"))
-  if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
-
+  if not Spring.ValidUnitID(unitID) then return end
+  if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID, "jumpReload") == 0) then return true end
 
   local teamsize = #Spring.GetTeamUnits(teamID)
-
-    --local _,_,spectator=Spring.GetPlayerInfo(playerId)
-    if teamsize > (MAXunits * 0.95) then
-      SendToUnsynced("unit_morph_stalled", teamID, teamsize)
-      --Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
+  if teamsize > (MAXunits * 0.95) then
+    SendToUnsynced("unit_morph_stalled", teamID, teamsize)
   end
 
-  Spring.SetUnitRulesParam(unitID,"Morphing",1)
-  SpSetUnitHealth(unitID, { paralyze = 1.0e9 })    --// turns mexes and mm off (paralyze the unit)
-  SpSetUnitResourcing(unitID,"e",0)                --// turns solars off
-  SpGiveOrderToUnit(unitID, CMD_ONOFF, { 0 }, { "alt" }) --// turns radars/jammers off
-
+  Spring.SetUnitRulesParam(unitID, "Morphing", 1)
+  SpSetUnitHealth(unitID, { paralyze = 1.0e9 })
+  SpSetUnitResourcing(unitID, "e", 0)
+  SpGiveOrderToUnit(unitID, CMD_ONOFF, { 0 }, { "alt" })
   if nanos[unitDefID] then
-    SpGiveOrderToUnit(unitID, CMD_NANOBOOST, { 0 }, { "alt" }) --// turn boost mode off for nanos
+    SpGiveOrderToUnit(unitID, CMD_NANOBOOST, { 0 }, { "alt" })
   end
-
-
 
   morphUnits[unitID] = {
     def = morphDef,
     progress = 0.0,
     increment = morphDef.increment,
-    morphID = morphID,
+    syncTick = 0, -- added for throttled mph_prg
     teamID = teamID,
   }
+
   SendToUnsynced("mph_str", unitID, unitDefID, 0.0, morphDef.increment, morphID, teamID, cmdp)
 
   local cmdDescID = SpFindUnitCmdDesc(unitID, morphDef.cmd)
   if (cmdDescID) then
-    SpEditUnitCmdDesc(unitID, cmdDescID, {id=morphDef.stopCmd, name=RedStr.."Stop"})
+    SpEditUnitCmdDesc(unitID, cmdDescID, { id = morphDef.stopCmd, name = RedStr .. "Stop" })
   end
 
   SendToUnsynced("unit_morph_start", unitID, unitDefID, morphDef.cmd)
 end
-
 
 local function StopMorph(unitID, morphData)
   morphUnits[unitID] = nil
@@ -809,17 +798,26 @@ local function FinishMorph(unitID, morphData)
 end
 
 
+local PROGRESS_SYNC_FREQUENCY = 5
+
 local function UpdateMorph(unitID, morphData, canfinish)
   local cmdQueue = SpGetCommandQueue(unitID, 1)
-  if cmdQueue and cmdQueue[1] and cmdQueue[1].id == CMD.WAIT then return true end -- Keep morph data without progressing
+  if cmdQueue and cmdQueue[1] and cmdQueue[1].id == CMD.WAIT then return true end
   if SpGetUnitTransporter(unitID) then return true end
-  if (morphData.progress < 1.0) and (SpUseUnitResource(unitID, morphData.def.resTable)) then
+
+  if (morphData.progress < 1.0) and SpUseUnitResource(unitID, morphData.def.resTable) then
     morphData.progress = morphData.progress + morphData.increment
-    SendToUnsynced("mph_prg", unitID, morphData.progress)
+    morphData.syncTick = morphData.syncTick + 1
+
+    if morphData.syncTick >= PROGRESS_SYNC_FREQUENCY or morphData.progress >= 1.0 then
+      SendToUnsynced("mph_prg", unitID, morphData.progress)
+      morphData.syncTick = 0
+    end
   end
+
   if (morphData.progress >= 1.0) and morphData.teamID < (MAXunits) and canfinish then
     FinishMorph(unitID, morphData)
-    return false -- remove from the list, all done
+    return false
   end
   return true
 end
@@ -956,31 +954,47 @@ function gadget:UnitFinished(unitID, unitDefID, teamID)
 end
 
 
-function gadget:UnitDestroyed(unitID, unitDefID, teamID)
-  if (morphUnits[unitID]) then
-    StopMorph(unitID,morphUnits[unitID])
-    morphUnits[unitID] = nil
-  end
-  local bfrTechLevel = teamTechLevel[teamID] or 0
-
-  RemoveFactory(unitID, unitDefID, teamID)
-
-  local updateButtons = false
-  if (reqDefIDs[unitDefID])and(isFinished(unitID)) then
-    local teamReq = teamReqUnits[teamID]
-    teamReq[unitDefID] = (teamReq[unitDefID] or 0) - 1
-    if (teamReq[unitDefID]==0) then
-      StopMorphsOnDevolution(teamID)
-      updateButtons = true
+-- helper to zap any XpMorphUnits entries for a gone unit
+local function RemoveFromXpMorphUnits(unitID)
+    for i = #XpMorphUnits, 1, -1 do
+        if XpMorphUnits[i].id == unitID then
+            table.remove(XpMorphUnits, i)
+        end
     end
-  end
+end
 
-  if (bfrTechLevel~=teamTechLevel[teamID]) then
-    StopMorphsOnDevolution(teamID)
-    updateButtons = true
-  end
+function gadget:UnitDestroyed(unitID, unitDefID, teamID)
+    -- 1) clean up any pending XP-morph entry
+    RemoveFromXpMorphUnits(unitID)
 
-  if (updateButtons) then UpdateMorphReqs(teamID) end
+    -- 2) stop any in-flight morph
+    if morphUnits[unitID] then
+        StopMorph(unitID, morphUnits[unitID])
+        morphUnits[unitID] = nil
+    end
+
+    -- 3) original factory/tech-level bookkeeping
+    local bfrTechLevel = teamTechLevel[teamID] or 0
+    RemoveFactory(unitID, unitDefID, teamID)
+
+    local updateButtons = false
+    if (reqDefIDs[unitDefID] and isFinished(unitID)) then
+        local teamReq = teamReqUnits[teamID]
+        teamReq[unitDefID] = (teamReq[unitDefID] or 0) - 1
+        if (teamReq[unitDefID] == 0) then
+            StopMorphsOnDevolution(teamID)
+            updateButtons = true
+        end
+    end
+
+    if (bfrTechLevel ~= teamTechLevel[teamID]) then
+        StopMorphsOnDevolution(teamID)
+        updateButtons = true
+    end
+
+    if updateButtons then
+        UpdateMorphReqs(teamID)
+    end
 end
 
 
@@ -1088,81 +1102,69 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local last_frame_morphs = -1
-
 function gadget:GameFrame(n)
-    local finished_morphs = 0
-    local max_morphs_per_frame = 4
+    if (n % 2 == 0) then
+      local i = 0
+      for unitid, data in pairs(morphToStart) do
+        if i == 10 then break end
+        StartMorph(unitid, unpack(data))
+        morphToStart[unitid] = nil
+        i = i + 1 
+      end
+    end 
 
-    if last_frame_morphs > 0 then -- Allow up to 40 per frame peak, if multiple frames have morphs diminish up to 40 - 30 = 10
-      max_morphs_per_frame = floor(max_morphs_per_frame - last_frame_morphs*0.75)
-    end
+    if ((n+24)%150<1) then
+      local unitCount = #XpMorphUnits
+      local i = 1
 
-  -- start pending morphs
-    if (n % 8 == 0) then
-    local i = 0
-    for unitid, data in pairs(morphToStart) do
-      if i == 5 then break end
-      StartMorph(unitid, unpack(data))
-      morphToStart[unitid] = nil
-      i = i + 1
-    end
-  end
-  --morphToStart = {}
-  --]]
+      while (i<=unitCount) do
+        local unitdata    = XpMorphUnits[i]
+        local unitID      = unitdata.id
+        local unitDefID   = unitdata.defID
 
-  if ((n+24)%150<1) then
-    local unitCount = #XpMorphUnits
-    local i = 1
+        local morphDefSet = morphDefs[unitDefID]
+        if (morphDefSet) then
+          local teamID   = unitdata.team
+          local teamTech = teamTechLevel[teamID] or 0
+          local unitXP   = SpGetUnitExperience(unitID)
+          local unitRank = GetUnitRank(unitID)
 
-    while (i<=unitCount) do
-      local unitdata    = XpMorphUnits[i]
-      local unitID      = unitdata.id
-      local unitDefID   = unitdata.defID
+          local xpMorphLeft = false
+          for _,morphDef in pairs(morphDefSet) do
+            if (morphDef) then
+              local cmdDescID = SpFindUnitCmdDesc(unitID, morphDef.cmd)
+              if (cmdDescID) then
+                local morphCmdDesc = {}
+                local teamOwnsReqUnit = UnitReqCheck(teamID,morphDef.require)
+                morphCmdDesc.disabled = (morphDef.tech > teamTech)or(morphDef.rank > unitRank)or(morphDef.xp > unitXP)or(not teamOwnsReqUnit)
+                morphCmdDesc.tooltip  = GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, unitXP, unitRank, teamOwnsReqUnit)
+                SpEditUnitCmdDesc(unitID, cmdDescID, morphCmdDesc)
 
-      local morphDefSet = morphDefs[unitDefID]
-      if (morphDefSet) then
-        local teamID   = unitdata.team
-        local teamTech = teamTechLevel[teamID] or 0
-        local unitXP   = SpGetUnitExperience(unitID)
-        local unitRank = GetUnitRank(unitID)
-
-        local xpMorphLeft = false
-        for _,morphDef in pairs(morphDefSet) do
-          if (morphDef) then
-            local cmdDescID = SpFindUnitCmdDesc(unitID, morphDef.cmd)
-            if (cmdDescID) then
-              local morphCmdDesc = {}
-              local teamOwnsReqUnit = UnitReqCheck(teamID,morphDef.require)
-              morphCmdDesc.disabled = (morphDef.tech > teamTech)or(morphDef.rank > unitRank)or(morphDef.xp > unitXP)or(not teamOwnsReqUnit)
-              morphCmdDesc.tooltip  = GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, unitXP, unitRank, teamOwnsReqUnit)
-              SpEditUnitCmdDesc(unitID, cmdDescID, morphCmdDesc)
-
-              xpMorphLeft = morphCmdDesc.disabled or xpMorphLeft
+                xpMorphLeft = morphCmdDesc.disabled or xpMorphLeft
+              end
             end
           end
+          if (not xpMorphLeft) then
+            --// remove unit in list (it fullfills all xp requirements)
+            XpMorphUnits[i] = XpMorphUnits[unitCount]
+            XpMorphUnits[unitCount] = nil
+            unitCount = unitCount - 1
+            i = i - 1
+          end
         end
-        if (not xpMorphLeft) then
-          --// remove unit in list (it fullfills all xp requirements)
-          XpMorphUnits[i] = XpMorphUnits[unitCount]
-          XpMorphUnits[unitCount] = nil
-          unitCount = unitCount - 1
-          i = i - 1
-        end
+        i = i + 1
+
       end
-      i = i + 1
-
     end
-  end
 
-  for unitID, morphData in pairs(morphUnits) do
-    if (not UpdateMorph(unitID, morphData, finished_morphs < max_morphs_per_frame)) then
-      morphUnits[unitID] = nil
-      finished_morphs = finished_morphs + 1
+    local finished = 0
+    local maxPerFrame = 2
+    for unitID, morphData in pairs(morphUnits) do
+        if not UpdateMorph(unitID, morphData, finished < maxPerFrame) then
+            morphUnits[unitID] = nil
+            finished = finished + 1
+        end
     end
-  end
-
-  last_frame_morphs = finished_morphs
 end
 
 
@@ -1536,7 +1538,6 @@ function gadget:Update()
   end
 end
 
-
 local teamColors = {}
 local function SetTeamColor(teamID,a)
   local color = teamColors[teamID]
@@ -1578,18 +1579,18 @@ local function InitializeUnitShape(unitDefID,unitTeam)
 end
 
 
-local function DrawMorphUnit(unitID, morphData, localTeamID)
-  local h = SpGetUnitHeading(unitID)
-  if (h==nil) then
-    return  --// bonus, heading is only available when the unit is in LOS
-  end
-  local px,py,pz = SpGetUnitBasePosition(unitID)
-  if (px==nil) then
-    return
-  end
-  local unitTeam = morphData.teamID
+local MAX_DRAWN_MORPHS = 200
+local DRAWN_THIS_FRAME = 0
 
-  InitializeUnitShape(morphData.def.into,unitTeam) --BUGFIX
+local function DrawMorphUnit(unitID, morphData, localTeamID)
+  if DRAWN_THIS_FRAME >= MAX_DRAWN_MORPHS then return end
+  local h = SpGetUnitHeading(unitID)
+  if not h then return end
+  local px, py, pz = SpGetUnitBasePosition(unitID)
+  if not px then return end
+
+  local unitTeam = morphData.teamID
+  InitializeUnitShape(morphData.def.into, unitTeam)
 
   local frac = ((gameFrame + unitID) % 30) / 30
   local alpha = 2.0 * abs(0.5 - frac)
@@ -1600,71 +1601,43 @@ local function DrawMorphUnit(unitID, morphData, localTeamID)
     angle = h * headingToDegree
   end
 
-  SetTeamColor(unitTeam,alpha)
+  SetTeamColor(unitTeam, alpha)
   glPushMatrix()
   glTranslate(px, py, pz)
   glRotate(angle, 0, 1, 0)
-  glUnitShape(morphData.def.into, unitTeam, true, true , true)
+  glUnitShape(morphData.def.into, unitTeam, true, true, true)
   glPopMatrix()
 
-  --// cheesy progress indicator
-  if (drawProgress)and(localTeamID)and
-     ( (spAreTeamsAllied(unitTeam,localTeamID)) or (localTeamID==Script.ALL_ACCESS_TEAM) )
-  then
-    glPushMatrix()
-    glPushAttrib(GL_COLOR_BUFFER_BIT)
-    glTranslate(px, py+14, pz)
-    glBillboard()
-    local progStr
-    if (morphData.progress >= 1.0) and (#Spring.GetTeamUnits(unitTeam) >= MAXunits) then
-      progStr = "Stalled"
-    else
-      progStr = string.format("%.1f%%", 100 * morphData.progress)
-    end
-    gl.Text(progStr, 0, -20, 9, "oc")
-    glPopAttrib()
-    glPopMatrix()
-  end
+
+  DRAWN_THIS_FRAME = DRAWN_THIS_FRAME + 1
 end
 
 function gadget:DrawWorld()
-  if IsTooHigh or HighPing or pfscount < 8 then
-    return
-  end
-
-  if (not morphUnits) then
-    if (not morphUnits) then return end
-  end
-
-
-  if (not next(morphUnits)) then
-    return --//no morphs to draw
-  end
+  if IsTooHigh or HighPing or pfscount < 8 then return end
+  if not next(morphUnits) then return end
 
   gameFrame = GetGameFrame()
+  DRAWN_THIS_FRAME = 0
 
   glBlending(GL_SRC_ALPHA, GL_ONE)
   glDepthTest(GL_LEQUAL)
 
   local spec, specFullView = GetSpectatingState()
-  local readTeam
-  if (specFullView) then
-    readTeam = Script.ALL_ACCESS_TEAM
-  else
-    readTeam = GetLocalTeamID()
-  end
+  local readTeam = specFullView and Script.ALL_ACCESS_TEAM or GetLocalTeamID()
 
   CallAsTeam({ ['read'] = readTeam }, function()
     for unitID, morphData in pairs(morphUnits) do
-          if (unitID and morphData)and(IsUnitVisible(unitID)) then
-          DrawMorphUnit(unitID, morphData,readTeam)
+      if unitID and morphData and IsUnitVisible(unitID) then
+        DrawMorphUnit(unitID, morphData, readTeam)
       end
     end
   end)
+
   glColor(1, 1, 1, 1)
   glDepthTest(false)
   glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 end
+
 
 local function split(msg,sep)
   local s=sep or '|'
