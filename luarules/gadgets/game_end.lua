@@ -54,6 +54,7 @@ local GetAIInfo = Spring.GetAIInfo
 local GetTeamLuaAI = Spring.GetTeamLuaAI
 local GameOver = Spring.GameOver
 local AreTeamsAllied = Spring.AreTeamsAllied
+local GetGameFrame = Spring.GetGameFrame
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -81,6 +82,7 @@ local allyTeamInfos = {}
 local teamToAllyTeam = {}
 local playerIDtoAIs = {}
 local playerQuitIsDead = true
+local killTeamQueue = {}
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -96,7 +98,8 @@ function gadget:Initialize()
 	end
 	local gaiaTeamID = Spring.GetGaiaTeamID()
 	local teamCount = 0
-	for _,teamID in ipairs(GetTeamList()) do
+	local teamList = GetTeamList()
+	for _,teamID in ipairs(teamList) do
 		if ignoreGaia ~= 1 or teamID ~= gaiaTeamID then
 			teamCount = teamCount + 1
 		end
@@ -227,10 +230,22 @@ local function UpdateAllyTeamIsDead(allyTeamID)
 	allyTeamInfos[allyTeamID].dead = dead
 end
 
-function gadget:GameFrame()
-	for _,playerID in ipairs(GetPlayerList()) do
-		CheckPlayer(playerID) -- because not all events that we want to test call gadget:PlayerChanged (e.g. allying)
+function gadget:GameFrame(gf)
+    -- FIX: Run checks only once per second to improve performance
+	if (gf < 30 or gf % 30 == 1) then
+		for _,playerID in ipairs(GetPlayerList()) do
+			CheckPlayer(playerID)
+		end
 	end
+
+    -- FIX: Process the kill queue every frame
+    for teamID, killFrame in pairs(killTeamQueue) do
+        if gf >= killFrame then
+            KillTeam(teamID)
+            killTeamQueue[teamID] = nil -- Important: remove after killing
+        end
+    end
+
 	local winners
 	if sharedDynamicAllianceVictory == 0 then
 		winners = CheckSingleAllyVictoryEnd()
@@ -247,13 +262,43 @@ end
 function CheckPlayer(playerID)
 	local _,active,spectator,teamID = GetPlayerInfo(playerID) 
 	local allyTeamID = teamToAllyTeam[teamID] 
+    if not allyTeamID then return end -- Player might not be on a team yet
 	local teamInfo = allyTeamInfos[allyTeamID].teams[teamID]
 	teamInfo.players[playerID] = active and not spectator
 	teamInfo.hasLeader = select(2,GetTeamInfo(teamID)) >= 0
-	if not teamInfo.hasLeader and not teamInfo.dead then
-		KillTeam(teamID)
-		--Script.LuaRules.TeamDeathMessage(teamID)
-	end
+
+    -- FIX: Replaced immediate kill with a robust queueing system
+    local gf = GetGameFrame()
+    local allResigned = true
+    if not teamInfo.dead then
+        if teamInfo.isAI then
+            allResigned = false
+        else
+            local players = GetPlayerList(teamID)
+            for _, pID in ipairs(players) do
+                local _, pActive, pSpec = GetPlayerInfo(pID, false)
+                if pActive and not pSpec then
+                    allResigned = false
+                    break
+                end
+            end
+        end
+    end
+
+    if not teamInfo.dead and allResigned then
+        killTeamQueue[teamID] = gf -- Queue for immediate death
+    else
+        if not teamInfo.hasLeader and not teamInfo.dead then
+            if not killTeamQueue[teamID] then
+                -- Add a 12-second grace period before killing the team
+                killTeamQueue[teamID] = gf + (30 * 12)
+            end
+        elseif killTeamQueue[teamID] then
+            -- Team is valid again, remove from kill queue
+            killTeamQueue[teamID] = nil
+        end
+    end
+
 	if not teamInfo.isAI then
 		--if team isn't AI controlled, then we need to check if we have attached players
 		teamInfo.isControlled = false
@@ -277,16 +322,22 @@ end
 
 function gadget:TeamDied(teamID)
 	local allyTeamID = teamToAllyTeam[teamID]
+    if not allyTeamID then return end
 	local allyTeamInfo = allyTeamInfos[allyTeamID]
 	allyTeamInfo.teams[teamID].dead = true
 	allyTeamInfos[allyTeamID] = allyTeamInfo
 	UpdateAllyTeamIsDead(allyTeamID)
-	--Script.LuaRules.TeamDeathMessage(teamID)
+
+    -- FIX: If a team dies, make sure it's removed from the kill queue
+    if killTeamQueue[teamID] then
+        killTeamQueue[teamID] = nil
+    end
 end
 
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeamID)
 	local allyTeamID = teamToAllyTeam[unitTeamID]
+    if not allyTeamID then return end
 	local allyTeamInfo = allyTeamInfos[allyTeamID]
 	allyTeamInfo.teams[unitTeamID].unitCount = allyTeamInfo.teams[unitTeamID].unitCount + 1
 	allyTeamInfo.unitCount = allyTeamInfo.unitCount + 1
@@ -298,6 +349,7 @@ gadget.UnitCaptured = gadget.UnitCreated
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeamID)
 	local allyTeamID = teamToAllyTeam[unitTeamID]
+    if not allyTeamID then return end
 	local allyTeamInfo = allyTeamInfos[allyTeamID]
 	local teamUnitCount = allyTeamInfo.teams[unitTeamID].unitCount -1
 	local allyTeamUnitCount = allyTeamInfo.unitCount - 1
@@ -309,7 +361,6 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeamID)
 	end
 	
 	if allyTeamUnitCount == 0 then
-		--Script.LuaRules.AllyTeamDeathMessage(allyTeamID) 
 		for teamID in pairs(allyTeamInfo.teams) do
 			KillTeam(teamID)
 		end
