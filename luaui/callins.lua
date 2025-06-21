@@ -77,9 +77,9 @@ CALLIN_LIST = {
 	-- feature callins
 	"FeatureCreated",
 	"FeatureDestroyed",
-	"FeatureDamaged",
+	--"FeatureDamaged",
 	"FeatureMoved",            -- FIXME: not exposed to Lua yet (as of 95.0)
-	"FeaturePreDamaged",
+	--"FeaturePreDamaged",
 
 	-- projectile callins
 	"ProjectileCreated",

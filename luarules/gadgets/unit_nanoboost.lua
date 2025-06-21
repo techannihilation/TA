@@ -98,9 +98,20 @@ local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
         spSetUnitRulesParam(unitID, 'nanoBoosted', 1)
         boostednanos[unitID] = true
     else
-        Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed, buildspeedlist[unitID].repair, buildspeedlist[unitID].reclaim)
-        spSetUnitRulesParam(unitID, 'nanoPower', buildspeedlist[unitID].speed)
-        spSetUnitRulesParam(unitID, 'nanoBoosted', 0)
+        local prio   = Spring.GetUnitRulesParam(unitID, "builderPriority")
+        if prio == 0 then
+            local wanted = Spring.GetUnitRulesParam(unitID, "wantedBuildSpeed")
+                        or buildspeedlist[unitID].speed
+            Spring.SetUnitBuildSpeed(unitID, wanted)
+            spSetUnitRulesParam(unitID, "nanoPower", wanted)
+        else
+            Spring.SetUnitBuildSpeed(unitID,
+                buildspeedlist[unitID].speed,
+                buildspeedlist[unitID].repair,
+                buildspeedlist[unitID].reclaim)
+            spSetUnitRulesParam(unitID, "nanoPower", buildspeedlist[unitID].speed)
+        end
+        spSetUnitRulesParam(unitID, "nanoBoosted", 0)
         boostednanos[unitID] = nil
     end
 
