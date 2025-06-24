@@ -988,7 +988,8 @@ local function initBinsAndTextures()
 				[10] = GG:GetEnvTexture(),
 			}
 
-			objectDefToUniformBin[-1 * featureDefID] = 'feature'
+			objectDefToUniformBin[-featureDefID] = 'feature'
+			featuresDefsWithAlpha[-featureDefID] = true
 
 			local texKeyFast = GenFastTextureKey(-1 * featureDefID, featureDef, normalTex, textureTable)
 			if textureKeytoSet[texKeyFast] == nil then
