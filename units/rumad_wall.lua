@@ -1,13 +1,17 @@
 return {
-	talon_wall = {
+	rumad_wall = {
 		activatewhenbuilt = false,
 		brakerate = 1,
 		buildangle = 1024,
 		buildcostenergy = 5000,
 		buildcostmetal = 1500,
 		builder = false,
-		buildpic = "talon_wall.dds",
+		buildpic = "rumad_wall.dds",
 		buildtime = 10000,
+		buildinggrounddecaldecayspeed = 3000,
+		buildinggrounddecalsizex = 18,
+		buildinggrounddecalsizey = 2,
+		buildinggrounddecaltype = "rumad_wall_aoplane.dds",
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "285 70 35",
@@ -32,7 +36,7 @@ return {
 		firestandorders = 1,
 		mobilestandorders = 1,
 		canstop = 1,
-		objectname = "talon/talon_wall",
+		objectname = "rumad/rumad_wall",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -43,7 +47,8 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 1,
-		unitname = "talon_wall",
+		unitname = "rumad_wall",
+		usebuildinggrounddecal = true,
 		yardmap = "oooo"
 			.. "cccccccccc"
 			.. "oooo"
@@ -51,7 +56,7 @@ return {
 			.. "cccccccccc"
 			.. "oooo",
 		customparams = {
-			buildpic = "talon_wall.dds",
+			buildpic = "rumad_wall.dds",
 		},
 		featuredefs = {
 			heap = {

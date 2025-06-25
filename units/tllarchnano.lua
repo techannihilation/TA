@@ -58,9 +58,9 @@ return {
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",
-			--[3] = "",
-			[4] = "tllnanotc",
-			[5] = "tlladt",
+			[3] = "tllnanotc",
+			[4] = "tlladt",
+			[5] = "tll_wall",
 			[6] = "tlltower",
 			[7] = "tllarad",
 			[8] = "tllajam",
@@ -77,7 +77,6 @@ return {
 			[19] = "tllamphibot",
 			[20] = "tllck",
 			[21] = "tllgizmo",
-			--[22] = "gate",
 		},
 		customparams = {
 			buildpic = "tllarchnano.dds",

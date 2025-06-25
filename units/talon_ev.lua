@@ -65,9 +65,10 @@ return {
 			--[1] = "talon_solar",
 			--[2] = "talon_mex",
 			--[3] = "talon_avp",
-			[4] = "talon_nanotc",
-			[5] = "talon_mine1",
-			[6] = "talon_fort",
+			[3] = "talon_nanotc",
+			[4] = "talon_mine1",
+			[5] = "talon_fort",
+			[6] = "talon_wall",
 			[7] = "talon_arad",
 			[8] = "talon_conspiracy1",
 			[9] = "talon_kevlar",
@@ -81,7 +82,7 @@ return {
 			[17] = "talon_cv",
 			[18] = "talon_xeon",
 			[19] = "talon_ogopogo",
-			[20] = "talon_wall",
+
 		},
 		customparams = {
 			buildpic = "talon_ev.dds",

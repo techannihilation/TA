@@ -3,25 +3,25 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, socle1, socle2, gate1, gate2;
+piece  base, soclea, socleb, gate1, gate2;
 
 static-var  statechg_DesiredState, statechg_StateChanging, cstate;
 
 // Signal definitions
-#define SIG_ACTIVATE			2
+#define SIG_ACTIVATE		2
 
 
 activatescr()
 {
-	move gate1 to x-axis [-26] speed [12.0];
-	move gate2 to x-axis [26] speed [12.0];
+	move gate1 to y-axis [-25] speed [14.0];
+	move gate2 to y-axis [-25] speed [14.0];
 	sleep 2000;
 }
 
 deactivatescr()
 {
-	move gate1 to x-axis [0] speed [12.0];
-	move gate2 to x-axis [0] speed [12.0];
+	move gate1 to y-axis [0] speed [12.0];
+	move gate2 to y-axis [0] speed [12.0];
 	sleep 2000;
 }
 
@@ -117,8 +117,8 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	cstate = 1;
 	set ARMORED to 1;
+	cstate = 1;
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
 	start-script SmokeUnit();
@@ -142,11 +142,9 @@ SweetSpot(piecenum)
 Killed(severity, corpsetype)
 {
 		corpsetype = 1;
-		explode socle2 type NOHEATCLOUD;
-		explode socle1 type NOHEATCLOUD;
+		explode soclea type NOHEATCLOUD;
+		explode socleb type NOHEATCLOUD;
 		explode gate1 type NOHEATCLOUD;
 		explode gate2 type NOHEATCLOUD;
-		//explode teeth01 type NOHEATCLOUD;
-		//explode teeth02 type NOHEATCLOUD;
 		return (corpsetype);
 }

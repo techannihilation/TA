@@ -1,12 +1,12 @@
 return {
-	talon_wall = {
+	tll_wall = {
 		activatewhenbuilt = false,
 		brakerate = 1,
 		buildangle = 1024,
 		buildcostenergy = 5000,
 		buildcostmetal = 1500,
 		builder = false,
-		buildpic = "talon_wall.dds",
+		buildpic = "tll_wall.dds",
 		buildtime = 10000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
@@ -15,7 +15,7 @@ return {
 		corpse = "heap",
 		description = "Safe Gate",
 		explodeas = "SMALL_BUILDING",
-		footprintx = 18,
+		footprintx = 16,
 		footprintz = 2,
 		icontype = "building",
 		idleautoheal = 5,
@@ -32,26 +32,26 @@ return {
 		firestandorders = 1,
 		mobilestandorders = 1,
 		canstop = 1,
-		objectname = "talon/talon_wall",
+		objectname = "tll/tll_wall",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
 		selfdestructcountdown = 5,
-		sightdistance = 273,
+		sightdistance = 500,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 1,
-		unitname = "talon_wall",
-		yardmap = "oooo"
+		unitname = "tll_wall",
+		yardmap = "oo"
 			.. "cccccccccc"
-			.. "oooo"
-			.. "oooo"
+			.. "oo"
+			.. "oo"
 			.. "cccccccccc"
-			.. "oooo",
+			.. "oo",
 		customparams = {
-			buildpic = "talon_wall.dds",
+			buildpic = "tll_wall.dds",
 		},
 		featuredefs = {
 			heap = {

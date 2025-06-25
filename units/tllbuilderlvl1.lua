@@ -57,9 +57,9 @@ return {
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",
-			--[3] = "",
-			[4] = "tllnanotc",
-			[5] = "tlladt",
+			[3] = "tllnanotc",
+			[4] = "tlladt",
+			[5] = "tll_wall",
 			[6] = "tlltower",
 			[7] = "tllarad",
 			[8] = "tllajam",
@@ -75,7 +75,6 @@ return {
 			[18] = "tlladvfight",
 			[19] = "tllabomber",
 			[20] = "tllca",
-			--[21] = "gate",
 		},
 		customparams = {
 			buildpic = "tllbuilderlvl1.dds",

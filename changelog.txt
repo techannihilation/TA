@@ -2,9 +2,8 @@
 2025-05-04
 
 Improvment :
- - Add Talon Gate. (Gates for all faction are comming)
- - Delete all Gate from t1 Constructors
-
+ - Add Talon, Rumad & TLL Gate (Gates for all faction are comming)
+ - Delete Gates from t1 Constructors
 
 4.81 => 4.82
 2025-05-04
