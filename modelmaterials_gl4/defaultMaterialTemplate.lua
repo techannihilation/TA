@@ -407,10 +407,8 @@ vertex = [[
 				safeB = vec3(0.0, 0.0, 1.0);
 			}
 			// tangent --> world space transformation (for vectors)
-			#ifdef NORMALMAPPING
 			worldTangent = normalMatrix * safeT;
 			worldBitangent = normalMatrix * safeB;
-			#endif
 			worldNormal = normalMatrix * modelVertexNormal;
 
 			if (BITMASK_FIELD(bitOptions, OPTION_VERTEX_AO)) {
