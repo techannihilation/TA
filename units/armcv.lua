@@ -97,7 +97,6 @@ return {
 			[32] = "armpack",
 			[33] = "armcir",
 			[34] = "armsy",
-			[35] = "gate",
 		},
 		customparams = {
 			buildpic = "armcv.dds",

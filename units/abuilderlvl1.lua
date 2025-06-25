@@ -69,7 +69,7 @@ return {
 			[16] = "armca",
 			[17] = "armpnix",
 			[18] = "armhawk",
-			[19] = "gate",
+			--[19] = "gate",
 		},
 		customparams = {
 			buildpic = "abuilderlvl1.dds",

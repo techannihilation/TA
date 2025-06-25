@@ -112,7 +112,6 @@ return {
 			[48] = "armfhlt",
 			[49] = "armfrt",
 			[50] = "armtl",
-			[51] = "gate",
 		},
 		customparams = {
 			buildpic = "armbeaver.dds",

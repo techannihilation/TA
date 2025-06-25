@@ -55,9 +55,9 @@ return {
 		unitname = "tllbuilderlvl1",
 		workertime = 50,
 		buildoptions = {
-			--[1] = "tllsolar",
-			--[2] = "tllmex",
-			--[3] = "tllaap",
+			--[1] = "",
+			--[2] = "",
+			--[3] = "",
 			[4] = "tllnanotc",
 			[5] = "tlladt",
 			[6] = "tlltower",
@@ -75,7 +75,7 @@ return {
 			[18] = "tlladvfight",
 			[19] = "tllabomber",
 			[20] = "tllca",
-			[21] = "gate",
+			--[21] = "gate",
 		},
 		customparams = {
 			buildpic = "tllbuilderlvl1.dds",

@@ -78,7 +78,7 @@ return {
 			[16] = "gok_mds",
 			[17] = "gok_ch",
 			[18] = "gok_agrat",
-			--[20] = "",
+			--[20] = "gate",
 			[21] = "gok_fnanotc",
 			[23] = "gok_frad",
 			[24] = "gok_asonar",
@@ -89,7 +89,7 @@ return {
 			--[29] = "gok_fsprinkler",
 			[30] = "gok_frl",
 			[31] = "gok_fflak",
-			[32] = "gate",
+			--[32] = "",
 		},
 		customparams = {
 			buildpic = "gok_engineerh.dds",

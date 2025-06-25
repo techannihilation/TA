@@ -83,7 +83,7 @@ return {
 			[19] = "armdl",
 			[20] = "armcv",
 			[21] = "armcroc",
-			--[22] = "",
+			--[22] = "gate",
 			--[23] = "",
 			--[24] = "",
 			[25] = "armfnanotc",
@@ -98,7 +98,6 @@ return {
 			[34] = "armfmercury",
 			[35] = "armcs",
 			[36] = "armsubk",
-			[37] = "gate",
 		},
 		customparams = {
 			buildpic = "armmarv.dds",

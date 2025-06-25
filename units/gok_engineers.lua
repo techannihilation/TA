@@ -71,7 +71,7 @@ return {
 			[14] = "gok_csub",
 			[15] = "gok_drac",
 			[16] = "gok_crus",
-			[17] = "gate",
+			--[17] = "gate",
 		},
 		customparams = {
 			buildpic = "gok_engineers.dds",

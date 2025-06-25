@@ -89,7 +89,7 @@ return {
 			[32] = "armatl",
 			[33] = "armfflak",
 			[34] = "armfmercury",
-			[35] = "gate",
+			--[35] = "gate",
 		},
 		customparams = {
 			buildpic = "aach.dds",

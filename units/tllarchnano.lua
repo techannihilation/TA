@@ -77,7 +77,7 @@ return {
 			[19] = "tllamphibot",
 			[20] = "tllck",
 			[21] = "tllgizmo",
-			[22] = "gate",
+			--[22] = "gate",
 		},
 		customparams = {
 			buildpic = "tllarchnano.dds",

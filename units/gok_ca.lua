@@ -87,7 +87,6 @@ return {
 			[32] = "gok_cir",
 			[33] = "gok_sy",
 			[34] = "gok_plat",
-			[35] = "gate",
 		},
 		customparams = {
 			buildpic = "gok_ca.dds",

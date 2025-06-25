@@ -76,7 +76,7 @@ return {
 			[19] = "corch",
 			[20] = "cormatch",
 			[21] = "corangler",
-			--[22] = "",
+			--[22] = "gate",
 			--[23] = "",
 			--[24] = "",
 			[25] = "corfnanotc",
@@ -89,7 +89,6 @@ return {
 			[32] = "coratl",
 			[33] = "corenaa",
 			[34] = "corfscreamer",
-			[35] = "gate",
 		},
 		customparams = {
 			buildpic = "cach.dds",

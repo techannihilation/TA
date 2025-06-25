@@ -85,7 +85,7 @@ return {
 			[20] = "corcv",
 			[21] = "correap",
 			[22] = "corseal",
-			--[23] = "",
+			--[23] = "gate",
 			--[24] = "",
 			--[25] = "",
 			[26] = "corfnanotc",
@@ -100,7 +100,6 @@ return {
 			[35] = "corfscreamer",
 			[36] = "corcs",
 			[37] = "corshark",
-			[38] = "gate",
 		},
 		customparams = {
 			buildpic = "corfred.dds",

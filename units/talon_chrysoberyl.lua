@@ -92,7 +92,7 @@ return {
 			[30] = "talon_frl",
 			[31] = "talon_kernel",
 			[32] = "talon_fptr",
-			[33] = "gate",
+			[33] = "talon_wall",
 		},
 		customparams = {
 			buildpic = "talon_chrysoberyl.dds",

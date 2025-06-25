@@ -1,4 +1,12 @@
- 4.81 => 4.82
+ 4.82 => 4.83
+2025-05-04
+
+Improvment :
+ - Add Talon Gate. (Gates for all faction are comming)
+ - Delete all Gate from t1 Constructors
+
+
+4.81 => 4.82
 2025-05-04
 
 Balance:
@@ -21,14 +29,14 @@ Balance:
   - Energy Generation: +90% (5 000 → 9 500)
   - Energy Storage: +400% (5 000 → 25 000)
   - Health (MaxDamage): 2500 → 2300
-  - Explosion: Changed from FUSION_BLAST to KROG_BLAST 
+  - Explosion: Changed from FUSION_BLAST to KROG_BLAST
 
 4.67 => 4.80
 2025-03-31
 
 Balance:
 
-• Unit: Cybran Monkeylord (Experimental Shield Hexapod):  
+• Unit: Cybran Monkeylord (Experimental Shield Hexapod):
   - Weapon Damage: +20% (2500 → 3000)
 
 • Unit: Core Core (Admiral AeroShip)

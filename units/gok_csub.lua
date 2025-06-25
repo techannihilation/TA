@@ -79,7 +79,6 @@ return {
 			[19] = "gok_fblackdawn",
 			[20] = "gok_fllt",
 			[21] = "gok_frl",
-			[22] = "gate",
 		},
 		customparams = {
 			buildpic = "gok_csub.dds",

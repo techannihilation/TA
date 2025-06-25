@@ -73,7 +73,7 @@ return {
 			[22] = "corsktl",
 			[23] = "coreavalanche",
 			[24] = "corcommando",
-			[25] = "gate",
+			--[25] = "gate",
 		},
 		customparams = {
 			buildpic = "coreleopard.dds",

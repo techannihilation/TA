@@ -56,9 +56,9 @@ return {
 		unitname = "cbuilderlvl1",
 		workertime = 45,
 		buildoptions = {
-			--[1] = "corsolar",
-			--[2] = "cormex",
-			--[3] = "coraap",
+			--[1] = "",
+			--[2] = "",
+			--[3] = "",
 			[4] = "cornanotc",
 			[5] = "coreyes",
 			[6] = "corshroud",
@@ -78,7 +78,7 @@ return {
 			[20] = "corca",
 			[21] = "corhurc",
 			[22] = "corvamp",
-			[23] = "gate",
+			--[23] = "gate",
 		},
 		customparams = {
 			buildpic = "cbuilderlvl1.dds",

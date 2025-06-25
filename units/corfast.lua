@@ -85,7 +85,7 @@ return {
 			[23] = "corpyro",
 			[24] = "cormort",
 			[25] = "corcommando",
-			[26] = "gate",
+			--[26] = "gate",
 		},
 		customparams = {
 			buildpic = "corfast.dds",

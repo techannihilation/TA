@@ -77,7 +77,7 @@ return {
 			[18] = "tllcv",
 			[19] = "tllcoyote",
 			[20] = "tllloki",
-			[21] = "gate",
+			--[21] = "gate",
 		},
 		customparams = {
 			buildpic = "tllhtcb.dds",

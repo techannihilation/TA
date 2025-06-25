@@ -81,7 +81,7 @@ return {
 			[20] = "armcv",
 			[21] = "armlatnk",
 			[22] = "armcroc",
-			[23] = "gate",
+			--[23] = "gate",
 		},
 		customparams = {
 			buildpic = "armconsul.dds",

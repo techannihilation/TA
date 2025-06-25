@@ -85,7 +85,6 @@ return {
 			[27] = "rumad_rl",
 			[28] = "rumad_sam",
 			[29] = "rumad_cir",
-			[30] = "gate",
 		},
 		customparams = {
 			buildpic = "rumad_ca.dds",

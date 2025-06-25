@@ -83,7 +83,6 @@ return {
 			[22] = "corfllt",
 			[23] = "corfhlt",
 			[24] = "cortl",
-			[25] = "gate",
 		},
 		customparams = {
 			buildpic = "corcs.dds",

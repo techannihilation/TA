@@ -93,7 +93,6 @@ return {
 			[33] = "armpack",
 			[34] = "armcir",
 			[35] = "armsy",
-			[36] = "gate",
 		},
 		customparams = {
 			buildpic = "armck.dds",
