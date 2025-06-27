@@ -449,6 +449,15 @@ cafus = {
     {class='GroundFlash',options=groundFlashArmses},
   },
 
+  -- WALL
+  gok_wall = {
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {1,0,0}, length=225, piece="flare1a", noIconDraw = true, priority=1, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {1,0,0}, length=250, piece="flare1b", noIconDraw = true, priority=1, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {-1,0,0}, ength=225, piece="flare2a", noIconDraw = true, priority=1, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {-1,0,0}, length=250, piece="flare2b", noIconDraw = true, priority=1, onActive=true}},
+  },
+
+
   -- PLANES
   gok_angel = {
     {class='AirJet',options={color={0.78, 0.08, 0.52}, width=3, length=28, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},

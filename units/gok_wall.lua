@@ -1,16 +1,16 @@
 return {
-	tll_wall = {
-		activatewhenbuilt = false,
+	gok_wall = {
+		activatewhenbuilt = true,
 		brakerate = 1,
 		buildangle = 1024,
 		buildcostenergy = 5000,
 		buildcostmetal = 1500,
 		builder = false,
-		buildpic = "tll_wall.dds",
+		buildpic = "gok_wall.dds",
 		buildtime = 10000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "260 70 35",
+		collisionvolumescales = "250 45 35",
 		collisionvolumetype = "Box",
 		corpse = "heap",
 		description = "Safe Gate",
@@ -32,7 +32,7 @@ return {
 		firestandorders = 1,
 		mobilestandorders = 1,
 		canstop = 1,
-		objectname = "tll/tll_wall.s3o",
+		objectname = "gok/gok_wall.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -43,10 +43,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 1,
-		unitname = "tll_wall",
+		unitname = "gok_wall",
 		yardmap = "ooccccccccccccooooccccccccccccoo",
 		customparams = {
-			buildpic = "tll_wall.dds",
+			buildpic = "gok_wall.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -56,7 +56,7 @@ return {
 				footprintx = 18,
 				footprintz = 2,
 				metal = 425,
-				object = "18x2c.s3o",
+				object = "18x2g.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

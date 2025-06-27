@@ -16,8 +16,6 @@ return {
 		collisionvolumetype = "box",
 		corpse = "heap",
 		description = "Watch Tower",
-		energymake = 0,
-		energyuse = 12,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 2,
 		footprintz = 2,

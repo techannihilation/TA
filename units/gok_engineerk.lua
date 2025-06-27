@@ -60,9 +60,10 @@ return {
 		upright = true,
 		workertime = 80,
 		buildoptions = {
-			"gok_nanotc",
-			[5] = "gok_mine1",
-			[6] = "gok_fort",
+			[3] = "gok_nanotc",
+			[4] = "gok_mine1",
+			[5] = "gok_fort",
+			[6] = "gok_wall",
 			[7] = "gok_arad",
 			[8] = "gok_jam1",
 			[9] = "gok_blackdawn",
@@ -75,7 +76,7 @@ return {
 			[17] = "gok_cv",
 			[19] = "gok_zealot",
 			[20] = "gok_mask",
-			--[21] = "gate",
+			--[21] = "",
 		},
 		customparams = {
 			buildpic = "gok_engineerk.dds",
