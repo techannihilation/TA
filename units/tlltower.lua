@@ -48,11 +48,10 @@ return {
 				blocking = false,
 				damage = 250,
 				description = "Hasseloff Wreckage",
-				featuredead = "heap",
 				footprintx = 2,
 				footprintz = 2,
 				metal = 120,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

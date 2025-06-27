@@ -32,7 +32,7 @@ return {
 		firestandorders = 1,
 		mobilestandorders = 1,
 		canstop = 1,
-		objectname = "talon/talon_wall",
+		objectname = "talon/talon_wall.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -56,9 +56,6 @@ return {
 		featuredefs = {
 			heap = {
 				blocking = false,
-				collisionvolumeoffsets = "0 0 0",
-				collisionvolumescales = "100 50 45",
-				collisionvolumetype = "Box",
 				damage = 12000,
 				description = "Wall Wreckage",
 				footprintx = 18,
@@ -66,6 +63,9 @@ return {
 				metal = 425,
 				object = "18x2c.s3o",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
