@@ -45,10 +45,10 @@ return {
 		turnrate = 1,
 		unitname = "tll_wall",
 		yardmap = "oo"
-			.. "cccccccccc"
+			.. "cccccccccccc"
 			.. "oo"
 			.. "oo"
-			.. "cccccccccc"
+			.. "cccccccccccc"
 			.. "oo",
 		customparams = {
 			buildpic = "tll_wall.dds",
