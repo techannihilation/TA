@@ -1,68 +1,73 @@
 return {
-	gate = {
-		acceleration = 0,
+	core_wall = {
 		activatewhenbuilt = false,
 		brakerate = 1,
 		buildangle = 1024,
 		buildcostenergy = 5000,
 		buildcostmetal = 1500,
 		builder = false,
-		buildpic = "gate.dds",
-		buildtime = 4000,
-		builddistance = 0.01,
-		category = "ALL MOBILE SURFACE",
+		buildpic = "core_wall.dds",
+		buildtime = 10000,
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "500 30 100",
+		collisionvolumescales = "285 70 35",
 		collisionvolumetype = "Box",
-		description = "Dragon Gate",
-		energyuse = 0,
+		corpse = "heap",
+		description = "Safe Gate",
 		explodeas = "SMALL_BUILDING",
-		footprintx = 30,
-		footprintz = 3,
+		footprintx = 18,
+		footprintz = 2,
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 26,
-		mass = 5300,
+		mass = 1500,
 		maxdamage = 50000,
 		maxslope = 20,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		maneuverleashlength = 380,
-		name = "Dragon Gate",
+		name = "Wall",
 		noautofire = false,
-		canguard = true,
-		canmove = false,
-		canpatrol = true,
 		firestandorders = 1,
 		mobilestandorders = 1,
 		canstop = 1,
-		objectname = "gate",
+		objectname = "core/core_wall.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
 		selfdestructcountdown = 5,
-		sightdistance = 273,
+		sightdistance = 500,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 1,
-		unitname = "portal",
-		yardmap = "ooooooooo"
-			.. "cccccccccccc"
-			.. "ooooooooo"
-			.. "ooooooooo"
-			.. "cccccccccccc"
-			.. "ooooooooo"
-			.. "ooooooooo"
-			.. "cccccccccccc"
-			.. "ooooooooo",
+		unitname = "core_wall",
+		yardmap = "oooo"
+			.. "cccccccccc"
+			.. "oooo"
+			.. "oooo"
+			.. "cccccccccc"
+			.. "oooo",
 		customparams = {
-			buildpic = "gate.dds",
+			buildpic = "core_wall.dds",
 		},
-		featuredefs = {},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 12000,
+				description = "Wall Wreckage",
+				footprintx = 18,
+				footprintz = 2,
+				metal = 425,
+				object = "18x2c.s3o",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

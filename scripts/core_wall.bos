@@ -1,0 +1,283 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, socle1, socle2, gate1, gate2,
+ 		g11, g12, g13, g14, g15, g16, g17, g18, g19,
+		g21, g22, g23, g24, g25, g26, g27, g28, g29;
+
+static-var  statechg_DesiredState, statechg_StateChanging, cstate, move_g;
+
+// Signal definitions
+#define SIG_ACTIVATE		2
+
+opengate1()
+{
+	move g19 to x-axis move_g * [1] speed [20.0];
+	wait-for-move g19 along x-axis;
+
+	move g18 to x-axis move_g * [1] speed [18.0];
+	wait-for-move g18 along x-axis;
+	
+	move g17 to x-axis move_g * [1] speed [16.0];
+	wait-for-move g17 along x-axis;
+	
+	move g16 to x-axis move_g * [1] speed [14.0];
+	wait-for-move g16 along x-axis;
+	
+	move g15 to x-axis move_g * [1] speed [12.0];
+	wait-for-move g15 along x-axis;
+	
+	move g14 to x-axis move_g * [1] speed [10.0];
+	wait-for-move g14 along x-axis;
+	
+	move g13 to x-axis move_g * [1] speed [8.0];
+	wait-for-move g13 along x-axis;
+	
+	move g12 to x-axis move_g * [1] speed [6.0];
+	wait-for-move g12 along x-axis;
+	
+	move g11 to x-axis move_g * [1] speed [4.0];
+	wait-for-move g11 along x-axis;
+	
+	sleep 250;
+}
+
+closegate1()
+{
+	move g11 to x-axis [-0] speed [4.0];
+	wait-for-move g11 along x-axis;
+	
+	move g12 to x-axis [0] speed [6.0];
+	wait-for-move g12 along x-axis;
+	
+	move g13 to x-axis [0] speed [8.0];
+	wait-for-move g13 along x-axis;
+	
+	move g14 to x-axis [0] speed [10.0];
+	wait-for-move g14 along x-axis;
+	
+	move g15 to x-axis [0] speed [12.0];
+	wait-for-move g15 along x-axis;
+	
+	move g16 to x-axis [0] speed [14.0];
+	wait-for-move g16 along x-axis;
+	
+	move g17 to x-axis [0] speed [16.0];
+	wait-for-move g17 along x-axis;
+	
+	move g18 to x-axis [0] speed [18.0];
+	wait-for-move g18 along x-axis;
+	
+	move g19 to x-axis [0] speed [20.0];
+	wait-for-move g19 along x-axis;
+	
+	sleep 250;
+}
+
+
+opengate2()
+{
+
+	move g29 to x-axis move_g * [-1] speed [20.0];
+	wait-for-move g29 along x-axis;
+
+	move g28 to x-axis move_g * [-1] speed [18.0];
+	wait-for-move g28 along x-axis;
+	
+	move g27 to x-axis move_g * [-1] speed [16.0];
+	wait-for-move g27 along x-axis;
+	
+	move g26 to x-axis move_g * [-1] speed [14.0];
+	wait-for-move g26 along x-axis;
+	
+	move g25 to x-axis move_g * [-1] speed [12.0];
+	wait-for-move g25 along x-axis;
+	
+	move g24 to x-axis move_g * [-1] speed [10.0];
+	wait-for-move g24 along x-axis;
+	
+	move g23 to x-axis move_g * [-1] speed [8.0];
+	wait-for-move g23 along x-axis;
+	
+	move g22 to x-axis move_g * [-1] speed [6.0];
+	wait-for-move g22 along x-axis;
+	
+	move g21 to x-axis move_g * [-1] speed [4.0];
+	wait-for-move g21 along x-axis;
+	
+	sleep 250;
+}
+
+closegate2()
+{
+	move g21 to x-axis [-0] speed [4.0];
+	wait-for-move g21 along x-axis;
+	
+	move g22 to x-axis [0] speed [6.0];
+	wait-for-move g22 along x-axis;
+	
+	move g23 to x-axis [0] speed [8.0];
+	wait-for-move g23 along x-axis;
+	
+	move g24 to x-axis [0] speed [10.0];
+	wait-for-move g24 along x-axis;
+	
+	move g25 to x-axis [0] speed [12.0];
+	wait-for-move g25 along x-axis;
+	
+	move g26 to x-axis [0] speed [14.0];
+	wait-for-move g26 along x-axis;
+	
+	move g27 to x-axis [0] speed [16.0];
+	wait-for-move g27 along x-axis;
+	
+	move g28 to x-axis [0] speed [18.0];
+	wait-for-move g28 along x-axis;
+	
+	move g29 to x-axis [0] speed [20.0];
+	wait-for-move g29 along x-axis;
+	
+	sleep 250;
+}
+
+activatescr()
+{
+	start-script opengate1();
+	start-script opengate2();
+}
+
+deactivatescr()
+{
+
+	start-script closegate1();
+	start-script closegate2();
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+
+	call-script activatescr();
+	call-script OpenYard();
+}
+
+Stop()
+{
+	call-script CloseYard();
+	call-script deactivatescr();
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != cstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			cstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			cstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	move_g = 5;
+	cstate = 1;
+	set ARMORED to 1;
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+		corpsetype = 1;
+		explode socle2 type NOHEATCLOUD;
+		explode socle1 type NOHEATCLOUD;
+		explode gate1 type NOHEATCLOUD;
+		explode gate2 type NOHEATCLOUD;
+		//explode teeth01 type NOHEATCLOUD;
+		//explode teeth02 type NOHEATCLOUD;
+		return (corpsetype);
+}

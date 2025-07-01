@@ -62,10 +62,10 @@ return {
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",
-			--[3] = "",
-			[4] = "cornanotc",
-			[5] = "coreyes",
-			[6] = "corfort",
+			[3] = "cornanotc",
+			[4] = "coreyes",
+			[5] = "corfort",
+			[6] = "core_wall",
 			[7] = "corarad",
 			[8] = "corshroud",
 			[9] = "cormine2",
@@ -85,7 +85,6 @@ return {
 			[23] = "corpyro",
 			[24] = "cormort",
 			[25] = "corcommando",
-			--[26] = "gate",
 		},
 		customparams = {
 			buildpic = "corfast.dds",

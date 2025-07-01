@@ -55,10 +55,11 @@ return {
 		unitname = "armtick",
 		workertime = 80,
 		buildoptions = {
-			[4] = "armnanotc",
-			[5] = "armeyes",
-			[6] = "armveil",
-			[7] = "armfort",
+			[3] = "armnanotc",
+			[4] = "armeyes",
+			[5] = "armveil",
+			[6] = "armfort",
+			[7] = "arm_wall",
 			[8] = "armarad",
 			[9] = "armmine2",
 			[10] = "armgrape",
@@ -75,7 +76,6 @@ return {
 			[21] = "armvader",
 			[22] = "armhobo",
 			[23] = "armrambo",
-			--[24] = "gate",
 		},
 		customparams = {
 			buildpic = "armtick.dds",
