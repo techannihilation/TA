@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, Left_Back_Leg, Left_Back_Foot, Right_Back_Leg, Righ_Back_Foot, Left_Front_Leg, Left_Front_Foot, Right_Front_Leg,
-       Right_Front_Foot, Hump, Tail;
+       Right_Front_Foot, Tail;
 
 static-var  bMoving;
 
@@ -19,13 +19,13 @@ MotionControl()
 			turn Right_Back_Leg to y-axis <30.005495> speed <180.000000>;
 			turn Left_Front_Leg to y-axis <-30.005495> speed <180.000000>;
 			turn Right_Front_Leg to y-axis <-30.005495> speed <180.000000>;
-			turn Tail to y-axis <-10.000000> speed <100.000000>;
+			turn Tail to y-axis <-10.000000> speed <30.000000>;
 			wait-for-turn Left_Back_Leg around y-axis;
 			turn Left_Back_Leg to y-axis <-30.005495> speed <180.000000>;
 			turn Right_Back_Leg to y-axis <-30.005495> speed <180.000000>;
 			turn Left_Front_Leg to y-axis <30.005495> speed <180.000000>;
 			turn Right_Front_Leg to y-axis <30.005495> speed <180.000000>;
-			turn Tail to y-axis <10.000000> speed <100.000000>;
+			turn Tail to y-axis <10.000000> speed <30.000000>;
 			wait-for-turn Left_Back_Leg around y-axis;
 		}
 		if( !bMoving )
@@ -44,7 +44,7 @@ Create()
 StartMoving()
 {
 	bMoving = TRUE;
-	move Tail to z-axis [0.000000] speed [50.000000];
+	move Tail to z-axis [0.000000] speed [5.000000];
 	wait-for-move Tail along z-axis;
 }
 
@@ -56,7 +56,7 @@ StopMoving()
 	turn Left_Front_Leg to y-axis <0.000000> speed <30.000000>;
 	turn Right_Front_Leg to y-axis <0.000000> speed <30.000000>;
 	turn Tail to y-axis <10.000000> speed <30.000000>;
-	move Tail to z-axis [2.500000] speed [3.000000];
+	move Tail to z-axis [0.500000] speed [3.000000];
 	wait-for-move Tail along z-axis;
 	sleep 150;
 }
@@ -79,6 +79,5 @@ Killed(severity, corpsetype)
 	explode Right_Front_Foot type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode Right_Front_Leg type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode Tail type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
-	explode Hump type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
 	return (corpsetype);
 }
