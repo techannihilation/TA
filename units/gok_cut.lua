@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE MINOR SURFACE UNDERWATER",
+		category = "ALL MOBILE MINOR SURFACE",
 		collisionvolumeoffsets = "0 1 2",
 		collisionvolumescales = "16 17 22",
 		collisionvolumetype = "Box",

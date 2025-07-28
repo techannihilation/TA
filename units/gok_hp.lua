@@ -54,10 +54,11 @@ return {
 		yardmap = "oocccoo oocccoo oocccoo oocccoo oocccoo oocccoo",
 		buildoptions = {
 			[1] = "gok_ch",
-			[2] = "gok_faerie",
-			[3] = "gok_avatar",
-			[4] = "gok_exorcist",
-			[5] = "gok_seastrike",
+			[2] = "gok_cut",
+			[3] = "gok_faerie",
+			[4] = "gok_avatar",
+			[5] = "gok_exorcist",
+			[6] = "gok_seastrike",
 		},
 		customparams = {
 			buildpic = "gok_hp.dds",
