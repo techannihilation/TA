@@ -8,11 +8,8 @@ modConfig["TA"]["unitList"] =
 								--Arm
 									--Ground Weapons--
 								armclaw = { weapons = { 1 } },
-								--amortor = { weapons = { 1 } },
 								armllt = { weapons = { 1 } },
 								armfllt = { weapons = { 1 } },
-								--armllt1 = { weapons = { 1 } },
-								armbeamer = { weapons = { 1 } },
 								armgrape = { weapons = { 1 } },
 								armhlt = { weapons = { 1 } },
 								armvhlt = { weapons = { 1 } },
