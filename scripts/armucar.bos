@@ -3,37 +3,34 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, aft, fore, bridge, deck,
-		land_01, land_02, land_03, land_04, land_05, land_06, land_07, land_08, 
-		land_09, land_10, land_11, land_12, land_13, land_14, 
-		anti, door1, door2, door3, door4, turret, rocket1, rocket2, rocket3,
-		bits1, bits2, bits3, bits4, bits5,
-		turret1, sleeve1, barrel1a, barrel1b, flare1a, flare1b,
-		turret2, sleeve2, barrel2a, barrel2b, flare2a, flare2b,
-		turret3, sleeve3, barrel3a, barrel3b, flare3a, flare3b,
-		turret4, sleeve4, barrel4a, barrel4b, flare4a, flare4b,
-     	radar, sleeve, dish, a1, a2, a3, wake1, wake2, wake3, wake4, wake5, wake6;
+piece  base, body, aft, fore, bridge, deck, land_01, land_02,
+       land_03, land_04, land_05, land_06, land_07, land_08, land_09, land_10,
+       land_11, land_12, land_13, land_14, anti, door1, door2, door3,
+       door4, turret, rocket1, rocket2, rocket3, bits1, bits2, bits3,
+       bits4, bits5, turret1, sleeve1, barrel1a, barrel1b, flare1a, flare1b,
+       turret2, sleeve2, barrel2a, barrel2b, flare2a, flare2b, turret3, sleeve3,
+       barrel3a, barrel3b, flare3a, flare3b, turret4, sleeve4, barrel4a, barrel4b,
+       flare4a, flare4b, radar, sleeve, dish, a1, a2, a3,
+       wake1, wake2, wake3, wake4, wake5, wake6;
 
-static-var  statechg_DesiredState, statechg_StateChanging, gun_anti, restore_delay, gun_1, gun_2, gun_3, gun_4;
+static-var  statechg_DesiredState, statechg_StateChanging, gun_1, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8;
 
 // Signal definitions
-#define SIG_AIM_1			2
-#define SIG_AIM_2			4
-#define SIG_AIM_3			8
-#define SIG_AIM_4			16
-#define SIG_AIM_5			32
+#define SIG_AIM				2
 #define SIG_MOVE			1024
+
 
 activatescr()
 {
 	if( TRUE )
 	{
-		turn door1 to z-axis <-60.0> speed <150.000000>;	
-		turn door2 to z-axis <60.0> speed <150.000000>;
-		turn door3 to x-axis <-60.0> speed <150.000000>;
-		turn door4 to x-axis <60.0> speed <150.000000>;
+		turn door1 to z-axis <-60.000000> speed <150.000000>;
+		turn door2 to z-axis <60.000000> speed <150.000000>;
+		turn door3 to x-axis <-60.000000> speed <150.000000>;
+		turn door4 to x-axis <60.000000> speed <150.000000>;
 		sleep 1500;
-		spin turret around y-axis speed <30.0>;
+		spin turret around y-axis speed <30.000000>;
 	}
 	sleep 3;
 }
@@ -42,7 +39,7 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		spin turret around y-axis speed <0.0>;
+		spin turret around y-axis speed <0.000000>;
 		turn door1 to z-axis <0.000000> speed <50.000000>;
 		turn door2 to z-axis <0.000000> speed <50.000000>;
 		turn door3 to x-axis <0.000000> speed <50.000000>;
@@ -124,31 +121,31 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	gun_1 = 0;
-	gun_2 = 0;
-	gun_3 = 0;
-	gun_4 = 0;
-	gun_anti = 0;
-	turn sleeve to x-axis <-45.0> now;
-	restore_delay = 3000;
+	Static_Var_5 = 0;
+	Static_Var_6 = 0;
+	Static_Var_7 = 0;
+	Static_Var_8 = 0;
+	gun_1 = base;
+	turn sleeve to x-axis <-45.000000> now;
+	Static_Var_4 = 3000;
 	call-script InitState();
 	start-script SmokeUnit();
 }
 
 Deactivate()
 {
-	spin radar around y-axis speed <0.0> accelerate <-1.0>;
-	spin a1 around z-axis speed <0.0> accelerate <1.0>;
-	spin a2 around z-axis speed <0.0> accelerate <-1.0>;
-	spin a3 around z-axis speed <0.0> accelerate <1.0>;
+	spin radar around y-axis speed <0.000000> accelerate <-1.000000>;
+	spin a1 around z-axis speed <0.000000> accelerate <1.000000>;
+	spin a2 around z-axis speed <0.000000> accelerate <-1.000000>;
+	spin a3 around z-axis speed <0.000000> accelerate <1.000000>;
 }
 
 Activate()
 {
-	spin radar around y-axis speed <4.0> accelerate <-2.0>;
-	spin a1 around z-axis speed <-64.0> accelerate <-2.0>;
-	spin a2 around z-axis speed <42.0> accelerate <1.0>;
-	spin a3 around z-axis speed <-20.0> accelerate <-1.0>;
+	spin radar around y-axis speed <4.000000> accelerate <-2.000000>;
+	spin a1 around z-axis speed <-64.000000> accelerate <-2.000000>;
+	spin a2 around z-axis speed <42.000000> accelerate <1.000000>;
+	spin a3 around z-axis speed <-20.000000> accelerate <-1.000000>;
 }
 
 StartMoving()
@@ -174,20 +171,20 @@ StopMoving()
 
 QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5, Func_Var_6, Func_Var_7, Func_Var_8, Func_Var_9, Func_Var_10, Func_Var_11, Func_Var_12, Func_Var_13, Func_Var_14)
 {
-	Func_Var_1 = land_01;
-	Func_Var_2 = land_02;
-	Func_Var_3 = land_03;
-	Func_Var_4 = land_04;
-	Func_Var_5 = land_05;
-	Func_Var_6 = land_06;
-	Func_Var_7 = land_07;
-	Func_Var_8 = land_08;
-	Func_Var_9 = land_09;
-	Func_Var_10 = land_10;
-	Func_Var_11 = land_11;
-	Func_Var_12 = land_12;
-	Func_Var_13 = land_13;
-	Func_Var_14 = land_14;
+	Func_Var_1 = 6;
+	Func_Var_2 = 7;
+	Func_Var_3 = 8;
+	Func_Var_4 = 9;
+	Func_Var_5 = 10;
+	Func_Var_6 = 11;
+	Func_Var_7 = 12;
+	Func_Var_8 = 13;
+	Func_Var_9 = 14;
+	Func_Var_10 = 15;
+	Func_Var_11 = 16;
+	Func_Var_12 = 17;
+	Func_Var_13 = 18;
+	Func_Var_14 = 19;
 }
 
 RestoreAfterDelay()
@@ -198,7 +195,7 @@ RestoreAfterDelay()
 
 RestoreFlak()
 {
-	sleep restore_delay;
+	sleep Static_Var_4;
 	turn turret1 to y-axis <0.000000> speed <100.000000>;
 	turn sleeve1 to x-axis <0.000000> speed <100.000000>;
 	turn turret2 to y-axis <0.000000> speed <100.000000>;
@@ -211,15 +208,15 @@ RestoreFlak()
 
 AimFromPrimary(piecenum)
 {
-	if( gun_anti == 0 )
+	if( gun_1 == 0 )
 	{
 		piecenum = rocket1;
 	}
-	if( gun_anti == 1 )
+	if( gun_1 == 1 )
 	{
 		piecenum = rocket2;
 	}
-	if( gun_anti == 2 )
+	if( gun_1 == 2 )
 	{
 		piecenum = rocket3;
 	}
@@ -228,117 +225,117 @@ AimFromPrimary(piecenum)
 AimPrimary(heading, pitch)
 {
 	start-script RequestState(0);
-	signal SIG_AIM_1;
-	set-signal-mask SIG_AIM_1;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	if( gun_anti == 0 )
+	if( gun_1 == 0 )
 	{
 		hide rocket1;
 		show rocket2;
 		show rocket3;
 	}
-	if( gun_anti == 1 )
+	if( gun_1 == 1 )
 	{
 		show rocket1;
 		hide rocket2;
 		show rocket3;
 	}
-	if( gun_anti == 2 )
+	if( gun_1 == 2 )
 	{
 		show rocket1;
 		show rocket2;
 		hide rocket3;
 	}
-	++gun_anti;
-	if( gun_anti == 3 )
+	++gun_1;
+	if( gun_1 == 3 )
 	{
-		gun_anti = 0;
+		gun_1 = base;
 	}
 }
 
 QueryPrimary(piecenum)
 {
-	if( gun_anti == 0 )
+	if( gun_1 == 0 )
 	{
 		piecenum = rocket1;
 	}
-	if( gun_anti == 1 )
+	if( gun_1 == 1 )
 	{
 		piecenum = rocket2;
 	}
-	if( gun_anti == 2 )
+	if( gun_1 == 2 )
 	{
 		piecenum = rocket3;
 	}
 }
 
-AimFromWeapon2(piecenum)
+AimFromWeapon2(Func_Var_1)
 {
-	piecenum = turret1;
+	Func_Var_1 = 34;
 }
 
-AimFromWeapon3(piecenum)
+AimFromWeapon3(Func_Var_1)
 {
-	piecenum = turret2;
+	Func_Var_1 = 40;
 }
 
-AimFromWeapon4(piecenum)
+AimFromWeapon4(Func_Var_1)
 {
-	piecenum = turret3;
+	Func_Var_1 = 46;
 }
 
-AimFromWeapon5(piecenum)
+AimFromWeapon5(Func_Var_1)
 {
-	piecenum = turret4;
+	Func_Var_1 = 52;
 }
 
-AimWeapon2(heading, pitch)
+AimWeapon2(Func_Var_1, Func_Var_2)
 {
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	turn turret1 to y-axis heading speed <700.000000>;
-	turn sleeve1 to x-axis <0.000000> - pitch speed <550.000000>;
+	signal 4;
+	set-signal-mask 4;
+	turn turret1 to y-axis Func_Var_1 speed <700.000000>;
+	turn sleeve1 to x-axis <0.000000> - Func_Var_2 speed <550.000000>;
 	wait-for-turn turret1 around y-axis;
 	wait-for-turn sleeve1 around x-axis;
 	start-script RestoreFlak();
 	return (1);
 }
 
-AimWeapon3(heading, pitch)
+AimWeapon3(Func_Var_1, Func_Var_2)
 {
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	turn turret2 to y-axis heading speed <700.000000>;
-	turn sleeve2 to x-axis <0.000000> - pitch speed <550.000000>;
+	signal 8;
+	set-signal-mask 8;
+	turn turret2 to y-axis Func_Var_1 speed <700.000000>;
+	turn sleeve2 to x-axis <0.000000> - Func_Var_2 speed <550.000000>;
 	wait-for-turn turret2 around y-axis;
 	wait-for-turn sleeve2 around x-axis;
 	start-script RestoreFlak();
 	return (1);
 }
 
-AimWeapon4(heading, pitch)
+AimWeapon4(Func_Var_1, Func_Var_2)
 {
-	signal SIG_AIM_4;
-	set-signal-mask SIG_AIM_4;
-	turn turret3 to y-axis heading speed <700.000000>;
-	turn sleeve3 to x-axis <0.000000> - pitch speed <550.000000>;
+	signal 16;
+	set-signal-mask 16;
+	turn turret3 to y-axis Func_Var_1 speed <700.000000>;
+	turn sleeve3 to x-axis <0.000000> - Func_Var_2 speed <550.000000>;
 	wait-for-turn turret3 around y-axis;
 	wait-for-turn sleeve3 around x-axis;
 	start-script RestoreFlak();
 	return (1);
 }
 
-AimWeapon5(heading, pitch)
+AimWeapon5(Func_Var_1, Func_Var_2)
 {
-	signal SIG_AIM_5;
-	set-signal-mask SIG_AIM_5;
-	turn turret4 to y-axis heading speed <700.000000>;
-	turn sleeve4 to x-axis <0.000000> - pitch speed <550.000000>;
+	signal 32;
+	set-signal-mask 32;
+	turn turret4 to y-axis Func_Var_1 speed <700.000000>;
+	turn sleeve4 to x-axis <0.000000> - Func_Var_2 speed <550.000000>;
 	wait-for-turn turret4 around y-axis;
 	wait-for-turn sleeve4 around x-axis;
 	start-script RestoreFlak();
@@ -347,141 +344,141 @@ AimWeapon5(heading, pitch)
 
 FireWeapon2()
 {
-	if( gun_1 == 0 )
+	if( Static_Var_5 == 0 )
 	{
 		move barrel1a to z-axis [-4.000000] now;
 		show flare1a;
 		sleep 150;
 		hide flare1a;
 		move barrel1a to z-axis [0.000000] speed [15.000000];
-		gun_1 = 1;
+		Static_Var_5 = 1;
 		return (0);
 	}
-	if( gun_1 == 1 )
+	if( Static_Var_5 == 1 )
 	{
 		move barrel1b to z-axis [-4.000000] now;
 		show flare1a;
 		sleep 150;
 		hide flare1b;
 		move barrel1b to z-axis [0.000000] speed [15.000000];
-		gun_1 = 0;
+		Static_Var_5 = 0;
 	}
 }
 
 FireWeapon3()
 {
-	if( gun_2 == 0 )
+	if( Static_Var_6 == 0 )
 	{
 		move barrel2a to z-axis [-4.000000] now;
 		show flare2a;
 		sleep 150;
 		hide flare2a;
 		move barrel2a to z-axis [0.000000] speed [15.000000];
-		gun_2 = 1;
+		Static_Var_6 = 1;
 		return (0);
 	}
-	if( gun_2 == 1 )
+	if( Static_Var_6 == 1 )
 	{
 		move barrel2b to z-axis [-4.000000] now;
 		show flare2a;
 		sleep 150;
 		hide flare2b;
 		move barrel2b to z-axis [0.000000] speed [15.000000];
-		gun_2 = 0;
+		Static_Var_6 = 0;
 	}
 }
 
 FireWeapon4()
 {
-	if( gun_3 == 0 )
+	if( Static_Var_7 == 0 )
 	{
 		move barrel3a to z-axis [-4.000000] now;
 		show flare3a;
 		sleep 150;
 		hide flare3a;
 		move barrel3a to z-axis [0.000000] speed [15.000000];
-		gun_2 = 1;
+		Static_Var_6 = 1;
 		return (0);
 	}
-	if( gun_3 == 1 )
+	if( Static_Var_7 == 1 )
 	{
 		move barrel3b to z-axis [-4.000000] now;
 		show flare3a;
 		sleep 150;
 		hide flare3b;
 		move barrel3b to z-axis [0.000000] speed [15.000000];
-		gun_2 = 0;
+		Static_Var_6 = 0;
 	}
 }
 
 FireWeapon5()
 {
-	if( gun_4 == 0 )
+	if( Static_Var_8 == 0 )
 	{
 		move barrel4a to z-axis [-4.000000] now;
 		show flare4a;
 		sleep 150;
 		hide flare4a;
 		move barrel4a to z-axis [0.000000] speed [15.000000];
-		gun_2 = 1;
+		Static_Var_6 = 1;
 		return (0);
 	}
-	if( gun_4 == 1 )
+	if( Static_Var_8 == 1 )
 	{
 		move barrel4b to z-axis [-4.000000] now;
 		show flare4a;
 		sleep 150;
 		hide flare4b;
 		move barrel4b to z-axis [0.000000] speed [15.000000];
-		gun_2 = 0;
+		Static_Var_6 = 0;
 	}
 }
 
-QueryWeapon2(piecenum)
+QueryWeapon2(Func_Var_1)
 {
-	if( gun_1 == 0 )
+	if( Static_Var_5 == 0 )
 	{
-		piecenum = flare1a;
+		Func_Var_1 = 38;
 	}
-	if( gun_1 == 1 )
+	if( Static_Var_5 == 1 )
 	{
-		piecenum = flare1b;
+		Func_Var_1 = 39;
 	}
 }
 
-QueryWeapon3(piecenum)
+QueryWeapon3(Func_Var_1)
 {
-	if( gun_2 == 0 )
+	if( Static_Var_6 == 0 )
 	{
-		piecenum = flare2a;
+		Func_Var_1 = 44;
 	}
-	if( gun_2 == 1 )
+	if( Static_Var_6 == 1 )
 	{
-		piecenum = flare2b;
+		Func_Var_1 = 45;
 	}
 }
 
-QueryWeapon4(piecenum)
+QueryWeapon4(Func_Var_1)
 {
-	if( gun_3 == 0 )
+	if( Static_Var_7 == 0 )
 	{
-		piecenum = flare3a;
+		Func_Var_1 = 50;
 	}
-	if( gun_3 == 1 )
+	if( Static_Var_7 == 1 )
 	{
-		piecenum = flare3b;
+		Func_Var_1 = 51;
 	}
 }
 
-QueryWeapon5(piecenum)
+QueryWeapon5(Func_Var_1)
 {
-	if( gun_4 == 0 )
+	if( Static_Var_8 == 0 )
 	{
-		piecenum = flare4a;
+		Func_Var_1 = 56;
 	}
-	if( gun_4 == 1 )
+	if( Static_Var_8 == 1 )
 	{
-		piecenum = flare4b;
+		Func_Var_1 = 57;
 	}
 }
 
@@ -495,43 +492,43 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD;
-		explode fore type NOHEATCLOUD;
-		explode aft type NOHEATCLOUD;
-		explode radar type NOHEATCLOUD;		
-		explode sleeve type NOHEATCLOUD;
-		explode anti type NOHEATCLOUD;
-		explode turret1 type NOHEATCLOUD;
-		explode turret2 type NOHEATCLOUD;
-		explode turret3 type NOHEATCLOUD;
-		explode turret4 type NOHEATCLOUD;
+		explode body type 128;
+		explode fore type 128;
+		explode aft type 128;
+		explode radar type 128;
+		explode sleeve type 128;
+		explode anti type 128;
+		explode turret1 type 128;
+		explode turret2 type 128;
+		explode turret3 type 128;
+		explode turret4 type 128;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD;
-		explode fore type NOHEATCLOUD;
-		explode aft type NOHEATCLOUD;
-		explode radar type NOHEATCLOUD | FALL;		
-		explode sleeve type NOHEATCLOUD | FALL;
-		explode anti type NOHEATCLOUD | FALL;
-		explode turret1 type NOHEATCLOUD | FALL;
-		explode turret2 type NOHEATCLOUD | FALL;
-		explode turret3 type NOHEATCLOUD | FALL;
-		explode turret4 type NOHEATCLOUD | FALL;
+		explode body type 128;
+		explode fore type 128;
+		explode aft type 128;
+		explode radar type 128 | FALL;
+		explode sleeve type 128 | FALL;
+		explode anti type 128 | FALL;
+		explode turret1 type 128 | FALL;
+		explode turret2 type 128 | FALL;
+		explode turret3 type 128 | FALL;
+		explode turret4 type 128 | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD;
-	explode fore type NOHEATCLOUD;
-	explode aft type NOHEATCLOUD;
-	explode radar type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;		
-	explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode anti type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type 128;
+	explode fore type 128;
+	explode aft type 128;
+	explode radar type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode anti type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret1 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret2 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret3 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret4 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

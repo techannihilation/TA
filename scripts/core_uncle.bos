@@ -8,12 +8,111 @@ piece  base, body, legs, rupleg1, rupleg2, rupleg3, lupleg1, lupleg2, lupleg3,
 	   basket1, basket2, basket3, basket4, basket5, basket6, basket7, basket8, 
 	   basket9, basket10, basket11, basket12, basket13, basket14, basket15, basket16;
 
-static-var  moving, turning;
+static-var  moving, turning, unitviewer, unitcount;
 
 // Signal definitions
 #define SIG_ACTIVATE		16
 #define SIG_MOVE			32
 
+TransportPickup(unitid) 
+{
+	unitcount = unitcount + 1;
+	
+	if( unitcount == 1) 
+	{	
+		attach-unit unitid to basket1;
+		move basket1 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+
+	}
+	if( unitcount == 2) 
+	{	
+		attach-unit unitid to basket2;
+		move basket2 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 3) 
+	{	
+		attach-unit unitid to basket3;
+		move basket3 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 4) 
+	{	
+		attach-unit unitid to basket4;
+		move basket4 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 5) 
+	{	
+		attach-unit unitid to basket5;
+		move basket5 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 6) 
+	{	
+		attach-unit unitid to basket6;
+		move basket6 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 7) 
+	{	
+		attach-unit unitid to basket7;
+		move basket7 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 8) 
+	{	
+		attach-unit unitid to basket8;
+		move basket8 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 9) 
+	{	
+		attach-unit unitid to basket9;
+		move basket9 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 10) 
+	{	
+		attach-unit unitid to basket10;
+		move basket10 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 11) 
+	{	
+		attach-unit unitid to basket11;
+		move basket11 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 12) 
+	{	
+		attach-unit unitid to basket12;
+		move basket12 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 13) 
+	{	
+		attach-unit unitid to basket13;
+		move basket13 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 14) 
+	{	
+		attach-unit unitid to basket14;
+		move basket14 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 15) 
+	{	
+		attach-unit unitid to basket15;
+		move basket15 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 16) 
+	{	
+		attach-unit unitid to basket16;
+		move basket16 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount > 16)
+	{	
+		sleep 150;
+	}	
+}
+
+TransportDrop(unitid, position) 
+{	
+	if( unitcount > 0)
+	{	
+		drop-unit unitid;
+		unitcount = unitcount - 1;
+	}
+}
 
 walk()
 {
@@ -133,8 +232,15 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+Demo()
+{
+	unitviewer = TRUE;
+}
+
 Create()
 {
+	unitcount = 0;
+	unitviewer = FALSE;
 	moving = 0;
 	turning = 0;
 	turn tail to x-axis <80> now;
