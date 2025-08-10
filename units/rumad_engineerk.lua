@@ -73,7 +73,7 @@ return {
 			[15] = "rumad_ptr",
 			[16] = "rumad_mds",
 			[17] = "rumad_ck",
-			[18] = "rumad_macm",
+			[18] = "rumad_zorga",
 			--[19] = "rumad_",
 			--[20] = "",
 			--[19] = "",
