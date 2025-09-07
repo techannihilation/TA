@@ -131,8 +131,8 @@ local modrules = {
   experience = {
     experienceMult = expEnabled * 1.0, -- defaults to 1.0
     powerScale = 1.0, -- defaults to 1.0
-    healthScale = 0.7, -- defaults to 0.7
-    reloadScale = 2.1, -- defaults to 0.4
+    healthScale = 0.85, -- defaults to 0.7
+    reloadScale = 2.75, -- defaults to 0.4
   },
 
   damage = {
