@@ -559,6 +559,11 @@ local luaShaderDir = "LuaUI/Widgets/Include/"
 local LuaShader = VFS.Include(luaShaderDir .. "LuaShader.lua")
 local engineUniformBufferDefs = LuaShader.GetEngineUniformBufferDefs()
 
+local QUATERNIONDEFS = ""
+if Engine.FeatureSupport.transformsInGL4 then 
+	QUATERNIONDEFS = LuaShader.GetQuaternionDefs()
+end
+
 local defaultMaterialTemplate
 local unitsNormalMapTemplate
 local featuresNormalMapTemplate
@@ -605,24 +610,24 @@ local function initMaterials()
 
 	unitsNormalMapTemplate = appendShaderDefinitionsToTemplate(defaultMaterialTemplate, {
 		shaderDefinitions = {
-			"#define ENABLE_OPTION_HEALTH_TEXTURING 1",
+			"#define ENABLE_OPTION_HEALTH_TEXTURING 0",
 			-- "#define ENABLE_OPTION_THREADS 1",
-			"#define ENABLE_OPTION_HEALTH_DISPLACE 1",
+			"#define ENABLE_OPTION_HEALTH_DISPLACE 0",
 			itsXmas and "#define XMAS 1" or "#define XMAS 0",
 		},
 		deferredDefinitions = {
-			"#define ENABLE_OPTION_HEALTH_TEXTURING 1",
+			"#define ENABLE_OPTION_HEALTH_TEXTURING 0",
 			-- "#define ENABLE_OPTION_THREADS 1",
-			"#define ENABLE_OPTION_HEALTH_DISPLACE 1",
+			"#define ENABLE_OPTION_HEALTH_DISPLACE 0",
 			itsXmas and "#define XMAS 1" or "#define XMAS 0",
 		},
 		shadowDefinitions = {
 			itsXmas and "#define XMAS 1" or "",
 		},
 		reflectionDefinitions = {
-			"#define ENABLE_OPTION_HEALTH_TEXTURING 1",
+			"#define ENABLE_OPTION_HEALTH_TEXTURING 0",
 			-- "#define ENABLE_OPTION_THREADS 1",
-			"#define ENABLE_OPTION_HEALTH_DISPLACE 1",
+			"#define ENABLE_OPTION_HEALTH_DISPLACE 0",
 			itsXmas and "#define XMAS 1" or "#define XMAS 0",
 		},
 	})
@@ -720,6 +725,12 @@ local function CompileLuaShader(shader, definitions, plugIns, addName)
 		end
 		if shader.geometry then
 			shader.geometry = shader.geometry:gsub("%%%%([%a_]+)%%%%", InsertPlugin)
+		end
+	end
+
+	for i, program in ipairs({"vertex", "fragment", "geometry"}) do
+		if shader[program] and QUATERNIONDEFS then 
+			shader[program] = shader[program]:gsub("//__QUATERNIONDEFS__",  QUATERNIONDEFS)
 		end
 	end
 
