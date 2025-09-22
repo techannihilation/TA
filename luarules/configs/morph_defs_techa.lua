@@ -19,20 +19,24 @@ local devolution = (-1 > 0)
 
 local morphDefs = {
 	rlab = {
+		into = 'rlab'
 		time = 60 * 10,
 		research = 2
 	},
 	rlab = {
+	into = 'rlab'
 		time = 60 * 10,
 		tech = 2,
 		research = 3
 	},
 	rlab = {
+	into = 'rlab'
 		time = 60 * 10,
 		tech = 3
 		research = 4
 	},
 	rlab = {
+	into = 'rlab'
 		time = 60 * 10,
 		tech = 4
 		research = 5

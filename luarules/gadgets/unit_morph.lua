@@ -462,7 +462,14 @@ local function GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, un
   if (morphDef.text ~= nil) then
     tt = tt .. WhiteStr  .. morphDef.text .. '\n'
   else
-    tt = tt .. 'Morph into a ' .. ud.humanName .. '\n'
+	--add prefix
+	if(morphDev.research == nil) then
+		--normal morph prefix
+		tt = tt .. 'Morph into a ' .. ud.humanName .. '\n'
+	else
+		--research prefix
+		tt = tt .. 'Research tech level ' .. morphDev.reseatch .. '\n'
+	end
   end
   if (morphDef.time > 0) then
     tt = tt .. GreenStr  .. 'time: '   .. morphDef.time     .. '\n'
