@@ -18,6 +18,25 @@ local morphDefs = {				--beginig of morphDefs
 local devolution = (-1 > 0)
 
 local morphDefs = {
+	rlab = {
+		time = 60 * 10,
+		research = 2
+	},
+	rlab = {
+		time = 60 * 10,
+		tech = 2,
+		research = 3
+	},
+	rlab = {
+		time = 60 * 10,
+		tech = 3
+		research = 4
+	},
+	rlab = {
+		time = 60 * 10,
+		tech = 4
+		research = 5
+	},
 	armcom = {
 		into = 'armcom1',
 		time = 45,

@@ -406,7 +406,7 @@ local teamList = SpGetTeamList()
 for i=1,#teamList do
   local teamID = teamList[i]
   teamReqUnits[teamID]  = {}
-  teamTechLevel[teamID] = 0
+  teamTechLevel[teamID] = 1
 end
 
 CMD_PASSIVE = 34571
@@ -788,9 +788,17 @@ local function FinishMorph(unitID, morphData)
  -- local lineage = Spring.GetUnitLineage(unitID)
  -- Spring.SetUnitLineage(newUnit,lineage,true)
 
+	 --update team tech level  TODO format
+	 local teamID = unitTeam
+	 local newLevel = morphData.def.research or 0
+	 if(teamTechLevel[teamID] < newLevel) then
+	   teamTechLevel[teamID] = newLevel
+	 end
+	 
   --// FIXME: - re-attach to current transport?
   --// update selection
   SendToUnsynced ("unit_morph_finished", unitID, newUnit)
+  
 
   SpSetUnitBlocking(newUnit, true)
   SpDestroyUnit(unitID, false, true) -- selfd = false, reclaim = true
@@ -1039,22 +1047,22 @@ end
 
 
 function AddFactory(unitID, unitDefID, teamID)
-  if (isFactory(unitDefID)) then
-    local unitTechLevel = GetTechLevel(unitDefID)
-    if (unitTechLevel > teamTechLevel[teamID]) then
-      teamTechLevel[teamID]=unitTechLevel
-    end
-  end
+--  if (isFactory(unitDefID)) then
+--    local unitTechLevel = GetTechLevel(unitDefID)
+--    if (unitTechLevel > teamTechLevel[teamID]) then
+--      teamTechLevel[teamID]=unitTechLevel
+--    end
+--  end
 end
 
 -- add Com to deblock level morph (here i think)
 function AddCommander(unitID, unitDefID, teamID)
-  if (UnitDefs[unitDefID].customParams.iscommander) then
-    local unitTechLevel = GetTechLevel(unitDefID)
-    if (unitTechLevel > teamTechLevel[teamID]) then
-      teamTechLevel[teamID]=unitTechLevel
-    end
-  end
+--  if (UnitDefs[unitDefID].customParams.iscommander) then
+--    local unitTechLevel = GetTechLevel(unitDefID)
+--    if (unitTechLevel > teamTechLevel[teamID]) then
+--      teamTechLevel[teamID]=unitTechLevel
+--    end
+--  end
 end
 
 
@@ -1075,9 +1083,9 @@ function RemoveFactory(unitID, unitDefID, teamID)
       end
     end
 
-    if (level ~= teamTechLevel[teamID]) then
-      teamTechLevel[teamID] = level
-    end
+--    if (level ~= teamTechLevel[teamID]) then
+--      teamTechLevel[teamID] = level
+--    end
 
   end
 end
