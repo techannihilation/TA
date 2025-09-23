@@ -315,6 +315,7 @@ local function BuildMorphDef(udSrc, morphData)
       e = (newData.increment * newData.energy)
     }
     newData.tech = morphData.tech or 0
+    newData.research = morphData.research or nil 
     newData.xp   = morphData.xp or 0
     newData.rank = morphData.rank or 0
     newData.facing = morphData.facing
@@ -463,12 +464,12 @@ local function GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, un
     tt = tt .. WhiteStr  .. morphDef.text .. '\n'
   else
 	--add prefix
-	if(morphDev.research == nil) then
+	if(morphDef.research == nil) then
 		--normal morph prefix
 		tt = tt .. 'Morph into a ' .. ud.humanName .. '\n'
 	else
 		--research prefix
-		tt = tt .. 'Research tech level ' .. morphDev.reseatch .. '\n'
+		tt = tt .. 'Research tech level ' .. morphDef.research .. '\n'
 	end
   end
   if (morphDef.time > 0) then
@@ -554,6 +555,10 @@ local function AddMorphCmdDesc(unitID, unitDefID, teamID, morphDef, teamTech)
   morphCmdDesc.disabled= (morphDef.tech > teamTech)or(morphDef.rank > unitRank)or(morphDef.xp > unitXP)or(not teamOwnsReqUnit)
 
   morphCmdDesc.id = morphDef.cmd
+
+  if morphDef.research ~= nil then 
+    morphCmdDesc.name = "Research\n T"..morphDef.research
+  end
 
   local cmdDescID = SpFindUnitCmdDesc(unitID, morphDef.cmd)
   if (cmdDescID) then
