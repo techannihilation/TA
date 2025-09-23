@@ -20,22 +20,31 @@ local devolution = (-1 > 0)
 local morphDefs = {
 	armcom = {
 		{
-		into = 'armcom1',
-		time = 60,
+			into = 'armcom1',
+			time = 60,
+			tech = 1
 		},
 		{
-		into = 'armcom',
-		time = 3,
-		research = 2
+			into = 'armcom',
+			time = 3,
+			research = 1
 		}
 	},
 	armcom1 = {
-		into = 'armcom2',
-    time = 90,
+		{
+			into = 'armcom2',
+	    	time = 90,
+			tech = 2
+		},
+		{
+			into = 'armcom1',
+			time = 3,
+			research = 2
+		}
 	},
 	armcom2 = {
 		into = 'armcom3',
-    time = 180,
+    	time = 180,
 	},
 	talon_com = {
 		into = 'talon_com1',

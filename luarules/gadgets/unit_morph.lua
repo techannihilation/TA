@@ -407,7 +407,7 @@ local teamList = SpGetTeamList()
 for i=1,#teamList do
   local teamID = teamList[i]
   teamReqUnits[teamID]  = {}
-  teamTechLevel[teamID] = 1
+  teamTechLevel[teamID] = 0
 end
 
 CMD_PASSIVE = 34571
@@ -469,7 +469,7 @@ local function GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, un
 		tt = tt .. 'Morph into a ' .. ud.humanName .. '\n'
 	else
 		--research prefix
-		tt = tt .. 'Research tech level ' .. morphDef.research .. '\n'
+		tt = tt .. 'Research tech level ' .. (morphDef.research + 1) .. '\n'
 	end
   end
   if (morphDef.time > 0) then
@@ -1240,6 +1240,10 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
         (morphDef.xp<=SpGetUnitExperience(unitID))and
         (UnitReqCheck(teamID, morphDef.require)) )
     then
+      if(morphDef.research and morphDef.research <= teamTechLevel[teamID])
+	  then
+        return false
+	  end
       if (isFactory(unitDefID)) then
         --// the factory cai is broken and doesn't call CommandFallback(),
         --// so we have to start the morph here
