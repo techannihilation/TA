@@ -87,7 +87,7 @@ return {
 				featuredead = "heap",
 				footprintx = 5,
 				footprintz = 6,
-				metal = 2687,
+				metal = 2687 / 4,
 				object = "core/coralab_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -100,7 +100,7 @@ return {
 				description = "Advanced Kbot Lab Debris",
 				footprintx = 5,
 				footprintz = 5,
-				metal = 1646,
+				metal = 1646 / 4,
 				object = "5x5a.s3o",
 				reclaimable = true,
 				customparams = {

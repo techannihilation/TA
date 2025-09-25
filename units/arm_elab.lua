@@ -83,7 +83,7 @@ return {
 				featuredead = "armshlt_heap",
 				footprintx = 9,
 				footprintz = 9,
-				metal = 12862,
+				metal = 12862 / 5,
 				object = "arm/armshlt_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -97,7 +97,7 @@ return {
 				energy = 0,
 				footprintx = 9,
 				footprintz = 9,
-				metal = 6860,
+				metal = 6860 / 5,
 				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {

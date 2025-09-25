@@ -77,7 +77,7 @@ return {
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
-				metal = 735,
+				metal = 735 / 5,
 				object = "arm/asubpen_dead.s3o",
 				reclaimable = true,
 				customparams = {

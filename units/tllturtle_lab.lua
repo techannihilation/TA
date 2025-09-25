@@ -68,7 +68,7 @@ return {
 				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
-				metal = 3300,
+				metal = 3300 / 5,
 				object = "tll/tllturtle_lab_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -82,7 +82,7 @@ return {
 				featuredead = "heap2",
 				footprintx = 6,
 				footprintz = 6,
-				metal = 1760,
+				metal = 1760 / 5,
 				object = "6x6c.s3o",
 				reclaimable = true,
 				customparams = {

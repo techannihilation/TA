@@ -80,7 +80,7 @@ return {
 				featuredead = "heap",
 				footprintx = 18,
 				footprintz = 18,
-				metal = 67200,
+				metal = 67200 / 5,
 				object = "talon/talon_ulab_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -94,7 +94,7 @@ return {
 				energy = 0,
 				footprintx = 18,
 				footprintz = 18,
-				metal = 35840,
+				metal = 35840 / 5,
 				object = "7x7c.s3o",
 				reclaimable = true,
 				customparams = {

@@ -78,7 +78,7 @@ return {
 				featuredead = "heap",
 				footprintx = 8,
 				footprintz = 8,
-				metal = 3412,
+				metal = 3412 / 4,
 				object = "tll/tllalab_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -91,7 +91,7 @@ return {
 				description = "Advanced Kbot Lab Debris",
 				footprintx = 8,
 				footprintz = 8,
-				metal = 1820,
+				metal = 1820 / 4,
 				object = "7x7c.s3o",
 				reclaimable = true,
 				customparams = {

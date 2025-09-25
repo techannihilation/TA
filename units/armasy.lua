@@ -78,7 +78,7 @@ return {
 				energy = 0,
 				footprintx = 12,
 				footprintz = 12,
-				metal = 3687,
+				metal = 3687 / 5,
 				object = "arm/armasy_dead.s3o",
 				reclaimable = true,
 				customparams = {

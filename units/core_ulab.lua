@@ -72,7 +72,7 @@ return {
 				energy = 0,
 				footprintx = 18,
 				footprintz = 18,
-				metal = 30840,
+				metal = 30840 / 5,
 				object = "7x7c.s3o",
 				reclaimable = true,
 				customparams = {

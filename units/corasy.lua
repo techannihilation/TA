@@ -75,7 +75,7 @@ return {
 				energy = 0,
 				footprintx = 12,
 				footprintz = 12,
-				metal = 3648,
+				metal = 3648 / 5,
 				object = "core/corasy_dead.s3o",
 				reclaimable = true,
 				customparams = {
