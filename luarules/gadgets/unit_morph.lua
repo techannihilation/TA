@@ -404,10 +404,12 @@ local morphToStart = {} -- morphes to start next frame
 local teamTechLevel = {}
 local teamReqUnits  = {}
 local teamList = SpGetTeamList()
+local teamInvalidFactories = {}
 for i=1,#teamList do
   local teamID = teamList[i]
   teamReqUnits[teamID]  = {}
   teamTechLevel[teamID] = 0
+  teamInvalidFactories[teamID] = {}
 end
 
 CMD_PASSIVE = 34571
@@ -463,14 +465,14 @@ local function GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, un
   if (morphDef.text ~= nil) then
     tt = tt .. WhiteStr  .. morphDef.text .. '\n'
   else
-	--add prefix
-	if(morphDef.research == nil) then
-		--normal morph prefix
-		tt = tt .. 'Morph into a ' .. ud.humanName .. '\n'
-	else
-		--research prefix
-		tt = tt .. 'Research tech level ' .. (morphDef.research + 1) .. '\n'
-	end
+  --add prefix
+  if(morphDef.research == nil) then
+    --normal morph prefix
+    tt = tt .. 'Morph into a ' .. ud.humanName .. '\n'
+  else
+    --research prefix
+    tt = tt .. 'Research tech level ' .. (morphDef.research + 1) .. '\n'
+  end
   end
   if (morphDef.time > 0) then
     tt = tt .. GreenStr  .. 'time: '   .. morphDef.time     .. '\n'
@@ -683,6 +685,19 @@ local function FinishMorph(unitID, morphData)
   SpSetUnitBlocking(unitID, false)
   morphUnits[unitID] = nil
 
+  --update team tech level  TODO format
+  local teamID = unitTeam
+  local newLevel = morphData.def.research or 0
+  if(newLevel > 0)
+  then
+    Spring.echo("Research finished")
+    if(teamTechLevel[teamID] < newLevel) then
+      TechLevelUpdated(teamID, newLevel)
+    end
+    StopMorph(unitID,morphData)
+    return
+  end
+  
   local oldHealth,oldMaxHealth,paralyzeDamage,captureProgress,buildProgress = SpGetUnitHealth(unitID)
   local isBeingBuilt = false
   if buildProgress < 1 then
@@ -800,13 +815,7 @@ local function FinishMorph(unitID, morphData)
  -- local lineage = Spring.GetUnitLineage(unitID)
  -- Spring.SetUnitLineage(newUnit,lineage,true)
 
-	 --update team tech level  TODO format
-	 local teamID = unitTeam
-	 local newLevel = morphData.def.research or 0
-	 if(teamTechLevel[teamID] < newLevel) then
-	   teamTechLevel[teamID] = newLevel
-	 end
-	 
+   
   --// FIXME: - re-attach to current transport?
   --// update selection
   SendToUnsynced ("unit_morph_finished", unitID, newUnit)
@@ -1057,25 +1066,53 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+--- Function to handle tech level updates for a team
+local function TechLevelUpdated(teamID, level)
+  teamTechLevel[teamID] = level
+    --- Iterate through all invalid factories of the team
+    for unitID, factoryData in pairs(teamInvalidFactories[teamID] or {}) do
+        local unitDefID = factoryData.defID
+        local unitTechLevel = factoryData.techLevel
+        
+        --- Check if the factory can now be activated
+        if unitTechLevel <= (teamTechLevel[teamID] or 0) then
+            --- Enable the factory
+            Spring.SetUnitHealth(unitID, { paralyze = -1 })  -- remove paralysis effect
+            Spring.SetUnitResourcing(unitID, "e", UnitDefs[unitDefID].energyMake)  -- restore production
+            
+            --- Remove the factory from the invalid list
+            teamInvalidFactories[teamID][unitID] = nil
+        end
+    end
 
+  SendToUnsynced ("team_tech_level_updated", teamID, level)
+end
+
+--- Function to add a new factory to the system
 function AddFactory(unitID, unitDefID, teamID)
---  if (isFactory(unitDefID)) then
---    local unitTechLevel = GetTechLevel(unitDefID)
---    if (unitTechLevel > teamTechLevel[teamID]) then
---      teamTechLevel[teamID]=unitTechLevel
---    end
---  end
+    if isFactory(unitDefID) then
+        local unitTechLevel = GetTechLevel(unitDefID)
+        local teamTech = teamTechLevel[teamID] or 0
+        
+        --- Check if the factory requires research
+        if unitTechLevel > teamTech then
+            --- Add the factory to the invalid list
+            if not teamInvalidFactories[teamID] then 
+                teamInvalidFactories[teamID] = {} 
+            end
+            teamInvalidFactories[teamID][unitID] = {
+                defID = unitDefID,
+                techLevel = unitTechLevel
+            }
+            
+            --- Apply paralysis effects
+            Spring.SetUnitResourcing(unitID, "e", 0)  -- stop production
+            Spring.SetUnitHealth(unitID, { paralyze = 1.0e9 })  -- apply paralysis effect
+        end
+    end
 end
 
--- add Com to deblock level morph (here i think)
-function AddCommander(unitID, unitDefID, teamID)
---  if (UnitDefs[unitDefID].customParams.iscommander) then
---    local unitTechLevel = GetTechLevel(unitDefID)
---    if (unitTechLevel > teamTechLevel[teamID]) then
---      teamTechLevel[teamID]=unitTechLevel
---    end
---  end
-end
+
 
 
 function RemoveFactory(unitID, unitDefID, teamID)
@@ -1241,9 +1278,9 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
         (UnitReqCheck(teamID, morphDef.require)) )
     then
       if(morphDef.research and morphDef.research <= teamTechLevel[teamID])
-	  then
+    then
         return false
-	  end
+    end
       if (isFactory(unitDefID)) then
         --// the factory cai is broken and doesn't call CommandFallback(),
         --// so we have to start the morph here
@@ -1415,6 +1452,7 @@ local function SelectSwap(cmd, oldID, newID)
 end
 
 local function StartMorph(cmd, unitID, unitDefID, morphID)
+  Spring.echo("Research started")
   if (Script.LuaUI('MorphStart')) then
     if (useLuaUI) then
       local readTeam, spec, specFullView = nil,GetSpectatingState()
@@ -1514,6 +1552,7 @@ function gadget:Initialize()
   gadgetHandler:AddSyncAction("mph_stp", StopMph)
   gadgetHandler:AddSyncAction("mph_prg", ProgMph)
   gadgetHandler:AddSyncAction("unit_morph_stalled", StalledMph)
+  gadgetHandler:AddSyncAction("team_tech_level_updated", TechLevelUpdated)
   gadgetHandler:RegisterGlobal('DrawManager_morph', DrawStatus)
 
 end
@@ -1527,6 +1566,7 @@ function gadget:Shutdown()
   gadgetHandler:RemoveSyncAction("mph_stp")
   gadgetHandler:RemoveSyncAction("mph_prg")
   gadgetHandler:RemoveSyncAction("unit_morph_stalled")
+  gadgetHandler:RemoveSyncAction("team_tech_level_updated")
   gadgetHandler:DeregisterGlobal('DrawManager_morph')
 
 end
