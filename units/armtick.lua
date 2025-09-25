@@ -62,7 +62,7 @@ return {
 			[7] = "arm_wall",
 			[8] = "armarad",
 			[9] = "armmine2",
-			[10] = "armgrape",
+			[10] = "arm_beamer",
 			--[11] = "",
 			[12] = "armpb",
 			[13] = "armamb",

@@ -88,7 +88,7 @@ return {
 			[24] = "armdrag",
 			[25] = "armclaw",
 			[26] = "armllt",
-			[27] = "armgrape",
+			[27] = "arm_beamer",
 			[28] = "armhlt",
 			[29] = "armdl",
 			[30] = "armguard",
