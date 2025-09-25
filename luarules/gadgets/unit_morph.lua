@@ -1066,7 +1066,7 @@ end
 --------------------------------------------------------------------------------
 
 --- Function to handle tech level updates for a team
-local function TechLevelUpdated(teamID, level)
+function TechLevelUpdated(teamID, level)
   teamTechLevel[teamID] = level
     --- Iterate through all invalid factories of the team
     for unitID, factoryData in pairs(teamInvalidFactories[teamID] or {}) do
