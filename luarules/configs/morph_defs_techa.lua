@@ -17,110 +17,312 @@ local morphDefs = {				--beginig of morphDefs
 
 local devolution = (-1 > 0)
 
+--local research_time = {60 * 10, 60 * 12, 60 * 15, 60 * 16}
+local research_time = {15, 15, 15, 15}
+
+local research_costs_per_second = {0, 70000, 600000, 2500000, 4000000}
+
 local morphDefs = {
-	armcom = {
-		{
-			into = 'armcom1',
-			time = 60,
-			tech = 1
-		},
-		{
-			into = 'armcom',
-			time = 3,
-			research = 1
-		}
-	},
-	armcom1 = {
-		{
-			into = 'armcom2',
-	    time = 90,
-			tech = 2
-		},
-		{
-			into = 'armcom1',
-			time = 3,
-			research = 2
-		}
-	},
-	armcom2 = {
-    {
-      into = 'armcom3',
-      time = 180,
-      tech = 3
-    },
-    {
-      into = 'armcom2',
-      time = 3,
-      research = 3
-    }
-	},
-  armcom3 = {
-    {
-      into = 'armcom3',
-      time = 3,
-      research = 4
-    }
+ armcom = {
+      {
+          into = 'armcom1',
+          time = 60,
+          tech = 1
+      },
+      {
+          into = 'armcom',
+          research = 1,
+          time = research_time[1],  -- 15
+          energy = research_costs_per_second[1]  -- 0
+      }
   },
-	talon_com = {
-		into = 'talon_com1',
-		time = 45,
-	},
-	talon_com1 = {
-		into = 'talon_com2',
-    time = 90,
-	},
-	talon_com2 = {
-		into = 'talon_com3',
-    time = 180,
-	},
-	gok_com = {
-		into = 'gok_com1',
-		time = 45,
-	},
-	gok_com1 = {
-		into = 'gok_com2',
-		time = 90,
-	},
-	gok_com2 = {
-		into = 'gok_com3',
-		time = 180,
-	},
-	corcom = {
-		into = 'corcom1',
-		time = 45,
-	},
-	corcom1 = {
-		into = 'corcom2',
-    time = 90,
-	},
-	corcom2 = {
-		into = 'corcom3',
-		time = 180,
-	},
-	tllcom = {
-		into = 'tllcom1',
-		time = 45,
-	},
-	tllcom1 = {
-		into = 'tllcom2',
-    time = 90,
-	},
-	tllcom2 = {
-		into = 'tllcom3',
-		time = 180,
-	},
-	rumad_com = {
-		into = 'rumad_com1',
-		time = 60,
-	},
-	rumad_com1 = {
-		into = 'rumad_com2',
-		time = 120,
-	},
-	rumad_com2 = {
-		into = 'rumad_com3',
-		time = 240,
-	},
+  armcom1 = {
+      {
+          into = 'armcom2',
+          time = 90,
+          tech = 2
+      },
+      {
+          into = 'armcom1',
+          research = 2,
+          time = research_time[2],  -- 15
+          energy = research_costs_per_second[2]  -- 160000
+      }
+  },
+  armcom2 = {
+      {
+          into = 'armcom3',
+          time = 180,
+          tech = 3
+      },
+      {
+          into = 'armcom2',
+          time = 3,
+          research = 3,
+          energy = research_costs_per_second[3],  -- 833333.33
+          time_cost = research_time[3]  -- 15
+      }
+  },
+  armcom3 = {
+      {
+          into = 'armcom3',
+          time = 3,
+          research = 4,
+          energy = research_costs_per_second[4],  -- 833333.33
+          time_cost = research_time[4]  -- 15
+      }
+  },
+  --TALON COM
+ talon_com = {
+      {
+          into = 'talon_com1',
+          time = 60,
+          tech = 1
+      },
+      {
+          into = 'talon_com',
+          research = 1,
+          time = research_time[1],  -- 15
+          energy = research_costs_per_second[1]  -- 0
+      }
+  },
+  talon_com1 = {
+      {
+          into = 'talon_com2',
+          time = 90,
+          tech = 2
+      },
+      {
+          into = 'talon_com1',
+          research = 2,
+          time = research_time[2],  -- 15
+          energy = research_costs_per_second[2]  -- 160000
+      }
+  },
+  talon_com2 = {
+      {
+          into = 'talon_com3',
+          time = 180,
+          tech = 3
+      },
+      {
+          into = 'talon_com2',
+          time = 3,
+          research = 3,
+          energy = research_costs_per_second[3],  -- 833333.33
+          time_cost = research_time[3]  -- 15
+      }
+  },
+  talon_com3 = {
+      {
+          into = 'talon_com3',
+          time = 3,
+          research = 4,
+          energy = research_costs_per_second[4],  -- 833333.33
+          time_cost = research_time[4]  -- 15
+      }
+  },
+	--GOK COM
+ gok_com = {
+      {
+          into = 'gok_com1',
+          time = 60,
+          tech = 1
+      },
+      {
+          into = 'gok_com',
+          research = 1,
+          time = research_time[1],  -- 15
+          energy = research_costs_per_second[1]  -- 0
+      }
+  },
+  gok_com1 = {
+      {
+          into = 'gok_com2',
+          time = 90,
+          tech = 2
+      },
+      {
+          into = 'gok_com1',
+          research = 2,
+          time = research_time[2],  -- 15
+          energy = research_costs_per_second[2]  -- 160000
+      }
+  },
+  gok_com2 = {
+      {
+          into = 'gok_com3',
+          time = 180,
+          tech = 3
+      },
+      {
+          into = 'gok_com2',
+          time = 3,
+          research = 3,
+          energy = research_costs_per_second[3],  -- 833333.33
+          time_cost = research_time[3]  -- 15
+      }
+  },
+  gok_com3 = {
+      {
+          into = 'gok_com3',
+          time = 3,
+          research = 4,
+          energy = research_costs_per_second[4],  -- 833333.33
+          time_cost = research_time[4]  -- 15
+      }
+  },
+	--CORE COM
+ corcom = {
+      {
+          into = 'corcom1',
+          time = 60,
+          tech = 1
+      },
+      {
+          into = 'corcom',
+          research = 1,
+          time = research_time[1],  -- 15
+          energy = research_costs_per_second[1]  -- 0
+      }
+  },
+  corcom1 = {
+      {
+          into = 'corcom2',
+          time = 90,
+          tech = 2
+      },
+      {
+          into = 'corcom1',
+          research = 2,
+          time = research_time[2],  -- 15
+          energy = research_costs_per_second[2]  -- 160000
+      }
+  },
+  corcom2 = {
+      {
+          into = 'corcom3',
+          time = 180,
+          tech = 3
+      },
+      {
+          into = 'corcom2',
+          time = 3,
+          research = 3,
+          energy = research_costs_per_second[3],  -- 833333.33
+          time_cost = research_time[3]  -- 15
+      }
+  },
+  corcom3 = {
+      {
+          into = 'corcom3',
+          time = 3,
+          research = 4,
+          energy = research_costs_per_second[4],  -- 833333.33
+          time_cost = research_time[4]  -- 15
+      }
+  },
+	--TLL COM
+	 tllcom = {
+      {
+          into = 'tllcom1',
+          time = 60,
+          tech = 1
+      },
+      {
+          into = 'tllcom',
+          research = 1,
+          time = research_time[1],  -- 15
+          energy = research_costs_per_second[1]  -- 0
+      }
+  },
+  tllcom1 = {
+      {
+          into = 'tllcom2',
+          time = 90,
+          tech = 2
+      },
+      {
+          into = 'tllcom1',
+          research = 2,
+          time = research_time[2],  -- 15
+          energy = research_costs_per_second[2]  -- 160000
+      }
+  },
+  tllcom2 = {
+      {
+          into = 'tllcom3',
+          time = 180,
+          tech = 3
+      },
+      {
+          into = 'tllcom2',
+          time = 3,
+          research = 3,
+          energy = research_costs_per_second[3],  -- 833333.33
+          time_cost = research_time[3]  -- 15
+      }
+  },
+  tllcom3 = {
+      {
+          into = 'tllcom3',
+          time = 3,
+          research = 4,
+          energy = research_costs_per_second[4],  -- 833333.33
+          time_cost = research_time[4]  -- 15
+      }
+  },
+	--RUMAD COM
+   rumad_com = {
+      {
+          into = 'rumad_com1',
+          time = 60,
+          tech = 1
+      },
+      {
+          into = 'rumad_com',
+          research = 1,
+          time = research_time[1],  -- 15
+          energy = research_costs_per_second[1]  -- 0
+      }
+  },
+  rumad_com1 = {
+      {
+          into = 'rumad_com2',
+          time = 90,
+          tech = 2
+      },
+      {
+          into = 'rumad_com1',
+          research = 2,
+          time = research_time[2],  -- 15
+          energy = research_costs_per_second[2]  -- 160000
+      }
+  },
+  rumad_com2 = {
+      {
+          into = 'rumad_com3',
+          time = 180,
+          tech = 3
+      },
+      {
+          into = 'rumad_com2',
+          time = 3,
+          research = 3,
+          energy = research_costs_per_second[3],  -- 833333.33
+          time_cost = research_time[3]  -- 15
+      }
+  },
+  rumad_com3 = {
+      {
+          into = 'rumad_com3',
+          time = 3,
+          research = 4,
+          energy = research_costs_per_second[4],  -- 833333.33
+          time_cost = research_time[4]  -- 15
+      }
+  },
+	--UNITS
 	rumad_king = {
 		into = 'rumad_king1',
 		time = 25,

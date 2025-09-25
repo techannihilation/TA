@@ -557,10 +557,14 @@ local function AddMorphCmdDesc(unitID, unitDefID, teamID, morphDef, teamTech)
   morphCmdDesc.disabled= (morphDef.tech > teamTech)or(morphDef.rank > unitRank)or(morphDef.xp > unitXP)or(not teamOwnsReqUnit)
 
   morphCmdDesc.id = morphDef.cmd
-
+  --TODO fix bug text bugged after morph
+  --TODO remove button
   if morphDef.research ~= nil then 
-    morphCmdDesc.name = "Research\n T"..morphDef.research
+      morphCmdDesc.name = "Research\n T"..(morphDef.research + 1)
+      morphCmdDesc.disabled = morphCmdDesc.disabled or morphDef.research <= teamTech
+      morphCmdDesc.texture = nil
   end
+
 
   local cmdDescID = SpFindUnitCmdDesc(unitID, morphDef.cmd)
   if (cmdDescID) then
