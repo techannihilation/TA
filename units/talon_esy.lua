@@ -1,10 +1,10 @@
 return {
 	talon_esy = {
 		buildcostenergy = 248969,
-		buildcostmetal = 17050,
+		buildcostmetal = 17050 / 3,
 		builder = true,
 		buildpic = "talon_asy.dds",
-		buildtime = 200000,
+		buildtime = 200000 / 3,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

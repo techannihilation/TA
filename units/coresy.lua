@@ -1,14 +1,14 @@
 return {
 	coresy = {
 		buildcostenergy = 248950,
-		buildcostmetal = 17112,
+		buildcostmetal = 17112 / 3,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "coresy_aoplane.dds",
 		buildpic = "coresy.dds",
-		buildtime = 200000,
+		buildtime = 200000 / 3,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

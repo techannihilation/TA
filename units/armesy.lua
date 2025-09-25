@@ -1,14 +1,14 @@
 return {
 	armesy = {
 		buildcostenergy = 271357,
-		buildcostmetal = 16667,
+		buildcostmetal = 16667 / 4,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "armesy_aoplane.dds",
 		buildpic = "armesy.dds",
-		buildtime = 200000,
+		buildtime = 200000 / 4,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

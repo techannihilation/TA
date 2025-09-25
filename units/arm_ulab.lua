@@ -1,14 +1,14 @@
 return {
 	arm_ulab = {
 		buildcostenergy = 1479050,
-		buildcostmetal = 85630,
+		buildcostmetal = 85630 / 5,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
 		buildinggrounddecaltype = "arm_ulab_aoplane.dds",
 		buildpic = "arm_ulab.dds",
-		buildtime = 1000000,
+		buildtime = 1000000 / 5,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

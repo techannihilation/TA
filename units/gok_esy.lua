@@ -1,10 +1,10 @@
 return {
 	gok_esy = {
 		buildcostenergy = 271357,
-		buildcostmetal = 16667,
+		buildcostmetal = 16667 / 3,
 		builder = true,
 		buildpic = "gok_esy.dds",
-		buildtime = 200000,
+		buildtime = 200000 / 3,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

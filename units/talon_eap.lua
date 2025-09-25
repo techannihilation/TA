@@ -2,10 +2,10 @@ return {
 	talon_eap = {
 		buildangle = 1024,
 		buildcostenergy = 411042,
-		buildcostmetal = 17985,
+		buildcostmetal = 17985 / 3,
 		builder = true,
 		buildpic = "talon_eap.dds",
-		buildtime = 300000,
+		buildtime = 300000 / 3,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

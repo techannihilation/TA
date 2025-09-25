@@ -1,14 +1,14 @@
 return {
 	csubpen = {
 		buildcostenergy = 27366,
-		buildcostmetal = 3371,
+		buildcostmetal = 3371 / 5,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "csubpen_aoplane.dds",
 		buildpic = "csubpen.dds",
-		buildtime = 36000,
+		buildtime = 36000 / 5,
 		canmove = true,
 		canpatrol = true,
 		category = "ALL LEVEL1 UNDERWATER",
