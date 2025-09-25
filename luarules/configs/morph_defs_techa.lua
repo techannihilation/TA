@@ -33,7 +33,7 @@ local morphDefs = {
 	armcom1 = {
 		{
 			into = 'armcom2',
-	    	time = 90,
+	    time = 90,
 			tech = 2
 		},
 		{
@@ -43,9 +43,24 @@ local morphDefs = {
 		}
 	},
 	armcom2 = {
-		into = 'armcom3',
-    	time = 180,
+    {
+      into = 'armcom3',
+      time = 180,
+      tech = 3
+    },
+    {
+      into = 'armcom2',
+      time = 3,
+      research = 3
+    }
 	},
+  armcom3 = {
+    {
+      into = 'armcom3',
+      time = 3,
+      research = 4
+    }
+  },
 	talon_com = {
 		into = 'talon_com1',
 		time = 45,
