@@ -674,28 +674,6 @@ local function StopMorph(unitID, morphData)
 end
 
 
---- Function to handle tech level updates for a team
-local function TechLevelUpdated(teamID, level)
-  teamTechLevel[teamID] = level
-    --- Iterate through all invalid factories of the team
-    for unitID, factoryData in pairs(teamInvalidFactories[teamID] or {}) do
-        local unitDefID = factoryData.defID
-        local unitTechLevel = factoryData.techLevel
-        
-        --- Check if the factory can now be activated
-        if unitTechLevel <= (teamTechLevel[teamID] or 0) then
-            --- Enable the factory
-            Spring.SetUnitHealth(unitID, { paralyze = -1 })  -- remove paralysis effect
-            Spring.SetUnitResourcing(unitID, "e", UnitDefs[unitDefID].energyMake)  -- restore production
-            
-            --- Remove the factory from the invalid list
-            teamInvalidFactories[teamID][unitID] = nil
-        end
-    end
-
-  SendToUnsynced ("team_tech_level_updated", teamID, level)
-end
-
 local function FinishMorph(unitID, morphData)
   Spring.SetUnitRulesParam(unitID,"Morphing",0)
   local udDst = UnitDefs[morphData.def.into]
@@ -710,11 +688,13 @@ local function FinishMorph(unitID, morphData)
   --update team tech level  TODO format
   local teamID = unitTeam
   local newLevel = morphData.def.research or 0
-  if(newLevel > 0) then
+  if(newLevel > 0)
+  then
     if(teamTechLevel[teamID] < newLevel) then
       TechLevelUpdated(teamID, newLevel)
+      UpdateMorphReqs(teamID)
     end
-      StopMorph(unitID,morphData)
+    StopMorph(unitID,morphData)
     return
   end
   
@@ -1086,7 +1066,6 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-
 --- Function to add a new factory to the system
 function AddFactory(unitID, unitDefID, teamID)
     if isFactory(unitDefID) then
@@ -1338,6 +1317,27 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
   return true, false  --// command was used, do not remove it
 end
 
+--- Function to handle tech level updates for a team
+function TechLevelUpdated(teamID, level)
+  teamTechLevel[teamID] = level
+    --- Iterate through all invalid factories of the team
+    for unitID, factoryData in pairs(teamInvalidFactories[teamID] or {}) do
+        local unitDefID = factoryData.defID
+        local unitTechLevel = factoryData.techLevel
+        
+        --- Check if the factory can now be activated
+        if unitTechLevel <= (teamTechLevel[teamID] or 0) then
+            --- Enable the factory
+            Spring.SetUnitHealth(unitID, { paralyze = -1 })  -- remove paralysis effect
+            Spring.SetUnitResourcing(unitID, "e", UnitDefs[unitDefID].energyMake)  -- restore production
+            
+            --- Remove the factory from the invalid list
+            teamInvalidFactories[teamID][unitID] = nil
+        end
+    end
+
+  
+end
 
 
 --------------------------------------------------------------------------------
@@ -1526,6 +1526,8 @@ local function StalledMph(cmd, teamID, teamsize)
   end
 end
 
+
+
 --[[
 function IsTooHigh()
   local cx, cy, cz = Spring.GetCameraPosition()
@@ -1550,7 +1552,6 @@ function gadget:Initialize()
   gadgetHandler:AddSyncAction("mph_stp", StopMph)
   gadgetHandler:AddSyncAction("mph_prg", ProgMph)
   gadgetHandler:AddSyncAction("unit_morph_stalled", StalledMph)
-  gadgetHandler:AddSyncAction("team_tech_level_updated", TechLevelUpdated)
   gadgetHandler:RegisterGlobal('DrawManager_morph', DrawStatus)
 
 end
