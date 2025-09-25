@@ -1,13 +1,13 @@
 return {
 	tllahp = {
 		buildcostenergy = 23595,
-		buildcostmetal = 3799,
+		buildcostmetal = 3799 / 3,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildpic = "tllahp.dds",
-		buildtime = 36000,
+		buildtime = 36000 / 3,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -67,7 +67,7 @@ return {
 				featuredead = "heap",
 				footprintx = 10,
 				footprintz = 8,
-				metal = 3360,
+				metal = 3360 / 3,
 				object = "tll/tllahp_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -80,7 +80,7 @@ return {
 				description = "Advanced Hovercraft Platform Debris",
 				footprintx = 8,
 				footprintz = 7,
-				metal = 1792,
+				metal = 1792 / 3,
 				object = "7x7a.s3o",
 				reclaimable = true,
 				customparams = {

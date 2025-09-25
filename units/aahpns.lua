@@ -1,10 +1,10 @@
 return {
 	aahpns = {
 		buildcostenergy = 29687,
-		buildcostmetal = 3544,
+		buildcostmetal = 3544 / 3,
 		builder = true,
 		buildpic = "aahpns.dds",
-		buildtime = 36000,
+		buildtime = 36000 / 3,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -68,7 +68,7 @@ return {
 				featuredead = "heap",
 				footprintx = 10,
 				footprintz = 8,
-				metal = 3615,
+				metal = 3615 / 3,
 				object = "arm/aahpns_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -81,7 +81,7 @@ return {
 				description = "Advanced Hovercraft Platform - NS Debris",
 				footprintx = 8,
 				footprintz = 7,
-				metal = 1928,
+				metal = 1928 / 3,
 				object = "7x7a.s3o",
 				reclaimable = true,
 				customparams = {
