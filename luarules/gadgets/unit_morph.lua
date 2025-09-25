@@ -690,7 +690,6 @@ local function FinishMorph(unitID, morphData)
   local newLevel = morphData.def.research or 0
   if(newLevel > 0)
   then
-    Spring.echo("Research finished")
     if(teamTechLevel[teamID] < newLevel) then
       TechLevelUpdated(teamID, newLevel)
     end
@@ -1452,7 +1451,6 @@ local function SelectSwap(cmd, oldID, newID)
 end
 
 local function StartMorph(cmd, unitID, unitDefID, morphID)
-  Spring.echo("Research started")
   if (Script.LuaUI('MorphStart')) then
     if (useLuaUI) then
       local readTeam, spec, specFullView = nil,GetSpectatingState()
