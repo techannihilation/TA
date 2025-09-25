@@ -1,10 +1,10 @@
 return {
 	tllplat = {
 		buildcostenergy = 27854,
-		buildcostmetal = 4005,
+		buildcostmetal = 4005 / 3,
 		builder = true,
 		buildpic = "tllplat.dds",
-		buildtime = 36000,
+		buildtime = 36000 / 3,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -65,7 +65,7 @@ return {
 				featuredead = "heap",
 				footprintx = 7,
 				footprintz = 7,
-				metal = 2919,
+				metal = 2919 / 3,
 				object = "tll/tllplat_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -78,7 +78,7 @@ return {
 				description = "Seaplane Platform Debris",
 				footprintx = 7,
 				footprintz = 7,
-				metal = 1557,
+				metal = 1557 / 3,
 				object = "6x6b.s3o",
 				reclaimable = true,
 				customparams = {
