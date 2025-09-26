@@ -9,7 +9,7 @@ function gadget:GetInfo()
       enabled = true,
    }
 end
-
+sdsd
 local TRANSPORTED_MASS_SPEED_PENALTY = 0.2 -- higher makes unit slower
 local FRAMES_PER_SECOND = Game.gameSpeed
 
