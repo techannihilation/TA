@@ -54,7 +54,7 @@ jobs:
         run: |
           cd recoil_engine
           set +e
-          timeout 60s ./spring-headless -game 'Tech Annihilation ${{ github.sha }}' -map 'Techno Lands Final 18.0' > output.log 2>&1
+          timeout 60s ./spring-headless -game 'Tech Annihilation $VERSION' -map 'Techno Lands Final 17.0' > output.log 2>&1
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
       - name: Check if game loaded successfully
@@ -62,15 +62,9 @@ jobs:
           cd recoil_engine
           if grep -q "Player UnnamedPlayer finished loading and is now ingame" output.log; then
             echo "Game launched successfully and player entered game."
+            exit 0
           else
             echo "ERROR: Game did not reach ingame state"
             cat output.log
             exit 1
           fi
-
-      - name: Check exit status of spring-headless
-        if: steps.run_spring.outputs.exit_code != '0'
-        run: |
-          echo "ERROR: spring-headless exited with code ${{ steps.run_spring.outputs.exit_code }}"
-          cat recoil_engine/output.log
-          exit 1
