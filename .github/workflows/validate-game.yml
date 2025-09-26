@@ -68,3 +68,17 @@ jobs:
             cat output.log
             exit 1
           fi
+      - name: Check no LUA errors
+        run: |
+          cd recoil_engine
+          if grep -q "Internal Lua error: Call failure" output.log; then
+            echo "Some LUA Gadget has an error in it"
+            exit 1
+          else
+            if grep -qe 'Error: Failed to load: [^\.]+\.lua' output.log; then
+              echo "Some LUA Gadget has an error in it"
+              exit 1
+            fi
+            exit 0
+          fi
+
