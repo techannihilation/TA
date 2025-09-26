@@ -54,7 +54,7 @@ jobs:
         run: |
           cd recoil_engine
           set +e
-          timeout 60s ./spring-headless -game 'Tech Annihilation ${{ github.sha }}' -map 'Techno Lands Final 17.0' > output.log 2>&1
+          timeout 60s ./spring-headless -game 'Tech Annihilation $VERSION' -map 'Techno Lands Final 17.0' > output.log 2>&1
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
       - name: Check if game loaded successfully
