@@ -1,0 +1,76 @@
+name: Validate Spring Game Load
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            p7zip-full \
+            wget \
+            git \
+            libgl1 \
+            libxcursor1 \
+            libxrandr2 \
+            libxinerama1 \
+            libxi6 \
+            libopenal1 \
+            libvorbisfile3 \
+            libfreetype6 \
+            libcurl4 \
+            ca-certificates
+
+      - name: Prepare spring packages directory
+        run: |
+          mkdir -p "$HOME/.spring/packages"
+          cp -r . "$HOME/.spring/packages/TA.sdd"
+
+      - name: Download and extract spring-headless
+        run: |
+          mkdir -p recoil_engine
+          cd recoil_engine
+          wget https://github.com/beyond-all-reason/RecoilEngine/releases/download/2025.06.05/recoil_2025.06.05_amd64-linux.7z
+          7z x recoil_2025.06.05_amd64-linux.7z
+          chmod +x ./spring-headless ./pr-downloader
+
+      - name: Download map using pr-downloader
+        run: |
+          cd recoil_engine
+          ./pr-downloader --download-map 'Techno Lands Final 17.0'
+
+      - name: Run spring-headless and capture output
+        id: run_spring
+        run: |
+          cd recoil_engine
+          set +e
+          timeout 60s ./spring-headless -game 'Tech Annihilation ${{ github.sha }}' -map 'Techno Lands Final 18.0' > output.log 2>&1
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Check if game loaded successfully
+        run: |
+          cd recoil_engine
+          if grep -q "Player UnnamedPlayer finished loading and is now ingame" output.log; then
+            echo "Game launched successfully and player entered game."
+          else
+            echo "ERROR: Game did not reach ingame state"
+            cat output.log
+            exit 1
+          fi
+
+      - name: Check exit status of spring-headless
+        if: steps.run_spring.outputs.exit_code != '0'
+        run: |
+          echo "ERROR: spring-headless exited with code ${{ steps.run_spring.outputs.exit_code }}"
+          cat recoil_engine/output.log
+          exit 1
