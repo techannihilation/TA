@@ -60,7 +60,7 @@ return {
 				featuredead = "heap",
 				footprintx = 2,
 				footprintz = 2,
-				object = "gok/arm_beamer_dead.s3o",
+				object = "arm/armbeamer_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
