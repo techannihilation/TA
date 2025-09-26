@@ -1,10 +1,10 @@
 return {
 	tllasy = {
 		buildcostenergy = 12360,
-		buildcostmetal = 3305,
+		buildcostmetal = 3305 / 5,
 		builder = true,
 		buildpic = "tllasy.dds",
-		buildtime = 36000,
+		buildtime = 36000 / 5,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -66,7 +66,7 @@ return {
 				featuredead = "heap",
 				footprintx = 8,
 				footprintz = 8,
-				metal = 3360,
+				metal = 3360 / 5,
 				object = "tll/tllasy_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -80,7 +80,7 @@ return {
 				featuredead = "heap2",
 				footprintx = 8,
 				footprintz = 8,
-				metal = 1792,
+				metal = 1792 / 5,
 				object = "6x6c.s3o",
 				reclaimable = true,
 				customparams = {
@@ -93,7 +93,7 @@ return {
 				description = "Advanced Shipyard Metal Shards",
 				footprintx = 8,
 				footprintz = 8,
-				metal = 1120,
+				metal = 1120 / 5,
 				object = "4x4c.s3o",
 				reclaimable = true,
 				customparams = {

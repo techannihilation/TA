@@ -1,10 +1,10 @@
 return {
 	coreap = {
 		buildcostenergy = 403068,
-		buildcostmetal = 18347,
+		buildcostmetal = 18347 / 4,
 		builder = true,
 		buildpic = "coreap.dds",
-		buildtime = 300000,
+		buildtime = 300000 / 4,
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
@@ -71,7 +71,7 @@ return {
 				featuredead = "heap",
 				footprintx = 10,
 				footprintz = 10,
-				metal = 14960,
+				metal = 14960 / 4,
 				object = "core/coreap_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -85,7 +85,7 @@ return {
 				energy = 0,
 				footprintx = 9,
 				footprintz = 9,
-				metal = 7978,
+				metal = 7978 / 4,
 				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {

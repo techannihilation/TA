@@ -1,14 +1,14 @@
 return {
 	core_ulab = {
 		buildcostenergy = 1552290,
-		buildcostmetal = 86630,
+		buildcostmetal = 86630 / 5,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
 		buildinggrounddecaltype = "core_ulab_aoplane.dds",
 		buildpic = "core_hexapod_lab.dds",
-		buildtime = 1000000,
+		buildtime = 1000000 / 5,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -72,7 +72,7 @@ return {
 				energy = 0,
 				footprintx = 18,
 				footprintz = 18,
-				metal = 30840,
+				metal = 30840 / 5,
 				object = "7x7c.s3o",
 				reclaimable = true,
 				customparams = {

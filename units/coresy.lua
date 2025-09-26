@@ -1,14 +1,14 @@
 return {
 	coresy = {
 		buildcostenergy = 248950,
-		buildcostmetal = 17112,
+		buildcostmetal = 17112 / 4,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "coresy_aoplane.dds",
 		buildpic = "coresy.dds",
-		buildtime = 200000,
+		buildtime = 200000 / 4,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -68,7 +68,7 @@ return {
 				featuredead = "heap",
 				footprintx = 15,
 				footprintz = 15,
-				metal = 12000,
+				metal = 12000 / 4,
 				object = "core/coresy_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -82,7 +82,7 @@ return {
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
-				metal = 6400,
+				metal = 6400 / 4,
 				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {

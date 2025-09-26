@@ -1,14 +1,14 @@
 return {
 	asubpen = {
 		buildcostenergy = 28541,
-		buildcostmetal = 3488,
+		buildcostmetal = 3488 / 5,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "asubpen_aoplane.dds",
 		buildpic = "asubpen.dds",
-		buildtime = 36000,
+		buildtime = 36000 / 5,
 		canmove = true,
 		canpatrol = true,
 		category = "ALL LEVEL1 UNDERWATER",
@@ -77,7 +77,7 @@ return {
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
-				metal = 735,
+				metal = 735 / 5,
 				object = "arm/asubpen_dead.s3o",
 				reclaimable = true,
 				customparams = {

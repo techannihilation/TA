@@ -1,14 +1,14 @@
 return {
 	tllaap = {
 		buildcostenergy = 27854,
-		buildcostmetal = 4005,
+		buildcostmetal = 4005 / 5,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "tllaap_aoplane.dds",
 		buildpic = "tllaap.dds",
-		buildtime = 40000,
+		buildtime = 40000 / 5,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -69,7 +69,7 @@ return {
 				featuredead = "heap",
 				footprintx = 7,
 				footprintz = 7,
-				metal = 3255,
+				metal = 3255 / 5,
 				object = "tll/tllaap_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -82,7 +82,7 @@ return {
 				description = "Advanced Aircraft Plant Debris",
 				footprintx = 7,
 				footprintz = 7,
-				metal = 1736,
+				metal = 1736 / 5,
 				object = "6x6a.s3o",
 				reclaimable = true,
 				customparams = {
