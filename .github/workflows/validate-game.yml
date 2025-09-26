@@ -75,7 +75,7 @@ jobs:
             echo "Some LUA Gadget has an error in it"
             exit 1
           else
-            if grep -qe 'Error: Failed to load: [^\.]+\.lua' output.log; then
+            if grep -qE 'Error: Failed to load: [^\.]+\.lua' output.log; then
               echo "Some LUA Gadget has an error in it"
               exit 1
             fi
