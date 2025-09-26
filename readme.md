@@ -1,3 +1,5 @@
+![CI Status](https://img.shields.io/github/actions/workflow/status/tizbac/TA/validate-game.yml?branch=master)
+
 # Tech Annihilation
 
 Uses Recoil Engine (https://github.com/beyond-all-reason/spring), fork of Spring Engine (https://springrts.com/). 
