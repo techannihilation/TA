@@ -129,7 +129,7 @@ float textureLODBias =  -0.5; //-0.5 * sin (simFrame * 0.1) - 0.5;
 	Spring.GetConfigFloat("unitExposureMult", 1.0),*/
 
 //float pbrParams[8] = float[8](4.75, 0.75, 3.5, 0.85, 1.0, 0.25, 1.0, 1.0 );	// old pre gl4 cus values
-float pbrParams[8] = float[8](4.85, 0.85, 3.5, 0.85, 1.0, 0.23, 1.0, 1.0 );
+float pbrParams[8] = float[8](4.85, 0.85, 3.5, 0.85, 1.0, 0.23, 0.6, 0.6 );
 
 /***********************************************************************/
 // Shadow mapping quality params
