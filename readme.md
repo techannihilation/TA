@@ -1,4 +1,4 @@
-![CI Status](https://img.shields.io/github/actions/workflow/status/tizbac/TA/validate-game.yml?branch=master)
+![CI Status](https://img.shields.io/github/actions/workflow/status/techannihilation/TA/validate-game.yml?branch=master)
 
 # Tech Annihilation
 
