@@ -1,10 +1,10 @@
 return {
 	gok_esy = {
 		buildcostenergy = 271357,
-		buildcostmetal = 16667 / 4,
+		buildcostmetal = 16667,
 		builder = true,
 		buildpic = "gok_esy.dds",
-		buildtime = 200000 / 4,
+		buildtime = 200000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -62,7 +62,7 @@ return {
 				featuredead = "heap",
 				footprintx = 15,
 				footprintz = 15,
-				metal = 11925 / 4,
+				metal = 11925,
 				object = "gok/gok_esy_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -76,7 +76,7 @@ return {
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
-				metal = 6360 / 4,
+				metal = 6360,
 				object = "7x7e.s3o",
 				reclaimable = true,
 				customparams = {

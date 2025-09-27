@@ -1,14 +1,14 @@
 return {
 	cahp = {
 		buildcostenergy = 28454,
-		buildcostmetal = 3410 / 3,
+		buildcostmetal = 3410,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "cahp_aoplane.dds",
 		buildpic = "cahp.dds",
-		buildtime = 36000 / 3,
+		buildtime = 36000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -70,7 +70,7 @@ return {
 				featuredead = "heap",
 				footprintx = 10,
 				footprintz = 8,
-				metal = 3472 / 3,
+				metal = 3472,
 				object = "core/cahp_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -83,7 +83,7 @@ return {
 				description = "Advanced Hovercraft Platform Debris",
 				footprintx = 8,
 				footprintz = 7,
-				metal = 1852 / 3,
+				metal = 1852,
 				object = "7x7a.s3o",
 				reclaimable = true,
 				customparams = {

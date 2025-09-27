@@ -1,14 +1,14 @@
 return {
 	armeap = {
 		buildcostenergy = 399667,
-		buildcostmetal = 18552 / 4,
+		buildcostmetal = 18552,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "armeap_aoplane.dds",
 		buildpic = "armeap.dds",
-		buildtime = 300000 / 4,
+		buildtime = 300000,
 		canbeassisted = true,
 		canmove = true,
 		canpatrol = true,
@@ -73,7 +73,7 @@ return {
 				featuredead = "heap",
 				footprintx = 10,
 				footprintz = 10,
-				metal = 15360 / 4,
+				metal = 15360,
 				object = "arm/armeap_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -87,7 +87,7 @@ return {
 				energy = 0,
 				footprintx = 9,
 				footprintz = 9,
-				metal = 8192 / 4,
+				metal = 8192,
 				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {

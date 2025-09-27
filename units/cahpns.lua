@@ -1,14 +1,14 @@
 return {
 	cahpns = {
 		buildcostenergy = 28446,
-		buildcostmetal = 3411 / 3,
+		buildcostmetal = 3411,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "cahpns_aoplane.dds",
 		buildpic = "cahpns.dds",
-		buildtime = 36000 / 3,
+		buildtime = 36000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -72,7 +72,7 @@ return {
 				featuredead = "heap",
 				footprintx = 10,
 				footprintz = 8,
-				metal = 3712 / 3,
+				metal = 3712,
 				object = "core/cahpns_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -85,7 +85,7 @@ return {
 				description = "Advanced Hovercraft Platform - NS Debris",
 				footprintx = 8,
 				footprintz = 7,
-				metal = 1980 / 3,
+				metal = 1980,
 				object = "7x7a.s3o",
 				reclaimable = true,
 				customparams = {
