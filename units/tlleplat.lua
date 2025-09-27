@@ -1,10 +1,10 @@
 return {
 	tlleplat = {
 		buildcostenergy = 315001,
-		buildcostmetal = 20415 / 3,
+		buildcostmetal = 20415,
 		builder = true,
 		buildpic = "tlleplat.dds",
-		buildtime = 300000 / 3,
+		buildtime = 300000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -72,7 +72,7 @@ return {
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
-				metal = 3360 / 3,
+				metal = 3360,
 				object = "tll/tllplat_dead.s3o",
 				reclaimable = true,
 				customparams = {

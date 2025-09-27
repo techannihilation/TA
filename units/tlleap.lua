@@ -1,14 +1,14 @@
 return {
 	tlleap = {
 		buildcostenergy = 315001,
-		buildcostmetal = 20415 / 4,
+		buildcostmetal = 20415,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "tlleap_aoplane.dds",
 		buildpic = "tlleap.dds",
-		buildtime = 300000 / 4,
+		buildtime = 300000,
 		canbeassisted = true,
 		canmove = true,
 		canpatrol = true,
@@ -72,7 +72,7 @@ return {
 				featuredead = "heap",
 				footprintx = 10,
 				footprintz = 10,
-				metal = 14955 / 4,
+				metal = 14955,
 				object = "tll/tlleap_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -86,7 +86,7 @@ return {
 				energy = 0,
 				footprintx = 9,
 				footprintz = 9,
-				metal = 7976 / 4,
+				metal = 7976,
 				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {

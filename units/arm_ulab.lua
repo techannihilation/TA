@@ -1,14 +1,14 @@
 return {
 	arm_ulab = {
 		buildcostenergy = 1479050,
-		buildcostmetal = 85630 / 5,
+		buildcostmetal = 85630,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
 		buildinggrounddecaltype = "arm_ulab_aoplane.dds",
 		buildpic = "arm_ulab.dds",
-		buildtime = 1000000 / 5,
+		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -73,7 +73,7 @@ return {
 				featuredead = "heap",
 				footprintx = 16,
 				footprintz = 16,
-				metal = 67200 / 5,
+				metal = 67200,
 				object = "arm/arm_ulab_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -87,7 +87,7 @@ return {
 				energy = 0,
 				footprintx = 18,
 				footprintz = 18,
-				metal = 35840 / 5,
+				metal = 35840,
 				object = "7x7c.s3o",
 				reclaimable = true,
 				customparams = {

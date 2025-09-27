@@ -1,10 +1,10 @@
 return {
 	rumad_eap = {
 		buildcostenergy = 402500,
-		buildcostmetal = 18650 / 4,
+		buildcostmetal = 18650,
 		builder = true,
 		buildpic = "rumad_eap.dds",
-		buildtime = 300000 / 4,
+		buildtime = 300000,
 		canbeassisted = true,
 		canmove = true,
 		canpatrol = true,
@@ -65,7 +65,7 @@ return {
 				featuredead = "heap",
 				footprintx = 10,
 				footprintz = 10,
-				metal = 15360 / 4,
+				metal = 15360,
 				object = "rumad/rumad_eap_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -79,7 +79,7 @@ return {
 				energy = 0,
 				footprintx = 9,
 				footprintz = 9,
-				metal = 8192 / 4,
+				metal = 8192,
 				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {
