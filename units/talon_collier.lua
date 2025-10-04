@@ -2,11 +2,11 @@ return {
 	talon_collier = {
 		acceleration = 0.108,
 		brakerate = 0.714,
-		buildcostenergy = 201250,
+		buildcostenergy = 131250,
 		buildcostmetal = 8290,
 		builder = false,
 		buildpic = "talon_collier.dds",
-		buildtime = 190000,
+		buildtime = 140000,
 		canattack = true,
 		canguard = true,
 		canmove = true,

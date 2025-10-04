@@ -219,29 +219,29 @@ return {
 		},
 		weapons = {
 			{
-				badtargetcategory = "MINOR MEDIUM LARGE",
+				badtargetcategory = "MINOR SMALL MEDIUM LARGE",
 				def = "ATAD",
 				onlytargetcategory = "SURFACE",
 			},
 			{
-				badtargetcategory = "MINOR MEDIUM",
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "ARM_EMCC4",
 				onlytargetcategory = "SURFACE",
 			},
 			{
-				badtargetcategory = "MINOR MEDIUM",
-				def = "ARM_EMCC4",
-				onlytargetcategory = "SURFACE",
-				slaveto = 2,
-			},
-			{
-				badtargetcategory = "MINOR MEDIUM",
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "ARM_EMCC4",
 				onlytargetcategory = "SURFACE",
 				slaveto = 2,
 			},
 			{
-				badtargetcategory = "MINOR MEDIUM",
+				badtargetcategory = "MINOR SMALL MEDIUM",
+				def = "ARM_EMCC4",
+				onlytargetcategory = "SURFACE",
+				slaveto = 2,
+			},
+			{
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "ARM_EMCC4",
 				onlytargetcategory = "SURFACE",
 				slaveto = 2,

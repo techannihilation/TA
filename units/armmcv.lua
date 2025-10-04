@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 8210,
 		builder = false,
 		buildpic = "armmcv.dds",
-		buildtime = 120000,
+		buildtime = 140000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
