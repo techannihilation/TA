@@ -2,7 +2,7 @@ return {
 	tllnaja = {
 		acceleration = 0.3,
 		brakerate = 1,
-		buildcostenergy = 101101,
+		buildcostenergy = 102000,
 		buildcostmetal = 6895,
 		builder = false,
 		buildpic = "tllnaja.dds",
@@ -29,7 +29,7 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 6895,
-		maxdamage = 5285,
+		maxdamage = 7085,
 		maxslope = 10,
 		maxvelocity = 1.2,
 		maxwaterdepth = 12,
