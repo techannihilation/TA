@@ -51,20 +51,20 @@ if gadgetHandler:IsSyncedCode() then
 	end
 
 	function gadget:Initialize()
-		-- for id, parm in pairs(UnitDefs) do
-		-- 	if parm.minWaterDepth > 0 then
-		-- 		UnitDefIDsCached[id * -1] = true
-		-- 	end
-		-- end
+		for id, parm in pairs(UnitDefs) do
+			if parm.minWaterDepth > 0 then
+				UnitDefIDsCached[id * -1] = true
+			end
+		end
 	end
 
 	function gadget:UnitCreated(unitID, unitDefID)
 		DisableCmdDesc(unitID, disableCmds)
 
-		-- if minHeight > 0 then
-		-- 	updateUnitsByDefParmTable(unitID)
-		-- 	DisableCmdDesc(unitID, disableUnitsByDefParm)
-		-- end
+		if minHeight > 0 then
+			updateUnitsByDefParmTable(unitID)
+			DisableCmdDesc(unitID, disableUnitsByDefParm)
+		end
 	end
 else
 end
