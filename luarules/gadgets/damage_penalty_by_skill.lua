@@ -1,0 +1,67 @@
+--------------------------------------------------------------------------------
+-- gadget: dmg_skill_penalty.lua  (High TS deals less damage; low TS not boosted)
+--------------------------------------------------------------------------------
+function gadget:GetInfo()
+    return {
+        name      = "DamagePenaltyBySkill",
+        desc      = "Higher TS deals reduced damage",
+        author    = "[ur]uncle",
+        date      = "2025-04-21",
+        license   = "GNU GPL, v2 or later",
+        layer     = 0,
+        enabled   = true,
+    }
+end
+
+if not gadgetHandler:IsSyncedCode() then return end
+
+local BASE_TS = 25
+local PENALTY_MULT = 3.33              -- % per TS over BASE_TS: penalty = (deltaTS/100)*PENALTY_MULT
+local MAX_REDUCTION = 0.70             -- allow >60% nerf; up to 70% reduction (damage floor = 30%)
+
+local Spring_GetTeamList   = Spring.GetTeamList
+local Spring_GetTeamInfo   = Spring.GetTeamInfo
+local Spring_GetPlayerInfo = Spring.GetPlayerInfo
+
+local teamScale = {}
+
+local function Clamp01(x)
+    if x < 0 then return 0 end
+    if x > 1 then return 1 end
+    return x
+end
+
+local function UpdateTeamScales()
+    teamScale = {}
+    for _, teamID in ipairs(Spring_GetTeamList()) do
+        local _, leaderID = Spring_GetTeamInfo(teamID)  -- second return is leaderID
+        if leaderID then
+            local _, _, _, _, _, _, _, _, _, _, custom = Spring_GetPlayerInfo(leaderID)
+            local playerTS = tonumber(custom and custom.skill)
+            if playerTS then
+                local delta = playerTS - BASE_TS
+                local penalty = (delta / 100) * PENALTY_MULT
+                local computed = 1 - penalty
+                -- clamp: never boost below BASE_TS, and allow strong nerf for high TS
+                local minScale = 1 - MAX_REDUCTION
+                if computed > 1 then computed = 1 end
+                if computed < minScale then computed = minScale end
+                teamScale[teamID] = Clamp01(computed)
+            else
+                teamScale[teamID] = 1
+            end
+        end
+    end
+end
+
+function gadget:GameStart()
+    UpdateTeamScales()
+end
+
+function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam)
+    local scale = 1
+    if attackerTeam then
+        scale = teamScale[attackerTeam] or 1
+    end
+    return damage * scale, 1
+end
