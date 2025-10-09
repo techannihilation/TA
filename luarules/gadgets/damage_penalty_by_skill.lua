@@ -15,8 +15,8 @@ end
 
 if not gadgetHandler:IsSyncedCode() then return end
 
-local BASE_TS = 25
-local PENALTY_MULT = 3.33              -- % per TS over BASE_TS: penalty = (deltaTS/100)*PENALTY_MULT
+local BASE_TS = 28
+local PENALTY_MULT = 5.0            -- % per TS over BASE_TS: penalty = (deltaTS/100)*PENALTY_MULT
 local MAX_REDUCTION = 0.70             -- allow >60% nerf; up to 70% reduction (damage floor = 30%)
 
 local Spring_GetTeamList   = Spring.GetTeamList
@@ -65,3 +65,4 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
     end
     return damage * scale, 1
 end
+
