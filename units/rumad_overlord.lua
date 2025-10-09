@@ -1,6 +1,6 @@
 return {
 	rumad_overlord = {
-		acceleration = 0.009,
+		acceleration = 0.002,
 		airhoverfactor = 0,
 		airstrafe = false,
 		bankingallowed = false,
@@ -37,7 +37,7 @@ return {
 		mass = 28500,
 		maxdamage = 100000,
 		maxslope = 10,
-		maxvelocity = 1.0,
+		maxvelocity = 0.8,
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Overlord",
@@ -116,7 +116,7 @@ return {
 				impulsefactor = 0.123,
 				name = "Plasma",
 				noselfdamage = true,
-				range = 1600,
+				range = 1400,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.9 0.9",
 				separation = 0.45,
