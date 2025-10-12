@@ -38,7 +38,7 @@ local function UpdateTeamScales()
         if leaderID then
             local custom = select(11, Spring.GetPlayerInfo(leaderID))
             local name = select(1, Spring.GetPlayerInfo(leaderID))
-            local playerTS = tonumber(custom and custom.skill:match("%d+%.?%d*"))
+            local playerTS = tonumber(custom and custom.skill and custom.skill:match("%d+%.?%d*"))
             if playerTS then
                 local delta = playerTS - BASE_TS
                 local penalty = (delta / 100) * PENALTY_MULT
@@ -66,5 +66,6 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
     end
     return damage * scale, 1
 end
+
 
 
