@@ -50,7 +50,7 @@ local function UpdateTeamScales()
             else
                 teamScale[teamID] = 1
             end
-            pring.Echo("~ name ", name, "playerTS ", playerTS, "teamScale[teamID] ", teamScale[teamID], "teamID ", teamID, "leaderID ", leaderID )
+            Spring.Echo("~ name ", name, "playerTS ", playerTS, "teamScale[teamID] ", teamScale[teamID], "teamID ", teamID, "leaderID ", leaderID )
         end
     end
 end
@@ -66,6 +66,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
     end
     return damage * scale, 1
 end
+
 
 
 
