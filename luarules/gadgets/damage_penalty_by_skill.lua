@@ -15,9 +15,9 @@ end
 
 if not gadgetHandler:IsSyncedCode() then return end
 
-local BASE_TS = 28
-local PENALTY_MULT = 5.0            -- % per TS over BASE_TS: penalty = (deltaTS/100)*PENALTY_MULT
-local MAX_REDUCTION = 0.70             -- allow >60% nerf; up to 70% reduction (damage floor = 30%)
+local BASE_TS       = 25
+local PENALTY_MULT  = 8
+local MAX_REDUCTION = 0.7
 
 local Spring_GetTeamList   = Spring.GetTeamList
 local Spring_GetTeamInfo   = Spring.GetTeamInfo
@@ -34,15 +34,15 @@ end
 local function UpdateTeamScales()
     teamScale = {}
     for _, teamID in ipairs(Spring_GetTeamList()) do
-        local _, leaderID = Spring_GetTeamInfo(teamID)  -- second return is leaderID
+        local _, leaderID = Spring_GetTeamInfo(teamID) 
         if leaderID then
-            local _, _, _, _, _, _, _, _, _, _, custom = Spring_GetPlayerInfo(leaderID)
-            local playerTS = tonumber(custom and custom.skill)
+            local custom = select(11, Spring.GetPlayerInfo(leaderID))
+            local name = select(1, Spring.GetPlayerInfo(leaderID))
+            local playerTS = tonumber(custom and custom.skill:match("%d+%.?%d*"))
             if playerTS then
                 local delta = playerTS - BASE_TS
                 local penalty = (delta / 100) * PENALTY_MULT
                 local computed = 1 - penalty
-                -- clamp: never boost below BASE_TS, and allow strong nerf for high TS
                 local minScale = 1 - MAX_REDUCTION
                 if computed > 1 then computed = 1 end
                 if computed < minScale then computed = minScale end
@@ -50,6 +50,7 @@ local function UpdateTeamScales()
             else
                 teamScale[teamID] = 1
             end
+            pring.Echo("~ name ", name, "playerTS ", playerTS, "teamScale[teamID] ", teamScale[teamID], "teamID ", teamID, "leaderID ", leaderID )
         end
     end
 end
@@ -65,4 +66,5 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
     end
     return damage * scale, 1
 end
+
 
