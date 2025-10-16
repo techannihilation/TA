@@ -58,6 +58,7 @@ jumpClassGroups = {
 	jumpbot = {
   	"tlldischarge",
     "armjugg",
+    "corkarg",
     "gok_valkyrie",
     "gok_satan",
     "rumad_macross",
