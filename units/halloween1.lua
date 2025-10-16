@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dark Pumpkin",
 		noautofire = false,
-		objectname = "halloween1",
+		objectname = "events/halloween1",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 350,
@@ -75,7 +75,7 @@ return {
 				"count1",
 			},
 			select = {
-				"warning1",
+				"techa_sounds/halloween",
 			},
 		},
 		weapondefs = {

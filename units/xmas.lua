@@ -22,7 +22,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Merry Xmas",
-		objectname = "xmas.s3o",
+		objectname = "events/xmas.s3o",
 		radaremitheight = 25,
 		script = "drag.lua",
 		unitname = "Xmas",
