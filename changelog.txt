@@ -1,4 +1,20 @@
- 4.82 => 4.83
+4.83 => 4.9
+2025-10-16
+
+Improvment :
+ - Delete All-Terrain for Karganeth. Add JetPack and new weapon (Sabot Missible)
+ - Add Gate T3 for ARM
+
+Balance :
+ - T3 Air Core Blackdawn : Increase range 650->700 and decrease damage 350->300
+ - Rumad Overlord : Decrease Range for main turret 1600->1400
+ - HeavyImpact TLL T3 Artillery : Decrease damage, speed and HP
+
+ Fixes :
+- Deleting "Square" from Rocket and Plasma TLL weapon textures
+
+
+4.82 => 4.83
 2025-05-04
 
 Improvment :
