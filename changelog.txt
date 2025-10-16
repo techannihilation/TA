@@ -1,6 +1,8 @@
 4.83 => 4.9
 2025-10-16
 
+Halloween is comming !
+
 Improvment :
  - Delete All-Terrain for Karganeth. Add JetPack and new weapon (Sabot Missible)
  - Add Gate T3 for ARM

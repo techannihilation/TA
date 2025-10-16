@@ -22,7 +22,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Merry Xmas",
-		objectname = "xmas.s3o",
+		objectname = "events/xmas",
 		radaremitheight = 25,
 		script = "drag.lua",
 		unitname = "Xmas",
@@ -48,7 +48,7 @@ return {
 				hitdensity = 100,
 				metal = 5000,
 				energy = 100000,
-				object = "xmas.s3o",
+				object = "events/xmas",
 				reclaimable = true,
 				reclaimtime = 250000,
 				customparams = {

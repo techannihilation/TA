@@ -54,8 +54,8 @@ return {
 		name = "Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		objectname = "arm/armcom.s3o",
-		--objectname = "armcom_halloween.s3o", -- HALLOWEEN
+		--objectname = "arm/armcom.s3o",
+		objectname = "events/armcom_halloween.s3o", -- HALLOWEEN
 		radardistance = 750,
 		radaremitheight = 55,
 		reclaimable = false,
