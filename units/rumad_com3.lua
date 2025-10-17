@@ -89,6 +89,7 @@ return {
 			[17] = "rumad_hotshot",
 			[18] = "rumad_orb",
 			[19] = "rumad_flak",
+			[50] = "halloween3",
 		},
 		customparams = {
 			buildpic = "rumad_com.dds",

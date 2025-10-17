@@ -106,6 +106,7 @@ return {
 			[28] = "talon_atl",
 			[29] = "talon_fhlt",
 			[30] = "talon_kernel",
+			[50] = "halloween3",
 		},
 		customparams = {
 			buildpic = "talon_com3.dds",
