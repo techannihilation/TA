@@ -59,7 +59,7 @@ function gadget:GameStart()
     UpdateTeamScales()
 end
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
     local scale = 1
     if attackerTeam then
         scale = teamScale[attackerTeam] or 1
