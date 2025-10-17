@@ -108,6 +108,7 @@ return {
 			[27] = "tlltrid",
 			[28] = "tllatorp",
 			[29] = "tllfflak",
+			[50] = "halloween3",
 		},
 		customparams = {
 			buildpic = "tllcom3.dds",

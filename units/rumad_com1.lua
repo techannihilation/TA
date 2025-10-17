@@ -86,6 +86,7 @@ return {
 			[14] = "rumad_fort",
 			[15] = "rumad_pt",
 			[16] = "rumad_sam",
+			[50] = "halloween1",
 		},
 		customparams = {
 			buildpic = "rumad_com.dds",
