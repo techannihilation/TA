@@ -187,7 +187,7 @@ return {
 				sprayangle = 250,
 				startvelocity = 600,
 				texture2 = "coresmoketrail",
-				tracks = false,
+				tracks = true,
 				turnrate = 25000,
 				turret = true,
 				weaponacceleration = 200,

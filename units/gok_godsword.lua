@@ -191,7 +191,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 90000,
-				tracks = false,
+				tracks = true,
 				turnrate = 50000,
 				turret = true,
 				weaponacceleration = 160,

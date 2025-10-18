@@ -266,7 +266,7 @@ return {
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 600,
-				tracks = false,
+				tracks = true,
 				turnrate = 68000,
 				turret = true,
 				weaponacceleration = 200,

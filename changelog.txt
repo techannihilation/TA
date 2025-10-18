@@ -5,6 +5,7 @@ Halloween is comming !
 
 Improvment :
  - Delete All-Terrain for Karganeth. Add JetPack and new weapon (Sabot Missible)
+ - Remplace Raptor T4 by Bagheera T4 Spider Arm
  - Add Gate T3 for ARM
 
 Balance :
