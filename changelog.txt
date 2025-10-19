@@ -5,12 +5,14 @@ Halloween is comming !
 
 Improvment :
  - Delete All-Terrain for Karganeth. Add JetPack and new weapon (Sabot Missible)
+ - Remplace Raptor T4 by Bagheera T4 Spider Arm
  - Add Gate T3 for ARM
 
 Balance :
  - T3 Air Core Blackdawn : Increase range 650->700 and decrease damage 350->300
  - Rumad Overlord : Decrease Range for main turret 1600->1400
  - HeavyImpact TLL T3 Artillery : Decrease damage, speed and HP
+ - Reactivate Tracking for all AA Missiles
 
  Fixes :
 - Deleting "Square" from Rocket and Plasma TLL weapon textures

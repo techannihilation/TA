@@ -233,7 +233,7 @@ return {
 				soundstart = "Rocklit3",
 				stages = 20,
 				startvelocity = 600,
-				tracks = false,
+				tracks = true,
 				turnrate = 68000,
 				turret = true,
 				weaponacceleration = 200,
