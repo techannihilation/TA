@@ -241,6 +241,13 @@ return {
 		"armnomad",
 		"gok_dome",
 		"gok_dome1",
+
+		-- EVENTS
+		"halloween",
+		"halloween1",
+		"halloween2",
+		"halloween3",
+
 	},
 
 	flamethrowers = {
