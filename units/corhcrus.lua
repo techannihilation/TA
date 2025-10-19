@@ -144,7 +144,7 @@ return {
 				texture2 = "armsmoketrail",
 				texture3 = "null",
 				texture4 = "null",
-				tracks = false,
+				tracks = true,
 				turret = true,
 				weaponacceleration = 200,
 				weapontimer = 2,
