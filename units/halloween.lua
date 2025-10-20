@@ -37,7 +37,7 @@ return {
 		noautofire = false,
 		objectname = "events/halloween",
 		seismicsignature = 0,
-		selfdestructas = "MINE_HEAVY",
+		selfdestructas = "MINE_MEDIUM",
 		selfdestructcountdown = 0,
 		sightdistance = 450,
 		standingfireorder = 2,
