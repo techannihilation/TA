@@ -649,7 +649,7 @@ local morphDefs = {
 	armorco = {
 		into = 'armexo',
 		time = 60,
-		tech = 3,
+		tech = 4,
 		xp = 0.10,
 	},
 	armmcv = {
