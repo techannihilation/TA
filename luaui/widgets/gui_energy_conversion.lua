@@ -3,7 +3,7 @@ function widget:GetInfo()
     name    = 'Energy Conversion Info',
     desc    = 'Displays energy conversion info',
     author  = 'Niobium (mod by Finkky)',
-    date    = 'May 2011',
+    date    = 'May 2011, 2025 fix',
     license = 'GNU GPL v2.1',
     layer   = 0,
     enabled = true,
@@ -32,8 +32,6 @@ local EfficiencyThresholds = {
   { title = '/',  color = { r = 0.60, g = 0.60, b = 0.60, a = 0.50 }, e = 0.000000 },
 }
 
-
-
 --------------------------------------------------------------------------------
 -- Vars
 --------------------------------------------------------------------------------
@@ -58,12 +56,18 @@ local hoverHWidth = 3
 
 local resourceRefreshRate = 16
 
+-- Drag state
+local isDragging = false
+local dragLevel = 0       -- 0..1 while dragging for immediate visual feedback
+local lastSentShare = nil -- cache last integer share sent, to avoid redundant sends
+
 --------------------------------------------------------------------------------
 -- Speedups
 --------------------------------------------------------------------------------
 
 local format = string.format
 local min, max, floor = math.min, math.max, math.floor
+local abs = math.abs
 
 local glColor, glRect = gl.Color, gl.Rect
 local glPushMatrix, glPopMatrix, glTranslate = gl.PushMatrix, gl.PopMatrix, gl.Translate
@@ -75,6 +79,7 @@ local spSendLuaRulesMsg    = Spring.SendLuaRulesMsg
 local spGetSpectatingState = Spring.GetSpectatingState
 local spGetTeamResources   = Spring.GetTeamResources
 local spGetViewGeometry    = Spring.GetViewGeometry
+local spGetMouseState      = Spring.GetMouseState
 
 -- UI colors with safe loading
 local cbackground, cborder, cbuttonbackground = { 0, 0, 0, 0.55 }, { 1, 1, 1, 0.15 }, { 1, 1, 1, 0.08 }
@@ -110,6 +115,12 @@ local hasData = false
 --------------------------------------------------------------------------------
 -- Helpers
 --------------------------------------------------------------------------------
+
+local function clamp01(x)
+  if x < 0 then return 0 end
+  if x > 1 then return 1 end
+  return x
+end
 
 local function getLetter(effi)
   for _, v in ipairs(EfficiencyThresholds) do
@@ -163,7 +174,6 @@ local function KeepOnScreen()
   end
 end
 
-
 local function IsOffscreen()
   local vsx, vsy = spGetViewGeometry()
   return (px + sx < 0) or (py + sy < 0) or (px > vsx) or (py > vsy)
@@ -201,6 +211,22 @@ function DrawStatus(_, _, ping)
   HighPing = ping
 end
 
+-- map mouse x to share [0..100] inside the bar, also update drag visuals and send if needed
+local function applyMouseToShare(mx, sendNow)
+  local dx = mx - px
+  local rel = (dx - hoverLeft) / (hoverRight - hoverLeft)
+  local lvl = clamp01(rel)
+  dragLevel = lvl
+  -- send integer 0..100
+  local share = floor(lvl * 100 + 0.5)
+  if sendNow then
+    if lastSentShare ~= share then
+      spSendLuaRulesMsg(format(alterLevelFormat, share))
+      lastSentShare = share
+    end
+  end
+end
+
 --------------------------------------------------------------------------------
 -- Callins
 --------------------------------------------------------------------------------
@@ -226,6 +252,11 @@ function widget:GameFrame(frame)
   end
   if frame % resourceRefreshRate == 1 then
     refreshData()
+  end
+  -- while dragging, poll mouse and update smoothly even if MouseMove deltas get throttled
+  if isDragging then
+    local mx = spGetMouseState()
+    applyMouseToShare(mx, true)
   end
 end
 
@@ -301,7 +332,8 @@ function widget:DrawScreen()
   )
 
   -- Slider
-  local sliderX = hoverLeft + (hoverRight - hoverLeft) * min(1, max(0, curLevel))
+  local levelForDraw = isDragging and dragLevel or clamp01(curLevel)
+  local sliderX = hoverLeft + (hoverRight - hoverLeft) * levelForDraw
   glColor(1, 0, 0, 0.75)
   glRect(sliderX - hoverHWidth, hoverBottom, sliderX + hoverHWidth, hoverTop)
   glColor(0, 0, 0, 1)
@@ -318,8 +350,9 @@ function widget:MousePress(mx, my, mButton)
   elseif mButton == 1 and not spGetSpectatingState() then
     local dx, dy = mx - px, my - py
     if dx >= hoverLeft and dy >= hoverBottom and dx < hoverRight and dy < hoverTop then
-      local newShare = 100 * (dx - hoverLeft) / (hoverRight - hoverLeft)
-      spSendLuaRulesMsg(format(alterLevelFormat, newShare))
+      isDragging = true
+      lastSentShare = nil
+      applyMouseToShare(mx, true)
       return true
     end
   end
@@ -331,6 +364,18 @@ function widget:MouseMove(mx, my, dx, dy, mButton)
     px = px + dx
     py = py + dy
     KeepOnScreen()
+    return true
+  elseif mButton == 1 and isDragging and not spGetSpectatingState() then
+    applyMouseToShare(mx, true)
+    return true
+  end
+  return false
+end
+
+function widget:MouseRelease(mx, my, mButton)
+  if mButton == 1 and isDragging then
+    applyMouseToShare(mx, true)
+    isDragging = false
     return true
   end
   return false
