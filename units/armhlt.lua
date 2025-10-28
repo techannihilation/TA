@@ -118,7 +118,8 @@ return {
 			},
 		},
 		weapondefs = {
-			arm_laserh1 = {
+		--[[
+			arm_laser = {
 				areaofeffect = 14,
 				beamtime = 0.15,
 				corethickness = 0.2,
@@ -155,13 +156,39 @@ return {
 					default = 540,
 					subs = 5,
 				},
-				tracks = false,
 			},
+		--]]
+			arm_laser = {
+				areaofeffect = 8,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
+				energypershot = 40,
+				firestarter = 90,
+				impulseboost = 0,
+				impulsefactor = 0,
+				name = "Weaver Laser",
+				range = 600,
+				reloadtime = 1,
+				rgbcolor = "0.1875 0.109375 0.65625",
+				soundhitdry = "xplosml3",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
+				soundstart = "Lasrhvy2",
+				turret = true,
+				weapontype = "LaserCannon",
+				weaponvelocity = 1200,
+				damage = {
+					default = 300,
+					subs = 5,
+				},
+			},
+
 		},
 		weapons = {
 			{
 				badtargetcategory = "MINOR",
-				def = "ARM_LASERH1",
+				def = "ARM_LASER",
 				onlytargetcategory = "SURFACE",
 			},
 		},
