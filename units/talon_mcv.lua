@@ -127,7 +127,7 @@ return {
 				intensity = 5,
 				name = "Impulsion Blaster",
 				noselfdamage = true,
-				range = 2250,
+				range = 2150,
 				reloadtime = 8,
 				rgbcolor = "0.1 0.9 1",
 				size = 4,
@@ -140,7 +140,7 @@ return {
 				weaponvelocity = 900,
 				damage = {
 					commanders = 2250,
-					default = 12000,
+					default = 17500,
 					subs = 5,
 				},
 			},
