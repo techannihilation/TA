@@ -104,7 +104,6 @@ return {
 			[26] = "gok_atl",
 			[27] = "gok_fblackdawn",
 			[28] = "gok_fflak",
-			[50] = "halloween2",
 		},
 		customparams = {
 			buildpic = "gok_com2.dds",

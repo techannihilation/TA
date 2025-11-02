@@ -104,7 +104,6 @@ return {
 			[25] = "talon_fdrag",
 			[26] = "talon_tl",
 			[27] = "talon_frl",
-			[50] = "halloween",
 		},
 		customparams = {
 			buildpic = "talon_com.dds",

@@ -103,7 +103,6 @@ return {
 			[25] = "corfllt",
 			[26] = "cortl",
 			[27] = "corfrt",
-			[50] = "halloween",
 		},
 		customparams = {
 			buildpic = "corcom.dds",
