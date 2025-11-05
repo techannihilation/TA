@@ -12,9 +12,10 @@ The game uses a rapid tool with springlobby. All commits update the game in real
 
 ### Prerequisites & Installing
 
-To install the game, 2 options : 
-1 - Download the spring/recoil Engine (https://github.com/beyond-all-reason/spring/releases). And Download this repository and paste on spring/games/TA.SDD folder. You could play alone to test the mode.
-2 - Download a lobby, for example : https://github.com/skynet-gh/skylobby/releases . then you will find a battleroom with Tech-annihilation mention. You can enter in the battleroom and maps and last version will be automatically download. You can also use new lobby.techa-rts.com server. To signup visit https://lobby.techa-rts.com/signup.php .
+To install the game, 2 options:  
+
+- Download the spring/recoil Engine (https://github.com/beyond-all-reason/spring/releases). And Download this repository and paste on spring/games/TA.SDD folder. You could play alone to test the mode.  
+- Download a lobby, for example : https://github.com/skynet-gh/skylobby/releases . then you will find a battleroom with Tech-annihilation mention. You can enter in the battleroom and maps and last version will be automatically download. You can also use new lobby.techa-rts.com server. To signup visit https://lobby.techa-rts.com/signup.php .
 
 ## Versioning
 
