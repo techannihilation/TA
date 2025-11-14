@@ -7,7 +7,7 @@ function gadget:GetInfo()
 		date = "2019",
 		license = "GNU GPL, v2 or later",
 		layer = 0,
-		enabled = false -- temporary disable nuke limit
+		enabled = true
 	}
 end
 
@@ -98,3 +98,4 @@ end
 --------------------------------------------------------------------------------
 -- END UNSYNCED
 --------------------------------------------------------------------------------
+
