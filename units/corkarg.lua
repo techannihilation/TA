@@ -34,7 +34,7 @@ return {
 		maxvelocity = 1.5,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
-		movementclass = "HTKBOT4",
+		movementclass = "HKBOT4",
 		name = "Karganeth",
 		noautofire = false,
 		objectname = "core/corkarg.s3o",
