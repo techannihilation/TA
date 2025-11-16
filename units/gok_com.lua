@@ -54,8 +54,8 @@ return {
 		name = "Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		--objectname = "gok/gok_com.s3o",
-		objectname = "events/gok_com_halloween.s3o",
+		objectname = "gok/gok_com.s3o",
+		--objectname = "events/gok_com_halloween.s3o",
 		radardistance = 750,
 		radaremitheight = 55,
 		reclaimable = false,
@@ -106,7 +106,6 @@ return {
 			[27] = "gok_tl",
 			[28] = "gok_fllt",
 			[29] = "gok_frl",
-			[50] = "halloween",
 		},
 		customparams = {
 			buildpic = "gok_com.dds",

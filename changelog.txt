@@ -1,9 +1,21 @@
-4.9 => 4.91
-2025-11-17
+ 4.9 => 4.95
+2025-11-02
+
+Halloween event is over!
 
 Improvment :
- - Add T3 Wall for GOK
- - Add Rapid T2 Kbot for Rumad
+
+* Add Box Formation widget (Matrix units v1.5) for unit selection
+* Improve Energy Conversion GUI with draggable slider and live feedback
+* Add T3 Wall for GOK
+* Add Rapid T2 Kbot for Rumad
+
+Balance :
+
+* ARM HLT: new “Weaver Laser” (range 600, reload 1s, energy/shot 40)
+* Talon MCV: adjust values (range 2250->2150, vs Commanders 6250->2250, default 25000->17500)
+* Talon Obelisk: energy cost 148000->327000, metal 5650->3650, mass 5650->3650, shield energy use 750->1250
+* Temporarily disable nuke limit !
 
 4.83 => 4.9
 2025-10-16

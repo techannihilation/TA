@@ -50,8 +50,8 @@ return {
 		name = "Queen",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		--objectname = "rumad/rumad_com.s3o",
-		objectname = "events/rumad_com_halloween.s3o",
+		objectname = "rumad/rumad_com.s3o",
+		--objectname = "events/rumad_com_halloween.s3o",
 		radaremitheight = 55,
 		reclaimable = false,
 		script = "rumad_com.cob",
@@ -86,7 +86,6 @@ return {
 			[13] = "rumad_drag",
 			[14] = "rumad_llt",
 			[15] = "rumad_rl",
-			[50] = "halloween",
 		},
 		customparams = {
 			buildpic = "rumad_com.dds",

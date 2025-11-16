@@ -55,8 +55,8 @@ return {
 		name = "Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		--objectname = "tll/tllcom.s3o",
-		objectname = "events/tllcom_halloween.s3o",
+		objectname = "tll/tllcom.s3o",
+		--objectname = "events/tllcom_halloween.s3o",
 		radardistance = 700,
 		radaremitheight = 55,
 		reclaimable = false,
@@ -104,7 +104,6 @@ return {
 			[25] = "tllfllt",
 			[26] = "tlltorp",
 			[27] = "tlllmtns",
-			[50] = "halloween",
 		},
 		customparams = {
 			buildpic = "tllcom.dds",

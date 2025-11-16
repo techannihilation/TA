@@ -55,8 +55,8 @@ return {
 		name = "Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		--objectname = "talon/talon_com.s3o",
-		objectname = "events/talon_com_halloween.s3o",
+		objectname = "talon/talon_com.s3o",
+		--objectname = "events/talon_com_halloween.s3o",
 		radardistance = 700,
 		radaremitheight = 37,
 		reclaimable = false,
@@ -104,7 +104,6 @@ return {
 			[25] = "talon_fdrag",
 			[26] = "talon_tl",
 			[27] = "talon_frl",
-			[50] = "halloween",
 		},
 		customparams = {
 			buildpic = "talon_com.dds",

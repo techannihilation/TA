@@ -54,8 +54,8 @@ return {
 		name = "Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		--objectname = "core/corcom.s3o",
-		objectname = "events/corcom_halloween.s3o",
+		objectname = "core/corcom.s3o",
+		--objectname = "events/corcom_halloween.s3o",
 		radardistance = 700,
 		radaremitheight = 55,
 		reclaimable = false,
@@ -103,7 +103,6 @@ return {
 			[25] = "corfllt",
 			[26] = "cortl",
 			[27] = "corfrt",
-			[50] = "halloween",
 		},
 		customparams = {
 			buildpic = "corcom.dds",
