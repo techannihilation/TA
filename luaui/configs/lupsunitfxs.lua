@@ -456,6 +456,14 @@ cafus = {
     {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {-1,0,0}, ength=225, piece="flare2a", noIconDraw = true, priority=1, onActive=true}},
     {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {-1,0,0}, length=250, piece="flare2b", noIconDraw = true, priority=1, onActive=true}},
   },
+  gok_wall1 = {
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {1,0,0}, length=480, piece="flare1a", noIconDraw = true, priority=1, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {1,0,0}, length=500, piece="flare1b", noIconDraw = true, priority=1, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {1,0,0}, length=500, piece="flare1c", noIconDraw = true, priority=1, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {-1,0,0}, ength=480, piece="flare2a", noIconDraw = true, priority=1, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {-1,0,0}, length=500, piece="flare2b", noIconDraw = true, priority=1, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=1, emitVector = {-1,0,0}, length=500, piece="flare2c", noIconDraw = true, priority=1, onActive=true}},
+  },
 
 
   -- PLANES

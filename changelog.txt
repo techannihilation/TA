@@ -7,6 +7,8 @@ Improvment :
 
 * Add Box Formation widget (Matrix units v1.5) for unit selection
 * Improve Energy Conversion GUI with draggable slider and live feedback
+* Add T3 Wall for GOK
+* Add Rapid T2 Kbot for Rumad
 
 Balance :
 
@@ -14,7 +16,6 @@ Balance :
 * Talon MCV: adjust values (range 2250->2150, vs Commanders 6250->2250, default 25000->17500)
 * Talon Obelisk: energy cost 148000->327000, metal 5650->3650, mass 5650->3650, shield energy use 750->1250
 * Temporarily disable nuke limit !
-
 
 4.83 => 4.9
 2025-10-16
