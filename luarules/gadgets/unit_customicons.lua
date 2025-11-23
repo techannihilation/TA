@@ -142,6 +142,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("rumad_oasis.user", "icons/rumad_oasis.png", 3)
   Spring.AddUnitIcon("rumad_mcv1.user", "icons/rumad_mcv1.png", 4)
   Spring.AddUnitIcon("rumad_mcv2.user", "icons/rumad_mcv2.png", 6)
+  Spring.AddUnitIcon("talon_cerberus.user", "icons/talon_cerberus.png", 7)
 
 
   -- Setup the unitdef icons
