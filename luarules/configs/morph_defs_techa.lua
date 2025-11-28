@@ -726,6 +726,12 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	tllmcv = {
+		into = 'tll_samael',
+		tech = 4,
+		time = 120,
+		xp = 0.20,
+	},
+	tllcolossus = {
 		into = 'tll_tyranosaurus',
 		tech = 4,
 		time = 120,
