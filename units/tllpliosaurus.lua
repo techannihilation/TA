@@ -138,11 +138,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 742,
 				damage = {
-					commanders = 225,
 					default = 450,
 					subs = 5,
 				},
-				tracks = false,
 			},
 			gauss_tll = {
 				alphaDecay = 0.5,
@@ -171,11 +169,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 850,
 				damage = {
-					commanders = 3200,
 					default = 6400,
 					subs = 5,
 				},
-				tracks = false,
 			},
 			tll_lightning = {
 				areaofeffect = 10,
