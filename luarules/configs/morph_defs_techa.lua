@@ -726,7 +726,7 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	tllmcv = {
-		into = 'tll_samael',
+		into = 'tll_neobahomet',
 		tech = 4,
 		time = 120,
 		xp = 0.20,
