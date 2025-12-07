@@ -5,7 +5,7 @@ return {
 		brakerate = 0.072,
 		buildangle = 16384,
 		buildcostenergy = 175270,
-		buildcostmetal = 3167,
+		buildcostmetal = 3160,
 		builder = true,
 		buildpic = "armcarry.dds",
 		buildtime = 80000,
