@@ -1,4 +1,23 @@
- 4.9 => 4.95
+4.95 => 4.96
+2025-12-07
+
+Improvment :
+
+* Add Rapid T2 Kbot for Rumad
+* Add T5 Air Carrier for Arm / Core with Jammer
+* Add Gok Gates T3/T4
+* Add TLL NeoBahomet (morph from Bahamut)
+* TLL Tyranosaurus morph from Colossus now
+
+Balance :
+
+* Talon MCV & Bahamut : adjust ranges (range 2250->2000)
+
+Next Work Comming :
+
+* T5 Shielded Walker for Gok (Nice Model)
+
+4.9 => 4.95
 2025-11-02
 
 Halloween event is over!
