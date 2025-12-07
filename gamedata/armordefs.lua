@@ -176,6 +176,10 @@ return {
 	"gok_erez",
 	"rumad_erez",
 
+	--T5 Carrier
+	"arm_aircarry",
+	"core_aircarry",
+
 	--SAT
 	"rumad_thirdeye",
 	"talon_planetkiller",

@@ -737,6 +737,10 @@ talon_handgod = {
     {class='AirJet',options={color={0.8,0.1,0}, width=10, length=30, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=10, length=30, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
   },
+  core_aircarry = {
+    {class='AirJet',options={color={0.8,0.1,0}, width=12, length=40, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=12, length=40, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
+  },
   corvamp = {
     {class='AirJet',options={color={0.6,0.1,0}, width=3.5, length=65, piece="thrustb", noIconDraw = true, priority=3, onActive=true}},
   },
@@ -856,6 +860,17 @@ coreca = {
     {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine_up", noIconDraw = true, priority=4, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine_down", noIconDraw = true, priority=4, onActive=true}},
  },
+ arm_aircarry = {
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=32, piece="engine1", noIconDraw = true, priority=4, onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=32, piece="engine2", noIconDraw = true, priority=4, onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=32, piece="engine3", noIconDraw = true, priority=4, onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=32, piece="engine4", noIconDraw = true, priority=4, onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=32, piece="engine5", noIconDraw = true, priority=4, onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=32, piece="engine6", noIconDraw = true, priority=4, onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=32, piece="engine7", noIconDraw = true, priority=4, onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=32, piece="engine8", noIconDraw = true, priority=4, onActive=true}},
+ },
+
  armsr71 = {
     {class='AirJet',options={color={0.6,0.4,0}, width=4, length=24, piece="wingthrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.4,0}, width=4, length=24, piece="wingthrust2", noIconDraw = true, priority=3, onActive=true}},
