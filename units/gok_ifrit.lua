@@ -143,7 +143,6 @@ return {
 				soundstart = "Flamhvy1",
 				soundtrigger = false,
 				sprayangle = 1200,
-				tolerance = 2500,
 				turret = true,
 				weapontimer = 1.5,
 				weapontype = "Flame",
@@ -153,7 +152,6 @@ return {
 					flamethrowers = 20,
 					subs = 1,
 				},
-				tracks = false,
 			},
 		},
 		weapons = {

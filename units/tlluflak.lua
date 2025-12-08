@@ -30,7 +30,7 @@ return {
 		maxdamage = 35200,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Neo Bahomet",
+		name = "Quetzalcoatl",
 		noautofire = false,
 		objectname = "tll/tlluflak.s3o",
 		radardistance = 0,

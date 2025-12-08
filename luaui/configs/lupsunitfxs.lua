@@ -250,6 +250,9 @@ cafus = {
   gok_archon = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  gok_darkarchonte = {
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,40,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
   cormonkeylord = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
