@@ -96,7 +96,7 @@ local corcomDefID = UnitDefNames.corcom.id
 local tllcomDefID = UnitDefNames.tllcom.id
 local talon_comDefID = UnitDefNames.talon_com.id
 local gok_comDefID = UnitDefNames.gok_com.id
-local rumad_kingDefID = UnitDefNames.rumad_king.id
+local rumad_comDefID = UnitDefNames.rumad_com.id
 
 local borderPadding					= 4
 
@@ -1071,7 +1071,7 @@ function setTeamTable(teamID)
 			teamside = "core"
 		elseif startunit == talon_comDefID then
 			teamside = "talon"
-		elseif startunit == rumad_kingDefID then
+		elseif startunit == rumad_comDefID then
 			teamside = "rumad"
 		elseif startunit == gok_comDefID then
 			teamside = "gok"

@@ -262,7 +262,7 @@ function ModOptions_Post(UnitDefs, WeaponDefs)
 
 		if (modOptions.mo_storageowner == "com") then
 			for name, ud in pairs(UnitDefs) do
-				if (name == "armcom" or name == "corcom" or name == "tllcom" or name == "talon_com" or name == "gok_com") then
+				if (name == "armcom" or name == "corcom" or name == "tllcom" or name == "talon_com" or name == "gok_com" or name == "rumad_com") then
 					ud.energyStorage = modOptions.startenergy or 1000
 					ud.metalStorage = modOptions.startmetal or 1000
 				end
