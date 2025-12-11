@@ -61,10 +61,16 @@ local unitArray = {
 
 --Rumad
   "rumad_king",
+  "rumad_king1",
+  "rumad_king2",
+  "rumad_king3",
+  "rumad_com",
+  "rumad_com1",
+  "rumad_com2",
+  "rumad_com3",
 
 
   --bombers
-  "corfiend",
   "armcybr",
   "armlance",
   "armpnix",
