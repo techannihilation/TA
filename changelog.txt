@@ -1,3 +1,11 @@
+ 4.96 => 4.97
+2025-12-16
+
+Improvment :
+* Add All-Terrain T2 Capture Spider for Rumad
+* Add T5 Dark Archonte for Gok (Morph from Asmodee)
+* Temporaly deleted Kadesh, but it will be back soon
+
 4.95 => 4.96
 2025-12-07
 

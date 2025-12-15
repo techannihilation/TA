@@ -18,11 +18,12 @@ end
 
 local autocapture_units = {
     [UnitDefNames["rumad_cordyceps"].id] = true,
+    [UnitDefNames["rumad_syrphid"].id] = true,
     [UnitDefNames["corcommando"].id] = true,
     [UnitDefNames["talon_shepherd"].id] = true,
     [UnitDefNames["tllgizmo"].id] = true,
-    [UnitDefNames["armrambo"].id] = true, 
-    [UnitDefNames["rumad_parasite"].id] = true,       
+    [UnitDefNames["armrambo"].id] = true,
+    [UnitDefNames["rumad_parasite"].id] = true,
 }
 
 local autocapture_enabled = {}

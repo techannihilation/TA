@@ -62,8 +62,9 @@ return {
 			[7] = "rumad_lightartybot",
 			[8] = "rumad_aak",
 			[9] = "rumad_zorga",
-			[10] = "rumad_macm",
-			[11] = "rumad_artybot",
+			[10] = "rumad_syrphid",
+			[11] = "rumad_macm",
+			[12] = "rumad_artybot",
 		},
 		customparams = {
 			buildpic = "rumad_alab.dds",

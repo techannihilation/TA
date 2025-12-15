@@ -1,0 +1,330 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, turret, arm1, arm2, emeter, lathe, radar,
+       lflegy, lfleg, lmlegy, lmleg, lblegy, lbleg,
+       rflegy, rfleg, rmlegy, rmleg, rblegy, rbleg;
+
+#define SIG_CAPTURE			2
+#define SIG_MOVE			4
+
+static-var  restore_delay, bMoving, UnitHeading, Static_Var_1, Static_Var_2, Static_Var_3;
+
+activatescr()
+{
+	turn arm1 to x-axis <-90.0> speed <-80.0>;
+	turn arm2 to x-axis <20.0> speed <40.0>;
+	turn emeter to x-axis <-20.0> speed <40.0>;
+	sleep 300;
+}
+
+deactivatescr()
+{
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.0> speed <120.0>;
+	wait-for-turn turret around y-axis;
+	turn arm1 to x-axis <0.0> speed <-80.0>;
+	turn arm2 to x-axis <0.0> speed <40.0>;
+	turn emeter to x-axis <0.0> speed <40.0>;
+	sleep 300;
+}
+
+MotionControl(Moving, Aiming, JustMoved)
+	{
+	JustMoved = 1;
+	while( TRUE )
+		{
+		Moving = bMoving;
+		if( Moving )
+			{
+			if( bMoving )
+				{
+				turn lmlegy to y-axis <30.00> speed <80.00>;
+				turn lmleg to z-axis <10.00> speed <40.00>;
+				
+				
+				turn rmlegy to y-axis <30.00> speed <80.00>;
+				turn rmleg to z-axis <10.00> speed <25.00>;
+								
+				turn rblegy to y-axis <-60.00> speed <60.00>;
+				turn rbleg to z-axis <-10.00> speed <80.00>;
+							
+				turn lblegy to y-axis <30.00> speed <60.00>;
+				turn lbleg to z-axis <-15.00> speed <25.00>;
+								
+				turn lflegy to y-axis <-60.00> speed <60.00>;
+				turn lfleg to z-axis <-5.00> speed <80.00>;
+							
+				turn rflegy to y-axis <30.00> speed <60.00>;
+				turn rfleg to z-axis <15.00> speed <40.00>;
+								
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lmleg to z-axis <-5.00> speed <50.00>;
+				turn rmleg to z-axis <-10.00> speed <50.00>;
+				turn rbleg to z-axis <5.00> speed <100.00>;
+				turn lbleg to z-axis <-15.00> speed <40.00>;
+				turn lfleg to z-axis <10.00> speed <100.00>;
+				turn rfleg to z-axis <15.00> speed <40.00>;
+						
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lmlegy to y-axis <0.00> speed <80.00>;
+				turn lmleg to z-axis <-10.00> speed <25.00>;
+				turn rmlegy to y-axis <0.00> speed <80.00>;
+				turn rmleg to z-axis <0.00> speed <40.00>;	
+				turn rblegy to y-axis <-40.00> speed <60.00>;
+				turn rbleg to z-axis <15.00> speed <125.00>;	
+				turn lblegy to y-axis <45.00> speed <60.00>;
+				turn lbleg to z-axis <-5.00> speed <40.00>;
+				turn lflegy to y-axis <-50.00> speed <60.00>;
+				turn lfleg to z-axis <-5.00> speed <75.00>;		
+				turn rflegy to y-axis <45.00> speed <60.00>;
+				turn rfleg to z-axis <15.00> speed <25.00>;			
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lmlegy to y-axis <-30.00> speed <80.00>;
+				turn lmleg to z-axis <-5.00> speed <25.00>;				
+				turn rmlegy to y-axis <-30.00> speed <80.00>;
+				turn rmleg to z-axis <-10.00> speed <40.00>;				
+				turn rblegy to y-axis <-30.00> speed <60.00>;
+				turn rbleg to z-axis <15.00> speed <25.00>;
+				turn lblegy to y-axis <50.00> speed <60.00>;
+				turn lbleg to z-axis <10.00> speed <75.00>;
+				turn lflegy to y-axis <-30.00> speed <60.00>;
+				turn lfleg to z-axis <-15.00> speed <40.00>;
+				turn rflegy to y-axis <50.00> speed <60.00>;
+				turn rfleg to z-axis <5.00> speed <80.00>;
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lmleg to z-axis <10.00> speed <50.00>;
+				turn rmleg to z-axis <5.00> speed <50.00>;
+				turn rbleg to z-axis <15.00> speed <40.00>;
+				turn lbleg to z-axis <-5.00> speed <120.00>;
+				turn lfleg to z-axis <-15.00> speed <40.00>;
+				turn rfleg to z-axis <-10.00> speed <80.00>;				
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lmlegy to y-axis <0.00> speed <80.00>;
+				turn lmleg to z-axis <0.00> speed <60.00>;
+				turn rmlegy to y-axis <0.00> speed <80.00>;
+				turn rmleg to z-axis <10.00> speed <25.00>;
+				turn rblegy to y-axis <-45.00> speed <60.00>;
+				turn rbleg to z-axis <15.00> speed <40.00>;
+				turn lblegy to y-axis <45.00> speed <60.00>;
+				turn lbleg to z-axis <-15.00> speed <75.00>;
+				turn lflegy to y-axis <-45.00> speed <60.00>;
+				turn lfleg to z-axis <-15.00> speed <25.00>;
+				turn rflegy to y-axis <45.00> speed <60.00>;
+				turn rfleg to z-axis <10.00> speed <75.00>;
+				sleep 200;
+				}
+			JustMoved = 1;
+			}
+		if( !Moving )
+			{
+			if( JustMoved )
+				{
+				turn lmlegy to y-axis <0.00> speed <82.00>;
+				turn lmleg to z-axis <0.00> speed <82.00>;
+			
+				turn rmlegy to y-axis <0.00> speed <82.00>;
+				turn rmleg to z-axis <0.00> speed <82.00>;
+			
+				turn lflegy to y-axis <-45.00> speed <82.00>;
+				turn lfleg to z-axis <0.00> speed <82.00>;
+		
+				turn rflegy to y-axis <45.00> speed <82.00>;
+				turn rfleg to z-axis <0.00> speed <82.00>;
+	
+				turn lblegy to y-axis <45.00> speed <82.00>;
+				turn lbleg to z-axis <0.00> speed <82.00>;
+			
+				turn rblegy to y-axis <-45.00> speed <82.00>;
+				turn rbleg to z-axis <0.00> speed <82.00>;
+			
+				JustMoved = 0;
+				}
+			sleep 200;
+			}
+		}
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_2 )
+	{
+		Static_Var_1 = requestedstate;
+		return (0);
+	}
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
+	{
+		if( Static_Var_1 )
+		{
+			call-script deactivatescr();
+			Static_Var_3 = 1;
+			currentstate = 1;
+		}
+		else
+		{
+			call-script activatescr();
+			Static_Var_3 = 0;
+			currentstate = 0;
+		}
+	}
+	Static_Var_2 = 0;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from hull;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = 0;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	restore_delay = 2000;
+	turn lflegy to y-axis <-45.00> now;
+	turn lblegy to y-axis <45.00> now;
+	turn rflegy to y-axis <45.00> now;
+	turn rblegy to y-axis <-45.00> now;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	bMoving = 1;
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	bMoving = 0;
+	
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1, Func_Var_2)
+{
+	start-script RequestState(0);
+	while( Static_Var_3 )
+	{
+		sleep 100;
+	}
+	signal SIG_CAPTURE;
+	turn turret to y-axis Func_Var_1 speed <120.0>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	signal SIG_CAPTURE;
+	set-signal-mask SIG_CAPTURE;
+	sleep 5000;
+	set-signal-mask 0;
+	signal SIG_CAPTURE;
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = lathe;
+}
+
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(Severity, CorpseType)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		explode rbleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lbleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD;
+		explode radar type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD;
+		explode rbleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lbleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | FALL;
+		explode radar type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD;
+	explode rbleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lbleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode radar type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
