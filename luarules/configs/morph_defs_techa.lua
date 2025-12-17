@@ -618,14 +618,20 @@ local morphDefs = {
 	-- Special Units
 	corkrog = {
 		into = 'corskrog',
-		time = 60,
 		tech = 4,
+		time = 60,
 		xp = 0.10,
 	},
 	gok_asmodee = {
 		into = 'gok_darkarchonte',
-		time = 60,
 		tech = 4,
+		time = 60,		
+		xp = 0.10,
+	},
+	gok_ifrit = {
+		into = 'gok_kadesh',
+		tech = 3,
+		time = 60,
 		xp = 0.10,
 	},
 	gok_satan = {
