@@ -511,7 +511,7 @@ function SpawnStartUnit(teamID, x, z)
 	  -- spCreateUnit(UnitDefNames["halloween"].id, x + 40 * (-1 * math.random(0,1)), y, z + 40 * (-1 * math.random(0,1)), 0, teamID)
 
 	--spawn Christmas
-		-- spCreateUnit(UnitDefNames["xmas"].id, x + 60 * (-1), y, z + 60 * (-1), 0, teamID)
+		spCreateUnit(UnitDefNames["xmas"].id, x + 60 * (-1), y, z + 60 * (-1), 0, teamID)
 
 
 	--share info
