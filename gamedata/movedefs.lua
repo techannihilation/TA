@@ -312,6 +312,14 @@ local moveDatas = {
         maxslope = 80,
         maxwaterdepth = 22
     },
+    HTKBOT9 = {
+        allowterraincollisions = false,
+        crushstrength = 1000,
+        footprintx = 9,
+        footprintz = 9,
+        maxslope = 80,
+        maxwaterdepth = 22
+    },
     KBOT1 = {
         crushstrength = 50,
         footprintx = 1,
@@ -504,6 +512,16 @@ local moveDatas = {
         footprintx = 25,
         footprintz = 25,
         maxslope = 24,
+        maxwaterdepth = 15000,
+        maxwaterslope = 30
+    },
+    VKBOT35 = {
+        allowterraincollisions = false,
+        crushstrength = 50000,
+        depthmod = 0,
+        footprintx = 35,
+        footprintz = 35,
+        maxslope = 36,
         maxwaterdepth = 15000,
         maxwaterslope = 30
     },
