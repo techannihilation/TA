@@ -144,6 +144,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("rumad_oasis.user", "icons/rumad_oasis.png", 3)
   Spring.AddUnitIcon("rumad_mcv1.user", "icons/rumad_mcv1.png", 4)
   Spring.AddUnitIcon("rumad_mcv2.user", "icons/rumad_mcv2.png", 6)
+  Spring.AddUnitIcon("gok_darkdeus.user", "icons/gok_darkdeus.png", 18)
 
 
   -- Setup the unitdef icons
@@ -250,6 +251,8 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "corskrog.user")
       elseif ud.name == "gok_darkarchonte" then
         Spring.SetUnitDefIcon(udid, "gok_darkarchonte.user")
+      elseif ud.name == "gok_darkdeus" then
+        Spring.SetUnitDefIcon(udid, "gok_darkdeus.user")
       elseif ud.name == "gok_cut1" then
         Spring.SetUnitDefIcon(udid, "gok_cut1.user")
       elseif ud.name == "armmcv1" then

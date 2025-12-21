@@ -4,7 +4,7 @@ return {
 		craterboost = 5,
 		cratermult = 14,
 		edgeeffectiveness = 0.3,
-		explosiongenerator = "custom:FLASHNUKE768",
+		explosiongenerator = "custom:FLASHNUKE750",
 		impulseboost = 0.25,
 		impulsefactor = 0.25,
 		name = "NuclearMine",

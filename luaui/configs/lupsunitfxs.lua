@@ -34,6 +34,13 @@ gok_ufusion = {
 {class='SimpleParticles2', options=MergeTable({pos={0,125,0}, delay=0, count=12, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_advfusion)},
 {class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {0,-1,0}, width=48, length=350, piece="base", noIconDraw = true, priority=2}},
 },
+gok_darkdeus = {
+  {class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {0,0,-1}, width=25, length=15, piece="fusion", noIconDraw = true, priority=2}},
+  {class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {0,-1,0}, width=15, length=15, piece="fusion", noIconDraw = true, priority=2}},
+  {class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {0,1,0}, width=15, length=15, piece="fusion", noIconDraw = true, priority=2}},
+  {class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {1,0,0}, width=15, length=15, piece="fusion", noIconDraw = true, priority=2}},
+  {class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {-1,0,0}, width=15, length=15, piece="fusion", noIconDraw = true, priority=2}},
+},
 --TALON
 talon_gen = {
 	{class='SimpleParticles2', options=MergeTable({pos={0,28,0}, delay=0, size=15, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_gen)},
