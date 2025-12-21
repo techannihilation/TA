@@ -2050,18 +2050,23 @@ end
 
 local nightFactorBins = { tree = 1.3, feature = 1.3, featurepbr = 1.3, treepbr = 1.3 }
 local lastSunChanged = -1
-function gadget:SunChanged() -- Note that map_nightmode.lua gadget has to change sun twice in a single draw frame to update all
-	local df = Spring.GetDrawFrame()
-	if df == lastSunChanged then return end
-	lastSunChanged = df
-	local nightFactor = 1.0
-	if GG['NightFactor'] then
-		local altitudefactor = 1.0 --+ (1.0 - WG['NightFactor'].altitude) * 0.5
-		nightFactor = (GG['NightFactor'].red + GG['NightFactor'].green + GG['NightFactor'].blue) * 0.33
-	end
-	for uniformBinName, defaultBrightnessFactor in pairs(nightFactorBins) do
-		uniformBins[uniformBinName].brightnessFactor = defaultBrightnessFactor * nightFactor
-	end
+function gadget:SunChanged()
+  local df = Spring.GetDrawFrame()
+  if df == lastSunChanged then return end
+  lastSunChanged = df
+
+  local nightFactor = 1.0
+  local nf = GG and GG.NightFactor
+  if nf and nf.red and nf.green and nf.blue then
+    nightFactor = (nf.red + nf.green + nf.blue) * (1.0 / 3.0)
+  end
+
+  for uniformBinName, defaultBrightnessFactor in pairs(nightFactorBins) do
+    local ub = uniformBins[uniformBinName]
+    if ub then
+      ub.brightnessFactor = defaultBrightnessFactor * nightFactor
+    end
+  end
 end
 
 local function drawPassBitsToNumber(opaquePass, deferredPass, drawReflection, drawRefraction)
@@ -2117,4 +2122,5 @@ end
 function gadget:DrawShadowFeaturesLua() -- These are drawn together with units
 	if unitDrawBins == nil then return end
 	--ExecuteDrawPass(16)
+
 end
