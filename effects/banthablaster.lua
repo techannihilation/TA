@@ -367,7 +367,6 @@ return {
       },
     },
   },
-
   ["ultimate_blaster"] = {
     usedefaultexplosions = false,
     Spawner_blaster_sparkels = {
@@ -436,7 +435,79 @@ return {
       },
     },
   },
-
+  ["gok_deus_blaster"] = {
+    usedefaultexplosions = false,
+    Spawner_blaster_sparkels = {
+      air        = true,
+      class      = [[CExpGenSpawner]],
+      count      = 24,         --32
+      ground     = false,
+      water      = false,
+      unit       = false,
+      properties = {
+        explosiongenerator = [[custom:blaster_gok_sparkels]],
+        pos                = [[0 r-20 r20, 0 r-20 r20, 0 r-20 r20]],
+      },
+    },
+    sparkles = {
+      air        = true,
+      class      = [[CSimpleParticleSystem]],
+      count      = 1,
+      ground     = true,
+      unit       = 1,
+      water      = true,
+      properties = {
+        airdrag             = 0.5,
+        colormap            = [[0 0 0 0  0.9 0.0 0.2 0.2   0.8 0 0.1 0.4   0.2 0 0.1 0.2   0.1 0 0 0.1   0 0 0 0.01]],
+        directional         = true,
+        emitrot             = 0,
+        emitrotspread       = 360,
+        emitvector          = [[0, 0.10, 0]],
+        gravity             = [[0,0,0]],
+        numparticles        = 1,
+        particlelife        = 1,
+        particlelifespread  = 5,
+        particlesize        = 20,
+        particlesizespread  = 7,
+        particlespeed       = 1,
+        particlespeedspread = 2,
+        pos                 = [[0, 0, 1]],
+        sizegrowth          = 1.2,
+        sizemod             = -1.0,
+        texture             = [[lightb2]],
+      },
+    },
+  },
+  ["blaster_gok_sparkels"] = {
+    sparkels = {
+      air        = true,
+      class      = [[CSimpleParticleSystem]],
+      count      = 1,
+      ground     = false,
+      water      = false,
+      properties = {
+        airdrag             = .75,
+        colormap            = [[0.78 0.08 0.52 0  0.68 0.0 0.42 0.2   0.5 0.0 0.25 0.4   0.4 0 0.1 0.2   0.25 0 0 0   0.1 0 0 0   0 0 0 0.01]],
+        directional         = true,
+        emitrot             = 0,
+        emitrotspread       = 0,
+        emitvector          = [[0.2, 0.2, 0.2]],
+        gravity             = [[0, 0, 0]],
+        numparticles        = 1,
+        particlelife        = 4,
+        particlelifespread  = 16,
+        particlesize        = 2,
+        particlesizespread  = 2,
+        particlespeed       = 1,
+        particlespeedspread = 1,
+        pos                 = [[0, 0, 0]],
+        sizegrowth          = 0.2,
+        sizemod             = -1.0,
+        texture             = [[lightb2]],
+        useairlos           = true,
+      },
+    },
+  },
   ["ultimate_blaster_muzzle"] = {
     glow = {
       air        = true,

@@ -4,6 +4,7 @@
 Xmas is comming !
 
 Improvment :
+* Add First T7 Deus unit : Gok Dark Deus (build by T5 Gok Builder). Restricted unit : 1.
 * Add All-Terrain T2 Capture Spider for Rumad
 * Add T5 Dark Archonte for Gok (Morph from Asmodee)
 * Add Back Gok Kadesh. Morph from Ifrit Flamer T3 Kbot. Kadesh reworked and is now T4
