@@ -46,11 +46,11 @@ Walk()
 		if( bMoving AND !bAiming )
 		{
 			turn lshoulder to x-axis <-6.000000> speed <16.000000> * SPEEDTURN;
-			turn lhand to y-axis <5.000000> speed <5.000000> * SPEEDTURN;
+			turn lhand to y-axis <2.000000> speed <5.000000> * SPEEDTURN;
 			turn rhand to y-axis <0.000000> speed <12.000000> * SPEEDTURN;
 			turn rshoulder to x-axis <6.000000> speed <8.000000> * SPEEDTURN;
-			turn torso to y-axis <4.000000> speed <9.000000> * SPEEDTURN;
-			turn head to y-axis <3.000000> speed <7.000000> * SPEEDTURN;
+			turn torso to y-axis <2.000000> speed <9.000000> * SPEEDTURN;
+			turn head to y-axis <2.000000> speed <7.000000> * SPEEDTURN;
 			turn torso to z-axis <2.000000> speed <2.000000> * SPEEDTURN;
 		}
 		
@@ -102,11 +102,11 @@ Walk()
 		if( bMoving AND !bAiming )
 		{
 			turn rshoulder to x-axis <-6.000000> speed <16.000000> * SPEEDTURN;
-			turn rhand to y-axis <5.000000> speed <5.000000> * SPEEDTURN;
+			turn rhand to y-axis <2.000000> speed <5.000000> * SPEEDTURN;
 			turn lhand to y-axis <0.000000> speed <12.000000> * SPEEDTURN;		
 			turn lshoulder to x-axis <6.000000> speed <8.000000> * SPEEDTURN;		
-			turn torso to y-axis <-4.000000> speed <9.000000> * SPEEDTURN;
-			turn head to y-axis <-3.000000> speed <7.000000> * SPEEDTURN;
+			turn torso to y-axis <-2.000000> speed <9.000000> * SPEEDTURN;
+			turn head to y-axis <-2.000000> speed <7.000000> * SPEEDTURN;
 			turn torso to z-axis <-2.000000> speed <2.000000> * SPEEDTURN;
 			move torso to y-axis [1.000000] speed [1.500000];
 	
@@ -185,8 +185,6 @@ StopMoving()
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
 	
-	move rleg to y-axis [0.000000] speed [1.000000];
-	move rleg to z-axis [0.000000] speed [1.000000];
 	turn rthigh to x-axis ANGLETURN * <0.000000> speed <35.000000> * SPEEDTURN;
 	turn lthigh to x-axis ANGLETURN * <0.000000> speed <35.000000> * SPEEDTURN;
 	turn lleg to x-axis ANGLETURN * <0.000000> speed <35.000000> * SPEEDTURN;
@@ -196,6 +194,8 @@ StopMoving()
 	turn rleg to y-axis <0.000000> speed <35.000000> * SPEEDTURN;
 	turn rfoot to x-axis <0.000000> speed <35.000000> * SPEEDTURN;
 	turn rtoes to x-axis <0.000000> speed <35.000000> * SPEEDTURN;
+	turn rankle to x-axis <0.000000> speed <35.000000> * SPEEDTURN;
+	turn lankle to x-axis <0.000000> speed <35.000000> * SPEEDTURN;
 	turn hips to y-axis <0.000000> speed <35.000000> * SPEEDTURN;
 	turn hips to z-axis <0.000000> speed <35.000000> * SPEEDTURN;
 	turn hips to x-axis <0.000000> speed <35.000000> * SPEEDTURN;
@@ -222,8 +222,8 @@ AimWeapon1(heading, pitch)
 	
 	Main_Gun_Heading = heading;
 	turn torso to y-axis heading speed <35.000000>;
-	turn head to y-axis <0.0> speed <3.000000>;
-	turn head to x-axis <0.000000> - pitch speed <6.000000>;
+	turn head to y-axis <0.0> speed <12.000000>;
+	turn head to x-axis <0.000000> - pitch speed <12.000000>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn head around x-axis;
 	start-script RestoreAfterDelayHead();
@@ -250,7 +250,7 @@ AimWeapon2(heading, pitch)
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
 	
-	if (heading > (Main_Gun_Heading + 4500) or heading < (Main_Gun_Heading - 4500))
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
 	{
 		return (0);
 	}
@@ -270,16 +270,6 @@ AimWeapon2(heading, pitch)
 
 FireWeapon2()
 {
-	if( gun_1 == 0 )
-	{
-	
-		
-	}
-	if( gun_1 == 1 )
-	{
-		
-	
-	}
 	++gun_1;
 	if( gun_1 >= 2 )
 	{
