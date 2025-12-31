@@ -16,7 +16,7 @@ end
 local lastLoadMessage = ""
 local infoMessage = {}
 
-table.insert(infoMessage, "Merry Xmas From TECHA.")
+-- table.insert(infoMessage, "Merry Xmas From TECHA.")
 -- table.insert(infoMessage, "Halloween is comming on TECHA.")
 
 local defaultModoptions = VFS.Include("modoptions.lua")
