@@ -188,6 +188,7 @@ return {
 			[1] = {
 				badtargetcategory = "MINOR SMALL MEDIUM LARGE HUGE",
 				def = "ultimate_beam",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "gok_darkarchonte_Shield",
