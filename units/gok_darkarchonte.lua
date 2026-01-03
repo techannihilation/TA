@@ -3,7 +3,7 @@ return {
 		acceleration = 0.05,
 		activatewhenbuilt = true,
 		brakerate = 2.0,
-		buildcostenergy = 600000,
+		buildcostenergy = 6000000,
 		buildcostmetal = 447000,
 		builder = false,
 		buildpic = "gok_darkarchonte.dds",
