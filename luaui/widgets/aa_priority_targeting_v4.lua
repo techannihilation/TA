@@ -21,7 +21,7 @@ local MOVEMENT_THRESHOLD = 0.1 -- fraction that needs be near base to trigger ag
 local AIR_RAID_CHECK_INTERVAL = 60 -- frames between checks (1 second at 30fps)
 local AIR_RAID_CHECK_INTERVAL_NORMAL  = 60 -- frames between  checks (1 second at 30fps)
 local AIR_RAID_CHECK_INTERVAL_ALERT=60
-local DIST_TO_BASE=9000          
+local DIST_TO_BASE=9000
 -- Unit name tables for prioritization (higher number = higher priority)
 local aa_names={
     --ARM
@@ -35,23 +35,23 @@ local aa_names={
 	"armjeth",
 	"armaak",
 	"armeak",
-	
+
 	--spider
 	"armhuntsman",
-	
-	--hover 
+
+	--hover
 	"armah",
 	"armiguana",
-	
-	--veh 
+
+	--veh
 	"armsam",
 	"armyork",
 	"armeflak",
-	
+
 	--static missiles
 	"armmercury",
 	"arm_ucir",
-	
+
 	--CORE
 	--static
 	"corrl",
@@ -60,30 +60,30 @@ local aa_names={
 	"corflak",
 	"corpre",
 	"coruflak",
-	
+
 	--kbot
 	"corcrash",
 	"coraak",
 	"coreak",
-	
-	--veh 
+
+	--veh
 	"cormist",
 	"corsent",
 	"coramist",
-	
+
 	--tort
 	"coraapod",
-	
+
 	--hover
 	"corah",
 	"corfrog",
-	
+
 	--air
 	"corshock",--???
-	
+
 	--static missiles
 	"corscreamer",
-	
+
 	--TLL
 	--static
 	"tlllmt",
@@ -91,99 +91,99 @@ local aa_names={
 	"tlltetanos",
 	"tllflak",
 	"tlluflak",
-	
+
 	--kbot
 	"tllfirestarter",
 	"tllaak",
 	"tlldilophosaurus",
-	
+
 	--veh
 	"tllhoplit",
 	"tllpuncher",
 	"tllmantis",
-	
+
 	--tort
 	"tllloggerhead",
-	
+
 	--static missiles
 	"tllhmt",
-	
+
 	--TALON
-	
+
 	--static
 	"talon_rl",
 	"talon_cir",
 	"talon_popcorn",
 	"talon_popcorn1",
-	
+
 	--kbot
 	"talon_rebel",
 	"talon_striker",
 	"talon_eak",
-	
+
 	--t4 kbot
 	"talon_javelin",
-	
+
 	--veh
 	"talon_sheatiped",
 	"talon_vanguard",
 	"talon_expanse",
-	
+
 	--hover
 	"talon_cataphract",
 	"talon_hydra",
-	
-	
+
+
 	--GOK
 	--static
 	"gok_rl",
-	"gok_flak",	
+	"gok_flak",
 	"gok_eflak",
 	"gok_ucir",
-	
+
 	--kbot
 	"gok_stung",
 	"gok_harbinger",
 	"gok_curred",
-	
+
 	--t4 kbot
 	"gok_pandora",
-	
+
 	--veh
 	"gok_earthstrike",
 	"gok_pains",
 	"gok_nahash",
-	
+
 	--static missiles
 	"gok_ptr",
-	
-	
+
+
 	--RUMAD
 	--static
 	"rumad_rl",
-	
+
 	"rumad_sam",
 	"rumad_cir",
 	"rumad_flak",
 	"rumad_erl",
 	"rumad_rlrpt",
-	
+
 	--kbot
 	"rumad_ak",
 	"rumad_aak",
-	
+
 	--kbot t4
 	"rumad_uflak",
-	
-	
+
+
 	--veh
 	"rumad_pasta",
 	"rumad_borer",
 	"rumad_mflak",
-	
+
 	--static missiles
 	"rumad_ptr"
-	
+
 }
 local target_names = {
     -- ARM (higher number = higher priority)-ok
@@ -249,6 +249,7 @@ local target_names = {
     {name = "talon_vulture",    priority = 2},
     {name = "talon_rukh",    priority = 2},
     {name = "talon_ceddral",    priority = 2},
+    {name = "talon_pepper",    priority = 2},
     {name = "talon_pampa",     priority = 3},
     {name = "talon_spirit",    priority = 3},
     {name = "talon_tau",   priority = 3},
@@ -273,7 +274,7 @@ local target_names = {
      -- RUMAD
     {name = "rumad_airtrans_lvl1",    priority = 1},
     {name = "rumad_gunship_lvl1",    priority = 1},
-    {name = "rumad_bomber_lvl1",    priority = 1}, 
+    {name = "rumad_bomber_lvl1",    priority = 1},
     {name = "rumad_airtrans_lvl2",    priority = 2},
     {name = "rumad_gunship_lvl2",    priority = 2},
     {name = "rumad_bomber_lvl2",    priority = 2},
@@ -294,7 +295,7 @@ for _, entry in ipairs(target_names) do
 end
 
 -- State
-local aaUnits = {} -- our AA units 
+local aaUnits = {} -- our AA units
 local enemyAirUnitsByPriority = {} -- enemy air units organized by priority {[priority] = {unitID = {unitDefID, x, y, z}}}
 local frameCount = 0
 local lastFullScan = 0
@@ -334,7 +335,7 @@ local glVertex = gl.Vertex
 local GL_LINE_STRIP = GL.LINE_STRIP
 local GL_LINE_LOOP = GL.LINE_LOOP
 local GL_LINES = GL.LINES
-        
+
 local CMD_ATTACK = CMD.ATTACK
 
 local math_sqrt = math.sqrt
@@ -392,7 +393,7 @@ local function UpdateGuiWidthForLabel(label)
     end
 end
 
-local aa_counter = 0 
+local aa_counter = 0
 -- Unit definitions cache
 local unitDefCache = {}
 local function DrawDiamond(x, y, z, radius)
@@ -471,17 +472,17 @@ function widget:Initialize()
             priority = nil,
             maxRange = 0
         }
-        
+
         if unitDef.canFly then
             local name = unitDef.name:lower()
-            
+
             -- Check if unit is in our target list
             local priority = nameToPriority[name]
             if priority then
                 unitDefCache[unitDefID].priority = priority
             end
         end
-        
+
         -- Check if unit is AA
         if find_name(unitDef.name:lower(),aa_names) then
             unitDefCache[unitDefID].isAA = true
@@ -498,12 +499,12 @@ function widget:Initialize()
             end
         end
     end
-    
-    -- Get start positions 
+
+    -- Get start positions
     myStartPosX, _, myStartPosZ = spGetTeamStartPosition(myTeamID)
-    
-    
-    
+
+
+
     -- Initial scan
     ScanForUnits()
     lastFullScan = 0
@@ -614,7 +615,7 @@ function ScanForUnits()
             }
         end
     end
-    
+
     -- Scan for enemy air units and organize by priority
     enemyAirUnitsByPriority = {}
     local allUnits = spGetAllUnits()
@@ -710,15 +711,15 @@ function CheckAirRaidMovement()
             allEnemyUnits[totalCount] = {unitID = unitID, data = data}
         end
     end
-    
+
     if totalCount == 0 then
         return false
     end
     -- Spring.Echo("planes detected")
-    
+
     -- Determine sample size
     local sampleSize = math.min(SAMPLE_SIZE, totalCount)
-    
+
     -- True random sampling using reservoir sampling algorithm
     local sampledUnits = {}
     for i = 1, totalCount do
@@ -733,26 +734,26 @@ function CheckAirRaidMovement()
             end
         end
     end
-    
+
     -- Check how many are near base
     local crossedCount = 0
     for i = 1, sampleSize do
         local unit = sampledUnits[i]
         if unit and unit.data then
             local data = unit.data
-            
-           
+
+
             local toUnitX =myStartPosX- data.x
             local toUnitZ =myStartPosZ- data.z
-            
+
             local dist=toUnitX*toUnitX+toUnitZ*toUnitZ
-            
+
             if (dist) <DIST_TO_BASE*DIST_TO_BASE then
                 crossedCount = crossedCount + 1
             end
         end
     end
-    
+
     -- Trigger if more than threshold crossed
     local crossedFraction = crossedCount / sampleSize
     return crossedFraction >= MOVEMENT_THRESHOLD
@@ -763,7 +764,7 @@ function widget:GameFrame(n)
     if not widgetEnabled then
         return
     end
-    
+
     -- Check for air raid periodically
     if frameCount - lastAirRaidCheck >= AIR_RAID_CHECK_INTERVAL then
         UpdateEnemyAirPositions()
@@ -771,7 +772,7 @@ function widget:GameFrame(n)
         -- Spring.Echo("check raid")
 
         airRaidActive = CheckAirRaidMovement()
-        
+
         if airRaidActive and not wasActive then
             AIR_RAID_CHECK_INTERVAL=AIR_RAID_CHECK_INTERVAL_ALERT
             RESCAN_INTERVAL=RESCAN_INTERVAL_ALERT
@@ -781,10 +782,10 @@ function widget:GameFrame(n)
             RESCAN_INTERVAL=RESCAN_INTERVAL_NORMAL
             Spring.Echo("AA Priority: Air raid subsided. Normal targeting resumed.")
         end
-        
+
         lastAirRaidCheck = frameCount
     end
-    
+
      -- Full rescan periodically
     if frameCount - lastFullScan >= RESCAN_INTERVAL then
         ScanForUnits()
@@ -805,14 +806,14 @@ function widget:GameFrame(n)
                 if x then
                     local unitDef = unitDefCache[aaData.unitDefID]
                     local maxRange = unitDef.maxRange
-                    
+
                     -- Check if weapon is reloaded
                     local _, reloaded = spGetUnitWeaponState(unitID, 1)
-                    
+
                     if reloaded == nil or reloaded then
                         -- Find highest priority target in range
                         local targetFound = false
-                        
+
                         -- Sort priorities in descending order (highest first)
                         local priorities = {}
                         for priority in pairs(enemyAirUnitsByPriority) do
@@ -820,28 +821,28 @@ function widget:GameFrame(n)
                         end
                         table.sort(priorities, function(a, b) return a > b end)
                         --check if old target is alive and in range
-						
-                                    
-						
+
+
+
                         -- Check each priority level from highest to lowest
                         for _, priority in ipairs(priorities) do
                             local units = enemyAirUnitsByPriority[priority]
 							old_target=false
-							
+
 							if spValidUnitID(aaData.target_id) then
-								if aaData.target_priority>=priority then 
+								if aaData.target_priority>=priority then
 									local enemy=units[aaData.target_id]
 									local enem_data=enemy.data
 									local ex, ey, ez = enem_data.x, enem_data.y, enem_data.z
 									local dx = ex - x
 									local dy = ey - y
 									local dz = ez - z
-									
+
 									-- Quick bounding box check first
                                     if dx < maxRange and dy < maxRange and dz < maxRange then
                                         local distSq = dx*dx + dy*dy + dz*dz
                                         local maxRangeSq = maxRange * maxRange
-                                        
+
                                         if distSq <= maxRangeSq then
 											old_target=true
                                             break
@@ -849,24 +850,24 @@ function widget:GameFrame(n)
                                     end
 								end
 							end
-							
+
 							--leave loop if old taregt alive and in range (and no higher prior)
 							if old_target then
 								break
 							end
-							
+
                             for enem_unitID, enem_data in pairs(units) do
                                 if spValidUnitID(enem_unitID) then
                                     local ex, ey, ez = enem_data.x, enem_data.y, enem_data.z
                                     local dx = ex - x
                                     local dy = ey - y
                                     local dz = ez - z
-                                    
+
                                     -- Quick bounding box check first
                                     if dx < maxRange and dy < maxRange and dz < maxRange then
                                         local distSq = dx*dx + dy*dy + dz*dz
                                         local maxRangeSq = maxRange * maxRange
-                                        
+
                                         if distSq <= maxRangeSq then
                                             spGiveOrderToUnit(unitID, CMD_ATTACK, {enem_unitID}, {""})
                                             targetFound = true
@@ -876,7 +877,7 @@ function widget:GameFrame(n)
                                     end
                                 end
                             end
-                            
+
                             -- Leave loop if target found
                             if targetFound then
                                 break

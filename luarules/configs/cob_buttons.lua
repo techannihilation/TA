@@ -538,7 +538,7 @@ return {
 		},
 	},
 	--[[
-	talon_mcv = {
+	talon_silver = {
 		{
 			name = "weapon_toggle_talon",
 			cob = "Dive",
