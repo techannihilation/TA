@@ -1,9 +1,9 @@
 return {
-	talon_mcv1 = {
+	talon_silver1 = {
 		buildcostenergy = 1095101,
 		buildcostmetal = 80475,
 		builder = false,
-		buildpic = "talon_mcv1.dds",
+		buildpic = "talon_silver1.dds",
 		buildtime = 1000000,
 		canattack = true,
 		canguard = true,
@@ -35,7 +35,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Silver",
 		noautofire = false,
-		objectname = "talon/talon_mcv1.s3o",
+		objectname = "talon/talon_silver1.s3o",
 		radaremitheight = 100,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 5,
@@ -43,9 +43,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		unitname = "talon_mcv1",
+		unitname = "talon_silver1",
 		customparams = {
-			buildpic = "talon_mcv1.dds",
+			buildpic = "talon_silver1.dds",
 			faction = "TALON",
 			normaltex = "unittextures/talon_normals.dds",
 		},
@@ -58,7 +58,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 7200,
-				object = "talon/talon_mcv_dead.s3o",
+				object = "talon/talon_silver_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {

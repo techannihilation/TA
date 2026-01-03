@@ -134,6 +134,7 @@ return {
 	"talon_vulture",
 	"talon_pampa",
 	"talon_ceddral",
+	"talon_pepper",
 	"gok_specter",
 	"gok_nosferatu",
 	"gok_spook",
