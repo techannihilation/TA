@@ -7,7 +7,7 @@ function widget:GetInfo()
         date      = "18.11.2025",
         license   = "GNU GPL v2",
         layer     = 0,
-        enabled   = true
+        enabled   = false
     }
 end
 
