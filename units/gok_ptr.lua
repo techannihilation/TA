@@ -153,7 +153,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "GOK_STARBURST",
 				onlytargetcategory = "VTOL SATELLITE",
 			},

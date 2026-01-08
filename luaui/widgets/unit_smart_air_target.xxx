@@ -6,7 +6,7 @@ function widget:GetInfo()
         author  = "[ur]uncle",
         license = "GNU GPL, v2 or later",
         layer   = 0,
-        enabled = true
+        enabled = false
     }
 end
 
@@ -155,7 +155,7 @@ function widget:Initialize()
     if IsReplay() or GetGameFrame() > 0 then
         maybeRemoveSelf()
     end
- 
+
     for _, ud in pairs(UnitDefs) do
         local isShield
         local wpRange
