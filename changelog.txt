@@ -1,6 +1,10 @@
 4.97 => 4.98
 2026-01-01
 
+Balance in test :
+* Ground AA, target priority only bombers / transporters
+* Air Fighter target priority fighter / bombers / transporters
+
 Xmas is ending !
 
  4.96 => 4.97

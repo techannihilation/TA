@@ -249,14 +249,14 @@ return {
 		},
 		weapons = {
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "TALON_FLAK_GUN",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "TALON_FLAK_GUN",
 				maindir = "0 0 1",
 				maxangledif = 270,
@@ -264,14 +264,14 @@ return {
 				slaveto = 2,
 			},
 			[4] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "TALON_FLAK_GUN",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "VTOL",
 			},
 			[5] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "TALON_FLAK_GUN",
 				maindir = "0 0 -1",
 				maxangledif = 270,

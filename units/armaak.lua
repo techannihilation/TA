@@ -196,12 +196,12 @@ return {
 		},
 		weapons = {
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "ARMAAKBOT_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "AAKFLAK",
 				onlytargetcategory = "VTOL",
 			},
