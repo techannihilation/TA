@@ -4,7 +4,7 @@ return {
 		airsightdistance = 850,
 		brakerate = 0,
 		buildangle = 8192,
-		buildcostenergy = 5133,
+		buildcostenergy = 5135,
 		buildcostmetal = 285,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -123,12 +123,10 @@ return {
 			},
 		},
 		weapondefs = {
-			corsam_missile = {
+			missile = {
 				areaofeffect = 48,
 				avoidfeature = false,
 				burnblow = true,
-				burst = 4,
-				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
 				craterareaofeffect = 0,
@@ -141,18 +139,18 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "weapon_missile.s3o",
-				name = "AA2Missile",
+				name = "AA Missile",
 				noselfdamage = true,
 				proximitypriority = 1,
 				range = 850,
-				reloadtime = 1.6,
+				reloadtime = 0.8,
 				smoketrail = false,
 				soundhitdry = "packohit",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
-				startvelocity = 600,
+				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "coresmoketrail",
 				texture3 = "null",
@@ -160,7 +158,7 @@ return {
 				tracks = true,
 				turnrate = 68000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
 				damage = {
@@ -173,8 +171,13 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
-				def = "corsam_MISSILE",
+				def = "MISSILE",
 				onlytargetcategory = "VTOL",
+			},
+			[2] = {
+				def = "MISSILE",
+				onlytargetcategory = "VTOL",
+				slaveto = 1,
 			},
 		},
 	},

@@ -120,7 +120,7 @@ return {
 			},
 		},
 		weapondefs = {
-			arm_cir2 = {
+			arm_cir = {
 				areaofeffect = 64,
 				avoidfeature = false,
 				burnblow = true,
@@ -136,7 +136,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "weapon_missile.s3o",
-				name = "ExplosiveRockets",
+				name = "AA Missile",
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 1045,
@@ -147,7 +147,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundtrigger = true,
-				startvelocity = 600,
+				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -155,7 +155,7 @@ return {
 				tracks = true,
 				turnrate = 55000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontimer = 3,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
@@ -169,7 +169,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
-				def = "ARM_CIR2",
+				def = "ARM_CIR",
 				onlytargetcategory = "VTOL",
 			},
 		},
