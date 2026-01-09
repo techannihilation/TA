@@ -4,8 +4,8 @@ return {
 		airsightdistance = 850,
 		brakerate = 0,
 		buildangle = 8192,
-		buildcostenergy = 5053,
-		buildcostmetal = 291,
+		buildcostenergy = 5050,
+		buildcostmetal = 290,
 		builder = false,
 		buildpic = "armpack.dds",
 		buildtime = 5000,
@@ -120,7 +120,7 @@ return {
 			},
 		},
 		weapondefs = {
-			armpack_missile = {
+			missile = {
 				areaofeffect = 48,
 				avoidfeature = false,
 				canattackground = false,
@@ -137,7 +137,7 @@ return {
 				impulsefactor = 0.123,
 				metalpershot = 0,
 				model = "weapon_missile.s3o",
-				name = "AA2Missile",
+				name = "AA Missile",
 				noselfdamage = true,
 				proximitypriority = 1,
 				range = 850,
@@ -148,7 +148,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
-				startvelocity = 600,
+				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -157,7 +157,7 @@ return {
 				tracks = true,
 				turnrate = 68000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
@@ -172,7 +172,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
-				def = "armpack_MISSILE",
+				def = "MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 		},

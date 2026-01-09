@@ -154,7 +154,7 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
-				startvelocity = 600,
+				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -162,7 +162,7 @@ return {
 				tracks = true,
 				turnrate = 48000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
 				damage = {

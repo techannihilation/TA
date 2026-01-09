@@ -136,7 +136,7 @@ return {
 				impulsefactor = 0.123,
 				metalpershot = 0,
 				model = "weapon_missile.s3o",
-				name = "Missiles",
+				name = "AA Missile",
 				noselfdamage = true,
 				range = 600,
 				reloadtime = 3,
@@ -153,8 +153,7 @@ return {
 				tracks = true,
 				turnrate = 63000,
 				turret = true,
-				weaponacceleration = 200,
-				weapontimer = 3,
+				weaponacceleration = 300,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
 				damage = {
