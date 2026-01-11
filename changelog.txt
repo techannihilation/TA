@@ -1,9 +1,17 @@
 4.97 => 4.98
-2026-01-01
+2026-01-11
 
-Balance in test :
+AA Balance in test :
 * Ground AA, target priority only bombers / transporters
 * Air Fighter target priority fighter / bombers / transporters
+
+Balance :
+* Reduce Range for Rumad Aeroship main gun : 2000->1800
+
+Improvment :
+* Rework T4 Artillery Core Hover Model
+* Try to fix T3 Veh Talon Production Lab. No perfect with Abaddon units.
+
 
 Xmas is ending !
 

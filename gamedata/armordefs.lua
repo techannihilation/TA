@@ -49,6 +49,7 @@ return {
 		"gok_chariot",
 		"gok_wordbearer",
 		"gok_benne",
+		"gok_lift",
 		"rumad_bomber_lvl1",
 		"rumad_bomber_lvl2",
 		"rumad_bomber_lvl3",
