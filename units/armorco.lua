@@ -32,7 +32,7 @@ return {
 		mass = 37900,
 		maxdamage = 118950,
 		maxslope = 17,
-		maxvelocity = 1.2,
+		maxvelocity = 0.9,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "VKBOT5",
@@ -219,29 +219,29 @@ return {
 		},
 		weapons = {
 			{
-				badtargetcategory = "MINOR MEDIUM LARGE",
+				badtargetcategory = "MINOR SMALL MEDIUM LARGE",
 				def = "ATAD",
 				onlytargetcategory = "SURFACE",
 			},
 			{
-				badtargetcategory = "MINOR MEDIUM",
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "ARM_EMCC4",
 				onlytargetcategory = "SURFACE",
 			},
 			{
-				badtargetcategory = "MINOR MEDIUM",
-				def = "ARM_EMCC4",
-				onlytargetcategory = "SURFACE",
-				slaveto = 2,
-			},
-			{
-				badtargetcategory = "MINOR MEDIUM",
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "ARM_EMCC4",
 				onlytargetcategory = "SURFACE",
 				slaveto = 2,
 			},
 			{
-				badtargetcategory = "MINOR MEDIUM",
+				badtargetcategory = "MINOR SMALL MEDIUM",
+				def = "ARM_EMCC4",
+				onlytargetcategory = "SURFACE",
+				slaveto = 2,
+			},
+			{
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "ARM_EMCC4",
 				onlytargetcategory = "SURFACE",
 				slaveto = 2,

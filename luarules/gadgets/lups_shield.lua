@@ -176,6 +176,7 @@ gok_satan = true,
 gok_slanesh = true,
 gok_antichrist = true,
 gok_archon = true,
+gok_darkarchonte = true,
 --Rumad
 rumad_king1 = true,
 rumad_king2 = true,

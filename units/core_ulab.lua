@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
 		buildinggrounddecaltype = "core_ulab_aoplane.dds",
-		buildpic = "core_ulab.dds",
+		buildpic = "core_hexapod_lab.dds",
 		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
@@ -60,7 +60,7 @@ return {
 			[9] = "corlift",
 		},
 		customparams = {
-			buildpic = "core_ulab.dds",
+			buildpic = "core_hexapod_lab.dds",
 			faction = "CORE",
 			normaltex = "unittextures/core_normals.dds",
 		},

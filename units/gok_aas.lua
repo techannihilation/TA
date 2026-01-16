@@ -163,14 +163,14 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "GOK_AA_MISSILE",
 				maindir = "0 0 -1",
 				maxangledif = 300,
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "GOK_AA_MISSILE",
 				maindir = "0 0 1",
 				maxangledif = 300,

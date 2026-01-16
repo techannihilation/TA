@@ -1,7 +1,7 @@
 return {
 	talon_topaz = {
 		acceleration = 0.08,
-		brakerate = 0.8,
+		brakerate = 0.6,
 		buildcostenergy = 865,
 		buildcostmetal = 95,
 		builder = false,
@@ -41,7 +41,7 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
-		sightdistance = 560,
+		sightdistance = 480,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -53,7 +53,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 4.0,
-		turnrate = 750,
+		turnrate = 680,
 		unitname = "talon_topaz",
 		unitrestricted = 200,
 		customparams = {
@@ -139,8 +139,8 @@ return {
 				laserflaresize = 5,
 				name = "Laser",
 				noselfdamage = true,
-				range = 200,
-				reloadtime = 0.5,
+				range = 190,
+				reloadtime = 0.55,
 				rgbcolor = "1 1 0.4",
 				soundhitdry = "",
 				soundhitwet = "sizzle",

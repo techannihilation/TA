@@ -17,7 +17,9 @@ static-var  unitviewer, Main_Gun_Heading, bShield,
 // Signal definitions
 #define SIG_AIM_1			2
 #define SIG_AIM_2			4
-#define SIG_MOVE			8
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_MOVE			32
 
 
 Walk()
@@ -382,13 +384,12 @@ AimWeapon4(heading, pitch)
 	{
 		return (0);
 	}
-	signal SIG_AIM_1;
-	set-signal-mask SIG_AIM_1;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	while( bBuilding )
 	{
 		sleep 500;
 	}
-	bAiming = 1;
 	Main_Gun_Heading = heading;
 	turn chest to y-axis heading speed <250.000000>;
 	turn rarm to x-axis <-45.000000> speed <65.000000>;	
@@ -417,8 +418,8 @@ AimFromTertiary(piecenum)
 
 AimTertiary(heading, pitch)
 {
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
 	bAiming = 1;
 	turn chest to y-axis heading speed <120.000000>;	
 	wait-for-turn chest around y-axis;

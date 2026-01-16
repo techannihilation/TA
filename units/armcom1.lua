@@ -92,7 +92,7 @@ return {
 			[14] = "armap",
 			[15] = "armeyes",
 			[16] = "armfort",
-			[17] = "armgrape",
+			[17] = "arm_beamer",
 			[18] = "armpack",
 			[19] = "armdl",
 			[20] = "armatidal",

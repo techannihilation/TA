@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
+		category = "ALL SMALL MOBILE SURFACE",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "28 16 28",
 		collisionvolumetype = "CylY",
@@ -167,7 +167,7 @@ return {
 		},
 		weapons = {
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "COREAH_WEAPON",
 				onlytargetcategory = "VTOL",
 			},

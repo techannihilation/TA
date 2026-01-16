@@ -618,8 +618,20 @@ local morphDefs = {
 	-- Special Units
 	corkrog = {
 		into = 'corskrog',
-		time = 60,
 		tech = 4,
+		time = 60,
+		xp = 0.10,
+	},
+	gok_asmodee = {
+		into = 'gok_darkarchonte',
+		tech = 4,
+		time = 60,		
+		xp = 0.10,
+	},
+	gok_ifrit = {
+		into = 'gok_kadesh',
+		tech = 3,
+		time = 60,
 		xp = 0.10,
 	},
 	gok_satan = {
@@ -649,7 +661,7 @@ local morphDefs = {
 	armorco = {
 		into = 'armexo',
 		time = 60,
-		tech = 3,
+		tech = 4,
 		xp = 0.10,
 	},
 	armmcv = {
@@ -674,12 +686,6 @@ local morphDefs = {
 		into = 'talon_repentance',
 		time = 60,
 		tech = 3,
-		xp = 0.10,
-	},
-	gok_asmodee = {
-		into = 'gok_kadesh',
-		time = 60,
-		tech = 4,
 		xp = 0.10,
 	},
 	tllblind = {
@@ -726,6 +732,12 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	tllmcv = {
+		into = 'tll_neobahomet',
+		tech = 4,
+		time = 120,
+		xp = 0.20,
+	},
+	tllcolossus = {
 		into = 'tll_tyranosaurus',
 		tech = 4,
 		time = 120,

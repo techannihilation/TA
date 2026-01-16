@@ -94,7 +94,7 @@ return {
 			[14] = "armap",
 			[15] = "armeyes",
 			[16] = "armedrag",
-			[17] = "armgrape",
+			[17] = "arm_beamer",
 			[18] = "armpb",
 			[19] = "armflak",
 			[20] = "armatidal",

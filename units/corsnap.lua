@@ -2,7 +2,7 @@ return {
 	corsnap = {
 		acceleration = 0.078,
 		brakerate = 0.3,
-		buildcostenergy = 2513,
+		buildcostenergy = 2510,
 		buildcostmetal = 254,
 		builder = false,
 		buildpic = "corsnap.dds",
@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE",
+		category = "ALL SMALL MOBILE SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "32 16 32",
 		collisionvolumetype = "CylY",

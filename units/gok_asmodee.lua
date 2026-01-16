@@ -64,7 +64,7 @@ return {
 				damage = 33488,
 				description = "Asmodee Mech Wreckage",
 				energy = 0,
-				featuredead = "gok_asmodee_heap",
+				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,
@@ -161,7 +161,6 @@ return {
 					default = 1800,
 					subs = 5,
 				},
-				tracks = false,
 			},
 		},
 		weapons = {

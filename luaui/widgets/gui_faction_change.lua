@@ -156,10 +156,10 @@ function FactionChangeList()
         	glRect(129, 1, 191, 63)
         elseif commanderDefID == taloncomDefID then
         	glRect(193, 1, 255, 63)
-		elseif commanderDefID == gokcomDefID then
-			glRect(257, 1, 319, 63)
-		elseif commanderDefID == rumadcomDefID then
-			glRect(321, 1, 383, 63)
+				elseif commanderDefID == gokcomDefID then
+					glRect(257, 1, 319, 63)
+				elseif commanderDefID == rumadcomDefID then
+					glRect(321, 1, 383, 63)
         end
 
         -- Icons

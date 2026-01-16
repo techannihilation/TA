@@ -6,7 +6,7 @@
 piece  torso, ruparm, luparm, lloarm, firept, pelvis, rleg, rfoot,
        lleg, lfoot, lthigh, rthigh, flame1, flame2, flame3, ground;
 
-static-var  bMoving, bAiming, Static_Var_3, restore_delay;
+static-var  bMoving, bAiming, Static_Var_3, restore_delay, first_move;
 
 // Signal definitions
 #define SIG_AIM				4
@@ -392,6 +392,7 @@ MotionControl(moving, aiming, justmoved)
 		aiming = bAiming;
 		if( moving )
 		{
+			first_move = TRUE;
 			if( aiming )
 			{
 				Static_Var_3 = 1;
@@ -434,7 +435,7 @@ PilotLight(Func_Var_1)
 {
 	while( TRUE )
 	{
-		while( bAiming )
+		while( bAiming or first_move == FALSE )
 		{
 			sleep 100;
 		}
@@ -480,6 +481,7 @@ Create()
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_3 = 1;
+	first_move = FALSE;
 	restore_delay = 2000;
 	start-script SmokeUnit();
 }

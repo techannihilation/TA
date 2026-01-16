@@ -282,7 +282,7 @@ RestoreAfterDelay()
 	spin rminigun2 around z-axis speed <0.0> accelerate <-25.0>;
 	
 	sleep 4000;
-	turn torso to y-axis <0.000000> speed <80.000000>;
+	turn torso to y-axis <0.000000> speed <45.000000>;
 	turn ruparm to x-axis <0.000000> speed <60.000000>;
 	turn luparm to x-axis <0.000000> speed <60.000000>;
 	turn lhand to y-axis <0.000000> speed <40.000000>;
@@ -299,7 +299,7 @@ RestoreAfterDelay()
 RestoreHead()
 {
 	sleep 5000;
-	turn head to y-axis <0.000000> speed <80.000000>;
+	turn head to y-axis <0.000000> speed <45.000000>;
 	wait-for-turn head around y-axis;
 }
 
@@ -327,7 +327,7 @@ AimWeapon1(heading, pitch)
 {
 	signal SIG_AIM_1;
 	set-signal-mask SIG_AIM_1;
-	turn head to y-axis heading speed <110.000000>;
+	turn head to y-axis heading speed <45.000000>;
 	wait-for-turn head around y-axis;
 	start-script RestoreHead();
 	return (1);
@@ -348,17 +348,17 @@ AimWeapon2(heading, pitch)
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
 	bAiming = TRUE;
-	turn torso to y-axis heading speed <75.000000>;
-	turn ruparm to x-axis <0.000000> - pitch speed <70.000000>;
-	turn luparm to x-axis <0.000000> - pitch speed <70.000000>;
-	turn ruparmhold to x-axis <0.000000> speed <70.000000>;
-	turn luparmhold to x-axis <0.000000> speed <70.000000>;
-	turn rhand to y-axis <0.000000> speed <55.000000>;
-	turn lhand to y-axis <0.000000> speed <55.000000>;
-	turn rhand to x-axis <0.000000> speed <55.000000>;
-	turn lhand to x-axis <0.000000> speed <55.000000>;
-	turn Larm to x-axis <0.000000> speed <55.000000>;
-	turn Rarm to x-axis <0.000000> speed <55.000000>;
+	turn torso to y-axis heading speed <45.000000>;
+	turn ruparm to x-axis <0.000000> - pitch speed <45.000000>;
+	turn luparm to x-axis <0.000000> - pitch speed <45.000000>;
+	turn ruparmhold to x-axis <0.000000> speed <45.000000>;
+	turn luparmhold to x-axis <0.000000> speed <45.000000>;
+	turn rhand to y-axis <0.000000> speed <45.000000>;
+	turn lhand to y-axis <0.000000> speed <45.000000>;
+	turn rhand to x-axis <0.000000> speed <45.000000>;
+	turn lhand to x-axis <0.000000> speed <45.000000>;
+	turn Larm to x-axis <0.000000> speed <45.000000>;
+	turn Rarm to x-axis <0.000000> speed <45.000000>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
 	wait-for-turn luparm around x-axis;

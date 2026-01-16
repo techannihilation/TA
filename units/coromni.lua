@@ -2,7 +2,7 @@ return {
 	coromni = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 320071,
+		buildcostenergy = 320000,
 		buildcostmetal = 8559,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

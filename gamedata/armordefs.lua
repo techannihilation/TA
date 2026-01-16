@@ -49,6 +49,7 @@ return {
 		"gok_chariot",
 		"gok_wordbearer",
 		"gok_benne",
+		"gok_lift",
 		"rumad_bomber_lvl1",
 		"rumad_bomber_lvl2",
 		"rumad_bomber_lvl3",
@@ -134,6 +135,7 @@ return {
 	"talon_vulture",
 	"talon_pampa",
 	"talon_ceddral",
+	"talon_pepper",
 	"gok_specter",
 	"gok_nosferatu",
 	"gok_spook",
@@ -175,6 +177,10 @@ return {
 	"talon_erez",
 	"gok_erez",
 	"rumad_erez",
+
+	--T5 Carrier
+	"arm_aircarry",
+	"core_aircarry",
 
 	--SAT
 	"rumad_thirdeye",
@@ -241,6 +247,13 @@ return {
 		"armnomad",
 		"gok_dome",
 		"gok_dome1",
+
+		-- EVENTS
+		"halloween",
+		"halloween1",
+		"halloween2",
+		"halloween3",
+
 	},
 
 	flamethrowers = {

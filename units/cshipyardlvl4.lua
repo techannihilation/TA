@@ -17,7 +17,7 @@ return {
 		collisionvolumescales = "240 240 519",
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
-		description = "Builds T5 AeroShips",
+		description = "Produces T5 AeroShips",
 		energystorage = 2000,
 		energyuse = 0,
 		explodeas = "SUPERBLAST",
@@ -49,6 +49,7 @@ return {
 			[2] = "corvaliant",
 			[3] = "cordust",
 			[4] = "cdevastator",
+			[5] = "core_aircarry",
 		},
 		customparams = {
 			buildpic = "cshipyardlvl4.dds",

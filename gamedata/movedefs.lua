@@ -45,6 +45,15 @@ local moveDatas = {
         maxwaterdepth = 5000,
         maxwaterslope = 80
     },
+    ATANK14 = {
+        crushstrength = 10000,
+        depthmod = 0,
+        footprintx = 14,
+        footprintz = 16,
+        maxslope = 36,
+        maxwaterdepth = 5000,
+        maxwaterslope = 80
+    },
     ATANK20 = {
         crushstrength = 10000,
         depthmod = 0,
@@ -169,6 +178,14 @@ local moveDatas = {
     HTANK6 = {
         allowterraincollisions = false,
         crushstrength = 250,
+        footprintx = 6,
+        footprintz = 6,
+        maxslope = 18,
+        maxwaterdepth = 22
+    },
+    HTANK6CRUSH = {
+        allowterraincollisions = false,
+        crushstrength = 1000,
         footprintx = 6,
         footprintz = 6,
         maxslope = 18,
@@ -300,6 +317,14 @@ local moveDatas = {
         crushstrength = 1000,
         footprintx = 7,
         footprintz = 7,
+        maxslope = 80,
+        maxwaterdepth = 22
+    },
+    HTKBOT9 = {
+        allowterraincollisions = false,
+        crushstrength = 1000,
+        footprintx = 9,
+        footprintz = 9,
         maxslope = 80,
         maxwaterdepth = 22
     },
@@ -498,6 +523,16 @@ local moveDatas = {
         maxwaterdepth = 15000,
         maxwaterslope = 30
     },
+    VKBOT28 = {
+        allowterraincollisions = false,
+        crushstrength = 50000,
+        depthmod = 0,
+        footprintx = 28,
+        footprintz = 28,
+        maxslope = 36,
+        maxwaterdepth = 15000,
+        maxwaterslope = 30
+    },
     UBOAT2 = {
         footprintx = 2,
         footprintz = 2,
@@ -615,8 +650,9 @@ local defs = {}
 
 for moveName, moveData in pairs(moveDatas) do
     moveData.heatmapping = true
-    moveData.allowRawMovement = true
     moveData.name = moveName
+    moveData.allowRawMovement = true
+    moveData.allowTerrainCollisions = false
     defs[#defs + 1] = moveData
 end
 

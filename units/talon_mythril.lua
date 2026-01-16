@@ -71,7 +71,7 @@ return {
 				damage = 33488,
 				description = "Mythril Wreckage",
 				energy = 0,
-				featuredead = "talon_mythril_heap",
+				featuredead = "heap",
 				footprintx = 8,
 				footprintz = 8,
 				metal = 14400,

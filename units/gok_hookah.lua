@@ -35,7 +35,7 @@ return {
 		mass = 325,
 		maxdamage = 1145,
 		maxslope = 10,
-		maxvelocity = 9.1,
+		maxvelocity = 8.1,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Hookah",

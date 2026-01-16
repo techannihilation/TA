@@ -203,7 +203,7 @@ return {
 				impulsefactor = 0,
 				metalpershot = 0,
 				model = "weapon_missile.s3o",
-				name = "Missiles",
+				name = "AA Missile",
 				noselfdamage = true,
 				range = 850,
 				reloadtime = 1,
@@ -215,12 +215,12 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundstartvolume = 7.5,
-				startvelocity = 600,
+				startvelocity = 900,
 				texture2 = "coresmoketrail",
 				tracks = true,
 				turnrate = 36000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
@@ -233,17 +233,17 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "CORAAKBOT_MISSILE1",
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "CORAAKBOT_MISSILE2",
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "AAKFLAK",
 				onlytargetcategory = "VTOL",
 			},

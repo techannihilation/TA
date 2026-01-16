@@ -30,7 +30,7 @@ return {
 		maxdamage = 35200,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Neo Bahomet",
+		name = "Quetzalcoatl",
 		noautofire = false,
 		objectname = "tll/tlluflak.s3o",
 		radardistance = 0,
@@ -148,24 +148,24 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "DRAGON_BREATH_GUN",
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "DRAGON_BREATH_GUN",
 				onlytargetcategory = "VTOL",
 				slaveto = 1,
 			},
 			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "DRAGON_BREATH_GUN",
 				onlytargetcategory = "VTOL",
 				slaveto = 1,
 			},
 			[4] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "DRAGON_BREATH_GUN",
 				onlytargetcategory = "VTOL",
 				slaveto = 1,

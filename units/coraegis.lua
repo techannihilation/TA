@@ -109,7 +109,7 @@ return {
 				name = "TacticalNuke",
 				noselfdamage = true,
 				range = 2550,
-				reloadtime = 2,
+				reloadtime = 15,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
 				soundstart = "misicbm1",

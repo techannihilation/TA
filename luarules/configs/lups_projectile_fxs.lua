@@ -7,6 +7,9 @@ local lups_effects = {
   rumad_rottweiler_rumad_gauss = {
     {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
   },
+  rumad_vergenten_rumad_gauss = {
+    {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
+  },
   rumad_garuda_rumad_gauss = {
     {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
   },

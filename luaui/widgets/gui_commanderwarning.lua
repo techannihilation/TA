@@ -69,10 +69,16 @@ end
 
 local tick = 0
 local lasttick  = 0
-local colorRed = color[1]
+local colorRed = nil
+if color ~= nil then
+	colorRed = color[1]
+end
 function widget:Update(tock)
 	tick = tick + tock
 	if tick > lasttick + UPDATERATE then
+		if color == nil then --Color may be undefined in headless runs
+			return
+		end
 		lasttick = tick
 		colorRed = colorRed + GLOWRATE
 		if colorRed > 0.33 and GLOWRATE > 0 then 

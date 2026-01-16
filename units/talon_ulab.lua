@@ -62,9 +62,10 @@ return {
 			[4] = "talon_boxer",
 			[5] = "talon_scorpion",
 			[6] = "talon_grenat",
-			[7] = "talon_mcv",
+			[7] = "talon_silver",
 			[8] = "talon_mythril",
-			[9] = "talon_plutor",
+			[9] = "talon_pepper",
+			[10] = "talon_plutor",
 		},
 		customparams = {
 			buildpic = "talon_ulab.dds",

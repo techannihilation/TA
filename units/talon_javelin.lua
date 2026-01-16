@@ -218,7 +218,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundtrigger = true,
-				startvelocity = 600,
+				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -227,7 +227,7 @@ return {
 				tracks = true,
 				turnrate = 25000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontimer = 3,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
@@ -240,29 +240,29 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "ADVFLAK",
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "ADVFLAK",
 				onlytargetcategory = "VTOL",
 				slaveTo = 1,
 			},
 			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "ADVANCED_MISSILE",
 				onlytargetcategory = "VTOL SATELLITE",
 			},
 			[4] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "TALON_MSL",
 				onlytargetcategory = "VTOL",
 				slaveTo = 1,
 			},
 			[5] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "TALON_MSL",
 				onlytargetcategory = "VTOL",
 				slaveTo = 1,

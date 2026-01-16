@@ -91,7 +91,6 @@ return {
 			[33] = "tlltetanos",
 			[34] = "tllshoretorp",
 			[35] = "tllsy",
-			[36] = "gate",
 		},
 		customparams = {
 			buildpic = "tllcv.dds",

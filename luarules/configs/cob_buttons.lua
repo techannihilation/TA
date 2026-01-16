@@ -538,7 +538,7 @@ return {
 		},
 	},
 	--[[
-	talon_mcv = {
+	talon_silver = {
 		{
 			name = "weapon_toggle_talon",
 			cob = "Dive",
@@ -659,6 +659,15 @@ return {
 	gok_archon = {
 		{
 			name = "shield_gokarchon",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_darkarchonte = {
+		{
+			name = "shield_gokdarkarchonte",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,

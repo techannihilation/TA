@@ -29,7 +29,7 @@ return {
 		mass = 11333,
 		maxdamage = 62000,
 		maxslope = 16,
-		maxvelocity = 1.5,
+		maxvelocity = 1.6,
 		mobilestandorders = 1,
 		movementclass = "hkbot4",
 		name = "Ifrit",
@@ -143,9 +143,7 @@ return {
 				soundstart = "Flamhvy1",
 				soundtrigger = false,
 				sprayangle = 1200,
-				tolerance = 2500,
 				turret = true,
-				weapontimer = 1.5,
 				weapontype = "Flame",
 				weaponvelocity = 265,
 				damage = {
@@ -153,7 +151,6 @@ return {
 					flamethrowers = 20,
 					subs = 1,
 				},
-				tracks = false,
 			},
 		},
 		weapons = {

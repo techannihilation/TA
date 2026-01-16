@@ -68,7 +68,7 @@ return {
 			[12] = "gok_dmc",
 			[13] = "gok_meteor1",
 			[14] = "gok_cain",
-			--[15] = "gok_squid",
+			[15] = "gok_darkdeus",
 		},
 		customparams = {
 			buildpic = "gok_builderlvl5.dds",

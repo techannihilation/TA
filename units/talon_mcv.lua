@@ -1,11 +1,11 @@
 return {
-	talon_mcv = {
+	talon_silver = {
 		acceleration = 0.005,
 		brakerate = 0.18,
 		buildcostenergy = 1145100,
 		buildcostmetal = 89475,
 		builder = false,
-		buildpic = "talon_mcv.dds",
+		buildpic = "talon_silver.dds",
 		buildtime = 1000000,
 		canattack = true,
 		canguard = true,
@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Silver",
 		noautofire = false,
-		objectname = "talon/talon_mcv.s3o",
+		objectname = "talon/talon_silver.s3o",
 		radaremitheight = 100,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,
@@ -49,9 +49,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.66,
 		turnrate = 175,
-		unitname = "talon_mcv",
+		unitname = "talon_silver",
 		customparams = {
-			buildpic = "talon_mcv.dds",
+			buildpic = "talon_silver.dds",
 			faction = "TALON",
 			normaltex = "unittextures/talon_normals.dds",
 		},
@@ -64,7 +64,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 7200,
-				object = "talon/talon_mcv_dead.s3o",
+				object = "talon/talon_silver_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -127,7 +127,7 @@ return {
 				intensity = 5,
 				name = "Impulsion Blaster",
 				noselfdamage = true,
-				range = 2250,
+				range = 2000,
 				reloadtime = 8,
 				rgbcolor = "0.1 0.9 1",
 				size = 4,
@@ -139,8 +139,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 900,
 				damage = {
-					commanders = 6250,
-					default = 25000,
+					commanders = 4500,
+					default = 18000,
 					subs = 5,
 				},
 			},

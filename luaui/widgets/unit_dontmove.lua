@@ -61,11 +61,16 @@ local unitArray = {
 
 --Rumad
   "rumad_king",
+  "rumad_king1",
+  "rumad_king2",
+  "rumad_king3",
+  "rumad_com",
+  "rumad_com1",
+  "rumad_com2",
+  "rumad_com3",
 
 
   --bombers
-  "armblz",
-  "corfiend",
   "armcybr",
   "armlance",
   "armpnix",
@@ -94,6 +99,13 @@ local unitArray = {
 
   --GOK
   "gok_dirgesinger",
+  "gok_hookah",
+  "gok_nurgle",
+
+  --RUMAD
+  "rumad_bomber_lvl1",
+  "rumad_bomber_lvl2",
+  "rumad_bomber_lvl3",
 
   --antinukes
   "armscab",
@@ -115,6 +127,11 @@ local unitArray = {
   "gok_carry",
   "gok_eveningstar",
   "gok_ucar",
+
+  -- Air Carrier
+  "arm_aircarry",
+  "arm_aircarry",
+
 }
 
 

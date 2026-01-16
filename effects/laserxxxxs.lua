@@ -242,7 +242,65 @@ return {
       },
     },
   },
-
+  ["gokravager"] = {
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 0,
+      flashalpha         = 0.3,
+      flashsize          = 66,
+      ttl                = 12,
+      color = {
+        [1]  = 0.78,
+        [2]  = 0.08,
+        [3]  = 0.52,
+      },
+    },
+    pikes20 = {
+      air                = true,
+      class              = [[explspike]],
+      count              = 15,
+      ground             = true,
+      water              = true,
+      properties = {
+        alpha              = 0.8,
+        alphadecay         = 0.1,
+        color              = [[0.78,0.08,0.52]],
+        dir                = [[-20 r40,-20 r40,-20 r40]],
+        length             = 30,
+        width              = 10,
+      },
+    },
+    residuals_pink = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 10,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = [[10 r200]],
+        explosiongenerator = [[custom:LASER_RESIDUALS_PINK]],
+        pos                = [[-100 r200, 1, -100 r200]],
+      },
+    },
+    whiteglow = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        alwaysvisible      = true,
+        heat               = 10,
+        heatfalloff        = 1.2,
+        maxheat            = 15,
+        pos                = [[r-2 r2, 5, r-2 r2]],
+        size               = 10,
+        sizegrowth         = 15,
+        speed              = [[0, 1 0, 0]],
+        texture            = [[laserendpink]],
+      },
+    },
+  },
   ["laseranni"] = {
     groundflash = {
       circlealpha        = 1,
@@ -649,4 +707,3 @@ return {
   },
 
 }
-

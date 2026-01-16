@@ -2413,13 +2413,13 @@ return {
     },
   },
 
-  ["flashnuke768"] = {
+  ["flashnuke750"] = {
     usedefaultexplosions = true,
     groundflash = {
       circlealpha        = 3,
       circlegrowth       = 17,
       flashalpha         = 2.2,
-      flashsize          = 883,
+      flashsize          = 750,
       ttl                = 27,
       color = {
         [1]  = 1,

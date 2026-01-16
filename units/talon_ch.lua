@@ -102,7 +102,6 @@ return {
 			[42] = "talon_tl",
 			[43] = "talon_fhlt",
 			[44] = "talon_frl",
-			[45] = "gate",
 		},
 		customparams = {
 			buildpic = "talon_ch.dds",

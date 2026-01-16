@@ -13,7 +13,6 @@ return {
 		collisionvolumeoffsets = "0 -12 0",
 		collisionvolumescales = "75 50 75",
 		collisionvolumetype = "CylY",
-		corpse = "dead",
 		description = "Tech Level 2",
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",

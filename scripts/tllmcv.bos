@@ -43,9 +43,9 @@ Sparks()
 		sleep 15;
 		emit-sfx 1024 + 2 from emit6;
 		sleep 15;
-		emit-sfx 1024 + 2 from emit8;
+		emit-sfx 1024 + 2 from emit7;
 		sleep 15;
-		emit-sfx 1024 + 2 from emit9;
+		emit-sfx 1024 + 2 from emit8;
 		sleep 15;
 		emit-sfx 1024 + 2 from emit9;
 		sleep 200;

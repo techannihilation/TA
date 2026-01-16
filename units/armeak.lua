@@ -163,7 +163,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				model = "weapon_missile.s3o",
-				name = "Missiles",
+				name = "AA Missile",
 				noselfdamage = true,
 				range = 1000,
 				reloadtime = 0.2,
@@ -175,12 +175,12 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundstartvolume = 7.5,
-				startvelocity = 600,
+				startvelocity = 900,
 				texture2 = "coresmoketrail",
 				tracks = true,
 				turnrate = 36000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
@@ -193,17 +193,17 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "ADVANCED_MISSILE",
 				onlytargetcategory = "VTOL SATELLITE",
 			},
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "MISSILE",
 				onlytargetcategory = "VTOL",
 			},

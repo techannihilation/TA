@@ -1,0 +1,307 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, legs, rupleg1, rupleg2, rupleg3, lupleg1, lupleg2, lupleg3,
+	   armor, tail,
+	   basket1, basket2, basket3, basket4, basket5, basket6, basket7, basket8, 
+	   basket9, basket10, basket11, basket12, basket13, basket14, basket15, basket16;
+
+static-var  moving, turning, unitviewer, unitcount;
+
+// Signal definitions
+#define SIG_ACTIVATE		16
+#define SIG_MOVE			32
+
+TransportPickup(unitid) 
+{
+	unitcount = unitcount + 1;
+	
+	if( unitcount == 1) 
+	{	
+		attach-unit unitid to basket1;
+		move basket1 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+
+	}
+	if( unitcount == 2) 
+	{	
+		attach-unit unitid to basket2;
+		move basket2 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 3) 
+	{	
+		attach-unit unitid to basket3;
+		move basket3 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 4) 
+	{	
+		attach-unit unitid to basket4;
+		move basket4 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 5) 
+	{	
+		attach-unit unitid to basket5;
+		move basket5 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 6) 
+	{	
+		attach-unit unitid to basket6;
+		move basket6 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 7) 
+	{	
+		attach-unit unitid to basket7;
+		move basket7 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 8) 
+	{	
+		attach-unit unitid to basket8;
+		move basket8 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 9) 
+	{	
+		attach-unit unitid to basket9;
+		move basket9 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 10) 
+	{	
+		attach-unit unitid to basket10;
+		move basket10 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 11) 
+	{	
+		attach-unit unitid to basket11;
+		move basket11 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 12) 
+	{	
+		attach-unit unitid to basket12;
+		move basket12 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 13) 
+	{	
+		attach-unit unitid to basket13;
+		move basket13 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 14) 
+	{	
+		attach-unit unitid to basket14;
+		move basket14 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 15) 
+	{	
+		attach-unit unitid to basket15;
+		move basket15 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount == 16) 
+	{	
+		attach-unit unitid to basket16;
+		move basket16 to y-axis [-2.000000] - get UNIT_HEIGHT(unitid) now;
+	}
+	if( unitcount > 16)
+	{	
+		sleep 150;
+	}	
+}
+
+TransportDrop(unitid, position) 
+{	
+	if( unitcount > 0)
+	{	
+		drop-unit unitid;
+		unitcount = unitcount - 1;
+	}
+}
+
+walk()
+{
+	if(( moving || turning ))
+	{
+		turn rupleg1 to y-axis <0> speed <75>;
+		turn rupleg1 to z-axis <0> speed <75>;
+		turn rupleg2 to z-axis <15> speed <75>;
+		turn rupleg3 to y-axis <16.5> speed <75>;
+		turn rupleg3 to z-axis <0> speed <75>;
+		turn lupleg1 to y-axis <-19.5> speed <75>;
+		turn lupleg1 to z-axis <0> speed <75>;
+		turn lupleg2 to y-axis <0> speed <75>;
+		turn lupleg2 to z-axis <0> speed <75>;
+		turn lupleg3 to y-axis <-14.5> speed <75>;
+		turn lupleg3 to z-axis <-22.5> speed <75>;
+		sleep 120;
+	}
+	if(( moving || turning ))
+	{
+		turn rupleg2 to y-axis <16.5> speed <75>;
+		turn rupleg2 to z-axis <15> speed <75>;
+		turn lupleg1 to y-axis <0> speed <75>;
+		turn lupleg2 to z-axis <-15> speed <75>;
+		turn lupleg3 to z-axis <1> speed <75>;
+		turn rupleg1 to z-axis <15> speed <75>;
+		turn rupleg3 to y-axis <0> speed <75>;
+		turn rupleg3 to z-axis <0> speed <75>;
+		sleep 120;
+	}
+	if(( moving || turning ))
+	{
+		turn lupleg2 to y-axis <-15> speed <75>;
+		turn lupleg2 to z-axis <-15> speed <75>;
+		turn lupleg3 to y-axis <1.5> speed <75>;
+		turn rupleg2 to y-axis <16.5> speed <75>;
+		turn rupleg2 to z-axis <0> speed <75>;
+		turn rupleg3 to z-axis <15> speed <75>;
+		turn rupleg1 to y-axis <27> speed <75>;
+		turn rupleg1 to z-axis <15> speed <75>;
+		turn lupleg1 to y-axis <0> speed <75>;
+		turn lupleg1 to z-axis <-15> speed <75>;
+		sleep 120;
+	}
+	if(( moving || turning ))
+	{
+		turn lupleg2 to y-axis <-18> speed <75>;
+		turn lupleg2 to z-axis <0> speed <75>;
+		turn lupleg3 to y-axis <0> speed <75>;
+		turn lupleg3 to z-axis <-22.5> speed <75>;
+		turn rupleg2 to y-axis <0> speed <75>;
+		turn rupleg2 to z-axis <0> speed <75>;
+		turn rupleg3 to y-axis <16.5> speed <75>;
+		turn rupleg1 to y-axis <21> speed <75>;
+		turn rupleg1 to z-axis <0> speed <75>;
+		turn rupleg3 to z-axis <15> speed <75>;
+		turn lupleg1 to y-axis <-19.5> speed <75>;
+		turn lupleg1 to z-axis <-15> speed <75>;
+		sleep 120;
+	}
+}
+
+MotionControl(Func_Var_1)
+{
+	var preang;
+	var ang;
+	while( TRUE )
+	{
+		ang = get XZ_ATAN(-419);
+		turning = 0;
+		if (ang != preang)
+		{
+			turning = 1;
+		}
+		sleep 100;
+		preang = ang;
+		
+		Func_Var_1 = moving;
+		if( Func_Var_1 )
+		{
+			call-script walk();
+		}
+		if( !Func_Var_1 )
+		{
+			sleep 100;
+			
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	turn tail to x-axis <0> speed <7.0>;
+	start-script MotionControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+Create()
+{
+	unitcount = 0;
+	unitviewer = FALSE;
+	moving = 0;
+	turning = 0;
+	turn tail to x-axis <80> now;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	moving=1;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+}
+
+
+StopMoving()
+{
+	moving=0;
+	signal SIG_MOVE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode lupleg1 type  NOHEATCLOUD;
+		explode lupleg2 type NOHEATCLOUD;
+		explode lupleg3 type NOHEATCLOUD;
+		explode rupleg1 type NOHEATCLOUD;
+		explode rupleg2 type NOHEATCLOUD;
+		explode rupleg3 type NOHEATCLOUD;
+		explode tail type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode lupleg1 type FALL | NOHEATCLOUD;
+		explode lupleg2 type FALL | NOHEATCLOUD;
+		explode lupleg3 type FALL | NOHEATCLOUD;
+		explode rupleg1 type FALL | NOHEATCLOUD;
+		explode rupleg2 type FALL | NOHEATCLOUD;
+		explode rupleg3 type FALL | NOHEATCLOUD;
+		explode tail type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode lupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode tail type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

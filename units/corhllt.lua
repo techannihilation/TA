@@ -3,8 +3,8 @@ return {
 		acceleration = 0,
 		brakerate = 0,
 		buildangle = 32768,
-		buildcostenergy = 2551,
-		buildcostmetal = 198,
+		buildcostenergy = 2555,
+		buildcostmetal = 200,
 		builder = false,
 		buildpic = "corhllt.dds",
 		buildtime = 5000,
@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 90,
-		mass = 254,
+		mass = 200,
 		maxdamage = 1205,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -208,10 +208,12 @@ return {
 		},
 		weapons = {
 			{
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL",
 				def = "corhllt_TOP",
 				onlytargetcategory = "SURFACE",
 			},
 			{
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL",
 				def = "corhllt_BOTTOM",
 				onlytargetcategory = "SURFACE",
 			},

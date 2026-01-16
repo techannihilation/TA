@@ -34,7 +34,7 @@ return {
 		mass = 330,
 		maxdamage = 1190,
 		maxslope = 10,
-		maxvelocity = 8.75,
+		maxvelocity = 7.75,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Desert Storm",

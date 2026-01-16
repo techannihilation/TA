@@ -81,7 +81,7 @@ return {
 			[23] = "armdrag",
 			[24] = "armclaw",
 			[25] = "armllt",
-			[26] = "armbeamer",
+			[26] = "arm_beamer",
 			[27] = "armhlt",
 			[28] = "armguard",
 			[29] = "armbrtha2",
@@ -90,7 +90,6 @@ return {
 			[32] = "armcir",
 			[33] = "armsy",
 			[34] = "armplat",
-			[35] = "gate",
 		},
 		customparams = {
 			buildpic = "armca.dds",

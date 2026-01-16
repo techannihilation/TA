@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Mobile Tachyon Hovercraft",
+		description = "Mobile Beam Hovercraft",
 		downloadable = 1,
 		explodeas = "ESTOR_BUILDINGEX",
 		firestandorders = 1,

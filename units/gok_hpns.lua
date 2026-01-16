@@ -49,10 +49,11 @@ return {
 		yardmap = "wcccw wcccw wcccw wcccw wcccw",
 		buildoptions = {
 			[1] = "gok_ch",
-			--[2] = "",
-			--[3] = "",
-			--[4] = "",
-			--[5] = "",
+			[2] = "gok_cut",
+			[3] = "gok_faerie",
+			[4] = "gok_avatar",
+			[5] = "gok_exorcist",
+			[6] = "gok_seastrike",
 		},
 		customparams = {
 			buildpic = "gok_hpns.dds",

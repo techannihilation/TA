@@ -134,7 +134,7 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
-				startvelocity = 600,
+				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -143,7 +143,7 @@ return {
 				tracks = true,
 				turnrate = 63000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
@@ -156,7 +156,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "ARMRL_MISSILE",
 				onlytargetcategory = "VTOL",
 			},

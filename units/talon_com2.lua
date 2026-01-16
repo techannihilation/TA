@@ -104,7 +104,6 @@ return {
 			[26] = "talon_atl",
 			[27] = "talon_fhlt",
 			[28] = "talon_kernel",
-			--[29] = "talon_jump",
 		},
 		customparams = {
 			buildpic = "talon_com2.dds",

@@ -140,7 +140,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
-				startvelocity = 600,
+				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -148,7 +148,7 @@ return {
 				tracks = true,
 				turnrate = 68000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
@@ -194,21 +194,21 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "MISSILELAUNCHER",
 				maindir = "0 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "MISSILELAUNCHER",
 				maindir = "0 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "MOBILEFLAK",
 				onlytargetcategory = "VTOL",
 			},

@@ -15,10 +15,6 @@ static-var  gun_1, gun_2, gun_3, terraintype, bMoving, Main_Gun_Heading;
 #define SIG_AIM_2           4
 #define SIG_AIM_3           8
 
-//#define rocketlaunchhev 1024+0
-//#define rocketlaunchmed 1024+1
-//#define rocketlaunchback 1024+2
-
 walk()
 {
 	if( TRUE )
@@ -392,26 +388,23 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-DishSpin()
-{
-          spin gen around z-axis speed <200> accelerate <130>; 
-}
-
-setSFXoccupy(setSFXoccupy_argument) 
-{   
-           terraintype = setSFXoccupy_argument;   
-} 
-
 Create()
 {
-		bMoving = 0;
-		Main_Gun_Heading = 0;
-		//call-script InitState();
-        hide gen;
-        //start-script DishSpin();
-        //start-script setSFXoccupy();
-		start-script MotionControl();
-        start-script SmokeUnit();
+	bMoving = 0;
+	Main_Gun_Heading = 0;
+    hide gen;
+    hide flare1a;
+    hide flare1b;
+    hide flare1c;
+    hide flare2a;
+    hide flare2b;
+    hide flare2c;
+    hide flare1up;
+    hide flare1down;
+    hide flare2up;
+    hide flare2down;
+	start-script MotionControl();
+    start-script SmokeUnit();
 }
 
 StartMoving()

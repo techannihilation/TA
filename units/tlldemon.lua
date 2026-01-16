@@ -2,7 +2,7 @@ return {
 	tlldemon = {
 		acceleration = 0.3,
 		brakerate = 1,
-		buildcostenergy = 101101,
+		buildcostenergy = 102000,
 		buildcostmetal = 6895,
 		builder = false,
 		buildpic = "tlldemon.dds",
@@ -28,7 +28,7 @@ return {
 		losemitheight = 29,
 		maneuverleashlength = 640,
 		mass = 6895,
-		maxdamage = 5285,
+		maxdamage = 7085,
 		maxslope = 10,
 		maxvelocity = 1.2,
 		maxwaterdepth = 12,
@@ -119,10 +119,10 @@ return {
 		weapondefs = {
 			demonslayer_cannon = {
 				accuracy = 850,
-				areaofeffect = 480,
+				areaofeffect = 360,
 				avoidfeature = false,
 				cegtag = "Core_Howie_Rocket",
-				craterareaofeffect = 480,
+				craterareaofeffect = 360,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:nix_mininuke",
@@ -130,7 +130,6 @@ return {
 				gravityaffected = "true",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				metalpershot = 0,
 				model = "weapon_missile_demon.s3o",
 				name = "Experimental Missile",
 				noselfdamage = true,
@@ -153,7 +152,6 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 800,
 				damage = {
-					commanders = 1500,
 					default = 6000,
 					subs = 5,
 				},

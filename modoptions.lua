@@ -241,7 +241,14 @@ local options = {
       },
     }
   },
-
+  {
+    key = "mo_superecostart",
+    name = "Super Economy",
+    desc = "Start with Super Economy\nAutoHost Usage :- mo_superEcoStart",
+    type = "bool",
+    def = false,
+    section = "ta_modes",
+  },
   {
     key = "exp_flankdefaultmin",
     name = "Min flanking bonus",
@@ -268,6 +275,22 @@ local options = {
     key = "exp_spamlimit",
     name = "Spam Limit",
     desc = "Monitors unit mass production and adjusts build time.",
+    type = "bool",
+    def = false,
+    section = "ta_exp",
+  },
+  {
+    key = "disable_bombers",
+    name = "Disable bombers",
+    desc = "Removes the build-menu commands for bombers",
+    type = "bool",
+    def = false,
+    section = "ta_exp",
+  },
+  {
+    key = "noair",
+    name = "Disable Air",
+    desc = "Removes the build-menu commands for all air units",
     type = "bool",
     def = false,
     section = "ta_exp",

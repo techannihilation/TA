@@ -31,6 +31,7 @@ PilotLight(Func_Var_1)
 		}
 		emit-sfx 1024 from lfirept;
 		emit-sfx 1024 from rfirept;
+		emit-sfx 1024 from flare;
 		sleep 100;
 	}
 }
@@ -42,13 +43,13 @@ Playtail()
 		if( !bAiming)
 		{
 			turn tail1 to y-axis <4> speed <0.25>;
-			turn tail1 to x-axis <-4> speed <0.25>;			
-			turn tail2 to x-axis <-12> speed <0.5>;		
+			turn tail1 to x-axis <-4> speed <0.25>;
+			turn tail2 to x-axis <-12> speed <0.5>;
 			sleep 2000;
 		}
 		if( !bAiming)
 		{
-			turn tail1 to y-axis <-4> speed <0.25.>;			
+			turn tail1 to y-axis <-4> speed <0.25.>;
 			turn tail1 to x-axis <4> speed <0.25.>;
 			turn tail2 to x-axis <12> speed <0.5>;
 			sleep 2000;
@@ -56,7 +57,7 @@ Playtail()
 		sleep 2000;
 	}
 }
-	
+
 
 MotionControl(Moving, Aiming, JustMoved)
 	{
@@ -70,30 +71,30 @@ MotionControl(Moving, Aiming, JustMoved)
 				{
 				move pelvis to y-axis [0.00] speed [1.00];
 				move pelvis to z-axis [0.50] speed [2.00];
-				
+
 				turn lblegy to y-axis <62.50> speed <20.00>;
 				turn lbleg to z-axis <-20.00> speed <30.00>;
 				turn lbleg2 to z-axis <50.00> speed <55.00>;
 				turn lbleg3 to z-axis <-55.00> speed <55.00>;
-				
+
 				turn rblegy to y-axis <0.00> speed <30.00>;
 				turn rbleg to z-axis <-20.00> speed <10.00>;
 				turn rbleg2 to z-axis <50.00> speed <10.00>;
 				turn rbleg3 to z-axis <-30.00> speed <12.00>;
-				
+
 				turn lflegy to y-axis <-45.00> speed <20.00>;
 				turn lfleg to z-axis <-10.00> speed <15.00>;
 				turn lfleg2 to z-axis <-10.00> speed <45.00>;
 				turn lfleg3 to z-axis <-25.00> speed <30.00>;
-				
+
 				turn rflegy to y-axis <0.00> speed <30.00>;
 				turn rfleg to z-axis <-20.00> speed <6.00>;
 				turn rfleg2 to z-axis <30.00> speed <12.00>;
 				turn rfleg3 to z-axis <-15.00> speed <10.00>;
-				
+
 				sleep 250;
 				}
-			
+
 			if( bMoving )
 				{
 				//move pelvis to y-axis [-0.50] speed [2.00];
@@ -103,7 +104,7 @@ MotionControl(Moving, Aiming, JustMoved)
 				turn lbleg3 to z-axis <-25.00> speed <25.00>;
 				turn rbleg2 to z-axis <30.00> speed <15.00>;
 				turn rbleg3 to z-axis <-15.00> speed <12.00>;
-			
+
 				turn lfleg to z-axis <-20.00> speed <9.00>;
 				turn lfleg2 to z-axis <-15.00> speed <35.00>;
 				turn lfleg3 to z-axis <-20.00> speed <25.00>;
@@ -111,40 +112,40 @@ MotionControl(Moving, Aiming, JustMoved)
 				turn rfleg3 to z-axis <-30.00> speed <12.00>;
 				sleep 250;
 				}
-			
+
 			if( bMoving )
 				{
 				//move pelvis to y-axis [0.00] speed [2.00];
 				move pelvis to z-axis [-0.50] speed [1.00];
-				
+
 				turn lblegy to y-axis <37.50> speed <20.00>;
-				
+
 				turn lbleg to z-axis <10.00> speed <15.00>;
 				turn lbleg2 to z-axis <-40.00> speed <45.00>;
 				turn lbleg3 to z-axis <15.00> speed <35.00>;
-			
-				
+
+
 				turn rblegy to y-axis <-37.50> speed <30.00>;
-			
+
 				turn rbleg to z-axis <-12.50> speed <6.00>;
 				turn rbleg2 to z-axis <15.00> speed <12.00>;
 				turn rbleg3 to z-axis <-2.50> speed <10.00>;
-			
-				
+
+
 				turn lflegy to y-axis <-37.50> speed <20.00>;
-			
+
 				turn lfleg to z-axis <12.50> speed <30.00>;
 				turn lfleg2 to z-axis <-15.00> speed <45.00>;
 				turn lfleg3 to z-axis <2.50> speed <45.00>;
-			
-				
+
+
 				turn rflegy to y-axis <37.50> speed <30.00>;
-			
+
 				turn rfleg to z-axis <-10.00> speed <9.00>;
 				turn rfleg2 to z-axis <30.00> speed <9.00>;
 				turn rfleg3 to z-axis <-15.00> speed <12.00>;
-			
-				
+
+
 				sleep 250;
 				}
 			////
@@ -152,38 +153,38 @@ MotionControl(Moving, Aiming, JustMoved)
 				{
 				//move pelvis to y-axis [0.00] speed [2.00];
 				move pelvis to z-axis [0.50] speed [2.00];
-				
+
 				turn lblegy to y-axis <0.00> speed <12.00>;
-			
+
 				turn lbleg to z-axis <20.00> speed <9.00>;
 				turn lbleg2 to z-axis <-50.00> speed <9.00>;
 				turn lbleg3 to z-axis <30.00> speed <12.00>;
-			
-				
+
+
 				turn rblegy to y-axis <-62.50> speed <20.00>;
-			
+
 				turn rbleg to z-axis <20.00> speed <25.00>;
 				turn rbleg2 to z-axis <-50.00> speed <45.00>;
 				turn rbleg3 to z-axis <55.00> speed <45.00>;
-			
-				
+
+
 				turn lflegy to y-axis <0.00> speed <30.00>;
-			
+
 				turn lfleg to z-axis <20.00> speed <15.00>;
 				turn lfleg2 to z-axis <-20.00> speed <12.00>;
 				turn lfleg3 to z-axis <15.00> speed <10.00>;
-			
-				
+
+
 				turn rflegy to y-axis <45.50> speed <20.00>;
-			
+
 				turn rfleg to z-axis <10.00> speed <15.00>;
 				turn rfleg2 to z-axis <0.00> speed <80.00>;
 				turn rfleg3 to z-axis <25.00> speed <30.00>;
-			
-				
+
+
 				sleep 250;
 				}
-			
+
 			if( bMoving )
 				{
 				move pelvis to z-axis [0.00] speed [1.00];
@@ -196,35 +197,35 @@ MotionControl(Moving, Aiming, JustMoved)
 				turn lfleg3 to z-axis <30.00> speed <12.00>;
 				turn rfleg to z-axis <20.00> speed <9.00>;
 				turn rfleg2 to z-axis <-15.00> speed <30.00>;
-				turn rfleg3 to z-axis <30.00> speed <30.00>;				
+				turn rfleg3 to z-axis <30.00> speed <30.00>;
 				sleep 250;
 				}
-			
+
 			if( bMoving )
 				{
 				move pelvis to y-axis [0.00] speed [2.00];
 				move pelvis to z-axis [-0.50] speed [2.00];
-				
+
 				turn lblegy to y-axis <37.50> speed <30.00>;
 				turn lbleg to z-axis <12.50> speed <15.00>;
 				turn lbleg2 to z-axis <-15.00> speed <12.00>;
 				turn lbleg3 to z-axis <2.50> speed <25.00>;
-					
+
 				turn rblegy to y-axis <-37.50> speed <20.00>;
 				turn rbleg to z-axis <-10.00> speed <12.00>;
 				turn rbleg2 to z-axis <18.00> speed <40.00>;
 				turn rbleg3 to z-axis <-15.00> speed <25.00>;
-							
+
 				turn lflegy to y-axis <-37.50> speed <30.00>;
 				turn lfleg to z-axis <10.00> speed <9.00>;
 				turn lfleg2 to z-axis <-30.00> speed <9.00>;
 				turn lfleg3 to z-axis <15.00> speed <12.00>;
-							
+
 				turn rflegy to y-axis <37.50> speed <20.00>;
 				turn rfleg to z-axis <-12.50> speed <25.00>;
 				turn rfleg2 to z-axis <15.00> speed <45.00>;
 				turn rfleg3 to z-axis <-2.50> speed <45.00>;
-							
+
 				sleep 250;
 				}
 			JustMoved = 1;
@@ -235,27 +236,27 @@ MotionControl(Moving, Aiming, JustMoved)
 				{
 				move pelvis to y-axis [0.00] speed [2.00];
 				move pelvis to z-axis [0.00] speed [2.00];
-				
+
 				turn lblegy to y-axis <45.00> speed <25.00>;
 				turn lbleg to z-axis <0.00> speed <25.00>;
 				turn lbleg2 to z-axis <0.00> speed <25.00>;
 				turn lbleg3 to z-axis <0.00> speed <25.00>;
-			
+
 				turn rblegy to y-axis <-45.00> speed <25.00>;
 				turn rbleg to z-axis <0.00> speed <25.00>;
 				turn rbleg2 to z-axis <0.00> speed <25.00>;
 				turn rbleg3 to z-axis <0.00> speed <25.00>;
-			
+
 				turn lflegy to y-axis <-45.00> speed <25.00>;
 				turn lfleg to z-axis <0.00> speed <25.00>;
 				turn lfleg2 to z-axis <-30.00> speed <25.00>;
 				turn lfleg3 to z-axis <0.00> speed <25.00>;
-			
+
 				turn rflegy to y-axis <45.00> speed <25.00>;
 				turn rfleg to z-axis <0.00> speed <25.00>;
 				turn rfleg2 to z-axis <0.00> speed <25.00>;
 				turn rfleg3 to z-axis <0.00> speed <25.00>;
-			
+
 				JustMoved = 0;
 				}
 			sleep 40;
@@ -269,11 +270,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 135;
 	}
-	
+
 	start-script MotionControl();
 	start-script PilotLight();
 	start-script Playtail();
-	
+
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -317,7 +318,7 @@ RestoreAfterDelay()
 	sleep 4500;
 	Main_Gun_Heading = 0;
 	bAiming = 0;
-	bFlaming = 0;	
+	bFlaming = 0;
 	turn torso to y-axis <0.> speed <20.000000>;
 	turn barrel to x-axis <0.> speed <20.000000>;
 	turn sleeves to x-axis <0.> speed <20.000000>;
@@ -416,7 +417,7 @@ AimWeapon3(heading, Pitch)
 		return (0);
 	}
 	bFlaming = 1;
-	turn sleeves to x-axis <0.0> - pitch speed <50.000000>;	
+	turn sleeves to x-axis <0.0> - pitch speed <50.000000>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn sleeves around x-axis;
 	return(1);

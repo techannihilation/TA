@@ -73,7 +73,6 @@ return {
 				blocking = false,
 				damage = 1512,
 				description = "Anemone Debris",
-				energy = 0,
 				footprintx = 3,
 				footprintz = 3,
 				metal = 115,

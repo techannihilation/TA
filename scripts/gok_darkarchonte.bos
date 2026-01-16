@@ -1,0 +1,585 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, lflegy, lfleg,
+		stomp1, stomp2, stomp3, stomp4,
+       lfleg2, lfleg3, lfleg4, lflegy2, rflegy, rfleg, rfleg2, rfleg3,
+       rfleg4, rflegy2, lblegy, lbleg, lbleg2, lbleg3, lbleg4, lblegy2,
+       rblegy, rbleg, rbleg2, rbleg3, rbleg4, rblegy2, cables, hanger1,
+       loin1, loin1a, loin1b, loin1c, loin1d, hanger2, loin2, loin2a,
+       loin2b, loin2c, loin2d, hanger3, loin3, loin3a, loin3b, loin3c,
+       loin3d, hanger4, loin4, loin4a, loin4b, loin4c, loin4d, turret,
+       rear, arcs, ring, device1, device2, antiturret, turret2,
+       pitchturret, cannon, barrel, fire, shield_pos,
+       system1, petal1,
+       system2turn, system2, petal2,
+       system3turn, system3, petal3, 
+       system4turn, system4, petal4, 
+       system5turn, system5, petal5,     
+       gem1, gem2, gem3;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
+            Static_Var_11, gun_1, gun_3, bAiming, bMoving, Static_Var_15,
+            Static_Var_16, shieldonoff;
+
+// Signal definitions
+#define SIG_AIM			2
+#define SPEED			1/2
+
+Shield()
+{
+	shieldonoff = !shieldonoff;
+}
+
+
+UnitControl(Func_Var_1, Func_Var_2, Func_Var_3)
+{
+	while( TRUE )
+	{
+	
+		Func_Var_3 = Rand( 1, 4 );
+		if( Func_Var_3 == 1 )
+		{
+					turn loin1a to x-axis <5.000000> speed <5.000000>;
+					turn loin1b to x-axis <-5.000000> speed <5.000000>;
+					turn loin1c to x-axis <5.000000> speed <5.000000>;
+					turn loin1d to x-axis <-5.000000> speed <5.000000>;
+					turn loin2a to x-axis <-5.000000> speed <5.000000>;
+					turn loin2b to x-axis <5.000000> speed <5.000000>;
+					turn loin2c to x-axis <-5.000000> speed <5.000000>;
+					turn loin2d to x-axis <5.000000> speed <5.000000>;
+		}
+		if( Func_Var_3 == 2 )
+		{
+					turn loin1a to x-axis <-5.000000> speed <5.000000>;
+					turn loin1b to x-axis <5.000000> speed <5.000000>;
+					turn loin1c to x-axis <-5.000000> speed <5.000000>;
+					turn loin1d to x-axis <5.000000> speed <5.000000>;
+					turn loin2a to x-axis <5.000000> speed <5.000000>;
+					turn loin2b to x-axis <5.000000> speed <5.000000>;
+					turn loin2c to x-axis <-5.000000> speed <5.000000>;
+					turn loin2d to x-axis <-5.000000> speed <5.000000>;
+		}
+		if( Func_Var_3 == 3 )
+		{
+					turn loin1a to x-axis <5.000000> speed <5.000000>;
+					turn loin1b to x-axis <5.000000> speed <5.000000>;
+					turn loin1c to x-axis <-5.000000> speed <5.000000>;
+					turn loin1d to x-axis <-5.000000> speed <5.000000>;
+					turn loin2a to x-axis <-5.000000> speed <5.000000>;
+					turn loin2b to x-axis <-5.000000> speed <5.000000>;
+					turn loin2c to x-axis <5.000000> speed <5.000000>;
+					turn loin2d to x-axis <5.000000> speed <5.000000>;
+		}
+		if( Func_Var_3 == 4 )
+		{
+					turn loin1a to x-axis <-5.000000> speed <5.000000>;
+					turn loin1b to x-axis <-5.000000> speed <5.000000>;
+					turn loin1c to x-axis <5.000000> speed <5.000000>;
+					turn loin1d to x-axis <5.000000> speed <5.000000>;
+					turn loin2a to x-axis <5.000000> speed <5.000000>;
+					turn loin2b to x-axis <-5.000000> speed <5.000000>;
+					turn loin2c to x-axis <5.000000> speed <5.000000>;
+					turn loin2d to x-axis <-5.000000> speed <5.000000>;
+		}
+		
+		Func_Var_3 = Rand( 1, 4 );
+		if( Func_Var_3 == 1 )
+		{
+					turn loin3a to z-axis <5.000000> speed <5.000000>;
+					turn loin3b to z-axis <5.000000> speed <5.000000>;
+					turn loin3c to z-axis <-5.000000> speed <5.000000>;
+					turn loin3d to z-axis <-5.000000> speed <5.000000>;
+					turn loin4a to z-axis <-5.000000> speed <5.000000>;
+					turn loin4b to z-axis <-5.000000> speed <5.000000>;
+					turn loin4c to z-axis <5.000000> speed <5.000000>;
+					turn loin4d to z-axis <5.000000> speed <5.000000>;
+		}
+		if( Func_Var_3 == 2 )
+		{
+					turn loin3a to z-axis <-5.000000> speed <5.000000>;
+					turn loin3b to z-axis <-5.000000> speed <5.000000>;
+					turn loin3c to z-axis <5.000000> speed <5.000000>;
+					turn loin3d to z-axis <5.000000> speed <5.000000>;
+					turn loin4a to z-axis <5.000000> speed <5.000000>;
+					turn loin4b to z-axis <-5.000000> speed <5.000000>;
+					turn loin4c to z-axis <5.000000> speed <5.000000>;
+					turn loin4d to z-axis <-5.000000> speed <5.000000>;
+		}
+		if( Func_Var_3 == 3 )
+		{
+					turn loin3a to z-axis <5.000000> speed <5.000000>;
+					turn loin3b to z-axis <-5.000000> speed <5.000000>;
+					turn loin3c to z-axis <5.000000> speed <5.000000>;
+					turn loin3d to z-axis <-5.000000> speed <5.000000>;
+					turn loin4a to z-axis <-5.000000> speed <5.000000>;
+					turn loin4b to z-axis <5.000000> speed <5.000000>;
+					turn loin4c to z-axis <-5.000000> speed <5.000000>;
+					turn loin4d to z-axis <5.000000> speed <5.000000>;
+		}
+		if( Func_Var_3 == 4 )
+		{
+					turn loin3a to z-axis <-5.000000> speed <5.000000>;
+					turn loin3b to z-axis <5.000000> speed <5.000000>;
+					turn loin3c to z-axis <-5.000000> speed <5.000000>;
+					turn loin3d to z-axis <5.000000> speed <5.000000>;
+					turn loin4a to z-axis <5.000000> speed <5.000000>;
+					turn loin4b to z-axis <5.000000> speed <5.000000>;
+					turn loin4c to z-axis <-5.000000> speed <5.000000>;
+					turn loin4d to z-axis <-5.000000> speed <5.000000>;
+		}
+	
+	sleep 500;
+	}
+}
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = bMoving;
+		aiming = bAiming;
+		if( moving )
+		{
+			if(  moving )
+			{
+				move pelvis to y-axis [0.000000] speed [1.250000];
+				move pelvis to z-axis [1.500000] speed [2.500000];
+				turn lblegy to y-axis <55.000000> speed <37.500000> * SPEED;
+				turn lblegy2 to y-axis <-10.000000> speed <37.500000> * SPEED;
+				turn lbleg to z-axis <-5.000000> speed <42.500000> * SPEED;
+				turn lbleg2 to z-axis <8.000000> speed <60.000000> * SPEED;
+				turn lbleg3 to z-axis <-5.000000> speed <20.000000> * SPEED;
+				turn lbleg4 to z-axis <2.000000> speed <2.500000> * SPEED;
+				turn rblegy to y-axis <-25.000000> speed <87.500000> * SPEED;
+				turn rblegy2 to y-axis <-20.000000> speed <87.500000> * SPEED;
+				turn rbleg to z-axis <-13.000000> speed <45.000000> * SPEED;
+				turn rbleg2 to z-axis <40.000000> speed <87.500000> * SPEED;
+				turn rbleg3 to z-axis <-28.000000> speed <82.500000> * SPEED;
+				turn rbleg4 to z-axis <1.000000> speed <40.000000> * SPEED;
+				turn lflegy to y-axis <-60.000000> speed <87.500000> * SPEED;
+				turn lflegy2 to y-axis <15.000000> speed <87.500000> * SPEED;
+				turn lfleg to z-axis <-5.000000> speed <45.000000> * SPEED;
+				turn lfleg2 to z-axis <-5.000000> speed <87.500000> * SPEED;
+				turn lfleg3 to z-axis <-5.000000> speed <82.500000> * SPEED;
+				turn lfleg4 to z-axis <15.000000> speed <40.000000> * SPEED;
+				turn rflegy to y-axis <40.000000> speed <37.500000> * SPEED;
+				turn rflegy2 to y-axis <5.000000> speed <37.500000> * SPEED;
+				turn rfleg to z-axis <-12.000000> speed <42.500000> * SPEED;
+				turn rfleg2 to z-axis <16.000000> speed <60.000000> * SPEED;
+				turn rfleg3 to z-axis <-3.000000> speed <20.000000> * SPEED;
+				turn rfleg4 to z-axis <-1.000000> speed <2.500000> * SPEED;
+				turn loin1 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn loin2 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn hanger1 to x-axis <8.000000> speed <8.000000> * SPEED;
+				turn hanger2 to x-axis <8.000000> speed <8.000000> * SPEED;
+				turn hanger3 to x-axis <8.000000> speed <8.000000> * SPEED;
+				turn hanger4 to x-axis <8.000000> speed <8.000000> * SPEED;
+				sleep 400;
+			}
+			if(  moving )
+			{
+				move pelvis to y-axis [-1.500000] speed [1.250000];
+				move pelvis to z-axis [0.000000] speed [1.250000];
+				turn lblegy to y-axis <65.000000> speed <25.000000> * SPEED;
+				turn lblegy2 to y-axis <-20.000000> speed <25.000000> * SPEED;
+				turn lbleg to z-axis <-13.000000> speed <20.000000> * SPEED;
+				turn lbleg2 to z-axis <35.000000> speed <67.500000> * SPEED;
+				turn lbleg3 to z-axis <-45.000000> speed <100.000000> * SPEED;
+				turn lbleg4 to z-axis <23.000000> speed <52.500000> * SPEED;
+				turn rblegy to y-axis <-10.000000> speed <37.500000> * SPEED;
+				turn rblegy2 to y-axis <-35.000000> speed <37.500000> * SPEED;
+				turn rbleg to z-axis <-20.000000> speed <17.500000> * SPEED;
+				turn rbleg2 to z-axis <27.000000> speed <32.500000> * SPEED;
+				turn rbleg3 to z-axis <-12.000000> speed <40.000000> * SPEED;
+				turn rbleg4 to z-axis <5.000000> speed <10.000000> * SPEED;
+				turn lflegy to y-axis <-65.000000> speed <12.500000> * SPEED;
+				turn lflegy2 to y-axis <20.000000> speed <12.500000> * SPEED;
+				turn lfleg to z-axis <-13.000000> speed <20.000000> * SPEED;
+				turn lfleg2 to z-axis <35.000000> speed <100.000000> * SPEED;
+				turn lfleg3 to z-axis <-45.000000> speed <100.000000> * SPEED;
+				turn lfleg4 to z-axis <23.000000> speed <20.000000> * SPEED;
+				turn rflegy to y-axis <10.000000> speed <75.000000> * SPEED;
+				turn rflegy2 to y-axis <35.000000> speed <75.000000> * SPEED;
+				turn rfleg to z-axis <-20.000000> speed <20.000000> * SPEED;
+				turn rfleg2 to z-axis <27.000000> speed <22.500000> * SPEED;
+				turn rfleg3 to z-axis <-12.000000> speed <22.500000> * SPEED;
+				turn rfleg4 to z-axis <5.000000> speed <15.000000> * SPEED;
+				turn loin1 to x-axis <12.000000> speed <8.000000> * SPEED;
+				turn loin2 to x-axis <12.000000> speed <8.000000> * SPEED;
+				turn hanger1 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn hanger2 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn hanger3 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn hanger4 to x-axis <8.000000> speed <4.000000> * SPEED;
+				sleep 400;
+			}
+			if(  moving )
+			{
+				move pelvis to y-axis [0.000000] speed [1.250000];
+				move pelvis to z-axis [-1.500000] speed [1.250000];
+				turn lblegy to y-axis <60.000000> speed <12.500000> * SPEED;
+				turn lblegy2 to y-axis <-15.000000> speed <12.500000> * SPEED;
+				turn lbleg to z-axis <-5.000000> speed <20.000000> * SPEED;
+				turn lbleg2 to z-axis <-5.000000> speed <100.000000> * SPEED;
+				turn lbleg3 to z-axis <-5.000000> speed <100.000000> * SPEED;
+				turn lbleg4 to z-axis <15.000000> speed <20.000000> * SPEED;
+				turn rblegy to y-axis <-40.000000> speed <75.000000> * SPEED;
+				turn rblegy2 to y-axis <-5.000000> speed <75.000000> * SPEED;
+				turn rbleg to z-axis <-12.000000> speed <20.000000> * SPEED;
+				turn rbleg2 to z-axis <16.000000> speed <22.500000> * SPEED;
+				turn rbleg3 to z-axis <-3.000000> speed <22.500000> * SPEED;
+				turn rbleg4 to z-axis <-1.000000> speed <15.000000> * SPEED;
+				turn lflegy to y-axis <-55.000000> speed <25.000000> * SPEED;
+				turn lflegy2 to y-axis <10.000000> speed <25.000000> * SPEED;
+				turn lfleg to z-axis <-5.000000> speed <20.000000> * SPEED;
+				turn lfleg2 to z-axis <8.000000> speed <67.500000> * SPEED;
+				turn lfleg3 to z-axis <-5.000000> speed <100.000000> * SPEED;
+				turn lfleg4 to z-axis <2.000000> speed <52.500000> * SPEED;
+				turn rflegy to y-axis <25.000000> speed <37.500000> * SPEED;
+				turn rflegy2 to y-axis <20.000000> speed <37.500000> * SPEED;
+				turn rfleg to z-axis <-13.000000> speed <17.500000> * SPEED;
+				turn rfleg2 to z-axis <40.000000> speed <32.500000> * SPEED;
+				turn rfleg3 to z-axis <-28.000000> speed <40.000000> * SPEED;
+				turn rfleg4 to z-axis <1.000000> speed <10.000000> * SPEED;
+				turn loin1 to x-axis <4.000000> speed <8.000000> * SPEED;
+				turn loin2 to x-axis <4.000000> speed <8.000000> * SPEED;
+				turn hanger1 to x-axis <4.000000> speed <8.000000> * SPEED;
+				turn hanger2 to x-axis <4.000000> speed <8.000000> * SPEED;
+				turn hanger3 to x-axis <4.000000> speed <8.000000> * SPEED;
+				turn hanger4 to x-axis <4.000000> speed <8.000000> * SPEED;
+				sleep 400;
+			}
+			if(  moving )
+			{
+				move pelvis to y-axis [0.000000] speed [1.250000];
+				move pelvis to z-axis [1.500000] speed [2.500000];
+				turn lblegy to y-axis <25.000000> speed <87.500000> * SPEED;
+				turn lblegy2 to y-axis <20.000000> speed <87.500000> * SPEED;
+				turn lbleg to z-axis <13.000000> speed <45.000000> * SPEED;
+				turn lbleg2 to z-axis <-40.000000> speed <87.500000> * SPEED;
+				turn lbleg3 to z-axis <28.000000> speed <82.500000> * SPEED;
+				turn lbleg4 to z-axis <-1.000000> speed <40.000000> * SPEED;
+				turn rblegy to y-axis <-55.000000> speed <37.500000> * SPEED;
+				turn rblegy2 to y-axis <10.000000> speed <37.500000> * SPEED;
+				turn rbleg to z-axis <5.000000> speed <42.500000> * SPEED;
+				turn rbleg2 to z-axis <-8.000000> speed <60.000000> * SPEED;
+				turn rbleg3 to z-axis <5.000000> speed <20.000000> * SPEED;
+				turn rbleg4 to z-axis <-2.000000> speed <2.500000> * SPEED;
+				turn lflegy to y-axis <-40.000000> speed <37.500000> * SPEED;
+				turn lflegy2 to y-axis <-5.000000> speed <37.500000> * SPEED;
+				turn lfleg to z-axis <12.000000> speed <42.500000> * SPEED;
+				turn lfleg2 to z-axis <-16.000000> speed <60.000000> * SPEED;
+				turn lfleg3 to z-axis <3.000000> speed <20.000000> * SPEED;
+				turn lfleg4 to z-axis <1.000000> speed <2.500000> * SPEED;
+				turn rflegy to y-axis <60.000000> speed <87.500000> * SPEED;
+				turn rflegy2 to y-axis <-15.000000> speed <87.500000> * SPEED;
+				turn rfleg to z-axis <5.000000> speed <45.000000> * SPEED;
+				turn rfleg2 to z-axis <5.000000> speed <87.500000> * SPEED;
+				turn rfleg3 to z-axis <5.000000> speed <82.500000> * SPEED;
+				turn rfleg4 to z-axis <-15.000000> speed <40.000000> * SPEED;
+				turn loin1 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn loin2 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn hanger1 to x-axis <8.000000> speed <8.000000> * SPEED;
+				turn hanger2 to x-axis <8.000000> speed <8.000000> * SPEED;
+				turn hanger3 to x-axis <8.000000> speed <8.000000> * SPEED;
+				turn hanger4 to x-axis <8.000000> speed <8.000000> * SPEED;
+				sleep 400;
+			}
+			if(  moving )
+			{
+				move pelvis to y-axis [-1.500000] speed [1.250000];
+				move pelvis to z-axis [0.000000] speed [1.250000];
+				turn lblegy to y-axis <10.000000> speed <37.500000> * SPEED;
+				turn lblegy2 to y-axis <35.000000> speed <37.500000> * SPEED;
+				turn lbleg to z-axis <20.000000> speed <17.500000> * SPEED;
+				turn lbleg2 to z-axis <-27.000000> speed <32.500000> * SPEED;
+				turn lbleg3 to z-axis <12.000000> speed <40.000000> * SPEED;
+				turn lbleg4 to z-axis <-5.000000> speed <10.000000> * SPEED;
+				turn rblegy to y-axis <-65.000000> speed <25.000000> * SPEED;
+				turn rblegy2 to y-axis <20.000000> speed <25.000000> * SPEED;
+				turn rbleg to z-axis <13.000000> speed <20.000000> * SPEED;
+				turn rbleg2 to z-axis <-35.000000> speed <67.500000> * SPEED;
+				turn rbleg3 to z-axis <45.000000> speed <100.000000> * SPEED;
+				turn rbleg4 to z-axis <-23.000000> speed <52.500000> * SPEED;
+				turn lflegy to y-axis <-10.000000> speed <75.000000> * SPEED;
+				turn lflegy2 to y-axis <-35.000000> speed <75.000000> * SPEED;
+				turn lfleg to z-axis <20.000000> speed <20.000000> * SPEED;
+				turn lfleg2 to z-axis <-27.000000> speed <27.500000> * SPEED;
+				turn lfleg3 to z-axis <12.000000> speed <22.500000> * SPEED;
+				turn lfleg4 to z-axis <-5.000000> speed <15.000000> * SPEED;
+				turn rflegy to y-axis <65.000000> speed <12.500000> * SPEED;
+				turn rflegy2 to y-axis <-20.000000> speed <12.500000> * SPEED;
+				turn rfleg to z-axis <13.000000> speed <20.000000> * SPEED;
+				turn rfleg2 to z-axis <-35.000000> speed <100.000000> * SPEED;
+				turn rfleg3 to z-axis <45.000000> speed <100.000000> * SPEED;
+				turn rfleg4 to z-axis <-23.000000> speed <20.000000> * SPEED;
+				turn loin1 to x-axis <12.000000> speed <8.000000> * SPEED;
+				turn loin2 to x-axis <12.000000> speed <8.000000> * SPEED;
+				turn hanger1 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn hanger2 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn hanger3 to x-axis <8.000000> speed <4.000000> * SPEED;
+				turn hanger4 to x-axis <8.000000> speed <4.000000> * SPEED;
+				sleep 400;
+			}
+			if(  moving )
+			{
+				move pelvis to y-axis [0.000000] speed [1.250000];
+				move pelvis to z-axis [-0.500000] speed [1.250000];
+				turn lblegy to y-axis <40.000000> speed <75.000000> * SPEED;
+				turn lblegy2 to y-axis <5.000000> speed <75.000000> * SPEED;
+				turn lbleg to z-axis <12.000000> speed <20.000000>* SPEED;
+				turn lbleg2 to z-axis <-16.000000> speed <27.500000> * SPEED;
+				turn lbleg3 to z-axis <3.000000> speed <22.500000> * SPEED;
+				turn lbleg4 to z-axis <1.000000> speed <15.000000> * SPEED;
+				turn rblegy to y-axis <-60.000000> speed <12.500000> * SPEED;
+				turn rblegy2 to y-axis <15.000000> speed <12.500000> * SPEED;
+				turn rbleg to z-axis <5.000000> speed <20.000000> * SPEED;
+				turn rbleg2 to z-axis <5.000000> speed <100.000000> * SPEED;
+				turn rbleg3 to z-axis <5.000000> speed <100.000000> * SPEED;
+				turn rbleg4 to z-axis <-15.000000> speed <20.000000> * SPEED;
+				turn lflegy to y-axis <-25.000000> speed <37.500000> * SPEED;
+				turn lflegy2 to y-axis <-20.000000> speed <37.500000> * SPEED;
+				turn lfleg to z-axis <13.000000> speed <17.500000> * SPEED;
+				turn lfleg2 to z-axis <-40.000000> speed <32.500000> * SPEED;
+				turn lfleg3 to z-axis <28.000000> speed <40.000000> * SPEED;
+				turn lfleg4 to z-axis <-1.000000> speed <10.000000> * SPEED;
+				turn rflegy to y-axis <55.000000> speed <25.000000> * SPEED;
+				turn rflegy2 to y-axis <-10.000000> speed <25.000000> * SPEED;
+				turn rfleg to z-axis <5.000000> speed <20.000000> * SPEED;
+				turn rfleg2 to z-axis <-8.000000> speed <67.500000> * SPEED;
+				turn rfleg3 to z-axis <5.000000> speed <100.000000> * SPEED;
+				turn rfleg4 to z-axis <-2.000000> speed <52.500000> * SPEED;
+				turn loin1 to x-axis <0.000000> speed <8.000000> * SPEED;
+				turn loin2 to x-axis <0.000000> speed <8.000000> * SPEED;
+				turn hanger1 to x-axis <4.000000> speed <8.000000> * SPEED;
+				turn hanger2 to x-axis <4.000000> speed <8.000000> * SPEED;
+				turn hanger3 to x-axis <4.000000> speed <8.000000> * SPEED;
+				turn hanger4 to x-axis <4.000000> speed <8.000000> * SPEED;
+				sleep 400;
+			}
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			if( justmoved AND ( ! moving ) )
+			{
+				move pelvis to y-axis [0.000000] speed [1.250000];
+				move pelvis to z-axis [0.000000] speed [1.250000];
+				turn lblegy to y-axis <45.000000> speed <60.000000>;
+				turn lblegy2 to y-axis <0.000000> speed <60.000000>;
+				turn lbleg to z-axis <0.000000> speed <60.000000>;
+				turn lbleg2 to z-axis <0.000000> speed <60.000000>;
+				turn lbleg3 to z-axis <0.000000> speed <60.000000>;
+				turn lbleg4 to z-axis <0.000000> speed <60.000000>;
+				turn rblegy to y-axis <-45.000000> speed <60.000000>;
+				turn rblegy2 to y-axis <0.000000> speed <60.000000>;
+				turn rbleg to z-axis <0.000000> speed <60.000000>;
+				turn rbleg2 to z-axis <0.000000> speed <60.000000>;
+				turn rbleg3 to z-axis <0.000000> speed <60.000000>;
+				turn rbleg4 to z-axis <0.000000> speed <60.000000>;
+				turn lflegy to y-axis <-45.000000> speed <60.000000>;
+				turn lflegy2 to y-axis <0.000000> speed <60.000000>;
+				turn lfleg to z-axis <0.000000> speed <60.000000>;
+				turn lfleg2 to z-axis <0.000000> speed <60.000000>;
+				turn lfleg3 to z-axis <0.000000> speed <60.000000>;
+				turn lfleg4 to z-axis <0.000000> speed <60.000000>;
+				turn rflegy to y-axis <45.000000> speed <60.000000>;
+				turn rflegy2 to y-axis <0.000000> speed <60.000000>;
+				turn rfleg to z-axis <0.000000> speed <60.000000>;
+				turn rfleg2 to z-axis <0.000000> speed <60.000000>;
+				turn rfleg3 to z-axis <0.000000> speed <60.000000>;
+				turn rfleg4 to z-axis <0.000000> speed <60.000000>;
+				turn loin1 to x-axis <0.000000> speed <4.000000>;
+				turn loin2 to x-axis <0.000000> speed <4.000000>;
+				turn hanger1 to x-axis <0.000000> speed <8.000000>;
+				turn hanger2 to x-axis <0.000000> speed <8.000000>;
+				turn hanger3 to x-axis <0.000000> speed <8.000000>;
+				turn hanger4 to x-axis <0.000000> speed <8.000000>;
+				justmoved = FALSE;
+				moving = FALSE;
+			}
+			sleep 100;
+		}
+		
+		sleep 100;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 135;
+	}
+	
+	start-script MotionControl();
+	start-script UnitControl();
+	sleep 1000;
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from pelvis;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	shieldonoff = 1;
+	bMoving = FALSE;
+	bAiming = FALSE;
+	
+	turn lblegy to y-axis <45.000000> now;
+	turn rblegy to y-axis <-45.000000> now;
+	turn lflegy to y-axis <-45.000000> now;
+	turn rflegy to y-axis <45.000000> now;
+
+	start-script Smokeunit();
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+RestoreAfterDelay()
+{
+	sleep 10000;
+	bAiming = FALSE;
+	turn turret to y-axis <0.0> speed <25.0>;
+	turn antiturret to y-axis <0.0> speed <60.0>;
+	turn turret2 to y-axis <0.0> speed <90.0>;
+	turn pitchturret to x-axis <0.0> speed <60.0>;
+	spin cannon around z-axis speed <0.0> accelerate <-3.0>;
+	spin system1 around z-axis speed <0.0> accelerate <5.0>;
+	spin system2turn around z-axis speed <0.0> accelerate <5.0>;
+	spin system3turn around z-axis speed <0.0> accelerate <5.0>;
+	spin system4turn around z-axis speed <0.0> accelerate <5.0>;
+	spin system5turn around z-axis speed <0.0> accelerate <5.0>;
+}
+
+
+AimFromPrimary(piecenum)
+{
+	piecenum = pitchturret;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fire;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;	
+	spin cannon around z-axis speed <30.0> accelerate <10.0>;
+	spin system1 around z-axis speed <-45.0> accelerate <-15.0>;
+	spin system2turn around z-axis speed <-45.0> accelerate <-15.0>;
+	spin system3turn around z-axis speed <-45.0> accelerate <-15.0>;
+	spin system4turn around z-axis speed <-45.0> accelerate <-15.0>;
+	spin system5turn around z-axis speed <-45.0> accelerate <-15.0>;
+	turn turret to y-axis heading speed <60.000000>;
+	turn antiturret to y-axis <0.000000> - heading speed <60.000000>;
+	turn turret2 to y-axis heading speed <90.000000>;
+	turn pitchturret to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary(Func_Var_1, Func_Var_2)
+{
+	spin cannon around z-axis speed <0.0> accelerate <-5.0>;
+	spin system1 around z-axis speed <0.0> accelerate <5.0>;
+	spin system2turn around z-axis speed <0.0> accelerate <5.0>;
+	spin system3turn around z-axis speed <0.0> accelerate <5.0>;
+	spin system4turn around z-axis speed <0.0> accelerate <5.0>;
+	spin system5turn around z-axis speed <0.0> accelerate <5.0>;
+	
+	sleep 150;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+AimTertiary(heading, pitch)
+{
+	return (shieldonoff);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hanger1 type NOHEATCLOUD;
+		explode hanger3 type NOHEATCLOUD;
+		explode cannon type NOHEATCLOUD;
+		explode lflegy2 type NOHEATCLOUD;
+		explode rflegy2 type NOHEATCLOUD;
+		explode lblegy2 type NOHEATCLOUD;
+		explode rblegy2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+		if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode hanger1 type NOHEATCLOUD | FALL;
+		explode hanger3 type NOHEATCLOUD | FALL;
+		explode cannon type NOHEATCLOUD | FALL;
+		explode lflegy2 type NOHEATCLOUD | FALL;
+		explode rflegy2 type NOHEATCLOUD | FALL;
+		explode lblegy2 type NOHEATCLOUD | FALL;
+		explode rblegy2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hanger1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode hanger3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode cannon type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode lflegy2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode rflegy2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode lblegy2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode rblegy2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	return (corpsetype);
+
+}

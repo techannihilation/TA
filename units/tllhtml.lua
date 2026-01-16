@@ -74,7 +74,7 @@ return {
 				blocking = false,
 				damage = 35628,
 				description = "Bumblebee Debris",
-				featuredead = "tllhtml_heap2",
+				featuredead = "heap2",
 				footprintx = 4,
 				footprintz = 4,
 				metal = 6900,

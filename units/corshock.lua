@@ -144,7 +144,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "ADVFLAK",
 				maindir = "0 1 0",
 				maxangledif = 220,

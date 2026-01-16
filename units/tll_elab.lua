@@ -80,7 +80,7 @@ return {
 				blocking = false,
 				damage = 11154,
 				description = "High Tech Construction Plant Debris",
-				featuredead = "tll_elab_heap2",
+				featuredead = "heap2",
 				footprintx = 8,
 				footprintz = 8,
 				metal = 7600,

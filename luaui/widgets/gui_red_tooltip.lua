@@ -1,145 +1,311 @@
 function widget:GetInfo()
 	return {
-		name = "Red Tooltip", --version 4
-		desc = "Requires Red UI Framework",
-		author = "Regret",
-		date = "August 11, 2009", --last change September 10,2009
+		name    = "Red Tooltip",
+		desc    = "Requires Red UI Framework. Always pinned bottom-left, auto-resizable.",
+		author  = "Regret (modified by [ur]uncle)",
+		date    = "August 11, 2009", -- last change 06.01.2025
 		license = "GNU GPL, v2 or later",
-		layer = -100,
-		enabled = true, --enabled by default
-		handler = true, --can use widgetHandler:x()
-
+		layer   = -100,
+		enabled = true,
+		handler = true,
 	}
 end
 
-local NeededFrameworkVersion = 8
-local CanvasX, CanvasY = 0, 800
-local iconsizeMaster = 96
-local iconsize = iconsizeMaster
-local oldUnitpicsDir = LUAUI_DIRNAME .. "Images/oldunitpics/"
-local unitDefID
-local CMD_MORPH = 31410
---1272,734 == 1280,768 windowed
---todo: sy adjustment
-local OtaIconExist = {}
+--------------------------------------------------------------------------------
+--  CONFIG & CONSTANTS
+--------------------------------------------------------------------------------
 
+local NeededFrameworkVersion = 8
+
+-- 1) Define a base resolution (e.g., 1920×1080) for design
+local BASE_X, BASE_Y = 1920, 1080
+
+-- 2) Keep track of the last-known screen size for dynamic scaling
+local LastAutoResizeX, LastAutoResizeY = nil, nil
+
+-- 3) Original icon size for 1080p
+local iconsizeMaster = 96
+local iconsize       = iconsizeMaster
+
+local oldUnitpicsDir = LUAUI_DIRNAME .. "Images/oldunitpics/"
+local OtaIconExist   = {}
+
+-- Pre-caching old OTA icons
 for i = 1, #UnitDefs do
-	if VFS.FileExists(oldUnitpicsDir .. UnitDefs[i].name .. '.png') then
-		OtaIconExist[i] = oldUnitpicsDir .. UnitDefs[i].name .. '.png'
-		--Spring.Echo("Icon Path ",oldUnitpicsDir..UnitDefs[i].name..'.png')
+	if VFS.FileExists(oldUnitpicsDir .. UnitDefs[i].name .. ".png") then
+		OtaIconExist[i] = oldUnitpicsDir .. UnitDefs[i].name .. ".png"
 	end
 end
 
+-- Colors from your config
 local cbackground, cborder = include("Configs/ui_config.lua")
-local sy_offset = 94
-local clampY = CanvasY - sy_offset
 
+-- This table will be scaled automatically by Red UI code,
+-- but we can also manually set some parts if needed.
 local Config = {
 	tooltip = {
-		px = 0, --default start position
-		py = clampY,
-		sx = 320, --background size
-		sy = sy_offset,
-		fontsize = 13,
-		margin = 5, --distance from background border
+		fontsize    = 18,
+		margin      = 5,
 		cbackground = cbackground,
-		cborder = cborder,
-		dragbutton = {2}, --middle mouse button
-		tooltip = {
-			background = "Hold \255\255\255\1middle mouse button\255\255\255\255 to drag the tooltip display around.",
-		},
+		cborder     = cborder,
 	},
 }
 
-local sGetCurrentTooltip = Spring.GetCurrentTooltip
+--------------------------------------------------------------------------------
+--  SPRING / REDUI FUNCTIONS
+--------------------------------------------------------------------------------
+
+local sGetCurrentTooltip     = Spring.GetCurrentTooltip
 local sGetSelectedUnitsCount = Spring.GetSelectedUnitsCount
+local sGetMouseState         = Spring.GetMouseState
+local sTraceScreenRay        = Spring.TraceScreenRay
+
+local Screen           -- will be set to WG.Red.Screen
+local GetWidgetObjects -- will be set to WG.Red.GetWidgetObjects
+local New              -- will be set to WG.Red.New
+local Copy             -- will be set to WG.Red.Copytable
+
+local unitDefID = nil
+
+--------------------------------------------------------------------------------
+--  INCLUDE / CHECKS
+--------------------------------------------------------------------------------
 
 local function IncludeRedUIFrameworkFunctions()
-	New = WG.Red.New(widget)
-	Copy = WG.Red.Copytable
-	SetTooltip = WG.Red.SetTooltip
-	GetSetTooltip = WG.Red.GetSetTooltip
-	Screen = WG.Red.Screen
-	GetWidgetObjects = WG.Red.GetWidgetObjects
+	New             	= WG.Red.New(widget)
+	Copy            	= WG.Red.Copytable
+	Screen          	= WG.Red.Screen
+	GetWidgetObjects	= WG.Red.GetWidgetObjects
 end
 
 local function RedUIchecks()
-	local color = "\255\255\255\1"
+	local color  = "\255\255\255\1"
 	local passed = true
 
 	if type(WG.Red) ~= "table" then
 		Spring.Echo(color .. widget:GetInfo().name .. " requires Red UI Framework.")
 		passed = false
 	elseif type(WG.Red.Screen) ~= "table" then
-		Spring.Echo(color .. widget:GetInfo().name .. ">> strange error.")
+		Spring.Echo(color .. widget:GetInfo().name .. " >> strange error.")
 		passed = false
 	elseif WG.Red.Version < NeededFrameworkVersion then
-		Spring.Echo(color .. widget:GetInfo().name .. ">> update your Red UI Framework.")
+		Spring.Echo(color .. widget:GetInfo().name .. " >> update your Red UI Framework.")
 		passed = false
 	end
 
 	if not passed then
 		widgetHandler:ToggleWidget(widget:GetInfo().name)
-
 		return false
 	end
 
 	IncludeRedUIFrameworkFunctions()
-
 	return true
 end
 
---autoresize v2
+--------------------------------------------------------------------------------
+--  TOOLTIP / ICON LOGIC
+--------------------------------------------------------------------------------
+
+local function armorInfo(unitID, text)
+	local health, maxHealth = Spring.GetUnitHealth(unitID)
+    if not health then return "" end
+	local _, armoredMultiple = Spring.GetUnitArmored(unitID)
+	if armoredMultiple and armoredMultiple ~= 1 then
+		local closedHP = math.floor(health / armoredMultiple)
+		local bonusHPPercent = math.floor((1 / armoredMultiple - 1) * 100)
+		text = text .. string.format("\n\255\255\77\77Armor: +%d%%, maxHP: %d", bonusHPPercent, closedHP)
+	end
+	return text
+end
+
+local function getEditedCurrentTooltip()
+	local text = sGetCurrentTooltip()
+	local mx, my = sGetMouseState()
+	local kind, var1 = sTraceScreenRay(mx, my, false, true)
+
+	-- Check if we're dealing with a morph tooltip
+	local expMorphPat = "UnitDefID (%d+)\n"
+	local MorphDefID = tonumber(text:match(expMorphPat))
+	if MorphDefID then
+		text = text:gsub(expMorphPat, "") -- remove that line
+	end
+
+	-- Decide which unitDefID to show the icon for
+	if MorphDefID then
+		unitDefID = MorphDefID
+		iconsize  = iconsizeMaster
+	elseif kind == "unit" then
+		unitDefID = Spring.GetUnitDefID(var1 or -1)
+		iconsize  = iconsizeMaster
+	elseif WG["hoverID"] and WG["hoverID"] < 0 then
+		unitDefID = math.abs(WG["hoverID"])
+		iconsize  = iconsizeMaster
+	elseif sGetSelectedUnitsCount() == 1 then
+		local selUnit = Spring.GetSelectedUnits()[1]
+		if Spring.ValidUnitID(selUnit) then
+			unitDefID = Spring.GetUnitDefID(selUnit)
+			iconsize  = iconsizeMaster
+			text = armorInfo(selUnit, text)
+		end
+	else
+		unitDefID = nil
+		iconsize  = 0
+	end
+
+	-- If the mouse is directly over a unit, integrate armor info
+	local rType, unitID = Spring.TraceScreenRay(mx, my)
+	if rType == "unit" then
+		text = armorInfo(unitID, text)
+	end
+
+	return text
+end
+
+--------------------------------------------------------------------------------
+--  WIDGET OBJECTS CREATION
+--------------------------------------------------------------------------------
+
+local tooltip = {}
+
+local function createtooltip(cfg)
+	local margin   = cfg.margin
+	local fontsize = cfg.fontsize
+
+	-- Text object
+	local textObj = {
+		"text",
+		px       = 0,
+		py       = 0,
+		fontsize = fontsize,
+		caption  = "",
+		options  = "o", -- "o" = outline font
+		onupdate = function(self)
+			local unitcount = sGetSelectedUnitsCount()
+			if unitcount > 0 then
+				self.caption = "Selected units: " .. unitcount .. "\n"
+			else
+				self.caption = ""
+			end
+			self.caption = self.caption .. (getEditedCurrentTooltip() or "")
+		end,
+	}
+
+	-- Background rectangle
+	local backgroundObj = {
+		"rectangle",
+		px      = 0,
+		py      = 0,
+		sx      = 0,
+		sy      = 0,
+		color   = cfg.cbackground,
+		border  = cfg.cborder,
+		onupdate = function(self)
+			local textW = textObj.getwidth()
+			local textH = textObj.getheight()
+
+			-- The full width includes left-margin + icon + margin + text + margin
+			local finalW = margin + iconsize + margin + textW + margin
+			-- The height is margin + whichever is taller, text or icon
+			local finalH = margin + math.max(textH, iconsize - margin) + margin
+
+			self.sx = finalW
+			self.sy = finalH
+
+			-- Place bottom-left at (0, vsy - finalH), so pinned to bottom-left
+			local vsx, vsy = Screen.vsx, Screen.vsy
+			self.px = 0
+			self.py = vsy - self.sy
+
+			-- The text starts after the icon
+			textObj.px = self.px + margin + iconsize
+			textObj.py = self.py + margin
+		end,
+	}
+
+	New(backgroundObj)
+	New(textObj)
+	return {
+		background = backgroundObj,
+		text       = textObj,
+		margin     = margin,
+	}
+end
+
+--------------------------------------------------------------------------------
+--  DRAW & UPDATE
+--------------------------------------------------------------------------------
+
+function widget:DrawScreen()
+	if unitDefID and tooltip and tooltip.background then
+		local margin = Config.tooltip.margin
+		gl.Color(1,1,1,1)
+		if WG["OtaIcons"] and OtaIconExist[unitDefID] then
+			gl.Texture(OtaIconExist[unitDefID])
+		else
+			gl.Texture("#" .. unitDefID)
+		end
+
+		local bx  = tooltip.background.px
+		local by  = tooltip.background.py
+		local vsy = Screen.vsy
+
+		-- Draw the icon directly
+		-- (Note how we use the updated 'iconsize' here.)
+		gl.TexRect(
+			bx,             vsy - by - iconsize - margin,
+			bx + iconsize,  vsy - by
+		)
+
+		gl.Texture(false)
+	end
+end
+
+--------------------------------------------------------------------------------
+--  AUTO-RESIZE LOGIC (IMPORTANT FOR ICON SCALING)
+--------------------------------------------------------------------------------
+
 local function AutoResizeObjects()
-	if LastAutoResizeX == nil then
-		LastAutoResizeX = CanvasX
-		LastAutoResizeY = CanvasY
+	if not LastAutoResizeX then
+		-- Initialize the "previous known" resolution to our design resolution
+		LastAutoResizeX = BASE_X
+		LastAutoResizeY = BASE_Y
 	end
 
 	local lx, ly = LastAutoResizeX, LastAutoResizeY
 	local vsx, vsy = Screen.vsx, Screen.vsy
 
+	-- Only do the scaling if the screen size has actually changed
 	if (lx ~= vsx) or (ly ~= vsy) then
-		local objects = GetWidgetObjects(widget)
+		-- Typically we scale by the ratio of new vsy to original
 		local scale = vsy / ly
-		local skippedobjects = {}
 
+		-- Scale all objects that Red UI is tracking
+		local objects = GetWidgetObjects(widget)
 		for i = 1, #objects do
 			local o = objects[i]
 			local adjust = 0
 
+			-- Attempt to keep the object from going off the right side
 			if o.movableslaves and (#o.movableslaves > 0) then
 				adjust = (o.px * scale + o.sx * scale) - vsx
-
 				if ((o.px + o.sx) - lx) == 0 then
 					o._moveduetoresize = true
 				end
 			end
 
-			if o.px then
-				o.px = o.px * scale
-			end
-
-			if o.py then
-				o.py = o.py * scale
-			end
-
-			if o.sx then
-				o.sx = o.sx * scale
-			end
-
-			if o.sy then
-				o.sy = o.sy * scale
-			end
-
+			if o.px then o.px = o.px * scale end
+			if o.py then o.py = o.py * scale end
+			if o.sx then o.sx = o.sx * scale end
+			if o.sy then o.sy = o.sy * scale end
 			if o.fontsize then
 				o.fontsize = o.fontsize * scale
 			end
 
+			-- Adjust position if off screen
 			if adjust > 0 then
 				o._moveduetoresize = true
 				o.px = o.px - adjust
-
+				-- Move slaves
 				for j = 1, #o.movableslaves do
 					local s = o.movableslaves[j]
 					s.px = s.px - adjust / scale
@@ -147,7 +313,6 @@ local function AutoResizeObjects()
 			elseif (adjust < 0) and o._moveduetoresize then
 				o._moveduetoresize = nil
 				o.px = o.px - adjust
-
 				for j = 1, #o.movableslaves do
 					local s = o.movableslaves[j]
 					s.px = s.px - adjust / scale
@@ -155,254 +320,47 @@ local function AutoResizeObjects()
 			end
 		end
 
+		-- Always recalc 'iconsizeMaster' based on the new scale
+		iconsizeMaster = iconsizeMaster * scale
+
+		-- Update "last known" resolution to the new one
 		LastAutoResizeX, LastAutoResizeY = vsx, vsy
 	end
 end
 
-local function getEditedCurrentTooltip()
-	local text = sGetCurrentTooltip()
-	--Prune RC tech list
-	local lvl1tech = text:match("advanced t1 unit research centre") or nil
-	local lvl2tech = text:match("advanced t2 unit research centre") or nil
-	local lvl3tech = text:match("advanced t3 unit research centre") or nil
-	local lvl4tech = text:match("advanced t4 unit research centre") or nil
-	local provides = text:match("Provides") or nil
-
-	if provides then
-		if lvl4tech then
-			text = text:gsub(lvl3tech, string.format("")) or text
-			text = text:gsub(lvl2tech, string.format("")) or text
-			text = text:gsub(lvl1tech, string.format("")) or text
-			text = text:gsub(",", string.format(""), 3) or text
-			text = text:gsub(lvl4tech, string.format("Advanced T4 Unit Research Centre")) or text
-		elseif lvl3tech then
-			text = text:gsub(lvl2tech, string.format("")) or text
-			text = text:gsub(lvl1tech, string.format("")) or text
-			text = text:gsub(",", string.format(""), 2) or text
-			text = text:gsub(lvl3tech, string.format("Advanced T3 Unit Research Centre")) or text
-		elseif lvl2tech then
-			text = text:gsub(lvl1tech, string.format("")) or text
-			text = text:gsub(",", string.format(""), 1) or text
-			text = text:gsub(lvl2tech, string.format("Advanced T2 Unit Research Centre")) or text
-		elseif lvl1tech then
-			text = text:gsub(lvl1tech, string.format("Advanced T1 Unit Research Centre")) or text
-		end
+-- Called automatically by Spring when the view is resized (fullscreen/windowed)
+function widget:ViewResize(vsx, vsy)
+	-- Update Red UI's known screen geometry
+	if Screen then
+		Screen.vsx = vsx
+		Screen.vsy = vsy
 	end
-
-	-- Prune hidden unitID
-	--[[
-	local expUnitPat = "UnitID (%d+)\n"
-	local UnitID = tonumber(text:match(expUnitPat)) or nil
-	if UnitID ~= nil then
-    	text = text:gsub(expUnitPat,string.format("")) or text
-	end
-	--]]
-	--extract the exp value with regexp
-	local expMorphPat = "UnitDefID (%d+)\n"
-	local MorphDefID = tonumber(text:match(expMorphPat)) or nil
-
-	if MorphDefID ~= nil then
-		text = text:gsub(expMorphPat, string.format("")) or text
-	end
-
-	local expPattern = "Experience (%d+%.%d%d)"
-	local currentExp = tonumber(text:match(expPattern))
-	local limExp = currentExp and currentExp / (1 + currentExp) or 1
-	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
-	text = currentExp and text:gsub(expPattern, string.format("Experience %.2f", currentExp)) or text
-
-	if WG.Music and WG.Music.curTrack then
-		text = text .. "\nPlaying : " .. WG.Music.curTrack
-	end
-
-	local mx, my, gx, gy, gz, tooltipID
-	mx, my = Spring.GetMouseState()
-
-	if mx and my then
-		local _, pos = Spring.TraceScreenRay(mx, my, true, true)
-
-		if pos then
-			gx, gy, gz = unpack(pos)
-		end
-
-		local kind, var1 = Spring.TraceScreenRay(mx, my, false, true)
-
-		if kind == "unit" then
-			tooltipID = var1
-		end
-	end
-
-	if MorphDefID then
-		unitDefID = MorphDefID
-		iconsize = tooltip.background.sy
-	elseif tooltipID then
-		unitDefID = Spring.GetUnitDefID(tooltipID)
-		iconsize = tooltip.background.sy
-	elseif WG["hoverID"] and WG["hoverID"] < 0 then
-		unitDefID = math.abs(WG["hoverID"])
-		iconsize = tooltip.background.sy
-	elseif Spring.GetSelectedUnitsCount() == 1 then
-		unitID = Spring.GetSelectedUnits()[1]
-
-		if Spring.ValidUnitID(unitID) then
-			unitDefID = Spring.GetUnitDefID(unitID)
-			iconsize = tooltip.background.sy
-		end
-	else
-		unitDefID = nil
-		iconsize = 0
-	end
-
-	return text
+	AutoResizeObjects()
 end
 
-local function createtooltip(r)
-	local text = {
-		"text", px = r.px + r.margin,
-		py = r.py + r.margin,
-		fontsize = r.fontsize,
-		caption = "",
-		options = "o",
-		onupdate = function(self)
-			local unitcount = sGetSelectedUnitsCount()
-
-			if unitcount ~= 0 then
-				self.caption = "Selected units: " .. unitcount .. "\n"
-			else
-				self.caption = "\n"
-			end
-
-			if self._mouseoverself then
-				self.caption = self.caption .. r.tooltip.background
-			else
-				self.caption = self.caption .. (getEditedCurrentTooltip() or sGetCurrentTooltip())
-			end
-		end
-	}
-
-	local background = {
-		"rectangle", px = r.px,
-		py = r.py,
-		sx = r.sx,
-		sy = r.sy,
-		color = r.cbackground,
-		border = r.cborder,
-		movable = r.dragbutton,
-		movableslaves = {text},
-		obeyscreenedge = true,
-		--overridecursor = true,
-		overrideclick = {2},
-		onupdate = function(self)
-			--left side of screen
-			if self.px < (Screen.vsx / 2) then
-				if (self.sx - r.margin * 2) <= text.getwidth() then
-					self.sx = ((text.getwidth() + r.margin * 2) - 1) + (iconsize * 1.95)
-				else
-					self.sx = (r.sx * Screen.vsy / CanvasY) + (iconsize * 1.95)
-				end
-
-				text.px = self.px + r.margin + iconsize
-			else --right side of screen
-				if (self.sx - r.margin * 2 - 1) <= text.getwidth() then
-					self.px = self.px - ((text.getwidth() + r.margin * 2) - self.sx)
-					self.sx = (text.getwidth() + r.margin * 2) + (iconsize * 1.95)
-				else
-					self.px = self.px - ((r.sx * Screen.vsy / CanvasY) - self.sx)
-					self.sx = (r.sx * Screen.vsy / CanvasY) + (iconsize * 1.95)
-				end
-
-				text.px = self.px + r.margin + iconsize
-			end
-		end,
-		mouseover = function(mx, my, self)
-			text._mouseoverself = true
-		end,
-		mousenotover = function(mx, my, self)
-			text._mouseoverself = nil
-		end,
-	}
-
-	New(background)
-	New(text)
-
-	return {
-		["background"] = background,
-		["text"] = text,
-		margin = r.margin,
-	}
-end
-
-function widget:DrawScreen()
-	if unitDefID then
-		gl.Color(1, 1, 1, 1)
-
-		--Spring.Echo(VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png'),unitDefID,UnitDefs[unitDefID].name )
-		if WG['OtaIcons'] and OtaIconExist[unitDefID] then
-			gl.Texture(OtaIconExist[unitDefID])
-		else
-			gl.Texture('#' .. unitDefID) -- Screen.vsx,Screen.vsy
-		end
-
-		gl.TexRect(tooltip.background.px, Screen.vsy - tooltip.background.py - iconsize, tooltip.background.px + iconsize, Screen.vsy - tooltip.background.py)
-		gl.Texture(false)
-	end
-end
+--------------------------------------------------------------------------------
+--  WIDGET INITIALIZATION / SHUTDOWN
+--------------------------------------------------------------------------------
 
 function widget:Initialize()
-	PassedStartupCheck = RedUIchecks()
-	if not PassedStartupCheck then return end
+	if not RedUIchecks() then return end
+
+	-- Create our tooltip objects
 	tooltip = createtooltip(Config.tooltip)
-	Spring.SetDrawSelectionInfo(false) --disables springs default display of selected units count
+
+	-- Hide default selection info & default tooltip
+	Spring.SetDrawSelectionInfo(false)
 	Spring.SendCommands("tooltip 0")
+
+	-- Ensure Red UI has the current geometry
+	Screen.vsx, Screen.vsy = Spring.GetViewGeometry()
+
+	-- Force an initial resize to scale everything to the *current* resolution
+	LastAutoResizeX, LastAutoResizeY = nil, nil
 	AutoResizeObjects()
 end
 
 function widget:Shutdown()
+	-- Restore the default Spring tooltip
 	Spring.SendCommands("tooltip 1")
-end
-
-function widget:Update()
-	AutoResizeObjects()
-end
-
---save/load stuff
---currently only position
---save config
-function widget:GetConfigData()
-	if PassedStartupCheck then
-		local vsx = Screen.vsx
-		local vsy = Screen.vsy
-		local unscale = CanvasY / vsy --needed due to autoresize, stores unresized variables
-
-		if (tooltip.background.px * unscale > -50) and (tooltip.background.py * unscale > -50) and (tooltip.background.py * unscale) < vsy and (tooltip.background.px * unscale) < vsx then
-			Config.tooltip.px = tooltip.background.px * unscale
-			Config.tooltip.py = tooltip.background.py * unscale
-
-			return {
-				Config = Config
-			}
-		else
-			Config.tooltip.px = 0
-			Config.tooltip.py = 0
-
-			return {
-				Config = Config
-			}
-		end
-	end
-end
-
---load config
-function widget:SetConfigData(data)
-	if data.Config ~= nil then
-		Config.tooltip.px = data.Config.tooltip.px
-		Config.tooltip.py = data.Config.tooltip.py
-
-		if Config.tooltip.py < 1 then
-			Config.tooltip.py = clampY
-		end
-		if Config.tooltip.py > clampY then
-			Config.tooltip.py = clampY
-		end
-	end
 end

@@ -94,7 +94,6 @@ return {
 			[33] = "cordl",
 			[34] = "corsy",
 			[35] = "corplat",
-			[36] = "gate",
 		},
 		customparams = {
 			buildpic = "corca.dds",

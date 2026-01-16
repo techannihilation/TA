@@ -106,7 +106,6 @@ return {
 			[42] = "gok_tl",
 			--[43] = "gok_fhlt",
 			[44] = "gok_frl",
-			[45] = "gate",
 		},
 		customparams = {
 			buildpic = "gok_cv.dds",

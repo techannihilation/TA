@@ -111,11 +111,12 @@ function gadget:Initialize()
   Spring.AddUnitIcon("corlilith.user", "icons/corlilith.png", 6)
   Spring.AddUnitIcon("armolympus.user", "icons/armolympus.png", 4)
   Spring.AddUnitIcon("armexo.user", "icons/armexo.png", 5)
-  Spring.AddUnitIcon("talon_mcv.user", "icons/talon_mcv.png", 3)
+  Spring.AddUnitIcon("talon_silver.user", "icons/talon_silver.png", 3)
   Spring.AddUnitIcon("talon_grenat.user", "icons/talon_grenat.png", 4)
   Spring.AddUnitIcon("tllmcv.user", "icons/tllmcv.png", 4)
   Spring.AddUnitIcon("tllsamael.user", "icons/tllsamael.png", 6)
   Spring.AddUnitIcon("tll_tyranosaurus.user", "icons/tll_tyranosaurus.png", 7)
+  Spring.AddUnitIcon("tll_neobahomet.user", "icons/tll_neobahomet.png", 5)
   Spring.AddUnitIcon("tllcolossus.user", "icons/tllcolossus.png", 4)
   Spring.AddUnitIcon("tllsaurus.user", "icons/tllsaurus.png", 5)
   Spring.AddUnitIcon("talon_mythril.user", "icons/talon_mythril.png", 5)
@@ -133,7 +134,8 @@ function gadget:Initialize()
   Spring.AddUnitIcon("gok_cut1.user", "icons/gok_cut1.png", 3)
   Spring.AddUnitIcon("coradamantoise.user", "icons/coradamantoise.png", 4.5)
   Spring.AddUnitIcon("corskrog.user", "icons/corskrog.png", 5)
-  Spring.AddUnitIcon("gok_kadesh.user", "icons/gok_kadesh.png", 6)
+  Spring.AddUnitIcon("gok_darkarchonte.user", "icons/gok_darkarchonte.png", 5)
+  Spring.AddUnitIcon("gok_kadesh.user", "icons/gok_kadesh.png", 4)
   Spring.AddUnitIcon("gok_slanesh.user", "icons/gok_slanesh.png", 5)
   Spring.AddUnitIcon("talon_repentance.user", "icons/talon_repentance.png", 5)
   Spring.AddUnitIcon("gok_satan.user", "icons/gok_satan.png", 3)
@@ -142,6 +144,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("rumad_oasis.user", "icons/rumad_oasis.png", 3)
   Spring.AddUnitIcon("rumad_mcv1.user", "icons/rumad_mcv1.png", 4)
   Spring.AddUnitIcon("rumad_mcv2.user", "icons/rumad_mcv2.png", 6)
+  Spring.AddUnitIcon("gok_darkdeus.user", "icons/gok_darkdeus.png", 15)
 
 
   -- Setup the unitdef icons
@@ -242,8 +245,14 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "gok_kadesh.user")
       elseif ud.name == "tll_tyranosaurus" then
         Spring.SetUnitDefIcon(udid, "tll_tyranosaurus.user")
+      elseif ud.name == "tll_neobahomet" then
+        Spring.SetUnitDefIcon(udid, "tll_neobahomet.user")
       elseif ud.name == "corskrog" then
         Spring.SetUnitDefIcon(udid, "corskrog.user")
+      elseif ud.name == "gok_darkarchonte" then
+        Spring.SetUnitDefIcon(udid, "gok_darkarchonte.user")
+      elseif ud.name == "gok_darkdeus" then
+        Spring.SetUnitDefIcon(udid, "gok_darkdeus.user")
       elseif ud.name == "gok_cut1" then
         Spring.SetUnitDefIcon(udid, "gok_cut1.user")
       elseif ud.name == "armmcv1" then
@@ -256,8 +265,8 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "talon_repentance.user")
       elseif ud.name == "tllsamael" then
         Spring.SetUnitDefIcon(udid, "tllsamael.user")
-      elseif (ud.name == "talon_mcv") or (ud.name == "talon_mcv1") then
-        Spring.SetUnitDefIcon(udid, "talon_mcv.user")
+      elseif (ud.name == "talon_silver") or (ud.name == "talon_silver1") then
+        Spring.SetUnitDefIcon(udid, "talon_silver.user")
       elseif ud.name == "talon_grenat" then
         Spring.SetUnitDefIcon(udid, "talon_grenat.user")
       elseif ud.name == "corkrog" then

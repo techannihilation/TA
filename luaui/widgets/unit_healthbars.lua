@@ -109,6 +109,7 @@ local barShader
 local barDList
 local barFeatureDList
 local UnitMorphs  = {}
+local UnitUpgrades = {}
 local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
 
 
@@ -142,6 +143,8 @@ function widget:Initialize()
   widgetHandler:RegisterGlobal('MorphFinished', MorphFinished)
   widgetHandler:RegisterGlobal('MorphStart', MorphStart)
   widgetHandler:RegisterGlobal('MorphStop', MorphStop)
+  widgetHandler:RegisterGlobal('UpgradeStart', UpgradeStart)
+  widgetHandler:RegisterGlobal('UpgradeStop', UpgradeStop)
 
   widgetHandler:RegisterGlobal('MorphDrawProgress', function() return true end)
 
@@ -266,7 +269,6 @@ function widget:Shutdown()
   widgetHandler:DeregisterGlobal('MorphFinished', MorphFinished)
   widgetHandler:DeregisterGlobal('MorphStart', MorphStart)
   widgetHandler:DeregisterGlobal('MorphStop', MorphStop)
-  
   widgetHandler:DeregisterGlobal('MorphDrawProgress')
 
   --// catch f9
@@ -564,6 +566,7 @@ do
         numStockpiled = false
       end
 
+
         --// MORPHING
       local morph = UnitMorphs[unitID]
       if morph then
@@ -576,8 +579,9 @@ do
         end
       end
 
+      local upgrade = WG["unitInUpgrade"][unitID]
       --// PARALYZE
-      if (emp>0.01)and(hp>0.01)and(emp<1e8)and(not morph) then 
+      if (emp>0.01)and(hp>0.01)and(emp<1e8)and(not morph) and not upgrade then 
         local stunned = GetUnitIsStunned(unitID) 
         local infotext = ""
         if (stunned) then
@@ -943,5 +947,6 @@ end
 function MorphFinished(unitID)
   UnitMorphs[unitID] = nil
 end
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

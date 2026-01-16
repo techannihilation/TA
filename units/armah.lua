@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE",
+		category = "ALL SMALL MOBILE SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "34 12 34",
 		collisionvolumetype = "CylY",
@@ -149,16 +149,15 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
-				startvelocity = 600,
+				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
 				texture4 = "null",
-				tolerance = 10000,
 				tracks = true,
 				turnrate = 63000,
 				turret = true,
-				weaponacceleration = 200,
+				weaponacceleration = 300,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
@@ -171,7 +170,7 @@ return {
 		},
 		weapons = {
 			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "ARMAH_WEAPON",
 				onlytargetcategory = "VTOL",
 			},

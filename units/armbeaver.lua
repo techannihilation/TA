@@ -88,7 +88,7 @@ return {
 			[24] = "armdrag",
 			[25] = "armclaw",
 			[26] = "armllt",
-			[27] = "armgrape",
+			[27] = "arm_beamer",
 			[28] = "armhlt",
 			[29] = "armdl",
 			[30] = "armguard",
@@ -112,7 +112,6 @@ return {
 			[48] = "armfhlt",
 			[49] = "armfrt",
 			[50] = "armtl",
-			[51] = "gate",
 		},
 		customparams = {
 			buildpic = "armbeaver.dds",

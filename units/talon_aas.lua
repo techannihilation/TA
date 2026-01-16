@@ -131,7 +131,7 @@ return {
 				impulsefactor = 0.123,
 				metalpershot = 0,
 				model = "weapon_missile.s3o",
-				name = "Missiles",
+				name = "AA Missile",
 				noselfdamage = true,
 				range = 850,
 				reloadtime = 0.5,
@@ -140,7 +140,7 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
-				startvelocity = 500,
+				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -149,10 +149,10 @@ return {
 				tracks = true,
 				turnrate = 50000,
 				turret = true,
-				weaponacceleration = 250,
+				weaponacceleration = 300,
 				weapontimer = 0.35,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 1000,
+				weaponvelocity = 1200,
 				damage = {
 					areoship = 25,
 					default = 5,
@@ -195,12 +195,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "MOBILEFLAK",
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR FIGHTER", --Ground AA
 				def = "TALON_STARBURST",
 				onlytargetcategory = "VTOL",
 			},

@@ -559,6 +559,11 @@ local luaShaderDir = "LuaUI/Widgets/Include/"
 local LuaShader = VFS.Include(luaShaderDir .. "LuaShader.lua")
 local engineUniformBufferDefs = LuaShader.GetEngineUniformBufferDefs()
 
+local QUATERNIONDEFS = ""
+if Engine.FeatureSupport.transformsInGL4 then 
+	QUATERNIONDEFS = LuaShader.GetQuaternionDefs()
+end
+
 local defaultMaterialTemplate
 local unitsNormalMapTemplate
 local featuresNormalMapTemplate
@@ -605,24 +610,24 @@ local function initMaterials()
 
 	unitsNormalMapTemplate = appendShaderDefinitionsToTemplate(defaultMaterialTemplate, {
 		shaderDefinitions = {
-			"#define ENABLE_OPTION_HEALTH_TEXTURING 1",
+			"#define ENABLE_OPTION_HEALTH_TEXTURING 0",
 			-- "#define ENABLE_OPTION_THREADS 1",
-			"#define ENABLE_OPTION_HEALTH_DISPLACE 1",
+			"#define ENABLE_OPTION_HEALTH_DISPLACE 0",
 			itsXmas and "#define XMAS 1" or "#define XMAS 0",
 		},
 		deferredDefinitions = {
-			"#define ENABLE_OPTION_HEALTH_TEXTURING 1",
+			"#define ENABLE_OPTION_HEALTH_TEXTURING 0",
 			-- "#define ENABLE_OPTION_THREADS 1",
-			"#define ENABLE_OPTION_HEALTH_DISPLACE 1",
+			"#define ENABLE_OPTION_HEALTH_DISPLACE 0",
 			itsXmas and "#define XMAS 1" or "#define XMAS 0",
 		},
 		shadowDefinitions = {
 			itsXmas and "#define XMAS 1" or "",
 		},
 		reflectionDefinitions = {
-			"#define ENABLE_OPTION_HEALTH_TEXTURING 1",
+			"#define ENABLE_OPTION_HEALTH_TEXTURING 0",
 			-- "#define ENABLE_OPTION_THREADS 1",
-			"#define ENABLE_OPTION_HEALTH_DISPLACE 1",
+			"#define ENABLE_OPTION_HEALTH_DISPLACE 0",
 			itsXmas and "#define XMAS 1" or "#define XMAS 0",
 		},
 	})
@@ -720,6 +725,12 @@ local function CompileLuaShader(shader, definitions, plugIns, addName)
 		end
 		if shader.geometry then
 			shader.geometry = shader.geometry:gsub("%%%%([%a_]+)%%%%", InsertPlugin)
+		end
+	end
+
+	for i, program in ipairs({"vertex", "fragment", "geometry"}) do
+		if shader[program] and QUATERNIONDEFS then 
+			shader[program] = shader[program]:gsub("//__QUATERNIONDEFS__",  QUATERNIONDEFS)
 		end
 	end
 
@@ -988,7 +999,8 @@ local function initBinsAndTextures()
 				[10] = GG:GetEnvTexture(),
 			}
 
-			objectDefToUniformBin[-1 * featureDefID] = 'feature'
+			objectDefToUniformBin[-featureDefID] = 'feature'
+			featuresDefsWithAlpha[-featureDefID] = true
 
 			local texKeyFast = GenFastTextureKey(-1 * featureDefID, featureDef, normalTex, textureTable)
 			if textureKeytoSet[texKeyFast] == nil then
@@ -2038,18 +2050,23 @@ end
 
 local nightFactorBins = { tree = 1.3, feature = 1.3, featurepbr = 1.3, treepbr = 1.3 }
 local lastSunChanged = -1
-function gadget:SunChanged() -- Note that map_nightmode.lua gadget has to change sun twice in a single draw frame to update all
-	local df = Spring.GetDrawFrame()
-	if df == lastSunChanged then return end
-	lastSunChanged = df
-	local nightFactor = 1.0
-	if GG['NightFactor'] then
-		local altitudefactor = 1.0 --+ (1.0 - WG['NightFactor'].altitude) * 0.5
-		nightFactor = (GG['NightFactor'].red + GG['NightFactor'].green + GG['NightFactor'].blue) * 0.33
-	end
-	for uniformBinName, defaultBrightnessFactor in pairs(nightFactorBins) do
-		uniformBins[uniformBinName].brightnessFactor = defaultBrightnessFactor * nightFactor
-	end
+function gadget:SunChanged()
+  local df = Spring.GetDrawFrame()
+  if df == lastSunChanged then return end
+  lastSunChanged = df
+
+  local nightFactor = 1.0
+  local nf = GG and GG.NightFactor
+  if nf and nf.red and nf.green and nf.blue then
+    nightFactor = (nf.red + nf.green + nf.blue) * (1.0 / 3.0)
+  end
+
+  for uniformBinName, defaultBrightnessFactor in pairs(nightFactorBins) do
+    local ub = uniformBins[uniformBinName]
+    if ub then
+      ub.brightnessFactor = defaultBrightnessFactor * nightFactor
+    end
+  end
 end
 
 local function drawPassBitsToNumber(opaquePass, deferredPass, drawReflection, drawRefraction)
@@ -2105,4 +2122,5 @@ end
 function gadget:DrawShadowFeaturesLua() -- These are drawn together with units
 	if unitDrawBins == nil then return end
 	--ExecuteDrawPass(16)
+
 end
