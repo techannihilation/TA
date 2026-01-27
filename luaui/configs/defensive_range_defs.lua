@@ -138,7 +138,7 @@ modConfig["TA"]["unitList"] =
 								tllhltns = { weapons = { 1 } },
 								tlllrpt = { weapons = { 1 } },
 								tllobliterator = { weapons = { 1 } },
-								tllobliterator1 = { weapons = { 1 } },
+								tll_obliterator2 = { weapons = { 1 } },
 								tll_immolator = { weapons = { 1 } },
 								tllarch = { weapons = { 1 } },
 								tll_hydre1 = { weapons = { 1 } },
