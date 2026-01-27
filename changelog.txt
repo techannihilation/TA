@@ -1,3 +1,13 @@
+ 4.98 => 4.99
+2026-01-28
+
+Improvment :
+* Rework T3 Turret Obliterator TLL Model and Balance
+* Rework Core T4 Hover Artillery Model
+
+Balance :
+* Rework Tlldischarge T2 JetPack Kbot : Delete Bomb and decrease cost by 25%
+
 4.97 => 4.98
 2026-01-11
 
