@@ -8,7 +8,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
-		buildinggrounddecaltype = "tllobliterator_aoplane.dds",
 		buildpic = "tll_obliterator2.dds",
 		buildtime = 248000,
 		canattack = true,
@@ -43,7 +42,6 @@ return {
 		sightdistance = 750,
 		standingfireorder = 2,
 		unitname = "tll_obliterator2",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "tll_obliterator2.dds",
