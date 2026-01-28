@@ -68,7 +68,7 @@ return {
 			[9] = "tllmine2",
 			[10] = "tllpulaser",
 			[11] = "tllplasma",
-			[12] = "tllobliterator",
+			[12] = "tll_obliterator1",
 			[13] = "tllsam",
 			[14] = "tllflak",
 			[15] = "tllhmt",

@@ -1484,7 +1484,7 @@ Fix :
 
 Balance :
  - Tll Lizard : Decrease speed 2.2 => 1.7. Decrease dmg/s 180=>170. Deacrease HP 1125=>1095
- - T2&T3 Tll tllobliterator : Decrease damage by 20%
+ - T2&T3 Tll tll_obliterator1 : Decrease damage by 20%
  - Decrease Xp 50% for all T1 ground AA morph into T2
  - Tllroaster : Decrease speed 1.5 => 1.35. Decrease spray lighting damage 200=>170 / shot. Increase metalcost 1535 => 1635
 
