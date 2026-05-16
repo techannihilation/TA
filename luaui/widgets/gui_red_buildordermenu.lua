@@ -428,7 +428,7 @@ local function UpdateGrid(g,cmds,ordertype)
 					local label, strippedActionPrefix = stripCommandActionPrefix(cmd.params[cmd.params[1]+2] or cmd.name)
 					icon.caption = " "..label.." "
 					if strippedActionPrefix then
-						icon.maxfontsize = icon.sy * 0.3
+						icon.maxfontsize = icon.sy * 0.35
 					end
 				
 					local statecount = #cmd.params-1 --number of states for the cmd
