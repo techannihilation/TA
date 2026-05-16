@@ -17,7 +17,7 @@ if (not gadgetHandler:IsSyncedCode()) then
   return
 end
 
-local enabled = tonumber(Spring.GetModOptions().mo_nowrecks) or 0
+local enabled = Spring.GetModOptions().mo_nowrecks or false
 
 if (enabled == 0) then 
   return false

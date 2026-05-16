@@ -49,6 +49,13 @@ local function convertToNumber(input)
     return tonumber(input)
 end
 
+local function stripCommandActionPrefix(input)
+	if type(input) == "string" and input:sub(1, 2) == "@@" then
+		return input:sub(3), true
+	end
+	return input, false
+end
+
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
 
 local Config = {
@@ -160,6 +167,7 @@ local function AutoResizeObjects() --autoresize v2
 			if (o.sx) then o.sx = o.sx * scale end
 			if (o.sy) then o.sy = o.sy * scale end
 			if (o.fontsize) then o.fontsize = o.fontsize * scale end
+			if (o.maxfontsize) then o.maxfontsize = o.maxfontsize * scale end
 			if (adjust > 0) then
 				o._moveduetoresize = true
 				o.px = o.px - adjust
@@ -402,6 +410,7 @@ local function UpdateGrid(g,cmds,ordertype)
 		}
 		
 		cmd.params[1] = convertToNumber(cmd.params[1])
+		icon.maxfontsize = nil
 		if (ordertype == 1) then --build orders
 			if oldUnitpics and UnitDefs[cmd.id*-1] ~= nil and OtaIconExist[cmd.id*-1] then
 				icon.texture = OtaIconExist[cmd.id*-1]
@@ -416,7 +425,11 @@ local function UpdateGrid(g,cmds,ordertype)
 		else
 			if (cmd.type == 5) then --state cmds (fire at will, etc)
 				if cmd.params[1] then
-					icon.caption = " "..(cmd.params[cmd.params[1]+2] or cmd.name).." "
+					local label, strippedActionPrefix = stripCommandActionPrefix(cmd.params[cmd.params[1]+2] or cmd.name)
+					icon.caption = " "..label.." "
+					if strippedActionPrefix then
+						icon.maxfontsize = icon.sy * 0.3
+					end
 				
 					local statecount = #cmd.params-1 --number of states for the cmd
 					local curstate = cmd.params[1]+1
