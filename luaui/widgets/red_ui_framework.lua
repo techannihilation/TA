@@ -138,6 +138,11 @@ local F = {
 		else
 			py2 = py2 + (sy - height) /2 --center
 		end
+		if (o.maxfontsize and fontsize > o.maxfontsize) then
+			fontsize = o.maxfontsize
+			px2 = px + (sx - width*fontsize) /2
+			py2 = py + (sy - linecount*fontsize) /2
+		end
 		Text(px2,py2,fontsize,text,o.options,captioncolor)
 		o.autofontsize = fontsize
 	end
