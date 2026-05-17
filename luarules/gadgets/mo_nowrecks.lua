@@ -19,7 +19,7 @@ end
 
 local enabled = Spring.GetModOptions().mo_nowrecks or false
 
-if (enabled == 0) then 
+if (enabled == false) then 
   return false
 end
 
