@@ -81,10 +81,7 @@ local callInsInitialized = false
 --see MouseRelease for which functions are called by which buttons
 local buttons = {
   [1] = "Reload LuaUI",
- --[2] = "Unload ALL Widgets",
- --[3] = "Allow/Disallow User Widgets",
- --[4] = "Reset LuaUI",
- --[5] = "Factory Reset LuaUI",
+  [2] = "Factory Reset LuaUI",
 }
 
 local titleFontSize = 16
@@ -136,11 +133,6 @@ function widget:Initialize()
   widgetHandler.knownChanged = true
   Spring.SendCommands("unbindkeyset f11")
 
-  if widgetHandler.allowUserWidgets then
-    buttons[3] = "Disallow User Widgets"
-  else
-    buttons[3] = "Allow User Widgets"
-  end
 end
 
 -------------------------------------------------------------------------------
@@ -772,39 +764,7 @@ function widget:MouseRelease(x, y, mb)
       return -1
     end
 
-    -- if buttonID == 2 then
-    --   -- disable all widgets, but don"t reload
-    --   for _, namedata in ipairs(fullWidgetsList) do
-    --     widgetHandler:DisableWidget(namedata[1])
-    --   end
-
-    --   widgetHandler:SaveConfigData()
-
-    --   return -1
-    -- end
-
-    if buttonID == 3 then
-      -- tell the widget handler that we allow/disallow user widgets and reload
-      if widgetHandler.allowUserWidgets then
-        widgetHandler.__allowUserWidgets = false
-        Spring.Echo("Disallowed user widgets, reloading...")
-      else
-        widgetHandler.__allowUserWidgets = true
-        Spring.Echo("Allowed user widgets, reloading...")
-      end
-
-      Spring.SendCommands("luarules reloadluaui")
-
-      return -1
-    end
-
-    if buttonID == 4 then
-      Spring.SendCommands("luaui reset")
-
-      return -1
-    end
-
-    if buttonID == 5 then
+    if buttonID == 2 then
       Spring.SendCommands("luaui factoryreset")
 
       return -1
@@ -929,9 +889,8 @@ function widget:TextCommand(s)
   end
 
   if n == 1 and token[1] == "factoryreset" then
-    -- tell the widget handler to disallow user widgets and reload with a blank config
-    widgetHandler.__blankOutConfig = true
-    widgetHandler.__allowUserWidgets = false
+    -- tell the widget handler to reload with a blank config
+    widgetHandler.blankOutConfig = true
     Spring.SendCommands("luarules reloadluaui")
   end
 

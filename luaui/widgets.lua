@@ -269,6 +269,15 @@ end
 
 function widgetHandler:SaveConfigData()
 --  self:LoadConfigData()
+  if self.blankOutConfig or self.__blankOutConfig then
+    local filetable = {
+      order = {},
+      data = {},
+    }
+    table.save(filetable, CONFIG_FILENAME, '-- Widget Custom data and order, order = 0 disabled widget')
+    return
+  end
+
   local filetable = {}
   for i,w in ipairs(self.widgets) do
     if (w.GetConfigData) then
