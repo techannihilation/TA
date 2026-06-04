@@ -57,6 +57,7 @@ local GL_LINE_LOOP = GL.LINE_LOOP
 local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
 local GL_PROJECTION = GL.PROJECTION
 local GL_MODELVIEW = GL.MODELVIEW
+local textOptionsCache = {}
 
 local function Color(c)
 	glColor(c[1],c[2],c[3],c[4])
@@ -71,7 +72,12 @@ local function Text(px,py,fontsize,text,options,c,alpha)
 	end
 	glTranslate(px,py+fontsize,0)
 	if (options) then
-		options = options.."d" --fuck you jK
+		local cachedOptions = textOptionsCache[options]
+		if (cachedOptions == nil) then
+			cachedOptions = options.."d" --fuck you jK
+			textOptionsCache[options] = cachedOptions
+		end
+		options = cachedOptions
 	else
 		options = "d"
 	end

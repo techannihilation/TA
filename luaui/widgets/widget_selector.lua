@@ -39,6 +39,7 @@ local sizeMultiplier = 1
 local floor = math.floor
 local widgetsList = {}
 local fullWidgetsList = {}
+local scrollRows = {}
 local vsx, vsy = widgetHandler:GetViewSizes()
 local minMaxEntries = 15
 local curMaxEntries = 25
@@ -80,16 +81,40 @@ local callInsInitialized = false
 --see MouseRelease for which functions are called by which buttons
 local buttons = {
   [1] = "Reload LuaUI",
- --[2] = "Unload ALL Widgets",
- --[3] = "Allow/Disallow User Widgets",
- --[4] = "Reset LuaUI",
- --[5] = "Factory Reset LuaUI",
+  [2] = "Factory Reset LuaUI",
 }
 
 local titleFontSize = 16
 local buttonFontSize = 20
 local buttonHeight = 22
 local buttonTop = 40 -- offset between top of buttons and bottom of widget
+local sectionFontScale = 1.2
+local hoverTextColor = "\255\255\215\064"
+
+local function GetButtonLine(buttonID)
+  if buttonID == 2 then
+    return buttonID + 1
+  end
+  return buttonID
+end
+
+local function GetButtonBounds(buttonID)
+  local label = buttons[buttonID]
+  if not label then
+    return nil
+  end
+  local buttonLine = GetButtonLine(buttonID)
+  local width = (gl.GetTextWidth(label) * buttonFontSize * sizeMultiplier) + (12 * sizeMultiplier)
+  local centerX = (minx + maxx) * 0.5
+  local y1 = miny - (buttonTop * sizeMultiplier) - (buttonLine * (buttonHeight * sizeMultiplier))
+  local y2 = miny - (buttonTop * sizeMultiplier) - ((buttonLine - 1) * (buttonHeight * sizeMultiplier))
+  return centerX - (width * 0.5), y1, centerX + (width * 0.5), y2
+end
+
+local function IsOnButton(buttonID, x, y)
+  local x1, y1, x2, y2 = GetButtonBounds(buttonID)
+  return x1 ~= nil and x1 < x and x < x2 and y1 < y and y < y2
+end
 
 local function DisableCallIns()
   widgetHandler:RemoveWidgetCallIn("DrawScreen", widget)
@@ -116,11 +141,6 @@ function widget:Initialize()
   widgetHandler.knownChanged = true
   Spring.SendCommands("unbindkeyset f11")
 
-  if widgetHandler.allowUserWidgets then
-    buttons[3] = "Disallow User Widgets"
-  else
-    buttons[3] = "Allow User Widgets"
-  end
 end
 
 -------------------------------------------------------------------------------
@@ -222,55 +242,87 @@ function RectRound(px, py, sx, sy, cs)
   gl.BeginEnd(GL.QUADS, DrawRectRound, px, py, sx, sy, cs)
 end
 
+local function GetSectionName(fromZip)
+  return fromZip and "Game Widgets" or "User Widgets"
+end
+
 local function UpdateGeometry()
   midx = vsx * 0.5
   midy = vsy * 0.5
   local halfWidth = ((maxWidth + 2) * fontSize) * sizeMultiplier * 0.5
   minx = floor(midx - halfWidth - (borderx * sizeMultiplier))
   maxx = floor(midx + halfWidth + (borderx * sizeMultiplier))
-  local ySize = (yStep * sizeMultiplier) * (#widgetsList) + 10
+  local rowCount = #widgetsList
+  if rowCount < 1 and #scrollRows > 0 then
+    rowCount = math.min(curMaxEntries, #scrollRows)
+  end
+  local ySize = (yStep * sizeMultiplier) * rowCount + 10
   miny = floor(midy - (0.5 * ySize)) - ((fontSize + bgPadding + bgPadding) * sizeMultiplier)
   maxy = floor(midy + (0.5 * ySize))
 end
 
-local function UpdateListScroll()
-  local wCount = #fullWidgetsList
-  local lastStart = lastStart or wCount - curMaxEntries + 1
-
-  if lastStart < 1 then
-    lastStart = 1
+local function GetMaxStart()
+  local maxStart = #scrollRows - curMaxEntries + 1
+  if maxStart < 1 then
+    return 1
   end
+  return maxStart
+end
 
-  if lastStart > wCount - curMaxEntries + 1 then
-    lastStart = 1
+local function ClampStartEntry()
+  local maxStart = GetMaxStart()
+  if startEntry > maxStart then
+    startEntry = maxStart
   end
-
-  if startEntry > lastStart then
-    startEntry = lastStart
-  end
-
   if startEntry < 1 then
     startEntry = 1
   end
+end
+
+local function BuildScrollRows()
+  scrollRows = {}
+  local lastFromZip = nil
+
+  for _, namedata in ipairs(fullWidgetsList) do
+    local fromZip = namedata[2].fromZip
+    if lastFromZip == nil then
+      table.insert(scrollRows, { rowType = "section", label = GetSectionName(fromZip) })
+    elseif fromZip ~= lastFromZip then
+      table.insert(scrollRows, { rowType = "separator" })
+      table.insert(scrollRows, { rowType = "section", label = GetSectionName(fromZip) })
+    end
+    table.insert(scrollRows, { rowType = "widget", namedata = namedata })
+    lastFromZip = fromZip
+  end
+end
+
+local function UpdateListScroll()
+  local rowCount = #scrollRows
+  ClampStartEntry()
 
   widgetsList = {}
   local se = startEntry
-  local ee = se + curMaxEntries - 1
+  local ee = math.min(se + curMaxEntries - 1, rowCount)
   local n = 1
 
   for i = se, ee do
-    widgetsList[n], n = fullWidgetsList[i], n + 1
+    widgetsList[n], n = scrollRows[i], n + 1
   end
+end
+
+local function UpdateScrolledGeometry()
+  UpdateListScroll()
+  UpdateGeometry()
 end
 
 local function ScrollUp(step)
   startEntry = startEntry - step
-  UpdateListScroll()
+  UpdateScrolledGeometry()
 end
 
 local function ScrollDown(step)
   startEntry = startEntry + step
-  UpdateListScroll()
+  UpdateScrolledGeometry()
 end
 
 function widget:MouseWheel(up, value)
@@ -316,6 +368,8 @@ local function UpdateList()
   maxWidth = 0
   local uncount = 1
   widgetsList = {}
+  fullWidgetsList = {}
+  scrollRows = {}
 
   for name, data in pairs(widgetHandler.knownWidgets) do
     if name ~= myName then
@@ -342,7 +396,7 @@ local function UpdateList()
     end
   end
 
-  maxWidth = maxWidth / fontSize
+  maxWidth = math.max(maxWidth / fontSize, gl.GetTextWidth("Game Widgets"), gl.GetTextWidth("User Widgets"))
   local myCount = #fullWidgetsList
 
   if widgetHandler.knownCount ~= ((myCount + 1) + uncount) then
@@ -350,8 +404,8 @@ local function UpdateList()
   end
 
   table.sort(fullWidgetsList, SortWidgetListFunc)
-  UpdateListScroll()
-  UpdateGeometry()
+  BuildScrollRows()
+  UpdateScrolledGeometry()
 end
 
 function widget:ViewResize(viewSizeX, viewSizeY)
@@ -425,14 +479,14 @@ function widget:DrawScreen()
 
   -- draw the -/+ buttons
   if maxx - 10 < mx and mx < maxx and maxy < my and my < maxy + ((buttonFontSize + 7) * sizeMultiplier) then
-    tcol = "\255\031\031\031"
+    tcol = hoverTextColor
   end
 
   gl.Text(tcol .. "+", maxx, maxy + ((7 + bgPadding) * sizeMultiplier), buttonFontSize * sizeMultiplier, "or")
   tcol = WhiteStr
 
   if minx < mx and mx < minx + 10 and maxy < my and my < maxy + ((buttonFontSize + 7) * sizeMultiplier) then
-    tcol = "\255\031\031\031"
+    tcol = hoverTextColor
   end
 
   gl.Text(tcol .. "-", minx, maxy + ((7 + bgPadding) * sizeMultiplier), buttonFontSize * sizeMultiplier, "ol")
@@ -447,11 +501,11 @@ function widget:DrawScreen()
   for i, name in ipairs(buttons) do
     tcol = WhiteStr
 
-    if minx < mx and mx < maxx and miny - (buttonTop * sizeMultiplier) - i * (buttonHeight * sizeMultiplier) < my and my < miny - (buttonTop * sizeMultiplier) - (i - 1) * (buttonHeight * sizeMultiplier) then
-      tcol = "\255\031\031\031"
+    if IsOnButton(i, mx, my) then
+      tcol = hoverTextColor
     end
 
-    gl.Text(tcol .. buttons[i], (minx + maxx) / 2, miny - (buttonTop * sizeMultiplier) - (i * (buttonHeight * sizeMultiplier)), buttonFontSize * sizeMultiplier, "oc")
+    gl.Text(tcol .. buttons[i], (minx + maxx) / 2, miny - (buttonTop * sizeMultiplier) - (GetButtonLine(i) * (buttonHeight * sizeMultiplier)), buttonFontSize * sizeMultiplier, "oc")
   end
 
   -- draw the widgets
@@ -460,64 +514,66 @@ function widget:DrawScreen()
   local pointedName = (nd and nd[1]) or nil
   local posy = maxy - ((yStep + bgPadding) * sizeMultiplier)
   sby1 = posy + ((fontSize + fontSpace) * sizeMultiplier) * 0.5
-  local lastFromZip = nil  -- Tracks the source of the last widget
+  local sectionColor = "\255\180\220\255"
 
-  for _, namedata in ipairs(widgetsList) do
-    local name = namedata[1]
-    local data = namedata[2]
-    local color = ""
-    local pointed = pointedName == name
-    local order = widgetHandler.orderList[name]
-    local enabled = order and (order > 0)
-    local active = data.active
+  for _, row in ipairs(widgetsList) do
+    if row.rowType == "section" then
+      gl.Text(sectionColor .. row.label, midx, posy + (fontSize * sizeMultiplier) * 0.5, fontSize * sectionFontScale * sizeMultiplier, "vc")
+      posy = posy - (yStep * sizeMultiplier)
+    elseif row.rowType == "separator" then
+      DrawSeparator(minx, posy + ((fontSize + fontSpace) * sizeMultiplier) * 0.5, maxx, posy + ((fontSize + fontSpace) * sizeMultiplier) * 0.5)
+      posy = posy - (yStep * sizeMultiplier)
+    else
+      local namedata = row.namedata
+      local name = namedata[1]
+      local data = namedata[2]
+      local color = ""
+      local pointed = pointedName == name
+      local order = widgetHandler.orderList[name]
+      local enabled = order and (order > 0)
+      local active = data.active
 
-    -- Now you would check if you need to draw a separator
-    if lastFromZip ~= nil and data.fromZip ~= lastFromZip then
-      posy = posy - 5  -- Decrease posy to create a gap; adjust '20' as needed for bigger or smaller gaps
-      DrawSeparator(minx, posy+13.5, maxx-15, posy+13.5)
-      posy = posy - 5  -- Decrease posy to create a gap; adjust '20' as needed for bigger or smaller gaps
-    end
-    lastFromZip = data.fromZip
+      if pointed and not activescrollbar then
+        pointedY = posy
+        pointedEnabled = data.active
 
-    if pointed and not activescrollbar then
-      pointedY = posy
-      pointedEnabled = data.active
-
-      if not pagestepped and (lmb or mmb or rmb) then
-        color = WhiteStr
+        if not pagestepped and (lmb or mmb or rmb) then
+          color = WhiteStr
+        else
+          color = (active and "\255\128\255\128") or (enabled and "\255\255\255\128") or "\255\255\128\128"
+        end
       else
-        color = (active and "\255\128\255\128") or (enabled and "\255\255\255\128") or "\255\255\128\128"
+        color = (active and "\255\064\224\064") or (enabled and "\255\200\200\064") or "\255\224\064\064"
       end
-    else
-      color = (active and "\255\064\224\064") or (enabled and "\255\200\200\064") or "\255\224\064\064"
+
+      local tmpName
+
+      if data.fromZip then
+        -- FIXME: extra chars not counted in text length
+        tmpName = WhiteStr .. "*" .. color .. name .. WhiteStr .. "*"
+      else
+        tmpName = color .. name
+      end
+
+      gl.Text(color .. tmpName, midx, posy + (fontSize * sizeMultiplier) * 0.5, fontSize * sizeMultiplier, "vc")
+      posy = posy - (yStep * sizeMultiplier)
     end
-
-    local tmpName
-
-    if data.fromZip then
-      -- FIXME: extra chars not counted in text length
-      tmpName = WhiteStr .. "*" .. color .. name .. WhiteStr .. "*"
-    else
-      tmpName = color .. name
-    end
-
-    gl.Text(color .. tmpName, midx, posy + (fontSize * sizeMultiplier) * 0.5, fontSize * sizeMultiplier, "vc")
-    posy = posy - (yStep * sizeMultiplier)
   end
 
   -- scrollbar
-  if #widgetsList < #fullWidgetsList then
-    sby2 = posy + (yStep * sizeMultiplier) - (fontSpace * sizeMultiplier) * 0.5
+  if #widgetsList < #scrollRows then
+    sby2 = miny + (fontSpace * sizeMultiplier) * 0.5
     sbheight = sby1 - sby2
-    sbsize = sbheight * #widgetsList / #fullWidgetsList
-
-    if activescrollbar then
-      startEntry = math.max(0, math.min(math.floor(#fullWidgetsList * ((sby1 - sbsize) - (my - math.min(scrollbargrabpos, sbsize))) / sbheight + 0.5), #fullWidgetsList - curMaxEntries)) + 1
-    end
+    sbsize = sbheight * #widgetsList / #scrollRows
 
     local sizex = maxx - minx
     sbposx = minx + sizex + 1.0 + scrollbarOffset
-    sbposy = sby1 - sbsize - sbheight * (startEntry - 1) / #fullWidgetsList
+    local maxStart = GetMaxStart()
+    if maxStart > 1 then
+      sbposy = sby1 - sbsize - (sbheight - sbsize) * (startEntry - 1) / (maxStart - 1)
+    else
+      sbposy = sby1 - sbsize
+    end
     sbsizex = yStep * sizeMultiplier
     sbsizey = sbsize
     local scrollerPadding = 8 * sizeMultiplier
@@ -577,7 +633,9 @@ function widget:MousePress(x, y, button)
 
   if button == 1 then
     -- above a button
-    if minx < x and x < maxx and miny - (buttonTop * sizeMultiplier) - #buttons * (buttonHeight * sizeMultiplier) < y and y < miny - (buttonTop * sizeMultiplier) then return true end
+    for i, _ in ipairs(buttons) do
+      if IsOnButton(i, x, y) then return true end
+    end
     -- above the -/+ 
     if maxx - 10 < x and x < maxx and maxy + bgPadding < y and y < maxy + ((buttonFontSize + 7 + bgPadding) * sizeMultiplier) then return true end
     if minx < x and x < minx + 10 and maxy + bgPadding < y and y < maxy + ((buttonFontSize + 7 + bgPadding) * sizeMultiplier) then return true end
@@ -611,12 +669,12 @@ function widget:MousePress(x, y, button)
       return true
     elseif sbposx < x and x < sbposx + sbsizex and sby2 < y and y < sby2 + sbheight then
       if y > sbposy + sbsizey then
-        startEntry = math.max(1, math.min(startEntry - curMaxEntries, #fullWidgetsList - curMaxEntries + 1))
+        startEntry = math.max(1, math.min(startEntry - curMaxEntries, GetMaxStart()))
       elseif y < sbposy then
-        startEntry = math.max(1, math.min(startEntry + curMaxEntries, #fullWidgetsList - curMaxEntries + 1))
+        startEntry = math.max(1, math.min(startEntry + curMaxEntries, GetMaxStart()))
       end
 
-      UpdateListScroll()
+      UpdateScrolledGeometry()
       pagestepped = true
 
       return true
@@ -636,8 +694,20 @@ end
 
 function widget:MouseMove(x, y, dx, dy, button)
   if show and activescrollbar then
-    startEntry = math.max(0, math.min(math.floor((#fullWidgetsList * ((sby1 - sbsize) - (y - math.min(scrollbargrabpos, sbsize))) / sbheight) + 0.5), #fullWidgetsList - curMaxEntries)) + 1
-    UpdateListScroll()
+    local maxStart = GetMaxStart()
+    if maxStart > 1 and sbheight > sbsize then
+      local thumbY = y - math.min(scrollbargrabpos, sbsize)
+      local progress = ((sby1 - sbsize) - thumbY) / (sbheight - sbsize)
+      if progress < 0 then
+        progress = 0
+      elseif progress > 1 then
+        progress = 1
+      end
+      startEntry = math.floor(progress * (maxStart - 1) + 0.5) + 1
+    else
+      startEntry = 1
+    end
+    UpdateScrolledGeometry()
 
     return true
   end
@@ -668,8 +738,7 @@ function widget:MouseRelease(x, y, mb)
     if maxx - 10 < x and x < maxx and maxy + bgPadding < y and y < maxy + buttonFontSize + 7 + bgPadding then
       -- + button
       curMaxEntries = curMaxEntries + 1
-      UpdateListScroll()
-      UpdateGeometry()
+      UpdateScrolledGeometry()
       Spring.WarpMouse(x, maxy + yOffset)
 
       return -1
@@ -679,8 +748,7 @@ function widget:MouseRelease(x, y, mb)
       -- - button
       if curMaxEntries > minMaxEntries then
         curMaxEntries = curMaxEntries - 1
-        UpdateListScroll()
-        UpdateGeometry()
+        UpdateScrolledGeometry()
         Spring.WarpMouse(x, maxy + yOffset)
       end
 
@@ -692,7 +760,7 @@ function widget:MouseRelease(x, y, mb)
     local buttonID = nil
 
     for i, _ in ipairs(buttons) do
-      if minx < x and x < maxx and miny - (buttonTop * sizeMultiplier) - i * (buttonHeight * sizeMultiplier) < y and y < miny - (buttonTop * sizeMultiplier) - (i - 1) * (buttonHeight * sizeMultiplier) then
+      if IsOnButton(i, x, y) then
         buttonID = i
         break
       end
@@ -704,39 +772,7 @@ function widget:MouseRelease(x, y, mb)
       return -1
     end
 
-    -- if buttonID == 2 then
-    --   -- disable all widgets, but don"t reload
-    --   for _, namedata in ipairs(fullWidgetsList) do
-    --     widgetHandler:DisableWidget(namedata[1])
-    --   end
-
-    --   widgetHandler:SaveConfigData()
-
-    --   return -1
-    -- end
-
-    if buttonID == 3 then
-      -- tell the widget handler that we allow/disallow user widgets and reload
-      if widgetHandler.allowUserWidgets then
-        widgetHandler.__allowUserWidgets = false
-        Spring.Echo("Disallowed user widgets, reloading...")
-      else
-        widgetHandler.__allowUserWidgets = true
-        Spring.Echo("Allowed user widgets, reloading...")
-      end
-
-      Spring.SendCommands("luarules reloadluaui")
-
-      return -1
-    end
-
-    if buttonID == 4 then
-      Spring.SendCommands("luaui reset")
-
-      return -1
-    end
-
-    if buttonID == 5 then
+    if buttonID == 2 then
       Spring.SendCommands("luaui factoryreset")
 
       return -1
@@ -770,15 +806,20 @@ function widget:AboveLabel(x, y)
   if (x < minx) or (y < (miny + bordery)) or (x > maxx) or (y > (maxy - bordery)) then return nil end
   local count = #widgetsList
   if count < 1 then return nil end
-  local i = floor(1 + ((maxy - bordery) - y) / (yStep * sizeMultiplier))
 
-  if i < 1 then
-    i = 1
-  elseif i > count then
-    i = count
+  local posy = maxy - ((yStep + bgPadding) * sizeMultiplier)
+  for _, row in ipairs(widgetsList) do
+    if row.rowType == "widget" then
+      local yn = posy - ((fontSpace * 0.5 + 1) * sizeMultiplier)
+      local yp = posy + ((fontSize + fontSpace * 0.5 + 1) * sizeMultiplier)
+      if y >= yn and y <= yp then
+        return row.namedata
+      end
+    end
+    posy = posy - (yStep * sizeMultiplier)
   end
 
-  return widgetsList[i]
+  return nil
 end
 
 function widget:IsAbove(x, y)
@@ -856,9 +897,8 @@ function widget:TextCommand(s)
   end
 
   if n == 1 and token[1] == "factoryreset" then
-    -- tell the widget handler to disallow user widgets and reload with a blank config
-    widgetHandler.__blankOutConfig = true
-    widgetHandler.__allowUserWidgets = false
+    -- tell the widget handler to reload with a blank config
+    widgetHandler.blankOutConfig = true
     Spring.SendCommands("luarules reloadluaui")
   end
 
@@ -866,6 +906,7 @@ function widget:TextCommand(s)
     showApiWidgets = not showApiWidgets
     widgetHandler.knownChanged = not widgetHandler.knownChanged
     fullWidgetsList = {}
+    scrollRows = {}
     UpdateList()
 
     if showApiWidgets then

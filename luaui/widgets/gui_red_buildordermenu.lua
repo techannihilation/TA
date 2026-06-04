@@ -21,12 +21,22 @@ local SpGetCmdDescIndex = Spring.GetCmdDescIndex
 local SpGetModKeyState = Spring.GetModKeyState
 
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-local update = 4.0
 
 local buttonTexture	= LUAUI_DIRNAME.."Images/button.png"
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 
+local textureColorDisabled = {0.45,0.45,0.45,0.98}
+local textureColorOrderButton = {1,1,1,0.95}
+local textureColorOrderIcon = {1,1,1,0.99}
+local textureColorBuild = {1,1,1,0.98}
+local stateColorRed = {0.8,0,0,1}
+local stateColorYellow = {0.8,0.8,0,1}
+local stateColorGreen = {0,0.8,0,1}
+local stateColorGray = {0.8,0.8,0.8,1}
+
 local oldUnitpics = true
+-- Text drawing is expensive in Red UI; keep build icons texture-only by default.
+local drawBuildHotkeys = false
 local OtaIconExist = {}
 
 for i=1,#UnitDefs do
@@ -111,6 +121,50 @@ local sGetSelectedUnitsCount = Spring.GetSelectedUnitsCount
 local sGetActiveCommand = Spring.GetActiveCommand
 local sGetActiveCmdDescs = Spring.GetActiveCmdDescs
 local ssub = string.sub
+local mfloor = math.floor
+
+local SelectedUnitsCount = 0
+local currentActiveCommandName = nil
+local emptyCommands = {}
+local UpdateGrid
+
+local function ActivateCommandLeft(mx,my,self)
+	local cmdID = self.cmdID
+	if (not cmdID) then return end
+	local cmdIndex = SpGetCmdDescIndex(cmdID)
+	if (cmdIndex) then
+		SpSetActiveCommand(cmdIndex,1,true,false,SpGetModKeyState())
+	end
+end
+
+local function ActivateCommandRight(mx,my,self)
+	local cmdID = self.cmdID
+	if (not cmdID) then return end
+	local cmdIndex = SpGetCmdDescIndex(cmdID)
+	if (cmdIndex) then
+		SpSetActiveCommand(cmdIndex,3,false,true,SpGetModKeyState())
+	end
+end
+
+local function PreviousPage(mx,my,self)
+	local g = self.grid
+	if (not g) then return end
+	g.page = g.page - 1
+	if (g.page < 1) then
+		g.page = g.pagecount
+	end
+	UpdateGrid(g,g.currentcmds,g.currentordertype)
+end
+
+local function NextPage(mx,my,self)
+	local g = self.grid
+	if (not g) then return end
+	g.page = g.page + 1
+	if (g.page > g.pagecount) then
+		g.page = 1
+	end
+	UpdateGrid(g,g.currentcmds,g.currentordertype)
+end
 
 local function IncludeRedUIFrameworkFunctions()
 	New = WG.Red.New(widget)
@@ -152,7 +206,6 @@ local function AutoResizeObjects() --autoresize v2
 	if ((lx ~= vsx) or (ly ~= vsy)) then
 		local objects = GetWidgetObjects(widget)
 		local scale = vsy/ly
-		local skippedobjects = {}
 		for i=1,#objects do
 			local o = objects[i]
 			local adjust = 0
@@ -231,14 +284,16 @@ WG.hoverID = nil
 	local icon = {"rectangle",
 		px=0,py=0,
 		sx=r.isx,sy=r.isy,
-		color=r.cbuttonbackground,
-		border={0,0,0,0},
 		
 		options="n", --disable colorcodes
 		captioncolor=r.ctext,
 		
 		overridecursor = true,
 		overrideclick = {3},
+		mouseclick = {
+			{1,ActivateCommandLeft},
+			{3,ActivateCommandRight},
+		},
 		
 		mouseheld={
 			{1,function(mx,my,self)
@@ -259,13 +314,10 @@ WG.hoverID = nil
 		end,
 		
 		onupdate=function(self)
-			local _,_,_,curcmdname = sGetActiveCommand()
-			if (curcmdname ~= nil) then
-				if (self.cmdname == curcmdname) then
-					selecthighlight.px = self.px
-					selecthighlight.py = self.py
-					selecthighlight.active = nil
-				end
+			if ((currentActiveCommandName ~= nil) and (self.cmdname == currentActiveCommandName)) then
+				selecthighlight.px = self.px
+				selecthighlight.py = self.py
+				selecthighlight.active = nil
 			end
 		end,
 		
@@ -325,7 +377,7 @@ WG.hoverID = nil
 	--tooltip
 	background.mouseover = function(mx,my,self) SetTooltip(r.tooltip.background) end
 	
-	return {
+	local grid = {
 		["background"] = background,
 		["icons"] = icons,
 		["backward"] = backward,
@@ -334,170 +386,168 @@ WG.hoverID = nil
 		["staterectangles"] = staterectangles,
 		["staterect"] = staterect,
 	}
+	backward.grid = grid
+	forward.grid = grid
+	backward.mouseclick = {{1,PreviousPage}}
+	forward.mouseclick = {{1,NextPage}}
+	return grid
 end
 
-local function UpdateGrid(g,cmds,ordertype)
-	if (#cmds==0) then
+UpdateGrid = function(g,cmds,ordertype)
+	local cmdCount = #cmds
+	g.currentcmds = cmds
+	g.currentordertype = ordertype
+	if (cmdCount==0) then
 		g.background.active = false
 	else
 		g.background.active = nil
 	end
 
-	local curpage = g.page
+	local curpage = g.page or 1
 	local icons = g.icons
-	local page = {{}}
-	
-	for i=1,#cmds do
-		local index = i-(#page-1)*#icons
-		page[#page][index] = cmds[i]
-		if ((i == (#icons*#page)) and (i~=#cmds)) then
-			page[#page+1] = {}
-		end
+	local iconCount = #icons
+	local pagecount = 1
+	if (cmdCount > 0) then
+		pagecount = mfloor((cmdCount - 1) / iconCount) + 1
 	end
-	g.pagecount = #page
+	g.pagecount = pagecount
 	
-	if (curpage > g.pagecount) then
+	if (curpage > pagecount) then
 		curpage = 1
+	elseif (curpage < 1) then
+		curpage = pagecount
+	end
+	g.page = curpage
+	
+	local firstCmdIndex = (curpage - 1) * iconCount + 1
+	local visibleIconCount = cmdCount - firstCmdIndex + 1
+	if (visibleIconCount > iconCount) then
+		visibleIconCount = iconCount
+	elseif (visibleIconCount < 0) then
+		visibleIconCount = 0
+	end
+	for i=visibleIconCount+1,iconCount do
+		icons[i].active = false --deactivate
 	end
 	
-	local iconsleft = (#icons-#page[curpage])
-	if (iconsleft > 0) then
-		for i=iconsleft+#page[curpage],#page[curpage]+1,-1 do
-			icons[i].active = false --deactivate
-		end
-	end
-	
-	for i=1,#g.staterectangles do
-		g.staterectangles[i].active = false
+	local staterectangles = g.staterectangles
+	for i=1,#staterectangles do
+		staterectangles[i].active = false
 	end
 	local usedstaterectangles = 0
 	
-	for i=1,#page[curpage] do
-		local cmd = page[curpage][i]
+	for i=1,visibleIconCount do
+		local cmd = cmds[firstCmdIndex + i - 1]
 		local icon = icons[i]
+		local params = cmd.params or emptyCommands
 		icon.tooltip = cmd.tooltip
 		icon.active = nil --activate
 		icon.cmdname = cmd.name
 		icon.cmdID = cmd.id
-		icon.texture = buttonTexture
-		if (cmd.texture) then
-			if (cmd.texture ~= "") then
-				icon.texture = cmd.texture
-			end
+		if (cmd.texture and cmd.texture ~= "") then
+			icon.texture = cmd.texture
+		else
+			icon.texture = buttonTexture
 		end
 
 		if (cmd.disabled) then
-			icon.texturecolor = {0.45,0.45,0.45,0.98}
+			icon.texturecolor = textureColorDisabled
 		else
 			if (ordertype ~= 1) then
 				if icon.texture == buttonTexture then
-					icon.texturecolor = {1,1,1,0.95}
+					icon.texturecolor = textureColorOrderButton
 				else
-					icon.texturecolor = {1,1,1,0.99}
+					icon.texturecolor = textureColorOrderIcon
 				end
 			else
-				icon.texturecolor = {1,1,1,0.98}
+				icon.texturecolor = textureColorBuild
 			end
 		end
 		
-		icon.mouseclick = {
-			{1,function(mx,my,self)
-				SpSetActiveCommand(SpGetCmdDescIndex(cmd.id),1,true,false,SpGetModKeyState())
-			end},
-			{3,function(mx,my,self)
-				SpSetActiveCommand(SpGetCmdDescIndex(cmd.id),3,false,true,SpGetModKeyState())
-			end},
-		}
-		
-		cmd.params[1] = convertToNumber(cmd.params[1])
 		icon.maxfontsize = nil
 		if (ordertype == 1) then --build orders
-			if oldUnitpics and UnitDefs[cmd.id*-1] ~= nil and OtaIconExist[cmd.id*-1] then
-				icon.texture = OtaIconExist[cmd.id*-1]
+			local firstParam = convertToNumber(params[1])
+			local buildDefID = cmd.id * -1
+			local otaIcon = OtaIconExist[buildDefID]
+			if oldUnitpics and UnitDefs[buildDefID] ~= nil and otaIcon then
+				icon.texture = otaIcon
 			else
-				icon.texture = "#"..cmd.id*-1
+				icon.texture = "#"..buildDefID
 			end
-			if (cmd.params[1]) then
-				icon.caption = "\n\n"..cmd.params[1].."          "
+			if (drawBuildHotkeys and firstParam) then
+				icon.caption = "\n\n"..firstParam.."          "
 			else
 				icon.caption = nil
 			end
 		else
 			if (cmd.type == 5) then --state cmds (fire at will, etc)
-				if cmd.params[1] then
-					local label, strippedActionPrefix = stripCommandActionPrefix(cmd.params[cmd.params[1]+2] or cmd.name)
+				local firstParam = convertToNumber(params[1])
+				if firstParam then
+					local label, strippedActionPrefix = stripCommandActionPrefix(params[firstParam+2] or cmd.name)
 					icon.caption = " "..label.." "
 					if strippedActionPrefix then
 						icon.maxfontsize = icon.sy * 0.35
 					end
 				
-					local statecount = #cmd.params-1 --number of states for the cmd
-					local curstate = cmd.params[1]+1
+					local statecount = #params-1 --number of states for the cmd
+					local curstate = firstParam+1
+					local spread = 2
+					local stateRectWidth = nil
+					local stateRectHeight = nil
+					if (statecount > 0) then
+						stateRectWidth = (icon.sx-(spread*(statecount+1)))/statecount
+						stateRectHeight = icon.sy/7
+					end
 				
 					for i=1,statecount do
 						usedstaterectangles = usedstaterectangles + 1
-						local s = g.staterectangles[usedstaterectangles]
+						local s = staterectangles[usedstaterectangles]
 						if (s == nil) then
 							s = New(Copy(g.staterect,true))
-							g.staterectangles[usedstaterectangles] = s
+							staterectangles[usedstaterectangles] = s
 							table.insert(g.background.movableslaves,s)
 						end
 						s.active = nil --activate
 						
-						local spread = 2
-						s.sx = (icon.sx-(spread*(statecount-1+2)))/statecount
-						s.sy = icon.sy/7
+						s.sx = stateRectWidth
+						s.sy = stateRectHeight
 						s.px = icon.px+spread + (s.sx+spread)*(i-1)
 						s.py = icon.py + icon.sy - s.sy -spread
 						
 						if (i == curstate) then
 							if (statecount < 4) then
 								if (i == 1) then
-									s.color = {0.8,0,0,1}
+									s.color = stateColorRed
 								elseif (i == 2) then
 									if (statecount == 3) then
-										s.color = {0.8,0.8,0,1}
+										s.color = stateColorYellow
 									else
-										s.color = {0,0.8,0,1}
+										s.color = stateColorGreen
 									end
 								elseif (i == 3) then
-									s.color = {0,0.8,0,1}
+									s.color = stateColorGreen
 								end
 							else
-								s.color = {0.8,0.8,0.8,1}
+								s.color = stateColorGray
 							end
 						else
-						s.color = nil
+							s.color = nil
 						end
 					end
 				else 
 					Spring.Echo("send info to nix ", cmd, cmd.name)
 				end
 			else
-				icon.caption = " "..cmd.name.." "
+				if (icon.texture == buttonTexture) then
+					icon.caption = " "..cmd.name.." "
+				else
+					icon.caption = nil
+				end
 			end
 		end
 	end
 	
-	if (#page>1) then
-		g.forward.mouseclick={
-			{1,function(mx,my,self)
-				g.page = g.page + 1
-				if (g.page > g.pagecount) then
-					g.page = 1
-				end
-				UpdateGrid(g,cmds,ordertype)
-			end},
-		}
-		g.backward.mouseclick={
-			{1,function(mx,my,self)
-				g.page = g.page - 1
-				if (g.page < 1) then
-					g.page = g.pagecount
-				end
-				UpdateGrid(g,cmds,ordertype)
-			end},
-		}
+	if (pagecount>1) then
 		g.backward.active = nil --activate
 		g.forward.active = nil
 		g.indicator.active = nil
@@ -512,11 +562,19 @@ end
 function widget:TextCommand(command)
 	if (string.find(command, "otaicons") == 1 and string.len(command) == 8) then
 		oldUnitpics = not oldUnitpics
-		Spring.ForceLayoutUpdate()
+		SpForceLayoutUpdate()
 		if oldUnitpics then
 			Spring.Echo("Using OTA unit icons in buildmenu")
 		else
 			Spring.Echo("Using TechA unit icons in buildmenu")
+		end
+	elseif (command == "buildhotkeys") then
+		drawBuildHotkeys = not drawBuildHotkeys
+		SpForceLayoutUpdate()
+		if drawBuildHotkeys then
+			Spring.Echo("Showing build hotkeys in buildmenu")
+		else
+			Spring.Echo("Hiding build hotkeys in buildmenu")
 		end
 	end
 end
@@ -549,6 +607,8 @@ end
 local function onWidgetUpdate() --function widget:Update()
 	AutoResizeObjects()
 	SelectedUnitsCount = sGetSelectedUnitsCount()
+	local _,_,_,curcmdname = sGetActiveCommand()
+	currentActiveCommandName = curcmdname
 end
 
 --save/load stuff
@@ -561,7 +621,7 @@ function widget:GetConfigData() --save config
 		Config.buildmenu.py = buildmenu.background.py * unscale
 		Config.ordermenu.px = ordermenu.background.px * unscale
 		Config.ordermenu.py = ordermenu.background.py * unscale
-		return {Config=Config, oldUnitpics=oldUnitpics}
+		return {Config=Config, oldUnitpics=oldUnitpics, drawBuildHotkeys=drawBuildHotkeys}
 	end
 end
 function widget:SetConfigData(data) --load config
@@ -572,6 +632,9 @@ function widget:SetConfigData(data) --load config
 		Config.ordermenu.py = data.Config.ordermenu.py
 		if (data.oldUnitpics ~= nil) then
 			oldUnitpics = data.oldUnitpics
+		end
+		if (data.drawBuildHotkeys ~= nil) then
+			drawBuildHotkeys = data.drawBuildHotkeys
 		end
 	end
 end
@@ -594,54 +657,53 @@ function widget:Shutdown()
 		SpForceLayoutUpdate()
 	end
 end
+local hiddencmds = {
+	[76] = true, --load units clone
+	[65] = true, --selfd
+	[9] = true, --gatherwait
+	[8] = true, --squadwait
+	[7] = true, --deathwait
+	[6] = true, --timewait
+}
 local function GetCommands()
-	local hiddencmds = {
-		[76] = true, --load units clone
-		[65] = true, --selfd
-		[9] = true, --gatherwait
-		[8] = true, --squadwait
-		[7] = true, --deathwait
-		[6] = true, --timewait
-	}
 	local buildcmds = {}
-	local statecmds = {}
 	local othercmds = {}
+	local othercmdsPending = {}
 	local buildcmdscount = 0
-	local statecmdscount = 0
 	local othercmdscount = 0
-	for index,cmd in pairs(sGetActiveCmdDescs()) do
+	local othercmdsPendingCount = 0
+	local activeCmdDescs = sGetActiveCmdDescs()
+	for i=1,#activeCmdDescs do
+		local cmd = activeCmdDescs[i]
 		if (type(cmd) == "table") then
+			local cmdtype = cmd.type
+			local cmdaction = cmd.action
 			if (
 			(not hiddencmds[cmd.id]) and
-			(cmd.action ~= nil) and
+			(cmdaction ~= nil) and
 			--(not cmd.disabled) and
-			(cmd.type ~= 21) and
-			(cmd.type ~= 18) and
-			(cmd.type ~= 17)
+			(cmdtype ~= 21) and
+			(cmdtype ~= 18) and
+			(cmdtype ~= 17)
 			) then
-				if ((cmd.type == 20) --build building
-				or (ssub(cmd.action,1,10) == "buildunit_")) then
+				if ((cmdtype == 20) --build building
+				or (ssub(cmdaction,1,10) == "buildunit_")) then
 					buildcmdscount = buildcmdscount + 1
 					buildcmds[buildcmdscount] = cmd
-				elseif (cmd.type == 5) then
-					statecmdscount = statecmdscount + 1
-					statecmds[statecmdscount] = cmd
-				else
+				elseif (cmdtype == 5) then
 					othercmdscount = othercmdscount + 1
 					othercmds[othercmdscount] = cmd
+				else
+					othercmdsPendingCount = othercmdsPendingCount + 1
+					othercmdsPending[othercmdsPendingCount] = cmd
 				end
 			end
 		end
 	end
-	local tempcmds = {}
-	for i=1,statecmdscount do
-		tempcmds[i] = statecmds[i]
+	for i=1,othercmdsPendingCount do
+		othercmdscount = othercmdscount + 1
+		othercmds[othercmdscount] = othercmdsPending[i]
 	end
-	for i=1,othercmdscount do
-		tempcmds[i+statecmdscount] = othercmds[i]
-	end
-	othercmdscount = othercmdscount + statecmdscount
-	othercmds = tempcmds
 	
 	return buildcmds,othercmds
 end
@@ -685,7 +747,7 @@ function widget:GameFrame(frame)
   if oldUnitpics ~= WG['OtaIcons'] then
   	--Spring.Echo("OtaIcons toggle ", WG['OtaIcons'])
   	oldUnitpics = WG['OtaIcons']
-    Spring.ForceLayoutUpdate()
+    SpForceLayoutUpdate()
   end
 
   if frame%9==0 then
@@ -722,7 +784,7 @@ function widget:Update(dt)
 	end
 	if (updatehax2) then
 		if (SelectedUnitsCount == 0) then
-			onNewCommands({},{}) --flush
+			onNewCommands(emptyCommands,emptyCommands) --flush
 			updatehax2 = false
 		end
 	end
