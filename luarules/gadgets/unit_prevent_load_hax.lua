@@ -24,7 +24,7 @@ local GiveOrderToUnit = Spring.GiveOrderToUnit
 local GetUnitPosition = Spring.GetUnitPosition
 local GetUnitSeparation = Spring.GetUnitSeparation
 local GetGameFrame = Spring.GetGameFrame
-local GetCommandQueue = Spring.GetCommandQueue
+local GetUnitCommands = Spring.GetUnitCommands
 local GetUnitTeam = Spring.GetUnitTeam
 local CMD_LOAD_UNITS = CMD.LOAD_UNITS
 local CMD_INSERT = CMD.INSERT
@@ -53,7 +53,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
      if (CMD_LOAD_UNITS == cmdParams[2]) then
        return gadget:AllowCommand(unitID, unitDefID, teamID, CMD_LOAD_UNITS, {cmdParams[4], cmdParams[5], cmdParams[6], cmdParams[7]}, cmdOptions, "nr", false)
      end
-     local cQueue = GetCommandQueue(unitID,-1)
+     local cQueue = GetUnitCommands(unitID,-1)
      if (#cQueue > 0) then
        for _,command in ipairs(cQueue) do
          if (command.id == CMD_LOAD_UNITS) and (#command.params == 1) then
@@ -66,7 +66,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
      if watchList[unitID] then
        return false
      end
-     local cQueue = GetCommandQueue(unitID,-1)
+     local cQueue = GetUnitCommands(unitID,-1)
      if (#cQueue > 0) then
        for _,command in ipairs(cQueue) do
          if (command.id == CMD_LOAD_UNITS) and (#command.params == 1) then

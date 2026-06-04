@@ -76,8 +76,3 @@ Spring.SetConfigInt("MaxNanoParticles", 0)
 
 Spring.SetConfigInt("MiniMapDrawProjectiles", 0)
 Spring.SetConfigInt("UnitIconsAsUI", 0)
-
--- These config ints control some multithreading functionality, and are now set to their enabled state for performance
-Spring.SetConfigInt("AnimationMT", 1)
-Spring.SetConfigInt("UpdateBoundingVolumeMT", 1)
-Spring.SetConfigInt("UpdateWeaponVectorsMT", 1)

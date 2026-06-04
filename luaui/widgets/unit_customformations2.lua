@@ -145,7 +145,7 @@ local spGetSelectedUnitsCount = Spring.GetSelectedUnitsCount
 local spGetSelectedUnits = Spring.GetSelectedUnits
 local spGiveOrder = Spring.GiveOrder
 local spGetUnitIsTransporting = Spring.GetUnitIsTransporting
-local spGetCommandQueue = Spring.GetCommandQueue
+local spGetUnitCommands = Spring.GetUnitCommands
 local spGetUnitPosition = Spring.GetUnitPosition
 local spTraceScreenRay = Spring.TraceScreenRay
 local spGetGroundHeight = Spring.GetGroundHeight
@@ -192,7 +192,7 @@ end
 
 local function GetUnitFinalPosition(uID)
 	local ux, uy, uz = spGetUnitPosition(uID)
-	local cmds = spGetCommandQueue(uID, -1)
+	local cmds = spGetUnitCommands(uID, -1)
 
 	for i = #cmds, 1, -1 do
 		local cmd = cmds[i]
