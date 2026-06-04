@@ -44,12 +44,31 @@ end
 --helper functions
 local type = type
 
+local function updateTextBoundsCache(o)
+	local caption = o.caption
+	local fontsize = o.fontsize
+	if ((o._boundsCaption ~= caption) or (o._boundsFontSize ~= fontsize)) then
+		o._boundsCaption = caption
+		o._boundsFontSize = fontsize
+		if (caption and fontsize) then
+			local linecount = getLineCount(caption)
+			o._boundsWidth = glGetTextWidth(caption)*fontsize
+			o._boundsHeight = linecount*fontsize
+		else
+			o._boundsWidth = 0
+			o._boundsHeight = 0
+		end
+	end
+end
+
 local function getTextWidth(o)
-	return glGetTextWidth(o.caption)*o.fontsize
+	updateTextBoundsCache(o)
+	return o._boundsWidth
 end
 
 local function getTextHeight(o)
-	return getLineCount(o.caption)*o.fontsize
+	updateTextBoundsCache(o)
+	return o._boundsHeight
 end
 
 local function isInRect(x,y,px,py,sx,sy)
@@ -81,6 +100,14 @@ end
 
 
 --Objects
+local function isVisibleColor(c, alpha)
+	return c and c[4] ~= 0 and ((alpha == nil) or (alpha > 0))
+end
+
+local function isVisibleTexture(texture, c, alpha)
+	return texture and ((c == nil) or (c[4] ~= 0)) and ((alpha == nil) or (alpha > 0))
+end
+
 local F = {
 [1] = function(o) --rectangle
 	if (o.draw == false) then
@@ -96,47 +123,62 @@ local F = {
 	local px,py,sx,sy = o.px,o.py,o.sx,o.sy	
 	
 	local alphamult = o.alphamult
+	local hasColor = isVisibleColor(color,alphamult)
+	local hasTexture = isVisibleTexture(texture,texturecolor,alphamult)
+	local hasCaption = o.caption and ((captioncolor == nil) or (captioncolor[4] ~= 0)) and ((alphamult == nil) or (alphamult > 0))
+	local hasBorder = isVisibleColor(border,alphamult)
+	if (not hasColor and not hasTexture and not hasCaption and not hasBorder) then
+		return
+	end
 	
-	if (color and color[4] ~= 0) then
+	if (hasColor) then
 		Rect(px,py,sx,sy,color,alphamult)
 	end
 	
-	if (texture) then
+	if (hasTexture) then
 		TexRect(px,py,sx,sy,texture,texturecolor,alphamult)
 	end
 	
-	if (o.caption) then
+	if (hasCaption) then
 		local text = o.caption
+		local drawCaption = true
 		if ((o._captionText ~= text) or (o._captionSx ~= sx) or (o._captionSy ~= sy) or (o._captionMaxFontSize ~= o.maxfontsize)) then
 			local width = glGetTextWidth(text)
-			local linecount = getLineCount(text)
-			local fontsize = sx/width
-			local height = linecount*fontsize
-			local offsetx = 0
-			local offsety = 0
-			if (height > sy) then
-				fontsize = sy/linecount
-				offsetx = (sx - width*fontsize) /2 --center
+			if (width <= 0) then
+				drawCaption = false
+				o._captionText = nil
 			else
-				offsety = (sy - height) /2 --center
+				local linecount = getLineCount(text)
+				local fontsize = sx/width
+				local height = linecount*fontsize
+				local offsetx = 0
+				local offsety = 0
+				if (height > sy) then
+					fontsize = sy/linecount
+					offsetx = (sx - width*fontsize) /2 --center
+				else
+					offsety = (sy - height) /2 --center
+				end
+				if (o.maxfontsize and fontsize > o.maxfontsize) then
+					fontsize = o.maxfontsize
+					offsetx = (sx - width*fontsize) /2
+					offsety = (sy - linecount*fontsize) /2
+				end
+				o._captionText = text
+				o._captionSx = sx
+				o._captionSy = sy
+				o._captionMaxFontSize = o.maxfontsize
+				o._captionOffsetX = offsetx
+				o._captionOffsetY = offsety
+				o.autofontsize = fontsize
 			end
-			if (o.maxfontsize and fontsize > o.maxfontsize) then
-				fontsize = o.maxfontsize
-				offsetx = (sx - width*fontsize) /2
-				offsety = (sy - linecount*fontsize) /2
-			end
-			o._captionText = text
-			o._captionSx = sx
-			o._captionSy = sy
-			o._captionMaxFontSize = o.maxfontsize
-			o._captionOffsetX = offsetx
-			o._captionOffsetY = offsety
-			o.autofontsize = fontsize
 		end
-		Text(px+o._captionOffsetX,py+o._captionOffsetY,o.autofontsize,text,o.options,captioncolor,alphamult)
+		if (drawCaption and o.autofontsize) then
+			Text(px+o._captionOffsetX,py+o._captionOffsetY,o.autofontsize,text,o.options,captioncolor,alphamult)
+		end
 	end
 	
-	if (border and border[4] ~= 0) then --todo: border styles
+	if (hasBorder) then --todo: border styles
 		Border(px,py,sx,sy,o.borderwidth,border,alphamult)
 	end
 end,
@@ -150,11 +192,15 @@ end,
 	local captioncolor = o.captioncolor
 	
 	local alphamult = o.alphamult
+	local drawcolor = color or captioncolor
+	if ((drawcolor and drawcolor[4] == 0) or (alphamult and alphamult <= 0)) then
+		return
+	end
 	
 	local px,py = o.px,o.py	
 	local fontsize = o.fontsize
 	
-	Text(px,py,fontsize,o.caption,o.options,color or captioncolor,alphamult)
+	Text(px,py,fontsize,o.caption,o.options,drawcolor,alphamult)
 end,
 
 [3] = function(o) --area
@@ -571,6 +617,7 @@ end
 
 local hookedtodrawing = false
 local fc = 0 --framecount
+local deletionLists = {}
 function widget:Update()
 
   
@@ -629,14 +676,20 @@ function widget:Update()
 			end
 			--
 			
-			local dellst = {}
+			local dellst = deletionLists[j]
+			if (dellst == nil) then
+				dellst = {}
+				deletionLists[j] = dellst
+			end
+			local dellstCount = 0
 			local objlst = wl[j]
 			
 			for i=1,#objlst do
 				local o = objlst[i]
 				o.tempactive = nil
 				if (o.scheduledfordeletion) then
-					dellst[#dellst+1] = i
+					dellstCount = dellstCount + 1
+					dellst[dellstCount] = i
 				else
 					if (o.active ~= false) then
 						o.notfirstprocessing = true
@@ -678,8 +731,9 @@ function widget:Update()
 				end
 			end
 			
-			for i=1,#dellst do
+			for i=dellstCount,1,-1 do
 				table.remove(objlst,dellst[i])
+				dellst[i] = nil
 			end
 		end
 	end

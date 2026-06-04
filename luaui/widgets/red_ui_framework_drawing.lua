@@ -58,6 +58,7 @@ local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
 local GL_PROJECTION = GL.PROJECTION
 local GL_MODELVIEW = GL.MODELVIEW
 local textOptionsCache = {}
+local backgroundOpacityFallback = {0,0,0,5}
 
 local function Color(c)
 	glColor(c[1],c[2],c[3],c[4])
@@ -113,7 +114,7 @@ end
 local function Rect(px,py,sx,sy,c,alpha)
 	if (c) then
 		if c[4] == 0.54321 then
-			glColor(WG["background_opacity_custom"] or {0,0,0,5})
+			glColor(WG["background_opacity_custom"] or backgroundOpacityFallback)
 		else
 			glColor(c[1],c[2],c[3],alpha and (c[4]*alpha) or c[4])
 		end
