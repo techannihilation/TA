@@ -91,15 +91,23 @@ local buttonTop = 40 -- offset between top of buttons and bottom of widget
 local sectionFontScale = 1.2
 local hoverTextColor = "\255\255\215\064"
 
+local function GetButtonLine(buttonID)
+  if buttonID == 2 then
+    return buttonID + 1
+  end
+  return buttonID
+end
+
 local function GetButtonBounds(buttonID)
   local label = buttons[buttonID]
   if not label then
     return nil
   end
+  local buttonLine = GetButtonLine(buttonID)
   local width = (gl.GetTextWidth(label) * buttonFontSize * sizeMultiplier) + (12 * sizeMultiplier)
   local centerX = (minx + maxx) * 0.5
-  local y1 = miny - (buttonTop * sizeMultiplier) - (buttonID * (buttonHeight * sizeMultiplier))
-  local y2 = miny - (buttonTop * sizeMultiplier) - ((buttonID - 1) * (buttonHeight * sizeMultiplier))
+  local y1 = miny - (buttonTop * sizeMultiplier) - (buttonLine * (buttonHeight * sizeMultiplier))
+  local y2 = miny - (buttonTop * sizeMultiplier) - ((buttonLine - 1) * (buttonHeight * sizeMultiplier))
   return centerX - (width * 0.5), y1, centerX + (width * 0.5), y2
 end
 
@@ -497,7 +505,7 @@ function widget:DrawScreen()
       tcol = hoverTextColor
     end
 
-    gl.Text(tcol .. buttons[i], (minx + maxx) / 2, miny - (buttonTop * sizeMultiplier) - (i * (buttonHeight * sizeMultiplier)), buttonFontSize * sizeMultiplier, "oc")
+    gl.Text(tcol .. buttons[i], (minx + maxx) / 2, miny - (buttonTop * sizeMultiplier) - (GetButtonLine(i) * (buttonHeight * sizeMultiplier)), buttonFontSize * sizeMultiplier, "oc")
   end
 
   -- draw the widgets
