@@ -97,7 +97,7 @@ local F = {
 	
 	local alphamult = o.alphamult
 	
-	if (color) then
+	if (color and color[4] ~= 0) then
 		Rect(px,py,sx,sy,color,alphamult)
 	end
 	
@@ -106,28 +106,37 @@ local F = {
 	end
 	
 	if (o.caption) then
-		local px2,py2 = px,py
 		local text = o.caption
-		local width = glGetTextWidth(text)
-		local linecount = getLineCount(text)
-		local fontsize = sx/width
-		local height = linecount*fontsize
-		if (height > sy) then
-			fontsize = sy/linecount
-			px2 = px2 + (sx - width*fontsize) /2 --center
-		else
-			py2 = py2 + (sy - height) /2 --center
+		if ((o._captionText ~= text) or (o._captionSx ~= sx) or (o._captionSy ~= sy) or (o._captionMaxFontSize ~= o.maxfontsize)) then
+			local width = glGetTextWidth(text)
+			local linecount = getLineCount(text)
+			local fontsize = sx/width
+			local height = linecount*fontsize
+			local offsetx = 0
+			local offsety = 0
+			if (height > sy) then
+				fontsize = sy/linecount
+				offsetx = (sx - width*fontsize) /2 --center
+			else
+				offsety = (sy - height) /2 --center
+			end
+			if (o.maxfontsize and fontsize > o.maxfontsize) then
+				fontsize = o.maxfontsize
+				offsetx = (sx - width*fontsize) /2
+				offsety = (sy - linecount*fontsize) /2
+			end
+			o._captionText = text
+			o._captionSx = sx
+			o._captionSy = sy
+			o._captionMaxFontSize = o.maxfontsize
+			o._captionOffsetX = offsetx
+			o._captionOffsetY = offsety
+			o.autofontsize = fontsize
 		end
-		if (o.maxfontsize and fontsize > o.maxfontsize) then
-			fontsize = o.maxfontsize
-			px2 = px + (sx - width*fontsize) /2
-			py2 = py + (sy - linecount*fontsize) /2
-		end
-		Text(px2,py2,fontsize,text,o.options,captioncolor,alphamult)
-		o.autofontsize = fontsize
+		Text(px+o._captionOffsetX,py+o._captionOffsetY,o.autofontsize,text,o.options,captioncolor,alphamult)
 	end
 	
-	if (border) then --todo: border styles
+	if (border and border[4] ~= 0) then --todo: border styles
 		Border(px,py,sx,sy,o.borderwidth,border,alphamult)
 	end
 end,
@@ -660,7 +669,11 @@ function widget:Update()
 						if (ro.onupdate) then
 							ro.onupdate(ro)
 						end
-						processMouseEvents(ro)
+						if (ro.movable or ro.mousenotover or ro.overridecursor or ro.overrideclick
+						or ro.overridewheel or ro.mouseover or ro.mouseclick or ro.mouseheld
+						or ro.mouserelease or ro.mousewheel or ro[2] == 2) then
+							processMouseEvents(ro)
+						end
 					end
 				end
 			end
