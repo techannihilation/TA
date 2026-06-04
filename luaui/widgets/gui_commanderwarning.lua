@@ -21,6 +21,18 @@ local MASTERRATE 					= 0.08
 local GLOWRATE						= MASTERRATE
 local color 						= WG["background_opacity_custom"]
 local gameover 						= false
+local tick = 0
+local lasttick  = 0
+local colorRed = color and (color[1] or 0) or 0
+
+local function RefreshBaseColor()
+	color = WG["background_opacity_custom"]
+	if color == nil then
+		return false
+	end
+	colorRed = color[1] or 0
+	return true
+end
 
 function widget:Initialize()
     localTeamID = Spring.GetLocalTeamID()   
@@ -63,20 +75,14 @@ end
 function widget:GameFrame(n)
 	--WG["background_opacity_custom"] = {0, 0, 0 , color[4]}
 	if n == 1 then
-		color = WG["background_opacity_custom"]
+		RefreshBaseColor()
 	end
 end
 
-local tick = 0
-local lasttick  = 0
-local colorRed = nil
-if color ~= nil then
-	colorRed = color[1]
-end
 function widget:Update(tock)
 	tick = tick + tock
 	if tick > lasttick + UPDATERATE then
-		if color == nil then --Color may be undefined in headless runs
+		if color == nil and not RefreshBaseColor() then --Color may be undefined in headless runs
 			return
 		end
 		lasttick = tick

@@ -96,33 +96,13 @@ local F = {
 	local px,py,sx,sy = o.px,o.py,o.sx,o.sy	
 	
 	local alphamult = o.alphamult
-	if (alphamult~=nil) then
-		if (color) then
-			color = copytable(color)
-			color[4] = o.color[4]*alphamult
-		end
-		if (border) then
-			border = copytable(border)
-			border[4] = o.border[4]*alphamult
-		end
-		if (captioncolor) then
-			captioncolor = copytable(captioncolor)
-			captioncolor[4] = o.captioncolor[4]*alphamult
-		end
-		if (texturecolor) then
-			texturecolor = copytable(texturecolor)
-			texturecolor[4] = o.texturecolor[4]*alphamult
-		else
-			texturecolor = {1,1,1,alphamult}
-		end
-	end
 	
 	if (color) then
-		Rect(px,py,sx,sy,color)
+		Rect(px,py,sx,sy,color,alphamult)
 	end
 	
 	if (texture) then
-		TexRect(px,py,sx,sy,texture,texturecolor)
+		TexRect(px,py,sx,sy,texture,texturecolor,alphamult)
 	end
 	
 	if (o.caption) then
@@ -143,12 +123,12 @@ local F = {
 			px2 = px + (sx - width*fontsize) /2
 			py2 = py + (sy - linecount*fontsize) /2
 		end
-		Text(px2,py2,fontsize,text,o.options,captioncolor)
+		Text(px2,py2,fontsize,text,o.options,captioncolor,alphamult)
 		o.autofontsize = fontsize
 	end
 	
 	if (border) then --todo: border styles
-		Border(px,py,sx,sy,o.borderwidth,border)
+		Border(px,py,sx,sy,o.borderwidth,border,alphamult)
 	end
 end,
 
@@ -161,20 +141,11 @@ end,
 	local captioncolor = o.captioncolor
 	
 	local alphamult = o.alphamult
-	if (alphamult~=nil) then
-		if (color) then
-			color = copytable(color)
-			color[4] = o.color[4]*alphamult
-		elseif (captioncolor) then
-			captioncolor = copytable(captioncolor)
-			captioncolor[4] = o.captioncolor[4]*alphamult
-		end
-	end
 	
 	local px,py = o.px,o.py	
 	local fontsize = o.fontsize
 	
-	Text(px,py,fontsize,o.caption,o.options,color or captioncolor)
+	Text(px,py,fontsize,o.caption,o.options,color or captioncolor,alphamult)
 end,
 
 [3] = function(o) --area
@@ -244,6 +215,10 @@ end
 
 --Mouse handling
 local Mouse = {{},{},{}}
+for i=1,3 do
+	Mouse[i][4] = {0,0}
+	Mouse[i][5] = {0,0}
+end
 local sGetMouseState = Spring.GetMouseState
 
 local dropClick = false
@@ -280,6 +255,7 @@ function widget:MousePress(mx,my,mb)
 end
 
 local LastMouseState = {sGetMouseState()}
+local CurMouseState = {}
 local function handleMouse()
 	--reset status
 	dropClick = false
@@ -287,7 +263,7 @@ local function handleMouse()
 	useDefaultMouseCursor = false
 	----
 	
-	local CurMouseState = {sGetMouseState()} --{mx,my,m1,m2,m3}
+	CurMouseState[1], CurMouseState[2], CurMouseState[3], CurMouseState[4], CurMouseState[5] = sGetMouseState()
 	CurMouseState[2] = vsy-CurMouseState[2] --make 0,0 top left
 	
 	Mouse.hoverunused = true --used in mouseover
@@ -311,13 +287,19 @@ local function handleMouse()
 			Mouse[n][1] = true --isheld
 		elseif (CurMouseState[i] and (not LastMouseState[i])) then
 			Mouse[n][2] = true --waspressed
-			Mouse[n][4] = {Mouse.x,Mouse.y} --last press
+			Mouse[n][4][1] = Mouse.x
+			Mouse[n][4][2] = Mouse.y
 		elseif ((not CurMouseState[i]) and LastMouseState[i]) then
 			Mouse[n][3] = true --wasreleased
-			Mouse[n][5] = {Mouse.x,Mouse.y} --last release
+			Mouse[n][5][1] = Mouse.x
+			Mouse[n][5][2] = Mouse.y
 		end
 	end
-	LastMouseState = CurMouseState
+	LastMouseState[1] = CurMouseState[1]
+	LastMouseState[2] = CurMouseState[2]
+	LastMouseState[3] = CurMouseState[3]
+	LastMouseState[4] = CurMouseState[4]
+	LastMouseState[5] = CurMouseState[5]
 end
 
 local function mouseEvent(t,e,o)

@@ -99,6 +99,7 @@ local sendMetal  = {}
 local trnsEnergy = {}
 local trnsMetal  = {}
 local labelText  = {}
+local hoveredTeam
 local sentEnergy = 0
 local sentMetal  = 0
 local gameFrame  = 0
@@ -272,6 +273,7 @@ local function updateBars()
   end
   local eCur, eMax, mCur, mMax
   local height = h - TOP_HEIGHT
+  local changed = false
   for key,teamID in ipairs(teamList) do
     if (teamID ~= myID or showSelf) then
       eCur, eMax = GetTeamResources(teamID, "energy")
@@ -289,27 +291,45 @@ local function updateBars()
 			xoffset = xoffset - selfXoffset
 		end
 	  end
-      teamRes[teamID] = 
-      {
-        ex1  = xoffset,       
-        ey1  = y1+height,
-        ex2  = xoffset+BAR_WIDTH,
-        ex2b = xoffset+(BAR_WIDTH * (eCur / eMax)),
-        ey2  = y1+height-BAR_HEIGHT,
-        mx1  = xoffset,
-        my1  = y1+height-BAR_HEIGHT-BAR_SPACER,
-        mx2  = xoffset+BAR_WIDTH,
-        mx2b = xoffset+(BAR_WIDTH * (mCur / mMax)),
-        my2  = y1+height-TOTAL_BAR_HEIGHT,
-        om   = opacityMultiplier,
-      }
+      local defs = teamRes[teamID]
+      if not defs then
+        defs = {}
+        teamRes[teamID] = defs
+      end
+      local ex1 = xoffset
+      local ey1 = y1+height
+      local ex2 = xoffset+BAR_WIDTH
+      local ex2b = xoffset+(BAR_WIDTH * (eCur / eMax))
+      local ey2 = y1+height-BAR_HEIGHT
+      local mx1 = xoffset
+      local my1 = y1+height-BAR_HEIGHT-BAR_SPACER
+      local mx2 = xoffset+BAR_WIDTH
+      local mx2b = xoffset+(BAR_WIDTH * (mCur / mMax))
+      local my2 = y1+height-TOTAL_BAR_HEIGHT
+      local wasERec = defs.eRec
+      local wasMRec = defs.mRec
+      changed = changed or defs.ex1 ~= ex1 or defs.ey1 ~= ey1 or defs.ex2 ~= ex2 or defs.ex2b ~= ex2b or defs.ey2 ~= ey2 or defs.mx1 ~= mx1 or defs.my1 ~= my1 or defs.mx2 ~= mx2 or defs.mx2b ~= mx2b or defs.my2 ~= my2 or defs.om ~= opacityMultiplier
+      defs.ex1 = ex1
+      defs.ey1 = ey1
+      defs.ex2 = ex2
+      defs.ex2b = ex2b
+      defs.ey2 = ey2
+      defs.mx1 = mx1
+      defs.my1 = my1
+      defs.mx2 = mx2
+      defs.mx2b = mx2b
+      defs.my2 = my2
+      defs.om = opacityMultiplier
+      defs.eRec = nil
+      defs.mRec = nil
       if (teamID == transferTeam) then
         if (transferType == "energy") then
-          teamRes[teamID].eRec = true
+          defs.eRec = true
         else
-          teamRes[teamID].mRec = true
+          defs.mRec = true
         end
       end
+      changed = changed or wasERec ~= defs.eRec or wasMRec ~= defs.mRec
       height = (height - TOTAL_BAR_HEIGHT - BAR_GAP)
     end
   end
@@ -321,7 +341,11 @@ local function updateBars()
     else
       --y1 = (y1 + height)
     end
+    changed = true
     updateStatics()
+  end
+  if not changed and displayList then
+    return false
   end
   if (displayList) then gl.DeleteList(displayList) end
   displayList = gl.CreateList( function()
@@ -451,33 +475,42 @@ function widget:Update()
 		  mx = x
 		  my = y
 		  if (x > x1 + BAR_GAP) and (y > y1 + (BAR_GAP/2)) and (x < (x1 + FULL_BAR)) and (y < (y1 + h - TOP_HEIGHT) + (BAR_GAP/2)) then
+		    local tooltipHandled = false
 		    for teamID,defs in pairs(teamIcons) do
 			  if (y < defs.iy1) and (y >= defs.iy2) then
-			    local eCur, _, _, eInc, _, _, _, eRec = GetTeamResources(teamID, "energy")
-			    local mCur, _, _, mInc, _, _, _, mRec = GetTeamResources(teamID, "metal")
-			    eRec = eRec + (trnsEnergy[teamID] or 0)
-			    mRec = mRec + (trnsMetal[teamID] or 0)      
-			    labelText[1] = 
-			    {
-				  label="\255\255\255\255"..defs.name,
-				  x=x1-BAR_GAP-BAR_MARGIN,
-				  y=defs.iy1-BAR_SPACER,
-				  size=TOTAL_BAR_HEIGHT*1.55,
-				  config="orn",
-			    }
-			    labelText[2] = 
-			    {
-				  label="\255\255\255\000E  + "..math.floor(sF("%.1f",eInc+eRec)).."\n\255\255\255\000      "..math.floor(sF("%.2f",eCur)).."\n\255\210\210\210M  + "..math.floor(sF("%.2f",mInc+mRec)).."\n\255\210\210\210     "..math.floor(sF("%.2f",mCur)),
-				  x=x1-BAR_GAP-BAR_MARGIN, 
-				  y=defs.iy1-BAR_SPACER-(TOTAL_BAR_HEIGHT*1.5),
-				  size=TOTAL_BAR_HEIGHT*1.4, 
-				  config="orn",
-			    }
-			    return
+			    tooltipHandled = true
+			    if hoveredTeam ~= teamID or transferring or ((gameFrame % 15) == 0) then
+			      hoveredTeam = teamID
+			      local eCur, _, _, eInc, _, _, _, eRec = GetTeamResources(teamID, "energy")
+			      local mCur, _, _, mInc, _, _, _, mRec = GetTeamResources(teamID, "metal")
+			      eRec = eRec + (trnsEnergy[teamID] or 0)
+			      mRec = mRec + (trnsMetal[teamID] or 0)      
+			      labelText[1] = labelText[1] or {}
+			      labelText[1].label = "\255\255\255\255"..defs.name
+			      labelText[1].x = x1-BAR_GAP-BAR_MARGIN
+			      labelText[1].y = defs.iy1-BAR_SPACER
+			      labelText[1].size = TOTAL_BAR_HEIGHT*1.55
+			      labelText[1].config = "orn"
+			      labelText[2] = labelText[2] or {}
+			      labelText[2].label = "\255\255\255\000E  + "..math.floor(sF("%.1f",eInc+eRec)).."\n\255\255\255\000      "..math.floor(sF("%.2f",eCur)).."\n\255\210\210\210M  + "..math.floor(sF("%.2f",mInc+mRec)).."\n\255\210\210\210     "..math.floor(sF("%.2f",mCur))
+			      labelText[2].x = x1-BAR_GAP-BAR_MARGIN
+			      labelText[2].y = defs.iy1-BAR_SPACER-(TOTAL_BAR_HEIGHT*1.5)
+			      labelText[2].size = TOTAL_BAR_HEIGHT*1.4
+			      labelText[2].config = "orn"
+			    end
+			    break
 			  end
 		    end
-		    if (labelText) then labelText = {} end
-		  elseif (labelText) then labelText = {} end
+		    if not tooltipHandled then
+		      hoveredTeam = nil
+		      labelText[1] = nil
+		      labelText[2] = nil
+		    end
+		  elseif (labelText) then
+		    hoveredTeam = nil
+		    labelText[1] = nil
+		    labelText[2] = nil
+		  end
 	    end
 	  end
     elseif (#GetTeamList(GetMyAllyTeamID()) > 1) then
@@ -617,6 +650,9 @@ end
 
 
 function widget:IsAbove(mx, my)
+	if not enabled then
+		return false
+	end
 	local xPos = x1+BAR_GAP-BAR_MARGIN-(bgcornerSize*0.75)
 	local yPos = y1+BAR_GAP-BAR_MARGIN-(bgcornerSize*0.75)
 	local x2Pos = x1+(w-BAR_GAP+BAR_MARGIN+(bgcornerSize*0.75))
