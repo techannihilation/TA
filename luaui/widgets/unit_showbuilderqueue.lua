@@ -117,7 +117,7 @@ end
 
 function checkBuilder(unitID)
 	clearBuilderCommands(unitID)
-	local queue = Spring.GetCommandQueue(unitID, 200)
+	local queue = Spring.GetUnitCommands(unitID, 200)
 	if(queue and #queue > 0) then
 		for _, cmd in ipairs(queue) do
 			if ( cmd.id < 0 ) then
