@@ -75,6 +75,7 @@ local show = false
 local pagestepped = false
 local showApiWidgets = false
 local apiWidgets = "BG color"
+local callInsInitialized = false
 
 --see MouseRelease for which functions are called by which buttons
 local buttons = {
@@ -100,9 +101,18 @@ local function UpdateCallIns()
   widgetHandler:UpdateWidgetCallIn("IsAbove", widget)
 end
 
+local function SyncCallIns()
+  if show then
+    UpdateCallIns()
+  else
+    DisableCallIns()
+  end
+end
+
 -------------------------------------------------------------------------------
 function widget:Initialize()
-  DisableCallIns()
+  callInsInitialized = true
+  SyncCallIns()
   widgetHandler.knownChanged = true
   Spring.SendCommands("unbindkeyset f11")
 
@@ -359,14 +369,9 @@ end
 -------------------------------------------------------------------------------
 function widget:KeyPress(key, mods, isRepeat)
 
-  if show and key == KEYSYMS.F11 and not isRepeat then
-      DisableCallIns()
-  elseif not show and key == KEYSYMS.F11 and not isRepeat then
-      UpdateCallIns()
-  end
-
-  if show and (key == KEYSYMS.ESCAPE) or ((key == KEYSYMS.F11) and not isRepeat and not (mods.alt or mods.ctrl or mods.meta or mods.shift)) then
+  if (show and key == KEYSYMS.ESCAPE) or ((key == KEYSYMS.F11) and not isRepeat and not (mods.alt or mods.ctrl or mods.meta or mods.shift)) then
     show = not show
+    SyncCallIns()
 
     return true
   end
@@ -622,7 +627,7 @@ function widget:MousePress(x, y, button)
 
   if not namedata then
     show = false
-    DisableCallIns()
+    SyncCallIns()
     return false
   end
 
@@ -825,7 +830,13 @@ end
 function widget:SetConfigData(data)
   startEntry = data.startEntry or startEntry
   curMaxEntries = data.curMaxEntries or curMaxEntries
-  show = data.show or show
+  if data.show ~= nil then
+    show = data.show
+  end
+
+  if callInsInitialized then
+    SyncCallIns()
+  end
 end
 
 function widget:TextCommand(s)
