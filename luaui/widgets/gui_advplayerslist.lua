@@ -305,6 +305,11 @@ local separatorOffset	= 4
 local playerOffset   	= 17
 local specOffset 	 	= 12
 local drawList       	= {}
+local drawListOffset 	= {}
+local backgroundDirty = true
+local mainListDirty = true
+local shareSliderDirty = true
+local HasActiveMainListEffects
 local teamN	
 local prevClickTime  	= os.clock()
 local specListShow = true
@@ -743,6 +748,7 @@ end
 
 function ActivityEvent(playerID)
   lastActivity[playerID] = os.clock()
+	mainListDirty = true
 end
 
 function CameraBroadcastEvent(playerID,cameraState)
@@ -752,6 +758,7 @@ function CameraBroadcastEvent(playerID,cameraState)
 		if lastBroadcasts[playerID] then
 			lastBroadcasts[playerID] = nil
 			newBroadcaster = true
+			mainListDirty = true
 		end
 		if lockPlayerID == playerID then
 			LockCamera()
@@ -761,9 +768,11 @@ function CameraBroadcastEvent(playerID,cameraState)
 	
 	if not lastBroadcasts[playerID] and not newBroadcaster then
 		newBroadcaster = true
+		mainListDirty = true
 	end
 	
 	lastBroadcasts[playerID] = {totalTime, cameraState}
+	mainListDirty = true
 	
 	if playerID == lockPlayerID then
 		SetCameraState(cameraState, transitionTime)
@@ -1179,6 +1188,7 @@ end
 
 function UpdatePlayerResources()
 	local energy, energyStorage, metal, metalStorage = 0, 1, 0 ,1
+	local changed = false
 	for playerID,_ in pairs(player) do
 		if player[playerID].name and not player[playerID].spec and player[playerID].team then
 			if aliveAllyTeams[player[playerID].allyteam] ~= nil  and  (mySpecStatus or myAllyTeamID == player[playerID].allyteam) then
@@ -1192,15 +1202,18 @@ function UpdatePlayerResources()
 					if energy < 0 then energy = 0 end
 					if metal < 0 then metal = 0 end
 				end
-				player[playerID].energy = energy
-				player[playerID].energyIncome = energyIncome
-				player[playerID].energyStorage = energyStorage
-				player[playerID].metal = metal
-				player[playerID].metalIncome = metalIncome
-				player[playerID].metalStorage = metalStorage
+				local data = player[playerID]
+				changed = changed or data.energy ~= energy or data.energyIncome ~= energyIncome or data.energyStorage ~= energyStorage or data.metal ~= metal or data.metalIncome ~= metalIncome or data.metalStorage ~= metalStorage
+				data.energy = energy
+				data.energyIncome = energyIncome
+				data.energyStorage = energyStorage
+				data.metal = metal
+				data.metalIncome = metalIncome
+				data.metalStorage = metalStorage
 			end
 		end
 	end
+	return changed
 end
 
 function GetDark(red,green,blue)                  	
@@ -1231,6 +1244,19 @@ end
 -- note: SPADS ensures that order of playerIDs/teams/allyteams as appropriate reflects TS (mu) order
 ---------------------------------------------------------------------------------------------------
 
+local function ClearDrawList()
+	for i = 1, #drawList do
+		drawList[i] = nil
+		drawListOffset[i] = nil
+	end
+end
+
+local function AddDrawEntry(offset, entry)
+	local index = #drawList + 1
+	drawListOffset[index] = offset
+	drawList[index] = entry
+end
+
 
 function SortList()
 	local teamList
@@ -1255,8 +1281,7 @@ function SortList()
 	myAllyTeamID = Spring_GetLocalAllyTeamID()
 	myTeamID = Spring_GetLocalTeamID()
 	
-	drawList = {}
-	drawListOffset = {}
+	ClearDrawList()
 	vOffset = 0
 	
 	-- calls the (cascade) sorting for players
@@ -1286,6 +1311,9 @@ function SortList()
 	else
 		widgetTop = widgetPosY + widgetHeight
 	end
+	backgroundDirty = true
+	mainListDirty = true
+	shareSliderDirty = true
 	
 end
 
@@ -1305,8 +1333,7 @@ function SortAllyTeams(vOffset)
 		if allyTeamID == myAllyTeamID  then
 			vOffset = vOffset + labelOffset - 3
 			if drawAlliesLabel then
-				table.insert(drawListOffset, vOffset)
-			  table.insert(drawList, -2)  -- "Allies" label
+				AddDrawEntry(vOffset, -2)  -- "Allies" label
 			  vOffset = SortTeams(allyTeamID, vOffset)+2	-- Add the teams from the allyTeam
 			else
 			  vOffset = SortTeams(allyTeamID, vOffset-labelOffset)
@@ -1323,13 +1350,11 @@ function SortAllyTeams(vOffset)
                 vOffset = vOffset + 13
 				
 				vOffset = vOffset + labelOffset - 3
-				table.insert(drawListOffset, vOffset)
-				table.insert(drawList, -3) -- "Enemies" label
+				AddDrawEntry(vOffset, -3) -- "Enemies" label
 				firstenemy = false
 			else
 				vOffset = vOffset + separatorOffset
-				table.insert(drawListOffset, vOffset)
-				table.insert(drawList, -4) -- Enemy teams separator
+				AddDrawEntry(vOffset, -4) -- Enemy teams separator
 			end
 			vOffset = SortTeams(allyTeamID, vOffset)+2 -- Add the teams from the allyTeam 
 		end
@@ -1348,8 +1373,7 @@ function SortTeams(allyTeamID, vOffset)
 	
 	--add teams 
 	for _,teamID in ipairs(teamsList) do
-			table.insert(drawListOffset, vOffset)
-			table.insert(drawList, -1)
+			AddDrawEntry(vOffset, -1)
 			vOffset = SortPlayers(teamID,allyTeamID,vOffset) -- adds players form the team
             local _,_, isDead, _, _, _ = Spring_GetTeamInfo(teamID)
             if isDead then
@@ -1372,8 +1396,7 @@ function SortPlayers(teamID,allyTeamID,vOffset)
 		if player[myPlayerID].name ~= nil then
 			if mySpecStatus == false then
 				vOffset = vOffset + playerOffset
-				table.insert(drawListOffset, vOffset)
-				table.insert(drawList, myPlayerID) -- new player (with ID)
+				AddDrawEntry(vOffset, myPlayerID) -- new player (with ID)
 				player[myPlayerID].posY = vOffset
 				noPlayer = false
 			end
@@ -1386,8 +1409,7 @@ function SortPlayers(teamID,allyTeamID,vOffset)
 			if player[playerID].name ~= nil then
 				if player[playerID].spec ~= true then
 					vOffset = vOffset + playerOffset
-					table.insert(drawListOffset, vOffset)
-					table.insert(drawList, playerID) -- new player (with ID)
+					AddDrawEntry(vOffset, playerID) -- new player (with ID)
 					player[playerID].posY = vOffset
 					noPlayer = false
 				end
@@ -1398,8 +1420,7 @@ function SortPlayers(teamID,allyTeamID,vOffset)
 	-- add AI teams
 	if isAi == true then
 		vOffset = vOffset + playerOffset
-		table.insert(drawListOffset, vOffset)
-		table.insert(drawList, 64 + teamID) -- new AI team (instead of players)
+		AddDrawEntry(vOffset, 64 + teamID) -- new AI team (instead of players)
 		player[64 + teamID].posY = vOffset
 		noPlayer = false
 	end
@@ -1407,8 +1428,7 @@ function SortPlayers(teamID,allyTeamID,vOffset)
 	-- add no player token if no player found in this team at this point
 	if noPlayer == true then
 		vOffset = vOffset + playerOffset - (deadPlayerHeightReduction/2)
-		table.insert(drawListOffset, vOffset)
-		table.insert(drawList, 64 + teamID)  -- no players team
+		AddDrawEntry(vOffset, 64 + teamID)  -- no players team
 		player[64 + teamID].posY = vOffset
 		if Spring_GetGameFrame() > 0 then
 			player[64+teamID].totake = IsTakeable(teamID)
@@ -1431,8 +1451,7 @@ function SortSpecs(vOffset)
 				if noSpec == true then
 					vOffset = vOffset + 13
 					vOffset = vOffset + labelOffset - 2
-					table.insert(drawListOffset, vOffset)
-					table.insert(drawList, -5)
+					AddDrawEntry(vOffset, -5)
 					noSpec = false
 					specJoinedOnce = true
 					vOffset = vOffset + 4					
@@ -1441,8 +1460,7 @@ function SortSpecs(vOffset)
 				-- add spectator
 				if specListShow == true then
 					vOffset = vOffset + specOffset
-					table.insert(drawListOffset, vOffset)
-					table.insert(drawList, playerID)
+					AddDrawEntry(vOffset, playerID)
 					player[playerID].posY = vOffset
 					noPlayer = false
 				end
@@ -1454,8 +1472,7 @@ function SortSpecs(vOffset)
 	if specJoinedOnce and noSpec then
 		vOffset = vOffset + 13
 		vOffset = vOffset + labelOffset - 2
-		table.insert(drawListOffset, vOffset)
-		table.insert(drawList, -5)
+		AddDrawEntry(vOffset, -5)
 		vOffset = vOffset + 4
 	end
 	
@@ -1499,7 +1516,7 @@ function widget:DrawScreen()
 	
 	if NeedUpdate then
 		--Spring.Echo("DS APL update")
-		CreateLists()
+		CreateMainList()
 		PrevGameFrame = CurGameFrame
 	end
 	
@@ -1539,14 +1556,30 @@ function CreateLists()
 	GetAliveAllyTeams()
 	
 	if m_resources.active then
-		UpdateResources()
+		if UpdateResources() then
+			shareSliderDirty = true
+		end
 	end
-	UpdatePlayerResources()
+	if UpdatePlayerResources() then
+		mainListDirty = true
+	end
+	if HasActiveMainListEffects and HasActiveMainListEffects() then
+		mainListDirty = true
+	end
 	
 	--Create lists
-	CreateBackground()
-	CreateMainList()
-	CreateShareSlider()
+	if backgroundDirty or not Background then
+		CreateBackground()
+		backgroundDirty = false
+	end
+	if mainListDirty or not MainList then
+		CreateMainList()
+		mainListDirty = false
+	end
+	if shareSliderDirty or not ShareSlider or energyPlayer ~= nil or metalPlayer ~= nil then
+		CreateShareSlider()
+		shareSliderDirty = false
+	end
 end
 
 ---------------------------------------------------------------------------------------------------
@@ -1663,6 +1696,8 @@ end
 
 
 function UpdateResources()
+	local oldAmountEM = amountEM
+	local oldAmountEMMax = amountEMMax
 	if energyPlayer ~= nil then
 		if energyPlayer.team == myTeamID then
 			local current,storage = Spring_GetTeamResources(myTeamID,"energy")
@@ -1687,6 +1722,7 @@ function UpdateResources()
 			amountEM = amountEM-(amountEM%1)
 		end
 	end
+	return oldAmountEM ~= amountEM or oldAmountEMMax ~= amountEMMax
 end
 
 function CheckTime()
@@ -2716,8 +2752,25 @@ function GetPingLvl(ping)
 	end
 end
 
+function HasActiveMainListEffects()
+	for playerID, activityTime in pairs(lastActivity) do
+		if type(activityTime) == "number" and now - activityTime < 8 then
+			return true
+		end
+	end
+	for _, _ in pairs(recentBroadcasters) do
+		return true
+	end
+	for playerID, data in pairs(player) do
+		if data.totake or data.pointTime ~= nil then
+			return true
+		end
+	end
+	return false
+end
 
----------------------------------------------------------------------------------------------------
+
+	---------------------------------------------------------------------------------------------------
 --  Mouse 
 ---------------------------------------------------------------------------------------------------
 
@@ -3604,6 +3657,37 @@ function updateWidgetScale()
 	widgetScale = (0.7 + (vsx*vsy / 5000000)) * customScale
 end
 
+local function ClampWidgetToView()
+	local margin = backgroundMargin * widgetScale
+	local scaledWidth = widgetWidth * widgetScale
+	local scaledHeight = widgetHeight * widgetScale
+
+	if scaledWidth > vsx - (margin * 2) then
+		widgetPosX = margin
+	elseif widgetPosX + scaledWidth > vsx - margin then
+		widgetPosX = vsx - scaledWidth - margin
+		expandLeft = true
+	elseif widgetPosX < margin then
+		widgetPosX = margin
+		expandLeft = false
+	end
+
+	if scaledHeight > vsy - (margin * 2) then
+		widgetPosY = margin
+	elseif widgetPosY + scaledHeight > vsy - margin then
+		widgetPosY = vsy - scaledHeight - margin
+		expandDown = true
+	elseif widgetPosY < margin then
+		widgetPosY = margin
+		expandDown = false
+	end
+
+	widgetTop = widgetPosY + widgetHeight
+	widgetRight = widgetPosX + widgetWidth
+	widgetRelRight = vsx - (widgetPosX + scaledWidth)
+	right = widgetPosX + (widgetWidth / 2) > vsx / 2
+end
+
 function customScaleUp()
 	widgetPosX		= widgetPosX - (widgetWidth*customScaleStep)
 	widgetRight		= widgetPosX + widgetWidth  
@@ -3619,18 +3703,32 @@ function customScaleDown()
 end
 
 function widget:ViewResize(viewSizeX, viewSizeY)
-	local dx, dy = vsx - viewSizeX, vsy - viewSizeY
+	local rightMargin = vsx - (widgetPosX + (widgetWidth * widgetScale))
+	local topMargin = vsy - (widgetPosY + (widgetHeight * widgetScale))
+	local oldPosX = widgetPosX
+	local oldPosY = widgetPosY
 	vsx, vsy = viewSizeX, viewSizeY
 	
 	updateWidgetScale()
 	
 	if expandDown == true then
-		widgetTop  = widgetTop - dy
-		widgetPosY = widgetTop - widgetHeight
+		widgetPosY = vsy - (widgetHeight * widgetScale) - topMargin
+	else
+		widgetPosY = oldPosY
 	end
 	if expandLeft == true then
-		widgetRight = widgetRight - dx
+		widgetRelRight = rightMargin
 	    widgetPosX = vsx - (widgetWidth * widgetScale) - widgetRelRight
+	else
+		widgetPosX = oldPosX
+	end
+
+	ClampWidgetToView()
+	backgroundDirty = true
+	mainListDirty = true
+	shareSliderDirty = true
+	if player[myPlayerID] and player[myPlayerID].name then
+		CreateLists()
 	end
 end
 

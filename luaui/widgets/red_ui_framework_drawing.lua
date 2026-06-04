@@ -27,6 +27,8 @@ local sIsGUIHidden = Spring.IsGUIHidden
 
 local F = {} --function table
 local Todo = {} --function queue
+local TodoPool = {}
+local TodoCount = 0
 local StartList
 
 local glText = gl.Text
@@ -60,12 +62,12 @@ local function Color(c)
 	glColor(c[1],c[2],c[3],c[4])
 end
 
-local function Text(px,py,fontsize,text,options,c)
+local function Text(px,py,fontsize,text,options,c,alpha)
 	glPushMatrix()
 	if (c) then
-		glColor(c[1],c[2],c[3],c[4])
+		glColor(c[1],c[2],c[3],alpha and (c[4]*alpha) or c[4])
 	else
-		glColor(1,1,1,1)
+		glColor(1,1,1,alpha or 1)
 	end
 	glTranslate(px,py+fontsize,0)
 	if (options) then
@@ -78,7 +80,7 @@ local function Text(px,py,fontsize,text,options,c)
 	glPopMatrix()
 end
 
-local function Border(px,py,sx,sy,width,c)
+local function Border(px,py,sx,sy,width,c,alpha)
 	if (width == nil) then
 		width = 1
 	elseif (width == 0) then
@@ -90,9 +92,9 @@ local function Border(px,py,sx,sy,width,c)
 	end
 	glPushMatrix()
 	if (c) then
-		glColor(c[1],c[2],c[3],c[4])
+		glColor(c[1],c[2],c[3],alpha and (c[4]*alpha) or c[4])
 	else
-		glColor(1,1,1,1)
+		glColor(1,1,1,alpha or 1)
 	end
 	glTranslate(px,py,0)
 	glRect(0,0,sx,width) --top
@@ -102,25 +104,25 @@ local function Border(px,py,sx,sy,width,c)
 	glPopMatrix()
 end
 
-local function Rect(px,py,sx,sy,c)
+local function Rect(px,py,sx,sy,c,alpha)
 	if (c) then
 		if c[4] == 0.54321 then
 			glColor(WG["background_opacity_custom"] or {0,0,0,5})
 		else
-			glColor(c[1],c[2],c[3],c[4])
+			glColor(c[1],c[2],c[3],alpha and (c[4]*alpha) or c[4])
 		end
 	else
-		glColor(1,1,1,1)
+		glColor(1,1,1,alpha or 1)
 	end
 	glRect(px,py,px+sx,py+sy)
 end
 
-local function TexRect(px,py,sx,sy,texture,c)
+local function TexRect(px,py,sx,sy,texture,c,alpha)
 	glPushMatrix()
 	if (c) then
-		glColor(c[1],c[2],c[3],c[4])
+		glColor(c[1],c[2],c[3],alpha and (c[4]*alpha) or c[4])
 	else
-		glColor(1,1,1,1)
+		glColor(1,1,1,alpha or 1)
 	end
 	glTranslate(px,py+sy,0)
 	glScale(1,-1,1) --flip
@@ -156,21 +158,39 @@ function widget:Initialize()
 	local T = {}
 	WG[TN] = T
 	T.version = version
+
+	local function PushDrawCommand(commandID, a, b, c, d, e, f, g)
+		TodoCount = TodoCount + 1
+		local command = TodoPool[TodoCount]
+		if command == nil then
+			command = {}
+			TodoPool[TodoCount] = command
+		end
+		command[1] = commandID
+		command[2] = a
+		command[3] = b
+		command[4] = c
+		command[5] = d
+		command[6] = e
+		command[7] = f
+		command[8] = g
+		Todo[TodoCount] = command
+	end
 	
 	T.Color = function(a,b,c,d) --using (...) seems slower
-		Todo[#Todo+1] = {1,a,b,c,d}
+		PushDrawCommand(1,a,b,c,d)
 	end
-	T.Rect = function(a,b,c,d,e)
-		Todo[#Todo+1] = {2,a,b,c,d,e}
+	T.Rect = function(a,b,c,d,e,f)
+		PushDrawCommand(2,a,b,c,d,e,f)
 	end
-	T.TexRect = function(a,b,c,d,e,f)
-		Todo[#Todo+1] = {3,a,b,c,d,e,f}
+	T.TexRect = function(a,b,c,d,e,f,g)
+		PushDrawCommand(3,a,b,c,d,e,f,g)
 	end
-	T.Border = function(a,b,c,d,e,f)
-		Todo[#Todo+1] = {4,a,b,c,d,e,f}
+	T.Border = function(a,b,c,d,e,f,g)
+		PushDrawCommand(4,a,b,c,d,e,f,g)
 	end
-	T.Text = function(a,b,c,d,e,f)
-		Todo[#Todo+1] = {5,a,b,c,d,e,f}
+	T.Text = function(a,b,c,d,e,f,g)
+		PushDrawCommand(5,a,b,c,d,e,f,g)
 	end
 	
 	F[1] = Color
@@ -190,11 +210,12 @@ function widget:DrawScreen()
 	glResetMatrices()
 	
 	glCallList(StartList)
-	for i=1,#Todo do
+	for i=1,TodoCount do
 		local t = Todo[i]
-		F[t[1]](t[2],t[3],t[4],t[5],t[6],t[7])
+		F[t[1]](t[2],t[3],t[4],t[5],t[6],t[7],t[8])
 		Todo[i] = nil
 	end
+	TodoCount = 0
 	
 	glResetState()
 	glResetMatrices()
@@ -206,9 +227,10 @@ local timeCounter = math.huge -- force the first update
 
 function widget:Update(deltaTime)
 	if (sIsGUIHidden()) then
-		for i=1,#Todo do
+		for i=1,TodoCount do
 			Todo[i] = nil
 		end
+		TodoCount = 0
 	end
 	if (timeCounter < update) then
     	timeCounter = timeCounter + deltaTime
