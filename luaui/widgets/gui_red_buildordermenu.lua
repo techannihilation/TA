@@ -24,6 +24,9 @@ local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
 
 local buttonTexture	= LUAUI_DIRNAME.."Images/button.png"
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
+local CMD_MORPH = 31410
+local CMD_MORPH_STOP = 32410
+local MAX_MORPH = 250
 
 local textureColorDisabled = {0.45,0.45,0.45,0.98}
 local textureColorOrderButton = {1,1,1,0.95}
@@ -35,8 +38,6 @@ local stateColorGreen = {0,0.8,0,1}
 local stateColorGray = {0.8,0.8,0.8,1}
 
 local oldUnitpics = true
--- Text drawing is expensive in Red UI; keep build icons texture-only by default.
-local drawBuildHotkeys = false
 local OtaIconExist = {}
 
 for i=1,#UnitDefs do
@@ -64,6 +65,11 @@ local function stripCommandActionPrefix(input)
 		return input:sub(3), true
 	end
 	return input, false
+end
+
+local function isMorphCommand(cmdID)
+	return (cmdID >= CMD_MORPH and cmdID <= CMD_MORPH + MAX_MORPH)
+		or (cmdID >= CMD_MORPH_STOP and cmdID <= CMD_MORPH_STOP + MAX_MORPH)
 end
 
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
@@ -474,7 +480,7 @@ UpdateGrid = function(g,cmds,ordertype)
 			else
 				icon.texture = "#"..buildDefID
 			end
-			if (drawBuildHotkeys and firstParam) then
+			if (firstParam) then
 				icon.caption = "\n\n"..firstParam.."          "
 			else
 				icon.caption = nil
@@ -538,7 +544,7 @@ UpdateGrid = function(g,cmds,ordertype)
 					Spring.Echo("send info to nix ", cmd, cmd.name)
 				end
 			else
-				if (icon.texture == buttonTexture) then
+				if (icon.texture == buttonTexture or isMorphCommand(cmd.id)) then
 					icon.caption = " "..cmd.name.." "
 				else
 					icon.caption = nil
@@ -567,14 +573,6 @@ function widget:TextCommand(command)
 			Spring.Echo("Using OTA unit icons in buildmenu")
 		else
 			Spring.Echo("Using TechA unit icons in buildmenu")
-		end
-	elseif (command == "buildhotkeys") then
-		drawBuildHotkeys = not drawBuildHotkeys
-		SpForceLayoutUpdate()
-		if drawBuildHotkeys then
-			Spring.Echo("Showing build hotkeys in buildmenu")
-		else
-			Spring.Echo("Hiding build hotkeys in buildmenu")
 		end
 	end
 end
@@ -621,7 +619,7 @@ function widget:GetConfigData() --save config
 		Config.buildmenu.py = buildmenu.background.py * unscale
 		Config.ordermenu.px = ordermenu.background.px * unscale
 		Config.ordermenu.py = ordermenu.background.py * unscale
-		return {Config=Config, oldUnitpics=oldUnitpics, drawBuildHotkeys=drawBuildHotkeys}
+		return {Config=Config, oldUnitpics=oldUnitpics}
 	end
 end
 function widget:SetConfigData(data) --load config
@@ -632,9 +630,6 @@ function widget:SetConfigData(data) --load config
 		Config.ordermenu.py = data.Config.ordermenu.py
 		if (data.oldUnitpics ~= nil) then
 			oldUnitpics = data.oldUnitpics
-		end
-		if (data.drawBuildHotkeys ~= nil) then
-			drawBuildHotkeys = data.drawBuildHotkeys
 		end
 	end
 end
