@@ -26,6 +26,7 @@ local buttonTexture	= LUAUI_DIRNAME.."Images/button.png"
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 local CMD_MORPH = 31410
 local CMD_MORPH_STOP = 32410
+local CMD_STOCKPILE = CMD.STOCKPILE
 local MAX_MORPH = 250
 
 local textureColorDisabled = {0.45,0.45,0.45,0.98}
@@ -70,6 +71,10 @@ end
 local function isMorphCommand(cmdID)
 	return (cmdID >= CMD_MORPH and cmdID <= CMD_MORPH + MAX_MORPH)
 		or (cmdID >= CMD_MORPH_STOP and cmdID <= CMD_MORPH_STOP + MAX_MORPH)
+end
+
+local function shouldShowTexturedCommandCaption(cmdID)
+	return cmdID == CMD_STOCKPILE or isMorphCommand(cmdID)
 end
 
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
@@ -544,7 +549,7 @@ UpdateGrid = function(g,cmds,ordertype)
 					Spring.Echo("send info to nix ", cmd, cmd.name)
 				end
 			else
-				if (icon.texture == buttonTexture or isMorphCommand(cmd.id)) then
+				if (icon.texture == buttonTexture or shouldShowTexturedCommandCaption(cmd.id)) then
 					icon.caption = " "..cmd.name.." "
 				else
 					icon.caption = nil
