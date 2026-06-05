@@ -241,7 +241,8 @@ function Ribbon:Update(n)
     end
     if x and y and z then
       self.posIdx = (self.posIdx % self.size)+1
-      self.oldPos[self.posIdx] = {x,y,z}
+      local pos = self.oldPos[self.posIdx]
+      pos[1], pos[2], pos[3] = x, y, z
 
       local vx,vy,vz
       if self.unit then
@@ -256,7 +257,9 @@ function Ribbon:Update(n)
   else
     local lastIndex = self.posIdx 
     self.posIdx = (self.posIdx % self.size)+1
-    self.oldPos[self.posIdx] = self.oldPos[lastIndex]
+    local lastPos = self.oldPos[lastIndex]
+    local pos = self.oldPos[self.posIdx]
+    pos[1], pos[2], pos[3] = lastPos[1], lastPos[2], lastPos[3]
     
     self.blendfactor = self.blendfactor - n * self.decayRate
   end
@@ -320,11 +323,10 @@ function Ribbon:CreateParticle()
   elseif self.projectile then
 	x,y,z = spGetProjectilePosition(self.projectile)
   end
-  local curpos = {x,y,z}
 
   self.oldPos = {}
   for i=1,self.size do
-    self.oldPos[i] = curpos
+    self.oldPos[i] = {x,y,z}
   end
 
   local udid  = self.unit and spGetUnitDefID(self.unit)
