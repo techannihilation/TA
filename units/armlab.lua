@@ -63,6 +63,7 @@ return {
 			[6] = "armjeth",
 			[7] = "armham",
 			[8] = "armwar",
+			[9] = "armmole",
 		},
 		customparams = {
 			buildpic = "armlab.dds",
