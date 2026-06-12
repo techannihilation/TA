@@ -26,8 +26,11 @@ CALLIN_LIST = {
 	"GameSetup",               -- FIXME: not implemented by base GH
 	"GamePreload",
 	"GameStart",
+	"GameLoadLua",
+	"GameStartPlaying",
 	"GameOver",
 	"GameFrame",
+	"GameFramePost",
 	"GameProgress",            -- FIXME: not implemented by base GH
 	"GameID",
 
@@ -44,7 +47,10 @@ CALLIN_LIST = {
 	"UnitCreated",
 	"UnitFinished",
 	"UnitFromFactory",
+	"UnitReverseBuilt",
 	"UnitDestroyed",
+	"UnitDestroyedByTeam",
+	"RenderUnitDestroyed",
 	"UnitExperience",
 	"UnitIdle",
 	"UnitCmdDone",
@@ -59,6 +65,7 @@ CALLIN_LIST = {
 	"UnitSeismicPing",
 	"UnitLoaded",
 	"UnitUnloaded",
+	"UnitHarvestStorageFull",
 	"UnitCloaked",
 	"UnitDecloaked",
 	"UnitUnitCollision",
@@ -70,6 +77,17 @@ CALLIN_LIST = {
 	"UnitEnteredWater",        -- FIXME: not implemented by base GH
 	"UnitLeftWater",           -- FIXME: not implemented by base GH
 	"UnitCommand",             -- FIXME: not implemented by base GH
+	"UnitBlocked",
+	"UnitSale",
+	"UnitSold",
+	"MetaUnitAdded",
+	"MetaUnitRemoved",
+	"VisibleUnitAdded",
+	"VisibleUnitRemoved",
+	"VisibleUnitsChanged",
+	"AlliedUnitAdded",
+	"AlliedUnitRemoved",
+	"AlliedUnitsChanged",
 
 	-- weapon callins
 	"StockpileChanged",
@@ -96,6 +114,7 @@ CALLIN_LIST = {
 	"AllowUnitTransportLoad",
 	"AllowUnitTransportUnload",
 	"AllowUnitBuildStep",
+	"AllowUnitCaptureStep",
 	"AllowFeatureBuildStep",
 	"AllowFeatureCreation",
 	"AllowResourceLevel",
@@ -118,14 +137,30 @@ CALLIN_LIST = {
 	"UnsyncedHeightMapUpdate", -- FIXME: not implemented by base GH
 
 	"DrawGenesis",
+	"DrawGroundDeferred",
 	"DrawWorld",
 	"DrawWorldPreUnit",
+	"DrawPreDecals",
+	"DrawWorldPreParticles",
 	"DrawWorldShadow",
 	"DrawWorldReflection",
 	"DrawWorldRefraction",
+	"DrawUnitsPostDeferred",
+	"DrawFeaturesPostDeferred",
+	"DrawGroundPreForward",
+	"DrawGroundPostForward",
+	"DrawGroundPreDeferred",
+	"DrawGroundPostDeferred",
 	"DrawScreenEffects",
+	"DrawScreenPost",
 	"DrawScreen",
 	"DrawInMiniMap",
+	"DrawOpaqueUnitsLua",
+	"DrawOpaqueFeaturesLua",
+	"DrawAlphaUnitsLua",
+	"DrawAlphaFeaturesLua",
+	"DrawShadowUnitsLua",
+	"DrawShadowFeaturesLua",
 
 	"DrawUnit",
 	"DrawFeature",
@@ -135,8 +170,12 @@ CALLIN_LIST = {
 	-- unsynced message callins
 	"RecvFromSynced",
 	"RecvSkirmishAIMessage",
+	"Pong",
 
 	"DefaultCommand",
+	"ActiveCommandChanged",
+	"CameraRotationChanged",
+	"CameraPositionChanged",
 	"CommandNotify",
 
 	"ViewResize", -- FIXME ?
@@ -145,14 +184,27 @@ CALLIN_LIST = {
 
 	"AddConsoleLine",
 	"GroupChanged",
+	"LanguageChanged",
+	"FontsChanged",
+	"SunChanged",
 
 	-- moved from LuaUI
 	"KeyPress",
 	"KeyRelease",
+	"TextInput",
+	"TextEditing",
 	"MousePress",
 	"MouseRelease",
 	"MouseMove",
 	"MouseWheel",
+	"ControllerAdded",
+	"ControllerRemoved",
+	"ControllerConnected",
+	"ControllerDisconnected",
+	"ControllerRemapped",
+	"ControllerButtonUp",
+	"ControllerButtonDown",
+	"ControllerAxisMotion",
 
 	"IsAbove",
 	"GetTooltip",
@@ -160,12 +212,26 @@ CALLIN_LIST = {
 	"WorldTooltip",            -- FIXME: not implemented by base GH
 	"MapDrawCmd",              -- FIXME: not implemented by base GH
 	"ShockFront",              -- FIXME: not implemented by base GH
+	"VisibleExplosion",
+	"Barrelfire",
+	"CrashingAircraft",
+	"ClearMapMarks",
+
+	"CobCallback",
+
+	"DownloadQueued",
+	"DownloadStarted",
+	"DownloadFinished",
+	"DownloadFailed",
+	"DownloadProgress",
 }
 
 for callinIdx, callinName in ipairs(CALLIN_LIST) do
 	CALLIN_MAP[callinName] = callinIdx
 end
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+CallInsList = CALLIN_LIST
+CallInsMap = CALLIN_MAP
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
