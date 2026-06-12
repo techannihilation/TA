@@ -3012,6 +3012,7 @@ function widget:MouseRelease(x,y,button)
 			sliderPosition = nil
 			amountEM = nil
 			energyPlayer = nil
+			CreateShareSlider()
 		end
 		
 		if metalPlayer ~= nil then
@@ -3030,6 +3031,7 @@ function widget:MouseRelease(x,y,button)
 			sliderPosition = nil
 			amountEM = nil
 			metalPlayer = nil
+			CreateShareSlider()
 		end
 	end
 end

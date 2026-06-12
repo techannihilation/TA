@@ -108,6 +108,7 @@ local flexCallIns = {
   'GameOver',
   'GamePaused',
   'GameFrame',
+  'GameFramePost',
   'GameProgress',
   'GameSetup',
   'TeamDied',
@@ -118,13 +119,18 @@ local flexCallIns = {
   'ShockFront',
   'WorldTooltip',
   'MapDrawCmd',
+  'ActiveCommandChanged',
+  'CameraRotationChanged',
+  'CameraPositionChanged',
   'DefaultCommand',
   'UnitCreated',
   'UnitFinished',
   'UnitFromFactory',
    'UnitReverseBuilt',
   'UnitDestroyed',
+  'UnitDestroyedByTeam',
   'RenderUnitDestroyed',
+  'UnitExperience',
   'UnitTaken',
   'UnitGiven',
   'UnitIdle',
@@ -146,17 +152,35 @@ local flexCallIns = {
   'UnitCloaked',
   'UnitDecloaked',
   'UnitMoveFailed',
+  'MetaUnitAdded',
+  'MetaUnitRemoved',
   'RecvLuaMsg',
   'StockpileChanged',
+  'SelectionChanged',
   'DrawGenesis',
+  'DrawGroundDeferred',
   'DrawWorld',
   'DrawWorldPreUnit',
+  'DrawPreDecals',
+  'DrawWorldPreParticles',
   'DrawWorldShadow',
   'DrawWorldReflection',
   'DrawWorldRefraction',
+  'DrawUnitsPostDeferred',
+  'DrawFeaturesPostDeferred',
   'DrawScreenEffects',
   'DrawScreenPost',
   'DrawInMiniMap',
+  'DrawOpaqueUnitsLua',
+  'DrawOpaqueFeaturesLua',
+  'DrawAlphaUnitsLua',
+  'DrawAlphaFeaturesLua',
+  'DrawShadowUnitsLua',
+  'DrawShadowFeaturesLua',
+  'SunChanged',
+  'FeatureCreated',
+  'FeatureDestroyed',
+  'UnsyncedHeightMapUpdate',
   'RecvSkirmishAIMessage',
 }
 local flexCallInMap = {}
@@ -165,6 +189,7 @@ for _,ci in ipairs(flexCallIns) do
 end
 
 local callInLists = {
+  'FontsChanged',
   'GamePreload',
   'GameStart',
   'Shutdown',
@@ -178,6 +203,14 @@ local callInLists = {
   'KeyRelease',
   'MousePress',
   'MouseWheel',
+  'ControllerAdded',
+  'ControllerRemoved',
+  'ControllerConnected',
+  'ControllerDisconnected',
+  'ControllerRemapped',
+  'ControllerButtonUp',
+  'ControllerButtonDown',
+  'ControllerAxisMotion',
   'JoyAxis',
   'JoyHat',
   'JoyButtonDown',
@@ -186,6 +219,20 @@ local callInLists = {
   'GetTooltip',
   'GroupChanged',
   'CommandsChanged',
+  'LanguageChanged',
+  'UnitBlocked',
+  'VisibleUnitAdded',
+  'VisibleUnitRemoved',
+  'VisibleUnitsChanged',
+  'AlliedUnitAdded',
+  'AlliedUnitRemoved',
+  'AlliedUnitsChanged',
+  'UnitSale',
+  'UnitSold',
+  'VisibleExplosion',
+  'Barrelfire',
+  'CrashingAircraft',
+  'ClearMapMarks',
   'TweakMousePress',
   'TweakMouseWheel',
   'TweakIsAbove',
@@ -1170,6 +1217,30 @@ function widgetHandler:ConfigureLayout(command)
 end
 
 
+function widgetHandler:ActiveCommandChanged(id, cmdType)
+  for _,w in ipairs(self.ActiveCommandChangedList) do
+    w:ActiveCommandChanged(id, cmdType)
+  end
+  return
+end
+
+
+function widgetHandler:CameraRotationChanged(rotx, roty, rotz)
+  for _,w in ipairs(self.CameraRotationChangedList) do
+    w:CameraRotationChanged(rotx, roty, rotz)
+  end
+  return
+end
+
+
+function widgetHandler:CameraPositionChanged(posx, posy, posz)
+  for _,w in ipairs(self.CameraPositionChangedList) do
+    w:CameraPositionChanged(posx, posy, posz)
+  end
+  return
+end
+
+
 function widgetHandler:CommandNotify(id, params, options)
   for _,w in ipairs(self.CommandNotifyList) do
     if (w:CommandNotify(id, params, options)) then
@@ -1196,7 +1267,27 @@ function widgetHandler:GroupChanged(groupID)
 end
 
 
+function widgetHandler:LanguageChanged()
+  for _,w in ipairs(self.LanguageChangedList) do
+    w:LanguageChanged()
+  end
+  return
+end
+
+
+function widgetHandler:UnitBlocked(unitDefID, reasons)
+  for _,w in ipairs(self.UnitBlockedList) do
+    w:UnitBlocked(unitDefID, reasons)
+  end
+  return
+end
+
+
 function widgetHandler:CommandsChanged()
+  if (self:UpdateSelection()) then
+    return
+  end
+
   self.inCommandsChanged = true
   self.customCommands = {}
   for _,w in ipairs(self.CommandsChangedList) do
@@ -1204,6 +1295,60 @@ function widgetHandler:CommandsChanged()
   end
   self.inCommandsChanged = false
   return
+end
+
+local oldSelection = {}
+
+function widgetHandler:UpdateSelection()
+  local changed
+  local newSelection = Spring.GetSelectedUnits()
+
+  if (#newSelection == #oldSelection) then
+    for i = 1, #oldSelection do
+      if (newSelection[i] ~= oldSelection[i]) then
+        changed = true
+        break
+      end
+    end
+  else
+    changed = true
+  end
+
+  if (changed) then
+    local subselection = true
+    if (#newSelection > #oldSelection) then
+      subselection = false
+    else
+      local oldSelectionMap = {}
+      for i = 1, #oldSelection do
+        oldSelectionMap[oldSelection[i]] = true
+      end
+      for i = 1, #newSelection do
+        if (not oldSelectionMap[newSelection[i]]) then
+          subselection = false
+          break
+        end
+      end
+    end
+
+    if (self:SelectionChanged(newSelection, subselection)) then
+      return true
+    end
+  end
+
+  oldSelection = newSelection
+  return false
+end
+
+function widgetHandler:SelectionChanged(selectedUnits, subselection)
+  for _,w in ipairs(self.SelectionChangedList) do
+    local unitArray = w:SelectionChanged(selectedUnits, subselection)
+    if (unitArray) then
+      Spring.SelectUnitArray(unitArray)
+      return true
+    end
+  end
+  return false
 end
 
 
@@ -1267,6 +1412,14 @@ function widgetHandler:DrawGenesis()
 end
 
 
+function widgetHandler:DrawGroundDeferred()
+  for _,w in ripairs(self.DrawGroundDeferredList) do
+    w:DrawGroundDeferred()
+  end
+  return
+end
+
+
 function widgetHandler:DrawWorld()
   for _,w in ripairs(self.DrawWorldList) do
     w:DrawWorld()
@@ -1278,6 +1431,70 @@ end
 function widgetHandler:DrawWorldPreUnit()
   for _,w in ripairs(self.DrawWorldPreUnitList) do
     w:DrawWorldPreUnit()
+  end
+  return
+end
+
+
+function widgetHandler:DrawOpaqueUnitsLua(deferredPass, drawReflection, drawRefraction)
+  for _,w in ripairs(self.DrawOpaqueUnitsLuaList) do
+    w:DrawOpaqueUnitsLua(deferredPass, drawReflection, drawRefraction)
+  end
+  return
+end
+
+
+function widgetHandler:DrawOpaqueFeaturesLua(deferredPass, drawReflection, drawRefraction)
+  for _,w in ripairs(self.DrawOpaqueFeaturesLuaList) do
+    w:DrawOpaqueFeaturesLua(deferredPass, drawReflection, drawRefraction)
+  end
+  return
+end
+
+
+function widgetHandler:DrawAlphaUnitsLua(drawReflection, drawRefraction)
+  for _,w in ripairs(self.DrawAlphaUnitsLuaList) do
+    w:DrawAlphaUnitsLua(drawReflection, drawRefraction)
+  end
+  return
+end
+
+
+function widgetHandler:DrawAlphaFeaturesLua(drawReflection, drawRefraction)
+  for _,w in ripairs(self.DrawAlphaFeaturesLuaList) do
+    w:DrawAlphaFeaturesLua(drawReflection, drawRefraction)
+  end
+  return
+end
+
+
+function widgetHandler:DrawShadowUnitsLua()
+  for _,w in ripairs(self.DrawShadowUnitsLuaList) do
+    w:DrawShadowUnitsLua()
+  end
+  return
+end
+
+
+function widgetHandler:DrawShadowFeaturesLua()
+  for _,w in ripairs(self.DrawShadowFeaturesLuaList) do
+    w:DrawShadowFeaturesLua()
+  end
+  return
+end
+
+
+function widgetHandler:DrawPreDecals()
+  for _,w in ripairs(self.DrawPreDecalsList) do
+    w:DrawPreDecals()
+  end
+  return
+end
+
+
+function widgetHandler:DrawWorldPreParticles(drawAboveWater, drawBelowWater, drawReflection, drawRefraction)
+  for _,w in ripairs(self.DrawWorldPreParticlesList) do
+    w:DrawWorldPreParticles(drawAboveWater, drawBelowWater, drawReflection, drawRefraction)
   end
   return
 end
@@ -1307,6 +1524,22 @@ function widgetHandler:DrawWorldRefraction()
 end
 
 
+function widgetHandler:DrawUnitsPostDeferred()
+  for _,w in ripairs(self.DrawUnitsPostDeferredList) do
+    w:DrawUnitsPostDeferred()
+  end
+  return
+end
+
+
+function widgetHandler:DrawFeaturesPostDeferred()
+  for _,w in ripairs(self.DrawFeaturesPostDeferredList) do
+    w:DrawFeaturesPostDeferred()
+  end
+  return
+end
+
+
 function widgetHandler:DrawScreenEffects(vsx, vsy)
   for _,w in ripairs(self.DrawScreenEffectsList) do
     w:DrawScreenEffects(vsx, vsy)
@@ -1326,6 +1559,23 @@ end
 function widgetHandler:DrawInMiniMap(xSize, ySize)
   for _,w in ripairs(self.DrawInMiniMapList) do
     w:DrawInMiniMap(xSize, ySize)
+  end
+  return
+end
+
+
+function widgetHandler:SunChanged()
+  local nightModeParams = _G['NightModeParams']
+  for _,w in ripairs(self.SunChangedList) do
+    w:SunChanged(nightModeParams)
+  end
+  return
+end
+
+
+function widgetHandler:FontsChanged()
+  for _,w in ripairs(self.FontsChangedList) do
+    w:FontsChanged()
   end
   return
 end
@@ -1506,6 +1756,78 @@ function widgetHandler:MouseWheel(up, value)
   end
 end
 
+function widgetHandler:ControllerAdded(deviceIndex)
+  for _,w in ipairs(self.ControllerAddedList) do
+    if (w:ControllerAdded(deviceIndex)) then
+      return true
+    end
+  end
+  return false
+end
+
+function widgetHandler:ControllerRemoved(instanceId)
+  for _,w in ipairs(self.ControllerRemovedList) do
+    if (w:ControllerRemoved(instanceId)) then
+      return true
+    end
+  end
+  return false
+end
+
+function widgetHandler:ControllerConnected(instanceId)
+  for _,w in ipairs(self.ControllerConnectedList) do
+    if (w:ControllerConnected(instanceId)) then
+      return true
+    end
+  end
+  return false
+end
+
+function widgetHandler:ControllerDisconnected(instanceId)
+  for _,w in ipairs(self.ControllerDisconnectedList) do
+    if (w:ControllerDisconnected(instanceId)) then
+      return true
+    end
+  end
+  return false
+end
+
+function widgetHandler:ControllerRemapped(instanceId)
+  for _,w in ipairs(self.ControllerRemappedList) do
+    if (w:ControllerRemapped(instanceId)) then
+      return true
+    end
+  end
+  return false
+end
+
+function widgetHandler:ControllerButtonUp(instanceId, button, state, name)
+  for _,w in ipairs(self.ControllerButtonUpList) do
+    if (w:ControllerButtonUp(instanceId, button, state, name)) then
+      return true
+    end
+  end
+  return false
+end
+
+function widgetHandler:ControllerButtonDown(instanceId, button, state, name)
+  for _,w in ipairs(self.ControllerButtonDownList) do
+    if (w:ControllerButtonDown(instanceId, button, state, name)) then
+      return true
+    end
+  end
+  return false
+end
+
+function widgetHandler:ControllerAxisMotion(instanceId, axis, value, name)
+  for _,w in ipairs(self.ControllerAxisMotionList) do
+    if (w:ControllerAxisMotion(instanceId, axis, value, name)) then
+      return true
+    end
+  end
+  return false
+end
+
 function widgetHandler:JoyAxis(axis, value)
 	for _,w in ipairs(self.JoyAxisList) do
 		if (w:JoyAxis(axis, value)) then
@@ -1657,9 +1979,23 @@ function widgetHandler:GameFrame(frameNum)
   return
 end
 
+function widgetHandler:GameFramePost(frameNum)
+  for _,w in ipairs(self.GameFramePostList) do
+    w:GameFramePost(frameNum)
+  end
+  return
+end
+
 function widgetHandler:GameProgress(frame)
   for _,w in ipairs(self.GameProgressList) do
     w:GameProgress(frame)
+  end
+  return
+end
+
+function widgetHandler:UnsyncedHeightMapUpdate(x1, z1, x2, z2)
+  for _,w in ipairs(self.UnsyncedHeightMapUpdateList) do
+    w:UnsyncedHeightMapUpdate(x1, z1, x2, z2)
   end
   return
 end
@@ -1703,6 +2039,14 @@ function widgetHandler:MapDrawCmd(playerID, cmdType, px, py, pz, ...)
 end
 
 
+function widgetHandler:ClearMapMarks()
+  for _,w in ipairs(self.ClearMapMarksList) do
+    w:ClearMapMarks()
+  end
+  return
+end
+
+
 function widgetHandler:GameSetup(state, ready, playerStates)
   for _,w in ipairs(self.GameSetupList) do
     local success, newReady = w:GameSetup(state, ready, playerStates)
@@ -1730,7 +2074,25 @@ end
 --  Unit call-ins
 --
 
+function widgetHandler:MetaUnitAdded(unitID, unitDefID, unitTeam)
+  for _,w in ipairs(self.MetaUnitAddedList) do
+    w:MetaUnitAdded(unitID, unitDefID, unitTeam)
+  end
+  return
+end
+
+
+function widgetHandler:MetaUnitRemoved(unitID, unitDefID, unitTeam)
+  for _,w in ipairs(self.MetaUnitRemovedList) do
+    w:MetaUnitRemoved(unitID, unitDefID, unitTeam)
+  end
+  return
+end
+
+
 function widgetHandler:UnitCreated(unitID, unitDefID, unitTeam, builderID)
+  widgetHandler:MetaUnitAdded(unitID, unitDefID, unitTeam)
+
   for _,w in ipairs(self.UnitCreatedList) do
     w:UnitCreated(unitID, unitDefID, unitTeam, builderID)
   end
@@ -1764,9 +2126,19 @@ function widgetHandler:UnitReverseBuilt(unitID, unitDefID, unitTeam)
 end
 
 
-function widgetHandler:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widgetHandler:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam, weaponDefID)
+  widgetHandler:MetaUnitRemoved(unitID, unitDefID, unitTeam)
+
   for _,w in ipairs(self.UnitDestroyedList) do
-    w:UnitDestroyed(unitID, unitDefID, unitTeam)
+    w:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam, weaponDefID)
+  end
+  return
+end
+
+
+function widgetHandler:UnitDestroyedByTeam(unitID, unitDefID, unitTeam, attackerTeamID)
+  for _,w in ipairs(self.UnitDestroyedByTeamList) do
+    w:UnitDestroyedByTeam(unitID, unitDefID, unitTeam, attackerTeamID)
   end
   return
 end
@@ -1780,7 +2152,17 @@ function widgetHandler:RenderUnitDestroyed(unitID, unitDefID, unitTeam)
 end
 
 
+function widgetHandler:UnitExperience(unitID, unitDefID, unitTeam, experience, oldExperience)
+  for _,w in ipairs(self.UnitExperienceList) do
+    w:UnitExperience(unitID, unitDefID, unitTeam, experience, oldExperience)
+  end
+  return
+end
+
+
 function widgetHandler:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
+  widgetHandler:MetaUnitRemoved(unitID, unitDefID, unitTeam)
+
   for _,w in ipairs(self.UnitTakenList) do
     w:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
   end
@@ -1789,6 +2171,8 @@ end
 
 
 function widgetHandler:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
+  widgetHandler:MetaUnitAdded(unitID, unitDefID, unitTeam)
+
   for _,w in ipairs(self.UnitGivenList) do
     w:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
   end
@@ -1804,9 +2188,9 @@ function widgetHandler:UnitIdle(unitID, unitDefID, unitTeam)
 end
 
 
-function widgetHandler:UnitCommand(unitID, unitDefID, unitTeam, cmdId, cmdParams, cmdOpts, cmdTag)
+function widgetHandler:UnitCommand(unitID, unitDefID, unitTeam, cmdId, cmdParams, cmdOpts, cmdTag, playerID, fromSynced, fromLua)
   for _,w in ipairs(self.UnitCommandList) do
-    w:UnitCommand(unitID, unitDefID, unitTeam, cmdId, cmdParams, cmdOpts, cmdTag)
+    w:UnitCommand(unitID, unitDefID, unitTeam, cmdId, cmdParams, cmdOpts, cmdTag, playerID, fromSynced, fromLua)
   end
   return
 end
@@ -1901,9 +2285,9 @@ function widgetHandler:UnitLeftAir(unitID, unitDefID, unitTeam)
 end
 
 
-function widgetHandler:UnitSeismicPing(x, y, z, strength)
+function widgetHandler:UnitSeismicPing(x, y, z, strength, allyTeam, unitID, unitDefID)
   for _,w in ipairs(self.UnitSeismicPingList) do
-    w:UnitSeismicPing(x, y, z, strength)
+    w:UnitSeismicPing(x, y, z, strength, allyTeam, unitID, unitDefID)
   end
   return
 end
@@ -1983,6 +2367,109 @@ function widgetHandler:StockpileChanged(unitID, unitDefID, unitTeam,
   for _,w in ipairs(self.StockpileChangedList) do
     w:StockpileChanged(unitID, unitDefID, unitTeam,
                        weaponNum, oldCount, newCount)
+  end
+  return
+end
+
+function widgetHandler:UnitSale(unitID, unitDefID, unitTeam, buyerID)
+  for _,w in ipairs(self.UnitSaleList) do
+    w:UnitSale(unitID, unitDefID, unitTeam, buyerID)
+  end
+  return
+end
+
+function widgetHandler:UnitSold(unitID, unitDefID, unitTeam, buyerID)
+  for _,w in ipairs(self.UnitSoldList) do
+    w:UnitSold(unitID, unitDefID, unitTeam, buyerID)
+  end
+  return
+end
+
+function widgetHandler:VisibleUnitAdded(unitID, unitDefID, unitTeam, reason)
+  for _,w in ipairs(self.VisibleUnitAddedList) do
+    w:VisibleUnitAdded(unitID, unitDefID, unitTeam, reason)
+  end
+  return
+end
+
+function widgetHandler:VisibleUnitRemoved(unitID, unitDefID, unitTeam, reason)
+  for _,w in ipairs(self.VisibleUnitRemovedList) do
+    w:VisibleUnitRemoved(unitID, unitDefID, unitTeam, reason)
+  end
+  return
+end
+
+function widgetHandler:VisibleUnitsChanged(visibleUnits, numVisibleUnits)
+  for _,w in ipairs(self.VisibleUnitsChangedList) do
+    w:VisibleUnitsChanged(visibleUnits, numVisibleUnits)
+  end
+  return
+end
+
+function widgetHandler:AlliedUnitAdded(unitID, unitDefID, unitTeam)
+  for _,w in ipairs(self.AlliedUnitAddedList) do
+    w:AlliedUnitAdded(unitID, unitDefID, unitTeam)
+  end
+  return
+end
+
+function widgetHandler:AlliedUnitRemoved(unitID, unitDefID, unitTeam)
+  for _,w in ipairs(self.AlliedUnitRemovedList) do
+    w:AlliedUnitRemoved(unitID, unitDefID, unitTeam)
+  end
+  return
+end
+
+function widgetHandler:AlliedUnitsChanged(visibleUnits, numVisibleUnits)
+  for _,w in ipairs(self.AlliedUnitsChangedList) do
+    w:AlliedUnitsChanged(visibleUnits, numVisibleUnits)
+  end
+  return
+end
+
+
+--------------------------------------------------------------------------------
+--
+--  GFX call-ins
+--
+
+function widgetHandler:VisibleExplosion(px, py, pz, weaponID, ownerID)
+  for _,w in ipairs(self.VisibleExplosionList) do
+    w:VisibleExplosion(px, py, pz, weaponID, ownerID)
+  end
+  return
+end
+
+function widgetHandler:Barrelfire(px, py, pz, weaponID, ownerID)
+  for _,w in ipairs(self.BarrelfireList) do
+    w:Barrelfire(px, py, pz, weaponID, ownerID)
+  end
+  return
+end
+
+function widgetHandler:CrashingAircraft(unitID, unitDefID, unitTeam)
+  for _,w in ipairs(self.CrashingAircraftList) do
+    w:CrashingAircraft(unitID, unitDefID, unitTeam)
+  end
+  return
+end
+
+
+--------------------------------------------------------------------------------
+--
+--  Feature call-ins
+--
+
+function widgetHandler:FeatureCreated(featureID, allyTeam)
+  for _,w in ipairs(self.FeatureCreatedList) do
+    w:FeatureCreated(featureID, allyTeam)
+  end
+  return
+end
+
+function widgetHandler:FeatureDestroyed(featureID, allyTeam)
+  for _,w in ipairs(self.FeatureDestroyedList) do
+    w:FeatureDestroyed(featureID, allyTeam)
   end
   return
 end

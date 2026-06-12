@@ -103,6 +103,7 @@ local callInLists = {
   "PlayerRemoved",
 
   "GameFrame",
+  "GameFramePost",
   "GamePaused",
 
   "ViewResize",  -- FIXME ?
@@ -123,7 +124,7 @@ local callInLists = {
   "UnitCmdDone",
   "UnitPreDamaged",
   "UnitDamaged",
-  --"UnitStunned",
+  "UnitStunned",
   "UnitTaken",
   "UnitGiven",
   "UnitEnteredRadar",
@@ -145,13 +146,16 @@ local callInLists = {
   -- "UnitMoveFailed",
   "StockpileChanged",
 
+  "ActiveCommandChanged",
+  "CameraRotationChanged",
+  "CameraPositionChanged",
   "CommandNotify",
 
   -- Feature CallIns
   "FeatureCreated",
   "FeatureDestroyed",
-  --"FeatureDamaged",
-  --"FeaturePreDamaged",
+  "FeatureDamaged",
+  "FeaturePreDamaged",
 
   -- Projectile CallIns
   "ProjectileCreated",
@@ -173,7 +177,7 @@ local callInLists = {
   "AllowStartPosition",
   "AllowUnitCreation",
   "AllowUnitTransfer",
-  --"AllowUnitBuildStep", --  Expensive
+  "AllowUnitBuildStep",
   "AllowUnitCaptureStep",
   "AllowUnitTransport",
   "AllowUnitTransportLoad",
@@ -192,6 +196,7 @@ local callInLists = {
   "AllowWeaponTargetCheck",
   "AllowWeaponTarget",
   "AllowWeaponInterceptTarget",
+  "UnitAutoTargetRange",
   -- unsynced
   "DrawUnit",
   "DrawFeature",
@@ -223,6 +228,8 @@ local callInLists = {
   'DrawAlphaFeaturesLua',
   'DrawShadowUnitsLua',
   'DrawShadowFeaturesLua',
+
+  "FontsChanged",
 
   "RecvFromSynced",
 
@@ -1054,6 +1061,13 @@ function gadgetHandler:GameFrame(frameNum)
   return
 end
 
+function gadgetHandler:GameFramePost(frameNum)
+  for _, g in r_ipairs(self.GameFramePostList) do
+    g:GameFramePost(frameNum)
+  end
+  return
+end
+
 function gadgetHandler:GamePaused(playerID, paused)
   for _, g in ipairs(self.GamePausedList) do
     g:GamePaused(playerID, paused)
@@ -1345,15 +1359,15 @@ function gadgetHandler:AllowUnitTransfer(unitID, unitDefID,
   return true
 end
 
--- function gadgetHandler:AllowUnitBuildStep(builderID, builderTeam,
---                       unitID, unitDefID, part)
---   for _, g in ipairs(self.AllowUnitBuildStepList) do
---     if not g:AllowUnitBuildStep(builderID, builderTeam, unitID, unitDefID, part) then
---       return false
---     end
---   end
---   return true
--- end
+function gadgetHandler:AllowUnitBuildStep(builderID, builderTeam,
+                      unitID, unitDefID, part)
+  for _, g in ipairs(self.AllowUnitBuildStepList) do
+    if not g:AllowUnitBuildStep(builderID, builderTeam, unitID, unitDefID, part) then
+      return false
+    end
+  end
+  return true
+end
 
 function gadgetHandler:AllowUnitCaptureStep(builderID, builderTeam,
                       unitID, unitDefID, part)
@@ -1470,22 +1484,31 @@ function gadgetHandler:AllowWeaponTargetCheck(attackerID, attackerWeaponNum, att
 end
 
 function gadgetHandler:AllowWeaponTarget(attackerID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
+  if not defPriority then
+    return true
+  end
+
   local allowed = true
-  local priority = 1.0
+  local result = 1.0
 
-  for _, g in ipairs(self.AllowWeaponTargetList) do
-    local targetAllowed, targetPriority = g:AllowWeaponTarget(attackerID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
-
-    if not targetAllowed then
-      allowed = false;
-      break
+  if targetID == -1 and attackerWeaponNum == -1 then
+    for _, g in ipairs(self.UnitAutoTargetRangeList) do
+      defPriority = g:UnitAutoTargetRange(attackerID, defPriority)
     end
-    if targetPriority > priority then
-      priority = targetPriority
+    allowed, result = defPriority > 0, defPriority
+  else
+    for _, g in ipairs(self.AllowWeaponTargetList) do
+      local targetPriority = g:AllowWeaponTarget(attackerID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
+      if targetPriority then
+        result = targetPriority
+      end
     end
   end
 
-  return allowed, priority
+  return allowed, result
+end
+
+function gadgetHandler:UnitAutoTargetRange(attackerID, autoTargetRange)
 end
 
 function gadgetHandler:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponNum, interceptorTargetID)
@@ -1535,11 +1558,18 @@ function gadgetHandler:UnitReverseBuilt(unitID, unitDefID, unitTeam)
   return
 end
 
-function gadgetHandler:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
+function gadgetHandler:UnitStunned(unitID, unitDefID, unitTeam, stunned)
+  for _, g in r_ipairs(self.UnitStunnedList) do
+    g:UnitStunned(unitID, unitDefID, unitTeam, stunned)
+  end
+  return
+end
+
+function gadgetHandler:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam, weaponDefID)
   gadgetHandler:MetaUnitRemoved(unitID, unitDefID, unitTeam)
 
   for _, g in ipairs(self.UnitDestroyedList) do
-    g:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
+    g:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam, weaponDefID)
   end
   return
 end
@@ -1745,9 +1775,9 @@ end
 --  Feature call-ins
 --
 
-function gadgetHandler:FeatureCreated(featureID, allyTeam)
+function gadgetHandler:FeatureCreated(featureID, allyTeam, sourceID)
   for _, g in ipairs(self.FeatureCreatedList) do
-    g:FeatureCreated(featureID, allyTeam)
+    g:FeatureCreated(featureID, allyTeam, sourceID)
   end
   return
 end
@@ -1759,55 +1789,55 @@ function gadgetHandler:FeatureDestroyed(featureID, allyTeam)
   return
 end
 
--- function gadgetHandler:FeatureDamaged(
---   featureID,
---   featureDefID,
---   featureTeam,
---   damage,
---   weaponDefID,
---   projectileID,
---   attackerID,
---   attackerDefID,
---   attackerTeam
--- )
---   for _, g in ipairs(self.FeatureDamagedList) do
---     g:FeatureDamaged(featureID, featureDefID, featureTeam,
---       damage, weaponDefID, projectileID,
---       attackerID, attackerDefID, attackerTeam)
---   end
--- end
+function gadgetHandler:FeatureDamaged(
+  featureID,
+  featureDefID,
+  featureTeam,
+  damage,
+  weaponDefID,
+  projectileID,
+  attackerID,
+  attackerDefID,
+  attackerTeam
+)
+  for _, g in ipairs(self.FeatureDamagedList) do
+    g:FeatureDamaged(featureID, featureDefID, featureTeam,
+      damage, weaponDefID, projectileID,
+      attackerID, attackerDefID, attackerTeam)
+  end
+end
 
--- function gadgetHandler:FeaturePreDamaged(
---   featureID,
---   featureDefID,
---   featureTeam,
---   damage,
---   weaponDefID,
---   projectileID,
---   attackerID,
---   attackerDefID,
---   attackerTeam
--- )
---   local retDamage = damage
---   local retImpulse = 1.0
+function gadgetHandler:FeaturePreDamaged(
+  featureID,
+  featureDefID,
+  featureTeam,
+  damage,
+  weaponDefID,
+  projectileID,
+  attackerID,
+  attackerDefID,
+  attackerTeam
+)
+  local retDamage = damage
+  local retImpulse = 1.0
 
---   for _, g in ipairs(self.FeaturePreDamagedList) do
---     local dmg, imp = g:FeaturePreDamaged(
---       featureID, featureDefID, featureTeam,
---       retDamage,
---       weaponDefID, projectileID,
---       attackerID, attackerDefID, attackerTeam)
+  for _, g in ipairs(self.FeaturePreDamagedList) do
+    local dmg, imp = g:FeaturePreDamaged(
+      featureID, featureDefID, featureTeam,
+      retDamage,
+      weaponDefID, projectileID,
+      attackerID, attackerDefID, attackerTeam)
 
---     if dmg ~= nil then
---       retDamage = dmg
---     end
---     if imp ~= nil then
---       retImpulse = imp
---     end
---   end
+    if dmg ~= nil then
+      retDamage = dmg
+    end
+    if imp ~= nil then
+      retImpulse = imp
+    end
+  end
 
---   return retDamage, retImpulse
--- end
+  return retDamage, retImpulse
+end
 
 
 --------------------------------------------------------------------------------
@@ -1889,6 +1919,27 @@ function gadgetHandler:DefaultCommand(type, id, cmd)
     if id then
       return id
     end
+  end
+  return
+end
+
+function gadgetHandler:ActiveCommandChanged(id, cmdType)
+  for _, g in ipairs(self.ActiveCommandChangedList) do
+    g:ActiveCommandChanged(id, cmdType)
+  end
+  return
+end
+
+function gadgetHandler:CameraRotationChanged(rotx, roty, rotz)
+  for _, g in r_ipairs(self.CameraRotationChangedList) do
+    g:CameraRotationChanged(rotx, roty, rotz)
+  end
+  return
+end
+
+function gadgetHandler:CameraPositionChanged(posx, posy, posz)
+  for _, g in r_ipairs(self.CameraPositionChangedList) do
+    g:CameraPositionChanged(posx, posy, posz)
   end
   return
 end
@@ -2139,6 +2190,13 @@ end
 function gadgetHandler:Load(zip)
   for _, g in ipairs(self.LoadList) do
     g:Load(zip)
+  end
+  return
+end
+
+function gadgetHandler:FontsChanged()
+  for _, g in r_ipairs(self.FontsChangedList) do
+    g:FontsChanged()
   end
   return
 end
