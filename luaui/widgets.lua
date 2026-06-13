@@ -754,7 +754,7 @@ local function SafeWrapWidget(widget)
     return
   elseif (SAFEWRAP == 1) then
     if (widget.GetInfo and widget.GetInfo().unsafe) then
-      Spring.LOG(section, LOG.INFO, 'LuaUI: loaded unsafe widget: ' .. widget.whInfo.name)
+      Spring.Log(section, LOG.INFO, 'LuaUI: loaded unsafe widget: ' .. widget.whInfo.name)
       return
     end
   end

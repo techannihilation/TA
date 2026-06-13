@@ -1,8 +1,8 @@
 return {
 	tllvanya = {
 		buildangle = 4096,
-		buildcostenergy = 153125000,
-		buildcostmetal = 46550000,
+		buildcostenergy = 1071875000,
+		buildcostmetal = 325850000,
 		builder = false,
 		buildpic = "tllvanya.dds",
 		buildtime = 60000000,
@@ -25,7 +25,7 @@ return {
 		idletime = 2200,
 		losemitheight = 175,
 		mass = 42865866,
-		maxdamage = 1500000,
+		maxdamage = 15000000,
 		maxslope = 16,
 		maxwaterdepth = 0,
 		name = "Vanya",

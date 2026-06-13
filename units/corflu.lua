@@ -1,8 +1,8 @@
 return {
 	corflu = {
 		buildangle = 4096,
-		buildcostenergy = 253935149,
-		buildcostmetal = 44937038,
+		buildcostenergy = 1777546043,
+		buildcostmetal = 314559266,
 		builder = false,
 		buildpic = "corflu.dds",
 		buildtime = 60000000,
@@ -25,7 +25,7 @@ return {
 		idletime = 2200,
 		losemitheight = 148,
 		mass = 39777014,
-		maxdamage = 1500000,
+		maxdamage = 15000000,
 		maxslope = 26,
 		maxwaterdepth = 0,
 		name = "Influence",
