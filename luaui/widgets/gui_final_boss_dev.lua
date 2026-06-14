@@ -18,6 +18,9 @@ local spEcho = Spring.Echo
 local spIsGUIHidden = Spring.IsGUIHidden
 local spSendLuaRulesMsg = Spring.SendLuaRulesMsg
 
+local vfsFileExists = VFS.FileExists
+local vfsInclude = VFS.Include
+
 local glColor = gl.Color
 local glGetTextWidth = gl.GetTextWidth
 local glRect = gl.Rect
@@ -44,13 +47,13 @@ local SAVE_FILE = "LuaUI/Config/final_boss_dev_fx.lua"
 local defaultConfig = {
 	normal = {
 		outline = { enabled = true, depthMode = "off", alpha = 1, lineWidth = 1, pulseSpeed = 1, red = true, redAlpha = 1, cyan = false, cyanAlpha = 1, green = false, greenAlpha = 1 },
-		ghost = { enabled = true, depthMode = "off", alpha = 1, offset = 1, jitterSpeed = 1, redPass = true, redAlpha = 1, cyanPass = true, cyanAlpha = 1, yellowPass = false, yellowAlpha = 1, purplePass = false, purpleAlpha = 1 },
+		ghost = { enabled = true, depthMode = "lequal", alpha = 1, offset = 1, jitterSpeed = 1, redPass = true, redAlpha = 1, cyanPass = true, cyanAlpha = 1, yellowPass = false, yellowAlpha = 1, purplePass = false, purpleAlpha = 1 },
 		shader = { enabled = true, intensity = 1, scan = 1, scanDensity = 1, noise = 1, flicker = 1, tear = 0 },
 	},
 	armored = {
-		outline = { enabled = true, depthMode = "off", alpha = 1, lineWidth = 1, pulseSpeed = 1, red = true, redAlpha = 1, cyan = true, cyanAlpha = 1, green = false, greenAlpha = 1 },
-		ghost = { enabled = true, depthMode = "off", alpha = 1, offset = 1, jitterSpeed = 1, redPass = true, redAlpha = 1, cyanPass = true, cyanAlpha = 1, yellowPass = true, yellowAlpha = 1, purplePass = true, purpleAlpha = 1 },
-		shader = { enabled = true, intensity = 1, scan = 1, scanDensity = 1, noise = 1, flicker = 1, tear = 1 },
+		outline = { enabled = true, depthMode = "off", alpha = 2.7892561, lineWidth = 0.65289259, pulseSpeed = 1, red = true, redAlpha = 0.04958677, cyan = true, cyanAlpha = 0, green = true, greenAlpha = 0.08677686 },
+		ghost = { enabled = true, depthMode = "less", alpha = 0.80578512, offset = 0.82644629, jitterSpeed = 0.64462811, redPass = true, redAlpha = 0.30991736, cyanPass = true, cyanAlpha = 0.57024789, yellowPass = true, yellowAlpha = 1.95867777, purplePass = true, purpleAlpha = 1.02892566 },
+		shader = { enabled = true, intensity = 2.06611562, scan = 1.21487594, scanDensity = 5.69999981, noise = 0.39669418, flicker = 0.27272728, tear = 0 },
 	},
 }
 
@@ -284,6 +287,39 @@ local function saveFxConfig()
 	end
 end
 
+local function loadFxConfig()
+	if not vfsFileExists or not vfsInclude then
+		setSaveStatus("Load failed: VFS missing", false)
+		if spEcho then
+			spEcho("Final Boss Dev FX load failed: VFS missing")
+		end
+		return
+	end
+	if not vfsFileExists(SAVE_FILE, VFS.RAW_ONLY) then
+		setSaveStatus("Load failed: file missing", false)
+		if spEcho then
+			spEcho("Final Boss Dev FX load failed: missing", SAVE_FILE)
+		end
+		return
+	end
+
+	local ok, loadedConfig = pcall(vfsInclude, SAVE_FILE, nil, VFS.RAW_ONLY)
+	if not ok or type(loadedConfig) ~= "table" then
+		setSaveStatus("Load failed", false)
+		if spEcho then
+			spEcho("Final Boss Dev FX load failed:", loadedConfig)
+		end
+		return
+	end
+
+	WG.finalBossDevFxConfig = copyTable(loadedConfig)
+	ensureConfig()
+	setSaveStatus("Loaded: " .. SAVE_FILE, true)
+	if spEcho then
+		spEcho("Final Boss Dev FX loaded:", SAVE_FILE)
+	end
+end
+
 function widget:Initialize()
 	ensureConfig()
 	panelX = clamp(panelX, 8, math.max(8, vsx - panelW - 8))
@@ -341,7 +377,8 @@ function widget:DrawScreen()
 
 	local y = y2 - 64
 	drawButton("spawn", "Spawn Boss Now", x1 + 12, y, x1 + 170, y + 24, false)
-	drawButton("save", "Save FX", x1 + 184, y, x1 + 314, y + 24, false)
+	drawButton("save", "Save FX", x1 + 184, y, x1 + 304, y + 24, false)
+	drawButton("load", "Load FX", x1 + 318, y, x1 + 438, y + 24, false)
 	y = y - 30
 	drawButton("normal", "No Armor FX", x1 + 12, y, x1 + 222, y + 24, activePhase == "normal")
 	drawButton("armored", "Armored FX", x1 + 234, y, x1 + 456, y + 24, activePhase == "armored")
@@ -388,6 +425,8 @@ function widget:MousePress(mx, my, button)
 					end
 				elseif box.id == "save" then
 					saveFxConfig()
+				elseif box.id == "load" then
+					loadFxConfig()
 				elseif box.id == "normal" or box.id == "armored" then
 					activePhase = box.id
 					WG.finalBossDevFxPreviewPhase = box.id

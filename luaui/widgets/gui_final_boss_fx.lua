@@ -59,11 +59,14 @@ local uFlicker
 local uTear
 
 local FINAL_BOSS_SOUND = "luaui/sounds/final_boss.wav"
+local FINAL_BOSS_ARMORED_SOUND = "/home/cachyos/Pulpit/final_boss_2.wav"
 local FINAL_BOSS_SOUND_VOLUME = 4
+local FINAL_BOSS_ARMORED_SOUND_VOLUME = FINAL_BOSS_SOUND_VOLUME * 1.4
 local FINAL_BOSS_SOUND_LOOP_SECONDS = 40 / 30
 local FINAL_BOSS_SOUND_RESTART_MOVE_SQ = 700 * 700
 
 local soundUnitID
+local soundFile
 local soundX
 local soundZ
 local soundNextAt = 0
@@ -72,13 +75,13 @@ local soundLastPlayAt = -1000
 local defaultFxConfig = {
 	normal = {
 		outline = { enabled = true, depthMode = "off", alpha = 1, lineWidth = 1, pulseSpeed = 1, red = true, redAlpha = 1, cyan = false, cyanAlpha = 1, green = false, greenAlpha = 1 },
-		ghost = { enabled = true, depthMode = "off", alpha = 1, offset = 1, jitterSpeed = 1, redPass = true, redAlpha = 1, cyanPass = true, cyanAlpha = 1, yellowPass = false, yellowAlpha = 1, purplePass = false, purpleAlpha = 1 },
+		ghost = { enabled = true, depthMode = "lequal", alpha = 1, offset = 1, jitterSpeed = 1, redPass = true, redAlpha = 1, cyanPass = true, cyanAlpha = 1, yellowPass = false, yellowAlpha = 1, purplePass = false, purpleAlpha = 1 },
 		shader = { enabled = true, intensity = 1, scan = 1, scanDensity = 1, noise = 1, flicker = 1, tear = 0 },
 	},
 	armored = {
-		outline = { enabled = true, depthMode = "off", alpha = 1, lineWidth = 1, pulseSpeed = 1, red = true, redAlpha = 1, cyan = true, cyanAlpha = 1, green = false, greenAlpha = 1 },
-		ghost = { enabled = true, depthMode = "off", alpha = 1, offset = 1, jitterSpeed = 1, redPass = true, redAlpha = 1, cyanPass = true, cyanAlpha = 1, yellowPass = true, yellowAlpha = 1, purplePass = true, purpleAlpha = 1 },
-		shader = { enabled = true, intensity = 1, scan = 1, scanDensity = 1, noise = 1, flicker = 1, tear = 1 },
+		outline = { enabled = true, depthMode = "off", alpha = 2.7892561, lineWidth = 0.65289259, pulseSpeed = 1, red = true, redAlpha = 0.04958677, cyan = true, cyanAlpha = 0, green = true, greenAlpha = 0.08677686 },
+		ghost = { enabled = true, depthMode = "less", alpha = 0.80578512, offset = 0.82644629, jitterSpeed = 0.64462811, redPass = true, redAlpha = 0.30991736, cyanPass = true, cyanAlpha = 0.57024789, yellowPass = true, yellowAlpha = 1.95867777, purplePass = true, purpleAlpha = 1.02892566 },
+		shader = { enabled = true, intensity = 2.06611562, scan = 1.21487594, scanDensity = 5.69999981, noise = 0.39669418, flicker = 0.27272728, tear = 0 },
 	},
 }
 
@@ -473,6 +476,7 @@ function widget:Shutdown()
 	end
 	ghostShader = nil
 	soundUnitID = nil
+	soundFile = nil
 	soundNextAt = 0
 end
 
@@ -485,6 +489,7 @@ function widget:UnitDestroyed(unitID)
 	pendingUnits[unitID] = nil
 	if unitID == soundUnitID then
 		soundUnitID = nil
+		soundFile = nil
 		soundNextAt = 0
 	end
 end
@@ -519,6 +524,7 @@ function widget:Update(dt)
 	local unitID = firstTrackedBoss()
 	if not unitID or (spGetUnitIsDead and spGetUnitIsDead(unitID)) then
 		soundUnitID = nil
+		soundFile = nil
 		soundNextAt = 0
 		return
 	end
@@ -527,12 +533,17 @@ function widget:Update(dt)
 	if not x then
 		return
 	end
+	local currentSoundFile = isAdvancedFxPhase(unitID) and FINAL_BOSS_ARMORED_SOUND or FINAL_BOSS_SOUND
 	local now = spGetGameSeconds and spGetGameSeconds() or 0
 	local forcePlay = false
 	if soundUnitID ~= unitID then
 		soundUnitID = unitID
+		soundFile = currentSoundFile
 		soundX = x
 		soundZ = z
+		forcePlay = true
+	elseif soundFile ~= currentSoundFile then
+		soundFile = currentSoundFile
 		forcePlay = true
 	elseif soundX then
 		local dx = x - soundX
@@ -545,7 +556,8 @@ function widget:Update(dt)
 		forcePlay = true
 	end
 	if forcePlay and (now - soundLastPlayAt) >= 0 then
-		spPlaySoundFile(FINAL_BOSS_SOUND, FINAL_BOSS_SOUND_VOLUME, x, y, z, "sfx")
+		local currentSoundVolume = isAdvancedFxPhase(unitID) and FINAL_BOSS_ARMORED_SOUND_VOLUME or FINAL_BOSS_SOUND_VOLUME
+		spPlaySoundFile(currentSoundFile, currentSoundVolume, x, y, z, "sfx")
 		soundLastPlayAt = now
 		soundNextAt = now + FINAL_BOSS_SOUND_LOOP_SECONDS
 		soundX = x
