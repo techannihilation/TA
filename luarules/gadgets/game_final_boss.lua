@@ -41,10 +41,13 @@ local spGetTeamResources = Spring.GetTeamResources
 local spGetTeamUnits = Spring.GetTeamUnits
 local spGetTeamStartPosition = Spring.GetTeamStartPosition
 local spGetUnitDefID = Spring.GetUnitDefID
+local spGetUnitHealth = Spring.GetUnitHealth
 local spGetUnitPosition = Spring.GetUnitPosition
 local spGetGroundHeight = Spring.GetGroundHeight
+local spIsCheatingEnabled = Spring.IsCheatingEnabled
 local spCreateUnit = Spring.CreateUnit
 local spGiveOrderToUnit = Spring.GiveOrderToUnit
+local spSendMessageToPlayer = Spring.SendMessageToPlayer
 local spSetUnitArmored = Spring.SetUnitArmored
 local spSetGameRulesParam = Spring.SetGameRulesParam
 local spSetTeamResource = Spring.SetTeamResource
@@ -61,14 +64,14 @@ if spawnMinutes < MIN_SPAWN_MINUTES then
 end
 local SPAWN_FRAME = math.floor((spawnMinutes * 60 * FRAMES_PER_SECOND) + 0.5)
 local WARNING_FRAME = math.max(0, SPAWN_FRAME - (WARNING_MINUTES * 60 * FRAMES_PER_SECOND))
-local BOSS_TEAM_ENERGY_STORAGE = 10000000
-local BOSS_TEAM_METAL_STORAGE = 1000000
+local BOSS_TEAM_ENERGY_STORAGE = 90000000
+local BOSS_TEAM_METAL_STORAGE = 9000000
 local RESOURCE_TOPUP_FRAMES = FRAMES_PER_SECOND
--- Match Techno Lands final boss defaults at final-wave progress:
--- hp: cat_final_boss_hp_mult 1.5 * (1 + 2 * 1^2) * final special 1.75 = 7.875
--- damage: Techno Lands final default 3.9, doubled for TA final boss pressure = 7.8
-local FINAL_BOSS_HP_MULT = 7.875
+-- Armor is a permanent enraged phase after the boss drops to 30% HP.
+-- Damage: Techno Lands final default 3.9, doubled for TA final boss pressure = 7.8
+local FINAL_BOSS_HP_MULT = 12
 local FINAL_BOSS_DAMAGE_MULT = 7.8
+local FINAL_BOSS_SHIELD_HEALTH_FRACTION = 0.30
 
 local bossUnitID
 local bossTeamID
@@ -87,9 +90,44 @@ local forcedMoveUntilFrame = 0
 local lastProgressFrame = 0
 local lastProgressDistance
 local nextResourceTopupFrame = 0
+local shieldActive = false
+local devMode = false
 
 local function setBossRuleParam(key, value)
 	spSetGameRulesParam("final_boss_" .. key, value)
+end
+
+local function setDevMode(enabled)
+	devMode = enabled and true or false
+	setBossRuleParam("devmode", devMode and 1 or 0)
+end
+
+local function canUseDevMode(playerID)
+	if playerID ~= 0 then
+		if spSendMessageToPlayer then
+			spSendMessageToPlayer(playerID, "Final Boss dev mode is host-only.")
+		end
+		return false
+	end
+	if not spIsCheatingEnabled or not spIsCheatingEnabled() then
+		if spSendMessageToPlayer then
+			spSendMessageToPlayer(playerID, "Final Boss dev mode requires /cheat.")
+		end
+		setDevMode(false)
+		return false
+	end
+	return true
+end
+
+local function toggleDevMode(cmd, line, words, playerID)
+	if not canUseDevMode(playerID) then
+		return true
+	end
+	setDevMode(not devMode)
+	if spSendMessageToPlayer then
+		spSendMessageToPlayer(playerID, "Final Boss dev mode " .. (devMode and "enabled." or "disabled."))
+	end
+	return true
 end
 
 local function isTeamDead(teamID)
@@ -313,6 +351,30 @@ local function applyBossArmor(unitID)
 	pcall(spSetUnitArmored, unitID, true, armorMultiple)
 end
 
+local function setBossShieldActive(unitID, frame)
+	if shieldActive then
+		return
+	end
+	shieldActive = true
+	applyBossArmor(unitID)
+	spSetUnitRulesParam(unitID, "final_boss_shield_active", 1, { public = true })
+	setBossRuleParam("shield_active", 1)
+	setBossRuleParam("shield_frame", frame)
+end
+
+local function updateBossShield(frame)
+	if shieldActive or not bossUnitID or not spGetUnitHealth then
+		return
+	end
+	local health, maxHealth = spGetUnitHealth(bossUnitID)
+	if not health or not maxHealth or maxHealth <= 0 then
+		return
+	end
+	if (health / maxHealth) <= FINAL_BOSS_SHIELD_HEALTH_FRACTION then
+		setBossShieldActive(bossUnitID, frame)
+	end
+end
+
 local function resetProgress(frame)
 	lastProgressFrame = frame
 	lastProgressDistance = nil
@@ -325,9 +387,9 @@ local function orderFight(frame)
 	end
 	bossState = STATE_FIGHT
 	forcedMoveUntilFrame = 0
-	spGiveOrderToUnit(bossUnitID, CMD.FIGHT, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {})
-	spGiveOrderToUnit(bossUnitID, CMD.MOVE_STATE, { 2 }, { "shift" })
-	spGiveOrderToUnit(bossUnitID, CMD.FIRE_STATE, { 2 }, { "shift" })
+	--spGiveOrderToUnit(bossUnitID, CMD.FIGHT, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {})
+	--spGiveOrderToUnit(bossUnitID, CMD.MOVE_STATE, { 2 }, { "shift" })
+	--spGiveOrderToUnit(bossUnitID, CMD.FIRE_STATE, { 2 }, { "shift" })
 	nextOrderRefreshFrame = frame + ORDER_REFRESH_FRAMES
 	updateHudParams()
 end
@@ -338,7 +400,7 @@ local function orderForcedMove(frame)
 	end
 	bossState = STATE_FORCED_MOVE
 	forcedMoveUntilFrame = frame + FORCED_MOVE_FRAMES
-	spGiveOrderToUnit(bossUnitID, CMD.MOVE, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {}, forcedMoveUntilFrame)
+	--spGiveOrderToUnit(bossUnitID, CMD.MOVE, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {}, forcedMoveUntilFrame)
 	updateHudParams()
 end
 
@@ -397,16 +459,19 @@ local function spawnBoss(frame)
 	bossSpawned = true
 	bossAlive = true
 	bossState = STATE_FIGHT
+	shieldActive = false
 	nextResourceTopupFrame = frame + RESOURCE_TOPUP_FRAMES
 	if spSetUnitNeutral then
 		spSetUnitNeutral(unitID, false)
 	end
 	spSetUnitRulesParam(unitID, "final_boss", 1, { public = true })
 	spSetUnitRulesParam(unitID, "final_boss_target_team", targetTeamID or -1, { public = true })
+	spSetUnitRulesParam(unitID, "final_boss_shield_active", 0, { public = true })
+	setBossRuleParam("shield_active", 0)
+	setBossRuleParam("shield_frame", -1)
 	bossUnits[unitID] = {
 		damageMult = FINAL_BOSS_DAMAGE_MULT,
 	}
-	applyBossArmor(unitID)
 	updateHudParams()
 	orderFight(frame)
 end
@@ -438,6 +503,7 @@ local function updateBoss(frame)
 		updateHudParams()
 		return
 	end
+	updateBossShield(frame)
 
 	local targetChanged = refreshTarget(frame, false)
 	if targetChanged then
@@ -491,14 +557,38 @@ function gadget:Initialize()
 	setBossRuleParam("enabled", 1)
 	setBossRuleParam("spawn_frame", SPAWN_FRAME)
 	setBossRuleParam("warning_frame", WARNING_FRAME)
+	setBossRuleParam("shield_active", 0)
+	setBossRuleParam("shield_frame", -1)
+	setDevMode(false)
+	gadgetHandler:AddChatAction("devmode", toggleDevMode, " toggles Final Boss dev mode (requires cheats)")
 	updateHudParams()
 end
 
+function gadget:Shutdown()
+	gadgetHandler:RemoveChatAction("devmode")
+end
+
 function gadget:GameFrame(frame)
+	if devMode and (not spIsCheatingEnabled or not spIsCheatingEnabled()) then
+		setDevMode(false)
+	end
 	if not bossSpawned and frame >= SPAWN_FRAME then
 		spawnBoss(frame)
 	end
 	updateBoss(frame)
+end
+
+function gadget:RecvLuaMsg(msg, playerID)
+	if msg ~= "final_boss_dev:spawn_now" then
+		return false
+	end
+	if not canUseDevMode(playerID) or not devMode then
+		return true
+	end
+	if not bossSpawned then
+		spawnBoss(spGetGameFrame())
+	end
+	return true
 end
 
 function gadget:UnitDestroyed(unitID)

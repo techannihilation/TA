@@ -22,6 +22,7 @@ local glText = gl.Text
 
 local FRAMES_PER_SECOND = 30
 local DEAD_DISPLAY_FRAMES = 60 * FRAMES_PER_SECOND
+local SHIELD_ALERT_FRAMES = 6 * FRAMES_PER_SECOND
 
 local STATE_FIGHT = 1
 local STATE_FORCED_MOVE = 2
@@ -346,6 +347,39 @@ local function drawFittedText(text, x, y, size, options, maxWidth)
 	glText(text, x, y, fittedSize, options)
 end
 
+local function drawShieldAlert(frame, shieldFrame)
+	if not shieldFrame or shieldFrame < 0 then
+		return
+	end
+	local elapsed = frame - shieldFrame
+	if elapsed < 0 or elapsed > SHIELD_ALERT_FRAMES then
+		return
+	end
+
+	local progress = elapsed / SHIELD_ALERT_FRAMES
+	local alpha = math.min(1, progress / 0.15, (1 - progress) / 0.25)
+	local pulse = 0.5 + 0.5 * math.sin(elapsed * 0.35)
+	local panelW = math.min(700, math.max(360, vsx - 80))
+	local panelH = 108 + (8 * pulse)
+	local x1 = (vsx - panelW) * 0.5
+	local x2 = x1 + panelW
+	local y1 = (vsy - panelH) * 0.5
+	local y2 = y1 + panelH
+
+	glColor(0, 0, 0, 0.62 * alpha)
+	glRect(x1, y1, x2, y2)
+	glColor(1.0, 0.12, 0.04, 0.88 * alpha)
+	glRect(x1, y2 - 4, x2, y2)
+	glColor(0.05, 0.75, 1.0, 0.58 * alpha)
+	glRect(x1, y1, x2, y1 + 3)
+
+	glColor(1.0, 0.18 + 0.12 * pulse, 0.08, alpha)
+	drawFittedText("BOSS GOT MAD", vsx * 0.5, y2 - 43, 27 + (4 * pulse), "oc", panelW - 40)
+	glColor(0.92, 0.95, 1.0, alpha)
+	drawFittedText("Advanced shields online. Someone dented the expensive ego.", vsx * 0.5, y1 + 30, 15, "oc", panelW - 44)
+	glColor(1, 1, 1, 1)
+end
+
 function widget:ViewResize(viewSizeX, viewSizeY)
 	vsx = viewSizeX
 	vsy = viewSizeY
@@ -365,6 +399,7 @@ function widget:DrawScreen()
 	local spawned = spGetGameRulesParam("final_boss_spawned") or 0
 	local alive = spGetGameRulesParam("final_boss_alive") or 0
 	local state = spGetGameRulesParam("final_boss_state") or 0
+	local shieldFrame = spGetGameRulesParam("final_boss_shield_frame") or -1
 
 	if frame < warningFrame and spawned ~= 1 then
 		return
@@ -410,5 +445,8 @@ function widget:DrawScreen()
 	drawPanel(x1, y1, x2, y2)
 	drawFittedText(colorPrefix .. title, x1 + 14, y2 - 27, 17, "o", panelW - 28)
 	drawFittedText("\255\225\225\225" .. detail, x1 + 14, y1 + 17, 13, "o", panelW - 28)
+	if alive == 1 and state ~= STATE_DEAD then
+		drawShieldAlert(frame, shieldFrame)
+	end
 	glColor(1, 1, 1, 1)
 end
