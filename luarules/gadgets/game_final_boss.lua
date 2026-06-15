@@ -15,6 +15,7 @@ if not gadgetHandler:IsSyncedCode() then
 end
 
 local FINAL_BOSS_UNIT = "core_core"
+local DEV_MODE_CHAT_ACTION = "bossdevmde"
 
 local FRAMES_PER_SECOND = 30
 local DEFAULT_SPAWN_MINUTES = 60
@@ -51,7 +52,6 @@ local spGetTeamUnits = Spring.GetTeamUnits
 local spGetTeamStartPosition = Spring.GetTeamStartPosition
 local spGetUnitDefID = Spring.GetUnitDefID
 local spGetUnitHealth = Spring.GetUnitHealth
-local spGetUnitNearestEnemy = Spring.GetUnitNearestEnemy
 local spGetUnitPosition = Spring.GetUnitPosition
 local spGetUnitWeaponState = Spring.GetUnitWeaponState
 local spGetGroundHeight = Spring.GetGroundHeight
@@ -82,17 +82,14 @@ local BOSS_TEAM_ENERGY_STORAGE = 90000000
 local BOSS_TEAM_METAL_STORAGE = 9000000
 local RESOURCE_TOPUP_FRAMES = FRAMES_PER_SECOND
 local HEALTH_PARAM_UPDATE_FRAMES = 15
-local PRE_BOSS_COMMENT_INTERVAL_FRAMES = 3 * 60 * FRAMES_PER_SECOND
-local FRONT_ENEMY_RANGE = 2500
 local FINAL_BOSS_WEAPON_POLL_FRAMES = 5
 local FINAL_BOSS_IDLE_REHEAL_TICK_FRAMES = FRAMES_PER_SECOND
 local FINAL_BOSS_IDLE_REHEAL_DELAY_FRAMES = 10 * FRAMES_PER_SECOND
 local FINAL_BOSS_IDLE_REHEAL_RATE = 0.0025
--- Armor is a permanent enraged phase after the boss drops to 30% HP.
--- Damage: Techno Lands final default 3.9, doubled for TA final boss pressure = 7.8
-local FINAL_BOSS_HP_MULT = 20
+-- Armor is a permanent enraged phase after the boss drops to 40% HP.
+local FINAL_BOSS_HP_MULT = 21
 local FINAL_BOSS_DAMAGE_MULT = 7.8
-local FINAL_BOSS_SHIELD_HEALTH_FRACTION = 0.30
+local FINAL_BOSS_SHIELD_HEALTH_FRACTION = 0.40
 
 local bossUnitID
 local bossTeamID
@@ -117,7 +114,6 @@ local devMode = false
 local attackerClass = ATTACKER_UNKNOWN
 local attackerFrame = -1
 local attackerDamageByClass = {}
-local nextPreBossCommentFrame = 0
 local bossWeaponReloadFrames = {}
 local bossWeaponCount = 0
 local nextBossWeaponPollFrame = 0
@@ -394,7 +390,7 @@ local function classifyAttacker(unitDefID, weaponID)
 	if commanderDefs[unitDefID] or (ud.customParams and ud.customParams.iscommander) then
 		return ATTACKER_COMMANDER
 	end
-	if ud.canFly then
+	if ud.isBomberAirUnit then
 		return ATTACKER_AIR
 	end
 	if (ud.minWaterDepth or 0) > 0 and (ud.waterline or 0) > 10 then
@@ -410,84 +406,6 @@ local function classifyAttacker(unitDefID, weaponID)
 		return ATTACKER_BUILDER
 	end
 	return ATTACKER_GROUND
-end
-
-local function getPrimaryWeaponDefID(ud)
-	if not ud or not ud.weapons then
-		return nil
-	end
-	if ud.primaryWeapon and ud.weapons[ud.primaryWeapon] then
-		return ud.weapons[ud.primaryWeapon].weaponDef
-	end
-	for i = 1, #ud.weapons do
-		if ud.weapons[i] and ud.weapons[i].weaponDef then
-			return ud.weapons[i].weaponDef
-		end
-	end
-	return nil
-end
-
-local function isMobileCombatUnitDef(unitDefID)
-	local ud = unitDefID and UnitDefs[unitDefID]
-	if not ud then
-		return false
-	end
-	if commanderDefs[unitDefID] or (ud.customParams and ud.customParams.iscommander) then
-		return true
-	end
-	if isStaticDef(ud) or not ud.weapons or #ud.weapons == 0 then
-		return false
-	end
-	if ud.isBuilder or ud.canAssist or ud.canReclaim or (ud.buildOptions and ud.buildOptions[1]) then
-		return false
-	end
-	return true
-end
-
-local function classifyFrontUnit(unitDefID)
-	local ud = unitDefID and UnitDefs[unitDefID]
-	return classifyAttacker(unitDefID, getPrimaryWeaponDefID(ud))
-end
-
-local function pickPreBossCommentClass()
-	local teams = getCandidateTeams()
-	local bestFrontClass = ATTACKER_UNKNOWN
-	local bestFrontCost = -1
-	local bestFallbackClass = ATTACKER_UNKNOWN
-	local bestFallbackCost = -1
-	for i = 1, #teams do
-		local units = spGetTeamUnits(teams[i])
-		if units then
-			for j = 1, #units do
-				local unitID = units[j]
-				local defID = spGetUnitDefID(unitID)
-				if isMobileCombatUnitDef(defID) then
-					local cost = unitCost(defID)
-					if cost > bestFallbackCost then
-						bestFallbackCost = cost
-						bestFallbackClass = classifyFrontUnit(defID)
-					end
-					if spGetUnitNearestEnemy and cost > bestFrontCost and spGetUnitNearestEnemy(unitID, FRONT_ENEMY_RANGE, false) then
-						bestFrontCost = cost
-						bestFrontClass = classifyFrontUnit(defID)
-					end
-				end
-			end
-		end
-	end
-	if bestFrontCost >= 0 then
-		return bestFrontClass
-	end
-	return bestFallbackClass
-end
-
-local function updatePreBossComment(frame)
-	if bossSpawned or frame < WARNING_FRAME or frame < nextPreBossCommentFrame then
-		return
-	end
-	setBossRuleParam("pre_spawn_comment_class", pickPreBossCommentClass())
-	setBossRuleParam("pre_spawn_comment_frame", frame)
-	nextPreBossCommentFrame = frame + PRE_BOSS_COMMENT_INTERVAL_FRAMES
 end
 
 local function setBossAttackerClass(classID, frame)
@@ -840,25 +758,20 @@ function gadget:Initialize()
 	setBossRuleParam("warning_frame", WARNING_FRAME)
 	setBossRuleParam("actual_spawn_frame", -1)
 	setBossAttackerClass(ATTACKER_UNKNOWN, -1)
-	setBossRuleParam("pre_spawn_comment_class", ATTACKER_UNKNOWN)
-	setBossRuleParam("pre_spawn_comment_frame", -PRE_BOSS_COMMENT_INTERVAL_FRAMES)
 	setBossRuleParam("shield_active", 0)
 	setBossRuleParam("shield_frame", -1)
 	setDevMode(false)
-	gadgetHandler:AddChatAction("devmode", toggleDevMode, " toggles Final Boss dev mode (requires cheats)")
+	gadgetHandler:AddChatAction(DEV_MODE_CHAT_ACTION, toggleDevMode, " toggles Final Boss dev mode (requires cheats)")
 	updateHudParams()
 end
 
 function gadget:Shutdown()
-	gadgetHandler:RemoveChatAction("devmode")
+	gadgetHandler:RemoveChatAction(DEV_MODE_CHAT_ACTION)
 end
 
 function gadget:GameFrame(frame)
 	if devMode and (not spIsCheatingEnabled or not spIsCheatingEnabled()) then
 		setDevMode(false)
-	end
-	if not bossSpawned then
-		updatePreBossComment(frame)
 	end
 	if not bossSpawned and frame >= SPAWN_FRAME then
 		spawnBoss(frame)
