@@ -52,11 +52,15 @@ end)
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-local modDefs = "gamedata/modDefs.lua"
+local modDefs = "gamedata/moddefs.lua"
+local legacyModDefs = "gamedata/modDefs.lua"
 
 if (VFS.FileExists(modDefs)) then
-  Spring.Echo("FOUND modDefs")
+  Spring.Echo("FOUND moddefs")
   VFS.Include(modDefs)
+elseif (VFS.FileExists(legacyModDefs)) then
+  Spring.Echo("FOUND legacy modDefs")
+  VFS.Include(legacyModDefs)
 end
 
 --------------------------------------------------------------------------------

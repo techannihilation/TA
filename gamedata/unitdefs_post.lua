@@ -7,6 +7,8 @@
 VFS.Include("gamedata/alldefs_post.lua")
 -- load functionality for saving to custom params
 VFS.Include("gamedata/post_save_to_customparams.lua")
+-- apply game-specific unit definition mutations after UnitDefs is available
+VFS.Include("gamedata/moddefs.lua")
 
 -- handle unitdefs and the weapons they contain
 for name,ud in pairs(UnitDefs) do

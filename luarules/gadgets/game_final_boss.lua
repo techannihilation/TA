@@ -53,14 +53,12 @@ local spGetTeamStartPosition = Spring.GetTeamStartPosition
 local spGetUnitDefID = Spring.GetUnitDefID
 local spGetUnitHealth = Spring.GetUnitHealth
 local spGetUnitPosition = Spring.GetUnitPosition
-local spGetUnitWeaponState = Spring.GetUnitWeaponState
 local spGetGroundHeight = Spring.GetGroundHeight
 local spIsCheatingEnabled = Spring.IsCheatingEnabled
 local spCreateUnit = Spring.CreateUnit
 local spGiveOrderToUnit = Spring.GiveOrderToUnit
 local spSendMessageToPlayer = Spring.SendMessageToPlayer
 local spSetUnitArmored = Spring.SetUnitArmored
-local spSetUnitHealth = Spring.SetUnitHealth
 local spSetGameRulesParam = Spring.SetGameRulesParam
 local spSetTeamResource = Spring.SetTeamResource
 local spSetUnitRulesParam = Spring.SetUnitRulesParam
@@ -82,14 +80,9 @@ local BOSS_TEAM_ENERGY_STORAGE = 90000000
 local BOSS_TEAM_METAL_STORAGE = 9000000
 local RESOURCE_TOPUP_FRAMES = FRAMES_PER_SECOND
 local HEALTH_PARAM_UPDATE_FRAMES = 15
-local FINAL_BOSS_WEAPON_POLL_FRAMES = 5
-local FINAL_BOSS_IDLE_REHEAL_TICK_FRAMES = FRAMES_PER_SECOND
-local FINAL_BOSS_IDLE_REHEAL_DELAY_FRAMES = 10 * FRAMES_PER_SECOND
-local FINAL_BOSS_IDLE_REHEAL_RATE = 0.0025
 -- Armor is a permanent enraged phase after the boss drops to 40% HP.
-local FINAL_BOSS_HP_MULT = 21
-local FINAL_BOSS_DAMAGE_MULT = 7.8
-local FINAL_BOSS_SHIELD_HEALTH_FRACTION = 0.40
+local FINAL_BOSS_HP_MULT = 11
+local FINAL_BOSS_SHIELD_HEALTH_FRACTION = 0.30
 
 local bossUnitID
 local bossTeamID
@@ -114,12 +107,6 @@ local devMode = false
 local attackerClass = ATTACKER_UNKNOWN
 local attackerFrame = -1
 local attackerDamageByClass = {}
-local bossWeaponReloadFrames = {}
-local bossWeaponCount = 0
-local nextBossWeaponPollFrame = 0
-local nextIdleRehealFrame = 0
-local lastBossFiredFrame = 0
-local lastBossDamagedFrame = 0
 
 local function setBossRuleParam(key, value)
 	spSetGameRulesParam("final_boss_" .. key, value)
@@ -448,77 +435,6 @@ local function updateHudParams()
 	updateBossHealthParam()
 end
 
-local function resetBossIdleRehealState(unitID, unitDef, frame)
-	lastBossFiredFrame = frame
-	lastBossDamagedFrame = frame
-	nextBossWeaponPollFrame = frame + FINAL_BOSS_WEAPON_POLL_FRAMES
-	nextIdleRehealFrame = frame + FINAL_BOSS_IDLE_REHEAL_TICK_FRAMES
-	bossWeaponReloadFrames = {}
-	bossWeaponCount = 0
-
-	if not unitID or not unitDef or not unitDef.weapons or not spGetUnitWeaponState then
-		return
-	end
-
-	bossWeaponCount = #unitDef.weapons
-	for weaponNum = 1, bossWeaponCount do
-		bossWeaponReloadFrames[weaponNum] = spGetUnitWeaponState(unitID, weaponNum, "reloadFrame") or 0
-	end
-end
-
-local function updateBossWeaponFireState(frame)
-	if frame < nextBossWeaponPollFrame then
-		return
-	end
-	nextBossWeaponPollFrame = frame + FINAL_BOSS_WEAPON_POLL_FRAMES
-
-	if not bossUnitID or bossWeaponCount <= 0 or not spGetUnitWeaponState then
-		return
-	end
-
-	for weaponNum = 1, bossWeaponCount do
-		local reloadFrame = spGetUnitWeaponState(bossUnitID, weaponNum, "reloadFrame")
-		if reloadFrame then
-			local previousReloadFrame = bossWeaponReloadFrames[weaponNum]
-			if previousReloadFrame and reloadFrame > previousReloadFrame and reloadFrame > frame then
-				lastBossFiredFrame = frame
-			end
-			bossWeaponReloadFrames[weaponNum] = reloadFrame
-		end
-	end
-end
-
-local function updateBossIdleReheal(frame)
-	if frame < nextIdleRehealFrame then
-		return
-	end
-	nextIdleRehealFrame = frame + FINAL_BOSS_IDLE_REHEAL_TICK_FRAMES
-
-	if not bossUnitID or not spGetUnitHealth or not spSetUnitHealth then
-		return
-	end
-
-	local lastCombatFrame = lastBossFiredFrame
-	if lastBossDamagedFrame > lastCombatFrame then
-		lastCombatFrame = lastBossDamagedFrame
-	end
-	if frame - lastCombatFrame < FINAL_BOSS_IDLE_REHEAL_DELAY_FRAMES then
-		return
-	end
-
-	local health, maxHealth = spGetUnitHealth(bossUnitID)
-	if not health or not maxHealth or maxHealth <= 0 or health >= maxHealth then
-		return
-	end
-
-	local healAmount = maxHealth * FINAL_BOSS_IDLE_REHEAL_RATE
-	local newHealth = health + healAmount
-	if newHealth > maxHealth then
-		newHealth = maxHealth
-	end
-	spSetUnitHealth(bossUnitID, newHealth)
-end
-
 local function ensureBossTeamResources(teamID)
 	if not teamID or not spSetTeamResource then
 		return
@@ -650,7 +566,6 @@ local function spawnBoss(frame)
 	bossState = STATE_FIGHT
 	shieldActive = false
 	clearBossAttackerDamage()
-	resetBossIdleRehealState(unitID, UnitDefs[spGetUnitDefID(unitID)] or unitDef, frame)
 	nextResourceTopupFrame = frame + RESOURCE_TOPUP_FRAMES
 	nextHealthParamFrame = frame + HEALTH_PARAM_UPDATE_FRAMES
 	if spSetUnitNeutral then
@@ -662,9 +577,18 @@ local function spawnBoss(frame)
 	setBossRuleParam("actual_spawn_frame", frame)
 	setBossRuleParam("shield_active", 0)
 	setBossRuleParam("shield_frame", -1)
-	bossUnits[unitID] = {
-		damageMult = FINAL_BOSS_DAMAGE_MULT,
-	}
+	local liveUnitDef = UnitDefs[spGetUnitDefID(unitID)] or unitDef
+	local customParams = liveUnitDef and liveUnitDef.customParams
+	setBossRuleParam("target_independence_count", tonumber(customParams and customParams.final_boss_target_independence_count) or -1)
+	setBossRuleParam("power_scale", tonumber(customParams and customParams.final_boss_power_scale) or -1)
+	setBossRuleParam("win_independence_count", tonumber(customParams and customParams.final_boss_win_independence_count) or -1)
+	setBossRuleParam("lose_independence_count", tonumber(customParams and customParams.final_boss_lose_independence_count) or -1)
+	setBossRuleParam("combat_independence_count", tonumber(customParams and customParams.final_boss_combat_independence_count) or -1)
+	setBossRuleParam("target_effective_health", tonumber(customParams and customParams.final_boss_target_effective_health) or -1)
+	setBossRuleParam("target_raw_health", tonumber(customParams and customParams.final_boss_target_raw_health) or -1)
+	setBossRuleParam("target_dps", tonumber(customParams and customParams.final_boss_target_dps) or -1)
+	setBossRuleParam("damage_scale", tonumber(customParams and customParams.final_boss_damage_scale) or -1)
+	bossUnits[unitID] = true
 	updateHudParams()
 	orderFight(frame)
 end
@@ -700,9 +624,7 @@ local function updateBoss(frame)
 		updateHudParams()
 		return
 	end
-	updateBossWeaponFireState(frame)
 	updateBossShield(frame)
-	updateBossIdleReheal(frame)
 
 	local targetChanged = refreshTarget(frame, false)
 	if targetChanged then
@@ -797,15 +719,7 @@ function gadget:UnitDestroyed(unitID)
 		bossUnits[unitID] = nil
 		bossAlive = false
 		bossState = STATE_DEAD
-		bossWeaponReloadFrames = {}
-		bossWeaponCount = 0
 		updateHudParams()
-	end
-end
-
-function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
-	if unitID == bossUnitID and bossAlive and unitTeam == bossTeamID and attackerTeam and attackerTeam ~= bossTeamID and damage and damage > 0 then
-		lastBossDamagedFrame = spGetGameFrame()
 	end
 end
 
@@ -822,13 +736,6 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 		end
 	end
 
-	local attacker = attackerID and bossUnits[attackerID]
-	if attacker and attackerTeam == bossTeamID and unitTeam ~= bossTeamID then
-		local damageMult = attacker.damageMult or 1
-		if damageMult > 1 then
-			damage = damage * damageMult
-		end
-	end
 	if bossDamageClass then
 		addBossAttackerDamage(bossDamageClass, damage, spGetGameFrame())
 	end
