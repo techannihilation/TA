@@ -14,7 +14,7 @@ if not gadgetHandler:IsSyncedCode() then
 	return false
 end
 
-local FINAL_BOSS_UNIT = "core_core"
+local FINAL_BOSS_UNIT = "core_core_boss"
 local DEV_MODE_CHAT_ACTION = "bossdevmde"
 
 local FRAMES_PER_SECOND = 30
