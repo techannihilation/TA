@@ -22,7 +22,7 @@ if gadgetHandler:IsSyncedCode() then
     -- local GetUnitSelectionVolumeData = Spring.GetUnitSelectionVolumeData -- not works?
 
 	local unitsToScale = {
-		[UnitDefNames["core_core"].id] = {
+		[UnitDefNames["core_core_boss"].id] = {
 			modelScale = 1.5,
 			colVolumeScale = 1.5,
 			selVolumeScale = 2
