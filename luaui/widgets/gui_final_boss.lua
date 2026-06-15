@@ -39,13 +39,14 @@ local ATTACKER_GROUND = 7
 
 local vsx, vsy = spGetViewGeometry()
 local deadSeenFrame
-local LINE_ROTATE_FRAMES = 8 * FRAMES_PER_SECOND
-local COUNTDOWN_CLOSE_FRAMES = 5 * 60 * FRAMES_PER_SECOND
-local COUNTDOWN_FINAL_FRAMES = 60 * FRAMES_PER_SECOND
-local PRE_BOSS_COMMENT_VISIBLE_FRAMES = 12 * FRAMES_PER_SECOND
+local LINE_ROTATE_FRAMES = 20 * FRAMES_PER_SECOND
+local COUNTDOWN_LINE_ROTATE_FRAMES = 60 * FRAMES_PER_SECOND
 local SPAWN_REACTION_FRAMES = 60 * FRAMES_PER_SECOND
-local HP_DAMAGED_FRACTION = 0.60
-local HP_ARMORED_FRACTION = 0.30
+local HP_DAMAGED_FRACTION = 0.80
+local HP_ARMORED_FRACTION = 0.40
+local countdownSequence = {}
+local countdownSequenceSpawnFrame
+local countdownSequenceWarningFrame
 
 local countdownLines = {
 	"Command says this is fine.",
@@ -138,56 +139,16 @@ local countdownFinalLines = {
 	"Impact appointment confirmed.",
 }
 
-local preBossLineSets = {
-	[ATTACKER_UNKNOWN] = {
-		"The front is spending money in suspicious directions.",
-		"Command is watching the expensive part of the battlefield.",
-		"Something costly is arguing near the front.",
-		"War accountants report active investment in future craters.",
-	},
-	[ATTACKER_COMMANDER] = {
-		"A commander is near the front, because rank apparently blocks shells.",
-		"Command presence detected close to danger. Bold or lost.",
-		"The front has a commander-shaped liability with a weapon.",
-		"Someone important is standing where explosions apply.",
-	},
-	[ATTACKER_AIR] = {
-		"The most expensive front argument currently has wings.",
-		"Air power is loitering near trouble with premium confidence.",
-		"Pilots are turning fuel into expensive opinions.",
-		"The front is being patrolled by airborne budget stress.",
-	},
-	[ATTACKER_NAVAL] = {
-		"The front's priciest complaint is floating with guns.",
-		"Naval assets are making the shoreline financially nervous.",
-		"The waterline is hosting a very expensive disagreement.",
-		"Fleet command has placed value near violence.",
-	},
-	[ATTACKER_STATIC] = {
-		"Static firepower is anchoring the front with expensive stubbornness.",
-		"The priciest front argument is bolted down and loud.",
-		"Defensive architecture is carrying the budget today.",
-		"The front has become a construction project with muzzle flash.",
-	},
-	[ATTACKER_ARTILLERY] = {
-		"Long-range fire is making expensive comments from a careful distance.",
-		"The front's richest voice speaks in delayed explosions.",
-		"Artillery is converting range into financial confidence.",
-		"Someone parked a costly punctuation machine near the front.",
-	},
-	[ATTACKER_BUILDER] = {
-		"Builders near the front are making management uncomfortable.",
-		"Construction assets are close enough to need combat etiquette.",
-		"The front contains tools, ambition, and questionable insurance.",
-		"Engineering is standing too close to the lesson.",
-	},
-	[ATTACKER_GROUND] = {
-		"The front's most expensive ground unit is volunteering for history.",
-		"Heavy ground assets are trading courage for depreciation.",
-		"The priciest ground argument is close to enemy punctuation.",
-		"Armored budget is moving where the map gets loud.",
-	},
-}
+local countdownLinePool = {}
+for i = 1, #countdownLines do
+	countdownLinePool[#countdownLinePool + 1] = countdownLines[i]
+end
+for i = 1, #countdownCloseLines do
+	countdownLinePool[#countdownLinePool + 1] = countdownCloseLines[i]
+end
+for i = 1, #countdownFinalLines do
+	countdownLinePool[#countdownLinePool + 1] = countdownFinalLines[i]
+end
 
 local spawnLines = {
 	"The boss has arrived. It did not bring snacks.",
@@ -727,18 +688,49 @@ local function pickLine(lines, frame)
 	return lines[idx]
 end
 
-local function getCountdownLines(framesUntilSpawn)
-	if framesUntilSpawn <= COUNTDOWN_FINAL_FRAMES then
-		return countdownFinalLines
+local function rebuildCountdownSequence(spawnFrame, warningFrame)
+	countdownSequence = {}
+	countdownSequenceSpawnFrame = spawnFrame
+	countdownSequenceWarningFrame = warningFrame
+
+	local pool = {}
+	for i = 1, #countdownLinePool do
+		pool[i] = countdownLinePool[i]
 	end
-	if framesUntilSpawn <= COUNTDOWN_CLOSE_FRAMES then
-		return countdownCloseLines
+
+	local warningDuration = spawnFrame - warningFrame
+	local slotCount = math.floor((warningDuration + COUNTDOWN_LINE_ROTATE_FRAMES - 1) / COUNTDOWN_LINE_ROTATE_FRAMES)
+	if slotCount < 1 then
+		slotCount = 1
 	end
-	return countdownLines
+	if slotCount > #pool then
+		slotCount = #pool
+	end
+
+	for i = 1, slotCount do
+		local pickIndex = math.random(#pool)
+		countdownSequence[i] = pool[pickIndex]
+		pool[pickIndex] = pool[#pool]
+		pool[#pool] = nil
+	end
 end
 
-local function getPreBossLines(commentClass)
-	return preBossLineSets[commentClass or ATTACKER_UNKNOWN] or preBossLineSets[ATTACKER_UNKNOWN]
+local function getCountdownLine(frame, spawnFrame, warningFrame)
+	if countdownSequenceSpawnFrame ~= spawnFrame or countdownSequenceWarningFrame ~= warningFrame then
+		rebuildCountdownSequence(spawnFrame, warningFrame)
+	end
+	if #countdownSequence == 0 then
+		return ""
+	end
+
+	local slot = math.floor((frame - warningFrame) / COUNTDOWN_LINE_ROTATE_FRAMES) + 1
+	if slot < 1 then
+		slot = 1
+	end
+	if slot > #countdownSequence then
+		slot = #countdownSequence
+	end
+	return countdownSequence[slot]
 end
 
 local function getActiveLines(state, hpFraction, shieldActive, frame, actualSpawnFrame, attackerClass)
@@ -859,6 +851,7 @@ function widget:DrawScreen()
 
 	local frame = spGetGameFrame()
 	local spawnFrame = spGetGameRulesParam("final_boss_spawn_frame") or 0
+	local warningFrame = spGetGameRulesParam("final_boss_warning_frame") or 0
 	local actualSpawnFrame = spGetGameRulesParam("final_boss_actual_spawn_frame") or -1
 	local spawned = spGetGameRulesParam("final_boss_spawned") or 0
 	local alive = spGetGameRulesParam("final_boss_alive") or 0
@@ -867,11 +860,9 @@ function widget:DrawScreen()
 	local shieldActive = spGetGameRulesParam("final_boss_shield_active") or 0
 	local hpFraction = spGetGameRulesParam("final_boss_hp_fraction") or 1
 	local attackerClass = spGetGameRulesParam("final_boss_attacker_class") or ATTACKER_UNKNOWN
-	local preBossCommentFrame = spGetGameRulesParam("final_boss_pre_spawn_comment_frame") or -1
-	local preBossCommentClass = spGetGameRulesParam("final_boss_pre_spawn_comment_class") or ATTACKER_UNKNOWN
 
 	if spawned ~= 1 then
-		if preBossCommentFrame < 0 or frame < preBossCommentFrame or frame > (preBossCommentFrame + PRE_BOSS_COMMENT_VISIBLE_FRAMES) then
+		if frame < warningFrame then
 			return
 		end
 	end
@@ -899,7 +890,7 @@ function widget:DrawScreen()
 	if spawned ~= 1 then
 		local framesUntilSpawn = spawnFrame - frame
 		title = "FINAL BOSS IN " .. fmtTime(framesUntilSpawn)
-		detail = pickLine(getPreBossLines(preBossCommentClass), preBossCommentFrame)
+		detail = getCountdownLine(frame, spawnFrame, warningFrame)
 	elseif state == STATE_DEAD or alive ~= 1 then
 		title = "FINAL BOSS DESTROYED"
 		detail = pickLine(getDeadLines(attackerClass), frame)
