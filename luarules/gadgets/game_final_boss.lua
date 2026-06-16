@@ -15,7 +15,7 @@ if not gadgetHandler:IsSyncedCode() then
 end
 
 local FINAL_BOSS_UNIT = "core_core_boss"
-local DEV_MODE_CHAT_ACTION = "bossdevmde"
+local DEV_MODE_CHAT_ACTION = "bossdevmode"
 
 local FRAMES_PER_SECOND = 30
 local DEFAULT_SPAWN_MINUTES = 60
@@ -28,11 +28,17 @@ local STALL_TIMEOUT_FRAMES = 20 * FRAMES_PER_SECOND
 local FORCED_MOVE_FRAMES = 30 * FRAMES_PER_SECOND
 local MIN_PROGRESS_ELOS = 100
 local TARGET_REACHED_RADIUS = 650
+local TARGET_CLEAR_RANGE_MULT = 0.8
+local FALLBACK_BOSS_WEAPON_RANGE = 1800
 
 local STATE_COUNTDOWN = 0
 local STATE_FIGHT = 1
 local STATE_FORCED_MOVE = 2
 local STATE_DEAD = 3
+
+local TARGET_CYCLE_CHEAP_1 = 1
+local TARGET_CYCLE_CHEAP_2 = 2
+local TARGET_CYCLE_ENERGY = 3
 
 local ATTACKER_UNKNOWN = 0
 local ATTACKER_COMMANDER = 1
@@ -53,14 +59,14 @@ local spGetTeamStartPosition = Spring.GetTeamStartPosition
 local spGetUnitDefID = Spring.GetUnitDefID
 local spGetUnitHealth = Spring.GetUnitHealth
 local spGetUnitPosition = Spring.GetUnitPosition
-local spGetUnitWeaponState = Spring.GetUnitWeaponState
+local spGetUnitTeam = Spring.GetUnitTeam
+local spGetUnitsInCylinder = Spring.GetUnitsInCylinder
 local spGetGroundHeight = Spring.GetGroundHeight
 local spIsCheatingEnabled = Spring.IsCheatingEnabled
 local spCreateUnit = Spring.CreateUnit
 local spGiveOrderToUnit = Spring.GiveOrderToUnit
 local spSendMessageToPlayer = Spring.SendMessageToPlayer
 local spSetUnitArmored = Spring.SetUnitArmored
-local spSetUnitHealth = Spring.SetUnitHealth
 local spSetGameRulesParam = Spring.SetGameRulesParam
 local spSetTeamResource = Spring.SetTeamResource
 local spSetUnitRulesParam = Spring.SetUnitRulesParam
@@ -82,13 +88,8 @@ local BOSS_TEAM_ENERGY_STORAGE = 90000000
 local BOSS_TEAM_METAL_STORAGE = 9000000
 local RESOURCE_TOPUP_FRAMES = FRAMES_PER_SECOND
 local HEALTH_PARAM_UPDATE_FRAMES = 15
-local FINAL_BOSS_WEAPON_POLL_FRAMES = 5
-local FINAL_BOSS_IDLE_REHEAL_TICK_FRAMES = FRAMES_PER_SECOND
-local FINAL_BOSS_IDLE_REHEAL_DELAY_FRAMES = 10 * FRAMES_PER_SECOND
-local FINAL_BOSS_IDLE_REHEAL_RATE = 0.0025
 -- Armor is a permanent enraged phase after the boss drops to 40% HP.
 local FINAL_BOSS_HP_MULT = 21
-local FINAL_BOSS_DAMAGE_MULT = 7.8
 local FINAL_BOSS_SHIELD_HEALTH_FRACTION = 0.40
 
 local bossUnitID
@@ -101,6 +102,8 @@ local targetTeamID
 local targetX
 local targetY
 local targetZ
+local targetIsBuilding = false
+local targetCycleStep = TARGET_CYCLE_CHEAP_1
 local nextRetargetFrame = 0
 local nextOrderRefreshFrame = 0
 local nextProgressCheckFrame = 0
@@ -114,12 +117,6 @@ local devMode = false
 local attackerClass = ATTACKER_UNKNOWN
 local attackerFrame = -1
 local attackerDamageByClass = {}
-local bossWeaponReloadFrames = {}
-local bossWeaponCount = 0
-local nextBossWeaponPollFrame = 0
-local nextIdleRehealFrame = 0
-local lastBossFiredFrame = 0
-local lastBossDamagedFrame = 0
 
 local function setBossRuleParam(key, value)
 	spSetGameRulesParam("final_boss_" .. key, value)
@@ -241,16 +238,57 @@ local function pickRichestTeam()
 end
 
 local function isBuildingDef(ud)
-	if not ud then
-		return false
+	return ud and ud.isBuilding == true
+end
+
+local function isEnergyBuildingDef(ud)
+	return isBuildingDef(ud) and (ud.energyMake or 0) > 0
+end
+
+local function getUnitCost(unitID)
+	return unitCost(spGetUnitDefID(unitID))
+end
+
+local function getUnitPositionWithGround(unitID)
+	local x, y, z = spGetUnitPosition(unitID)
+	if x and z then
+		return x, y or spGetGroundHeight(x, z), z
 	end
-	if ud.isBuilding then
-		return true
+	return nil
+end
+
+local function getBuildingTargetPosition(teamID, energyOnly, expensive)
+	local units = spGetTeamUnits(teamID)
+	if not units then
+		return nil
 	end
-	if ud.canFly then
-		return false
+
+	local bestUnitID
+	local bestCost
+	for i = 1, #units do
+		local unitID = units[i]
+		local defID = spGetUnitDefID(unitID)
+		local ud = defID and UnitDefs[defID]
+		if (energyOnly and isEnergyBuildingDef(ud)) or ((not energyOnly) and isBuildingDef(ud)) then
+			local cost = getUnitCost(unitID)
+			if not bestCost
+				or (expensive and cost > bestCost)
+				or ((not expensive) and cost < bestCost)
+				or (cost == bestCost and unitID < bestUnitID)
+			then
+				bestUnitID = unitID
+				bestCost = cost
+			end
+		end
 	end
-	return (ud.speed or ud.maxSpeed or ud.maxVelocity or 0) <= 0
+
+	if bestUnitID then
+		local x, y, z = getUnitPositionWithGround(bestUnitID)
+		if x and z then
+			return x, y, z, true
+		end
+	end
+	return nil
 end
 
 local function getTeamBuildingCentroid(teamID)
@@ -277,6 +315,14 @@ local function getTeamBuildingCentroid(teamID)
 		return totalX / count, totalY / count, totalZ / count
 	end
 	return nil
+end
+
+local function getCheapestBuildingPosition(teamID)
+	return getBuildingTargetPosition(teamID, false, false)
+end
+
+local function getMostExpensiveEnergyBuildingPosition(teamID)
+	return getBuildingTargetPosition(teamID, true, true)
 end
 
 local function getMostExpensiveUnitPosition(teamID)
@@ -309,32 +355,53 @@ local function getFirstUnitPosition(teamID)
 	return nil
 end
 
-local function getTargetPosition(teamID)
+local function getFallbackTargetPosition(teamID)
 	if not teamID then
 		return nil
 	end
 
-	local x, y, z = spGetTeamStartPosition(teamID)
-	if x and z and x >= 0 and z >= 0 then
-		return x, y or spGetGroundHeight(x, z), z
-	end
-
-	x, y, z = getTeamBuildingCentroid(teamID)
+	local x, y, z = getTeamBuildingCentroid(teamID)
 	if x and z then
-		return x, y or spGetGroundHeight(x, z), z
+		return x, y or spGetGroundHeight(x, z), z, true
 	end
 
 	x, y, z = getMostExpensiveUnitPosition(teamID)
 	if x and z then
-		return x, y or spGetGroundHeight(x, z), z
+		return x, y or spGetGroundHeight(x, z), z, false
 	end
 
 	x, y, z = getFirstUnitPosition(teamID)
 	if x and z then
-		return x, y or spGetGroundHeight(x, z), z
+		return x, y or spGetGroundHeight(x, z), z, false
+	end
+
+	x, y, z = spGetTeamStartPosition(teamID)
+	if x and z and x >= 0 and z >= 0 then
+		return x, y or spGetGroundHeight(x, z), z, false
 	end
 
 	return nil
+end
+
+local function getCycleTargetPosition(teamID)
+	if not teamID then
+		return nil
+	end
+
+	local x, y, z, isBuilding
+	if targetCycleStep == TARGET_CYCLE_ENERGY then
+		x, y, z, isBuilding = getMostExpensiveEnergyBuildingPosition(teamID)
+		if x and z then
+			return x, y, z, isBuilding
+		end
+	end
+
+	x, y, z, isBuilding = getCheapestBuildingPosition(teamID)
+	if x and z then
+		return x, y, z, isBuilding
+	end
+
+	return getFallbackTargetPosition(teamID)
 end
 
 local function getBossHpFraction()
@@ -448,75 +515,68 @@ local function updateHudParams()
 	updateBossHealthParam()
 end
 
-local function resetBossIdleRehealState(unitID, unitDef, frame)
-	lastBossFiredFrame = frame
-	lastBossDamagedFrame = frame
-	nextBossWeaponPollFrame = frame + FINAL_BOSS_WEAPON_POLL_FRAMES
-	nextIdleRehealFrame = frame + FINAL_BOSS_IDLE_REHEAL_TICK_FRAMES
-	bossWeaponReloadFrames = {}
-	bossWeaponCount = 0
-
-	if not unitID or not unitDef or not unitDef.weapons or not spGetUnitWeaponState then
-		return
+local function getBossWeaponRange()
+	local unitDef = UnitDefNames and UnitDefNames[FINAL_BOSS_UNIT]
+	if unitDef and unitDef.maxWeaponRange and unitDef.maxWeaponRange > 0 then
+		return unitDef.maxWeaponRange
 	end
 
-	bossWeaponCount = #unitDef.weapons
-	for weaponNum = 1, bossWeaponCount do
-		bossWeaponReloadFrames[weaponNum] = spGetUnitWeaponState(unitID, weaponNum, "reloadFrame") or 0
-	end
-end
-
-local function updateBossWeaponFireState(frame)
-	if frame < nextBossWeaponPollFrame then
-		return
-	end
-	nextBossWeaponPollFrame = frame + FINAL_BOSS_WEAPON_POLL_FRAMES
-
-	if not bossUnitID or bossWeaponCount <= 0 or not spGetUnitWeaponState then
-		return
-	end
-
-	for weaponNum = 1, bossWeaponCount do
-		local reloadFrame = spGetUnitWeaponState(bossUnitID, weaponNum, "reloadFrame")
-		if reloadFrame then
-			local previousReloadFrame = bossWeaponReloadFrames[weaponNum]
-			if previousReloadFrame and reloadFrame > previousReloadFrame and reloadFrame > frame then
-				lastBossFiredFrame = frame
+	local bestRange = 0
+	local weapons = unitDef and unitDef.weapons
+	if weapons and WeaponDefs then
+		for i = 1, #weapons do
+			local weaponDefID = weapons[i].weaponDef
+			local weaponDef = weaponDefID and WeaponDefs[weaponDefID]
+			local range = weaponDef and weaponDef.range
+			if range and range > bestRange then
+				bestRange = range
 			end
-			bossWeaponReloadFrames[weaponNum] = reloadFrame
 		end
 	end
+
+	if bestRange > 0 then
+		return bestRange
+	end
+	return FALLBACK_BOSS_WEAPON_RANGE
 end
 
-local function updateBossIdleReheal(frame)
-	if frame < nextIdleRehealFrame then
-		return
-	end
-	nextIdleRehealFrame = frame + FINAL_BOSS_IDLE_REHEAL_TICK_FRAMES
+local function getTargetClearRadius()
+	return getBossWeaponRange() * TARGET_CLEAR_RANGE_MULT
+end
 
-	if not bossUnitID or not spGetUnitHealth or not spSetUnitHealth then
-		return
-	end
-
-	local lastCombatFrame = lastBossFiredFrame
-	if lastBossDamagedFrame > lastCombatFrame then
-		lastCombatFrame = lastBossDamagedFrame
-	end
-	if frame - lastCombatFrame < FINAL_BOSS_IDLE_REHEAL_DELAY_FRAMES then
-		return
+local function targetAreaHasLiveBuilding()
+	if not targetTeamID or not targetX or not targetZ or not spGetUnitsInCylinder then
+		return false
 	end
 
-	local health, maxHealth = spGetUnitHealth(bossUnitID)
-	if not health or not maxHealth or maxHealth <= 0 or health >= maxHealth then
-		return
+	local units = spGetUnitsInCylinder(targetX, targetZ, getTargetClearRadius())
+	if not units then
+		return false
 	end
 
-	local healAmount = maxHealth * FINAL_BOSS_IDLE_REHEAL_RATE
-	local newHealth = health + healAmount
-	if newHealth > maxHealth then
-		newHealth = maxHealth
+	for i = 1, #units do
+		local unitID = units[i]
+		if spGetUnitTeam(unitID) == targetTeamID then
+			local defID = spGetUnitDefID(unitID)
+			if isBuildingDef(defID and UnitDefs[defID]) then
+				local health = spGetUnitHealth(unitID)
+				if health and health > 0 then
+					return true
+				end
+			end
+		end
 	end
-	spSetUnitHealth(bossUnitID, newHealth)
+	return false
+end
+
+local function advanceTargetCycle()
+	if targetCycleStep == TARGET_CYCLE_CHEAP_1 then
+		targetCycleStep = TARGET_CYCLE_CHEAP_2
+	elseif targetCycleStep == TARGET_CYCLE_CHEAP_2 then
+		targetCycleStep = TARGET_CYCLE_ENERGY
+	else
+		targetCycleStep = TARGET_CYCLE_CHEAP_1
+	end
 end
 
 local function ensureBossTeamResources(teamID)
@@ -578,7 +638,7 @@ local function orderFight(frame)
 	forcedMoveUntilFrame = 0
 	spGiveOrderToUnit(bossUnitID, CMD.FIGHT, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {})
 	spGiveOrderToUnit(bossUnitID, CMD.MOVE_STATE, { 2 }, { "shift" })
-	spGiveOrderToUnit(bossUnitID, CMD.FIRE_STATE, { 2 }, { "shift" })
+	spGiveOrderToUnit(bossUnitID, CMD.IDLEMODE, { 0 }, {})
 	nextOrderRefreshFrame = frame + ORDER_REFRESH_FRAMES
 	updateHudParams()
 end
@@ -593,6 +653,15 @@ local function orderForcedMove(frame)
 	updateHudParams()
 end
 
+local function setTargetPosition(teamID, x, y, z, isBuilding)
+	targetTeamID = teamID
+	targetX = x
+	targetY = y or spGetGroundHeight(x, z)
+	targetZ = z
+	targetIsBuilding = isBuilding and true or false
+	updateHudParams()
+end
+
 local function refreshTarget(frame, force)
 	if not force and frame < nextRetargetFrame then
 		return false
@@ -600,25 +669,53 @@ local function refreshTarget(frame, force)
 	nextRetargetFrame = frame + RETARGET_INTERVAL_FRAMES
 
 	local newTargetTeamID = pickRichestTeam()
-	local x, y, z = getTargetPosition(newTargetTeamID)
-	if not newTargetTeamID or not x or not z then
+	if not newTargetTeamID then
 		return false
 	end
 
-	local changed = newTargetTeamID ~= targetTeamID
+	local teamChanged = newTargetTeamID ~= targetTeamID
+	if not force and not teamChanged and targetX and targetZ then
+		return false
+	end
+
+	if teamChanged or force then
+		targetCycleStep = TARGET_CYCLE_CHEAP_1
+	end
+
+	local x, y, z, isBuilding = getCycleTargetPosition(newTargetTeamID)
+	if not x or not z then
+		return false
+	end
+
+	local changed = teamChanged
 		or math.abs((targetX or x) - x) > 200
 		or math.abs((targetZ or z) - z) > 200
-	targetTeamID = newTargetTeamID
-	targetX = x
-	targetY = y or spGetGroundHeight(x, z)
-	targetZ = z
-	updateHudParams()
+	setTargetPosition(newTargetTeamID, x, y, z, isBuilding)
 
 	if changed or force then
 		resetProgress(frame)
 		return true
 	end
 	return false
+end
+
+local function refreshClearedTarget(frame)
+	if not targetIsBuilding or not targetTeamID then
+		return false
+	end
+	if targetAreaHasLiveBuilding() then
+		return false
+	end
+
+	advanceTargetCycle()
+	local x, y, z, isBuilding = getCycleTargetPosition(targetTeamID)
+	if not x or not z then
+		return false
+	end
+
+	setTargetPosition(targetTeamID, x, y, z, isBuilding)
+	resetProgress(frame)
+	return true
 end
 
 local function spawnBoss(frame)
@@ -650,7 +747,6 @@ local function spawnBoss(frame)
 	bossState = STATE_FIGHT
 	shieldActive = false
 	clearBossAttackerDamage()
-	resetBossIdleRehealState(unitID, UnitDefs[spGetUnitDefID(unitID)] or unitDef, frame)
 	nextResourceTopupFrame = frame + RESOURCE_TOPUP_FRAMES
 	nextHealthParamFrame = frame + HEALTH_PARAM_UPDATE_FRAMES
 	if spSetUnitNeutral then
@@ -662,9 +758,7 @@ local function spawnBoss(frame)
 	setBossRuleParam("actual_spawn_frame", frame)
 	setBossRuleParam("shield_active", 0)
 	setBossRuleParam("shield_frame", -1)
-	bossUnits[unitID] = {
-		damageMult = FINAL_BOSS_DAMAGE_MULT,
-	}
+	bossUnits[unitID] = true
 	updateHudParams()
 	orderFight(frame)
 end
@@ -700,13 +794,16 @@ local function updateBoss(frame)
 		updateHudParams()
 		return
 	end
-	updateBossWeaponFireState(frame)
 	updateBossShield(frame)
-	updateBossIdleReheal(frame)
 
 	local targetChanged = refreshTarget(frame, false)
 	if targetChanged then
 		spSetUnitRulesParam(bossUnitID, "final_boss_target_team", targetTeamID or -1, { public = true })
+		orderFight(frame)
+		return
+	end
+
+	if refreshClearedTarget(frame) then
 		orderFight(frame)
 		return
 	end
@@ -797,15 +894,7 @@ function gadget:UnitDestroyed(unitID)
 		bossUnits[unitID] = nil
 		bossAlive = false
 		bossState = STATE_DEAD
-		bossWeaponReloadFrames = {}
-		bossWeaponCount = 0
 		updateHudParams()
-	end
-end
-
-function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
-	if unitID == bossUnitID and bossAlive and unitTeam == bossTeamID and attackerTeam and attackerTeam ~= bossTeamID and damage and damage > 0 then
-		lastBossDamagedFrame = spGetGameFrame()
 	end
 end
 
@@ -822,13 +911,6 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 		end
 	end
 
-	local attacker = attackerID and bossUnits[attackerID]
-	if attacker and attackerTeam == bossTeamID and unitTeam ~= bossTeamID then
-		local damageMult = attacker.damageMult or 1
-		if damageMult > 1 then
-			damage = damage * damageMult
-		end
-	end
 	if bossDamageClass then
 		addBossAttackerDamage(bossDamageClass, damage, spGetGameFrame())
 	end
