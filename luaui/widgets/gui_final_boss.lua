@@ -43,7 +43,7 @@ local LINE_ROTATE_FRAMES = 20 * FRAMES_PER_SECOND
 local COUNTDOWN_LINE_ROTATE_FRAMES = 60 * FRAMES_PER_SECOND
 local SPAWN_REACTION_FRAMES = 60 * FRAMES_PER_SECOND
 local HP_DAMAGED_FRACTION = 0.80
-local HP_ARMORED_FRACTION = 0.30
+local HP_ARMORED_FRACTION = 0.40
 local countdownSequence = {}
 local countdownSequenceSpawnFrame
 local countdownSequenceWarningFrame
