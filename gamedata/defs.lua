@@ -59,6 +59,14 @@ if (VFS.FileExists(modDefs)) then
   VFS.Include(modDefs)
 end
 
+local bossDefs = "gamedata/bossDefs.lua"
+local bossDefsMode = VFS.GAME
+
+if (VFS.FileExists(bossDefs, bossDefsMode)) then
+  Spring.Echo("FOUND bossDefs")
+  VFS.Include(bossDefs, nil, bossDefsMode)
+end
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- ACME HORSE COVFEFE
