@@ -26,6 +26,12 @@ local SHIELD_ALERT_FRAMES = 6 * FRAMES_PER_SECOND
 local PANEL_MARGIN = 8
 local PANEL_DEFAULT_RIGHT_MARGIN = 24
 local PANEL_DEFAULT_TOP_MARGIN = 118
+local PANEL_MIN_WIDTH = 300
+local PANEL_TEXT_PADDING = 28
+local PANEL_JOKE_FIT_PADDING = 6
+local TITLE_TEXT_SIZE = 17
+local DETAIL_TEXT_SIZE = 13
+local FITTED_TEXT_MIN_SIZE = 10
 
 local STATE_FIGHT = 1
 local STATE_FORCED_MOVE = 2
@@ -681,6 +687,62 @@ local deadLines = {
 	"Budget office found the explosion.",
 }
 
+local jokeLineSources = {
+	countdownLinePool,
+	spawnLines,
+	attackerLineSets,
+	fightLines,
+	fightDamagedLines,
+	fightArmoredLines,
+	forcedMoveLines,
+	forcedMoveDamagedLines,
+	forcedMoveArmoredLines,
+	deadLines,
+}
+
+local jokeFitPanelWidth
+
+local function measureVisibleTextWidth(text, size)
+	if not glGetTextWidth then
+		return 0
+	end
+	local visibleText = tostring(text or ""):gsub("\255...", "")
+	return glGetTextWidth(visibleText) * size
+end
+
+local function getLongestTextWidth(value, size)
+	local valueType = type(value)
+	if valueType == "string" then
+		return measureVisibleTextWidth(value, size)
+	end
+	if valueType ~= "table" then
+		return 0
+	end
+
+	local longest = 0
+	for _, child in pairs(value) do
+		local childWidth = getLongestTextWidth(child, size)
+		if childWidth > longest then
+			longest = childWidth
+		end
+	end
+	return longest
+end
+
+local function getJokeFitPanelWidth()
+	if not jokeFitPanelWidth then
+		local longest = 0
+		for i = 1, #jokeLineSources do
+			local width = getLongestTextWidth(jokeLineSources[i], FITTED_TEXT_MIN_SIZE)
+			if width > longest then
+				longest = width
+			end
+		end
+		jokeFitPanelWidth = math.ceil(longest + PANEL_TEXT_PADDING + PANEL_JOKE_FIT_PADDING)
+	end
+	return jokeFitPanelWidth
+end
+
 local function fmtTime(frames)
 	if frames < 0 then
 		frames = 0
@@ -806,9 +868,9 @@ end
 local function drawFittedText(text, x, y, size, options, maxWidth)
 	local fittedSize = size
 	if glGetTextWidth and maxWidth and maxWidth > 0 then
-		local width = glGetTextWidth(text) * fittedSize
+		local width = measureVisibleTextWidth(text, fittedSize)
 		if width > maxWidth then
-			fittedSize = math.max(10, fittedSize * (maxWidth / width))
+			fittedSize = math.max(FITTED_TEXT_MIN_SIZE, fittedSize * (maxWidth / width))
 		end
 	end
 	glText(text, x, y, fittedSize, options)
@@ -825,7 +887,7 @@ local function clamp(value, minValue, maxValue)
 end
 
 local function getPanelSize()
-	local panelW = math.min(430, math.max(310, vsx - 48))
+	local panelW = math.max(PANEL_MIN_WIDTH, getJokeFitPanelWidth())
 	local maxPanelW = math.max(1, vsx - (PANEL_MARGIN * 2))
 	if panelW > maxPanelW then
 		panelW = maxPanelW
@@ -1028,8 +1090,8 @@ function widget:DrawScreen()
 	end
 
 	drawPanel(x1, y1, x2, y2)
-	drawFittedText(colorPrefix .. title, x1 + 14, y2 - 27, 17, "o", textMaxW)
-	drawFittedText("\255\225\225\225" .. detail, x1 + 14, y1 + 17, 13, "o", textMaxW)
+	drawFittedText(colorPrefix .. title, x1 + 14, y2 - 27, TITLE_TEXT_SIZE, "o", textMaxW)
+	drawFittedText("\255\225\225\225" .. detail, x1 + 14, y1 + 17, DETAIL_TEXT_SIZE, "o", textMaxW)
 	if alive == 1 and state ~= STATE_DEAD then
 		drawShieldAlert(frame, shieldFrame)
 	end
