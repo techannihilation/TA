@@ -1,7 +1,7 @@
 function widget:GetInfo()
 	return {
-		name = "Final Boss FX",
-		desc = "Outline, ghost, and sound effects for the final boss",
+		name = "Final Boss Visual FX",
+		desc = "Visual outline and ghost effects for the final boss",
 		author = "Codex",
 		date = "2026-06-13",
 		license = "GNU GPL, v2 or later",

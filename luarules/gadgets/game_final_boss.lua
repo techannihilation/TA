@@ -26,15 +26,23 @@ local ORDER_REFRESH_FRAMES = 10 * FRAMES_PER_SECOND
 local PROGRESS_CHECK_FRAMES = 5 * FRAMES_PER_SECOND
 local STALL_TIMEOUT_FRAMES = 20 * FRAMES_PER_SECOND
 local FORCED_MOVE_FRAMES = 30 * FRAMES_PER_SECOND
+local MIDDLE_ROAM_DURATION_FRAMES = 5 * 60 * FRAMES_PER_SECOND
+local MIDDLE_ROAM_WAYPOINT_FRAMES = 30 * FRAMES_PER_SECOND
 local MIN_PROGRESS_ELOS = 100
 local TARGET_REACHED_RADIUS = 650
 local TARGET_CLEAR_RANGE_MULT = 0.8
 local FALLBACK_BOSS_WEAPON_RANGE = 1800
+local ECO_ROAM_ADVANTAGE = 0.20
+local ECO_ATTACK_ADVANTAGE = 0.30
 
 local STATE_COUNTDOWN = 0
 local STATE_FIGHT = 1
 local STATE_FORCED_MOVE = 2
 local STATE_DEAD = 3
+local STATE_MIDDLE_ROAM = 4
+
+local MODE_ATTACK = 1
+local MODE_MIDDLE_ROAM = 2
 
 local TARGET_CYCLE_CHEAP_1 = 1
 local TARGET_CYCLE_CHEAP_2 = 2
@@ -53,9 +61,11 @@ local spGetGameFrame = Spring.GetGameFrame
 local spGetGaiaTeamID = Spring.GetGaiaTeamID
 local spGetTeamList = Spring.GetTeamList
 local spGetTeamInfo = Spring.GetTeamInfo
+local spGetTeamAllyTeamID = Spring.GetTeamAllyTeamID
 local spGetTeamStatsHistory = Spring.GetTeamStatsHistory
 local spGetTeamUnits = Spring.GetTeamUnits
 local spGetTeamStartPosition = Spring.GetTeamStartPosition
+local spGetAllyTeamStartBox = Spring.GetAllyTeamStartBox
 local spGetUnitDefID = Spring.GetUnitDefID
 local spGetUnitHealth = Spring.GetUnitHealth
 local spGetUnitPosition = Spring.GetUnitPosition
@@ -74,7 +84,6 @@ local spSetUnitNeutral = Spring.SetUnitNeutral
 
 local MAP_X = Game.mapSizeX
 local MAP_Z = Game.mapSizeZ
-local random = math.random
 local commanderDefs = VFS.Include("luarules/configs/comDefIDs.lua") or {}
 local modOptions = (Spring.GetModOptions and Spring.GetModOptions()) or {}
 
@@ -98,12 +107,21 @@ local bossUnits = {}
 local bossSpawned = false
 local bossAlive = false
 local bossState = STATE_COUNTDOWN
+local bossMode
+local targetAllyTeamID
 local targetTeamID
 local targetX
 local targetY
 local targetZ
 local targetIsBuilding = false
 local targetCycleStep = TARGET_CYCLE_CHEAP_1
+local middleRoamTopAllyTeamID
+local middleRoamSecondAllyTeamID
+local middleRoamStartedFrame = 0
+local middleRoamLeg = 0
+local middleRoamEdgeLeg = 0
+local middleRoamInEdgePhase = false
+local nextMiddleRoamWaypointFrame = 0
 local nextRetargetFrame = 0
 local nextOrderRefreshFrame = 0
 local nextProgressCheckFrame = 0
@@ -161,9 +179,10 @@ local function isTeamDead(teamID)
 	end
 	local info = spGetTeamInfo(teamID)
 	if type(info) == "table" then
-		return info.isDead
+		return info.isDead == true or info.isDead == 1
 	end
-	return select(3, spGetTeamInfo(teamID))
+	local isDead = select(3, spGetTeamInfo(teamID))
+	return isDead == true or isDead == 1
 end
 
 local function unitCost(unitDefID)
@@ -179,6 +198,23 @@ end
 local function teamHasLiveUnits(teamID)
 	local units = spGetTeamUnits(teamID)
 	return units and units[1] ~= nil
+end
+
+local function getTeamAllyTeamID(teamID)
+	if not teamID then
+		return nil
+	end
+	if spGetTeamAllyTeamID then
+		return spGetTeamAllyTeamID(teamID)
+	end
+	if not spGetTeamInfo then
+		return nil
+	end
+	local info = spGetTeamInfo(teamID, false)
+	if type(info) == "table" then
+		return info.allyTeam or info.allyTeamID
+	end
+	return select(6, spGetTeamInfo(teamID, false))
 end
 
 local function getTeamProducedMetalEquivalent(teamID)
@@ -200,41 +236,98 @@ local function getTeamProducedMetalEquivalent(teamID)
 	return (latest.metalProduced or 0) + ((latest.energyProduced or 0) / 60)
 end
 
-local function getCandidateTeams()
+local function getNonGaiaTeams(allyTeamID)
 	local gaiaTeamID = spGetGaiaTeamID()
 	local teams = {}
-	for _, teamID in ipairs(spGetTeamList()) do
-		if teamID ~= gaiaTeamID and not isTeamDead(teamID) and teamHasLiveUnits(teamID) then
+	local teamList
+	if allyTeamID ~= nil then
+		teamList = spGetTeamList(allyTeamID) or {}
+	else
+		teamList = spGetTeamList() or {}
+	end
+	for _, teamID in ipairs(teamList) do
+		if teamID ~= gaiaTeamID then
 			teams[#teams + 1] = teamID
 		end
 	end
 	return teams
 end
 
-local function pickRichestTeam()
-	local teams = getCandidateTeams()
+local function getCandidateTeams(allyTeamID)
+	local teams = getNonGaiaTeams(allyTeamID)
+	local candidates = {}
+	for i = 1, #teams do
+		local teamID = teams[i]
+		if not isTeamDead(teamID) and teamHasLiveUnits(teamID) then
+			candidates[#candidates + 1] = teamID
+		end
+	end
+	return candidates
+end
+
+local function scoreIsBetter(allyTeamID, score, bestAllyTeamID, bestScore)
+	if not bestAllyTeamID then
+		return true
+	end
+	if score ~= bestScore then
+		return score > bestScore
+	end
+	return allyTeamID < bestAllyTeamID
+end
+
+local function getAllyTeamEcoLeaders()
+	local teams = getNonGaiaTeams()
 	if #teams == 0 then
 		return nil
 	end
 
-	local bestTeamID
-	local bestScore = -1
-	local tiedBestCount = 0
+	local scores = {}
+	local allyTeamIDs = {}
+	local aliveAllyTeams = {}
 	for i = 1, #teams do
 		local teamID = teams[i]
-		local score = getTeamProducedMetalEquivalent(teamID)
-		if score > bestScore then
-			bestTeamID = teamID
-			bestScore = score
-			tiedBestCount = 1
-		elseif score == bestScore then
-			tiedBestCount = tiedBestCount + 1
-			if random(tiedBestCount) == 1 then
-				bestTeamID = teamID
+		local allyTeamID = getTeamAllyTeamID(teamID)
+		if allyTeamID then
+			if not scores[allyTeamID] then
+				allyTeamIDs[#allyTeamIDs + 1] = allyTeamID
+				scores[allyTeamID] = 0
+			end
+			scores[allyTeamID] = (scores[allyTeamID] or 0) + getTeamProducedMetalEquivalent(teamID)
+			if not isTeamDead(teamID) and teamHasLiveUnits(teamID) then
+				aliveAllyTeams[allyTeamID] = true
 			end
 		end
 	end
-	return bestTeamID
+
+	local topAllyTeamID, topScore
+	local secondAllyTeamID, secondScore
+	for i = 1, #allyTeamIDs do
+		local allyTeamID = allyTeamIDs[i]
+		if aliveAllyTeams[allyTeamID] then
+			local score = scores[allyTeamID]
+			if scoreIsBetter(allyTeamID, score, topAllyTeamID, topScore) then
+				secondAllyTeamID = topAllyTeamID
+				secondScore = topScore
+				topAllyTeamID = allyTeamID
+				topScore = score
+			elseif scoreIsBetter(allyTeamID, score, secondAllyTeamID, secondScore) then
+				secondAllyTeamID = allyTeamID
+				secondScore = score
+			end
+		end
+	end
+
+	return topAllyTeamID, topScore or 0, secondAllyTeamID, secondScore or 0
+end
+
+local function getEcoAdvantage(topScore, secondScore)
+	if not secondScore or secondScore <= 0 then
+		if topScore and topScore > 0 then
+			return math.huge
+		end
+		return 0
+	end
+	return ((topScore or 0) - secondScore) / secondScore
 end
 
 local function isBuildingDef(ud)
@@ -257,27 +350,32 @@ local function getUnitPositionWithGround(unitID)
 	return nil
 end
 
-local function getBuildingTargetPosition(teamID, energyOnly, expensive)
-	local units = spGetTeamUnits(teamID)
-	if not units then
-		return nil
-	end
-
+local function getBuildingTargetPosition(allyTeamID, energyOnly, expensive)
+	local teams = getCandidateTeams(allyTeamID)
 	local bestUnitID
+	local bestTeamID
 	local bestCost
-	for i = 1, #units do
-		local unitID = units[i]
-		local defID = spGetUnitDefID(unitID)
-		local ud = defID and UnitDefs[defID]
-		if (energyOnly and isEnergyBuildingDef(ud)) or ((not energyOnly) and isBuildingDef(ud)) then
-			local cost = getUnitCost(unitID)
-			if not bestCost
-				or (expensive and cost > bestCost)
-				or ((not expensive) and cost < bestCost)
-				or (cost == bestCost and unitID < bestUnitID)
-			then
-				bestUnitID = unitID
-				bestCost = cost
+
+	for t = 1, #teams do
+		local teamID = teams[t]
+		local units = spGetTeamUnits(teamID)
+		if units then
+			for i = 1, #units do
+				local unitID = units[i]
+				local defID = spGetUnitDefID(unitID)
+				local ud = defID and UnitDefs[defID]
+				if (energyOnly and isEnergyBuildingDef(ud)) or ((not energyOnly) and isBuildingDef(ud)) then
+					local cost = getUnitCost(unitID)
+					if not bestCost
+						or (expensive and cost > bestCost)
+						or ((not expensive) and cost < bestCost)
+						or (cost == bestCost and unitID < bestUnitID)
+					then
+						bestUnitID = unitID
+						bestTeamID = teamID
+						bestCost = cost
+					end
+				end
 			end
 		end
 	end
@@ -285,123 +383,279 @@ local function getBuildingTargetPosition(teamID, energyOnly, expensive)
 	if bestUnitID then
 		local x, y, z = getUnitPositionWithGround(bestUnitID)
 		if x and z then
-			return x, y, z, true
+			return x, y, z, true, bestTeamID
 		end
 	end
 	return nil
 end
 
-local function getTeamBuildingCentroid(teamID)
-	local units = spGetTeamUnits(teamID)
-	if not units then
-		return nil
-	end
+local function getAllyTeamBuildingCentroid(allyTeamID)
+	local teams = getCandidateTeams(allyTeamID)
 	local totalX, totalY, totalZ = 0, 0, 0
 	local count = 0
-	for i = 1, #units do
-		local unitID = units[i]
-		local defID = spGetUnitDefID(unitID)
-		if isBuildingDef(defID and UnitDefs[defID]) then
-			local x, y, z = spGetUnitPosition(unitID)
-			if x and z then
-				totalX = totalX + x
-				totalY = totalY + (y or spGetGroundHeight(x, z) or 0)
-				totalZ = totalZ + z
-				count = count + 1
+
+	for t = 1, #teams do
+		local teamID = teams[t]
+		local units = spGetTeamUnits(teamID)
+		if units then
+			for i = 1, #units do
+				local unitID = units[i]
+				local defID = spGetUnitDefID(unitID)
+				if isBuildingDef(defID and UnitDefs[defID]) then
+					local x, y, z = spGetUnitPosition(unitID)
+					if x and z then
+						totalX = totalX + x
+						totalY = totalY + (y or spGetGroundHeight(x, z) or 0)
+						totalZ = totalZ + z
+						count = count + 1
+					end
+				end
 			end
 		end
 	end
+
 	if count > 0 then
 		return totalX / count, totalY / count, totalZ / count
 	end
 	return nil
 end
 
-local function getCheapestBuildingPosition(teamID)
-	return getBuildingTargetPosition(teamID, false, false)
+local function getCheapestBuildingPosition(allyTeamID)
+	return getBuildingTargetPosition(allyTeamID, false, false)
 end
 
-local function getMostExpensiveEnergyBuildingPosition(teamID)
-	return getBuildingTargetPosition(teamID, true, true)
+local function getMostExpensiveEnergyBuildingPosition(allyTeamID)
+	return getBuildingTargetPosition(allyTeamID, true, true)
 end
 
-local function getMostExpensiveUnitPosition(teamID)
-	local units = spGetTeamUnits(teamID)
-	if not units then
-		return nil
-	end
+local function getMostExpensiveUnitPosition(allyTeamID)
+	local teams = getCandidateTeams(allyTeamID)
 	local bestUnitID
+	local bestTeamID
 	local bestCost = -1
-	for i = 1, #units do
-		local unitID = units[i]
-		local defID = spGetUnitDefID(unitID)
-		local cost = unitCost(defID)
-		if cost > bestCost then
-			bestCost = cost
-			bestUnitID = unitID
+
+	for t = 1, #teams do
+		local teamID = teams[t]
+		local units = spGetTeamUnits(teamID)
+		if units then
+			for i = 1, #units do
+				local unitID = units[i]
+				local defID = spGetUnitDefID(unitID)
+				local cost = unitCost(defID)
+				if cost > bestCost then
+					bestCost = cost
+					bestUnitID = unitID
+					bestTeamID = teamID
+				end
+			end
 		end
 	end
+
 	if bestUnitID then
-		return spGetUnitPosition(bestUnitID)
-	end
-	return nil
-end
-
-local function getFirstUnitPosition(teamID)
-	local units = spGetTeamUnits(teamID)
-	if units and units[1] then
-		return spGetUnitPosition(units[1])
-	end
-	return nil
-end
-
-local function getFallbackTargetPosition(teamID)
-	if not teamID then
-		return nil
-	end
-
-	local x, y, z = getTeamBuildingCentroid(teamID)
-	if x and z then
-		return x, y or spGetGroundHeight(x, z), z, true
-	end
-
-	x, y, z = getMostExpensiveUnitPosition(teamID)
-	if x and z then
-		return x, y or spGetGroundHeight(x, z), z, false
-	end
-
-	x, y, z = getFirstUnitPosition(teamID)
-	if x and z then
-		return x, y or spGetGroundHeight(x, z), z, false
-	end
-
-	x, y, z = spGetTeamStartPosition(teamID)
-	if x and z and x >= 0 and z >= 0 then
-		return x, y or spGetGroundHeight(x, z), z, false
-	end
-
-	return nil
-end
-
-local function getCycleTargetPosition(teamID)
-	if not teamID then
-		return nil
-	end
-
-	local x, y, z, isBuilding
-	if targetCycleStep == TARGET_CYCLE_ENERGY then
-		x, y, z, isBuilding = getMostExpensiveEnergyBuildingPosition(teamID)
+		local x, y, z = spGetUnitPosition(bestUnitID)
 		if x and z then
-			return x, y, z, isBuilding
+			return x, y, z, bestTeamID
+		end
+	end
+	return nil
+end
+
+local function getFirstUnitPosition(allyTeamID)
+	local teams = getCandidateTeams(allyTeamID)
+	for t = 1, #teams do
+		local teamID = teams[t]
+		local units = spGetTeamUnits(teamID)
+		if units and units[1] then
+			local x, y, z = spGetUnitPosition(units[1])
+			if x and z then
+				return x, y, z, teamID
+			end
+		end
+	end
+	return nil
+end
+
+local function getFallbackTargetPosition(allyTeamID)
+	if not allyTeamID then
+		return nil
+	end
+
+	local x, y, z = getAllyTeamBuildingCentroid(allyTeamID)
+	if x and z then
+		return x, y or spGetGroundHeight(x, z), z, true, nil
+	end
+
+	local teamID
+	x, y, z, teamID = getMostExpensiveUnitPosition(allyTeamID)
+	if x and z then
+		return x, y or spGetGroundHeight(x, z), z, false, teamID
+	end
+
+	x, y, z, teamID = getFirstUnitPosition(allyTeamID)
+	if x and z then
+		return x, y or spGetGroundHeight(x, z), z, false, teamID
+	end
+
+	local teams = getCandidateTeams(allyTeamID)
+	for i = 1, #teams do
+		teamID = teams[i]
+		x, y, z = spGetTeamStartPosition(teamID)
+		if x and z and x >= 0 and z >= 0 then
+			return x, y or spGetGroundHeight(x, z), z, false, teamID
 		end
 	end
 
-	x, y, z, isBuilding = getCheapestBuildingPosition(teamID)
-	if x and z then
-		return x, y, z, isBuilding
+	return nil
+end
+
+local function getCycleTargetPosition(allyTeamID)
+	if not allyTeamID then
+		return nil
 	end
 
-	return getFallbackTargetPosition(teamID)
+	local x, y, z, isBuilding, teamID
+	if targetCycleStep == TARGET_CYCLE_ENERGY then
+		x, y, z, isBuilding, teamID = getMostExpensiveEnergyBuildingPosition(allyTeamID)
+		if x and z then
+			return x, y, z, isBuilding, teamID
+		end
+	end
+
+	x, y, z, isBuilding, teamID = getCheapestBuildingPosition(allyTeamID)
+	if x and z then
+		return x, y, z, isBuilding, teamID
+	end
+
+	return getFallbackTargetPosition(allyTeamID)
+end
+
+local getTargetClearRadius
+
+local function clampMapPosition(x, z)
+	if x < 0 then
+		x = 0
+	elseif x > MAP_X then
+		x = MAP_X
+	end
+	if z < 0 then
+		z = 0
+	elseif z > MAP_Z then
+		z = MAP_Z
+	end
+	return x, z
+end
+
+local function getValidTeamStartPosition(teamID)
+	local x, _, z = spGetTeamStartPosition(teamID)
+	if x and z and x >= 0 and z >= 0 and x <= MAP_X and z <= MAP_Z then
+		return x, z
+	end
+	return nil
+end
+
+local function getAllyTeamStartCenter(allyTeamID)
+	if not allyTeamID then
+		return MAP_X * 0.5, MAP_Z * 0.5
+	end
+
+	local teams = getCandidateTeams(allyTeamID)
+	local totalX, totalZ = 0, 0
+	local count = 0
+
+	for i = 1, #teams do
+		local x, z = getValidTeamStartPosition(teams[i])
+		if x and z then
+			totalX = totalX + x
+			totalZ = totalZ + z
+			count = count + 1
+		end
+	end
+
+	if count > 0 then
+		return totalX / count, totalZ / count
+	end
+
+	if spGetAllyTeamStartBox then
+		local xMin, zMin, xMax, zMax = spGetAllyTeamStartBox(allyTeamID)
+		if xMin and zMin and xMax and zMax and xMin < xMax and zMin < zMax then
+			return (xMin + xMax) * 0.5, (zMin + zMax) * 0.5
+		end
+	end
+
+	local x, _, z = getAllyTeamBuildingCentroid(allyTeamID)
+	if x and z then
+		return x, z
+	end
+
+	return MAP_X * 0.5, MAP_Z * 0.5
+end
+
+local function getMiddleRoamCenter()
+	local topX, topZ = getAllyTeamStartCenter(middleRoamTopAllyTeamID)
+	if not middleRoamSecondAllyTeamID then
+		return topX, topZ
+	end
+
+	local secondX, secondZ = getAllyTeamStartCenter(middleRoamSecondAllyTeamID)
+	return (topX + secondX) * 0.5, (topZ + secondZ) * 0.5
+end
+
+local function getAllyTeamBaseCenter(allyTeamID)
+	local x, _, z = getAllyTeamBuildingCentroid(allyTeamID)
+	if x and z then
+		return x, z
+	end
+	return getAllyTeamStartCenter(allyTeamID)
+end
+
+local function getBaseEdgePoint(allyTeamID)
+	if not allyTeamID then
+		return MAP_X * 0.5, MAP_Z * 0.5
+	end
+
+	local centerX, centerZ = getMiddleRoamCenter()
+	local baseX, baseZ = getAllyTeamBaseCenter(allyTeamID)
+	local dx = baseX - centerX
+	local dz = baseZ - centerZ
+	local length = math.sqrt((dx * dx) + (dz * dz))
+	local radius = getTargetClearRadius()
+
+	if length <= 1 then
+		return clampMapPosition(baseX, baseZ)
+	end
+
+	local x = baseX - ((dx / length) * radius)
+	local z = baseZ - ((dz / length) * radius)
+	return clampMapPosition(x, z)
+end
+
+local function getMiddleRoamPoint(frame)
+	local centerX, centerZ = getMiddleRoamCenter()
+	if frame - middleRoamStartedFrame < MIDDLE_ROAM_DURATION_FRAMES then
+		local radius = math.max(TARGET_REACHED_RADIUS, getTargetClearRadius() * 0.5)
+		local leg = middleRoamLeg % 4
+		local x, z = centerX, centerZ
+		if leg == 0 then
+			x = centerX + radius
+		elseif leg == 1 then
+			z = centerZ + radius
+		elseif leg == 2 then
+			x = centerX - radius
+		else
+			z = centerZ - radius
+		end
+		return clampMapPosition(x, z)
+	end
+
+	if not middleRoamInEdgePhase then
+		middleRoamInEdgePhase = true
+		middleRoamEdgeLeg = 0
+	end
+
+	if middleRoamEdgeLeg % 2 == 0 or not middleRoamSecondAllyTeamID then
+		return getBaseEdgePoint(middleRoamTopAllyTeamID)
+	end
+	return getBaseEdgePoint(middleRoamSecondAllyTeamID)
 end
 
 local function getBossHpFraction()
@@ -540,12 +794,12 @@ local function getBossWeaponRange()
 	return FALLBACK_BOSS_WEAPON_RANGE
 end
 
-local function getTargetClearRadius()
+getTargetClearRadius = function()
 	return getBossWeaponRange() * TARGET_CLEAR_RANGE_MULT
 end
 
 local function targetAreaHasLiveBuilding()
-	if not targetTeamID or not targetX or not targetZ or not spGetUnitsInCylinder then
+	if not targetX or not targetZ or not spGetUnitsInCylinder then
 		return false
 	end
 
@@ -556,7 +810,14 @@ local function targetAreaHasLiveBuilding()
 
 	for i = 1, #units do
 		local unitID = units[i]
-		if spGetUnitTeam(unitID) == targetTeamID then
+		local unitTeamID = spGetUnitTeam(unitID)
+		local matchesTarget = false
+		if targetAllyTeamID then
+			matchesTarget = getTeamAllyTeamID(unitTeamID) == targetAllyTeamID
+		else
+			matchesTarget = unitTeamID == targetTeamID
+		end
+		if matchesTarget then
 			local defID = spGetUnitDefID(unitID)
 			if isBuildingDef(defID and UnitDefs[defID]) then
 				local health = spGetUnitHealth(unitID)
@@ -653,44 +914,123 @@ local function orderForcedMove(frame)
 	updateHudParams()
 end
 
-local function setTargetPosition(teamID, x, y, z, isBuilding)
+local function setTargetPosition(teamID, allyTeamID, x, y, z, isBuilding)
+	targetAllyTeamID = allyTeamID
 	targetTeamID = teamID
 	targetX = x
 	targetY = y or spGetGroundHeight(x, z)
 	targetZ = z
 	targetIsBuilding = isBuilding and true or false
+	if bossUnitID then
+		spSetUnitRulesParam(bossUnitID, "final_boss_target_team", targetTeamID or -1, { public = true })
+	end
 	updateHudParams()
 end
 
-local function refreshTarget(frame, force)
-	if not force and frame < nextRetargetFrame then
-		return false
-	end
-	nextRetargetFrame = frame + RETARGET_INTERVAL_FRAMES
-
-	local newTargetTeamID = pickRichestTeam()
-	if not newTargetTeamID then
-		return false
+local function orderMiddleRoam(frame, advance)
+	if not bossUnitID or not middleRoamTopAllyTeamID then
+		return
 	end
 
-	local teamChanged = newTargetTeamID ~= targetTeamID
-	if not force and not teamChanged and targetX and targetZ then
-		return false
+	local edgePhase = frame - middleRoamStartedFrame >= MIDDLE_ROAM_DURATION_FRAMES
+	if advance then
+		if edgePhase then
+			if middleRoamInEdgePhase then
+				middleRoamEdgeLeg = middleRoamEdgeLeg + 1
+			end
+		else
+			middleRoamLeg = middleRoamLeg + 1
+		end
 	end
 
-	if teamChanged or force then
+	local x, z = getMiddleRoamPoint(frame)
+	setTargetPosition(nil, nil, x, spGetGroundHeight(x, z), z, false)
+	bossState = STATE_MIDDLE_ROAM
+	forcedMoveUntilFrame = 0
+	spGiveOrderToUnit(bossUnitID, CMD.MOVE, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {})
+	spGiveOrderToUnit(bossUnitID, CMD.MOVE_STATE, { 2 }, { "shift" })
+	nextOrderRefreshFrame = frame + ORDER_REFRESH_FRAMES
+	if advance or nextMiddleRoamWaypointFrame <= frame then
+		nextMiddleRoamWaypointFrame = frame + MIDDLE_ROAM_WAYPOINT_FRAMES
+	end
+	updateHudParams()
+end
+
+local function chooseBossMode()
+	local topAllyTeamID, topScore, secondAllyTeamID, secondScore = getAllyTeamEcoLeaders()
+	if not topAllyTeamID then
+		return nil
+	end
+	if not secondAllyTeamID then
+		return MODE_ATTACK, topAllyTeamID, nil
+	end
+
+	local advantage = getEcoAdvantage(topScore, secondScore)
+	if not bossMode then
+		if advantage >= ECO_ATTACK_ADVANTAGE then
+			return MODE_ATTACK, topAllyTeamID, secondAllyTeamID
+		end
+		return MODE_MIDDLE_ROAM, topAllyTeamID, secondAllyTeamID
+	end
+
+	if bossMode == MODE_ATTACK then
+		if advantage <= ECO_ROAM_ADVANTAGE then
+			return MODE_MIDDLE_ROAM, topAllyTeamID, secondAllyTeamID
+		end
+		if advantage < ECO_ATTACK_ADVANTAGE and targetAllyTeamID and #getCandidateTeams(targetAllyTeamID) > 0 then
+			return MODE_ATTACK, targetAllyTeamID, secondAllyTeamID
+		end
+		return MODE_ATTACK, topAllyTeamID, secondAllyTeamID
+	end
+
+	if advantage >= ECO_ATTACK_ADVANTAGE then
+		return MODE_ATTACK, topAllyTeamID, secondAllyTeamID
+	end
+	return MODE_MIDDLE_ROAM, topAllyTeamID, secondAllyTeamID
+end
+
+local function enterMiddleRoam(frame, topAllyTeamID, secondAllyTeamID, force)
+	local modeChanged = bossMode ~= MODE_MIDDLE_ROAM
+	local teamsChanged = topAllyTeamID ~= middleRoamTopAllyTeamID or secondAllyTeamID ~= middleRoamSecondAllyTeamID
+	bossMode = MODE_MIDDLE_ROAM
+	middleRoamTopAllyTeamID = topAllyTeamID
+	middleRoamSecondAllyTeamID = secondAllyTeamID
+
+	if modeChanged or force then
+		middleRoamStartedFrame = frame
+		middleRoamLeg = 0
+		middleRoamEdgeLeg = 0
+		middleRoamInEdgePhase = false
+		nextMiddleRoamWaypointFrame = frame + MIDDLE_ROAM_WAYPOINT_FRAMES
+	end
+
+	local x, z = getMiddleRoamPoint(frame)
+	setTargetPosition(nil, nil, x, spGetGroundHeight(x, z), z, false)
+	resetProgress(frame)
+	return modeChanged or teamsChanged or force
+end
+
+local function enterAttackMode(frame, allyTeamID, force)
+	local modeChanged = bossMode ~= MODE_ATTACK
+	local allyChanged = allyTeamID ~= targetAllyTeamID
+	if not force and not modeChanged and not allyChanged and targetX and targetZ then
+		return false
+	end
+	if modeChanged or allyChanged or force then
 		targetCycleStep = TARGET_CYCLE_CHEAP_1
 	end
 
-	local x, y, z, isBuilding = getCycleTargetPosition(newTargetTeamID)
+	local x, y, z, isBuilding, teamID = getCycleTargetPosition(allyTeamID)
 	if not x or not z then
 		return false
 	end
 
-	local changed = teamChanged
+	bossMode = MODE_ATTACK
+	local changed = modeChanged
+		or allyChanged
 		or math.abs((targetX or x) - x) > 200
 		or math.abs((targetZ or z) - z) > 200
-	setTargetPosition(newTargetTeamID, x, y, z, isBuilding)
+	setTargetPosition(teamID, allyTeamID, x, y, z, isBuilding)
 
 	if changed or force then
 		resetProgress(frame)
@@ -699,8 +1039,25 @@ local function refreshTarget(frame, force)
 	return false
 end
 
+local function refreshTarget(frame, force)
+	if not force and frame < nextRetargetFrame then
+		return false
+	end
+	nextRetargetFrame = frame + RETARGET_INTERVAL_FRAMES
+
+	local mode, topAllyTeamID, secondAllyTeamID = chooseBossMode()
+	if not mode then
+		return false
+	end
+
+	if mode == MODE_MIDDLE_ROAM then
+		return enterMiddleRoam(frame, topAllyTeamID, secondAllyTeamID, force)
+	end
+	return enterAttackMode(frame, topAllyTeamID, force)
+end
+
 local function refreshClearedTarget(frame)
-	if not targetIsBuilding or not targetTeamID then
+	if bossMode ~= MODE_ATTACK or not targetIsBuilding or not targetAllyTeamID then
 		return false
 	end
 	if targetAreaHasLiveBuilding() then
@@ -708,12 +1065,12 @@ local function refreshClearedTarget(frame)
 	end
 
 	advanceTargetCycle()
-	local x, y, z, isBuilding = getCycleTargetPosition(targetTeamID)
+	local x, y, z, isBuilding, teamID = getCycleTargetPosition(targetAllyTeamID)
 	if not x or not z then
 		return false
 	end
 
-	setTargetPosition(targetTeamID, x, y, z, isBuilding)
+	setTargetPosition(teamID, targetAllyTeamID, x, y, z, isBuilding)
 	resetProgress(frame)
 	return true
 end
@@ -744,7 +1101,7 @@ local function spawnBoss(frame)
 	bossTeamID = teamID
 	bossSpawned = true
 	bossAlive = true
-	bossState = STATE_FIGHT
+	bossState = (bossMode == MODE_MIDDLE_ROAM) and STATE_MIDDLE_ROAM or STATE_FIGHT
 	shieldActive = false
 	clearBossAttackerDamage()
 	nextResourceTopupFrame = frame + RESOURCE_TOPUP_FRAMES
@@ -760,7 +1117,11 @@ local function spawnBoss(frame)
 	setBossRuleParam("shield_frame", -1)
 	bossUnits[unitID] = true
 	updateHudParams()
-	orderFight(frame)
+	if bossMode == MODE_MIDDLE_ROAM then
+		orderMiddleRoam(frame, false)
+	else
+		orderFight(frame)
+	end
 end
 
 local function bossDistanceToTarget()
@@ -774,6 +1135,22 @@ local function bossDistanceToTarget()
 	local dx = x - targetX
 	local dz = z - targetZ
 	return math.sqrt(dx * dx + dz * dz)
+end
+
+local function updateMiddleRoam(frame)
+	if bossMode ~= MODE_MIDDLE_ROAM then
+		return false
+	end
+
+	local distance = bossDistanceToTarget()
+	if frame >= nextMiddleRoamWaypointFrame or (distance and distance <= TARGET_REACHED_RADIUS) then
+		orderMiddleRoam(frame, true)
+	elseif frame >= nextOrderRefreshFrame then
+		orderMiddleRoam(frame, false)
+	elseif bossState ~= STATE_MIDDLE_ROAM then
+		orderMiddleRoam(frame, false)
+	end
+	return true
 end
 
 local function updateBoss(frame)
@@ -798,8 +1175,15 @@ local function updateBoss(frame)
 
 	local targetChanged = refreshTarget(frame, false)
 	if targetChanged then
-		spSetUnitRulesParam(bossUnitID, "final_boss_target_team", targetTeamID or -1, { public = true })
-		orderFight(frame)
+		if bossMode == MODE_MIDDLE_ROAM then
+			orderMiddleRoam(frame, false)
+		else
+			orderFight(frame)
+		end
+		return
+	end
+
+	if updateMiddleRoam(frame) then
 		return
 	end
 
@@ -918,7 +1302,12 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 end
 
 function gadget:TeamDied(teamID)
-	if teamID == targetTeamID then
+	local allyTeamID = getTeamAllyTeamID(teamID)
+	if teamID == targetTeamID
+		or allyTeamID == targetAllyTeamID
+		or allyTeamID == middleRoamTopAllyTeamID
+		or allyTeamID == middleRoamSecondAllyTeamID
+	then
 		nextRetargetFrame = 0
 	end
 end

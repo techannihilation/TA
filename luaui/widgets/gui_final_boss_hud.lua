@@ -1,7 +1,7 @@
 function widget:GetInfo()
 	return {
 		name = "Final Boss HUD",
-		desc = "Shows final boss countdown and status",
+		desc = "HUD panel for final boss countdown and status",
 		author = "Codex",
 		date = "2026-06-13",
 		license = "GNU GPL, v2 or later",
@@ -23,6 +23,9 @@ local glText = gl.Text
 local FRAMES_PER_SECOND = 30
 local DEAD_DISPLAY_FRAMES = 60 * FRAMES_PER_SECOND
 local SHIELD_ALERT_FRAMES = 6 * FRAMES_PER_SECOND
+local PANEL_MARGIN = 8
+local PANEL_DEFAULT_RIGHT_MARGIN = 24
+local PANEL_DEFAULT_TOP_MARGIN = 118
 
 local STATE_FIGHT = 1
 local STATE_FORCED_MOVE = 2
@@ -47,6 +50,14 @@ local HP_ARMORED_FRACTION = 0.40
 local countdownSequence = {}
 local countdownSequenceSpawnFrame
 local countdownSequenceWarningFrame
+local panelX
+local panelY
+local panelRelX
+local panelRelY
+local hasSavedPanelPosition = false
+local draggingPanel = false
+local dragOffX = 0
+local dragOffY = 0
 
 local countdownLines = {
 	"Command says this is fine.",
@@ -803,6 +814,97 @@ local function drawFittedText(text, x, y, size, options, maxWidth)
 	glText(text, x, y, fittedSize, options)
 end
 
+local function clamp(value, minValue, maxValue)
+	if value < minValue then
+		return minValue
+	end
+	if value > maxValue then
+		return maxValue
+	end
+	return value
+end
+
+local function getPanelSize()
+	local panelW = math.min(430, math.max(310, vsx - 48))
+	local maxPanelW = math.max(1, vsx - (PANEL_MARGIN * 2))
+	if panelW > maxPanelW then
+		panelW = maxPanelW
+	end
+	local panelH = math.min(72, math.max(1, vsy - (PANEL_MARGIN * 2)))
+	return panelW, panelH
+end
+
+local function getDefaultPanelPosition(panelW, panelH)
+	return vsx - PANEL_DEFAULT_RIGHT_MARGIN - panelW, vsy - PANEL_DEFAULT_TOP_MARGIN - panelH
+end
+
+local function clampPanelPosition(x, y, panelW, panelH)
+	local maxX = math.max(PANEL_MARGIN, vsx - panelW - PANEL_MARGIN)
+	local maxY = math.max(PANEL_MARGIN, vsy - panelH - PANEL_MARGIN)
+	return clamp(x, PANEL_MARGIN, maxX), clamp(y, PANEL_MARGIN, maxY)
+end
+
+local function rememberPanelPosition()
+	if vsx > 0 and vsy > 0 and panelX and panelY then
+		panelRelX = panelX / vsx
+		panelRelY = panelY / vsy
+	end
+end
+
+local function updatePanelPositionForView(panelW, panelH)
+	local x
+	local y
+	if hasSavedPanelPosition and panelRelX and panelRelY then
+		x = panelRelX * vsx
+		y = panelRelY * vsy
+	else
+		x, y = getDefaultPanelPosition(panelW, panelH)
+	end
+	panelX, panelY = clampPanelPosition(x, y, panelW, panelH)
+	if hasSavedPanelPosition then
+		rememberPanelPosition()
+	end
+end
+
+local function getPanelBounds()
+	local panelW, panelH = getPanelSize()
+	if not panelX or not panelY then
+		updatePanelPositionForView(panelW, panelH)
+	else
+		panelX, panelY = clampPanelPosition(panelX, panelY, panelW, panelH)
+		if hasSavedPanelPosition then
+			rememberPanelPosition()
+		end
+	end
+	return panelX, panelY, panelX + panelW, panelY + panelH, panelW, panelH
+end
+
+local function isInside(mx, my, x1, y1, x2, y2)
+	return mx >= x1 and mx <= x2 and my >= y1 and my <= y2
+end
+
+local function isStatusPanelVisible()
+	if spIsGUIHidden and spIsGUIHidden() then
+		return false
+	end
+	if spGetGameRulesParam("final_boss_enabled") ~= 1 then
+		return false
+	end
+
+	local frame = spGetGameFrame()
+	local warningFrame = spGetGameRulesParam("final_boss_warning_frame") or 0
+	local spawned = spGetGameRulesParam("final_boss_spawned") or 0
+	if spawned ~= 1 and frame < warningFrame then
+		return false
+	end
+
+	local state = spGetGameRulesParam("final_boss_state") or 0
+	if state == STATE_DEAD and deadSeenFrame and frame > (deadSeenFrame + DEAD_DISPLAY_FRAMES) then
+		return false
+	end
+	return true
+end
+
 local function drawShieldAlert(frame, shieldFrame)
 	if not shieldFrame or shieldFrame < 0 then
 		return
@@ -839,6 +941,34 @@ end
 function widget:ViewResize(viewSizeX, viewSizeY)
 	vsx = viewSizeX
 	vsy = viewSizeY
+	local panelW, panelH = getPanelSize()
+	if hasSavedPanelPosition then
+		updatePanelPositionForView(panelW, panelH)
+	else
+		panelX = nil
+		panelY = nil
+	end
+end
+
+function widget:GetConfigData()
+	return {
+		panelRelX = panelRelX,
+		panelRelY = panelRelY,
+		hasSavedPanelPosition = hasSavedPanelPosition,
+	}
+end
+
+function widget:SetConfigData(data)
+	if type(data) ~= "table" then
+		return
+	end
+	if type(data.panelRelX) == "number" and type(data.panelRelY) == "number" and data.hasSavedPanelPosition ~= false then
+		panelRelX = data.panelRelX
+		panelRelY = data.panelRelY
+		hasSavedPanelPosition = true
+		local panelW, panelH = getPanelSize()
+		updatePanelPositionForView(panelW, panelH)
+	end
 end
 
 function widget:DrawScreen()
@@ -877,15 +1007,11 @@ function widget:DrawScreen()
 		deadSeenFrame = nil
 	end
 
-	local panelW = math.min(430, math.max(310, vsx - 48))
-	local panelH = 72
-	local x2 = vsx - 24
-	local x1 = x2 - panelW
-	local y2 = vsy - 118
-	local y1 = y2 - panelH
+	local x1, y1, x2, y2, panelW = getPanelBounds()
 	local title
 	local detail
 	local colorPrefix = "\255\255\210\120"
+	local textMaxW = math.max(1, panelW - 28)
 
 	if spawned ~= 1 then
 		local framesUntilSpawn = spawnFrame - frame
@@ -902,10 +1028,49 @@ function widget:DrawScreen()
 	end
 
 	drawPanel(x1, y1, x2, y2)
-	drawFittedText(colorPrefix .. title, x1 + 14, y2 - 27, 17, "o", panelW - 28)
-	drawFittedText("\255\225\225\225" .. detail, x1 + 14, y1 + 17, 13, "o", panelW - 28)
+	drawFittedText(colorPrefix .. title, x1 + 14, y2 - 27, 17, "o", textMaxW)
+	drawFittedText("\255\225\225\225" .. detail, x1 + 14, y1 + 17, 13, "o", textMaxW)
 	if alive == 1 and state ~= STATE_DEAD then
 		drawShieldAlert(frame, shieldFrame)
 	end
 	glColor(1, 1, 1, 1)
+end
+
+function widget:MousePress(mx, my, button)
+	if button ~= 2 or not isStatusPanelVisible() then
+		return false
+	end
+
+	local x1, y1, x2, y2 = getPanelBounds()
+	if isInside(mx, my, x1, y1, x2, y2) then
+		draggingPanel = true
+		dragOffX = mx - x1
+		dragOffY = my - y1
+		return true
+	end
+	return false
+end
+
+function widget:MouseMove(mx, my, dx, dy, button)
+	if button ~= 2 or not draggingPanel then
+		return false
+	end
+
+	local panelW, panelH = getPanelSize()
+	panelX, panelY = clampPanelPosition(mx - dragOffX, my - dragOffY, panelW, panelH)
+	hasSavedPanelPosition = true
+	rememberPanelPosition()
+	return true
+end
+
+function widget:MouseRelease(mx, my, button)
+	if button == 2 and draggingPanel then
+		local panelW, panelH = getPanelSize()
+		panelX, panelY = clampPanelPosition(mx - dragOffX, my - dragOffY, panelW, panelH)
+		hasSavedPanelPosition = true
+		rememberPanelPosition()
+		draggingPanel = false
+		return true
+	end
+	return false
 end
