@@ -32,8 +32,8 @@ local TARGET_REACHED_RADIUS = 650
 local TARGET_CLEAR_RANGE_MULT = 0.8
 local MIDDLE_ROAM_EDGE_RANGE_MULT = 1.1
 local FALLBACK_BOSS_WEAPON_RANGE = 1800
-local ECO_ROAM_ADVANTAGE = 0.20
-local ECO_ATTACK_ADVANTAGE = 0.30
+local ECO_ROAM_ADVANTAGE = 0.60
+local ECO_ATTACK_ADVANTAGE = 0.70
 
 local STATE_COUNTDOWN = 0
 local STATE_FIGHT = 1
@@ -46,7 +46,8 @@ local MODE_MIDDLE_ROAM = 2
 
 local TARGET_CYCLE_CHEAP_1 = 1
 local TARGET_CYCLE_CHEAP_2 = 2
-local TARGET_CYCLE_ENERGY = 3
+local TARGET_CYCLE_CHEAP_3 = 3
+local TARGET_CYCLE_ENERGY = 4
 
 local ATTACKER_UNKNOWN = 0
 local ATTACKER_COMMANDER = 1
@@ -837,6 +838,8 @@ local function advanceTargetCycle()
 	if targetCycleStep == TARGET_CYCLE_CHEAP_1 then
 		targetCycleStep = TARGET_CYCLE_CHEAP_2
 	elseif targetCycleStep == TARGET_CYCLE_CHEAP_2 then
+		targetCycleStep = TARGET_CYCLE_CHEAP_3
+	elseif targetCycleStep == TARGET_CYCLE_CHEAP_3 then
 		targetCycleStep = TARGET_CYCLE_ENERGY
 	else
 		targetCycleStep = TARGET_CYCLE_CHEAP_1
