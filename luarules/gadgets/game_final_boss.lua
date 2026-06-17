@@ -27,10 +27,10 @@ local PROGRESS_CHECK_FRAMES = 5 * FRAMES_PER_SECOND
 local STALL_TIMEOUT_FRAMES = 20 * FRAMES_PER_SECOND
 local FORCED_MOVE_FRAMES = 30 * FRAMES_PER_SECOND
 local MIDDLE_ROAM_DURATION_FRAMES = 5 * 60 * FRAMES_PER_SECOND
-local MIDDLE_ROAM_WAYPOINT_FRAMES = 30 * FRAMES_PER_SECOND
 local MIN_PROGRESS_ELOS = 100
 local TARGET_REACHED_RADIUS = 650
 local TARGET_CLEAR_RANGE_MULT = 0.8
+local MIDDLE_ROAM_EDGE_RANGE_MULT = 1.1
 local FALLBACK_BOSS_WEAPON_RANGE = 1800
 local ECO_ROAM_ADVANTAGE = 0.20
 local ECO_ATTACK_ADVANTAGE = 0.30
@@ -121,7 +121,6 @@ local middleRoamStartedFrame = 0
 local middleRoamLeg = 0
 local middleRoamEdgeLeg = 0
 local middleRoamInEdgePhase = false
-local nextMiddleRoamWaypointFrame = 0
 local nextRetargetFrame = 0
 local nextOrderRefreshFrame = 0
 local nextProgressCheckFrame = 0
@@ -530,6 +529,7 @@ local function getCycleTargetPosition(allyTeamID)
 end
 
 local getTargetClearRadius
+local getBossWeaponRange
 
 local function clampMapPosition(x, z)
 	if x < 0 then
@@ -618,7 +618,7 @@ local function getBaseEdgePoint(allyTeamID)
 	local dx = baseX - centerX
 	local dz = baseZ - centerZ
 	local length = math.sqrt((dx * dx) + (dz * dz))
-	local radius = getTargetClearRadius()
+	local radius = getBossWeaponRange() * MIDDLE_ROAM_EDGE_RANGE_MULT
 
 	if length <= 1 then
 		return clampMapPosition(baseX, baseZ)
@@ -632,7 +632,7 @@ end
 local function getMiddleRoamPoint(frame)
 	local centerX, centerZ = getMiddleRoamCenter()
 	if frame - middleRoamStartedFrame < MIDDLE_ROAM_DURATION_FRAMES then
-		local radius = math.max(TARGET_REACHED_RADIUS, getTargetClearRadius() * 0.5)
+		local radius = math.max(TARGET_REACHED_RADIUS, getTargetClearRadius())
 		local leg = middleRoamLeg % 4
 		local x, z = centerX, centerZ
 		if leg == 0 then
@@ -652,10 +652,13 @@ local function getMiddleRoamPoint(frame)
 		middleRoamEdgeLeg = 0
 	end
 
+	local edgeAllyTeamID = middleRoamTopAllyTeamID
 	if middleRoamEdgeLeg % 2 == 0 or not middleRoamSecondAllyTeamID then
-		return getBaseEdgePoint(middleRoamTopAllyTeamID)
+		edgeAllyTeamID = middleRoamTopAllyTeamID
+	else
+		edgeAllyTeamID = middleRoamSecondAllyTeamID
 	end
-	return getBaseEdgePoint(middleRoamSecondAllyTeamID)
+	return getBaseEdgePoint(edgeAllyTeamID)
 end
 
 local function getBossHpFraction()
@@ -769,7 +772,7 @@ local function updateHudParams()
 	updateBossHealthParam()
 end
 
-local function getBossWeaponRange()
+getBossWeaponRange = function()
 	local unitDef = UnitDefNames and UnitDefNames[FINAL_BOSS_UNIT]
 	if unitDef and unitDef.maxWeaponRange and unitDef.maxWeaponRange > 0 then
 		return unitDef.maxWeaponRange
@@ -927,6 +930,18 @@ local function setTargetPosition(teamID, allyTeamID, x, y, z, isBuilding)
 	updateHudParams()
 end
 
+local function resendMiddleRoamMove(frame)
+	if not bossUnitID or not targetX or not targetZ then
+		return
+	end
+	bossState = STATE_MIDDLE_ROAM
+	forcedMoveUntilFrame = 0
+	spGiveOrderToUnit(bossUnitID, CMD.MOVE, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {})
+	spGiveOrderToUnit(bossUnitID, CMD.MOVE_STATE, { 2 }, { "shift" })
+	nextOrderRefreshFrame = frame + ORDER_REFRESH_FRAMES
+	updateHudParams()
+end
+
 local function orderMiddleRoam(frame, advance)
 	if not bossUnitID or not middleRoamTopAllyTeamID then
 		return
@@ -945,15 +960,7 @@ local function orderMiddleRoam(frame, advance)
 
 	local x, z = getMiddleRoamPoint(frame)
 	setTargetPosition(nil, nil, x, spGetGroundHeight(x, z), z, false)
-	bossState = STATE_MIDDLE_ROAM
-	forcedMoveUntilFrame = 0
-	spGiveOrderToUnit(bossUnitID, CMD.MOVE, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {})
-	spGiveOrderToUnit(bossUnitID, CMD.MOVE_STATE, { 2 }, { "shift" })
-	nextOrderRefreshFrame = frame + ORDER_REFRESH_FRAMES
-	if advance or nextMiddleRoamWaypointFrame <= frame then
-		nextMiddleRoamWaypointFrame = frame + MIDDLE_ROAM_WAYPOINT_FRAMES
-	end
-	updateHudParams()
+	resendMiddleRoamMove(frame)
 end
 
 local function chooseBossMode()
@@ -995,13 +1002,15 @@ local function enterMiddleRoam(frame, topAllyTeamID, secondAllyTeamID, force)
 	bossMode = MODE_MIDDLE_ROAM
 	middleRoamTopAllyTeamID = topAllyTeamID
 	middleRoamSecondAllyTeamID = secondAllyTeamID
+	if not force and not modeChanged and not teamsChanged and targetX and targetZ then
+		return false
+	end
 
 	if modeChanged or force then
 		middleRoamStartedFrame = frame
 		middleRoamLeg = 0
 		middleRoamEdgeLeg = 0
 		middleRoamInEdgePhase = false
-		nextMiddleRoamWaypointFrame = frame + MIDDLE_ROAM_WAYPOINT_FRAMES
 	end
 
 	local x, z = getMiddleRoamPoint(frame)
@@ -1143,12 +1152,12 @@ local function updateMiddleRoam(frame)
 	end
 
 	local distance = bossDistanceToTarget()
-	if frame >= nextMiddleRoamWaypointFrame or (distance and distance <= TARGET_REACHED_RADIUS) then
+	if distance and distance <= TARGET_REACHED_RADIUS then
 		orderMiddleRoam(frame, true)
 	elseif frame >= nextOrderRefreshFrame then
-		orderMiddleRoam(frame, false)
+		resendMiddleRoamMove(frame)
 	elseif bossState ~= STATE_MIDDLE_ROAM then
-		orderMiddleRoam(frame, false)
+		resendMiddleRoamMove(frame)
 	end
 	return true
 end
