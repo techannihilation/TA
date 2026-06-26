@@ -23,6 +23,7 @@ local glText = gl.Text
 local FRAMES_PER_SECOND = 30
 local DEAD_DISPLAY_FRAMES = 60 * FRAMES_PER_SECOND
 local SHIELD_ALERT_FRAMES = 6 * FRAMES_PER_SECOND
+local PHASE2_ALERT_FRAMES = 7 * FRAMES_PER_SECOND
 local PANEL_MARGIN = 8
 local PANEL_DEFAULT_RIGHT_MARGIN = 24
 local PANEL_DEFAULT_TOP_MARGIN = 118
@@ -36,6 +37,7 @@ local FITTED_TEXT_MIN_SIZE = 10
 local STATE_FIGHT = 1
 local STATE_FORCED_MOVE = 2
 local STATE_DEAD = 3
+local PHASE_DARK_DEUS = 2
 
 local ATTACKER_UNKNOWN = 0
 local ATTACKER_COMMANDER = 1
@@ -961,6 +963,10 @@ local function isStatusPanelVisible()
 	end
 
 	local state = spGetGameRulesParam("final_boss_state") or 0
+	local phase2Pending = spGetGameRulesParam("final_boss_phase2_pending") or 0
+	if phase2Pending == 1 then
+		return true
+	end
 	if state == STATE_DEAD and deadSeenFrame and frame > (deadSeenFrame + DEAD_DISPLAY_FRAMES) then
 		return false
 	end
@@ -997,6 +1003,39 @@ local function drawShieldAlert(frame, shieldFrame)
 	drawFittedText("BOSS GOT MAD", vsx * 0.5, y2 - 43, 27 + (4 * pulse), "oc", panelW - 40)
 	glColor(0.92, 0.95, 1.0, alpha)
 	drawFittedText("Advanced shields online. Someone dented the expensive ego.", vsx * 0.5, y1 + 30, 15, "oc", panelW - 44)
+	glColor(1, 1, 1, 1)
+end
+
+local function drawPhase2Alert(frame, phase2Frame)
+	if not phase2Frame or phase2Frame < 0 then
+		return
+	end
+	local elapsed = frame - phase2Frame
+	if elapsed < 0 or elapsed > PHASE2_ALERT_FRAMES then
+		return
+	end
+
+	local progress = elapsed / PHASE2_ALERT_FRAMES
+	local alpha = math.min(1, progress / 0.12, (1 - progress) / 0.22)
+	local pulse = 0.5 + 0.5 * math.sin(elapsed * 0.28)
+	local panelW = math.min(760, math.max(380, vsx - 80))
+	local panelH = 112 + (10 * pulse)
+	local x1 = (vsx - panelW) * 0.5
+	local x2 = x1 + panelW
+	local y1 = (vsy - panelH) * 0.5
+	local y2 = y1 + panelH
+
+	glColor(0, 0, 0, 0.66 * alpha)
+	glRect(x1, y1, x2, y2)
+	glColor(0.78, 0.08, 0.52, 0.95 * alpha)
+	glRect(x1, y2 - 4, x2, y2)
+	glColor(1.0, 0.25, 0.12, 0.72 * alpha)
+	glRect(x1, y1, x2, y1 + 3)
+
+	glColor(1.0, 0.22 + 0.16 * pulse, 0.16, alpha)
+	drawFittedText("PHASE 2: DARK DEUS", vsx * 0.5, y2 - 44, 27 + (4 * pulse), "oc", panelW - 40)
+	glColor(0.94, 0.92, 1.0, alpha)
+	drawFittedText("Boss Dark Deus has entered the field.", vsx * 0.5, y1 + 31, 15, "oc", panelW - 44)
 	glColor(1, 1, 1, 1)
 end
 
@@ -1050,6 +1089,9 @@ function widget:DrawScreen()
 	local state = spGetGameRulesParam("final_boss_state") or 0
 	local shieldFrame = spGetGameRulesParam("final_boss_shield_frame") or -1
 	local shieldActive = spGetGameRulesParam("final_boss_shield_active") or 0
+	local phase = spGetGameRulesParam("final_boss_phase") or 1
+	local phase2SpawnFrame = spGetGameRulesParam("final_boss_phase2_spawn_frame") or -1
+	local phase2Pending = spGetGameRulesParam("final_boss_phase2_pending") or 0
 	local hpFraction = spGetGameRulesParam("final_boss_hp_fraction") or 1
 	local attackerClass = spGetGameRulesParam("final_boss_attacker_class") or ATTACKER_UNKNOWN
 
@@ -1058,7 +1100,7 @@ function widget:DrawScreen()
 			return
 		end
 	end
-	if state == STATE_DEAD then
+	if state == STATE_DEAD and phase2Pending ~= 1 then
 		if not deadSeenFrame then
 			deadSeenFrame = frame
 		end
@@ -1079,12 +1121,20 @@ function widget:DrawScreen()
 		local framesUntilSpawn = spawnFrame - frame
 		title = "FINAL BOSS IN " .. fmtTime(framesUntilSpawn)
 		detail = getCountdownLine(frame, spawnFrame, warningFrame)
+	elseif phase2Pending == 1 then
+		title = "PHASE 2 IN " .. fmtTime(phase2SpawnFrame - frame)
+		detail = "Boss Dark Deus is entering the field."
+		colorPrefix = "\255\255\120\220"
 	elseif state == STATE_DEAD or alive ~= 1 then
 		title = "FINAL BOSS DESTROYED"
 		detail = pickLine(getDeadLines(attackerClass), frame)
 		colorPrefix = "\255\160\255\160"
 	else
-		title = "FINAL BOSS ACTIVE"
+		if phase == PHASE_DARK_DEUS then
+			title = "FINAL BOSS PHASE 2"
+		else
+			title = "FINAL BOSS ACTIVE"
+		end
 		detail = pickLine(getActiveLines(state, hpFraction, shieldActive, frame, actualSpawnFrame, attackerClass), frame)
 		colorPrefix = "\255\255\120\90"
 	end
@@ -1093,6 +1143,9 @@ function widget:DrawScreen()
 	drawFittedText(colorPrefix .. title, x1 + 14, y2 - 27, TITLE_TEXT_SIZE, "o", textMaxW)
 	drawFittedText("\255\225\225\225" .. detail, x1 + 14, y1 + 17, DETAIL_TEXT_SIZE, "o", textMaxW)
 	if alive == 1 and state ~= STATE_DEAD then
+		if phase == PHASE_DARK_DEUS then
+			drawPhase2Alert(frame, phase2SpawnFrame)
+		end
 		drawShieldAlert(frame, shieldFrame)
 	end
 	glColor(1, 1, 1, 1)

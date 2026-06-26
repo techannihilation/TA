@@ -14,7 +14,12 @@ if not gadgetHandler:IsSyncedCode() then
 	return false
 end
 
-local FINAL_BOSS_UNIT = "core_core_boss"
+local PHASE_CORE = 1
+local PHASE_DARK_DEUS = 2
+local FINAL_BOSS_UNITS = {
+	[PHASE_CORE] = "core_core_boss",
+	[PHASE_DARK_DEUS] = "gok_darkdeus_boss",
+}
 local DEV_MODE_CHAT_ACTION = "bossdevmode"
 
 local FRAMES_PER_SECOND = 30
@@ -25,9 +30,8 @@ local RETARGET_INTERVAL_FRAMES = 30 * FRAMES_PER_SECOND
 local ORDER_REFRESH_FRAMES = 10 * FRAMES_PER_SECOND
 local PROGRESS_CHECK_FRAMES = 5 * FRAMES_PER_SECOND
 local STALL_TIMEOUT_FRAMES = 20 * FRAMES_PER_SECOND
-local FORCED_MOVE_FRAMES = 30 * FRAMES_PER_SECOND
 local MIDDLE_ROAM_DURATION_FRAMES = 3 * 60 * FRAMES_PER_SECOND
-local MIN_PROGRESS_ELOS = 100
+local MIN_PROGRESS_POSITION_ELOS = 500
 local TARGET_REACHED_RADIUS = 650
 local TARGET_CLEAR_RANGE_MULT = 0.8
 local AREA_RETARGET_RADIUS = 300
@@ -36,6 +40,7 @@ local FALLBACK_BOSS_WEAPON_RANGE = 1800
 local ECO_ROAM_ADVANTAGE = 0.50
 local ECO_ATTACK_ADVANTAGE = 0.70
 local ECO_FORCE_ATTACK_DELAY_FRAMES = 20 * 60 * FRAMES_PER_SECOND
+local PHASE2_DELAY_FRAMES = 10 * 60 * FRAMES_PER_SECOND
 
 local STATE_COUNTDOWN = 0
 local STATE_FIGHT = 1
@@ -105,8 +110,11 @@ local FINAL_BOSS_SHIELD_HEALTH_FRACTION = 0.40
 local bossUnitID
 local bossTeamID
 local bossUnits = {}
+local bossPhase = PHASE_CORE
 local bossSpawned = false
 local bossSpawnFrame = -1
+local phase2SpawnFrame = -1
+local phase2Pending = false
 local bossAlive = false
 local bossState = STATE_COUNTDOWN
 local bossMode
@@ -128,9 +136,9 @@ local middleRoamInEdgePhase = false
 local nextRetargetFrame = 0
 local nextOrderRefreshFrame = 0
 local nextProgressCheckFrame = 0
-local forcedMoveUntilFrame = 0
 local lastProgressFrame = 0
-local lastProgressDistance
+local lastProgressX
+local lastProgressZ
 local nextResourceTopupFrame = 0
 local nextHealthParamFrame = 0
 local shieldActive = false
@@ -141,6 +149,10 @@ local attackerDamageByClass = {}
 
 local function setBossRuleParam(key, value)
 	spSetGameRulesParam("final_boss_" .. key, value)
+end
+
+local function getBossUnitName(phase)
+	return FINAL_BOSS_UNITS[phase or bossPhase] or FINAL_BOSS_UNITS[PHASE_CORE]
 end
 
 local function setDevMode(enabled)
@@ -802,11 +814,14 @@ local function updateHudParams()
 	setBossRuleParam("unit_id", bossUnitID or -1)
 	setBossRuleParam("target_team", targetTeamID or -1)
 	setBossRuleParam("state", bossState)
+	setBossRuleParam("phase", bossPhase)
+	setBossRuleParam("phase2_spawn_frame", phase2SpawnFrame)
+	setBossRuleParam("phase2_pending", phase2Pending and 1 or 0)
 	updateBossHealthParam()
 end
 
 getBossWeaponRange = function()
-	local unitDef = UnitDefNames and UnitDefNames[FINAL_BOSS_UNIT]
+	local unitDef = UnitDefNames and UnitDefNames[getBossUnitName()]
 	if unitDef and unitDef.maxWeaponRange and unitDef.maxWeaponRange > 0 then
 		return unitDef.maxWeaponRange
 	end
@@ -971,7 +986,15 @@ end
 
 local function resetProgress(frame)
 	lastProgressFrame = frame
-	lastProgressDistance = nil
+	lastProgressX = nil
+	lastProgressZ = nil
+	if bossUnitID then
+		local x, _, z = spGetUnitPosition(bossUnitID)
+		if x and z then
+			lastProgressX = x
+			lastProgressZ = z
+		end
+	end
 	nextProgressCheckFrame = frame + PROGRESS_CHECK_FRAMES
 end
 
@@ -980,7 +1003,6 @@ local function orderFight(frame)
 		return
 	end
 	bossState = STATE_FIGHT
-	forcedMoveUntilFrame = 0
 	spGiveOrderToUnit(bossUnitID, CMD.FIGHT, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {})
 	spGiveOrderToUnit(bossUnitID, CMD.MOVE_STATE, { 2 }, { "shift" })
 	spGiveOrderToUnit(bossUnitID, CMD.IDLEMODE, { 0 }, {})
@@ -993,8 +1015,8 @@ local function orderForcedMove(frame)
 		return
 	end
 	bossState = STATE_FORCED_MOVE
-	forcedMoveUntilFrame = frame + FORCED_MOVE_FRAMES
-	spGiveOrderToUnit(bossUnitID, CMD.MOVE, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {}, forcedMoveUntilFrame)
+	spGiveOrderToUnit(bossUnitID, CMD.MOVE, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {})
+	nextOrderRefreshFrame = frame + ORDER_REFRESH_FRAMES
 	updateHudParams()
 end
 
@@ -1023,7 +1045,6 @@ local function resendMiddleRoamMove(frame)
 		return
 	end
 	bossState = STATE_MIDDLE_ROAM
-	forcedMoveUntilFrame = 0
 	spGiveOrderToUnit(bossUnitID, CMD.MOVE, { targetX, targetY or spGetGroundHeight(targetX, targetZ), targetZ }, {})
 	spGiveOrderToUnit(bossUnitID, CMD.MOVE_STATE, { 2 }, { "shift" })
 	nextOrderRefreshFrame = frame + ORDER_REFRESH_FRAMES
@@ -1055,6 +1076,9 @@ local function chooseBossMode(frame)
 	local topAllyTeamID, topScore, secondAllyTeamID, secondScore = getAllyTeamEcoLeaders()
 	if not topAllyTeamID then
 		return nil
+	end
+	if bossPhase == PHASE_DARK_DEUS then
+		return MODE_ATTACK, topAllyTeamID, secondAllyTeamID
 	end
 	if not secondAllyTeamID then
 		return MODE_ATTACK, topAllyTeamID, nil
@@ -1179,15 +1203,29 @@ local function refreshClearedTarget(frame)
 	return true
 end
 
-local function spawnBoss(frame)
-	local unitDef = UnitDefNames[FINAL_BOSS_UNIT]
+local function spawnBossPhase(frame, phase)
+	local unitName = getBossUnitName(phase)
+	local unitDef = UnitDefNames[unitName]
 	if not unitDef then
-		Spring.Echo("Final Boss: missing UnitDef " .. FINAL_BOSS_UNIT)
-		return
+		Spring.Echo("Final Boss: missing UnitDef " .. unitName)
+		return false
 	end
 
+	bossPhase = phase or PHASE_CORE
+	bossMode = nil
+	targetAllyTeamID = nil
+	targetTeamID = nil
+	targetX = nil
+	targetY = nil
+	targetZ = nil
+	targetClearsArea = false
+	targetClearX = nil
+	targetClearZ = nil
+	targetStage = TARGET_STAGE_BASE
+	nextRetargetFrame = 0
+
 	if not refreshTarget(frame, true) then
-		return
+		return false
 	end
 
 	local x = MAP_X * 0.5
@@ -1195,10 +1233,10 @@ local function spawnBoss(frame)
 	local y = spGetGroundHeight(x, z)
 	local teamID = spGetGaiaTeamID()
 	ensureBossTeamResources(teamID)
-	local unitID = spCreateUnit(FINAL_BOSS_UNIT, x, y, z, "n", teamID)
+	local unitID = spCreateUnit(unitName, x, y, z, "n", teamID)
 	if not unitID then
-		Spring.Echo("Final Boss: failed to spawn " .. FINAL_BOSS_UNIT)
-		return
+		Spring.Echo("Final Boss: failed to spawn " .. unitName)
+		return false
 	end
 
 	bossUnitID = unitID
@@ -1215,11 +1253,19 @@ local function spawnBoss(frame)
 		spSetUnitNeutral(unitID, false)
 	end
 	spSetUnitRulesParam(unitID, "final_boss", 1, { public = true })
+	spSetUnitRulesParam(unitID, "final_boss_phase", bossPhase, { public = true })
 	spSetUnitRulesParam(unitID, "final_boss_target_team", targetTeamID or -1, { public = true })
 	spSetUnitRulesParam(unitID, "final_boss_shield_active", 0, { public = true })
 	setBossRuleParam("actual_spawn_frame", frame)
+	setBossRuleParam("phase", bossPhase)
 	setBossRuleParam("shield_active", 0)
 	setBossRuleParam("shield_frame", -1)
+	if bossPhase == PHASE_DARK_DEUS then
+		phase2Pending = false
+		phase2SpawnFrame = frame
+		setBossRuleParam("phase2_pending", 0)
+		setBossRuleParam("phase2_spawn_frame", phase2SpawnFrame)
+	end
 	bossUnits[unitID] = true
 	updateHudParams()
 	if bossMode == MODE_MIDDLE_ROAM then
@@ -1227,6 +1273,19 @@ local function spawnBoss(frame)
 	else
 		orderFight(frame)
 	end
+	return true
+end
+
+local function spawnBoss(frame)
+	return spawnBossPhase(frame, PHASE_CORE)
+end
+
+local function schedulePhase2(frame)
+	phase2Pending = true
+	phase2SpawnFrame = frame + PHASE2_DELAY_FRAMES
+	setBossRuleParam("phase2_pending", 1)
+	setBossRuleParam("phase2_spawn_frame", phase2SpawnFrame)
+	updateHudParams()
 end
 
 bossDistanceToTarget = function()
@@ -1298,6 +1357,17 @@ local function updateBoss(frame)
 	end
 	updateBossShield(frame)
 
+	if bossState == STATE_FORCED_MOVE then
+		local distance = bossDistanceToTarget()
+		if distance and distance <= TARGET_REACHED_RADIUS then
+			resetProgress(frame)
+			orderFight(frame)
+		elseif frame >= nextOrderRefreshFrame then
+			orderForcedMove(frame)
+		end
+		return
+	end
+
 	local targetChanged = refreshTarget(frame, false)
 	if targetChanged then
 		if bossMode == MODE_MIDDLE_ROAM then
@@ -1317,14 +1387,6 @@ local function updateBoss(frame)
 		return
 	end
 
-	if bossState == STATE_FORCED_MOVE then
-		if frame >= forcedMoveUntilFrame then
-			resetProgress(frame)
-			orderFight(frame)
-		end
-		return
-	end
-
 	if frame >= nextOrderRefreshFrame then
 		orderFight(frame)
 	end
@@ -1334,22 +1396,31 @@ local function updateBoss(frame)
 	end
 	nextProgressCheckFrame = frame + PROGRESS_CHECK_FRAMES
 
-	local distance = bossDistanceToTarget()
-	if not distance then
+	local bossX, _, bossZ = spGetUnitPosition(bossUnitID)
+	if not bossX or not bossZ then
 		return
 	end
+	local dxToTarget = bossX - targetX
+	local dzToTarget = bossZ - targetZ
+	local distance = math.sqrt((dxToTarget * dxToTarget) + (dzToTarget * dzToTarget))
 	if distance <= TARGET_REACHED_RADIUS then
 		lastProgressFrame = frame
-		lastProgressDistance = distance
+		lastProgressX = bossX
+		lastProgressZ = bossZ
 		return
 	end
-	if not lastProgressDistance then
-		lastProgressDistance = distance
+	if not lastProgressX or not lastProgressZ then
+		lastProgressX = bossX
+		lastProgressZ = bossZ
 		lastProgressFrame = frame
 		return
 	end
-	if distance <= (lastProgressDistance - MIN_PROGRESS_ELOS) then
-		lastProgressDistance = distance
+	local dx = bossX - lastProgressX
+	local dz = bossZ - lastProgressZ
+	local movedDistance = math.sqrt((dx * dx) + (dz * dz))
+	if movedDistance >= MIN_PROGRESS_POSITION_ELOS then
+		lastProgressX = bossX
+		lastProgressZ = bossZ
 		lastProgressFrame = frame
 		return
 	end
@@ -1367,6 +1438,9 @@ function gadget:Initialize()
 	setBossRuleParam("spawn_frame", SPAWN_FRAME)
 	setBossRuleParam("warning_frame", WARNING_FRAME)
 	setBossRuleParam("actual_spawn_frame", -1)
+	setBossRuleParam("phase", PHASE_CORE)
+	setBossRuleParam("phase2_spawn_frame", -1)
+	setBossRuleParam("phase2_pending", 0)
 	setBossAttackerClass(ATTACKER_UNKNOWN, -1)
 	setBossRuleParam("shield_active", 0)
 	setBossRuleParam("shield_frame", -1)
@@ -1386,6 +1460,9 @@ function gadget:GameFrame(frame)
 	if not bossSpawned and frame >= SPAWN_FRAME then
 		spawnBoss(frame)
 	end
+	if phase2Pending and frame >= phase2SpawnFrame then
+		spawnBossPhase(frame, PHASE_DARK_DEUS)
+	end
 	updateBoss(frame)
 end
 
@@ -1404,9 +1481,15 @@ end
 
 function gadget:UnitDestroyed(unitID)
 	if unitID == bossUnitID then
+		local destroyedPhase = bossPhase
 		bossUnits[unitID] = nil
 		bossAlive = false
+		bossUnitID = nil
 		bossState = STATE_DEAD
+		if destroyedPhase == PHASE_CORE then
+			schedulePhase2(spGetGameFrame())
+			return
+		end
 		updateHudParams()
 	end
 end

@@ -18,16 +18,32 @@ if gadgetHandler:IsSyncedCode() then
 	local GetUnitRootPiece = Spring.GetUnitRootPiece
 	local GetUnitCollisionVolumeData = Spring.GetUnitCollisionVolumeData
 	local SetUnitCollisionVolumeData = Spring.SetUnitCollisionVolumeData
+	local GetUnitRadius = Spring.GetUnitRadius
+	local GetUnitHeight = Spring.GetUnitHeight
+	local SetUnitRadiusAndHeight = Spring.SetUnitRadiusAndHeight
 	-- local SetUnitSelectionVolumeData = Spring.SetUnitSelectionVolumeData
     -- local GetUnitSelectionVolumeData = Spring.GetUnitSelectionVolumeData -- not works?
 
-	local unitsToScale = {
-		[UnitDefNames["core_core_boss"].id] = {
+	local unitsToScale = {}
+
+	local function addScaledUnit(unitName, scaleDef)
+		local unitDef = UnitDefNames[unitName]
+		if unitDef then
+			unitsToScale[unitDef.id] = scaleDef
+		end
+	end
+
+	addScaledUnit("core_core_boss", {
 			modelScale = 1.5,
 			colVolumeScale = 1.5,
 			selVolumeScale = 2
-		},
-	}
+	})
+	addScaledUnit("gok_darkdeus_boss", {
+			modelScale = 1.3,
+			colVolumeScale = 1.3,
+			selVolumeScale = 1.3,
+			radiusHeightScale = 1.3
+	})
 
 	local function UnitModelScale(unitID, base, scale)
 		local pieceTable = {GetUnitPieceMatrix(unitID, base)}
@@ -45,16 +61,29 @@ if gadgetHandler:IsSyncedCode() then
 		--SetUnitSelectionVolumeData(unitID, svd[1] * selVolumeScale, svd[2] * selVolumeScale, svd[3] * selVolumeScale, svd[4], svd[5], svd[6], svd[7], svd[8], svd[9])
 	end
 
+	local function UnitRadiusHeightScale(unitID, scale)
+		if not scale or not GetUnitRadius or not GetUnitHeight or not SetUnitRadiusAndHeight then
+			return
+		end
+		local radius = GetUnitRadius(unitID)
+		local height = GetUnitHeight(unitID)
+		if radius and height then
+			SetUnitRadiusAndHeight(unitID, radius * scale, height * scale)
+		end
+	end
+
 	function gadget:UnitFinished(unitID, unitDefID, unitTeam)
 		if unitsToScale[unitDefID] then
 			local base = GetUnitRootPiece(unitID)
 			local modelScale = unitsToScale[unitDefID].modelScale
 			local colVolumeScale = unitsToScale[unitDefID].colVolumeScale
 			local selVolumeScale = unitsToScale[unitDefID].selVolumeScale
+			local radiusHeightScale = unitsToScale[unitDefID].radiusHeightScale
 
 			if base then
 				UnitModelScale(unitID, base, modelScale)
 				UnitVolumeScale(unitID, colVolumeScale, selVolumeScale)
+				UnitRadiusHeightScale(unitID, radiusHeightScale)
 			end
 		end
 	end
