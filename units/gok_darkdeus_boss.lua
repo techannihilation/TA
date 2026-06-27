@@ -15,6 +15,20 @@ local function copyTable(value)
 	return result
 end
 
+local function applyBossWeaponTargeting(unitDef)
+	local weapons = unitDef.weapons
+	if not weapons then
+		return
+	end
+
+	for i = 1, #weapons do
+		local weapon = weapons[i]
+		if weapon and (weapon.def == "DEUS_BEAM" or weapon.def == "DEUS_CANNON") then
+			weapon.badtargetcategory = "SMALL MINOR"
+		end
+	end
+end
+
 local bossDef = copyTable(sourceDef)
 bossDef.name = "Boss Dark Deus"
 bossDef.description = "Final Boss Dark Deus"
@@ -24,6 +38,7 @@ bossDef.customparams = bossDef.customparams or {}
 bossDef.customparams.buildpic = "gok_darkdeus.dds"
 bossDef.customparams.faction = "GOK"
 bossDef.customparams.final_boss_phase = "2"
+applyBossWeaponTargeting(bossDef)
 
 return {
 	gok_darkdeus_boss = bossDef,

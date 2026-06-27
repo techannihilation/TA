@@ -16,6 +16,7 @@ local spGetViewGeometry = Spring.GetViewGeometry
 local spCreateDir = Spring.CreateDir
 local spEcho = Spring.Echo
 local spIsGUIHidden = Spring.IsGUIHidden
+local spGetMouseState = Spring.GetMouseState
 local spSendLuaRulesMsg = Spring.SendLuaRulesMsg
 
 local vfsFileExists = VFS.FileExists
@@ -41,6 +42,13 @@ local hitboxes = {}
 local saveStatusText
 local saveStatusOk = false
 local saveStatusUntil = 0
+local hoverX
+local hoverY
+local expandedSections = {
+	outline = false,
+	ghost = false,
+	shader = false,
+}
 
 local SAVE_FILE = "LuaUI/Config/final_boss_dev_fx.lua"
 
@@ -71,7 +79,7 @@ local depthModeLabels = {
 }
 
 local controls = {
-	{ type = "header", label = "Outline" },
+	{ type = "header", group = "outline", label = "Outline" },
 	{ type = "toggle", group = "outline", key = "enabled", label = "Outline" },
 	{ type = "cycle", group = "outline", key = "depthMode", label = "Outline depth", options = depthModeOptions },
 	{ type = "toggle", group = "outline", key = "red", label = "Red outline" },
@@ -83,7 +91,7 @@ local controls = {
 	{ type = "slider", group = "outline", key = "greenAlpha", label = "Green outline", min = 0, max = 3 },
 	{ type = "slider", group = "outline", key = "lineWidth", label = "Line width", min = 0.25, max = 4 },
 	{ type = "slider", group = "outline", key = "pulseSpeed", label = "Pulse speed", min = 0, max = 4 },
-	{ type = "header", label = "Ghost" },
+	{ type = "header", group = "ghost", label = "Ghost" },
 	{ type = "toggle", group = "ghost", key = "enabled", label = "Ghost" },
 	{ type = "cycle", group = "ghost", key = "depthMode", label = "Ghost depth", options = depthModeOptions },
 	{ type = "toggle", group = "ghost", key = "redPass", label = "Red pass" },
@@ -97,7 +105,7 @@ local controls = {
 	{ type = "slider", group = "ghost", key = "purpleAlpha", label = "Purple pass", min = 0, max = 3 },
 	{ type = "slider", group = "ghost", key = "offset", label = "Ghost offset", min = 0, max = 4 },
 	{ type = "slider", group = "ghost", key = "jitterSpeed", label = "Jitter speed", min = 0, max = 4 },
-	{ type = "header", label = "Shader" },
+	{ type = "header", group = "shader", label = "Shader" },
 	{ type = "toggle", group = "shader", key = "enabled", label = "Shader" },
 	{ type = "slider", group = "shader", key = "intensity", label = "Intensity", min = 0, max = 4 },
 	{ type = "slider", group = "shader", key = "scan", label = "Scan", min = 0, max = 3 },
@@ -148,11 +156,25 @@ local function isDevMode()
 	return spGetGameRulesParam("final_boss_devmode") == 1
 end
 
+local function isControlVisible(control)
+	return control.type == "header" or expandedSections[control.group] == true
+end
+
+local function visibleControlCount()
+	local count = 0
+	for i = 1, #controls do
+		if isControlVisible(controls[i]) then
+			count = count + 1
+		end
+	end
+	return count
+end
+
 local function currentPanelH()
 	if minimized then
 		return 42
 	end
-	return math.max(42, math.min(vsy - 16, 146 + (#controls * rowH)))
+	return math.max(42, math.min(vsy - 16, 176 + (visibleControlCount() * rowH)))
 end
 
 local function inside(x, y, box)
@@ -172,10 +194,35 @@ end
 
 local function drawButton(id, label, x1, y1, x2, y2, active)
 	hitboxes[#hitboxes + 1] = { id = id, type = "button", x1 = x1, y1 = y1, x2 = x2, y2 = y2 }
-	glColor(active and 0.28 or 0.13, active and 0.34 or 0.15, active and 0.42 or 0.18, 0.92)
+	local hovered = hoverX and hoverY and hoverX >= x1 and hoverX <= x2 and hoverY >= y1 and hoverY <= y2
+	if active then
+		if hovered then
+			glColor(0.36, 0.43, 0.52, 0.97)
+		else
+			glColor(0.28, 0.34, 0.42, 0.92)
+		end
+	elseif hovered then
+		glColor(0.19, 0.23, 0.28, 0.97)
+	else
+		glColor(0.13, 0.15, 0.18, 0.92)
+	end
 	glRect(x1, y1, x2, y2)
-	glColor(1, 1, 1, 0.95)
+	glColor(1, 1, 1, hovered and 1 or 0.95)
 	drawFittedText(label, (x1 + x2) * 0.5, y1 + 7, 12, "oc", x2 - x1 - 8)
+end
+
+local function drawSectionHeader(control, x1, y)
+	local expanded = expandedSections[control.group] == true
+	local box = { type = "header", control = control, x1 = x1, y1 = y, x2 = x1 + panelW - 28, y2 = y + rowH }
+	hitboxes[#hitboxes + 1] = box
+	glColor(expanded and 0.30 or 0.13, expanded and 0.18 or 0.11, expanded and 0.11 or 0.10, 0.92)
+	glRect(box.x1, box.y1, box.x2, box.y2 - 2)
+	glColor(1.0, 0.38, 0.12, 0.95)
+	glRect(box.x1, box.y2 - 4, box.x2, box.y2 - 2)
+	glColor(1, 1, 1, 0.95)
+	glText(expanded and "-" or "+", x1 + 10, y + 6, 12, "o")
+	glColor(expanded and 1.0 or 0.88, expanded and 0.72 or 0.78, expanded and 0.48 or 0.86, 0.96)
+	glText(control.label, x1 + 30, y + 6, 12, "o")
 end
 
 local function drawToggle(control, x1, y, config)
@@ -353,6 +400,12 @@ function widget:DrawScreen()
 	end
 	local config = ensureConfig()
 	hitboxes = {}
+	if spGetMouseState then
+		hoverX, hoverY = spGetMouseState()
+	else
+		hoverX = nil
+		hoverY = nil
+	end
 
 	local panelH = currentPanelH()
 	local x1 = panelX
@@ -376,9 +429,11 @@ function widget:DrawScreen()
 	end
 
 	local y = y2 - 64
-	drawButton("spawn", "Spawn Boss Now", x1 + 12, y, x1 + 170, y + 24, false)
-	drawButton("save", "Save FX", x1 + 184, y, x1 + 304, y + 24, false)
-	drawButton("load", "Load FX", x1 + 318, y, x1 + 438, y + 24, false)
+	drawButton("spawn", "Spawn Phase 1", x1 + 12, y, x1 + 222, y + 24, false)
+	drawButton("spawn_phase2", "Spawn Phase 2", x1 + 234, y, x1 + 456, y + 24, false)
+	y = y - 30
+	drawButton("save", "Save FX", x1 + 12, y, x1 + 222, y + 24, false)
+	drawButton("load", "Load FX", x1 + 234, y, x1 + 456, y + 24, false)
 	y = y - 30
 	drawButton("normal", "No Armor FX", x1 + 12, y, x1 + 222, y + 24, activePhase == "normal")
 	drawButton("armored", "Armored FX", x1 + 234, y, x1 + 456, y + 24, activePhase == "armored")
@@ -395,17 +450,18 @@ function widget:DrawScreen()
 
 	for i = 1, #controls do
 		local control = controls[i]
-		if control.type == "header" then
-			glColor(1.0, 0.38, 0.12, 0.9)
-			glText(control.label, x1 + 14, y + 6, 12, "o")
-		elseif control.type == "toggle" then
-			drawToggle(control, x1 + 14, y, config)
-		elseif control.type == "cycle" then
-			drawCycle(control, x1 + 14, y, config)
-		elseif control.type == "slider" then
-			drawSlider(control, x1 + 14, y, config)
+		if isControlVisible(control) then
+			if control.type == "header" then
+				drawSectionHeader(control, x1 + 14, y)
+			elseif control.type == "toggle" then
+				drawToggle(control, x1 + 14, y, config)
+			elseif control.type == "cycle" then
+				drawCycle(control, x1 + 14, y, config)
+			elseif control.type == "slider" then
+				drawSlider(control, x1 + 14, y, config)
+			end
+			y = y - rowH
 		end
-		y = y - rowH
 	end
 
 	glColor(1, 1, 1, 1)
@@ -423,6 +479,10 @@ function widget:MousePress(mx, my, button)
 					if spSendLuaRulesMsg then
 						spSendLuaRulesMsg("final_boss_dev:spawn_now")
 					end
+				elseif box.id == "spawn_phase2" then
+					if spSendLuaRulesMsg then
+						spSendLuaRulesMsg("final_boss_dev:spawn_phase2_now")
+					end
 				elseif box.id == "save" then
 					saveFxConfig()
 				elseif box.id == "load" then
@@ -438,6 +498,11 @@ function widget:MousePress(mx, my, button)
 				local config = ensureConfig()
 				local control = box.control
 				config[activePhase][control.group][control.key] = not config[activePhase][control.group][control.key]
+				return true
+			elseif box.type == "header" then
+				local control = box.control
+				expandedSections[control.group] = not expandedSections[control.group]
+				panelY = clamp(panelY, 8, math.max(8, vsy - currentPanelH() - 8))
 				return true
 			elseif box.type == "cycle" then
 				local config = ensureConfig()
