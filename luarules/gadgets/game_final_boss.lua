@@ -21,6 +21,8 @@ local FINAL_BOSS_UNITS = {
 	[PHASE_DARK_DEUS] = "gok_darkdeus_boss",
 }
 local DEV_MODE_CHAT_ACTION = "bossdevmode"
+local DEV_SPAWN_CORE_MSG = "final_boss_dev:spawn_now"
+local DEV_SPAWN_DARK_DEUS_MSG = "final_boss_dev:spawn_phase2_now"
 
 local FRAMES_PER_SECOND = 30
 local DEFAULT_SPAWN_MINUTES = 60
@@ -80,7 +82,9 @@ local spGetUnitsInCylinder = Spring.GetUnitsInCylinder
 local spGetGroundHeight = Spring.GetGroundHeight
 local spIsCheatingEnabled = Spring.IsCheatingEnabled
 local spCreateUnit = Spring.CreateUnit
-local spGiveOrderToUnit = Spring.GiveOrderToUnit
+local spDestroyUnit = Spring.DestroyUnit
+-- local spGiveOrderToUnit = Spring.GiveOrderToUnit
+  local spGiveOrderToUnit = function(...) return end
 local spSendMessageToPlayer = Spring.SendMessageToPlayer
 local spSetUnitArmored = Spring.SetUnitArmored
 local spSetGameRulesParam = Spring.SetGameRulesParam
@@ -110,6 +114,7 @@ local FINAL_BOSS_SHIELD_HEALTH_FRACTION = 0.40
 local bossUnitID
 local bossTeamID
 local bossUnits = {}
+local devReplacedBossUnits = {}
 local bossPhase = PHASE_CORE
 local bossSpawned = false
 local bossSpawnFrame = -1
@@ -1280,6 +1285,65 @@ local function spawnBoss(frame)
 	return spawnBossPhase(frame, PHASE_CORE)
 end
 
+local function resetBossRuntimeState(frame, phase)
+	bossUnitID = nil
+	bossTeamID = nil
+	bossUnits = {}
+	bossPhase = phase or PHASE_CORE
+	bossSpawned = false
+	bossSpawnFrame = -1
+	phase2SpawnFrame = -1
+	phase2Pending = false
+	bossAlive = false
+	bossState = STATE_COUNTDOWN
+	bossMode = nil
+	targetAllyTeamID = nil
+	targetTeamID = nil
+	targetX = nil
+	targetY = nil
+	targetZ = nil
+	targetClearsArea = false
+	targetClearX = nil
+	targetClearZ = nil
+	targetStage = TARGET_STAGE_BASE
+	middleRoamTopAllyTeamID = nil
+	middleRoamSecondAllyTeamID = nil
+	middleRoamStartedFrame = 0
+	middleRoamLeg = 0
+	middleRoamEdgeLeg = 0
+	middleRoamInEdgePhase = false
+	nextRetargetFrame = 0
+	nextOrderRefreshFrame = 0
+	nextProgressCheckFrame = 0
+	lastProgressFrame = frame or 0
+	lastProgressX = nil
+	lastProgressZ = nil
+	nextResourceTopupFrame = 0
+	nextHealthParamFrame = 0
+	shieldActive = false
+	clearBossAttackerDamage()
+	setBossRuleParam("actual_spawn_frame", -1)
+	setBossRuleParam("shield_active", 0)
+	setBossRuleParam("shield_frame", -1)
+	updateHudParams()
+end
+
+local function replaceBossPhase(frame, phase)
+	local oldUnitID = bossUnitID
+	if oldUnitID and not spDestroyUnit then
+		Spring.Echo("Final Boss: cannot replace boss because Spring.DestroyUnit is unavailable")
+		return false
+	end
+	if oldUnitID then
+		devReplacedBossUnits[oldUnitID] = true
+	end
+	resetBossRuntimeState(frame, phase)
+	if oldUnitID then
+		spDestroyUnit(oldUnitID, false, true)
+	end
+	return spawnBossPhase(frame, phase)
+end
+
 local function schedulePhase2(frame)
 	phase2Pending = true
 	phase2SpawnFrame = frame + PHASE2_DELAY_FRAMES
@@ -1358,6 +1422,12 @@ local function updateBoss(frame)
 	updateBossShield(frame)
 
 	if bossState == STATE_FORCED_MOVE then
+		-- Phase 2 keeps tracking the richest allyTeam while forced-moving.
+		if bossPhase == PHASE_DARK_DEUS and refreshTarget(frame, false) then
+			orderForcedMove(frame)
+			return
+		end
+
 		local distance = bossDistanceToTarget()
 		if distance and distance <= TARGET_REACHED_RADIUS then
 			resetProgress(frame)
@@ -1467,19 +1537,27 @@ function gadget:GameFrame(frame)
 end
 
 function gadget:RecvLuaMsg(msg, playerID)
-	if msg ~= "final_boss_dev:spawn_now" then
+	if msg ~= DEV_SPAWN_CORE_MSG and msg ~= DEV_SPAWN_DARK_DEUS_MSG then
 		return false
 	end
 	if not canUseDevMode(playerID) or not devMode then
 		return true
 	end
-	if not bossSpawned then
-		spawnBoss(spGetGameFrame())
+	local frame = spGetGameFrame()
+	if msg == DEV_SPAWN_CORE_MSG then
+		replaceBossPhase(frame, PHASE_CORE)
+	else
+		replaceBossPhase(frame, PHASE_DARK_DEUS)
 	end
 	return true
 end
 
 function gadget:UnitDestroyed(unitID)
+	if devReplacedBossUnits[unitID] then
+		devReplacedBossUnits[unitID] = nil
+		bossUnits[unitID] = nil
+		return
+	end
 	if unitID == bossUnitID then
 		local destroyedPhase = bossPhase
 		bossUnits[unitID] = nil
