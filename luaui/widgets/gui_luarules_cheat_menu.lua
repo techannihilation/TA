@@ -40,17 +40,22 @@ local commandGroups = {
 	{
 		label = "LuaRules",
 		commands = {
-			{ label = "Boss Dev Mode", command = "luarules bossdevmode" },
+			{ label = "Load Missiles", command = "luarules loadmissiles" },
+			{ label = "Half Health", command = "luarules halfhealth" },
+			{ label = "Wreck Units", command = "luarules wreckunits" },
+			{ label = "Clear Wrecks", command = "luarules clearwrecks" },
+			{ label = "Reduce Wrecks", command = "luarules reducewrecks" },
 			{ label = "Profiler", command = "luarules profile" },
-			{ label = "Kill Profiler", command = "luarules kill_profiler", warning = true },
 		},
 	},
 	{
 		label = "Engine",
 		commands = {
 			{ label = "God Mode", command = "godmode" },
-			{ label = "NoCost", command = "luarules nc" },
+			{ label = "NoCost", command = "nocost" },
 			{ label = "Global LOS", command = "globallos" },
+			{ label = "Reload CEGs", command = "ReloadCEGs" },
+			{ label = "Reload COB", command = "ReloadCOB" },
 		},
 	},
 }
