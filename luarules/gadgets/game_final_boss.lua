@@ -37,6 +37,9 @@ local MIN_PROGRESS_POSITION_ELOS = 500
 local TARGET_REACHED_RADIUS = 650
 local TARGET_CLEAR_RANGE_MULT = 0.8
 local AREA_RETARGET_RADIUS = 300
+local BASE_CLUSTER_LINK_RANGE_MULT = 1.5
+local BASE_CLUSTER_MIN_LINK_RANGE = TARGET_REACHED_RADIUS * 3
+local BASE_CLUSTER_CLEAR_PADDING = TARGET_REACHED_RADIUS
 local MIDDLE_ROAM_EDGE_RANGE_MULT = 1.1
 local FALLBACK_BOSS_WEAPON_RANGE = 1800
 local ECO_ROAM_ADVANTAGE = 0.50
@@ -131,6 +134,8 @@ local targetZ
 local targetClearsArea = false
 local targetClearX
 local targetClearZ
+local targetAreaRadius
+local targetAreaTeams
 local targetStage = TARGET_STAGE_BASE
 local middleRoamTopAllyTeamID
 local middleRoamSecondAllyTeamID
@@ -389,6 +394,11 @@ local function getUnitPositionWithGround(unitID)
 	return nil
 end
 
+local getTargetClearRadius
+local getBossWeaponRange
+local bossDistanceToTarget
+local retargetLiveTargetAreaBuilding
+
 local function getMostProductiveEnergyBuildingPosition(allyTeamID)
 	local teams = getCandidateTeams(allyTeamID)
 	local bestUnitID
@@ -431,13 +441,82 @@ local function getMostProductiveEnergyBuildingPosition(allyTeamID)
 	return nil
 end
 
-local function getAllyTeamBuildingCentroid(allyTeamID)
+local function getBaseClusterLinkRange()
+	local radius = getTargetClearRadius and getTargetClearRadius() or (FALLBACK_BOSS_WEAPON_RANGE * TARGET_CLEAR_RANGE_MULT)
+	local linkRange = radius * BASE_CLUSTER_LINK_RANGE_MULT
+	if linkRange < BASE_CLUSTER_MIN_LINK_RANGE then
+		return BASE_CLUSTER_MIN_LINK_RANGE
+	end
+	return linkRange
+end
+
+local function addBaseClusterBuilding(cluster, building)
+	cluster.members[#cluster.members + 1] = building
+	cluster.totalX = cluster.totalX + building.x
+	cluster.totalY = cluster.totalY + building.y
+	cluster.totalZ = cluster.totalZ + building.z
+	cluster.cost = cluster.cost + building.cost
+	cluster.count = cluster.count + 1
+	if not cluster.teams[building.teamID] then
+		cluster.teams[building.teamID] = true
+		cluster.teamCount = cluster.teamCount + 1
+		if not cluster.representativeTeamID or building.teamID < cluster.representativeTeamID then
+			cluster.representativeTeamID = building.teamID
+		end
+	end
+end
+
+local function createBaseCluster(building)
+	local cluster = {
+		members = {},
+		teams = {},
+		teamCount = 0,
+		totalX = 0,
+		totalY = 0,
+		totalZ = 0,
+		cost = 0,
+		count = 0,
+	}
+	addBaseClusterBuilding(cluster, building)
+	return cluster
+end
+
+local function baseBuildingLinksCluster(building, cluster, linkRangeSq)
+	for i = 1, #cluster.members do
+		local member = cluster.members[i]
+		local dx = building.x - member.x
+		local dz = building.z - member.z
+		if (dx * dx) + (dz * dz) <= linkRangeSq then
+			return true
+		end
+	end
+	return false
+end
+
+local function mergeBaseClusters(target, source)
+	for i = 1, #source.members do
+		addBaseClusterBuilding(target, source.members[i])
+	end
+end
+
+local function getTeamBaseStartPosition(teamID)
+	local x, _, z = spGetTeamStartPosition(teamID)
+	if x and z and x >= 0 and z >= 0 and x <= MAP_X and z <= MAP_Z then
+		return x, z
+	end
+	return nil
+end
+
+local function collectBaseBuildings(allyTeamID)
 	local teams = getCandidateTeams(allyTeamID)
-	local totalX, totalY, totalZ = 0, 0, 0
-	local count = 0
+	local buildings = {}
+	local fallbackBuildings = {}
+	local baseRange = getBaseClusterLinkRange()
+	local baseRangeSq = baseRange * baseRange
 
 	for t = 1, #teams do
 		local teamID = teams[t]
+		local startX, startZ = getTeamBaseStartPosition(teamID)
 		local units = spGetTeamUnits(teamID)
 		if units then
 			for i = 1, #units do
@@ -446,18 +525,128 @@ local function getAllyTeamBuildingCentroid(allyTeamID)
 				if isBossAttackableBuildingDef(defID and UnitDefs[defID]) then
 					local x, y, z = spGetUnitPosition(unitID)
 					if x and z then
-						totalX = totalX + x
-						totalY = totalY + (y or spGetGroundHeight(x, z) or 0)
-						totalZ = totalZ + z
-						count = count + 1
+						local building = {
+							unitID = unitID,
+							teamID = teamID,
+							x = x,
+							y = y or spGetGroundHeight(x, z) or 0,
+							z = z,
+							cost = getUnitCost(unitID),
+						}
+						fallbackBuildings[#fallbackBuildings + 1] = building
+						if not startX then
+							buildings[#buildings + 1] = building
+						else
+							local dx = x - startX
+							local dz = z - startZ
+							if (dx * dx) + (dz * dz) <= baseRangeSq then
+								buildings[#buildings + 1] = building
+							end
+						end
 					end
 				end
 			end
 		end
 	end
+	if #buildings == 0 then
+		return fallbackBuildings
+	end
+	return buildings
+end
 
-	if count > 0 then
-		return totalX / count, totalY / count, totalZ / count
+local function finalizeBaseCluster(cluster)
+	if not cluster or cluster.count <= 0 then
+		return nil
+	end
+
+	cluster.x = cluster.totalX / cluster.count
+	cluster.y = cluster.totalY / cluster.count
+	cluster.z = cluster.totalZ / cluster.count
+
+	local radius = 0
+	for i = 1, #cluster.members do
+		local member = cluster.members[i]
+		local dx = member.x - cluster.x
+		local dz = member.z - cluster.z
+		local distance = math.sqrt((dx * dx) + (dz * dz))
+		if distance > radius then
+			radius = distance
+		end
+	end
+
+	local clearRadius = getTargetClearRadius and getTargetClearRadius() or (FALLBACK_BOSS_WEAPON_RANGE * TARGET_CLEAR_RANGE_MULT)
+	if radius + BASE_CLUSTER_CLEAR_PADDING > clearRadius then
+		clearRadius = radius + BASE_CLUSTER_CLEAR_PADDING
+	end
+	cluster.clearRadius = clearRadius
+	return cluster
+end
+
+local function baseClusterIsBetter(cluster, bestCluster)
+	if not bestCluster then
+		return true
+	end
+	if cluster.teamCount ~= bestCluster.teamCount then
+		return cluster.teamCount > bestCluster.teamCount
+	end
+	if cluster.cost ~= bestCluster.cost then
+		return cluster.cost > bestCluster.cost
+	end
+	if cluster.count ~= bestCluster.count then
+		return cluster.count > bestCluster.count
+	end
+	return (cluster.representativeTeamID or math.huge) < (bestCluster.representativeTeamID or math.huge)
+end
+
+local function getSelectedBaseCluster(allyTeamID)
+	local buildings = collectBaseBuildings(allyTeamID)
+	if #buildings == 0 then
+		return nil
+	end
+
+	local clusters = {}
+	local linkRange = getBaseClusterLinkRange()
+	local linkRangeSq = linkRange * linkRange
+
+	for i = 1, #buildings do
+		local building = buildings[i]
+		local matchedCluster
+		local clusterIndex = 1
+		while clusterIndex <= #clusters do
+			local cluster = clusters[clusterIndex]
+			if baseBuildingLinksCluster(building, cluster, linkRangeSq) then
+				if not matchedCluster then
+					matchedCluster = cluster
+					addBaseClusterBuilding(matchedCluster, building)
+					clusterIndex = clusterIndex + 1
+				else
+					mergeBaseClusters(matchedCluster, cluster)
+					table.remove(clusters, clusterIndex)
+				end
+			else
+				clusterIndex = clusterIndex + 1
+			end
+		end
+
+		if not matchedCluster then
+			clusters[#clusters + 1] = createBaseCluster(building)
+		end
+	end
+
+	local bestCluster
+	for i = 1, #clusters do
+		local cluster = finalizeBaseCluster(clusters[i])
+		if cluster and baseClusterIsBetter(cluster, bestCluster) then
+			bestCluster = cluster
+		end
+	end
+	return bestCluster
+end
+
+local function getAllyTeamBuildingCentroid(allyTeamID)
+	local cluster = getSelectedBaseCluster(allyTeamID)
+	if cluster then
+		return cluster.x, cluster.y, cluster.z
 	end
 	return nil
 end
@@ -514,11 +703,13 @@ local function getFallbackTargetPosition(allyTeamID)
 		return nil
 	end
 
-	local x, y, z = getAllyTeamBuildingCentroid(allyTeamID)
-	if x and z then
-		return x, y or spGetGroundHeight(x, z), z, true, nil
+	local cluster = getSelectedBaseCluster(allyTeamID)
+	if cluster then
+		return cluster.x, cluster.y or spGetGroundHeight(cluster.x, cluster.z), cluster.z, true,
+			cluster.representativeTeamID, cluster.x, cluster.z, cluster.clearRadius, cluster.teams
 	end
 
+	local x, y, z
 	local teamID
 	x, y, z, teamID = getMostExpensiveUnitPosition(allyTeamID)
 	if x and z then
@@ -547,9 +738,10 @@ local function getBaseTargetPosition(allyTeamID)
 		return nil
 	end
 
-	local x, y, z = getAllyTeamBuildingCentroid(allyTeamID)
-	if x and z then
-		return x, y or spGetGroundHeight(x, z), z, true, nil
+	local cluster = getSelectedBaseCluster(allyTeamID)
+	if cluster then
+		return cluster.x, cluster.y or spGetGroundHeight(cluster.x, cluster.z), cluster.z, true,
+			cluster.representativeTeamID, cluster.x, cluster.z, cluster.clearRadius, cluster.teams
 	end
 
 	return getFallbackTargetPosition(allyTeamID)
@@ -560,11 +752,11 @@ local function getAttackTargetPosition(allyTeamID)
 		return nil
 	end
 
-	local x, y, z, clearsArea, teamID
+	local x, y, z, clearsArea, teamID, clearX, clearZ, clearRadius, areaTeams
 	if targetStage == TARGET_STAGE_BASE then
-		x, y, z, clearsArea, teamID = getBaseTargetPosition(allyTeamID)
+		x, y, z, clearsArea, teamID, clearX, clearZ, clearRadius, areaTeams = getBaseTargetPosition(allyTeamID)
 		if x and z then
-			return x, y, z, clearsArea, teamID
+			return x, y, z, clearsArea, teamID, clearX, clearZ, clearRadius, areaTeams
 		end
 	end
 
@@ -575,11 +767,6 @@ local function getAttackTargetPosition(allyTeamID)
 
 	return getFallbackTargetPosition(allyTeamID)
 end
-
-local getTargetClearRadius
-local getBossWeaponRange
-local bossDistanceToTarget
-local retargetLiveTargetAreaBuilding
 
 local function clampMapPosition(x, z)
 	if x < 0 then
@@ -596,11 +783,7 @@ local function clampMapPosition(x, z)
 end
 
 local function getValidTeamStartPosition(teamID)
-	local x, _, z = spGetTeamStartPosition(teamID)
-	if x and z and x >= 0 and z >= 0 and x <= MAP_X and z <= MAP_Z then
-		return x, z
-	end
-	return nil
+	return getTeamBaseStartPosition(teamID)
 end
 
 local function getAllyTeamStartCenter(allyTeamID)
@@ -854,9 +1037,36 @@ getTargetClearRadius = function()
 	return getBossWeaponRange() * TARGET_CLEAR_RANGE_MULT
 end
 
+local function copyTeamSet(teamSet)
+	if not teamSet then
+		return nil
+	end
+	local result = {}
+	local count = 0
+	for teamID in pairs(teamSet) do
+		result[teamID] = true
+		count = count + 1
+	end
+	if count > 0 then
+		return result
+	end
+	return nil
+end
+
+local function getCurrentTargetAreaRadius()
+	local defaultRadius = getTargetClearRadius()
+	if targetAreaRadius and targetAreaRadius > defaultRadius then
+		return targetAreaRadius
+	end
+	return defaultRadius
+end
+
 local function unitMatchesCurrentTarget(unitTeamID)
 	if not unitTeamID then
 		return false
+	end
+	if targetAreaTeams then
+		return targetAreaTeams[unitTeamID] == true
 	end
 	if targetAllyTeamID then
 		return getTeamAllyTeamID(unitTeamID) == targetAllyTeamID
@@ -874,7 +1084,7 @@ local function targetAreaHasLiveBuilding()
 		return false
 	end
 
-	local units = spGetUnitsInCylinder(anchorX, anchorZ, getTargetClearRadius())
+	local units = spGetUnitsInCylinder(anchorX, anchorZ, getCurrentTargetAreaRadius())
 	if not units then
 		return false
 	end
@@ -901,7 +1111,7 @@ local function getLiveTargetAreaBuilding(minTargetDistance)
 		return nil
 	end
 
-	local units = spGetUnitsInCylinder(anchorX, anchorZ, getTargetClearRadius())
+	local units = spGetUnitsInCylinder(anchorX, anchorZ, getCurrentTargetAreaRadius())
 	if not units then
 		return nil
 	end
@@ -1025,7 +1235,7 @@ local function orderForcedMove(frame)
 	updateHudParams()
 end
 
-local function setTargetPosition(teamID, allyTeamID, x, y, z, clearsArea, clearX, clearZ)
+local function setTargetPosition(teamID, allyTeamID, x, y, z, clearsArea, clearX, clearZ, clearRadius, areaTeams)
 	targetAllyTeamID = allyTeamID
 	targetTeamID = teamID
 	targetX = x
@@ -1035,9 +1245,13 @@ local function setTargetPosition(teamID, allyTeamID, x, y, z, clearsArea, clearX
 	if targetClearsArea then
 		targetClearX = clearX or x
 		targetClearZ = clearZ or z
+		targetAreaRadius = clearRadius
+		targetAreaTeams = copyTeamSet(areaTeams)
 	else
 		targetClearX = nil
 		targetClearZ = nil
+		targetAreaRadius = nil
+		targetAreaTeams = nil
 	end
 	if bossUnitID then
 		spSetUnitRulesParam(bossUnitID, "final_boss_target_team", targetTeamID or -1, { public = true })
@@ -1150,7 +1364,7 @@ local function enterAttackMode(frame, allyTeamID, force)
 		targetStage = TARGET_STAGE_BASE
 	end
 
-	local x, y, z, clearsArea, teamID = getAttackTargetPosition(allyTeamID)
+	local x, y, z, clearsArea, teamID, clearX, clearZ, clearRadius, areaTeams = getAttackTargetPosition(allyTeamID)
 	if not x or not z then
 		return false
 	end
@@ -1160,7 +1374,7 @@ local function enterAttackMode(frame, allyTeamID, force)
 		or allyChanged
 		or math.abs((targetX or x) - x) > 200
 		or math.abs((targetZ or z) - z) > 200
-	setTargetPosition(teamID, allyTeamID, x, y, z, clearsArea)
+	setTargetPosition(teamID, allyTeamID, x, y, z, clearsArea, clearX, clearZ, clearRadius, areaTeams)
 
 	if changed or force then
 		resetProgress(frame)
@@ -1198,12 +1412,12 @@ local function refreshClearedTarget(frame)
 	end
 
 	advanceTargetStage()
-	local x, y, z, clearsArea, teamID = getAttackTargetPosition(targetAllyTeamID)
+	local x, y, z, clearsArea, teamID, clearX, clearZ, clearRadius, areaTeams = getAttackTargetPosition(targetAllyTeamID)
 	if not x or not z then
 		return false
 	end
 
-	setTargetPosition(teamID, targetAllyTeamID, x, y, z, clearsArea)
+	setTargetPosition(teamID, targetAllyTeamID, x, y, z, clearsArea, clearX, clearZ, clearRadius, areaTeams)
 	resetProgress(frame)
 	return true
 end
@@ -1226,6 +1440,8 @@ local function spawnBossPhase(frame, phase)
 	targetClearsArea = false
 	targetClearX = nil
 	targetClearZ = nil
+	targetAreaRadius = nil
+	targetAreaTeams = nil
 	targetStage = TARGET_STAGE_BASE
 	nextRetargetFrame = 0
 
@@ -1305,6 +1521,8 @@ local function resetBossRuntimeState(frame, phase)
 	targetClearsArea = false
 	targetClearX = nil
 	targetClearZ = nil
+	targetAreaRadius = nil
+	targetAreaTeams = nil
 	targetStage = TARGET_STAGE_BASE
 	middleRoamTopAllyTeamID = nil
 	middleRoamSecondAllyTeamID = nil
@@ -1375,12 +1593,14 @@ retargetLiveTargetAreaBuilding = function(frame, requireReached, minTargetDistan
 
 	local clearX = targetClearX
 	local clearZ = targetClearZ
+	local clearRadius = targetAreaRadius
+	local areaTeams = targetAreaTeams
 	local x, y, z, teamID = getLiveTargetAreaBuilding(minTargetDistance or AREA_RETARGET_RADIUS)
 	if not x or not z then
 		return false
 	end
 
-	setTargetPosition(teamID, targetAllyTeamID, x, y, z, true, clearX, clearZ)
+	setTargetPosition(teamID, targetAllyTeamID, x, y, z, true, clearX, clearZ, clearRadius, areaTeams)
 	resetProgress(frame)
 	return true
 end
