@@ -60,7 +60,7 @@ local uTear
 
 local FINAL_BOSS_SOUND = "sounds/techa_sounds/final_boss.wav"
 local FINAL_BOSS_ARMORED_SOUND = "sounds/techa_sounds/final_boss_2.wav"
-local FINAL_BOSS_SOUND_VOLUME = 4
+local FINAL_BOSS_SOUND_VOLUME = 2.5
 local FINAL_BOSS_ARMORED_SOUND_VOLUME = FINAL_BOSS_SOUND_VOLUME * 1.4
 local FINAL_BOSS_SOUND_LOOP_SECONDS = 40 / 30
 local FINAL_BOSS_SOUND_RESTART_MOVE_SQ = 700 * 700
