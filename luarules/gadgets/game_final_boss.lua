@@ -25,8 +25,11 @@ local DEV_SPAWN_CORE_MSG = "final_boss_dev:spawn_now"
 local DEV_SPAWN_DARK_DEUS_MSG = "final_boss_dev:spawn_phase2_now"
 
 local FRAMES_PER_SECOND = 30
-local DEFAULT_SPAWN_MINUTES = 60
-local MIN_SPAWN_MINUTES = 10
+local SPAWN_MINUTES_CONFIG = {
+	default = 0,
+	min = 0,
+	max = 120,
+}
 local WARNING_MINUTES = 10
 local RETARGET_INTERVAL_FRAMES = 30 * FRAMES_PER_SECOND
 local ORDER_REFRESH_FRAMES = 10 * FRAMES_PER_SECOND
@@ -70,6 +73,13 @@ local ATTACKER_ARTILLERY = 5
 local ATTACKER_BUILDER = 6
 local ATTACKER_GROUND = 7
 
+local modOptions = (Spring.GetModOptions and Spring.GetModOptions()) or {}
+local spawnMinutes = tonumber(modOptions.mo_final_boss_spawn_minutes) or SPAWN_MINUTES_CONFIG.default
+spawnMinutes = math.max(SPAWN_MINUTES_CONFIG.min, math.min(SPAWN_MINUTES_CONFIG.max, spawnMinutes))
+if spawnMinutes <= 0 then
+	return false
+end
+
 local spGetGameFrame = Spring.GetGameFrame
 local spGetGaiaTeamID = Spring.GetGaiaTeamID
 local spGetTeamList = Spring.GetTeamList
@@ -100,12 +110,6 @@ local spSetUnitNeutral = Spring.SetUnitNeutral
 local MAP_X = Game.mapSizeX
 local MAP_Z = Game.mapSizeZ
 local commanderDefs = VFS.Include("luarules/configs/comDefIDs.lua") or {}
-local modOptions = (Spring.GetModOptions and Spring.GetModOptions()) or {}
-
-local spawnMinutes = tonumber(modOptions.mo_final_boss_spawn_minutes) or DEFAULT_SPAWN_MINUTES
-if spawnMinutes < MIN_SPAWN_MINUTES then
-	spawnMinutes = MIN_SPAWN_MINUTES
-end
 local SPAWN_FRAME = math.floor((spawnMinutes * 60 * FRAMES_PER_SECOND) + 0.5)
 local WARNING_FRAME = math.max(0, SPAWN_FRAME - (WARNING_MINUTES * 60 * FRAMES_PER_SECOND))
 local BOSS_TEAM_ENERGY_STORAGE = 90000000
