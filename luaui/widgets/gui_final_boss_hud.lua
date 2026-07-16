@@ -10,6 +10,10 @@ function widget:GetInfo()
 	}
 end
 
+if (tonumber(((Spring.GetModOptions and Spring.GetModOptions()) or {}).mo_final_boss_spawn_minutes) or 0) <= 0 then
+	return false
+end
+
 local spGetGameFrame = Spring.GetGameFrame
 local spGetGameRulesParam = Spring.GetGameRulesParam
 local spIsGUIHidden = Spring.IsGUIHidden

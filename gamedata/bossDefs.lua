@@ -1,5 +1,7 @@
 local BASE_SPAWN_MINUTES = 30
-local DEFAULT_SPAWN_MINUTES = 30
+local DEFAULT_SPAWN_MINUTES = 0
+local MIN_SPAWN_MINUTES = 0
+local MAX_SPAWN_MINUTES = 120
 local FINAL_BOSS_UNITS = {
 	core_core_boss = {
 		hpScale = 1,
@@ -23,7 +25,8 @@ end
 
 local function getSpawnMinutes()
 	local modOptions = (Spring and Spring.GetModOptions and Spring.GetModOptions()) or {}
-	return tonumber(modOptions.mo_final_boss_spawn_minutes) or DEFAULT_SPAWN_MINUTES
+	local spawnMinutes = tonumber(modOptions.mo_final_boss_spawn_minutes) or DEFAULT_SPAWN_MINUTES
+	return math.max(MIN_SPAWN_MINUTES, math.min(MAX_SPAWN_MINUTES, spawnMinutes))
 end
 
 local function log(message)
@@ -43,6 +46,11 @@ local function scaleDamageTable(damage, scale)
 	end
 end
 
+local spawnMinutes = getSpawnMinutes()
+if spawnMinutes <= 0 then
+	return true
+end
+
 if _G.FinalBossBossDefsApplied then
 	return true
 end
@@ -53,7 +61,6 @@ if not unitDefs then
 	return false
 end
 
-local spawnMinutes = getSpawnMinutes()
 local timeScale = 1
 if spawnMinutes > BASE_SPAWN_MINUTES then
 	timeScale = 2 ^ ((spawnMinutes - BASE_SPAWN_MINUTES) / 10)

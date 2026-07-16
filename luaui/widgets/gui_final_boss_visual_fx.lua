@@ -10,6 +10,10 @@ function widget:GetInfo()
 	}
 end
 
+if (tonumber(((Spring.GetModOptions and Spring.GetModOptions()) or {}).mo_final_boss_spawn_minutes) or 0) <= 0 then
+	return false
+end
+
 local spGetAllUnits = Spring.GetAllUnits
 local spGetCameraVectors = Spring.GetCameraVectors
 local spGetGameSeconds = Spring.GetGameSeconds
@@ -21,7 +25,6 @@ local spGetUnitIsDead = Spring.GetUnitIsDead
 local spGetUnitRulesParam = Spring.GetUnitRulesParam
 local spGetUnitTeam = Spring.GetUnitTeam
 local spIsUnitVisible = Spring.IsUnitVisible
-local spPlaySoundFile = Spring.PlaySoundFile
 local spValidUnitID = Spring.ValidUnitID
 
 local glBlending = gl.Blending
@@ -57,20 +60,6 @@ local uScanDensity
 local uNoise
 local uFlicker
 local uTear
-
-local FINAL_BOSS_SOUND = "sounds/techa_sounds/final_boss.wav"
-local FINAL_BOSS_ARMORED_SOUND = "sounds/techa_sounds/final_boss_2.wav"
-local FINAL_BOSS_SOUND_VOLUME = 2.5
-local FINAL_BOSS_ARMORED_SOUND_VOLUME = FINAL_BOSS_SOUND_VOLUME * 1.4
-local FINAL_BOSS_SOUND_LOOP_SECONDS = 40 / 30
-local FINAL_BOSS_SOUND_RESTART_MOVE_SQ = 700 * 700
-
-local soundUnitID
-local soundFile
-local soundX
-local soundZ
-local soundNextAt = 0
-local soundLastPlayAt = -1000
 
 local defaultFxConfig = {
 	normal = {
@@ -451,13 +440,6 @@ local function drawFinalBossGhost(unitID, defID, teamID, time, advanced)
 	glColor(1, 1, 1, 1)
 end
 
-local function firstTrackedBoss()
-	for unitID in pairs(finalBossUnits) do
-		return unitID
-	end
-	return nil
-end
-
 function widget:Initialize()
 	compileGhostShader()
 	if spGetAllUnits then
@@ -475,9 +457,6 @@ function widget:Shutdown()
 		glDeleteShader(ghostShader)
 	end
 	ghostShader = nil
-	soundUnitID = nil
-	soundFile = nil
-	soundNextAt = 0
 end
 
 function widget:UnitCreated(unitID, unitDefID, unitTeam)
@@ -487,11 +466,6 @@ end
 function widget:UnitDestroyed(unitID)
 	finalBossUnits[unitID] = nil
 	pendingUnits[unitID] = nil
-	if unitID == soundUnitID then
-		soundUnitID = nil
-		soundFile = nil
-		soundNextAt = 0
-	end
 end
 
 function widget:GameFrame(frame)
@@ -514,54 +488,6 @@ function widget:GameFrame(frame)
 		else
 			trackUnit(unitID)
 		end
-	end
-end
-
-function widget:Update(dt)
-	if not spPlaySoundFile then
-		return
-	end
-	local unitID = firstTrackedBoss()
-	if not unitID or (spGetUnitIsDead and spGetUnitIsDead(unitID)) then
-		soundUnitID = nil
-		soundFile = nil
-		soundNextAt = 0
-		return
-	end
-
-	local x, y, z = spGetUnitBasePosition(unitID)
-	if not x then
-		return
-	end
-	local currentSoundFile = isAdvancedFxPhase(unitID) and FINAL_BOSS_ARMORED_SOUND or FINAL_BOSS_SOUND
-	local now = spGetGameSeconds and spGetGameSeconds() or 0
-	local forcePlay = false
-	if soundUnitID ~= unitID then
-		soundUnitID = unitID
-		soundFile = currentSoundFile
-		soundX = x
-		soundZ = z
-		forcePlay = true
-	elseif soundFile ~= currentSoundFile then
-		soundFile = currentSoundFile
-		forcePlay = true
-	elseif soundX then
-		local dx = x - soundX
-		local dz = z - soundZ
-		if (dx * dx + dz * dz) >= FINAL_BOSS_SOUND_RESTART_MOVE_SQ then
-			forcePlay = true
-		end
-	end
-	if now >= soundNextAt then
-		forcePlay = true
-	end
-	if forcePlay and (now - soundLastPlayAt) >= 0 then
-		local currentSoundVolume = isAdvancedFxPhase(unitID) and FINAL_BOSS_ARMORED_SOUND_VOLUME or FINAL_BOSS_SOUND_VOLUME
-		spPlaySoundFile(currentSoundFile, currentSoundVolume, x, y, z, "sfx")
-		soundLastPlayAt = now
-		soundNextAt = now + FINAL_BOSS_SOUND_LOOP_SECONDS
-		soundX = x
-		soundZ = z
 	end
 end
 
