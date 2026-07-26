@@ -52,6 +52,8 @@ local ECO_ATTACK_ADVANTAGE = 0.70
 local ECO_FORCE_ATTACK_DELAY_FRAMES = 20 * 60 * FRAMES_PER_SECOND
 local DUAL_BOSS_CONFIG = {
 	minPlayerTS = 30,
+	fallbackMinTS = 5,
+	fallbackMaxTS = 40,
 	spawnBaseFraction = 0.25,
 	spawnSeparation = 650,
 	weakHpMult = 0.10,
@@ -186,6 +188,11 @@ local bossRuntime = {
 	eventSpawned = false,
 	eventCancelled = false,
 	actualSpawnFrame = -1,
+	gameID = "",
+	fallbackTS = {
+		players = {},
+		teams = {},
+	},
 }
 bossRuntime.order = {
 	bossRuntime.contexts.darkDeus,
@@ -473,25 +480,157 @@ local function getAllyTeamEcoLeaders()
 	return topAllyTeamID, topScore or 0, secondAllyTeamID, secondScore or 0
 end
 
-function bossRuntime.allyTeamHasEligiblePlayer(allyTeamID)
+function bossRuntime.parsePlayerSkill(playerOptions)
+	if type(playerOptions) ~= "table" then
+		return nil
+	end
+	local skillText = playerOptions.skill
+	return skillText and tonumber(tostring(skillText):match("%d+%.?%d*"))
+end
+
+function bossRuntime.getFallbackTS(cache, entityType, entityID)
+	local fallbackTS = cache[entityID]
+	if fallbackTS then
+		return fallbackTS
+	end
+
+	local hash = 5381
+	local hashText = (bossRuntime.gameID or "") .. ":" .. entityType .. ":" .. tostring(entityID)
+	for i = 1, #hashText do
+		hash = ((hash * 33) + string.byte(hashText, i)) % 2147483647
+	end
+	hash = ((hash * 48271) + 12820163) % 2147483647
+	local fallbackRange = DUAL_BOSS_CONFIG.fallbackMaxTS - DUAL_BOSS_CONFIG.fallbackMinTS + 1
+	fallbackTS = DUAL_BOSS_CONFIG.fallbackMinTS + (hash % fallbackRange)
+	cache[entityID] = fallbackTS
+	Spring.Echo("Final Boss: assigned fallback TS", fallbackTS, "to", entityType, entityID)
+	return fallbackTS
+end
+
+function bossRuntime.teamHasAI(teamID)
+	if not spGetTeamInfo then
+		return false
+	end
+	local teamInfo, _, _, hasAI = spGetTeamInfo(teamID, false)
+	if type(teamInfo) == "table" then
+		hasAI = teamInfo.hasAI or teamInfo.isAI
+	end
+	return hasAI == true or hasAI == 1
+end
+
+function bossRuntime.shouldUseFallbackTS()
+	if bossRuntime.useFallbackTS ~= nil then
+		return bossRuntime.useFallbackTS
+	end
+	if not Spring.GetPlayerList or not Spring.GetPlayerInfo then
+		bossRuntime.useFallbackTS = true
+		return true
+	end
+
+	local players = Spring.GetPlayerList(-1, true) or {}
+	for i = 1, #players do
+		local _, active, spectator, _, _, _, _, _, _, _, playerOptions = Spring.GetPlayerInfo(players[i], true)
+		if active and not spectator and bossRuntime.parsePlayerSkill(playerOptions) then
+			bossRuntime.useFallbackTS = false
+			return false
+		end
+	end
+	bossRuntime.useFallbackTS = true
+	Spring.Echo(
+		"Final Boss: no reported player TS found; using deterministic fallback TS range",
+		DUAL_BOSS_CONFIG.fallbackMinTS,
+		DUAL_BOSS_CONFIG.fallbackMaxTS
+	)
+	return true
+end
+
+function bossRuntime.initializeFallbackTS()
+	if bossRuntime.fallbackTS.initialized then
+		return
+	end
+	bossRuntime.fallbackTS.initialized = true
+
+	local players = Spring.GetPlayerList and Spring.GetPlayerList(-1, true) or {}
+	for i = 1, #players do
+		local playerID = players[i]
+		local _, active, spectator = Spring.GetPlayerInfo(playerID, false)
+		if active and not spectator then
+			bossRuntime.getFallbackTS(bossRuntime.fallbackTS.players, "player", playerID)
+		end
+	end
+
+	local teams = getNonGaiaTeams()
+	for i = 1, #teams do
+		local teamID = teams[i]
+		if bossRuntime.teamHasAI(teamID) then
+			bossRuntime.getFallbackTS(bossRuntime.fallbackTS.teams, "AI team", teamID)
+		end
+	end
+end
+
+function bossRuntime.allyTeamHasEligibleParticipant(allyTeamID)
 	if not allyTeamID or not Spring.GetPlayerList or not Spring.GetPlayerInfo then
 		return false
 	end
+	local useFallbackTS = bossRuntime.shouldUseFallbackTS()
+	if useFallbackTS then
+		bossRuntime.initializeFallbackTS()
+	end
 	local teams = getCandidateTeams(allyTeamID)
+	local fallbackCandidateCache
+	local fallbackCandidateID
+	local fallbackCandidateType
+	local fallbackCandidateTS
 	for i = 1, #teams do
 		local teamID = teams[i]
 		local players = Spring.GetPlayerList(teamID, true) or {}
 		for j = 1, #players do
 			local playerID = players[j]
 			local _, active, spectator, playerTeamID, _, _, _, _, _, _, playerOptions = Spring.GetPlayerInfo(playerID, true)
-			if active and not spectator and playerTeamID == teamID and type(playerOptions) == "table" then
-				local skillText = playerOptions.skill
-				local skill = skillText and tonumber(tostring(skillText):match("%d+%.?%d*"))
+			if active and not spectator and playerTeamID == teamID then
+				local skill = bossRuntime.parsePlayerSkill(playerOptions)
+				if not skill and useFallbackTS then
+					skill = bossRuntime.fallbackTS.players[playerID]
+				end
 				if skill and skill >= DUAL_BOSS_CONFIG.minPlayerTS then
 					return true
 				end
+				if useFallbackTS and skill and (not fallbackCandidateTS or skill > fallbackCandidateTS) then
+					fallbackCandidateCache = bossRuntime.fallbackTS.players
+					fallbackCandidateID = playerID
+					fallbackCandidateType = "player"
+					fallbackCandidateTS = skill
+				end
 			end
 		end
+		if useFallbackTS and bossRuntime.teamHasAI(teamID) then
+			local skill = bossRuntime.fallbackTS.teams[teamID]
+			if skill and skill >= DUAL_BOSS_CONFIG.minPlayerTS then
+				return true
+			end
+			if skill and (not fallbackCandidateTS or skill > fallbackCandidateTS) then
+				fallbackCandidateCache = bossRuntime.fallbackTS.teams
+				fallbackCandidateID = teamID
+				fallbackCandidateType = "AI team"
+				fallbackCandidateTS = skill
+			end
+		end
+	end
+	if useFallbackTS and fallbackCandidateCache then
+		local eligibleRange = DUAL_BOSS_CONFIG.fallbackMaxTS - DUAL_BOSS_CONFIG.minPlayerTS + 1
+		local promotedTS = DUAL_BOSS_CONFIG.minPlayerTS + (fallbackCandidateTS % eligibleRange)
+		fallbackCandidateCache[fallbackCandidateID] = promotedTS
+		Spring.Echo(
+			"Final Boss: promoted fallback TS",
+			fallbackCandidateTS,
+			"to",
+			promotedTS,
+			"for",
+			fallbackCandidateType,
+			fallbackCandidateID,
+			"to guarantee local boss testing"
+		)
+		return true
 	end
 	return false
 end
@@ -1897,7 +2036,7 @@ function bossRuntime.spawnEvent(frame)
 	local topAllyTeamID, _, secondAllyTeamID = getAllyTeamEcoLeaders()
 	if not topAllyTeamID
 		or not secondAllyTeamID
-		or not bossRuntime.allyTeamHasEligiblePlayer(topAllyTeamID)
+		or not bossRuntime.allyTeamHasEligibleParticipant(topAllyTeamID)
 	then
 		bossRuntime.cancelEvent(frame)
 		return false
@@ -2124,6 +2263,10 @@ end
 
 function gadget:Shutdown()
 	gadgetHandler:RemoveChatAction(DEV_MODE_CHAT_ACTION)
+end
+
+function gadget:GameID(gameID)
+	bossRuntime.gameID = gameID or ""
 end
 
 function gadget:GameFrame(frame)
