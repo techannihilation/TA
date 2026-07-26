@@ -433,8 +433,8 @@ function widget:DrawScreen()
 	end
 
 	local y = y2 - 64
-	drawButton("spawn", "Spawn Phase 1", x1 + 12, y, x1 + 222, y + 24, false)
-	drawButton("spawn_phase2", "Spawn Phase 2", x1 + 234, y, x1 + 456, y + 24, false)
+	drawButton("spawn", "Spawn Core Boss", x1 + 12, y, x1 + 222, y + 24, false)
+	drawButton("spawn_phase2", "Spawn Dark Deus", x1 + 234, y, x1 + 456, y + 24, false)
 	y = y - 30
 	drawButton("save", "Save FX", x1 + 12, y, x1 + 222, y + 24, false)
 	drawButton("load", "Load FX", x1 + 234, y, x1 + 456, y + 24, false)

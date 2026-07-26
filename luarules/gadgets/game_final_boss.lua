@@ -50,7 +50,13 @@ local FALLBACK_BOSS_WEAPON_RANGE = 1800
 local ECO_ROAM_ADVANTAGE = 0.50
 local ECO_ATTACK_ADVANTAGE = 0.70
 local ECO_FORCE_ATTACK_DELAY_FRAMES = 20 * 60 * FRAMES_PER_SECOND
-local PHASE2_DELAY_FRAMES = 10 * 60 * FRAMES_PER_SECOND
+local DUAL_BOSS_CONFIG = {
+	minPlayerTS = 30,
+	spawnBaseFraction = 0.25,
+	spawnSeparation = 650,
+	weakHpMult = 0.10,
+	weakSpeedMult = 1.50,
+}
 
 local STATE_COUNTDOWN = 0
 local STATE_FIGHT = 1
@@ -162,8 +168,125 @@ local attackerClass = ATTACKER_UNKNOWN
 local attackerFrame = -1
 local attackerDamageByClass = {}
 
+local bossRuntime = {
+	contexts = {
+		darkDeus = {
+			key = "dark_deus",
+			phase = PHASE_DARK_DEUS,
+			targetArea = {},
+		},
+		core = {
+			key = "core",
+			phase = PHASE_CORE,
+			targetArea = {},
+			weakVariant = true,
+		},
+	},
+	eventResolved = false,
+	eventSpawned = false,
+	eventCancelled = false,
+	actualSpawnFrame = -1,
+}
+bossRuntime.order = {
+	bossRuntime.contexts.darkDeus,
+	bossRuntime.contexts.core,
+}
+
 local function setBossRuleParam(key, value)
+	local context = bossRuntime.active
+	if context then
+		spSetGameRulesParam("final_boss_" .. context.key .. "_" .. key, value)
+		if context == bossRuntime.contexts.darkDeus then
+			spSetGameRulesParam("final_boss_" .. key, value)
+		end
+		return
+	end
 	spSetGameRulesParam("final_boss_" .. key, value)
+end
+
+function bossRuntime.load(context)
+	bossRuntime.active = context
+	bossUnitID = context.unitID
+	bossTeamID = context.teamID
+	bossPhase = context.phase or PHASE_CORE
+	bossSpawned = context.spawned == true
+	bossSpawnFrame = context.spawnFrame or -1
+	phase2SpawnFrame = context.phase2SpawnFrame or -1
+	phase2Pending = context.phase2Pending == true
+	bossAlive = context.alive == true
+	bossState = context.state or STATE_COUNTDOWN
+	bossMode = context.mode
+	targetAllyTeamID = context.targetAllyTeamID
+	targetTeamID = context.targetTeamID
+	targetX = context.targetX
+	targetY = context.targetY
+	targetZ = context.targetZ
+	targetClearsArea = context.targetClearsArea == true
+	targetClearX = context.targetClearX
+	targetClearZ = context.targetClearZ
+	targetArea = context.targetArea or {}
+	context.targetArea = targetArea
+	targetStage = context.targetStage or TARGET_STAGE_BASE
+	middleRoamTopAllyTeamID = context.middleRoamTopAllyTeamID
+	middleRoamSecondAllyTeamID = context.middleRoamSecondAllyTeamID
+	middleRoamStartedFrame = context.middleRoamStartedFrame or 0
+	middleRoamLeg = context.middleRoamLeg or 0
+	middleRoamEdgeLeg = context.middleRoamEdgeLeg or 0
+	middleRoamInEdgePhase = context.middleRoamInEdgePhase == true
+	nextRetargetFrame = context.nextRetargetFrame or 0
+	nextOrderRefreshFrame = context.nextOrderRefreshFrame or 0
+	nextProgressCheckFrame = context.nextProgressCheckFrame or 0
+	lastProgressFrame = context.lastProgressFrame or 0
+	lastProgressX = context.lastProgressX
+	lastProgressZ = context.lastProgressZ
+	nextResourceTopupFrame = context.nextResourceTopupFrame or 0
+	nextHealthParamFrame = context.nextHealthParamFrame or 0
+	shieldActive = context.shieldActive == true
+	attackerClass = context.attackerClass or ATTACKER_UNKNOWN
+	attackerFrame = context.attackerFrame or -1
+	attackerDamageByClass = context.attackerDamageByClass or {}
+	context.attackerDamageByClass = attackerDamageByClass
+end
+
+function bossRuntime.capture(context)
+	context.unitID = bossUnitID
+	context.teamID = bossTeamID
+	context.phase = bossPhase
+	context.spawned = bossSpawned
+	context.spawnFrame = bossSpawnFrame
+	context.phase2SpawnFrame = phase2SpawnFrame
+	context.phase2Pending = phase2Pending
+	context.alive = bossAlive
+	context.state = bossState
+	context.mode = bossMode
+	context.targetAllyTeamID = targetAllyTeamID
+	context.targetTeamID = targetTeamID
+	context.targetX = targetX
+	context.targetY = targetY
+	context.targetZ = targetZ
+	context.targetClearsArea = targetClearsArea
+	context.targetClearX = targetClearX
+	context.targetClearZ = targetClearZ
+	context.targetArea = targetArea
+	context.targetStage = targetStage
+	context.middleRoamTopAllyTeamID = middleRoamTopAllyTeamID
+	context.middleRoamSecondAllyTeamID = middleRoamSecondAllyTeamID
+	context.middleRoamStartedFrame = middleRoamStartedFrame
+	context.middleRoamLeg = middleRoamLeg
+	context.middleRoamEdgeLeg = middleRoamEdgeLeg
+	context.middleRoamInEdgePhase = middleRoamInEdgePhase
+	context.nextRetargetFrame = nextRetargetFrame
+	context.nextOrderRefreshFrame = nextOrderRefreshFrame
+	context.nextProgressCheckFrame = nextProgressCheckFrame
+	context.lastProgressFrame = lastProgressFrame
+	context.lastProgressX = lastProgressX
+	context.lastProgressZ = lastProgressZ
+	context.nextResourceTopupFrame = nextResourceTopupFrame
+	context.nextHealthParamFrame = nextHealthParamFrame
+	context.shieldActive = shieldActive
+	context.attackerClass = attackerClass
+	context.attackerFrame = attackerFrame
+	context.attackerDamageByClass = attackerDamageByClass
 end
 
 local function getBossUnitName(phase)
@@ -348,6 +471,29 @@ local function getAllyTeamEcoLeaders()
 	end
 
 	return topAllyTeamID, topScore or 0, secondAllyTeamID, secondScore or 0
+end
+
+function bossRuntime.allyTeamHasEligiblePlayer(allyTeamID)
+	if not allyTeamID or not Spring.GetPlayerList or not Spring.GetPlayerInfo then
+		return false
+	end
+	local teams = getCandidateTeams(allyTeamID)
+	for i = 1, #teams do
+		local teamID = teams[i]
+		local players = Spring.GetPlayerList(teamID, true) or {}
+		for j = 1, #players do
+			local playerID = players[j]
+			local _, active, spectator, playerTeamID, _, _, _, _, _, _, playerOptions = Spring.GetPlayerInfo(playerID, true)
+			if active and not spectator and playerTeamID == teamID and type(playerOptions) == "table" then
+				local skillText = playerOptions.skill
+				local skill = skillText and tonumber(tostring(skillText):match("%d+%.?%d*"))
+				if skill and skill >= DUAL_BOSS_CONFIG.minPlayerTS then
+					return true
+				end
+			end
+		end
+	end
+	return false
 end
 
 local function getEcoAdvantage(topScore, secondScore)
@@ -843,6 +989,33 @@ local function getAllyTeamBaseCenter(allyTeamID)
 	return getAllyTeamStartCenter(allyTeamID)
 end
 
+function bossRuntime.getDualSpawnPositions(allyTeamID)
+	local centerX = MAP_X * 0.5
+	local centerZ = MAP_Z * 0.5
+	local baseX, baseZ = getAllyTeamBaseCenter(allyTeamID)
+	local dx = baseX - centerX
+	local dz = baseZ - centerZ
+	local length = math.sqrt((dx * dx) + (dz * dz))
+	local anchorX = centerX + (dx * DUAL_BOSS_CONFIG.spawnBaseFraction)
+	local anchorZ = centerZ + (dz * DUAL_BOSS_CONFIG.spawnBaseFraction)
+	local perpendicularX = 1
+	local perpendicularZ = 0
+	if length > 1 then
+		perpendicularX = -dz / length
+		perpendicularZ = dx / length
+	end
+	local halfSeparation = DUAL_BOSS_CONFIG.spawnSeparation * 0.5
+	local darkX, darkZ = clampMapPosition(
+		anchorX + (perpendicularX * halfSeparation),
+		anchorZ + (perpendicularZ * halfSeparation)
+	)
+	local coreX, coreZ = clampMapPosition(
+		anchorX - (perpendicularX * halfSeparation),
+		anchorZ - (perpendicularZ * halfSeparation)
+	)
+	return darkX, darkZ, coreX, coreZ
+end
+
 local function getBaseEdgePoint(allyTeamID)
 	if not allyTeamID then
 		return MAP_X * 0.5, MAP_Z * 0.5
@@ -1008,6 +1181,73 @@ local function updateHudParams()
 	setBossRuleParam("phase2_spawn_frame", phase2SpawnFrame)
 	setBossRuleParam("phase2_pending", phase2Pending and 1 or 0)
 	updateBossHealthParam()
+end
+
+function bossRuntime.getHpFraction(context)
+	if not context.spawned then
+		return 1
+	end
+	if not context.alive or not context.unitID then
+		return 0
+	end
+	local health, maxHealth = spGetUnitHealth(context.unitID)
+	if not health or not maxHealth or maxHealth <= 0 then
+		return 1
+	end
+	return math.max(0, math.min(1, health / maxHealth))
+end
+
+function bossRuntime.publishContext(context)
+	local prefix = "final_boss_" .. context.key .. "_"
+	spSetGameRulesParam(prefix .. "spawned", context.spawned and 1 or 0)
+	spSetGameRulesParam(prefix .. "alive", context.alive and 1 or 0)
+	spSetGameRulesParam(prefix .. "unit_id", context.unitID or -1)
+	spSetGameRulesParam(prefix .. "target_team", context.targetTeamID or -1)
+	spSetGameRulesParam(prefix .. "state", context.state or STATE_COUNTDOWN)
+	spSetGameRulesParam(prefix .. "phase", context.phase)
+	spSetGameRulesParam(prefix .. "hp_fraction", bossRuntime.getHpFraction(context))
+	spSetGameRulesParam(prefix .. "shield_active", context.shieldActive and 1 or 0)
+	spSetGameRulesParam(prefix .. "shield_frame", context.shieldFrame or -1)
+	spSetGameRulesParam(prefix .. "attacker_class", context.attackerClass or ATTACKER_UNKNOWN)
+	spSetGameRulesParam(prefix .. "attacker_frame", context.attackerFrame or -1)
+end
+
+function bossRuntime.publishEvent()
+	local aliveCount = 0
+	for i = 1, #bossRuntime.order do
+		local context = bossRuntime.order[i]
+		bossRuntime.publishContext(context)
+		if context.alive then
+			aliveCount = aliveCount + 1
+		end
+	end
+
+	local selected = bossRuntime.contexts.darkDeus
+	if not selected.alive and bossRuntime.contexts.core.alive then
+		selected = bossRuntime.contexts.core
+	end
+	spSetGameRulesParam("final_boss_spawned", bossRuntime.eventSpawned and 1 or 0)
+	spSetGameRulesParam("final_boss_alive", aliveCount > 0 and 1 or 0)
+	spSetGameRulesParam("final_boss_alive_count", aliveCount)
+	spSetGameRulesParam("final_boss_total_count", 2)
+	spSetGameRulesParam("final_boss_dual", bossRuntime.eventSpawned and 1 or 0)
+	spSetGameRulesParam("final_boss_cancelled", bossRuntime.eventCancelled and 1 or 0)
+	spSetGameRulesParam("final_boss_unit_id", selected.unitID or -1)
+	spSetGameRulesParam("final_boss_target_team", selected.targetTeamID or -1)
+	local eventState = STATE_COUNTDOWN
+	if bossRuntime.eventSpawned then
+		eventState = aliveCount > 0 and (selected.state or STATE_FIGHT) or STATE_DEAD
+	end
+	spSetGameRulesParam("final_boss_state", eventState)
+	spSetGameRulesParam("final_boss_phase", selected.phase or PHASE_DARK_DEUS)
+	spSetGameRulesParam("final_boss_hp_fraction", bossRuntime.getHpFraction(selected))
+	spSetGameRulesParam("final_boss_shield_active", selected.shieldActive and 1 or 0)
+	spSetGameRulesParam("final_boss_shield_frame", selected.shieldFrame or -1)
+	spSetGameRulesParam("final_boss_attacker_class", selected.attackerClass or ATTACKER_UNKNOWN)
+	spSetGameRulesParam("final_boss_attacker_frame", selected.attackerFrame or -1)
+	spSetGameRulesParam("final_boss_actual_spawn_frame", bossRuntime.actualSpawnFrame)
+	spSetGameRulesParam("final_boss_phase2_pending", 0)
+	spSetGameRulesParam("final_boss_phase2_spawn_frame", bossRuntime.actualSpawnFrame)
 end
 
 getBossWeaponRange = function()
@@ -1182,6 +1422,9 @@ local function setBossShieldActive(unitID, frame)
 		return
 	end
 	shieldActive = true
+	if bossRuntime.active then
+		bossRuntime.active.shieldFrame = frame
+	end
 	applyBossArmor(unitID)
 	spSetUnitRulesParam(unitID, "final_boss_shield_active", 1, { public = true })
 	setBossRuleParam("shield_active", 1)
@@ -1297,6 +1540,15 @@ local function chooseBossMode(frame)
 	local topAllyTeamID, topScore, secondAllyTeamID, secondScore = getAllyTeamEcoLeaders()
 	if not topAllyTeamID then
 		return nil
+	end
+	local context = bossRuntime.active
+	if context and context.weakVariant then
+		local lockedAllyTeamID = context.lockedTargetAllyTeamID
+		if lockedAllyTeamID and #getCandidateTeams(lockedAllyTeamID) > 0 then
+			return MODE_ATTACK, lockedAllyTeamID, secondAllyTeamID
+		end
+		context.lockedTargetAllyTeamID = topAllyTeamID
+		return MODE_ATTACK, topAllyTeamID, secondAllyTeamID
 	end
 	if bossPhase == PHASE_DARK_DEUS then
 		return MODE_ATTACK, topAllyTeamID, secondAllyTeamID
@@ -1424,7 +1676,55 @@ local function refreshClearedTarget(frame)
 	return true
 end
 
-local function spawnBossPhase(frame, phase)
+function bossRuntime.createUnit(unitName, preferredX, preferredZ, teamID)
+	local offsets = {
+		{ 0, 0 },
+		{ 256, 0 },
+		{ -256, 0 },
+		{ 0, 256 },
+		{ 0, -256 },
+		{ 384, 384 },
+		{ -384, 384 },
+		{ 384, -384 },
+		{ -384, -384 },
+		{ 768, 0 },
+		{ -768, 0 },
+		{ 0, 768 },
+		{ 0, -768 },
+	}
+	for i = 1, #offsets do
+		local x, z = clampMapPosition(preferredX + offsets[i][1], preferredZ + offsets[i][2])
+		local y = spGetGroundHeight(x, z)
+		local unitID = spCreateUnit(unitName, x, y, z, "n", teamID)
+		if unitID then
+			return unitID, x, y, z
+		end
+	end
+	return nil
+end
+
+function bossRuntime.applyWeakVariant(unitID, unitDef)
+	local _, maxHealth = spGetUnitHealth(unitID)
+	if maxHealth and maxHealth > 0 and Spring.SetUnitMaxHealth and Spring.SetUnitHealth then
+		local reducedMaxHealth = math.max(1, math.floor((maxHealth * DUAL_BOSS_CONFIG.weakHpMult) + 0.5))
+		Spring.SetUnitMaxHealth(unitID, reducedMaxHealth)
+		Spring.SetUnitHealth(unitID, reducedMaxHealth)
+	end
+
+	local moveData = Spring.GetUnitMoveTypeData and Spring.GetUnitMoveTypeData(unitID)
+	local baseSpeed = (moveData and moveData.maxSpeed) or (unitDef and unitDef.speed) or 0
+	local moveCtrl = Spring.MoveCtrl
+	if baseSpeed > 0 and moveCtrl and moveCtrl.SetGunshipMoveTypeData then
+		local boostedSpeed = baseSpeed * DUAL_BOSS_CONFIG.weakSpeedMult
+		moveCtrl.SetGunshipMoveTypeData(unitID, {
+			maxSpeed = boostedSpeed,
+			maxWantedSpeed = boostedSpeed,
+		})
+	end
+	spSetUnitRulesParam(unitID, "final_boss_weak_variant", 1, { public = true })
+end
+
+local function spawnBossPhase(frame, phase, preferredX, preferredZ)
 	local unitName = getBossUnitName(phase)
 	local unitDef = UnitDefNames[unitName]
 	if not unitDef then
@@ -1451,16 +1751,17 @@ local function spawnBossPhase(frame, phase)
 		return false
 	end
 
-	local x = MAP_X * 0.5
-	local z = MAP_Z * 0.5
-	local y = spGetGroundHeight(x, z)
+	local x = preferredX or (MAP_X * 0.5)
+	local z = preferredZ or (MAP_Z * 0.5)
 	local teamID = spGetGaiaTeamID()
 	ensureBossTeamResources(teamID)
-	local unitID = spCreateUnit(unitName, x, y, z, "n", teamID)
+	local unitID, actualX, y, actualZ = bossRuntime.createUnit(unitName, x, z, teamID)
 	if not unitID then
 		Spring.Echo("Final Boss: failed to spawn " .. unitName)
 		return false
 	end
+	x = actualX
+	z = actualZ
 
 	bossUnitID = unitID
 	bossTeamID = teamID
@@ -1469,11 +1770,17 @@ local function spawnBossPhase(frame, phase)
 	bossAlive = true
 	bossState = (bossMode == MODE_MIDDLE_ROAM) and STATE_MIDDLE_ROAM or STATE_FIGHT
 	shieldActive = false
+	if bossRuntime.active then
+		bossRuntime.active.shieldFrame = -1
+	end
 	clearBossAttackerDamage()
 	nextResourceTopupFrame = frame + RESOURCE_TOPUP_FRAMES
 	nextHealthParamFrame = frame + HEALTH_PARAM_UPDATE_FRAMES
 	if spSetUnitNeutral then
 		spSetUnitNeutral(unitID, false)
+	end
+	if bossRuntime.active and bossRuntime.active.weakVariant then
+		bossRuntime.applyWeakVariant(unitID, unitDef)
 	end
 	spSetUnitRulesParam(unitID, "final_boss", 1, { public = true })
 	spSetUnitRulesParam(unitID, "final_boss_phase", bossPhase, { public = true })
@@ -1489,7 +1796,7 @@ local function spawnBossPhase(frame, phase)
 		setBossRuleParam("phase2_pending", 0)
 		setBossRuleParam("phase2_spawn_frame", phase2SpawnFrame)
 	end
-	bossUnits[unitID] = true
+	bossUnits[unitID] = bossRuntime.active or true
 	updateHudParams()
 	if bossMode == MODE_MIDDLE_ROAM then
 		orderMiddleRoam(frame, false)
@@ -1499,14 +1806,12 @@ local function spawnBossPhase(frame, phase)
 	return true
 end
 
-local function spawnBoss(frame)
-	return spawnBossPhase(frame, PHASE_CORE)
-end
-
 local function resetBossRuntimeState(frame, phase)
+	if bossUnitID then
+		bossUnits[bossUnitID] = nil
+	end
 	bossUnitID = nil
 	bossTeamID = nil
-	bossUnits = {}
 	bossPhase = phase or PHASE_CORE
 	bossSpawned = false
 	bossSpawnFrame = -1
@@ -1541,11 +1846,89 @@ local function resetBossRuntimeState(frame, phase)
 	nextResourceTopupFrame = 0
 	nextHealthParamFrame = 0
 	shieldActive = false
+	if bossRuntime.active then
+		bossRuntime.active.shieldFrame = -1
+	end
 	clearBossAttackerDamage()
 	setBossRuleParam("actual_spawn_frame", -1)
 	setBossRuleParam("shield_active", 0)
 	setBossRuleParam("shield_frame", -1)
 	updateHudParams()
+end
+
+function bossRuntime.resetContexts(frame)
+	for i = 1, #bossRuntime.order do
+		local context = bossRuntime.order[i]
+		bossRuntime.load(context)
+		resetBossRuntimeState(frame, context.phase)
+		context.lockedTargetAllyTeamID = nil
+		bossRuntime.capture(context)
+	end
+	bossRuntime.active = nil
+end
+
+function bossRuntime.removeAllBosses(frame)
+	for i = 1, #bossRuntime.order do
+		local context = bossRuntime.order[i]
+		local unitID = context.unitID
+		if unitID then
+			devReplacedBossUnits[unitID] = true
+			bossUnits[unitID] = nil
+			if spDestroyUnit then
+				spDestroyUnit(unitID, false, true)
+			end
+		end
+	end
+	bossRuntime.resetContexts(frame)
+end
+
+function bossRuntime.cancelEvent(frame)
+	bossRuntime.removeAllBosses(frame)
+	bossRuntime.eventResolved = true
+	bossRuntime.eventSpawned = false
+	bossRuntime.eventCancelled = true
+	bossRuntime.actualSpawnFrame = -1
+	bossRuntime.active = nil
+	spSetGameRulesParam("final_boss_enabled", 0)
+	bossRuntime.publishEvent()
+end
+
+function bossRuntime.spawnEvent(frame)
+	local topAllyTeamID, _, secondAllyTeamID = getAllyTeamEcoLeaders()
+	if not topAllyTeamID
+		or not secondAllyTeamID
+		or not bossRuntime.allyTeamHasEligiblePlayer(topAllyTeamID)
+	then
+		bossRuntime.cancelEvent(frame)
+		return false
+	end
+
+	local darkX, darkZ, coreX, coreZ = bossRuntime.getDualSpawnPositions(topAllyTeamID)
+	local darkContext = bossRuntime.contexts.darkDeus
+	local coreContext = bossRuntime.contexts.core
+
+	darkContext.lockedTargetAllyTeamID = nil
+	bossRuntime.load(darkContext)
+	local darkSpawned = spawnBossPhase(frame, PHASE_DARK_DEUS, darkX, darkZ)
+	bossRuntime.capture(darkContext)
+
+	coreContext.lockedTargetAllyTeamID = secondAllyTeamID
+	bossRuntime.load(coreContext)
+	local coreSpawned = spawnBossPhase(frame, PHASE_CORE, coreX, coreZ)
+	bossRuntime.capture(coreContext)
+
+	if not darkSpawned or not coreSpawned then
+		bossRuntime.cancelEvent(frame)
+		return false
+	end
+
+	bossRuntime.eventResolved = true
+	bossRuntime.eventSpawned = true
+	bossRuntime.eventCancelled = false
+	bossRuntime.actualSpawnFrame = frame
+	bossRuntime.active = nil
+	bossRuntime.publishEvent()
+	return true
 end
 
 local function replaceBossPhase(frame, phase)
@@ -1562,14 +1945,6 @@ local function replaceBossPhase(frame, phase)
 		spDestroyUnit(oldUnitID, false, true)
 	end
 	return spawnBossPhase(frame, phase)
-end
-
-local function schedulePhase2(frame)
-	phase2Pending = true
-	phase2SpawnFrame = frame + PHASE2_DELAY_FRAMES
-	setBossRuleParam("phase2_pending", 1)
-	setBossRuleParam("phase2_spawn_frame", phase2SpawnFrame)
-	updateHudParams()
 end
 
 bossDistanceToTarget = function()
@@ -1644,8 +2019,10 @@ local function updateBoss(frame)
 	updateBossShield(frame)
 
 	if bossState == STATE_FORCED_MOVE then
-		-- Phase 2 keeps tracking the richest allyTeam while forced-moving.
-		if bossPhase == PHASE_DARK_DEUS and refreshTarget(frame, false) then
+		-- Attack-only bosses keep their assigned allyTeam current while forced-moving.
+		if (bossPhase == PHASE_DARK_DEUS or (bossRuntime.active and bossRuntime.active.weakVariant))
+			and refreshTarget(frame, false)
+		then
 			orderForcedMove(frame)
 			return
 		end
@@ -1726,19 +2103,23 @@ local function updateBoss(frame)
 end
 
 function gadget:Initialize()
+	bossRuntime.eventResolved = false
+	bossRuntime.eventSpawned = false
+	bossRuntime.eventCancelled = false
+	bossRuntime.actualSpawnFrame = -1
+	bossRuntime.resetContexts(0)
 	setBossRuleParam("enabled", 1)
 	setBossRuleParam("spawn_frame", SPAWN_FRAME)
 	setBossRuleParam("warning_frame", WARNING_FRAME)
 	setBossRuleParam("actual_spawn_frame", -1)
-	setBossRuleParam("phase", PHASE_CORE)
+	setBossRuleParam("phase", PHASE_DARK_DEUS)
 	setBossRuleParam("phase2_spawn_frame", -1)
 	setBossRuleParam("phase2_pending", 0)
-	setBossAttackerClass(ATTACKER_UNKNOWN, -1)
 	setBossRuleParam("shield_active", 0)
 	setBossRuleParam("shield_frame", -1)
 	setDevMode(false)
 	gadgetHandler:AddChatAction(DEV_MODE_CHAT_ACTION, toggleDevMode, " toggles Final Boss dev mode (requires cheats)")
-	updateHudParams()
+	bossRuntime.publishEvent()
 end
 
 function gadget:Shutdown()
@@ -1749,13 +2130,21 @@ function gadget:GameFrame(frame)
 	if devMode and (not spIsCheatingEnabled or not spIsCheatingEnabled()) then
 		setDevMode(false)
 	end
-	if not bossSpawned and frame >= SPAWN_FRAME then
-		spawnBoss(frame)
+	if not bossRuntime.eventResolved and frame >= SPAWN_FRAME then
+		bossRuntime.spawnEvent(frame)
 	end
-	if phase2Pending and frame >= phase2SpawnFrame then
-		spawnBossPhase(frame, PHASE_DARK_DEUS)
+	if bossRuntime.eventSpawned then
+		for i = 1, #bossRuntime.order do
+			local context = bossRuntime.order[i]
+			if context.alive then
+				bossRuntime.load(context)
+				updateBoss(frame)
+				bossRuntime.capture(context)
+			end
+		end
+		bossRuntime.active = nil
+		bossRuntime.publishEvent()
 	end
-	updateBoss(frame)
 end
 
 function gadget:RecvLuaMsg(msg, playerID)
@@ -1766,11 +2155,29 @@ function gadget:RecvLuaMsg(msg, playerID)
 		return true
 	end
 	local frame = spGetGameFrame()
+	local context
 	if msg == DEV_SPAWN_CORE_MSG then
-		replaceBossPhase(frame, PHASE_CORE)
+		context = bossRuntime.contexts.core
+		local topAllyTeamID, _, secondAllyTeamID = getAllyTeamEcoLeaders()
+		context.lockedTargetAllyTeamID = secondAllyTeamID or topAllyTeamID
 	else
-		replaceBossPhase(frame, PHASE_DARK_DEUS)
+		context = bossRuntime.contexts.darkDeus
+		context.lockedTargetAllyTeamID = nil
 	end
+	bossRuntime.load(context)
+	local spawned = replaceBossPhase(frame, context.phase)
+	bossRuntime.capture(context)
+	bossRuntime.active = nil
+	if spawned then
+		bossRuntime.eventResolved = true
+		bossRuntime.eventSpawned = true
+		bossRuntime.eventCancelled = false
+		if bossRuntime.actualSpawnFrame < 0 then
+			bossRuntime.actualSpawnFrame = frame
+		end
+		spSetGameRulesParam("final_boss_enabled", 1)
+	end
+	bossRuntime.publishEvent()
 	return true
 end
 
@@ -1780,26 +2187,33 @@ function gadget:UnitDestroyed(unitID)
 		bossUnits[unitID] = nil
 		return
 	end
-	if unitID == bossUnitID then
-		local destroyedPhase = bossPhase
+	local context = bossUnits[unitID]
+	if type(context) == "table" then
+		bossRuntime.load(context)
 		bossUnits[unitID] = nil
 		bossAlive = false
 		bossUnitID = nil
 		bossState = STATE_DEAD
-		if destroyedPhase == PHASE_CORE then
-			schedulePhase2(spGetGameFrame())
-			return
-		end
 		updateHudParams()
+		bossRuntime.capture(context)
+		bossRuntime.active = nil
+		bossRuntime.publishEvent()
 	end
 end
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
-	local target = bossUnits[unitID]
+	local context = bossUnits[unitID]
 	local bossDamageClass
-	if target and unitTeam == bossTeamID and weaponID and WeaponDefs then
+	if type(context) == "table" then
+		bossRuntime.load(context)
+	end
+	if context and unitTeam == bossTeamID and weaponID and WeaponDefs then
 		local weaponDef = WeaponDefs[weaponID]
 		if weaponDef and weaponDef.type == "DGun" then
+			if type(context) == "table" then
+				bossRuntime.capture(context)
+				bossRuntime.active = nil
+			end
 			return 0, 1
 		end
 		if attackerTeam and attackerTeam ~= bossTeamID then
@@ -1810,16 +2224,26 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 	if bossDamageClass then
 		addBossAttackerDamage(bossDamageClass, damage, spGetGameFrame())
 	end
+	if type(context) == "table" then
+		bossRuntime.capture(context)
+		bossRuntime.active = nil
+	end
 	return damage, 1
 end
 
 function gadget:TeamDied(teamID)
 	local allyTeamID = getTeamAllyTeamID(teamID)
-	if teamID == targetTeamID
-		or allyTeamID == targetAllyTeamID
-		or allyTeamID == middleRoamTopAllyTeamID
-		or allyTeamID == middleRoamSecondAllyTeamID
-	then
-		nextRetargetFrame = 0
+	for i = 1, #bossRuntime.order do
+		local context = bossRuntime.order[i]
+		bossRuntime.load(context)
+		if teamID == targetTeamID
+			or allyTeamID == targetAllyTeamID
+			or allyTeamID == middleRoamTopAllyTeamID
+			or allyTeamID == middleRoamSecondAllyTeamID
+		then
+			nextRetargetFrame = 0
+		end
+		bossRuntime.capture(context)
 	end
+	bossRuntime.active = nil
 end

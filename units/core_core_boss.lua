@@ -20,6 +20,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "280 100 280",
 		collisionvolumetype = "Ell",
+		corpse = "dead",
 		cruisealt = 250,
 		description = "Admiral AeroShip",
 		energystorage = 100000,
@@ -51,6 +52,37 @@ return {
 			buildpic = "core_core.dds",
 			faction = "CORE",
 			normaltex = "unittextures/core_normals.dds",
+		},
+		featuredefs = {
+			dead = {
+				blocking = true,
+				damage = 1806600,
+				description = "Boss Core Wreckage",
+				energy = 0,
+				featuredead = "heap",
+				footprintx = 32,
+				footprintz = 32,
+				metal = 37240000,
+				object = "core/core_core_dead.s3o",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
+			heap = {
+				blocking = false,
+				damage = 2717900,
+				description = "Boss Core Debris",
+				energy = 0,
+				footprintx = 10,
+				footprintz = 10,
+				metal = 18620000,
+				object = "10x10z.s3o",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
