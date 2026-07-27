@@ -56,7 +56,7 @@ local DUAL_BOSS_CONFIG = {
 	fallbackMaxTS = 40,
 	spawnBaseFraction = 0.25,
 	spawnSeparation = 650,
-	weakHpMult = 0.10,
+	weakHpMult = 0.30,
 	weakSpeedMult = 1.50,
 }
 
@@ -1686,8 +1686,9 @@ local function chooseBossMode(frame)
 		if lockedAllyTeamID and #getCandidateTeams(lockedAllyTeamID) > 0 then
 			return MODE_ATTACK, lockedAllyTeamID, secondAllyTeamID
 		end
-		context.lockedTargetAllyTeamID = topAllyTeamID
-		return MODE_ATTACK, topAllyTeamID, secondAllyTeamID
+		local nextTargetAllyTeamID = secondAllyTeamID or topAllyTeamID
+		context.lockedTargetAllyTeamID = nextTargetAllyTeamID
+		return MODE_ATTACK, nextTargetAllyTeamID, secondAllyTeamID
 	end
 	if bossPhase == PHASE_DARK_DEUS then
 		return MODE_ATTACK, topAllyTeamID, secondAllyTeamID

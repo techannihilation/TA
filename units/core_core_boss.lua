@@ -1,3 +1,6 @@
+local bossEnergyCost = 870000000
+local bossMetalCost = 37240000
+
 return {
 	core_core_boss = {
 		acceleration = 0.02,
@@ -5,8 +8,8 @@ return {
 		airHoverFactor = 1,
 		bankingallowed = false,
 		brakerate = 0.01,
-		buildcostenergy = 870000000,
-		buildcostmetal = 37240000,
+		buildcostenergy = bossEnergyCost,
+		buildcostmetal = bossMetalCost,
 		builder = false,
 		buildpic = "core_core.dds",
 		buildtime = 107200000,
@@ -58,11 +61,11 @@ return {
 				blocking = true,
 				damage = 1806600,
 				description = "Boss Core Wreckage",
-				energy = 0,
+				energy = bossEnergyCost,
 				featuredead = "heap",
 				footprintx = 32,
 				footprintz = 32,
-				metal = 37240000,
+				metal = bossMetalCost,
 				object = "core/core_core_dead.s3o",
 				reclaimable = true,
 				customparams = {
@@ -73,10 +76,10 @@ return {
 				blocking = false,
 				damage = 2717900,
 				description = "Boss Core Debris",
-				energy = 0,
+				energy = bossEnergyCost,
 				footprintx = 10,
 				footprintz = 10,
-				metal = 18620000,
+				metal = bossMetalCost,
 				object = "10x10z.s3o",
 				reclaimable = true,
 				customparams = {
