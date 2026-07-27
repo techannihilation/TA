@@ -27,7 +27,7 @@ local glText = gl.Text
 local FRAMES_PER_SECOND = 30
 local DEAD_DISPLAY_FRAMES = 60 * FRAMES_PER_SECOND
 local SHIELD_ALERT_FRAMES = 6 * FRAMES_PER_SECOND
-local PHASE2_ALERT_FRAMES = 7 * FRAMES_PER_SECOND
+local DUAL_SPAWN_ALERT_FRAMES = 7 * FRAMES_PER_SECOND
 local PANEL_MARGIN = 8
 local PANEL_DEFAULT_RIGHT_MARGIN = 24
 local PANEL_DEFAULT_TOP_MARGIN = 118
@@ -41,7 +41,6 @@ local FITTED_TEXT_MIN_SIZE = 10
 local STATE_FIGHT = 1
 local STATE_FORCED_MOVE = 2
 local STATE_DEAD = 3
-local PHASE_DARK_DEUS = 2
 
 local ATTACKER_UNKNOWN = 0
 local ATTACKER_COMMANDER = 1
@@ -882,6 +881,15 @@ local function drawFittedText(text, x, y, size, options, maxWidth)
 	glText(text, x, y, fittedSize, options)
 end
 
+local function formatBossStatus(name, alive, hpFraction, shieldActive)
+	if alive ~= 1 then
+		return name .. ": DESTROYED"
+	end
+	local hpPercent = math.floor((math.max(0, math.min(1, hpFraction or 0)) * 100) + 0.5)
+	local suffix = shieldActive == 1 and "  [ARMORED]" or ""
+	return string.format("%s: %d%%%s", name, hpPercent, suffix)
+end
+
 local function clamp(value, minValue, maxValue)
 	if value < minValue then
 		return minValue
@@ -898,7 +906,9 @@ local function getPanelSize()
 	if panelW > maxPanelW then
 		panelW = maxPanelW
 	end
-	local panelH = math.min(72, math.max(1, vsy - (PANEL_MARGIN * 2)))
+	local dualSpawned = spGetGameRulesParam("final_boss_dual") == 1
+	local wantedHeight = dualSpawned and 112 or 72
+	local panelH = math.min(wantedHeight, math.max(1, vsy - (PANEL_MARGIN * 2)))
 	return panelW, panelH
 end
 
@@ -967,17 +977,13 @@ local function isStatusPanelVisible()
 	end
 
 	local state = spGetGameRulesParam("final_boss_state") or 0
-	local phase2Pending = spGetGameRulesParam("final_boss_phase2_pending") or 0
-	if phase2Pending == 1 then
-		return true
-	end
 	if state == STATE_DEAD and deadSeenFrame and frame > (deadSeenFrame + DEAD_DISPLAY_FRAMES) then
 		return false
 	end
 	return true
 end
 
-local function drawShieldAlert(frame, shieldFrame)
+local function drawShieldAlert(frame, shieldFrame, bossName)
 	if not shieldFrame or shieldFrame < 0 then
 		return
 	end
@@ -1004,22 +1010,22 @@ local function drawShieldAlert(frame, shieldFrame)
 	glRect(x1, y1, x2, y1 + 3)
 
 	glColor(1.0, 0.18 + 0.12 * pulse, 0.08, alpha)
-	drawFittedText("BOSS GOT MAD", vsx * 0.5, y2 - 43, 27 + (4 * pulse), "oc", panelW - 40)
+	drawFittedText((bossName or "BOSS") .. " GOT MAD", vsx * 0.5, y2 - 43, 27 + (4 * pulse), "oc", panelW - 40)
 	glColor(0.92, 0.95, 1.0, alpha)
 	drawFittedText("Advanced shields online. Someone dented the expensive ego.", vsx * 0.5, y1 + 30, 15, "oc", panelW - 44)
 	glColor(1, 1, 1, 1)
 end
 
-local function drawPhase2Alert(frame, phase2Frame)
-	if not phase2Frame or phase2Frame < 0 then
+local function drawDualSpawnAlert(frame, spawnFrame)
+	if not spawnFrame or spawnFrame < 0 then
 		return
 	end
-	local elapsed = frame - phase2Frame
-	if elapsed < 0 or elapsed > PHASE2_ALERT_FRAMES then
+	local elapsed = frame - spawnFrame
+	if elapsed < 0 or elapsed > DUAL_SPAWN_ALERT_FRAMES then
 		return
 	end
 
-	local progress = elapsed / PHASE2_ALERT_FRAMES
+	local progress = elapsed / DUAL_SPAWN_ALERT_FRAMES
 	local alpha = math.min(1, progress / 0.12, (1 - progress) / 0.22)
 	local pulse = 0.5 + 0.5 * math.sin(elapsed * 0.28)
 	local panelW = math.min(760, math.max(380, vsx - 80))
@@ -1037,9 +1043,9 @@ local function drawPhase2Alert(frame, phase2Frame)
 	glRect(x1, y1, x2, y1 + 3)
 
 	glColor(1.0, 0.22 + 0.16 * pulse, 0.16, alpha)
-	drawFittedText("PHASE 2: DARK DEUS", vsx * 0.5, y2 - 44, 27 + (4 * pulse), "oc", panelW - 40)
+	drawFittedText("FINAL BOSSES ARRIVED", vsx * 0.5, y2 - 44, 27 + (4 * pulse), "oc", panelW - 40)
 	glColor(0.94, 0.92, 1.0, alpha)
-	drawFittedText("Boss Dark Deus has entered the field.", vsx * 0.5, y1 + 31, 15, "oc", panelW - 44)
+	drawFittedText("Dark Deus and Core Boss have entered the field.", vsx * 0.5, y1 + 31, 15, "oc", panelW - 44)
 	glColor(1, 1, 1, 1)
 end
 
@@ -1090,21 +1096,27 @@ function widget:DrawScreen()
 	local actualSpawnFrame = spGetGameRulesParam("final_boss_actual_spawn_frame") or -1
 	local spawned = spGetGameRulesParam("final_boss_spawned") or 0
 	local alive = spGetGameRulesParam("final_boss_alive") or 0
+	local aliveCount = spGetGameRulesParam("final_boss_alive_count") or 0
+	local totalCount = spGetGameRulesParam("final_boss_total_count") or 2
 	local state = spGetGameRulesParam("final_boss_state") or 0
-	local shieldFrame = spGetGameRulesParam("final_boss_shield_frame") or -1
 	local shieldActive = spGetGameRulesParam("final_boss_shield_active") or 0
-	local phase = spGetGameRulesParam("final_boss_phase") or 1
-	local phase2SpawnFrame = spGetGameRulesParam("final_boss_phase2_spawn_frame") or -1
-	local phase2Pending = spGetGameRulesParam("final_boss_phase2_pending") or 0
 	local hpFraction = spGetGameRulesParam("final_boss_hp_fraction") or 1
 	local attackerClass = spGetGameRulesParam("final_boss_attacker_class") or ATTACKER_UNKNOWN
+	local darkAlive = spGetGameRulesParam("final_boss_dark_deus_alive") or 0
+	local darkHpFraction = spGetGameRulesParam("final_boss_dark_deus_hp_fraction") or 0
+	local darkShieldActive = spGetGameRulesParam("final_boss_dark_deus_shield_active") or 0
+	local darkShieldFrame = spGetGameRulesParam("final_boss_dark_deus_shield_frame") or -1
+	local coreAlive = spGetGameRulesParam("final_boss_core_alive") or 0
+	local coreHpFraction = spGetGameRulesParam("final_boss_core_hp_fraction") or 0
+	local coreShieldActive = spGetGameRulesParam("final_boss_core_shield_active") or 0
+	local coreShieldFrame = spGetGameRulesParam("final_boss_core_shield_frame") or -1
 
 	if spawned ~= 1 then
 		if frame < warningFrame then
 			return
 		end
 	end
-	if state == STATE_DEAD and phase2Pending ~= 1 then
+	if state == STATE_DEAD then
 		if not deadSeenFrame then
 			deadSeenFrame = frame
 		end
@@ -1123,21 +1135,17 @@ function widget:DrawScreen()
 
 	if spawned ~= 1 then
 		local framesUntilSpawn = spawnFrame - frame
-		title = "FINAL BOSS IN " .. fmtTime(framesUntilSpawn)
+		title = "FINAL BOSSES IN " .. fmtTime(framesUntilSpawn)
 		detail = getCountdownLine(frame, spawnFrame, warningFrame)
-	elseif phase2Pending == 1 then
-		title = "PHASE 2 IN " .. fmtTime(phase2SpawnFrame - frame)
-		detail = "Boss Dark Deus is entering the field."
-		colorPrefix = "\255\255\120\220"
 	elseif state == STATE_DEAD or alive ~= 1 then
-		title = "FINAL BOSS DESTROYED"
+		title = "FINAL BOSSES DESTROYED"
 		detail = pickLine(getDeadLines(attackerClass), frame)
 		colorPrefix = "\255\160\255\160"
 	else
-		if phase == PHASE_DARK_DEUS then
-			title = "FINAL BOSS PHASE 2"
+		if aliveCount == 1 then
+			title = "FINAL BOSS ACTIVE - 1/" .. totalCount
 		else
-			title = "FINAL BOSS ACTIVE"
+			title = "FINAL BOSSES ACTIVE - " .. aliveCount .. "/" .. totalCount
 		end
 		detail = pickLine(getActiveLines(state, hpFraction, shieldActive, frame, actualSpawnFrame, attackerClass), frame)
 		colorPrefix = "\255\255\120\90"
@@ -1145,12 +1153,42 @@ function widget:DrawScreen()
 
 	drawPanel(x1, y1, x2, y2)
 	drawFittedText(colorPrefix .. title, x1 + 14, y2 - 27, TITLE_TEXT_SIZE, "o", textMaxW)
-	drawFittedText("\255\225\225\225" .. detail, x1 + 14, y1 + 17, DETAIL_TEXT_SIZE, "o", textMaxW)
+	if spawned == 1 then
+		drawFittedText(
+			"\255\255\120\220" .. formatBossStatus("DARK DEUS", darkAlive, darkHpFraction, darkShieldActive),
+			x1 + 14,
+			y2 - 49,
+			DETAIL_TEXT_SIZE,
+			"o",
+			textMaxW
+		)
+		drawFittedText(
+			"\255\255\150\90" .. formatBossStatus("CORE BOSS", coreAlive, coreHpFraction, coreShieldActive),
+			x1 + 14,
+			y2 - 68,
+			DETAIL_TEXT_SIZE,
+			"o",
+			textMaxW
+		)
+		drawFittedText("\255\225\225\225" .. detail, x1 + 14, y1 + 12, DETAIL_TEXT_SIZE, "o", textMaxW)
+	else
+		drawFittedText("\255\225\225\225" .. detail, x1 + 14, y1 + 17, DETAIL_TEXT_SIZE, "o", textMaxW)
+	end
+	if spawned == 1 then
+		drawDualSpawnAlert(frame, actualSpawnFrame)
+	end
 	if alive == 1 and state ~= STATE_DEAD then
-		if phase == PHASE_DARK_DEUS then
-			drawPhase2Alert(frame, phase2SpawnFrame)
+		local alertFrame = -1
+		local alertName
+		if darkAlive == 1 and darkShieldFrame > alertFrame then
+			alertFrame = darkShieldFrame
+			alertName = "DARK DEUS"
 		end
-		drawShieldAlert(frame, shieldFrame)
+		if coreAlive == 1 and coreShieldFrame > alertFrame then
+			alertFrame = coreShieldFrame
+			alertName = "CORE BOSS"
+		end
+		drawShieldAlert(frame, alertFrame, alertName)
 	end
 	glColor(1, 1, 1, 1)
 end

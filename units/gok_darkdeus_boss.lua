@@ -38,6 +38,10 @@ bossDef.customparams = bossDef.customparams or {}
 bossDef.customparams.buildpic = "gok_darkdeus.dds"
 bossDef.customparams.faction = "GOK"
 bossDef.customparams.final_boss_phase = "2"
+bossDef.featuredefs.dead.metal = bossDef.buildcostmetal
+bossDef.featuredefs.dead.energy = 0
+bossDef.featuredefs.heap.metal = bossDef.buildcostmetal * 0.5
+bossDef.featuredefs.heap.energy = 0
 applyBossWeaponTargeting(bossDef)
 
 return {
