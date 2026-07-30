@@ -1,8 +1,6 @@
 -- Exceptions list for music, it will not check these units for a switch between war and peace
 
-local exceptions = {
-	"terraunit",
-}
+local exceptions = {}
 
 local array = {}
 

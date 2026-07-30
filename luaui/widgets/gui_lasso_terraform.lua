@@ -72,13 +72,12 @@ local modf = math.modf
 local string_format = string.format
 
 local team = Spring.GetMyTeamID()
+local commanderDefs = VFS.Include("luarules/configs/comDefIDs.lua") or {}
 
 -- command IDs
 local CMD_RAMP = 39734
 local CMD_LEVEL = 39736
-local CMD_RAISE = 39737
 local CMD_SMOOTH = 39738
-local CMD_RESTORE = 39739
 local CMD_BUMPY = 39740
 local CMD_TERRAFORM_INTERNAL = 39801
 
@@ -94,11 +93,9 @@ local originalCommandGiven = false
 -- max difference of height around terraforming, Makes Shraka Pyramids. Not used
 local maxHeightDifference = 30 
 
--- elmos of height that correspond to a 1 veritcal pixel of mouse movement during height choosing
-local mouseSensitivity = 2 
-
--- snap to Y grid for raise
-local heightSnap = 6
+-- Elmos per vertical mouse pixel while selecting terraform dimensions.
+local mouseSensitivity = 2
+local minLevelDragPixels = 1
 
 -- max sizes of non-ramp command, reduces slowdown MUST AGREE WITH GADGET VALUES
 local maxAreaSize = 4000 -- max width or length
@@ -112,11 +109,15 @@ local minRampWidth = 24
 
 local startRampWidth = 60
 
+-- Lasso endpoints do not need to meet exactly to form an area.
+local lassoCloseDistance = 300
+local minLassoArea = Grid * Grid
+
 -- max slope of certain units, changes ramp colour
 local botPathingGrad = 1.375
 local vehPathingGrad = 0.498
 
--- Colours used during height choosing for level and raise
+-- Colours used during height selection
 local negVolume   = {1, 0, 0, 0.1} -- negative volume
 local posVolume   = {0, 1, 0, 0.1} -- posisive volume
 local groundGridColor  = {0.3, 0.2, 1, 0.8} -- grid representing new ground height
@@ -129,13 +130,6 @@ local vehPathingColor = {0.2, 1.0, 0.2, 1.0}
 local botPathingColor = {0.78, .78, 0.39, 1.0}
 local noPathingColor = {1.0, 0.2, 0.2, 1.0}
 
--- cost mult of terra
-local costMult = 1
-local modOptions = Spring.GetModOptions()
-if modOptions.terracostmult then
-	costMult = modOptions.terracostmult
-end
-
 ----------------------------------
 -- Global Vars
 
@@ -143,7 +137,7 @@ local drawingLasso = false
 local drawingRectangle = false
 local drawingRamp = false
 local setHeight = false
-local terraform_type = 0 -- 1 = level, 2 = raise, 3 = smooth, 4 = ramp, 5 = restore, 6 = bump
+local terraform_type = 0 -- 1 = level, 3 = smooth, 4 = ramp, 6 = bump
 
 local volumeSelection = 0
 
@@ -167,6 +161,7 @@ local mouseGridDraw
 local mouseUnit = {id = false}
 
 local mouseX, mouseY
+local lassoStartMouseX, lassoStartMouseY
 
 ---------------
 
@@ -187,6 +182,8 @@ local function stopCommand()
 	mouseGridDraw = false
 	volumeSelection = 0
 	points = 0
+	lassoStartMouseX = nil
+	lassoStartMouseY = nil
 	terraform_type = 0
 end
 
@@ -209,22 +206,30 @@ local function completelyStopCommand()
 	drawingRamp = false
 	volumeSelection = 0
 	points = 0
+	lassoStartMouseX = nil
+	lassoStartMouseY = nil
 	terraform_type = 0
 end
 
 local function SendCommand()
-			
-	local constructor = spGetSelectedUnits()
+	local selectedUnits = spGetSelectedUnits()
+	local constructor = {}
+	for i = 1, #selectedUnits do
+		local unitDefID = spGetUnitDefID(selectedUnits[i])
+		if unitDefID and commanderDefs[unitDefID] then
+			constructor[#constructor + 1] = selectedUnits[i]
+		end
+	end
 
 	if terraform_type == 4 then
 		if (#constructor > 0) then 
 			local params = {}
-			params[1] = terraform_type -- 1 = level, 2 = raise, 3 = smooth, 4 = ramp, 5 = restore
+			params[1] = terraform_type -- 1 = level, 3 = smooth, 4 = ramp
 			params[2] = team -- teamID of the team doing the terraform
 			params[3] = loop -- true or false
 			params[4] = terraformHeight -- width of the ramp
 			params[5] = points -- how many points there are in the lasso (2 for ramp)
-			params[6] = #constructor -- how many constructors are working on it
+			params[6] = #constructor -- selected commander candidates
 			params[7] = volumeSelection -- 0 = none, 1 = only raise, 2 = only lower
 			local i = 8
 			for j = 1, points do
@@ -234,7 +239,6 @@ local function SendCommand()
 				i = i + 3
 			end
 					
-			i = i + 2
 			for j = 1, #constructor do
 				params[i] = constructor[j]
 				i = i + 1
@@ -259,7 +263,7 @@ local function SendCommand()
 			params[3] = loop
 			params[4] = terraformHeight 
 			params[5] = points
-			params[6] = #constructor
+			params[6] = #constructor -- selected commander candidates
 			params[7] = volumeSelection
 			local i = 8
 			for j = 1, points do
@@ -268,7 +272,6 @@ local function SendCommand()
 				i = i + 2
 			end
 			
-			i = i + 2
 			for j = 1, #constructor do
 				params[i] = constructor[j]
 				i = i + 1
@@ -314,26 +317,6 @@ local function lineVolumeLevel()
 				end
 			end
 		until true --do not repeat
-	end
-
-end
-
-local function lineVolumeRaise()
-
-	for i = 1, drawPoints do
-		if (terraformHeight < 0) then
-			glColor(negVolume)
-		else
-			glColor(posVolume)
-		end
-		
-		for lx = 2,14,4 do
-			for lz = 2,14,4 do
-				glVertex(drawPoint[i].x+lx ,drawPoint[i].ytl,drawPoint[i].z+lz)
-				glVertex(drawPoint[i].x+lx ,drawPoint[i].ytl + terraformHeight,drawPoint[i].z+lz)
-			end
-		end
-		
 	end
 
 end
@@ -384,32 +367,6 @@ local function mouseGridLevel()
 		if drawPoint[i].Bottom then
 			glVertex(drawPoint[i].x,terraformHeight,drawPoint[i].z+16)
 			glVertex(drawPoint[i].x+Grid,terraformHeight,drawPoint[i].z+16)
-		end
-		
-	end
-
-end
-
-local function mouseGridRaise()
-
-	for i = 1, drawPoints do
-	
-		glColor(groundGridColor)
-		
-		glVertex(drawPoint[i].x,drawPoint[i].ytl+terraformHeight,drawPoint[i].z)
-		glVertex(drawPoint[i].x+Grid,drawPoint[i].ytr+terraformHeight,drawPoint[i].z)
-
-		glVertex(drawPoint[i].x,drawPoint[i].ytl+terraformHeight,drawPoint[i].z)
-		glVertex(drawPoint[i].x,drawPoint[i].ybl+terraformHeight,drawPoint[i].z+Grid)
-		
-		if drawPoint[i].Right then
-			glVertex(drawPoint[i].x+16,drawPoint[i].ytr+terraformHeight,drawPoint[i].z)
-			glVertex(drawPoint[i].x+16,drawPoint[i].ybr+terraformHeight,drawPoint[i].z+Grid)
-		end
-		
-		if drawPoint[i].Bottom then
-			glVertex(drawPoint[i].x,drawPoint[i].ybl+terraformHeight,drawPoint[i].z+16)
-			glVertex(drawPoint[i].x+Grid,drawPoint[i].ybr+terraformHeight,drawPoint[i].z+16)
 		end
 		
 	end
@@ -779,6 +736,65 @@ local function snapToHeight(heightArray, snapHeight, arrayCount)
 	return smallestIndex
 end
 
+local function isClosedLasso(lassoPoints, pointCount)
+	if pointCount < 3 then
+		return false
+	end
+
+	local firstPoint = lassoPoints[1]
+	local lastPoint = lassoPoints[pointCount]
+	local diffX = firstPoint.x - lastPoint.x
+	local diffZ = firstPoint.z - lastPoint.z
+
+	if diffX * diffX + diffZ * diffZ > lassoCloseDistance * lassoCloseDistance then
+		return false
+	end
+
+	local areaTwice = 0
+	local previousPoint = lastPoint
+	for i = 1, pointCount do
+		local currentPoint = lassoPoints[i]
+		areaTwice = areaTwice
+			+ previousPoint.x * currentPoint.z
+			- currentPoint.x * previousPoint.z
+		previousPoint = currentPoint
+	end
+
+	return abs(areaTwice) >= minLassoArea * 2
+end
+
+local function updateRampEndpoint(mx, my)
+	local _, pos = spTraceScreenRay(mx, my, true)
+	if not legalPos(pos) then
+		return false
+	end
+
+	local diffX = pos[1] - point[1].x
+	local diffZ = pos[3] - point[1].z
+	local distance = sqrt(diffX * diffX + diffZ * diffZ)
+	if distance <= 0.0001 then
+		return false
+	end
+
+	local rampLength = distance
+	if rampLength < minRampLength then
+		rampLength = minRampLength
+	elseif rampLength > maxRampLength then
+		rampLength = maxRampLength
+	end
+
+	local endX = point[1].x + rampLength * diffX / distance
+	local endZ = point[1].z + rampLength * diffZ / distance
+	local endHeight = spGetGroundHeight(endX, endZ)
+	point[2] = {
+		x = endX,
+		y = endHeight,
+		z = endZ,
+		ground = endHeight,
+	}
+	return true
+end
+
 function widget:MousePress(mx, my, button)
 
 	local toolTip = Spring.GetCurrentTooltip()
@@ -788,7 +804,7 @@ function widget:MousePress(mx, my, button)
 
 	local activeCmdIndex, activeid = spGetActiveCommand()
 	
-	if ((activeid == CMD_LEVEL) or (activeid == CMD_RAISE) or (activeid == CMD_SMOOTH) or (activeid == CMD_RESTORE) or (activeid == CMD_BUMPY)) 
+	if ((activeid == CMD_LEVEL) or (activeid == CMD_SMOOTH) or (activeid == CMD_BUMPY))
 			and not (setHeight or drawingRectangle or drawingLasso or drawingRamp) then
 	
 		if button == 1 then
@@ -820,6 +836,8 @@ function widget:MousePress(mx, my, button)
 					else
 						drawingRectangle = false
 						drawingLasso = true
+						lassoStartMouseX = mx
+						lassoStartMouseY = my
 						points = 1
 						point[1] = {x = pos[1], y = orHeight, z = pos[3]}
 					end
@@ -828,14 +846,8 @@ function widget:MousePress(mx, my, button)
 						terraform_type = 1
 						terraformHeight = point[1].y
 						storedHeight = orHeight
-					elseif (activeid == CMD_RAISE) then
-						terraform_type = 2
-						terraformHeight = 0
-						storedHeight = 0
 					elseif (activeid == CMD_SMOOTH) then
 						terraform_type = 3
-					elseif (activeid == CMD_RESTORE) then
-						terraform_type = 5
 					elseif (activeid == CMD_BUMPY) then
 						terraform_type = 6
 					end
@@ -860,14 +872,11 @@ function widget:MousePress(mx, my, button)
 					orHeight = spGetGroundHeight(pos[1],pos[3])
 					
 					point[1] = {x = pos[1], y = orHeight, z = pos[3], ground = orHeight}
-					point[2] = {x = pos[1], y = point[1].y, z = pos[3], ground = point[1]}
-					storedHeight = orHeight
+					point[2] = {x = pos[1], y = point[1].y, z = pos[3], ground = orHeight}
 					points = 2
 					drawingRamp = 1
 					terraform_type = 4
 					terraformHeight = startRampWidth -- width
-					mouseX = mx
-					mouseY = my
 					return true
 					
 				end
@@ -884,9 +893,9 @@ function widget:MousePress(mx, my, button)
 	end
 	
 	if drawingRamp == 2 and button == 1 then
-		mouseX = mx
-		mouseY = my
-		drawingRamp = 3
+		if updateRampEndpoint(mx, my) then
+			drawingRamp = 3
+		end
 		return true
 	end
 	
@@ -957,53 +966,7 @@ function widget:MouseMove(mx, my, dx, dy, button)
 		
 		return true
 		
-	elseif drawingRamp == 1 then
-		
-		local a,c,m,s = spGetModKeyState()
-		if a then
-			Spring.WarpMouse (mouseX,mouseY)
-			storedHeight = storedHeight + (my-mouseY)*mouseSensitivity
-			local heightArray = {
-				-6,
-				orHeight,
-			}
-			point[1].y = heightArray[snapToHeight(heightArray,storedHeight,2)]
-		else
-			if my ~= mouseY then
-				Spring.WarpMouse (mouseX,mouseY)
-				point[1].y = point[1].y + (my-mouseY)*mouseSensitivity
-				storedHeight = point[1].y 
-			end	
-		end
-		
-		return true
-		
-	elseif drawingRamp == 3 then
-
-		local a,c,m,s = spGetModKeyState()
-		if a then
-			Spring.WarpMouse (mouseX,mouseY)
-
-			local dis = sqrt((point[1].x-point[2].x)^2 + (point[1].z-point[2].z)^2)
-			storedHeight = storedHeight + (my-mouseY)/50*dis*mouseSensitivity
-			local heightArray = {
-				botPathingGrad*dis+point[1].y,
-				vehPathingGrad*dis+point[1].y,
-				point[1].y,
-				-botPathingGrad*dis+point[1].y,
-				-vehPathingGrad*dis+point[1].y,
-				-5,
-				orHeight,
-			}
-			point[2].y = heightArray[snapToHeight(heightArray,storedHeight,7)]
-		else
-			if my ~= mouseY then
-				Spring.WarpMouse (mouseX,mouseY)
-				point[2].y = point[2].y + (my-mouseY)*mouseSensitivity
-				storedHeight = point[2].y 
-			end
-		end
-			
+	elseif drawingRamp == 1 or drawingRamp == 3 then
 		return true
 	
 	end
@@ -1028,7 +991,7 @@ function widget:Update(n)
 				end
 			elseif a then
 				Spring.WarpMouse (mouseX,mouseY)
-				storedHeight = storedHeight + (my-mouseY)*mouseSensitivity 
+				storedHeight = storedHeight + (my-mouseY)*mouseSensitivity
 				local heightArray = {
 					-2,
 					orHeight,
@@ -1046,25 +1009,6 @@ function widget:Update(n)
 			end
 			volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
 			mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
-		elseif terraform_type == 2 then
-			Spring.WarpMouse (mouseX,mouseY)
-			local a,c,m,s = spGetModKeyState()
-			if c then
-				terraformHeight = 0
-				storedHeight = 0
-			elseif a then
-				storedHeight = storedHeight + (my-mouseY)*mouseSensitivity 
-				terraformHeight = floor((storedHeight+heightSnap/2)/heightSnap)*heightSnap
-			else
-				terraformHeight = terraformHeight + (my-mouseY)*mouseSensitivity
-				storedHeight = terraformHeight
-			end
-			if (volumeDraw) then
-				gl.DeleteList(volumeDraw); volumeDraw=nil
-				gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-			end			
-			volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeRaise)
-			mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridRaise)
 		elseif terraform_type == 4 then
 			Spring.WarpMouse (mouseX,mouseY)
 			terraformHeight = terraformHeight + (my-mouseY)*mouseSensitivity
@@ -1078,31 +1022,7 @@ function widget:Update(n)
 	
 	elseif drawingRamp == 2 then
 		local mx,my = Spring.GetMouseState()
-		local _, pos = spTraceScreenRay(mx, my, true)
-		if legalPos(pos) then
-			local dis = sqrt((point[1].x-pos[1])^2 + (point[1].z-pos[3])^2)
-			if dis ~= 0 then
-				orHeight = spGetGroundHeight(pos[1],pos[3])
-				storedHeight = orHeight
-				if dis < minRampLength then
-					point[2] = {
-						x = point[1].x+minRampLength*(pos[1]-point[1].x)/dis, 
-						y = orHeight, 
-						z = point[1].z+minRampLength*(pos[3]-point[1].z)/dis, 
-						ground = orHeight
-					}
-				elseif dis > maxRampLength then
-					point[2] = {
-						x = point[1].x+maxRampLength*(pos[1]-point[1].x)/dis, 
-						y = orHeight, 
-						z = point[1].z+maxRampLength*(pos[3]-point[1].z)/dis, 
-						ground = orHeight
-					}
-				else
-					point[2] = {x = pos[1], y = orHeight, z = pos[3], ground = orHeight}	
-				end
-			end
-		end
+		updateRampEndpoint(mx, my)
 	end
 
 end
@@ -1112,26 +1032,37 @@ function widget:MouseRelease(mx, my, button)
 	if drawingLasso then
 		if button == 1 then
 			--spSetActiveCommand(-1)
+
+			local levelSelectionMoved = terraform_type ~= 1
+				or (lassoStartMouseX ~= nil and lassoStartMouseY ~= nil and (
+					abs(mx - lassoStartMouseX) >= minLevelDragPixels
+					or abs(my - lassoStartMouseY) >= minLevelDragPixels
+				))
+			if not levelSelectionMoved then
+				stopCommand()
+				return true
+			end
 			
 			local _, pos = spTraceScreenRay(mx, my, true)
 			if legalPos(pos) then
 				local diffX = abs(point[points].x - pos[1])
 				local diffZ = abs(point[points].z - pos[3])
-				if diffX >= 10 or diffZ >= 10 then
+				if diffX >= 10 or diffZ >= 10 or (terraform_type == 1 and points == 1) then
 					points = points + 1
 					point[points] = {x = pos[1], y = spGetGroundHeight(pos[1],pos[3]), z = pos[3]}
 				end
+			elseif terraform_type == 1 and points == 1 then
+				stopCommand()
+				return true
 			end
 			
-			if terraform_type == 1 or terraform_type == 2 then
+			if terraform_type == 1 then
 				setHeight = true
 				drawingLasso = false
 				mouseX = mx
 				mouseY = my
 				
-				local disSQ = (point[1].x-point[points].x)^2 + (point[1].z-point[points].z)^2
-			
-				if disSQ < 6400 and points > 10 then
+				if isClosedLasso(point, points) then
 					loop = 1
 					calculateAreaPoints(point,points)
 					if (groundGridDraw) then gl.DeleteList(groundGridDraw); groundGridDraw=nil end
@@ -1143,26 +1074,15 @@ function widget:MouseRelease(mx, my, button)
 					groundGridDraw = glCreateList(glBeginEnd, GL_LINES, groundGrid)
 				end
 				
-				if terraform_type == 1 then
-					if (volumeDraw) then
-						gl.DeleteList(volumeDraw); volumeDraw=nil
-						gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-					end
-					volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
-					mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
-				elseif terraform_type == 2 then
-					if (volumeDraw) then
-						gl.DeleteList(volumeDraw); volumeDraw=nil
-						gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-					end
-					volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeRaise)
-					mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridRaise)
+				if (volumeDraw) then
+					gl.DeleteList(volumeDraw); volumeDraw=nil
+					gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
 				end
-			elseif terraform_type == 3 or terraform_type == 5 or terraform_type == 6 then
+				volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
+				mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
+			elseif terraform_type == 3 or terraform_type == 6 then
 			
-				local disSQ = (point[1].x-point[points].x)^2 + (point[1].z-point[points].z)^2
-			
-				if disSQ < 6400 and points > 10 then
+				if isClosedLasso(point, points) then
 					loop = 1
 					calculateAreaPoints(point,points)
 					if (groundGridDraw) then gl.DeleteList(groundGridDraw); groundGridDraw=nil end
@@ -1190,7 +1110,7 @@ function widget:MouseRelease(mx, my, button)
 		if button == 1 then
 			--spSetActiveCommand(-1)
 			
-			if terraform_type == 1 or terraform_type == 2 then
+			if terraform_type == 1 then
 				setHeight = true
 				drawingRectangle = false
 				mouseX = mx
@@ -1229,21 +1149,12 @@ function widget:MouseRelease(mx, my, button)
 							if (groundGridDraw) then gl.DeleteList(groundGridDraw); groundGridDraw=nil end
 							groundGridDraw = glCreateList(glBeginEnd, GL_LINES, groundGrid)
 							
-							if terraform_type == 1 then
-								if (volumeDraw) then 
-									gl.DeleteList(volumeDraw); volumeDraw=nil
-									gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-								end
-								volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
-								mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
-							elseif terraform_type == 2 then
-								if (volumeDraw) then 
-									gl.DeleteList(volumeDraw); volumeDraw=nil
-									gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-								end
-								volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeRaise)
-								mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridRaise)
+							if (volumeDraw) then
+								gl.DeleteList(volumeDraw); volumeDraw=nil
+								gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
 							end
+							volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
+							mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
 							
 							mouseUnit.id = false
 							return true
@@ -1282,23 +1193,14 @@ function widget:MouseRelease(mx, my, button)
 				if (groundGridDraw) then gl.DeleteList(groundGridDraw); groundGridDraw=nil end
 				groundGridDraw = glCreateList(glBeginEnd, GL_LINES, groundGrid)
 				
-				if terraform_type == 1 then
-					if (volumeDraw) then
-						gl.DeleteList(volumeDraw); volumeDraw=nil
-						gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-					end
-					volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
-					mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
-				elseif terraform_type == 2 then
-					if (volumeDraw) then
-						gl.DeleteList(volumeDraw); volumeDraw=nil
-						gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-					end
-					volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeRaise)
-					mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridRaise)
+				if (volumeDraw) then
+					gl.DeleteList(volumeDraw); volumeDraw=nil
+					gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
 				end
+				volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
+				mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
 				
-			elseif terraform_type == 3 or terraform_type == 5 or terraform_type == 6 then
+			elseif terraform_type == 3 or terraform_type == 6 then
 			
 				local _, pos = spTraceScreenRay(mx, my, true)
 				local x,z
@@ -1379,8 +1281,6 @@ function widget:MouseRelease(mx, my, button)
 	elseif drawingRamp == 1 then
 	
 		if button == 1 then
-			mouseX = mx
-			mouseY = my
 			--spSetActiveCommand(-1)
 			drawingRamp = 2
 			return true
@@ -1445,8 +1345,7 @@ function widget:KeyPress(key)
 
 	if key == KEYSYMS.SPACE and ( 
 		(terraform_type == 1 and (setHeight or drawingLasso)) or 
-		(terraform_type == 4 and (setHeight or drawingRamp)) or 
-		(terraform_type == 5 and drawingLasso)
+		(terraform_type == 4 and (setHeight or drawingRamp))
 	) then
 		volumeSelection = volumeSelection+1
 		if volumeSelection > 2 then
@@ -1589,7 +1488,7 @@ end
 
 function widget:DrawScreen()
 
-	if terraform_type == 1 or terraform_type == 2 then
+	if terraform_type == 1 then
 		if setHeight then
 			drawMouseText(0,floor(terraformHeight))
 		end
@@ -1607,7 +1506,7 @@ function widget:DrawScreen()
 		end
 	end
 	
-	if terraform_type == 1 or terraform_type == 4 or terraform_type == 5 then
+	if terraform_type == 1 or terraform_type == 4 then
 		if volumeSelection == 1 then
 			drawMouseText(-30,"Only raise")
 		elseif volumeSelection == 2 then
