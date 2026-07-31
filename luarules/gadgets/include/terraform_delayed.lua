@@ -9,6 +9,7 @@ local GRID_SIZE = 8
 local MAX_ABSOLUTE_HEIGHT = 3000
 local MAX_EDGE_POINTS = 9000
 local HEIGHT_EPSILON = 0.0001
+local SMOOTH_STRENGTH = 1.5
 
 local mapSizeX = Game.mapSizeX
 local mapSizeZ = Game.mapSizeZ
@@ -28,26 +29,31 @@ local function isHeightmapPoint(x, z)
 	return x >= 0 and x <= mapSizeX and z >= 0 and z <= mapSizeZ
 end
 
-local function getProtectionCount(structureAreaMap, x, z)
-	return structureAreaMap[x] and structureAreaMap[x][z] or 0
-end
-
 local function removeAreaPoint(area, x, z)
 	if area[x] then
 		area[x][z] = nil
 	end
 end
 
-local function getSmoothedHeight(x, z)
+local function getSmoothedHeight(x, z, currentHeight)
 	local totalHeight = 0
+	local minHeight = math.huge
+	local maxHeight = -math.huge
 	for xOffset = -16, 16, GRID_SIZE do
 		for zOffset = -16, 16, GRID_SIZE do
 			local sampleX = max(0, min(mapSizeX, x + xOffset))
 			local sampleZ = max(0, min(mapSizeZ, z + zOffset))
-			totalHeight = totalHeight + Spring.GetGroundHeight(sampleX, sampleZ)
+			local sampleHeight = Spring.GetGroundHeight(sampleX, sampleZ)
+			totalHeight = totalHeight + sampleHeight
+			minHeight = min(minHeight, sampleHeight)
+			maxHeight = max(maxHeight, sampleHeight)
 		end
 	end
-	return totalHeight / 25
+
+	local averageHeight = totalHeight / 25
+	local strengthenedHeight = currentHeight
+		+ (averageHeight - currentHeight) * SMOOTH_STRENGTH
+	return max(minHeight, min(maxHeight, strengthenedHeight))
 end
 
 local function preparePoint(terraformData, point, aimHeight)
@@ -65,13 +71,6 @@ local function preparePoint(terraformData, point, aimHeight)
 	point.orHeight = currentHeight
 	point.prevHeight = currentHeight
 	point.aimHeight = aimHeight
-
-	if terraformData.structureArea[x] and terraformData.structureArea[x][z] then
-		point.diffHeight = 0
-		point.structure = true
-		removeAreaPoint(terraformData.area, x, z)
-		return false
-	end
 
 	point.structure = false
 	point.diffHeight = aimHeight - currentHeight
@@ -96,7 +95,7 @@ function DelayedTerraform.PrepareSegment(terraformData, terraformType, terraform
 			if terraformType == 1 then
 				aimHeight = terraformHeight
 			elseif terraformType == 3 then
-				aimHeight = getSmoothedHeight(point.x, point.z)
+				aimHeight = getSmoothedHeight(point.x, point.z, currentHeight)
 			else
 				aimHeight = currentHeight
 			end
@@ -157,7 +156,7 @@ local function addFrozenPoint(frozen, point)
 	return point, true
 end
 
-local function addCorePoints(frozen, segments, segmentCount, structureAreaMap)
+local function addCorePoints(frozen, segments, segmentCount)
 	local hasHeightChange = false
 
 	for i = 1, segmentCount do
@@ -165,20 +164,15 @@ local function addCorePoints(frozen, segments, segmentCount, structureAreaMap)
 		for j = 1, segment.points do
 			local source = segment.point[j]
 			if isHeightmapPoint(source.x, source.z) then
-				local protectionCount = getProtectionCount(structureAreaMap, source.x, source.z)
 				local initialHeight = source.orHeight
 					or Spring.GetGroundHeight(source.x, source.z)
 				local finalHeight = source.aimHeight or initialHeight
-				if source.structure or protectionCount > 0 then
-					finalHeight = initialHeight
-				end
 
 				local frozenPoint, added = addFrozenPoint(frozen, {
 					x = source.x,
 					z = source.z,
 					initialHeight = initialHeight,
 					finalHeight = finalHeight,
-					protectedCount = protectionCount,
 					isCore = true,
 					isEdge = false,
 				})
@@ -186,7 +180,6 @@ local function addCorePoints(frozen, segments, segmentCount, structureAreaMap)
 				if not added and not frozenPoint.isCore then
 					frozenPoint.initialHeight = initialHeight
 					frozenPoint.finalHeight = finalHeight
-					frozenPoint.protectedCount = protectionCount
 					frozenPoint.isCore = true
 					frozenPoint.isEdge = false
 				end
@@ -201,24 +194,6 @@ local function addCorePoints(frozen, segments, segmentCount, structureAreaMap)
 	return hasHeightChange
 end
 
-local function addProtectionPoint(frozen, structureAreaMap, x, z)
-	local initialHeight = Spring.GetGroundHeight(x, z)
-	local point, added = addFrozenPoint(frozen, {
-		x = x,
-		z = z,
-		initialHeight = initialHeight,
-		finalHeight = initialHeight,
-		protectedCount = getProtectionCount(structureAreaMap, x, z),
-		isCore = false,
-		isEdge = true,
-		isProtection = true,
-	})
-	if not added then
-		point.protectedCount = getProtectionCount(structureAreaMap, x, z)
-		point.isProtection = true
-	end
-end
-
 local function addEdgePoint(edgeState, source, x, z)
 	if not isInsideMap(x, z) then
 		return false
@@ -227,11 +202,6 @@ local function addEdgePoint(edgeState, source, x, z)
 	local frozen = edgeState.frozen
 	local existingIndex = frozen.pointMap[x] and frozen.pointMap[x][z]
 	if existingIndex and frozen.points[existingIndex].isCore then
-		return false
-	end
-
-	if getProtectionCount(edgeState.structureAreaMap, x, z) > 0 then
-		addProtectionPoint(frozen, edgeState.structureAreaMap, x, z)
 		return false
 	end
 
@@ -287,7 +257,6 @@ local function addEdgePoint(edgeState, source, x, z)
 		z = z,
 		initialHeight = groundHeight,
 		finalHeight = targetHeight,
-		protectedCount = 0,
 		isCore = false,
 		isEdge = true,
 		direction = source.direction,
@@ -300,10 +269,9 @@ local function addEdgePoint(edgeState, source, x, z)
 	return true
 end
 
-local function buildEdgePoints(frozen, structureAreaMap, maxHeightDifference)
+local function buildEdgePoints(frozen, maxHeightDifference)
 	local edgeState = {
 		frozen = frozen,
-		structureAreaMap = structureAreaMap,
 		maxHeightDifference = maxHeightDifference,
 		queue = {},
 		edgeCount = 0,
@@ -313,7 +281,7 @@ local function buildEdgePoints(frozen, structureAreaMap, maxHeightDifference)
 	for i = 1, coreCount do
 		local point = frozen.points[i]
 		local difference = point.finalHeight - point.initialHeight
-		if point.isCore and point.protectedCount == 0 and abs(difference) > HEIGHT_EPSILON then
+		if point.isCore and abs(difference) > HEIGHT_EPSILON then
 			local source = {
 				direction = difference > 0 and 1 or -1,
 				supportX = point.x,
@@ -365,7 +333,7 @@ local function calculateWork(frozen)
 	frozen.work = work
 end
 
-function DelayedTerraform.FreezeSegments(segments, segmentCount, structureAreaMap, maxHeightDifference)
+function DelayedTerraform.FreezeSegments(segments, segmentCount, maxHeightDifference)
 	local frozen = {
 		points = {},
 		pointMap = {},
@@ -380,7 +348,7 @@ function DelayedTerraform.FreezeSegments(segments, segmentCount, structureAreaMa
 	}
 
 	if segmentCount < 1
-			or not addCorePoints(frozen, segments, segmentCount, structureAreaMap) then
+			or not addCorePoints(frozen, segments, segmentCount) then
 		return nil, "nochange"
 	end
 
@@ -390,7 +358,7 @@ function DelayedTerraform.FreezeSegments(segments, segmentCount, structureAreaMa
 		end
 	end
 
-	local edgeState = buildEdgePoints(frozen, structureAreaMap, maxHeightDifference)
+	local edgeState = buildEdgePoints(frozen, maxHeightDifference)
 	if edgeState.invalidHeight then
 		return nil, "height"
 	end
@@ -483,16 +451,6 @@ function DelayedTerraform.Apply(frozen, updateTexture)
 		updateTerrainTexture(frozen)
 	end
 	return true
-end
-
-function DelayedTerraform.HasNewProtection(frozen, structureAreaMap)
-	for i = 1, frozen.count do
-		local point = frozen.points[i]
-		if getProtectionCount(structureAreaMap, point.x, point.z) > point.protectedCount then
-			return true
-		end
-	end
-	return false
 end
 
 function DelayedTerraform.OverlapsStructure(frozen, structureData)
