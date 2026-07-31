@@ -122,7 +122,7 @@ local levelCmdDesc = {
   cursor  = 'Repair',
   action  = 'levelground',
   texture = 'luarules/images/commands/level.png',
-  tooltip = 'Levels the ground in an area - draw a line or shape while holding mouse',
+  tooltip = 'Levels the ground in a rectangular area - drag or click 2 corners',
 }
 
 local smoothCmdDesc = {
@@ -132,7 +132,7 @@ local smoothCmdDesc = {
   cursor  = 'Repair',
   action  = 'smoothground',
   texture = 'luarules/images/commands/smooth.png',
-  tooltip = 'Smooths the ground in an area',
+  tooltip = 'Smooths the ground in a rectangular area - drag or click 2 corners',
 }
 
 local cmdDescsArray = {
@@ -444,60 +444,13 @@ local function TerraformRamp(x1, y1, z1, x2, y2, z2, terraform_width, unit, unit
 		i = i+1
 	end
 
-	--** Detect potentially overlapping buildings**
-
-	local localStructure = {}
-	local localStructureCount = 0
-
-	for i = 1, structureCount do
-		local s = structure[structureTable[i] ]
-		if (border.left < s.maxx and
-			border.right > s.minx and
-			border.top < s.maxz and
-			border.bottom > s.minz) then
-
-			localStructureCount = localStructureCount + 1
-			localStructure[localStructureCount] = i
-		end
-	end
-
 	-- Prepare every segment for one combined delayed task.
 
 	for i = 1,n-1 do
-
-		-- detect overlapping buildings
-
-		segment[i].structure = {}
-		segment[i].structureCount = 0
-		segment[i].structureArea = {}
-
-		for j = 1, localStructureCount do
-			local s = structure[structureTable[localStructure[j]]]
-			if (segment[i].border.left < s.maxx and
-				segment[i].border.right > s.minx and
-				segment[i].border.top < s.maxz and
-				segment[i].border.bottom > s.minz) then
-
-				segment[i].structureCount = segment[i].structureCount + 1
-				segment[i].structure[segment[i].structureCount] = {id = s}
-
-
-				for lx = s.minx, s.maxx, 8 do
-					if not segment[i].structureArea[lx] then
-						segment[i].structureArea[lx] = {}
-					end
-					for lz = s.minz,s.maxz, 8 do
-						segment[i].structureArea[lx][lz] = true
-					end
-				end
-
-			end
-		end
-
 		delayedTerraform.PrepareRamp(segment[i])
 
 	end
-	return delayedTerraform.FreezeSegments(segment, n - 1, structureAreaMap, maxHeightDifference)
+	return delayedTerraform.FreezeSegments(segment, n - 1, maxHeightDifference)
 
 end
 
@@ -673,61 +626,13 @@ local function TerraformWall(terraform_type,mPoint,mPoints,terraformHeight,unit,
 
 	end
 
-	--** Detect potentially overlapping buildings**
-
-	local localStructure = {}
-	local localStructureCount = 0
-
-	for i = 1, structureCount do
-		local s = structure[structureTable[i]]
-		if (border.left < s.maxx and
-			border.right > s.minx and
-			border.top < s.maxz and
-			border.bottom > s.minz) then
-
-			localStructureCount = localStructureCount + 1
-			localStructure[localStructureCount] = i
-		end
-	end
-
-
 	-- Prepare every segment for one combined delayed task.
 
 	for i = 1,n-1 do
-
-		-- detect overlapping buildings
-
-		segment[i].structure = {}
-		segment[i].structureCount = 0
-		segment[i].structureArea = {}
-
-		for j = 1, localStructureCount do
-			local s = structure[structureTable[localStructure[j]]]
-			if (segment[i].border.left < s.maxx and
-				segment[i].border.right > s.minx and
-				segment[i].border.top < s.maxz and
-				segment[i].border.bottom > s.minz) then
-
-				segment[i].structureCount = segment[i].structureCount + 1
-				segment[i].structure[segment[i].structureCount] = {id = s}
-
-
-				for lx = s.minx, s.maxx, 8 do
-					if not segment[i].structureArea[lx] then
-						segment[i].structureArea[lx] = {}
-					end
-					for lz = s.minz,s.maxz, 8 do
-						segment[i].structureArea[lx][lz] = true
-					end
-				end
-
-			end
-		end
-
 		delayedTerraform.PrepareSegment(segment[i], terraform_type, terraformHeight)
 
 	end
-	return delayedTerraform.FreezeSegments(segment, n - 1, structureAreaMap, maxHeightDifference)
+	return delayedTerraform.FreezeSegments(segment, n - 1, maxHeightDifference)
 
 end
 
@@ -997,54 +902,12 @@ local function TerraformArea(terraform_type,mPoint,mPoints,terraformHeight,unit,
 		addX = 8
 	end
 
-	--** Detect potentially overlapping buildings**
-
-	local localStructure = {}
-	local localStructureCount = 0
-
-	for i = 1, structureCount do
-		local s = structure[structureTable[i]]
-		if (border.left < s.maxx and
-			border.right > s.minx and
-			border.top < s.maxz and
-			border.bottom > s.minz) then
-
-			localStructureCount = localStructureCount + 1
-			localStructure[localStructureCount] = i
-		end
-	end
-
 	-- Prepare every segment for one combined delayed task.
 
 	for i = 1,n-1 do
-		segment[i].structure = {}
-		segment[i].structureCount = 0
-		segment[i].structureArea = {}
-
-		for j = 1, localStructureCount do
-			local s = structure[structureTable[localStructure[j]]]
-			if (segment[i].border.left < s.maxx and
-				segment[i].border.right > s.minx and
-				segment[i].border.top < s.maxz and
-				segment[i].border.bottom > s.minz) then
-
-				segment[i].structureCount = segment[i].structureCount + 1
-				segment[i].structure[segment[i].structureCount] = {id = s}
-
-				for lx = s.minx, s.maxx, 8 do
-					if not segment[i].structureArea[lx] then
-						segment[i].structureArea[lx] = {}
-					end
-					for lz = s.minz, s.maxz, 8 do
-						segment[i].structureArea[lx][lz] = true
-					end
-				end
-			end
-		end
-
 		delayedTerraform.PrepareSegment(segment[i], terraform_type, terraformHeight)
 	end
-	return delayedTerraform.FreezeSegments(segment, n - 1, structureAreaMap, maxHeightDifference)
+	return delayedTerraform.FreezeSegments(segment, n - 1, maxHeightDifference)
 
 end
 
@@ -1056,9 +919,11 @@ local taskController = {
 	activeByUnit = {},
 	activeByID = {},
 	occupied = {},
+	capturedStructures = {},
 	finishedTagByUnit = {},
 	nextTaskID = 0,
 	redirectingUnitID = false,
+	moveCtrlTag = 39802,
 }
 
 function taskController.IsFiniteNumber(value)
@@ -1414,6 +1279,248 @@ function taskController.MakePublicTask(task)
 	return publicTask, publicGeometry
 end
 
+function taskController.GetBlockingState(unitID)
+	local isBlocking, isSolidObjectCollidable, isProjectileCollidable,
+		isRaySegmentCollidable, crushable, blockEnemyPushing, blockHeightChanges =
+		Spring.GetUnitBlocking(unitID)
+	return {
+		isBlocking = isBlocking,
+		isSolidObjectCollidable = isSolidObjectCollidable,
+		isProjectileCollidable = isProjectileCollidable,
+		isRaySegmentCollidable = isRaySegmentCollidable,
+		crushable = crushable,
+		blockEnemyPushing = blockEnemyPushing,
+		blockHeightChanges = blockHeightChanges,
+	}
+end
+
+function taskController.RestoreBlockingState(unitID, blocking)
+	if not blocking then
+		return
+	end
+	Spring.SetUnitBlocking(
+		unitID,
+		blocking.isBlocking,
+		blocking.isSolidObjectCollidable,
+		blocking.isProjectileCollidable,
+		blocking.isRaySegmentCollidable,
+		blocking.crushable,
+		blocking.blockEnemyPushing,
+		blocking.blockHeightChanges
+	)
+end
+
+function taskController.OwnsMoveCtrl(unitID)
+	return Spring.MoveCtrl.IsEnabled(unitID)
+		and Spring.MoveCtrl.GetTag(unitID) == taskController.moveCtrlTag
+end
+
+function taskController.RestoreCapturedStructureBlocking(unitID, capture)
+	if not capture.noBlocking or not taskController.OwnsMoveCtrl(unitID) then
+		return
+	end
+	Spring.MoveCtrl.SetNoBlocking(unitID, false)
+	taskController.RestoreBlockingState(unitID, capture.blocking)
+	capture.noBlocking = false
+	capture.blocking = nil
+end
+
+function taskController.UpdateCapturedStructurePosition(unitID, capture)
+	if not spValidUnitID(unitID)
+		or spGetUnitIsDead(unitID)
+		or not taskController.OwnsMoveCtrl(unitID) then
+		return false
+	end
+
+	local groundHeight = spGetGroundHeight(capture.x, capture.z)
+	Spring.MoveCtrl.SetPosition(
+		unitID,
+		capture.x,
+		groundHeight + capture.groundOffset,
+		capture.z
+	)
+
+	local structureData = structure[unitID]
+	if structureData then
+		structureData.h = spGetGroundHeight(structureData.x, structureData.z)
+	end
+	return true
+end
+
+function taskController.ForgetCapturedStructure(unitID)
+	local capture = taskController.capturedStructures[unitID]
+	if not capture then
+		return
+	end
+	for taskID in pairs(capture.owners) do
+		local task = taskController.activeByID[taskID]
+		if task then
+			task.capturedStructures[unitID] = nil
+		end
+	end
+	taskController.capturedStructures[unitID] = nil
+end
+
+function taskController.RestoreCapturedStructure(unitID, capture)
+	if spValidUnitID(unitID) and not spGetUnitIsDead(unitID)
+			and taskController.OwnsMoveCtrl(unitID) then
+		taskController.UpdateCapturedStructurePosition(unitID, capture)
+		taskController.RestoreCapturedStructureBlocking(unitID, capture)
+		Spring.MoveCtrl.SetTag(unitID, 0)
+		Spring.MoveCtrl.Disable(unitID)
+	end
+	taskController.capturedStructures[unitID] = nil
+end
+
+function taskController.GetSortedTaskStructureIDs(task)
+	local unitIDs = {}
+	for unitID in pairs(task.capturedStructures) do
+		unitIDs[#unitIDs + 1] = unitID
+	end
+	table.sort(unitIDs)
+	return unitIDs
+end
+
+function taskController.ReleaseTaskStructures(task)
+	local unitIDs = taskController.GetSortedTaskStructureIDs(task)
+	for i = 1, #unitIDs do
+		local unitID = unitIDs[i]
+		local capture = taskController.capturedStructures[unitID]
+		task.capturedStructures[unitID] = nil
+		if capture then
+			capture.owners[task.id] = nil
+			if next(capture.owners) then
+				if taskController.OwnsMoveCtrl(unitID) then
+					taskController.RestoreCapturedStructureBlocking(unitID, capture)
+					taskController.UpdateCapturedStructurePosition(unitID, capture)
+				end
+			else
+				taskController.RestoreCapturedStructure(unitID, capture)
+			end
+		end
+	end
+end
+
+function taskController.CaptureStructure(task, unitID)
+	if task.capturedStructures[unitID] then
+		return true
+	end
+	if not structure[unitID]
+		or not spValidUnitID(unitID)
+		or spGetUnitIsDead(unitID) then
+		return true
+	end
+
+	local capture = taskController.capturedStructures[unitID]
+	if capture then
+		if not taskController.OwnsMoveCtrl(unitID) then
+			return false
+		end
+	else
+		if Spring.MoveCtrl.IsEnabled(unitID) then
+			return false
+		end
+
+		local x, y, z = spGetUnitPosition(unitID)
+		if not x or not z then
+			return false
+		end
+		local groundHeight = spGetGroundHeight(x, z)
+		capture = {
+			x = x,
+			z = z,
+			groundOffset = (y or groundHeight) - groundHeight,
+			owners = {},
+		}
+
+		Spring.MoveCtrl.Enable(unitID)
+		Spring.MoveCtrl.SetTag(unitID, taskController.moveCtrlTag)
+		Spring.MoveCtrl.SetPosition(unitID, x, y or groundHeight, z)
+		if not taskController.OwnsMoveCtrl(unitID) then
+			if Spring.MoveCtrl.IsEnabled(unitID)
+					and Spring.MoveCtrl.GetTag(unitID) == taskController.moveCtrlTag then
+				Spring.MoveCtrl.SetTag(unitID, 0)
+				Spring.MoveCtrl.Disable(unitID)
+			end
+			return false
+		end
+		taskController.capturedStructures[unitID] = capture
+	end
+
+	capture.owners[task.id] = true
+	task.capturedStructures[unitID] = true
+	return true
+end
+
+function taskController.CaptureOverlappingStructures(task)
+	local unitIDs = {}
+	for i = 1, structureCount do
+		local unitID = structureTable[i]
+		local structureData = structure[unitID]
+		if structureData
+				and delayedTerraform.OverlapsStructure(task.frozen, structureData) then
+			unitIDs[#unitIDs + 1] = unitID
+		end
+	end
+	table.sort(unitIDs)
+
+	for i = 1, #unitIDs do
+		if not taskController.CaptureStructure(task, unitIDs[i]) then
+			return false
+		end
+	end
+	return true
+end
+
+function taskController.ValidateTaskStructures(task)
+	if not taskController.CaptureOverlappingStructures(task) then
+		return false
+	end
+
+	local unitIDs = taskController.GetSortedTaskStructureIDs(task)
+	for i = 1, #unitIDs do
+		local unitID = unitIDs[i]
+		if not structure[unitID]
+				or not spValidUnitID(unitID)
+				or spGetUnitIsDead(unitID) then
+			taskController.ForgetCapturedStructure(unitID)
+		else
+			local capture = taskController.capturedStructures[unitID]
+			if not capture
+					or not capture.owners[task.id]
+					or not taskController.OwnsMoveCtrl(unitID) then
+				return false
+			end
+		end
+	end
+	return true
+end
+
+function taskController.SetTaskStructuresNoBlocking(task, noBlocking)
+	local valid = true
+	local unitIDs = taskController.GetSortedTaskStructureIDs(task)
+	for i = 1, #unitIDs do
+		local unitID = unitIDs[i]
+		if structure[unitID] and spValidUnitID(unitID) and not spGetUnitIsDead(unitID) then
+			if taskController.OwnsMoveCtrl(unitID) then
+				local capture = taskController.capturedStructures[unitID]
+				if noBlocking then
+					if not capture.noBlocking then
+						capture.blocking = taskController.GetBlockingState(unitID)
+						capture.noBlocking = true
+					end
+					Spring.MoveCtrl.SetNoBlocking(unitID, true)
+				else
+					taskController.RestoreCapturedStructureBlocking(unitID, capture)
+				end
+			else
+				valid = false
+			end
+		end
+	end
+	return valid
+end
+
 function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 	local frozen, prepareError = taskController.PrepareFrozen(unitID, teamID, cmdParams)
 	if not frozen then
@@ -1475,7 +1582,16 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 		building = false,
 		moveGoalSet = false,
 		lastMoveGoalFrame = -Game.gameSpeed,
+		capturedStructures = {},
 	}
+	if not taskController.CaptureOverlappingStructures(task) then
+		taskController.ReleaseTaskStructures(task)
+		taskController.SendTeamMessage(
+			teamID,
+			"Terraform rejected: a building is controlled by another movement system."
+		)
+		return false
+	end
 
 	task.public, task.publicGeometry = taskController.MakePublicTask(task)
 	taskController.activeByUnit[unitID] = task
@@ -1550,6 +1666,7 @@ function taskController.ReleaseTask(task, removeCommand)
 		Spring.ClearUnitGoal(task.unitID)
 	end
 
+	taskController.ReleaseTaskStructures(task)
 	taskController.ReleaseGrid(task)
 	taskController.activeByUnit[task.unitID] = nil
 	taskController.activeByID[task.id] = nil
@@ -1642,16 +1759,28 @@ function taskController.UpdateTask(task, gameFrame)
 		return
 	end
 
-	if delayedTerraform.HasNewProtection(task.frozen, structureAreaMap) then
+	if not taskController.ValidateTaskStructures(task) then
 		taskController.CancelTask(
 			task,
-			"Terraform canceled: a protected building was created in the area.",
+			"Terraform canceled: a building is controlled by another movement system.",
 			true
 		)
 		return
 	end
 
-	if delayedTerraform.Apply(task.frozen, USE_TERRAIN_TEXTURE_CHANGE) then
+	if not taskController.SetTaskStructuresNoBlocking(task, true) then
+		taskController.SetTaskStructuresNoBlocking(task, false)
+		taskController.CancelTask(
+			task,
+			"Terraform canceled: control of a building was lost.",
+			true
+		)
+		return
+	end
+
+	local applied = delayedTerraform.Apply(task.frozen, USE_TERRAIN_TEXTURE_CHANGE)
+	taskController.SetTaskStructuresNoBlocking(task, false)
+	if applied then
 		taskController.ReleaseTask(task, true)
 	else
 		taskController.CancelTask(
@@ -1698,20 +1827,27 @@ function taskController.CancelQueuedCommands(unitID)
 	end
 end
 
-function taskController.CancelTasksForStructure(structureData)
-	local tasksToCancel = {}
+function taskController.CaptureTasksForStructure(unitID, structureData)
+	local tasks = {}
 	for _, task in pairs(taskController.activeByID) do
 		if delayedTerraform.OverlapsStructure(task.frozen, structureData) then
-			tasksToCancel[#tasksToCancel + 1] = task
+			tasks[#tasks + 1] = task
 		end
 	end
+	table.sort(tasks, function(firstTask, secondTask)
+		return firstTask.id < secondTask.id
+	end)
 
-	for i = 1, #tasksToCancel do
-		taskController.CancelTask(
-			tasksToCancel[i],
-			"Terraform canceled: a protected building was created in the area.",
-			true
-		)
+	for i = 1, #tasks do
+		local task = tasks[i]
+		if taskController.activeByID[task.id] == task
+				and not taskController.CaptureStructure(task, unitID) then
+			taskController.CancelTask(
+				task,
+				"Terraform canceled: a building is controlled by another movement system.",
+				true
+			)
+		end
 	end
 end
 
@@ -1722,6 +1858,22 @@ function taskController.CancelAll(removeCommand)
 	end
 	for i = 1, #tasksToCancel do
 		taskController.CancelTask(tasksToCancel[i], nil, removeCommand)
+	end
+end
+
+function taskController.ReleaseAllCapturedStructures()
+	local unitIDs = {}
+	for unitID in pairs(taskController.capturedStructures) do
+		unitIDs[#unitIDs + 1] = unitID
+	end
+	table.sort(unitIDs)
+	for i = 1, #unitIDs do
+		local unitID = unitIDs[i]
+		local capture = taskController.capturedStructures[unitID]
+		if capture then
+			capture.owners = {}
+			taskController.RestoreCapturedStructure(unitID, capture)
+		end
 	end
 end
 
@@ -1822,7 +1974,8 @@ function gadget:GameFrame(n)
 
 	for i = 1, structuresToCheck.count do
 		local registeredStructure = structure[structuresToCheck.unit[i]]
-		if registeredStructure then
+		if registeredStructure
+				and not taskController.capturedStructures[structuresToCheck.unit[i]] then
 			local height = spGetGroundHeight(registeredStructure.x, registeredStructure.z)
 			if height ~= registeredStructure.h then
 				spLevelHeightMap(
@@ -2038,6 +2191,7 @@ end
 function gadget:UnitDestroyed(unitID, unitDefID)
 	taskController.CancelUnitTask(unitID, false)
 	taskController.finishedTagByUnit[unitID] = nil
+	taskController.ForgetCapturedStructure(unitID)
 
 	if (unitDefID == corclogDefID) then
 		local  _,_,_,_,build = spGetUnitHealth(unitID)
@@ -2263,7 +2417,7 @@ function gadget:UnitCreated(unitID, unitDefID)
 			currentCheckFrame = 0
 		end
 
-		taskController.CancelTasksForStructure(structure[unitID])
+		taskController.CaptureTasksForStructure(unitID, structure[unitID])
 	end
 
 end
@@ -2291,6 +2445,7 @@ end
 
 function gadget:Shutdown()
 	taskController.CancelAll(true)
+	taskController.ReleaseAllCapturedStructures()
 	_G.terraformPreviewTasks = nil
 	_G.terraformPreviewGeometry = nil
 end
