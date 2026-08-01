@@ -61,10 +61,10 @@ if gadgetHandler:IsSyncedCode() then
 	function gadget:UnitCreated(unitID, unitDefID)
 		DisableCmdDesc(unitID, disableCmds)
 
-		if minHeight > 0 then
-			updateUnitsByDefParmTable(unitID)
-			DisableCmdDesc(unitID, disableUnitsByDefParm)
-		end
+		-- if minHeight > 0 then
+		-- 	updateUnitsByDefParmTable(unitID)
+		-- 	DisableCmdDesc(unitID, disableUnitsByDefParm)
+		-- end
 	end
 else
 end
