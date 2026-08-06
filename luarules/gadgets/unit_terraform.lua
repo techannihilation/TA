@@ -67,6 +67,7 @@ local maxRampLegth = 200 -- maximun length of ramp segment
 
 local maxHeightDifference = 30 -- max difference of height around terraforming, Makes Shraka Pyramids
 local maxRampGradient = 5
+local terraformSpeedMultiplier = 9
 
 --ramp dimensions
 local maxTotalRampLength = 3000
@@ -103,6 +104,7 @@ local delayedTerraform = VFS.Include("luarules/gadgets/include/terraform_delayed
 CMD_RAMP = 39734
 CMD_LEVEL = 39736
 CMD_SMOOTH = 39738
+CMD_RESTORE = 39739
 CMD_TERRAFORM_INTERNAL = 39801
 
 local rampCmdDesc = {
@@ -135,10 +137,21 @@ local smoothCmdDesc = {
   tooltip = 'Smooths the ground in a rectangular area - drag or click 2 corners',
 }
 
+local restoreCmdDesc = {
+  id      = CMD_RESTORE,
+  type    = CMDTYPE.ICON_MAP,
+  name    = 'Restore',
+  cursor  = 'Repair',
+  action  = 'restoreground',
+  texture = 'luarules/images/commands/restore.png',
+  tooltip = 'Restores the ground in a rectangular area to its original map height',
+}
+
 local cmdDescsArray = {
   rampCmdDesc,
   levelCmdDesc,
   smoothCmdDesc,
+  restoreCmdDesc,
 }
 
 if (not Game.mapDamage) then  -- map has "notDeformable = true", or "disablemapdamage = 1" modoption was set in the startscript
@@ -628,10 +641,7 @@ local function TerraformWall(terraform_type,mPoint,mPoints,terraformHeight,unit,
 
 	-- Prepare every segment for one combined delayed task.
 
-	for i = 1,n-1 do
-		delayedTerraform.PrepareSegment(segment[i], terraform_type, terraformHeight)
-
-	end
+	delayedTerraform.PrepareSegments(segment, n - 1, terraform_type, terraformHeight)
 	return delayedTerraform.FreezeSegments(segment, n - 1, maxHeightDifference)
 
 end
@@ -904,9 +914,7 @@ local function TerraformArea(terraform_type,mPoint,mPoints,terraformHeight,unit,
 
 	-- Prepare every segment for one combined delayed task.
 
-	for i = 1,n-1 do
-		delayedTerraform.PrepareSegment(segment[i], terraform_type, terraformHeight)
-	end
+	delayedTerraform.PrepareSegments(segment, n - 1, terraform_type, terraformHeight)
 	return delayedTerraform.FreezeSegments(segment, n - 1, maxHeightDifference)
 
 end
@@ -947,7 +955,7 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 
 	if not taskController.IsFiniteNumber(terraformType)
 		or terraformType % 1 ~= 0
-		or (terraformType ~= 1 and terraformType ~= 3 and terraformType ~= 4)
+		or (terraformType ~= 1 and terraformType ~= 3 and terraformType ~= 4 and terraformType ~= 5)
 		or not taskController.IsFiniteNumber(loop)
 		or (loop ~= 0 and loop ~= 1)
 		or not taskController.IsFiniteNumber(terraformHeight)
@@ -964,6 +972,14 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 
 	if terraformType == 4 then
 		if pointCount ~= 2 then
+			return
+		end
+	elseif terraformType == 5 then
+		if loop ~= 1
+			or terraformHeight ~= 0
+			or volumeSelection ~= 0
+			or pointCount < 4
+			or pointCount > maxWallPoints then
 			return
 		end
 	elseif pointCount < 2 or pointCount > maxWallPoints then
@@ -1563,7 +1579,7 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 		return false
 	end
 
-	local durationSeconds = math.max(1, frozen.work / buildSpeed)
+	local durationSeconds = math.max(1, frozen.work / (buildSpeed * terraformSpeedMultiplier))
 	local durationFrames = math.ceil(durationSeconds * Game.gameSpeed)
 
 	taskController.nextTaskID = taskController.nextTaskID + 1

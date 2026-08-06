@@ -76,6 +76,7 @@ local commanderDefs = VFS.Include("luarules/configs/comDefIDs.lua") or {}
 local CMD_RAMP = 39734
 local CMD_LEVEL = 39736
 local CMD_SMOOTH = 39738
+local CMD_RESTORE = 39739
 local CMD_TERRAFORM_INTERNAL = 39801
 
 local Grid = 16 -- grid size, do not change without other changes.
@@ -128,7 +129,7 @@ local noPathingColor = {1.0, 0.2, 0.2, 1.0}
 local drawingRectangle = false
 local drawingRamp = false
 local setHeight = false
-local terraform_type = 0 -- 1 = level, 3 = smooth, 4 = ramp
+local terraform_type = 0 -- 1 = level, 3 = smooth, 4 = ramp, 5 = restore
 
 local volumeSelection = 0
 
@@ -672,7 +673,7 @@ function widget:MousePress(mx, my, button)
 
 	local activeCmdIndex, activeid = spGetActiveCommand()
 	
-	if ((activeid == CMD_LEVEL) or (activeid == CMD_SMOOTH))
+	if ((activeid == CMD_LEVEL) or (activeid == CMD_SMOOTH) or (activeid == CMD_RESTORE))
 			and not (setHeight or drawingRectangle or drawingRamp) then
 	
 		if button == 1 then
@@ -698,6 +699,10 @@ function widget:MousePress(mx, my, button)
 						storedHeight = orHeight
 					elseif (activeid == CMD_SMOOTH) then
 						terraform_type = 3
+					elseif (activeid == CMD_RESTORE) then
+						terraform_type = 5
+						terraformHeight = 0
+						storedHeight = 0
 					end
 					
 					return true
@@ -900,7 +905,7 @@ function widget:MouseRelease(mx, my, button)
 				volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
 				mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
 				
-			elseif terraform_type == 3 then
+			elseif terraform_type == 3 or terraform_type == 5 then
 			
 				local _, pos = spTraceScreenRay(mx, my, true)
 				local x,z
