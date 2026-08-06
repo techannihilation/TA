@@ -9,7 +9,10 @@ local GRID_SIZE = 8
 local MAX_ABSOLUTE_HEIGHT = 3000
 local MAX_EDGE_POINTS = 9000
 local HEIGHT_EPSILON = 0.0001
-local SMOOTH_STRENGTH = 1.5
+local SMOOTH_PASSES = 3
+local SMOOTH_KERNEL = {1, 4, 6, 4, 1}
+local SMOOTH_KERNEL_RADIUS = 2
+local SMOOTH_KERNEL_WEIGHT = 16
 
 local mapSizeX = Game.mapSizeX
 local mapSizeZ = Game.mapSizeZ
@@ -33,27 +36,6 @@ local function removeAreaPoint(area, x, z)
 	if area[x] then
 		area[x][z] = nil
 	end
-end
-
-local function getSmoothedHeight(x, z, currentHeight)
-	local totalHeight = 0
-	local minHeight = math.huge
-	local maxHeight = -math.huge
-	for xOffset = -16, 16, GRID_SIZE do
-		for zOffset = -16, 16, GRID_SIZE do
-			local sampleX = max(0, min(mapSizeX, x + xOffset))
-			local sampleZ = max(0, min(mapSizeZ, z + zOffset))
-			local sampleHeight = Spring.GetGroundHeight(sampleX, sampleZ)
-			totalHeight = totalHeight + sampleHeight
-			minHeight = min(minHeight, sampleHeight)
-			maxHeight = max(maxHeight, sampleHeight)
-		end
-	end
-
-	local averageHeight = totalHeight / 25
-	local strengthenedHeight = currentHeight
-		+ (averageHeight - currentHeight) * SMOOTH_STRENGTH
-	return max(minHeight, min(maxHeight, strengthenedHeight))
 end
 
 local function preparePoint(terraformData, point, aimHeight)
@@ -81,6 +63,123 @@ local function preparePoint(terraformData, point, aimHeight)
 	return abs(point.diffHeight) > HEIGHT_EPSILON
 end
 
+local function getSmoothCoreBounds(segments, segmentCount)
+	local left = mapSizeX
+	local right = 0
+	local top = mapSizeZ
+	local bottom = 0
+	local hasPoint = false
+
+	for i = 1, segmentCount do
+		local segment = segments[i]
+		for j = 1, segment.points do
+			local point = segment.point[j]
+			if isHeightmapPoint(point.x, point.z) then
+				left = min(left, point.x)
+				right = max(right, point.x)
+				top = min(top, point.z)
+				bottom = max(bottom, point.z)
+				hasPoint = true
+			end
+		end
+	end
+
+	if hasPoint then
+		return left, right, top, bottom
+	end
+end
+
+local function snapshotSmoothHeights(left, right, top, bottom)
+	local heights = {}
+	for x = left, right, GRID_SIZE do
+		heights[x] = {}
+		local sampleX = max(0, min(mapSizeX, x))
+		for z = top, bottom, GRID_SIZE do
+			local sampleZ = max(0, min(mapSizeZ, z))
+			heights[x][z] = Spring.GetGroundHeight(sampleX, sampleZ)
+		end
+	end
+	return heights
+end
+
+local function runSmoothPass(source, left, right, top, bottom)
+	local radius = SMOOTH_KERNEL_RADIUS * GRID_SIZE
+	local outputLeft = left + radius
+	local outputRight = right - radius
+	local outputTop = top + radius
+	local outputBottom = bottom - radius
+	local horizontal = {}
+
+	for x = outputLeft, outputRight, GRID_SIZE do
+		horizontal[x] = {}
+		for z = top, bottom, GRID_SIZE do
+			local weightedHeight = 0
+			for kernelIndex = 1, #SMOOTH_KERNEL do
+				local offset = (kernelIndex - SMOOTH_KERNEL_RADIUS - 1) * GRID_SIZE
+				weightedHeight = weightedHeight
+					+ source[x + offset][z] * SMOOTH_KERNEL[kernelIndex]
+			end
+			horizontal[x][z] = weightedHeight / SMOOTH_KERNEL_WEIGHT
+		end
+	end
+
+	local filtered = {}
+	for x = outputLeft, outputRight, GRID_SIZE do
+		filtered[x] = {}
+		for z = outputTop, outputBottom, GRID_SIZE do
+			local weightedHeight = 0
+			for kernelIndex = 1, #SMOOTH_KERNEL do
+				local offset = (kernelIndex - SMOOTH_KERNEL_RADIUS - 1) * GRID_SIZE
+				weightedHeight = weightedHeight
+					+ horizontal[x][z + offset] * SMOOTH_KERNEL[kernelIndex]
+			end
+			filtered[x][z] = weightedHeight / SMOOTH_KERNEL_WEIGHT
+		end
+	end
+
+	return filtered, outputLeft, outputRight, outputTop, outputBottom
+end
+
+local function prepareSmoothSegments(segments, segmentCount)
+	local left, right, top, bottom = getSmoothCoreBounds(segments, segmentCount)
+	if not left then
+		return false
+	end
+
+	local passRadius = SMOOTH_KERNEL_RADIUS * GRID_SIZE
+	local halo = SMOOTH_PASSES * passRadius
+	left = left - halo
+	right = right + halo
+	top = top - halo
+	bottom = bottom + halo
+
+	local filtered = snapshotSmoothHeights(left, right, top, bottom)
+	for _ = 1, SMOOTH_PASSES do
+		filtered, left, right, top, bottom = runSmoothPass(
+			filtered,
+			left,
+			right,
+			top,
+			bottom
+		)
+	end
+
+	local hasHeightChange = false
+	for i = 1, segmentCount do
+		local segment = segments[i]
+		for j = 1, segment.points do
+			local point = segment.point[j]
+			if not isHeightmapPoint(point.x, point.z) then
+				preparePoint(segment, point, 0)
+			elseif preparePoint(segment, point, filtered[point.x][point.z]) then
+				hasHeightChange = true
+			end
+		end
+	end
+
+	return hasHeightChange
+end
+
 function DelayedTerraform.PrepareSegment(terraformData, terraformType, terraformHeight)
 	local hasHeightChange = false
 
@@ -94,8 +193,8 @@ function DelayedTerraform.PrepareSegment(terraformData, terraformType, terraform
 
 			if terraformType == 1 then
 				aimHeight = terraformHeight
-			elseif terraformType == 3 then
-				aimHeight = getSmoothedHeight(point.x, point.z, currentHeight)
+			elseif terraformType == 5 then
+				aimHeight = Spring.GetGroundOrigHeight(point.x, point.z)
 			else
 				aimHeight = currentHeight
 			end
@@ -106,6 +205,20 @@ function DelayedTerraform.PrepareSegment(terraformData, terraformType, terraform
 		end
 	end
 
+	return hasHeightChange
+end
+
+function DelayedTerraform.PrepareSegments(segments, segmentCount, terraformType, terraformHeight)
+	if terraformType == 3 then
+		return prepareSmoothSegments(segments, segmentCount)
+	end
+
+	local hasHeightChange = false
+	for i = 1, segmentCount do
+		if DelayedTerraform.PrepareSegment(segments[i], terraformType, terraformHeight) then
+			hasHeightChange = true
+		end
+	end
 	return hasHeightChange
 end
 
