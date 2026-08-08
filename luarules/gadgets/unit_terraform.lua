@@ -56,7 +56,7 @@ local mapHeight = Game.mapSizeZ
 -- Configuration
 --------------------------------------------------------------------------------
 
-local maxAreaSize = 4000 -- max X or Z bound of area terraform
+local maxAreaSize = 1000 -- max X or Z bound of area terraform
 local areaSegMaxSize = 400 -- max width and height of terraform squares
 
 local maxWallPoints = 1400 -- max points that can makeup a wall
@@ -65,13 +65,14 @@ local wallSegmentLength = 14 -- how many points are part of a wall segment (poin
 local maxRampWidth = 200 -- maximun width of ramp segment
 local maxRampLegth = 200 -- maximun length of ramp segment
 
-local maxHeightDifference = 30 -- max difference of height around terraforming, Makes Shraka Pyramids
+local maxHeightDifference = 100 -- max difference of height around terraforming, Makes Shraka Pyramids
+local maxAbsoluteHeight = 2000
 local maxRampGradient = 5
-local terraformSpeedMultiplier = 9
+local terraformSpeedMultiplier = 20
 
 --ramp dimensions
 local maxTotalRampLength = 3000
-local maxTotalRampWidth = 800
+local maxTotalRampWidth = 1600
 local minTotalRampLength = 32
 local minTotalRampWidth = 24
 
@@ -258,7 +259,7 @@ local function TerraformRamp(x1, y1, z1, x2, y2, z2, terraform_width, unit, unit
 		return
 	end
 
-	if terraform_width < minTotalRampWidth or terraform_width > maxTotalRampWidth*2 then
+	if terraform_width < minTotalRampWidth or terraform_width > maxTotalRampWidth then
 		return
 	end
 
@@ -728,7 +729,8 @@ local function TerraformArea(terraform_type,mPoint,mPoints,terraformHeight,unit,
 		end
 	end
 
-	if border.right-border.left > maxAreaSize or border.bottom-border.top > maxAreaSize then
+	if border.right-border.left + 16 > maxAreaSize
+			or border.bottom-border.top + 16 > maxAreaSize then
 		-- cancel command if the area is too big, anti-slowdown
 		return false
 	end
@@ -974,6 +976,8 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 		if pointCount ~= 2 then
 			return
 		end
+	elseif terraformType == 1 and abs(terraformHeight) > maxAbsoluteHeight then
+		return
 	elseif terraformType == 5 then
 		if loop ~= 1
 			or terraformHeight ~= 0
@@ -1025,7 +1029,7 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 			or z < 0
 			or z > mapHeight
 			or (terraformType == 4
-				and (not taskController.IsFiniteNumber(y) or abs(y) > 3000)) then
+				and (not taskController.IsFiniteNumber(y) or abs(y) > maxAbsoluteHeight)) then
 			return
 		end
 
@@ -1540,12 +1544,7 @@ end
 function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 	local frozen, prepareError = taskController.PrepareFrozen(unitID, teamID, cmdParams)
 	if not frozen then
-		if prepareError == "pointlimit" then
-			taskController.SendTeamMessage(
-				teamID,
-				"Terraform rejected: the slope grid exceeds the point limit."
-			)
-		elseif prepareError == "height" then
+		if prepareError == "height" then
 			taskController.SendTeamMessage(
 				teamID,
 				"Terraform rejected: the target height exceeds the limit."

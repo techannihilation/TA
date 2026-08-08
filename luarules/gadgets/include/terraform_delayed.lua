@@ -6,8 +6,7 @@ local min = math.min
 local sqrt = math.sqrt
 
 local GRID_SIZE = 8
-local MAX_ABSOLUTE_HEIGHT = 3000
-local MAX_EDGE_POINTS = 9000
+local MAX_ABSOLUTE_HEIGHT = 2000
 local HEIGHT_EPSILON = 0.0001
 local SMOOTH_PASSES = 3
 local SMOOTH_KERNEL = {1, 4, 6, 4, 1}
@@ -359,11 +358,6 @@ local function addEdgePoint(edgeState, source, x, z)
 		return true
 	end
 
-	if edgeState.edgeCount >= MAX_EDGE_POINTS then
-		edgeState.limitReached = true
-		return false
-	end
-
 	local point
 	point, _ = addFrozenPoint(frozen, {
 		x = x,
@@ -377,7 +371,6 @@ local function addEdgePoint(edgeState, source, x, z)
 		supportZ = source.supportZ,
 		supportHeight = source.supportHeight,
 	})
-	edgeState.edgeCount = edgeState.edgeCount + 1
 	edgeState.queue[#edgeState.queue + 1] = frozen.pointMap[x][z]
 	return true
 end
@@ -387,7 +380,6 @@ local function buildEdgePoints(frozen, maxHeightDifference)
 		frozen = frozen,
 		maxHeightDifference = maxHeightDifference,
 		queue = {},
-		edgeCount = 0,
 	}
 
 	local coreCount = frozen.count
@@ -414,9 +406,7 @@ local function buildEdgePoints(frozen, maxHeightDifference)
 
 	local queueIndex = 1
 	while queueIndex <= #edgeState.queue
-			and queueIndex <= MAX_EDGE_POINTS * 8
-			and not edgeState.invalidHeight
-			and not edgeState.limitReached do
+			and not edgeState.invalidHeight do
 		local pointIndex = edgeState.queue[queueIndex]
 		local source = frozen.points[pointIndex]
 		queueIndex = queueIndex + 1
@@ -430,10 +420,6 @@ local function buildEdgePoints(frozen, maxHeightDifference)
 			)
 		end
 	end
-	if queueIndex <= #edgeState.queue then
-		edgeState.limitReached = true
-	end
-
 	return edgeState
 end
 
@@ -475,10 +461,6 @@ function DelayedTerraform.FreezeSegments(segments, segmentCount, maxHeightDiffer
 	if edgeState.invalidHeight then
 		return nil, "height"
 	end
-	if edgeState.limitReached then
-		return nil, "pointlimit"
-	end
-
 	calculateWork(frozen)
 	if frozen.work <= HEIGHT_EPSILON then
 		return nil, "nochange"

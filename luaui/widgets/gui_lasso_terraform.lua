@@ -89,20 +89,26 @@ local Grid = 16 -- grid size, do not change without other changes.
 local originalCommandGiven = false
 
 -- max difference of height around terraforming, Makes Shraka Pyramids. Not used
-local maxHeightDifference = 30 
+local maxHeightDifference = 100
 
 -- Elmos per vertical mouse pixel while selecting terraform dimensions.
 local mouseSensitivity = 2
 local rectangleDragThreshold = 4
+local minTerraformHeight = -2000
+local maxTerraformHeight = 2000
+local maxRampGradient = 5
 
 -- max sizes of non-ramp command, reduces slowdown MUST AGREE WITH GADGET VALUES
-local maxAreaSize = 4000 -- max width or length
+local maxAreaSize = 1000 -- max width or length
+local generatedAreaPadding = Grid
+local maxRectangleSpan = floor((maxAreaSize - generatedAreaPadding) / Grid) * Grid
 
--- bounding ramp dimensions, reduces slowdown MUST AGREE WITH GADGET VALUES
+-- Ramp length and half-width limits. The gadget receives twice the half-width.
+-- These values MUST AGREE WITH GADGET VALUES.
 local maxRampLength = 3000
 local maxRampWidth = 800
 local minRampLength = 32
-local minRampWidth = 24
+local minRampWidth = 12
 
 local startRampWidth = 60
 
@@ -152,10 +158,15 @@ local mouseGridDraw
 ----
 local mouseX, mouseY
 local rectangleStartMouseX, rectangleStartMouseY
+local rectangleEndX, rectangleEndZ
 local rectangleDragged = false
 local rectangleAwaitingSecondClick = false
 
 ---------------
+
+local function clampTerraformHeight(height)
+	return math.max(minTerraformHeight, math.min(maxTerraformHeight, height))
+end
 
 
 local function stopCommand()
@@ -176,6 +187,8 @@ local function stopCommand()
 	loop = 0
 	rectangleStartMouseX = nil
 	rectangleStartMouseY = nil
+	rectangleEndX = nil
+	rectangleEndZ = nil
 	rectangleDragged = false
 	rectangleAwaitingSecondClick = false
 	terraform_type = 0
@@ -202,6 +215,8 @@ local function completelyStopCommand()
 	loop = 0
 	rectangleStartMouseX = nil
 	rectangleStartMouseY = nil
+	rectangleEndX = nil
+	rectangleEndZ = nil
 	rectangleDragged = false
 	rectangleAwaitingSecondClick = false
 	terraform_type = 0
@@ -466,7 +481,8 @@ local function calculateAreaPoints(mPoint, mPoints)
 		end
 	end
 	
-	if border.right-border.left > maxAreaSize or border.bottom-border.top > maxAreaSize then
+	if border.right-border.left + generatedAreaPadding > maxAreaSize
+			or border.bottom-border.top + generatedAreaPadding > maxAreaSize then
 		Spring.Echo("Terraform Command Too Large")
 		stopCommand()
 		return
@@ -611,12 +627,20 @@ local function updateRampEndpoint(mx, my)
 
 	local endX = point[1].x + rampLength * diffX / distance
 	local endZ = point[1].z + rampLength * diffZ / distance
-	local endHeight = spGetGroundHeight(endX, endZ)
+	local endGroundHeight = spGetGroundHeight(endX, endZ)
+	local endHeight = clampTerraformHeight(endGroundHeight)
+	local maxHeightDifference = rampLength * maxRampGradient
+	local heightDifference = endHeight - point[1].y
+	if heightDifference > maxHeightDifference then
+		endHeight = point[1].y + maxHeightDifference
+	elseif heightDifference < -maxHeightDifference then
+		endHeight = point[1].y - maxHeightDifference
+	end
 	point[2] = {
 		x = endX,
 		y = endHeight,
 		z = endZ,
-		ground = endHeight,
+		ground = endGroundHeight,
 	}
 	return true
 end
@@ -629,28 +653,21 @@ local function updateRectangleEndpoint(mx, my)
 
 	local x = floor((pos[1])/16)*16
 	local z = floor((pos[3])/16)*16
-
-	if x > point[1].x then
-		point[2].x = x+16
-		point[3].x = point[1].x
-	else
-		if x - point[1].x == 0 then
-			x = x - 16
-		end
-		point[2].x = x
-		point[3].x = point[1].x+16
+	x = math.max(point[1].x - maxRectangleSpan, math.min(point[1].x + maxRectangleSpan, x))
+	z = math.max(point[1].z - maxRectangleSpan, math.min(point[1].z + maxRectangleSpan, z))
+	if x == point[1].x then
+		x = x + 16 <= mapWidth and x + 16 or x - 16
 	end
-
-	if z > point[1].z then
-		point[2].z = z+16
-		point[3].z = point[1].z
-	else
-		if z - point[1].z == 0 then
-			z = z - 16
-		end
-		point[2].z = z
-		point[3].z = point[1].z+16
+	if z == point[1].z then
+		z = z + 16 <= mapHeight and z + 16 or z - 16
 	end
+	rectangleEndX = x
+	rectangleEndZ = z
+
+	point[2].x = math.min(math.max(point[1].x, x) + generatedAreaPadding, mapWidth)
+	point[3].x = math.min(point[1].x, x)
+	point[2].z = math.min(math.max(point[1].z, z) + generatedAreaPadding, mapHeight)
+	point[3].z = math.min(point[1].z, z)
 
 	return true
 end
@@ -686,6 +703,8 @@ function widget:MousePress(mx, my, button)
 					drawingRectangle = true
 					rectangleStartMouseX = mx
 					rectangleStartMouseY = my
+					rectangleEndX = nil
+					rectangleEndZ = nil
 					rectangleDragged = false
 					rectangleAwaitingSecondClick = false
 					points = 3
@@ -695,8 +714,8 @@ function widget:MousePress(mx, my, button)
 					
 					if (activeid == CMD_LEVEL) then
 						terraform_type = 1
-						terraformHeight = point[1].y
-						storedHeight = orHeight
+						terraformHeight = clampTerraformHeight(point[1].y)
+						storedHeight = terraformHeight
 					elseif (activeid == CMD_SMOOTH) then
 						terraform_type = 3
 					elseif (activeid == CMD_RESTORE) then
@@ -724,8 +743,9 @@ function widget:MousePress(mx, my, button)
 					widgetHandler:UpdateWidgetCallIn("DrawWorld", self)
 					orHeight = spGetGroundHeight(pos[1],pos[3])
 					
-					point[1] = {x = pos[1], y = orHeight, z = pos[3], ground = orHeight}
-					point[2] = {x = pos[1], y = point[1].y, z = pos[3], ground = orHeight}
+					local startHeight = clampTerraformHeight(orHeight)
+					point[1] = {x = pos[1], y = startHeight, z = pos[3], ground = orHeight}
+					point[2] = {x = pos[1], y = startHeight, z = pos[3], ground = orHeight}
 					points = 2
 					drawingRamp = 1
 					terraform_type = 4
@@ -797,7 +817,7 @@ function widget:Update(n)
 			if c then
 				local _, pos = spTraceScreenRay(mx, my, true)
 				if legalPos(pos) then	
-					terraformHeight = spGetGroundHeight(pos[1],pos[3])
+					terraformHeight = clampTerraformHeight(spGetGroundHeight(pos[1],pos[3]))
 					storedHeight = terraformHeight
 					mouseX = mx
 					mouseY = my
@@ -810,10 +830,10 @@ function widget:Update(n)
 					orHeight,
 					-23,
 				}
-				terraformHeight = heightArray[snapToHeight(heightArray,storedHeight,3)]
+				terraformHeight = clampTerraformHeight(heightArray[snapToHeight(heightArray,storedHeight,3)])
 			else
 				Spring.WarpMouse (mouseX,mouseY)
-				terraformHeight = terraformHeight + (my-mouseY)*mouseSensitivity
+				terraformHeight = clampTerraformHeight(terraformHeight + (my-mouseY)*mouseSensitivity)
 				storedHeight = terraformHeight
 			end
 			if (volumeDraw) then 
@@ -870,23 +890,10 @@ function widget:MouseRelease(mx, my, button)
 				mouseX = mx
 				mouseY = my
 				
-				local x,z
-				
-				local _, pos = spTraceScreenRay(mx, my, true)
-				if legalPos(pos) then
-					x = floor((pos[1])/16)*16
-					z = floor((pos[3])/16)*16
-						
-					if x - point[1].x == 0 then
-						x = x - 16
-					end
-					if z - point[1].z == 0 then
-						z = z - 16
-					end
-				else
-					x = point[2].x
-					z = point[2].z
-				end	
+				local x = rectangleEndX
+					or (point[1].x + 16 <= mapWidth and point[1].x + 16 or point[1].x - 16)
+				local z = rectangleEndZ
+					or (point[1].z + 16 <= mapHeight and point[1].z + 16 or point[1].z - 16)
 				
 				points = 5
 				point[2] = {x = point[1].x, z = z}
@@ -907,22 +914,10 @@ function widget:MouseRelease(mx, my, button)
 				
 			elseif terraform_type == 3 or terraform_type == 5 then
 			
-				local _, pos = spTraceScreenRay(mx, my, true)
-				local x,z
-				if legalPos(pos) then
-					x = floor((pos[1])/16)*16
-					z = floor((pos[3])/16)*16
-					
-					if x - point[1].x == 0 then
-						x = x - 16
-					end
-					if z - point[1].z == 0 then
-						z = z - 16
-					end
-				else
-					x = point[2].x
-					z = point[2].z
-				end
+				local x = rectangleEndX
+					or (point[1].x + 16 <= mapWidth and point[1].x + 16 or point[1].x - 16)
+				local z = rectangleEndZ
+					or (point[1].z + 16 <= mapHeight and point[1].z + 16 or point[1].z - 16)
 						
 				points = 5
 				point[2] = {x = point[1].x, z = z}
