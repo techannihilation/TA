@@ -93,7 +93,16 @@ local currentCheckFrame 	= 0
 local corclogDefID = {}
 --local novheavymineDefID = UnitDefNames["novheavymine"].id
 
-local commanderDefs = VFS.Include("luarules/configs/comDefIDs.lua") or {}
+local terraformerConfig = {
+	defs = VFS.Include("luarules/configs/comDefIDs.lua") or {},
+	additionalDefs = VFS.Include("luarules/configs/terraformerDefIDs.lua") or {},
+	-- Match armcom's builddistance and workertime.
+	additionalBuildDistance = 150,
+	additionalBuildSpeed = 300,
+}
+for unitDefID in pairs(terraformerConfig.additionalDefs) do
+	terraformerConfig.defs[unitDefID] = true
+end
 local delayedTerraform = VFS.Include("luarules/gadgets/include/terraform_delayed.lua")
 
 --------------------------------------------------------------------------------
@@ -215,7 +224,7 @@ end
 
 local function TerraformRamp(x1, y1, z1, x2, y2, z2, rampWidth, unit, units, team, volumeSelection, shift)
 
-	--** Initial constructor processing **
+	--** Initial terraformer processing **
 	local unitsX = 0
 	local unitsZ = 0
 	local i = 1
@@ -455,7 +464,7 @@ local function TerraformWall(terraform_type,mPoint,mPoints,terraformHeight,unit,
 
 	local border = {left = mapWidth, right = 0, top = mapHeight, bottom = 0}
 
-	--** Initial constructor processing **
+	--** Initial terraformer processing **
 	local unitsX = 0
 	local unitsZ = 0
 	local i = 1
@@ -634,7 +643,7 @@ local function TerraformArea(terraform_type,mPoint,mPoints,terraformHeight,unit,
 
 	local border = {left = mapWidth, right = 0, top = mapHeight, bottom = 0} -- border for the entire area
 
-	--** Initial constructor processing **
+	--** Initial terraformer processing **
 	local unitsX = 0
 	local unitsZ = 0
 	local i = 1
@@ -935,7 +944,7 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 	local loop = cmdParams[3]
 	local terraformHeight = cmdParams[4]
 	local pointCount = cmdParams[5]
-	local commanderCount = cmdParams[6]
+	local terraformerCount = cmdParams[6]
 	local volumeSelection = cmdParams[7]
 
 	if not taskController.IsFiniteNumber(terraformType)
@@ -946,8 +955,8 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 		or not taskController.IsFiniteNumber(terraformHeight)
 		or not taskController.IsFiniteNumber(pointCount)
 		or pointCount % 1 ~= 0
-		or not taskController.IsFiniteNumber(commanderCount)
-		or commanderCount % 1 ~= 0
+		or not taskController.IsFiniteNumber(terraformerCount)
+		or terraformerCount % 1 ~= 0
 		or not taskController.IsFiniteNumber(volumeSelection)
 		or volumeSelection % 1 ~= 0
 		or volumeSelection < 0
@@ -972,11 +981,11 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 	elseif pointCount < 2 or pointCount > maxWallPoints then
 		return
 	end
-	if commanderCount < 1 then
+	if terraformerCount < 1 then
 		return
 	end
 	local pointParameterCount = terraformType == 4 and pointCount * 3 or pointCount * 2
-	if #cmdParams < 7 + pointParameterCount + commanderCount then
+	if #cmdParams < 7 + pointParameterCount + terraformerCount then
 		return
 	end
 
@@ -988,7 +997,7 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 		pointCount = pointCount,
 		volumeSelection = volumeSelection,
 		points = {},
-		commanders = {},
+		terraformers = {},
 	}
 
 	local parameterIndex = 8
@@ -1019,29 +1028,29 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 		parsed.points[i] = {x = x, y = y, z = z}
 	end
 
-	local commanderSeen = {}
-	local containsCommandUnit = false
-	for i = 1, commanderCount do
-		local commanderID = cmdParams[parameterIndex]
+	local terraformerSeen = {}
+	local containsIssuingUnit = false
+	for i = 1, terraformerCount do
+		local terraformerID = cmdParams[parameterIndex]
 		parameterIndex = parameterIndex + 1
-		if taskController.IsFiniteNumber(commanderID)
-			and commanderID % 1 == 0
-			and not commanderSeen[commanderID]
-			and spValidUnitID(commanderID)
-			and not spGetUnitIsDead(commanderID)
-			and spGetUnitTeam(commanderID) == teamID then
-			local commanderDefID = Spring.GetUnitDefID(commanderID)
-			if commanderDefs[commanderDefID] then
-				commanderSeen[commanderID] = true
-				parsed.commanders[#parsed.commanders + 1] = commanderID
-				if commanderID == unitID then
-					containsCommandUnit = true
+		if taskController.IsFiniteNumber(terraformerID)
+			and terraformerID % 1 == 0
+			and not terraformerSeen[terraformerID]
+			and spValidUnitID(terraformerID)
+			and not spGetUnitIsDead(terraformerID)
+			and spGetUnitTeam(terraformerID) == teamID then
+			local terraformerDefID = Spring.GetUnitDefID(terraformerID)
+			if terraformerConfig.defs[terraformerDefID] then
+				terraformerSeen[terraformerID] = true
+				parsed.terraformers[#parsed.terraformers + 1] = terraformerID
+				if terraformerID == unitID then
+					containsIssuingUnit = true
 				end
 			end
 		end
 	end
 
-	if #parsed.commanders == 0 or not containsCommandUnit then
+	if #parsed.terraformers == 0 or not containsIssuingUnit then
 		return
 	end
 
@@ -1131,25 +1140,25 @@ function taskController.DistanceToCommandSquared(x, z, parsed)
 	return closestDistance or 0
 end
 
-function taskController.ChooseCommander(parsed)
-	local closestCommander
+function taskController.ChooseTerraformer(parsed)
+	local closestTerraformer
 	local closestDistance
 
-	for i = 1, #parsed.commanders do
-		local commanderID = parsed.commanders[i]
-		local x, _, z = spGetUnitPosition(commanderID)
+	for i = 1, #parsed.terraformers do
+		local terraformerID = parsed.terraformers[i]
+		local x, _, z = spGetUnitPosition(terraformerID)
 		if x and z then
 			local distance = taskController.DistanceToCommandSquared(x, z, parsed)
 			if not closestDistance
 				or distance < closestDistance
-				or (distance == closestDistance and commanderID < closestCommander) then
-				closestCommander = commanderID
+				or (distance == closestDistance and terraformerID < closestTerraformer) then
+				closestTerraformer = terraformerID
 				closestDistance = distance
 			end
 		end
 	end
 
-	return closestCommander
+	return closestTerraformer
 end
 
 function taskController.CopyCommandOptions(cmdOptions)
@@ -1185,8 +1194,8 @@ function taskController.PrepareFrozen(unitID, teamID, cmdParams)
 			secondPoint.y,
 			secondPoint.z,
 			parsed.terraformHeight,
-			parsed.commanders,
-			#parsed.commanders,
+			parsed.terraformers,
+			#parsed.terraformers,
 			teamID,
 			parsed.volumeSelection,
 			false
@@ -1199,8 +1208,8 @@ function taskController.PrepareFrozen(unitID, teamID, cmdParams)
 			parsed.points,
 			parsed.pointCount,
 			parsed.terraformHeight,
-			parsed.commanders,
-			#parsed.commanders,
+			parsed.terraformers,
+			#parsed.terraformers,
 			teamID,
 			parsed.volumeSelection,
 			false
@@ -1212,8 +1221,8 @@ function taskController.PrepareFrozen(unitID, teamID, cmdParams)
 		parsed.points,
 		parsed.pointCount,
 		parsed.terraformHeight,
-		parsed.commanders,
-		#parsed.commanders,
+		parsed.terraformers,
+		#parsed.terraformers,
 		teamID,
 		parsed.volumeSelection,
 		false
@@ -1552,11 +1561,19 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 	local unitX, _, unitZ = spGetUnitPosition(unitID)
 	local anchor = unitX and delayedTerraform.FindClosestPoint(frozen, unitX, unitZ)
 	local unitDef = UnitDefs[unitDefID]
-	local buildSpeed = unitDef and unitDef.buildSpeed or 0
+	local buildSpeed
+	local buildDistance
+	if terraformerConfig.additionalDefs[unitDefID] then
+		buildSpeed = terraformerConfig.additionalBuildSpeed
+		buildDistance = terraformerConfig.additionalBuildDistance
+	else
+		buildSpeed = unitDef and unitDef.buildSpeed or 0
+		buildDistance = unitDef and unitDef.buildDistance or 0
+	end
 	if not anchor or buildSpeed <= 0 then
 		taskController.SendTeamMessage(
 			teamID,
-			"Terraform rejected: the commander cannot perform this work."
+			"Terraform rejected: the selected unit cannot perform this work."
 		)
 		return false
 	end
@@ -1573,7 +1590,8 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 		cmdTag = cmdTag,
 		frozen = frozen,
 		anchor = anchor,
-		buildDistance = unitDef.buildDistance or 0,
+		buildDistance = buildDistance,
+		useBuildAnimation = unitDef and unitDef.isBuilder,
 		remainingFrames = durationFrames,
 		totalFrames = durationFrames,
 		started = false,
@@ -1601,6 +1619,11 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 end
 
 function taskController.StartBuilding(task)
+	if not task.useBuildAnimation then
+		task.building = true
+		return
+	end
+
 	local _, _, _, midX, midY, midZ = Spring.GetUnitPosition(
 		task.unitID,
 		true
@@ -1647,7 +1670,7 @@ function taskController.StartBuilding(task)
 end
 
 function taskController.StopBuilding(task)
-	if task.building and spValidUnitID(task.unitID) then
+	if task.building and task.useBuildAnimation and spValidUnitID(task.unitID) then
 		Spring.CallCOBScript(task.unitID, "StopBuilding", 0)
 	end
 	task.building = false
@@ -1898,7 +1921,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 	if cmdID ~= CMD_TERRAFORM_INTERNAL then
 		return true
 	end
-	if not commanderDefs[unitDefID] then
+	if not terraformerConfig.defs[unitDefID] then
 		return false
 	end
 
@@ -1911,17 +1934,17 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 		return unitID == taskController.redirectingUnitID
 	end
 
-	local chosenCommander = taskController.ChooseCommander(parsed)
-	if not chosenCommander then
+	local chosenTerraformer = taskController.ChooseTerraformer(parsed)
+	if not chosenTerraformer then
 		return false
 	end
-	if chosenCommander == unitID then
+	if chosenTerraformer == unitID then
 		return true
 	end
 
-	taskController.redirectingUnitID = chosenCommander
+	taskController.redirectingUnitID = chosenTerraformer
 	Spring.GiveOrderToUnit(
-		chosenCommander,
+		chosenTerraformer,
 		CMD_TERRAFORM_INTERNAL,
 		cmdParams,
 		taskController.CopyCommandOptions(cmdOptions)
@@ -1934,7 +1957,7 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
 	if cmdID ~= CMD_TERRAFORM_INTERNAL then
 		return false
 	end
-	if not commanderDefs[unitDefID] then
+	if not terraformerConfig.defs[unitDefID] then
 		return true, true
 	end
 
@@ -2363,8 +2386,8 @@ function gadget:UnitCreated(unitID, unitDefID)
 	end
 
 	local ud = UnitDefs[unitDefID]
-	-- add terraform commands to commanders
-	if (ud.isBuilder and commanderDefs[unitDefID]) and not ud.isFactory then
+	-- Add terraform commands to configured terraformers.
+	if terraformerConfig.defs[unitDefID] and not ud.isFactory then
 		for _, cmdDesc in ipairs(cmdDescsArray) do
 			spInsertUnitCmdDesc(unitID, cmdDesc)
 		end

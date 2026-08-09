@@ -68,7 +68,10 @@ local modf = math.modf
 local string_format = string.format
 
 local team = Spring.GetMyTeamID()
-local commanderDefs = VFS.Include("luarules/configs/comDefIDs.lua") or {}
+local terraformerDefs = VFS.Include("luarules/configs/comDefIDs.lua") or {}
+for unitDefID in pairs(VFS.Include("luarules/configs/terraformerDefIDs.lua") or {}) do
+	terraformerDefs[unitDefID] = true
+end
 
 -- command IDs
 local CMD_RAMP = 39734
@@ -500,23 +503,23 @@ end
 
 local function SendCommand()
 	local selectedUnits = spGetSelectedUnits()
-	local constructor = {}
+	local terraformers = {}
 	for i = 1, #selectedUnits do
 		local unitDefID = spGetUnitDefID(selectedUnits[i])
-		if unitDefID and commanderDefs[unitDefID] then
-			constructor[#constructor + 1] = selectedUnits[i]
+		if unitDefID and terraformerDefs[unitDefID] then
+			terraformers[#terraformers + 1] = selectedUnits[i]
 		end
 	end
 
 	if terraform_type == 4 then
-		if (#constructor > 0) then 
+		if (#terraformers > 0) then 
 			local params = {}
 			params[1] = terraform_type -- 1 = level, 3 = smooth, 4 = ramp
 			params[2] = team -- teamID of the team doing the terraform
 			params[3] = loop -- true or false
 			params[4] = fixedRampWidth
 			params[5] = points -- number of selected points (2 for ramp)
-			params[6] = #constructor -- selected commander candidates
+			params[6] = #terraformers
 			params[7] = volumeSelection -- 0 = none, 1 = only raise, 2 = only lower
 			local i = 8
 			for j = 1, points do
@@ -526,31 +529,31 @@ local function SendCommand()
 				i = i + 3
 			end
 					
-			for j = 1, #constructor do
-				params[i] = constructor[j]
+			for j = 1, #terraformers do
+				params[i] = terraformers[j]
 				i = i + 1
 			end
 			
 			local a,c,m,s = spGetModKeyState()
 			
 			if s then
-				Spring.GiveOrderToUnit(constructor[1], CMD_TERRAFORM_INTERNAL, params, {"shift"})
+				Spring.GiveOrderToUnit(terraformers[1], CMD_TERRAFORM_INTERNAL, params, {"shift"})
 				originalCommandGiven = true
 			else
-				Spring.GiveOrderToUnit(constructor[1], CMD_TERRAFORM_INTERNAL, params, {})
+				Spring.GiveOrderToUnit(terraformers[1], CMD_TERRAFORM_INTERNAL, params, {})
 				spSetActiveCommand(-1)
 				originalCommandGiven = false
 			end
 		end
 	else
-		if (#constructor > 0) then 
+		if (#terraformers > 0) then 
 			local params = {}
 			params[1] = terraform_type
 			params[2] = team
 			params[3] = loop
 			params[4] = terraformHeight 
 			params[5] = points
-			params[6] = #constructor -- selected commander candidates
+			params[6] = #terraformers
 			params[7] = volumeSelection
 			local i = 8
 			for j = 1, points do
@@ -559,18 +562,18 @@ local function SendCommand()
 				i = i + 2
 			end
 			
-			for j = 1, #constructor do
-				params[i] = constructor[j]
+			for j = 1, #terraformers do
+				params[i] = terraformers[j]
 				i = i + 1
 			end
 			
 			local a,c,m,s = spGetModKeyState()
 			
 			if s then
-				Spring.GiveOrderToUnit(constructor[1], CMD_TERRAFORM_INTERNAL, params, {"shift"})
+				Spring.GiveOrderToUnit(terraformers[1], CMD_TERRAFORM_INTERNAL, params, {"shift"})
 				originalCommandGiven = true
 			else
-				Spring.GiveOrderToUnit(constructor[1], CMD_TERRAFORM_INTERNAL, params, {})
+				Spring.GiveOrderToUnit(terraformers[1], CMD_TERRAFORM_INTERNAL, params, {})
 				spSetActiveCommand(-1)
 				originalCommandGiven = false
 			end
