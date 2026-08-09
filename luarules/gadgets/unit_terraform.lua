@@ -2534,11 +2534,19 @@ local function addPreview(taskID, syncedGeometry)
 	}
 end
 
+local function isPreviewVisible(task, localTeamID, fullView)
+	return fullView
+		or Spring.AreTeamsAllied(localTeamID, task.teamID)
+end
+
 local function synchronizePreviewCache()
 	local syncedTasks = SYNCED.terraformPreviewTasks or {}
+	local localTeamID = Spring.GetLocalTeamID()
+	local _, fullView = Spring.GetSpectatingState()
 
-	for taskID in pairs(syncedTasks) do
-		if not previewCache[taskID] then
+	for taskID, task in pairs(syncedTasks) do
+		if isPreviewVisible(task, localTeamID, fullView)
+				and not previewCache[taskID] then
 			local syncedGeometryRoot = SYNCED.terraformPreviewGeometry
 			local syncedGeometry = syncedGeometryRoot
 				and syncedGeometryRoot[taskID]
@@ -2549,7 +2557,9 @@ local function synchronizePreviewCache()
 	end
 
 	for taskID, preview in pairs(previewCache) do
-		if not syncedTasks[taskID] then
+		local task = syncedTasks[taskID]
+		if not task
+				or not isPreviewVisible(task, localTeamID, fullView) then
 			deletePreview(preview)
 			previewCache[taskID] = nil
 		end
