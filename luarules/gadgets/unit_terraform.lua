@@ -1675,6 +1675,16 @@ function taskController.SetState(task, state)
 	task.public.remainingFrames = task.remainingFrames
 end
 
+function taskController.RefreshAllyTeamTerrain(teamID)
+	local allyTeamID = Spring.GetTeamAllyTeamID(teamID)
+	if allyTeamID == nil or Spring.GetGlobalLos(allyTeamID) then
+		return
+	end
+
+	Spring.SetGlobalLos(allyTeamID, true)
+	Spring.SetGlobalLos(allyTeamID, false)
+end
+
 function taskController.ReleaseTask(task, removeCommand)
 	taskController.StopBuilding(task)
 	if spValidUnitID(task.unitID) and not spGetUnitIsDead(task.unitID) then
@@ -1796,6 +1806,7 @@ function taskController.UpdateTask(task, gameFrame)
 	local applied = delayedTerraform.Apply(task.frozen, USE_TERRAIN_TEXTURE_CHANGE)
 	taskController.SetTaskStructuresNoBlocking(task, false)
 	if applied then
+		taskController.RefreshAllyTeamTerrain(task.teamID)
 		taskController.ReleaseTask(task, true)
 	else
 		taskController.CancelTask(
