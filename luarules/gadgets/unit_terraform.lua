@@ -62,7 +62,6 @@ local areaSegMaxSize = 400 -- max width and height of terraform squares
 local maxWallPoints = 1400 -- max points that can makeup a wall
 local wallSegmentLength = 14 -- how many points are part of a wall segment (points are seperated 8 elmos orthagonally)
 
-local maxRampWidth = 200 -- maximun width of ramp segment
 local maxRampLegth = 200 -- maximun length of ramp segment
 
 local maxHeightDifference = 100 -- max difference of height around terraforming, Makes Shraka Pyramids
@@ -72,9 +71,8 @@ local terraformSpeedMultiplier = 20
 
 --ramp dimensions
 local maxTotalRampLength = 3000
-local maxTotalRampWidth = 1600
 local minTotalRampLength = 32
-local minTotalRampWidth = 24
+local fixedRampWidth = 100
 
 local structureCheckLoopFrames = 300 -- frequency of slow update for building deformation check
 local modOptions = Spring.GetModOptions()
@@ -95,7 +93,16 @@ local currentCheckFrame 	= 0
 local corclogDefID = {}
 --local novheavymineDefID = UnitDefNames["novheavymine"].id
 
-local commanderDefs = VFS.Include("luarules/configs/comDefIDs.lua") or {}
+local terraformerConfig = {
+	defs = VFS.Include("luarules/configs/comDefIDs.lua") or {},
+	additionalDefs = VFS.Include("luarules/configs/terraformerDefIDs.lua") or {},
+	-- Match armcom's builddistance and workertime.
+	additionalBuildDistance = 150,
+	additionalBuildSpeed = 300,
+}
+for unitDefID in pairs(terraformerConfig.additionalDefs) do
+	terraformerConfig.defs[unitDefID] = true
+end
 local delayedTerraform = VFS.Include("luarules/gadgets/include/terraform_delayed.lua")
 
 --------------------------------------------------------------------------------
@@ -135,7 +142,7 @@ local smoothCmdDesc = {
   cursor  = 'Repair',
   action  = 'smoothground',
   texture = 'luarules/images/commands/smooth.png',
-  tooltip = 'Smooths the ground in a rectangular area - drag or click 2 corners',
+  tooltip = 'Smooths the ground in a circular area - click center, move mouse, click to confirm',
 }
 
 local restoreCmdDesc = {
@@ -177,14 +184,16 @@ local function distance(x1,y1,x2,y2)
   return ((x1-x2)^2+(y1-y2)^2)^0.5
 end
 
-local function pointHeight(xs, ys, zs, x, z, m, h, xdis)
-
-  local xInt = (z-zs+m*xs+x/m)/(m+1/m)
-
-  local ratio = abs(xInt-xs)/xdis
-
-  return ratio*h+ys
-
+local function pointHeight(xs, ys, zs, xe, ze, x, z, heightDifference)
+	local directionX = xe - xs
+	local directionZ = ze - zs
+	local lengthSquared = directionX * directionX + directionZ * directionZ
+	local ratio = (
+		(x - xs) * directionX
+		+ (z - zs) * directionZ
+	) / lengthSquared
+	ratio = math.max(0, math.min(1, ratio))
+	return ratio * heightDifference + ys
 end
 
 local function checkPointCreation(terraform_type, volumeSelection, orHeight, newHeight)
@@ -215,9 +224,9 @@ local function updateBorderWithPoint(border, x, z)
 	end
 end
 
-local function TerraformRamp(x1, y1, z1, x2, y2, z2, terraform_width, unit, units, team, volumeSelection, shift)
+local function TerraformRamp(x1, y1, z1, x2, y2, z2, rampWidth, unit, units, team, volumeSelection, shift)
 
-	--** Initial constructor processing **
+	--** Initial terraformer processing **
 	local unitsX = 0
 	local unitsZ = 0
 	local i = 1
@@ -259,11 +268,6 @@ local function TerraformRamp(x1, y1, z1, x2, y2, z2, terraform_width, unit, unit
 		return
 	end
 
-	if terraform_width < minTotalRampWidth or terraform_width > maxTotalRampWidth then
-		return
-	end
-
-	local xdis = abs(x1-x2)
 	local heightDiff = y2-y1
 	if heightDiff/dis > maxRampGradient then
 		heightDiff = maxRampGradient*dis
@@ -281,13 +285,13 @@ local function TerraformRamp(x1, y1, z1, x2, y2, z2, terraform_width, unit, unit
 		m = 0.0001
 	end
 
-	local segLength = dis/(ceil(dis/maxRampLegth))
-	local segWidth = terraform_width/ceil(terraform_width/maxRampWidth)
-	local widthScale = terraform_width/dis
+	local segmentCount = ceil(dis/maxRampLegth)
+	local segLength = dis/segmentCount
+	local widthScale = rampWidth/dis
 	local lengthScale = segLength/dis
 
 	local add = {x = (x2-x1)*lengthScale, z = (z2-z1)*lengthScale}
-	local addPerp = {x = (z1-z2)*segWidth/dis, z = -(x1-x2)*segWidth/dis}
+	local addPerp = {x = (z1-z2)*rampWidth/dis, z = -(x1-x2)*rampWidth/dis}
 
 	local mid = {x = (x1-x2)*widthScale/2, z = (z1-z2)*widthScale/2}
 	local leftRot = {x = mid.z+x1, z = -mid.x+z1}
@@ -387,73 +391,63 @@ local function TerraformRamp(x1, y1, z1, x2, y2, z2, terraform_width, unit, unit
 	local n = 1
 
 	local i = 0
-	while i*segLength < dis do
-		local j = 0
-		while j*segWidth < terraform_width do
+	while i < segmentCount do
+		segment[n] = {}
+		segment[n].along = i
+		segment[n].point = {}
+		segment[n].area = {}
+		segment[n].border = {
+			left = floor((leftpoint.x+add.x*i)/8)*8,
+			right = ceil((rightpoint.x+add.x*i)/8)*8,
+			top = floor((toppoint.z+add.z*i)/8)*8,
+			bottom = ceil((botpoint.z+add.z*i)/8)*8
+		}
 
-			segment[n] = {}
-			segment[n].along = i
-			segment[n].point = {}
-			segment[n].area = {}
-			segment[n].border = {
-				left = floor((leftpoint.x+add.x*i+addPerp.x*j)/8)*8,
-				right = ceil((rightpoint.x+add.x*i+addPerp.x*j)/8)*8,
-				top = floor((toppoint.z+add.z*i+addPerp.z*j)/8)*8,
-				bottom = ceil((botpoint.z+add.z*i+addPerp.z*j)/8)*8
-			}
-			-- end of segment
-			--segment[n].position = {x = (rightRot.x-4+add.x*i+addPerp.x*(j+0.5)-16*(x2-x1)/dis), z = (rightRot.z-4+add.z*i+addPerp.z*(j+0.5)-16*(z2-z1)/dis)}
+		-- middle of segment
+		segment[n].position = {x = rightRot.x+add.x*(i+0.5)+addPerp.x*0.5, z = rightRot.z+add.z*(i+0.5)+addPerp.z*0.5}
+		local pc = 1
 
-			-- middle of segment
-			segment[n].position = {x = rightRot.x+add.x*(i+0.5)+addPerp.x*(j+0.5), z = rightRot.z+add.z*(i+0.5)+addPerp.z*(j+0.5)}
-			local pc = 1
+		local topline1 = {x = leftpoint.x+add.x*i, z = leftpoint.z+add.z*i, m = topleftGrad}
+		local topline2 = {x = toppoint.x+add.x*i, z = toppoint.z+add.z*i, m = botleftGrad}
+		local botline1 = {x = leftpoint.x+add.x*i, z = leftpoint.z+add.z*i, m = botleftGrad}
+		local botline2 = {x = botpoint.x+add.x*i, z = botpoint.z+add.z*i, m = topleftGrad}
 
-			local topline1 = {x = leftpoint.x+add.x*i+addPerp.x*j, z = leftpoint.z+add.z*i+addPerp.z*j, m = topleftGrad}
-			local topline2 = {x = toppoint.x+add.x*i+addPerp.x*j, z = toppoint.z+add.z*i+addPerp.z*j, m = botleftGrad}
-			local botline1 = {x = leftpoint.x+add.x*i+addPerp.x*j, z = leftpoint.z+add.z*i+addPerp.z*j, m = botleftGrad}
-			local botline2 = {x = botpoint.x+add.x*i+addPerp.x*j, z = botpoint.z+add.z*i+addPerp.z*j, m = topleftGrad}
+		local topline = topline1
+		local botline = botline1
 
-			local topline = topline1
-			local botline = botline1
+		local lx = segment[n].border.left
+		while lx <= segment[n].border.right do
+			segment[n].area[lx] = {}
+			local zmin = linearEquation(lx,topline.m,topline.x,topline.z)
+			local zmax = linearEquation(lx,botline.m,botline.x,botline.z)
 
-			local lx = segment[n].border.left
-			while lx <= segment[n].border.right do
-				segment[n].area[lx] = {}
-				local zmin = linearEquation(lx,topline.m,topline.x,topline.z)
-				local zmax = linearEquation(lx,botline.m,botline.x,botline.z)
+			local lz = segment[n].border.top
+			while lz <= zmax do
+				if zmin <= lz then
+					local h = pointHeight(x1, y1, z1, x2, z2, lx, lz, heightDiff)
+					segment[n].point[pc] = {x = lx, y = h ,z = lz, orHeight = spGetGroundHeight(lx,lz), prevHeight = spGetGroundHeight(lx,lz)}
 
-				local lz = segment[n].border.top
-				while lz <= zmax do
-
-					if zmin <= lz then
-						local h = pointHeight(x1, y1, z1, lx, lz, m, heightDiff, xdis)
-						segment[n].point[pc] = {x = lx, y = h ,z = lz, orHeight = spGetGroundHeight(lx,lz), prevHeight = spGetGroundHeight(lx,lz)}
-
-						if checkPointCreation(4, volumeSelection, segment[n].point[pc].orHeight, h) then
-							pc = pc + 1
-						end
+					if checkPointCreation(4, volumeSelection, segment[n].point[pc].orHeight, h) then
+						pc = pc + 1
 					end
-
-					lz = lz+8
-				end
-				lx = lx+8
-
-				if topline == topline1 and topline2.x < lx then
-					topline = topline2
 				end
 
-				if botline == botline1 and botline2.x < lx then
-					botline = botline2
-				end
+				lz = lz+8
+			end
+			lx = lx+8
 
+			if topline == topline1 and topline2.x < lx then
+				topline = topline2
 			end
 
-			if pc ~= 1 then
-				segment[n].points = pc - 1
-				n = n + 1
+			if botline == botline1 and botline2.x < lx then
+				botline = botline2
 			end
+		end
 
-			j = j+1
+		if pc ~= 1 then
+			segment[n].points = pc - 1
+			n = n + 1
 		end
 		i = i+1
 	end
@@ -472,7 +466,7 @@ local function TerraformWall(terraform_type,mPoint,mPoints,terraformHeight,unit,
 
 	local border = {left = mapWidth, right = 0, top = mapHeight, bottom = 0}
 
-	--** Initial constructor processing **
+	--** Initial terraformer processing **
 	local unitsX = 0
 	local unitsZ = 0
 	local i = 1
@@ -651,7 +645,7 @@ local function TerraformArea(terraform_type,mPoint,mPoints,terraformHeight,unit,
 
 	local border = {left = mapWidth, right = 0, top = mapHeight, bottom = 0} -- border for the entire area
 
-	--** Initial constructor processing **
+	--** Initial terraformer processing **
 	local unitsX = 0
 	local unitsZ = 0
 	local i = 1
@@ -952,7 +946,7 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 	local loop = cmdParams[3]
 	local terraformHeight = cmdParams[4]
 	local pointCount = cmdParams[5]
-	local commanderCount = cmdParams[6]
+	local terraformerCount = cmdParams[6]
 	local volumeSelection = cmdParams[7]
 
 	if not taskController.IsFiniteNumber(terraformType)
@@ -963,8 +957,8 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 		or not taskController.IsFiniteNumber(terraformHeight)
 		or not taskController.IsFiniteNumber(pointCount)
 		or pointCount % 1 ~= 0
-		or not taskController.IsFiniteNumber(commanderCount)
-		or commanderCount % 1 ~= 0
+		or not taskController.IsFiniteNumber(terraformerCount)
+		or terraformerCount % 1 ~= 0
 		or not taskController.IsFiniteNumber(volumeSelection)
 		or volumeSelection % 1 ~= 0
 		or volumeSelection < 0
@@ -973,7 +967,7 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 	end
 
 	if terraformType == 4 then
-		if pointCount ~= 2 then
+		if pointCount ~= 2 or terraformHeight ~= fixedRampWidth then
 			return
 		end
 	elseif terraformType == 1 and abs(terraformHeight) > maxAbsoluteHeight then
@@ -989,11 +983,11 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 	elseif pointCount < 2 or pointCount > maxWallPoints then
 		return
 	end
-	if commanderCount < 1 then
+	if terraformerCount < 1 then
 		return
 	end
 	local pointParameterCount = terraformType == 4 and pointCount * 3 or pointCount * 2
-	if #cmdParams < 7 + pointParameterCount + commanderCount then
+	if #cmdParams < 7 + pointParameterCount + terraformerCount then
 		return
 	end
 
@@ -1005,7 +999,7 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 		pointCount = pointCount,
 		volumeSelection = volumeSelection,
 		points = {},
-		commanders = {},
+		terraformers = {},
 	}
 
 	local parameterIndex = 8
@@ -1036,29 +1030,29 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 		parsed.points[i] = {x = x, y = y, z = z}
 	end
 
-	local commanderSeen = {}
-	local containsCommandUnit = false
-	for i = 1, commanderCount do
-		local commanderID = cmdParams[parameterIndex]
+	local terraformerSeen = {}
+	local containsIssuingUnit = false
+	for i = 1, terraformerCount do
+		local terraformerID = cmdParams[parameterIndex]
 		parameterIndex = parameterIndex + 1
-		if taskController.IsFiniteNumber(commanderID)
-			and commanderID % 1 == 0
-			and not commanderSeen[commanderID]
-			and spValidUnitID(commanderID)
-			and not spGetUnitIsDead(commanderID)
-			and spGetUnitTeam(commanderID) == teamID then
-			local commanderDefID = Spring.GetUnitDefID(commanderID)
-			if commanderDefs[commanderDefID] then
-				commanderSeen[commanderID] = true
-				parsed.commanders[#parsed.commanders + 1] = commanderID
-				if commanderID == unitID then
-					containsCommandUnit = true
+		if taskController.IsFiniteNumber(terraformerID)
+			and terraformerID % 1 == 0
+			and not terraformerSeen[terraformerID]
+			and spValidUnitID(terraformerID)
+			and not spGetUnitIsDead(terraformerID)
+			and spGetUnitTeam(terraformerID) == teamID then
+			local terraformerDefID = Spring.GetUnitDefID(terraformerID)
+			if terraformerConfig.defs[terraformerDefID] then
+				terraformerSeen[terraformerID] = true
+				parsed.terraformers[#parsed.terraformers + 1] = terraformerID
+				if terraformerID == unitID then
+					containsIssuingUnit = true
 				end
 			end
 		end
 	end
 
-	if #parsed.commanders == 0 or not containsCommandUnit then
+	if #parsed.terraformers == 0 or not containsIssuingUnit then
 		return
 	end
 
@@ -1142,31 +1136,31 @@ function taskController.DistanceToCommandSquared(x, z, parsed)
 	end
 
 	if parsed.terraformType == 4 then
-		local distance = sqrt(closestDistance or 0) - abs(parsed.terraformHeight)
+		local distance = sqrt(closestDistance or 0) - parsed.terraformHeight * 0.5
 		return distance > 0 and distance * distance or 0
 	end
 	return closestDistance or 0
 end
 
-function taskController.ChooseCommander(parsed)
-	local closestCommander
+function taskController.ChooseTerraformer(parsed)
+	local closestTerraformer
 	local closestDistance
 
-	for i = 1, #parsed.commanders do
-		local commanderID = parsed.commanders[i]
-		local x, _, z = spGetUnitPosition(commanderID)
+	for i = 1, #parsed.terraformers do
+		local terraformerID = parsed.terraformers[i]
+		local x, _, z = spGetUnitPosition(terraformerID)
 		if x and z then
 			local distance = taskController.DistanceToCommandSquared(x, z, parsed)
 			if not closestDistance
 				or distance < closestDistance
-				or (distance == closestDistance and commanderID < closestCommander) then
-				closestCommander = commanderID
+				or (distance == closestDistance and terraformerID < closestTerraformer) then
+				closestTerraformer = terraformerID
 				closestDistance = distance
 			end
 		end
 	end
 
-	return closestCommander
+	return closestTerraformer
 end
 
 function taskController.CopyCommandOptions(cmdOptions)
@@ -1201,9 +1195,9 @@ function taskController.PrepareFrozen(unitID, teamID, cmdParams)
 			secondPoint.x,
 			secondPoint.y,
 			secondPoint.z,
-			parsed.terraformHeight * 2,
-			parsed.commanders,
-			#parsed.commanders,
+			parsed.terraformHeight,
+			parsed.terraformers,
+			#parsed.terraformers,
 			teamID,
 			parsed.volumeSelection,
 			false
@@ -1216,8 +1210,8 @@ function taskController.PrepareFrozen(unitID, teamID, cmdParams)
 			parsed.points,
 			parsed.pointCount,
 			parsed.terraformHeight,
-			parsed.commanders,
-			#parsed.commanders,
+			parsed.terraformers,
+			#parsed.terraformers,
 			teamID,
 			parsed.volumeSelection,
 			false
@@ -1229,8 +1223,8 @@ function taskController.PrepareFrozen(unitID, teamID, cmdParams)
 		parsed.points,
 		parsed.pointCount,
 		parsed.terraformHeight,
-		parsed.commanders,
-		#parsed.commanders,
+		parsed.terraformers,
+		#parsed.terraformers,
 		teamID,
 		parsed.volumeSelection,
 		false
@@ -1273,12 +1267,107 @@ end
 
 function taskController.MakePublicTask(task)
 	local pointData = {}
+	local publicPointMap = {}
 	for i = 1, task.frozen.count do
 		local point = task.frozen.points[i]
 		local dataIndex = (i - 1) * 3
 		pointData[dataIndex + 1] = point.x
 		pointData[dataIndex + 2] = point.finalHeight
 		pointData[dataIndex + 3] = point.z
+		if not publicPointMap[point.x] then
+			publicPointMap[point.x] = {}
+		end
+		publicPointMap[point.x][point.z] = i
+	end
+
+	local pointCount = task.frozen.count
+	local lineCount = 0
+	local lineData = {}
+	local lineMap = {}
+	local cellOffsets = {
+		{x = -8, z = -8},
+		{x = -8, z = 0},
+		{x = 0, z = -8},
+		{x = 0, z = 0},
+	}
+	local cellCorners = {
+		{x = 0, z = 0},
+		{x = 8, z = 0},
+		{x = 8, z = 8},
+		{x = 0, z = 8},
+	}
+
+	local function getPublicPointIndex(x, z)
+		local column = publicPointMap[x]
+		local pointIndex = column and column[z]
+		if pointIndex then
+			return pointIndex
+		end
+
+		pointCount = pointCount + 1
+		local dataIndex = (pointCount - 1) * 3
+		pointData[dataIndex + 1] = x
+		pointData[dataIndex + 2] = spGetGroundHeight(x, z)
+		pointData[dataIndex + 3] = z
+		if not column then
+			column = {}
+			publicPointMap[x] = column
+		end
+		column[z] = pointCount
+		return pointCount
+	end
+
+	local function addLine(firstPointIndex, secondPointIndex)
+		local lowIndex = math.min(firstPointIndex, secondPointIndex)
+		local highIndex = math.max(firstPointIndex, secondPointIndex)
+		if not lineMap[lowIndex] then
+			lineMap[lowIndex] = {}
+		elseif lineMap[lowIndex][highIndex] then
+			return
+		end
+
+		lineMap[lowIndex][highIndex] = true
+		lineCount = lineCount + 1
+		local dataIndex = (lineCount - 1) * 2
+		lineData[dataIndex + 1] = firstPointIndex
+		lineData[dataIndex + 2] = secondPointIndex
+	end
+
+	for i = 1, task.frozen.count do
+		local point = task.frozen.points[i]
+		local xNeighborColumn = task.frozen.pointMap[point.x + 8]
+		local xNeighborIndex = xNeighborColumn and xNeighborColumn[point.z]
+		if xNeighborIndex then
+			addLine(i, xNeighborIndex)
+		end
+
+		local zNeighborColumn = task.frozen.pointMap[point.x]
+		local zNeighborIndex = zNeighborColumn and zNeighborColumn[point.z + 8]
+		if zNeighborIndex then
+			addLine(i, zNeighborIndex)
+		end
+
+		local hasHeightChange = abs(point.finalHeight - point.initialHeight) > 0.0001
+		if hasHeightChange then
+			for j = 1, #cellOffsets do
+				local cellX = point.x + cellOffsets[j].x
+				local cellZ = point.z + cellOffsets[j].z
+				if cellX >= 0 and cellX + 8 <= mapWidth
+						and cellZ >= 0 and cellZ + 8 <= mapHeight then
+					local cornerIndices = {}
+					for k = 1, #cellCorners do
+						cornerIndices[k] = getPublicPointIndex(
+							cellX + cellCorners[k].x,
+							cellZ + cellCorners[k].z
+						)
+					end
+					addLine(cornerIndices[1], cornerIndices[2])
+					addLine(cornerIndices[2], cornerIndices[3])
+					addLine(cornerIndices[3], cornerIndices[4])
+					addLine(cornerIndices[4], cornerIndices[1])
+				end
+			end
+		end
 	end
 
 	local publicTask = {
@@ -1293,8 +1382,10 @@ function taskController.MakePublicTask(task)
 		anchorZ = task.anchor.z,
 	}
 	local publicGeometry = {
-		pointCount = task.frozen.count,
+		pointCount = pointCount,
 		pointData = pointData,
+		lineCount = lineCount,
+		lineData = lineData,
 	}
 	return publicTask, publicGeometry
 end
@@ -1569,11 +1660,19 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 	local unitX, _, unitZ = spGetUnitPosition(unitID)
 	local anchor = unitX and delayedTerraform.FindClosestPoint(frozen, unitX, unitZ)
 	local unitDef = UnitDefs[unitDefID]
-	local buildSpeed = unitDef and unitDef.buildSpeed or 0
+	local buildSpeed
+	local buildDistance
+	if terraformerConfig.additionalDefs[unitDefID] then
+		buildSpeed = terraformerConfig.additionalBuildSpeed
+		buildDistance = terraformerConfig.additionalBuildDistance
+	else
+		buildSpeed = unitDef and unitDef.buildSpeed or 0
+		buildDistance = unitDef and unitDef.buildDistance or 0
+	end
 	if not anchor or buildSpeed <= 0 then
 		taskController.SendTeamMessage(
 			teamID,
-			"Terraform rejected: the commander cannot perform this work."
+			"Terraform rejected: the selected unit cannot perform this work."
 		)
 		return false
 	end
@@ -1590,7 +1689,8 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 		cmdTag = cmdTag,
 		frozen = frozen,
 		anchor = anchor,
-		buildDistance = unitDef.buildDistance or 0,
+		buildDistance = buildDistance,
+		useBuildAnimation = unitDef and unitDef.isBuilder,
 		remainingFrames = durationFrames,
 		totalFrames = durationFrames,
 		started = false,
@@ -1618,6 +1718,11 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 end
 
 function taskController.StartBuilding(task)
+	if not task.useBuildAnimation then
+		task.building = true
+		return
+	end
+
 	local _, _, _, midX, midY, midZ = Spring.GetUnitPosition(
 		task.unitID,
 		true
@@ -1664,7 +1769,7 @@ function taskController.StartBuilding(task)
 end
 
 function taskController.StopBuilding(task)
-	if task.building and spValidUnitID(task.unitID) then
+	if task.building and task.useBuildAnimation and spValidUnitID(task.unitID) then
 		Spring.CallCOBScript(task.unitID, "StopBuilding", 0)
 	end
 	task.building = false
@@ -1673,6 +1778,16 @@ end
 function taskController.SetState(task, state)
 	task.public.state = state
 	task.public.remainingFrames = task.remainingFrames
+end
+
+function taskController.RefreshAllyTeamTerrain(teamID)
+	local allyTeamID = Spring.GetTeamAllyTeamID(teamID)
+	if allyTeamID == nil or Spring.GetGlobalLos(allyTeamID) then
+		return
+	end
+
+	Spring.SetGlobalLos(allyTeamID, true)
+	Spring.SetGlobalLos(allyTeamID, false)
 end
 
 function taskController.ReleaseTask(task, removeCommand)
@@ -1796,6 +1911,7 @@ function taskController.UpdateTask(task, gameFrame)
 	local applied = delayedTerraform.Apply(task.frozen, USE_TERRAIN_TEXTURE_CHANGE)
 	taskController.SetTaskStructuresNoBlocking(task, false)
 	if applied then
+		taskController.RefreshAllyTeamTerrain(task.teamID)
 		taskController.ReleaseTask(task, true)
 	else
 		taskController.CancelTask(
@@ -1904,7 +2020,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 	if cmdID ~= CMD_TERRAFORM_INTERNAL then
 		return true
 	end
-	if not commanderDefs[unitDefID] then
+	if not terraformerConfig.defs[unitDefID] then
 		return false
 	end
 
@@ -1917,17 +2033,17 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 		return unitID == taskController.redirectingUnitID
 	end
 
-	local chosenCommander = taskController.ChooseCommander(parsed)
-	if not chosenCommander then
+	local chosenTerraformer = taskController.ChooseTerraformer(parsed)
+	if not chosenTerraformer then
 		return false
 	end
-	if chosenCommander == unitID then
+	if chosenTerraformer == unitID then
 		return true
 	end
 
-	taskController.redirectingUnitID = chosenCommander
+	taskController.redirectingUnitID = chosenTerraformer
 	Spring.GiveOrderToUnit(
-		chosenCommander,
+		chosenTerraformer,
 		CMD_TERRAFORM_INTERNAL,
 		cmdParams,
 		taskController.CopyCommandOptions(cmdOptions)
@@ -1940,7 +2056,7 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
 	if cmdID ~= CMD_TERRAFORM_INTERNAL then
 		return false
 	end
-	if not commanderDefs[unitDefID] then
+	if not terraformerConfig.defs[unitDefID] then
 		return true, true
 	end
 
@@ -2369,8 +2485,8 @@ function gadget:UnitCreated(unitID, unitDefID)
 	end
 
 	local ud = UnitDefs[unitDefID]
-	-- add terraform commands to commanders
-	if (ud.isBuilder and commanderDefs[unitDefID]) and not ud.isFactory then
+	-- Add terraform commands to configured terraformers.
+	if terraformerConfig.defs[unitDefID] and not ud.isFactory then
 		for _, cmdDesc in ipairs(cmdDescsArray) do
 			spInsertUnitCmdDesc(unitID, cmdDesc)
 		end
@@ -2473,7 +2589,6 @@ else
 --------------------------------------------------------------------------------
 
 local previewCache = {}
-local GRID_SIZE = 8
 
 local function deletePreview(preview)
 	if preview.displayList then
@@ -2481,45 +2596,22 @@ local function deletePreview(preview)
 	end
 end
 
-local function drawPreviewGeometry(pointCount, pointData)
-	local pointMap = {}
-	for i = 1, pointCount do
-		local dataIndex = (i - 1) * 3
-		local x = pointData[dataIndex + 1]
-		local z = pointData[dataIndex + 3]
-		if not pointMap[x] then
-			pointMap[x] = {}
-		end
-		pointMap[x][z] = dataIndex
-	end
-
+local function drawPreviewGeometry(lineCount, lineData, pointData)
 	gl.BeginEnd(GL.LINES, function()
-		for i = 1, pointCount do
-			local dataIndex = (i - 1) * 3
-			local x = pointData[dataIndex + 1]
-			local y = pointData[dataIndex + 2]
-			local z = pointData[dataIndex + 3]
-			local xNeighborIndex = pointMap[x + GRID_SIZE]
-				and pointMap[x + GRID_SIZE][z]
-			if xNeighborIndex then
-				gl.Vertex(x, y + 2, z)
-				gl.Vertex(
-					pointData[xNeighborIndex + 1],
-					pointData[xNeighborIndex + 2] + 2,
-					pointData[xNeighborIndex + 3]
-				)
-			end
-
-			local zNeighborIndex = pointMap[x]
-				and pointMap[x][z + GRID_SIZE]
-			if zNeighborIndex then
-				gl.Vertex(x, y + 2, z)
-				gl.Vertex(
-					pointData[zNeighborIndex + 1],
-					pointData[zNeighborIndex + 2] + 2,
-					pointData[zNeighborIndex + 3]
-				)
-			end
+		for i = 1, lineCount do
+			local lineIndex = (i - 1) * 2
+			local firstDataIndex = (lineData[lineIndex + 1] - 1) * 3
+			local secondDataIndex = (lineData[lineIndex + 2] - 1) * 3
+			gl.Vertex(
+				pointData[firstDataIndex + 1],
+				pointData[firstDataIndex + 2] + 2,
+				pointData[firstDataIndex + 3]
+			)
+			gl.Vertex(
+				pointData[secondDataIndex + 1],
+				pointData[secondDataIndex + 2] + 2,
+				pointData[secondDataIndex + 3]
+			)
 		end
 	end)
 end
@@ -2528,17 +2620,26 @@ local function addPreview(taskID, syncedGeometry)
 	previewCache[taskID] = {
 		displayList = gl.CreateList(
 			drawPreviewGeometry,
-			syncedGeometry.pointCount,
+			syncedGeometry.lineCount,
+			syncedGeometry.lineData,
 			syncedGeometry.pointData
 		),
 	}
 end
 
+local function isPreviewVisible(task, localTeamID, fullView)
+	return fullView
+		or Spring.AreTeamsAllied(localTeamID, task.teamID)
+end
+
 local function synchronizePreviewCache()
 	local syncedTasks = SYNCED.terraformPreviewTasks or {}
+	local localTeamID = Spring.GetLocalTeamID()
+	local _, fullView = Spring.GetSpectatingState()
 
-	for taskID in pairs(syncedTasks) do
-		if not previewCache[taskID] then
+	for taskID, task in pairs(syncedTasks) do
+		if isPreviewVisible(task, localTeamID, fullView)
+				and not previewCache[taskID] then
 			local syncedGeometryRoot = SYNCED.terraformPreviewGeometry
 			local syncedGeometry = syncedGeometryRoot
 				and syncedGeometryRoot[taskID]
@@ -2549,7 +2650,9 @@ local function synchronizePreviewCache()
 	end
 
 	for taskID, preview in pairs(previewCache) do
-		if not syncedTasks[taskID] then
+		local task = syncedTasks[taskID]
+		if not task
+				or not isPreviewVisible(task, localTeamID, fullView) then
 			deletePreview(preview)
 			previewCache[taskID] = nil
 		end
