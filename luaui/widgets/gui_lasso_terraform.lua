@@ -20,23 +20,20 @@ include("keysym.h.lua")
 
 local osclock	= os.clock
 
-local GL_LINE_STRIP		= GL.LINE_STRIP
 local GL_LINES			= GL.LINES
-local glVertex			= gl.Vertex
-local glLineStipple 	= gl.LineStipple
-local glLineWidth   	= gl.LineWidth
-local glColor       	= gl.Color
-local glBeginEnd    	= gl.BeginEnd
-local glPushMatrix		= gl.PushMatrix
-local glPopMatrix		= gl.PopMatrix
-local glScale			= gl.Scale
-local glTranslate		= gl.Translate
-local glLoadIdentity	= gl.LoadIdentity
-local glCallList        = gl.CallList
-local glCreateList      = gl.CreateList
+local glBlending        = gl.Blending
+local glCreateShader    = gl.CreateShader
+local glCulling         = gl.Culling
+local glDeleteShader    = gl.DeleteShader
 local glDepthTest		= gl.DepthTest
-local glBillboard       = gl.Billboard
+local glGetShaderLog    = gl.GetShaderLog
+local glGetUniformLocation = gl.GetUniformLocation
+local glGetVAO          = gl.GetVAO
+local glGetVBO          = gl.GetVBO
 local glText            = gl.Text
+local glUniform         = gl.Uniform
+local glUniformMatrix   = gl.UniformMatrix
+local glUseShader       = gl.UseShader
 
 local spGetActiveCommand 	= Spring.GetActiveCommand
 local spSetActiveCommand	= Spring.SetActiveCommand
@@ -54,6 +51,7 @@ local spGetModKeyState		= Spring.GetModKeyState
 local spTraceScreenRay		= Spring.TraceScreenRay
 local spGetGroundHeight		= Spring.GetGroundHeight
 local spGetCurrentTooltip	= Spring.GetCurrentTooltip
+local spGetViewGeometry    = Spring.GetViewGeometry
 
 local spSendCommands 		= Spring.SendCommands
 
@@ -151,11 +149,23 @@ local points = 0
 
 local drawPoint = {}
 local drawPoints = 0
---draw list--
-local volumeDraw
-local groundGridDraw
-local mouseGridDraw
-----
+
+local lineShader
+local lineViewProjectionLoc
+local lineViewportSizeLoc
+local lineWidthLoc
+local lineTerraformHeightLoc
+local lineVolumeSelectionLoc
+local lineNegativeVolumeColorLoc
+local linePositiveVolumeColorLoc
+local lineRendererFailed = false
+local lineMeshFailureReported = false
+
+local volumeMesh = {vao = nil, vbo = nil, capacity = 0, vertexCount = 0}
+local groundGridMesh = {vao = nil, vbo = nil, capacity = 0, vertexCount = 0}
+local mouseGridMesh = {vao = nil, vbo = nil, capacity = 0, vertexCount = 0}
+local transientMesh = {vao = nil, vbo = nil, capacity = 0, vertexCount = 0}
+
 local mouseX, mouseY
 local rectangleStartMouseX, rectangleStartMouseY
 local rectangleEndX, rectangleEndZ
@@ -163,6 +173,274 @@ local rectangleDragged = false
 local rectangleAwaitingSecondClick = false
 
 ---------------
+
+local lineVertexShader = [[
+#version 330 core
+
+layout(location = 0) in vec3 position;
+layout(location = 1) in vec4 color;
+layout(location = 2) in vec2 vertexParams;
+
+uniform mat4 viewprojection;
+uniform float terraformHeight;
+uniform float volumeSelection;
+uniform vec4 negativeVolumeColor;
+uniform vec4 positiveVolumeColor;
+
+out vec4 vertexColor;
+
+void main()
+{
+	vec3 worldPosition = position;
+	float vertexMode = vertexParams.x;
+	float groundHeight = vertexParams.y;
+	vertexColor = color;
+
+	if (vertexMode > 0.5 && (vertexMode < 1.5 || vertexMode > 2.5)) {
+		worldPosition.y = terraformHeight;
+	}
+	if (vertexMode > 1.5) {
+		bool isNegativeVolume = terraformHeight < groundHeight;
+		bool suppressVolume = (isNegativeVolume && volumeSelection > 0.5 && volumeSelection < 1.5)
+			|| (!isNegativeVolume && volumeSelection > 1.5);
+		vertexColor = isNegativeVolume ? negativeVolumeColor : positiveVolumeColor;
+		if (suppressVolume) {
+			vertexColor.a = 0.0;
+		}
+	}
+
+	gl_Position = viewprojection * vec4(worldPosition, 1.0);
+}
+]]
+
+local lineGeometryShader = [[
+#version 330 core
+
+layout(lines) in;
+layout(triangle_strip, max_vertices = 4) out;
+
+in vec4 vertexColor[];
+out vec4 fragmentColor;
+
+uniform vec2 viewportSize;
+uniform float lineWidth;
+
+void EmitLineVertex(vec4 clipPosition, vec2 offset, vec4 color)
+{
+	fragmentColor = color;
+	gl_Position = clipPosition;
+	gl_Position.xy += offset * clipPosition.w;
+	EmitVertex();
+}
+
+void main()
+{
+	vec4 startClip = gl_in[0].gl_Position;
+	vec4 endClip = gl_in[1].gl_Position;
+	if (startClip.w <= 0.0001 || endClip.w <= 0.0001) {
+		return;
+	}
+	vec2 startScreen = (startClip.xy / startClip.w) * viewportSize * 0.5;
+	vec2 endScreen = (endClip.xy / endClip.w) * viewportSize * 0.5;
+	vec2 direction = endScreen - startScreen;
+	float directionLength = length(direction);
+
+	if (directionLength < 0.001) {
+		return;
+	}
+
+	vec2 normal = vec2(-direction.y, direction.x) / directionLength;
+	vec2 offset = normal * (lineWidth / viewportSize);
+
+	EmitLineVertex(startClip, offset, vertexColor[0]);
+	EmitLineVertex(startClip, -offset, vertexColor[0]);
+	EmitLineVertex(endClip, offset, vertexColor[1]);
+	EmitLineVertex(endClip, -offset, vertexColor[1]);
+	EndPrimitive();
+}
+]]
+
+local lineFragmentShader = [[
+#version 330 core
+
+in vec4 fragmentColor;
+out vec4 fragColor;
+
+void main()
+{
+	if (fragmentColor.a <= 0.0) {
+		discard;
+	}
+	fragColor = fragmentColor;
+}
+]]
+
+local function destroyLineMesh(mesh)
+	if mesh.vao then
+		mesh.vao:Delete()
+	end
+	if mesh.vbo then
+		mesh.vbo:Delete()
+	end
+	mesh.vao = nil
+	mesh.vbo = nil
+	mesh.capacity = 0
+	mesh.vertexCount = 0
+end
+
+local function clearLineMeshes()
+	volumeMesh.vertexCount = 0
+	groundGridMesh.vertexCount = 0
+	mouseGridMesh.vertexCount = 0
+	transientMesh.vertexCount = 0
+end
+
+local function destroyLineRenderer()
+	destroyLineMesh(volumeMesh)
+	destroyLineMesh(groundGridMesh)
+	destroyLineMesh(mouseGridMesh)
+	destroyLineMesh(transientMesh)
+
+	if lineShader then
+		glDeleteShader(lineShader)
+		lineShader = nil
+	end
+end
+
+local function initLineRenderer()
+	if lineShader then
+		return true
+	end
+	if lineRendererFailed then
+		return false
+	end
+	if not glCreateShader or not glDeleteShader or not glGetUniformLocation
+			or not glGetVAO or not glGetVBO or not glUniform
+			or not glUniformMatrix or not glUseShader then
+		lineRendererFailed = true
+		return false
+	end
+
+	lineShader = glCreateShader({
+		vertex = lineVertexShader,
+		geometry = lineGeometryShader,
+		fragment = lineFragmentShader,
+	})
+	if not lineShader or lineShader == 0 then
+		Spring.Echo("[Lasso Terraform GUI] Failed to create the line shader:", glGetShaderLog and glGetShaderLog() or "no shader log")
+		lineShader = nil
+		lineRendererFailed = true
+		return false
+	end
+
+	lineViewProjectionLoc = glGetUniformLocation(lineShader, "viewprojection")
+	lineViewportSizeLoc = glGetUniformLocation(lineShader, "viewportSize")
+	lineWidthLoc = glGetUniformLocation(lineShader, "lineWidth")
+	lineTerraformHeightLoc = glGetUniformLocation(lineShader, "terraformHeight")
+	lineVolumeSelectionLoc = glGetUniformLocation(lineShader, "volumeSelection")
+	lineNegativeVolumeColorLoc = glGetUniformLocation(lineShader, "negativeVolumeColor")
+	linePositiveVolumeColorLoc = glGetUniformLocation(lineShader, "positiveVolumeColor")
+	return true
+end
+
+local function ensureLineMeshCapacity(mesh, vertexCount)
+	if mesh.vao and mesh.vbo and vertexCount <= mesh.capacity then
+		return true
+	end
+
+	local capacity = math.max(mesh.capacity, 64)
+	while capacity < vertexCount do
+		capacity = capacity * 2
+	end
+
+	local newVAO = glGetVAO()
+	local newVBO = glGetVBO(GL.ARRAY_BUFFER, true)
+	if not newVAO or not newVBO then
+		if newVAO then
+			newVAO:Delete()
+		end
+		if newVBO then
+			newVBO:Delete()
+		end
+		return false
+	end
+
+	newVBO:Define(capacity, {
+		{id = 0, name = "position", size = 3},
+		{id = 1, name = "color", size = 4},
+		{id = 2, name = "vertexParams", size = 2},
+	})
+	newVAO:AttachVertexBuffer(newVBO)
+
+	if mesh.vao then
+		mesh.vao:Delete()
+	end
+	if mesh.vbo then
+		mesh.vbo:Delete()
+	end
+
+	mesh.vao = newVAO
+	mesh.vbo = newVBO
+	mesh.capacity = capacity
+	return true
+end
+
+local function uploadLineMesh(mesh, data)
+	local vertexCount = #data / 9
+	mesh.vertexCount = 0
+	if vertexCount == 0 then
+		return true
+	end
+	if not ensureLineMeshCapacity(mesh, vertexCount) then
+		if not lineMeshFailureReported then
+			Spring.Echo("[Lasso Terraform GUI] Failed to allocate a line mesh.")
+			lineMeshFailureReported = true
+		end
+		return false
+	end
+
+	mesh.vbo:Upload(data)
+	mesh.vertexCount = vertexCount
+	return true
+end
+
+local function addLine(data, x1, y1, z1, x2, y2, z2, color, startMode, endMode, groundHeight)
+	local index = #data
+	startMode = startMode or 0
+	endMode = endMode or 0
+	groundHeight = groundHeight or 0
+	data[index + 1] = x1
+	data[index + 2] = y1
+	data[index + 3] = z1
+	data[index + 4] = color[1]
+	data[index + 5] = color[2]
+	data[index + 6] = color[3]
+	data[index + 7] = color[4]
+	data[index + 8] = startMode
+	data[index + 9] = groundHeight
+	data[index + 10] = x2
+	data[index + 11] = y2
+	data[index + 12] = z2
+	data[index + 13] = color[1]
+	data[index + 14] = color[2]
+	data[index + 15] = color[3]
+	data[index + 16] = color[4]
+	data[index + 17] = endMode
+	data[index + 18] = groundHeight
+end
+
+local function addLineStrip(data, vertices, color)
+	for i = 1, #vertices - 1 do
+		local startPoint = vertices[i]
+		local endPoint = vertices[i + 1]
+		addLine(
+			data,
+			startPoint[1], startPoint[2], startPoint[3],
+			endPoint[1], endPoint[2], endPoint[3],
+			color
+		)
+	end
+end
 
 local function clampTerraformHeight(height)
 	return math.max(minTerraformHeight, math.min(maxTerraformHeight, height))
@@ -172,16 +450,7 @@ end
 local function stopCommand()
 	drawingRectangle = false
 	setHeight = false
-	if (volumeDraw) then 
-		gl.DeleteList(volumeDraw)
-		gl.DeleteList(mouseGridDraw)
-	end
-	if (groundGridDraw) then 
-		gl.DeleteList(groundGridDraw)
-	end
-	volumeDraw = false
-	groundGridDraw = false
-	mouseGridDraw = false
+	clearLineMeshes()
 	volumeSelection = 0
 	points = 0
 	loop = 0
@@ -199,16 +468,7 @@ local function completelyStopCommand()
 	originalCommandGiven = false
 	drawingRectangle = false
 	setHeight = false
-	if (volumeDraw) then 
-		gl.DeleteList(volumeDraw)
-		gl.DeleteList(mouseGridDraw)
-	end
-	if (groundGridDraw) then 
-		gl.DeleteList(groundGridDraw)
-	end
-	volumeDraw = false
-	groundGridDraw = false
-	mouseGridDraw = false
+	clearLineMeshes()
 	drawingRamp = false
 	volumeSelection = 0
 	points = 0
@@ -305,83 +565,107 @@ end
 
 ---------------
 
-local function lineVolumeLevel()
+local function rebuildVolumeMesh()
+	local data = {}
 
 	for i = 1, drawPoints do
-		repeat -- emulating continue
-			if (terraformHeight < drawPoint[i].ytl) then
-				if (volumeSelection == 1) then
-					break -- continue
-				end
-				glColor(negVolume)
-			else
-				if (volumeSelection == 2) then
-					break -- continue
-				end
-				glColor(posVolume)
+		local drawCell = drawPoint[i]
+		for lx = 0, 12, 4 do
+			for lz = 0, 12, 4 do
+				addLine(
+					data,
+					drawCell.x + lx, drawCell.ytl, drawCell.z + lz,
+					drawCell.x + lx, drawCell.ytl, drawCell.z + lz,
+					posVolume,
+					2, 3, drawCell.ytl
+				)
 			end
-			
-			for lx = 0,12,4 do
-				for lz = 0,12,4 do
-					glVertex(drawPoint[i].x+lx ,drawPoint[i].ytl,drawPoint[i].z+lz)
-					glVertex(drawPoint[i].x+lx ,terraformHeight,drawPoint[i].z+lz)
-				end
-			end
-		until true --do not repeat
+		end
 	end
 
+	return uploadLineMesh(volumeMesh, data)
 end
 
-local function groundGrid()
+local function rebuildGroundGridMesh()
+	local data = {}
 
 	for i = 1, drawPoints do
-	
-		glColor(groundGridColor)
-		
-		glVertex(drawPoint[i].x,drawPoint[i].ytl,drawPoint[i].z)
-		glVertex(drawPoint[i].x+Grid,drawPoint[i].ytr,drawPoint[i].z)
+		local drawCell = drawPoint[i]
+		addLine(
+			data,
+			drawCell.x, drawCell.ytl, drawCell.z,
+			drawCell.x + Grid, drawCell.ytr, drawCell.z,
+			groundGridColor
+		)
+		addLine(
+			data,
+			drawCell.x, drawCell.ytl, drawCell.z,
+			drawCell.x, drawCell.ybl, drawCell.z + Grid,
+			groundGridColor
+		)
 
-		glVertex(drawPoint[i].x,drawPoint[i].ytl,drawPoint[i].z)
-		glVertex(drawPoint[i].x,drawPoint[i].ybl,drawPoint[i].z+Grid)
-		
-		if drawPoint[i].Right then
-			glVertex(drawPoint[i].x+16,drawPoint[i].ytr,drawPoint[i].z)
-			glVertex(drawPoint[i].x+16,drawPoint[i].ybr,drawPoint[i].z+Grid)
+		if drawCell.Right then
+			addLine(
+				data,
+				drawCell.x + Grid, drawCell.ytr, drawCell.z,
+				drawCell.x + Grid, drawCell.ybr, drawCell.z + Grid,
+				groundGridColor
+			)
 		end
-		
-		if drawPoint[i].Bottom then
-			glVertex(drawPoint[i].x,drawPoint[i].ybl,drawPoint[i].z+16)
-			glVertex(drawPoint[i].x+Grid,drawPoint[i].ybr,drawPoint[i].z+16)
+		if drawCell.Bottom then
+			addLine(
+				data,
+				drawCell.x, drawCell.ybl, drawCell.z + Grid,
+				drawCell.x + Grid, drawCell.ybr, drawCell.z + Grid,
+				groundGridColor
+			)
 		end
-		
 	end
 
+	return uploadLineMesh(groundGridMesh, data)
 end
 
-local function mouseGridLevel()
+local function rebuildMouseGridMesh()
+	local data = {}
 
 	for i = 1, drawPoints do
-	
-		glColor(groundGridColor)
-		
-		glVertex(drawPoint[i].x,terraformHeight,drawPoint[i].z)
-		glVertex(drawPoint[i].x+Grid,terraformHeight,drawPoint[i].z)
+		local drawCell = drawPoint[i]
+		addLine(
+			data,
+			drawCell.x, terraformHeight, drawCell.z,
+			drawCell.x + Grid, terraformHeight, drawCell.z,
+			groundGridColor,
+			1, 1
+		)
+		addLine(
+			data,
+			drawCell.x, terraformHeight, drawCell.z,
+			drawCell.x, terraformHeight, drawCell.z + Grid,
+			groundGridColor,
+			1, 1
+		)
 
-		glVertex(drawPoint[i].x,terraformHeight,drawPoint[i].z)
-		glVertex(drawPoint[i].x,terraformHeight,drawPoint[i].z+Grid)
-		
-		if drawPoint[i].Right then
-			glVertex(drawPoint[i].x+16,terraformHeight,drawPoint[i].z)
-			glVertex(drawPoint[i].x+16,terraformHeight,drawPoint[i].z+Grid)
+		if drawCell.Right then
+			addLine(
+				data,
+				drawCell.x + Grid, terraformHeight, drawCell.z,
+				drawCell.x + Grid, terraformHeight, drawCell.z + Grid,
+				groundGridColor,
+				1, 1
+			)
 		end
-		
-		if drawPoint[i].Bottom then
-			glVertex(drawPoint[i].x,terraformHeight,drawPoint[i].z+16)
-			glVertex(drawPoint[i].x+Grid,terraformHeight,drawPoint[i].z+16)
+		if drawCell.Bottom then
+			addLine(
+				data,
+				drawCell.x, terraformHeight, drawCell.z + Grid,
+				drawCell.x + Grid, terraformHeight, drawCell.z + Grid,
+				groundGridColor,
+				1, 1
+			)
 		end
-		
 	end
 
+	return uploadLineMesh(mouseGridMesh, data)
 end
 
 local function calculateAreaPoints(mPoint, mPoints)
@@ -836,12 +1120,6 @@ function widget:Update(n)
 				terraformHeight = clampTerraformHeight(terraformHeight + (my-mouseY)*mouseSensitivity)
 				storedHeight = terraformHeight
 			end
-			if (volumeDraw) then 
-				gl.DeleteList(volumeDraw); volumeDraw=nil
-				gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-			end
-			volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
-			mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
 		elseif terraform_type == 4 then
 			Spring.WarpMouse (mouseX,mouseY)
 			terraformHeight = terraformHeight + (my-mouseY)*mouseSensitivity
@@ -902,15 +1180,9 @@ function widget:MouseRelease(mx, my, button)
 				point[5] = {x = point[1].x, z = point[1].z}
 				loop = 1
 				calculateAreaPoints(point,points)
-				if (groundGridDraw) then gl.DeleteList(groundGridDraw); groundGridDraw=nil end
-				groundGridDraw = glCreateList(glBeginEnd, GL_LINES, groundGrid)
-				
-				if (volumeDraw) then
-					gl.DeleteList(volumeDraw); volumeDraw=nil
-					gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-				end
-				volumeDraw = glCreateList(glBeginEnd, GL_LINES, lineVolumeLevel)
-				mouseGridDraw = glCreateList(glBeginEnd, GL_LINES, mouseGridLevel)
+				rebuildGroundGridMesh()
+				rebuildVolumeMesh()
+				rebuildMouseGridMesh()
 				
 			elseif terraform_type == 3 or terraform_type == 5 then
 			
@@ -1004,47 +1276,74 @@ end
 -- Drawing
 --------------------------------------------------------------------------------
 
-local function DrawRectangleLine()
+local function rebuildTransientMesh()
+	local data = {}
 
-	glVertex(point[3].x,point[1].y,point[3].z)
-	glVertex(point[3].x,point[1].y,point[2].z)
-	glVertex(point[2].x,point[1].y,point[2].z)
-	glVertex(point[2].x,point[1].y,point[3].z)
-	glVertex(point[3].x,point[1].y,point[3].z)
-	
+	if terraform_type == 4 then
+		local distance = sqrt((point[1].x - point[2].x)^2 + (point[1].z - point[2].z)^2)
+		if distance <= 0.0001 then
+			addLine(
+				data,
+				point[1].x, point[1].y, point[1].z,
+				point[1].x, point[1].ground, point[1].z,
+				vehPathingColor
+			)
+		else
+			local gradient = abs(point[1].y - point[2].y) / distance
+			local color
+			if gradient <= vehPathingGrad then
+				color = vehPathingColor
+			elseif gradient <= botPathingGrad then
+				color = botPathingColor
+			else
+				color = noPathingColor
+			end
+
+			local perpendicularX = terraformHeight * (point[1].z - point[2].z) / distance
+			local perpendicularZ = -terraformHeight * (point[1].x - point[2].x) / distance
+			local startTopPlus = {point[1].x + perpendicularX, point[1].y, point[1].z + perpendicularZ}
+			local startGroundPlus = {point[1].x + perpendicularX, point[1].ground, point[1].z + perpendicularZ}
+			local startGroundMinus = {point[1].x - perpendicularX, point[1].ground, point[1].z - perpendicularZ}
+			local startTopMinus = {point[1].x - perpendicularX, point[1].y, point[1].z - perpendicularZ}
+			local endTopMinus = {point[2].x - perpendicularX, point[2].y, point[2].z - perpendicularZ}
+			local endTopPlus = {point[2].x + perpendicularX, point[2].y, point[2].z + perpendicularZ}
+			local endGroundMinus = {point[2].x - perpendicularX, point[2].ground, point[2].z - perpendicularZ}
+			local endGroundPlus = {point[2].x + perpendicularX, point[2].ground, point[2].z + perpendicularZ}
+
+			addLineStrip(data, {
+				startTopPlus,
+				startGroundPlus,
+				startGroundMinus,
+				startTopMinus,
+			}, color)
+			addLineStrip(data, {
+				endTopMinus,
+				startTopMinus,
+				startTopPlus,
+				endTopPlus,
+				endTopMinus,
+				endGroundMinus,
+				endGroundPlus,
+				endTopPlus,
+			}, color)
+		end
+	elseif drawingRectangle then
+		addLineStrip(data, {
+			{point[3].x, point[1].y, point[3].z},
+			{point[3].x, point[1].y, point[2].z},
+			{point[2].x, point[1].y, point[2].z},
+			{point[2].x, point[1].y, point[3].z},
+			{point[3].x, point[1].y, point[3].z},
+		}, selectionColor)
+	end
+
+	return uploadLineMesh(transientMesh, data)
 end
 
-local function DrawRampFirstSetHeight(dis)
-	
-	glVertex(point[1].x,point[1].y,point[1].z)
-	glVertex(point[1].x,point[1].ground,point[1].z)
-	
-end
-
-local function DrawRampStart(dis)
-
-	local perpendicular = {x = terraformHeight*(point[1].z-point[2].z)/dis, z = -terraformHeight*(point[1].x-point[2].x)/dis}
-	
-	glVertex(point[1].x+perpendicular.x,point[1].y,point[1].z+perpendicular.z)
-	glVertex(point[1].x+perpendicular.x,point[1].ground,point[1].z+perpendicular.z)
-	glVertex(point[1].x-perpendicular.x,point[1].ground,point[1].z-perpendicular.z)
-	glVertex(point[1].x-perpendicular.x,point[1].y,point[1].z-perpendicular.z)
-	
-end
-
-local function DrawRampMiddleEnd(dis)
-	
-	local perpendicular = {x = terraformHeight*(point[1].z-point[2].z)/dis, z = -terraformHeight*(point[1].x-point[2].x)/dis}
-	
-	glVertex(point[2].x-perpendicular.x,point[2].y,point[2].z-perpendicular.z)
-	glVertex(point[1].x-perpendicular.x,point[1].y,point[1].z-perpendicular.z)
-	glVertex(point[1].x+perpendicular.x,point[1].y,point[1].z+perpendicular.z)
-	glVertex(point[2].x+perpendicular.x,point[2].y,point[2].z+perpendicular.z)
-	glVertex(point[2].x-perpendicular.x,point[2].y,point[2].z-perpendicular.z)
-	glVertex(point[2].x-perpendicular.x,point[2].ground,point[2].z-perpendicular.z)
-	glVertex(point[2].x+perpendicular.x,point[2].ground,point[2].z+perpendicular.z)
-	glVertex(point[2].x+perpendicular.x,point[2].y,point[2].z+perpendicular.z)
-	
+local function drawLineMesh(mesh)
+	if mesh.vao and mesh.vertexCount > 0 then
+		mesh.vao:DrawArrays(GL_LINES, mesh.vertexCount, 0)
+	end
 end
 
 local function drawMouseText(y,text)
@@ -1056,55 +1355,52 @@ end
 
 
 function widget:DrawWorld()
-	
+
 	if not (setHeight or drawingRectangle or drawingRamp) then
 		widgetHandler:RemoveWidgetCallIn("DrawWorld", self)
 		return
 	end
-	
-	--// draw the lines
-	--glLineStipple(2, 4095)
-	glLineWidth(3.0)
-	
-	if terraform_type == 4 then
-	
-		local dis = sqrt((point[1].x-point[2].x)^2 + (point[1].z-point[2].z)^2)
-		
-		if dis == 0 then
-			glColor(vehPathingColor)
-			glBeginEnd(GL_LINES, DrawRampFirstSetHeight)
-		else
-			local grad = abs(point[1].y-point[2].y)/dis
-			if grad <= vehPathingGrad then
-				glColor(vehPathingColor)
-			elseif grad <= botPathingGrad then
-				glColor(botPathingColor)
-			else
-			   glColor(noPathingColor)
-			end
-			glBeginEnd(GL_LINE_STRIP, DrawRampStart, dis)
-			glBeginEnd(GL_LINE_STRIP, DrawRampMiddleEnd, dis)
-		end
-	
+
+	if not initLineRenderer() then
+		return
+	end
+	if terraform_type == 4 or drawingRectangle then
+		rebuildTransientMesh()
 	else
-	
-		if setHeight then	
-			--glDepthTest(true)
-			glCallList(groundGridDraw)
-			glCallList(volumeDraw)
-			glCallList(mouseGridDraw)
-			
-			--glDepthTest(false)
-		elseif drawingRectangle then
-			glColor(selectionColor)
-			glBeginEnd(GL_LINE_STRIP, DrawRectangleLine)
-		end
-		
+		transientMesh.vertexCount = 0
 	end
 
-	glColor(1, 1, 1, 1)
-	glLineWidth(1.0)
-	--glLineStipple(false)
+	local viewSizeX, viewSizeY = spGetViewGeometry()
+	if not viewSizeX or not viewSizeY or viewSizeX <= 0 or viewSizeY <= 0 then
+		return
+	end
+
+	glDepthTest(false)
+	glCulling(false)
+	glBlending("alpha")
+
+	if glUseShader(lineShader) then
+		glUniformMatrix(lineViewProjectionLoc, "viewprojection")
+		glUniform(lineViewportSizeLoc, viewSizeX, viewSizeY)
+		glUniform(lineWidthLoc, 3.0)
+		glUniform(lineTerraformHeightLoc, terraformHeight)
+		glUniform(lineVolumeSelectionLoc, volumeSelection)
+		glUniform(lineNegativeVolumeColorLoc, negVolume[1], negVolume[2], negVolume[3], negVolume[4])
+		glUniform(linePositiveVolumeColorLoc, posVolume[1], posVolume[2], posVolume[3], posVolume[4])
+
+		if terraform_type == 4 or drawingRectangle then
+			drawLineMesh(transientMesh)
+		elseif setHeight then
+			drawLineMesh(groundGridMesh)
+			drawLineMesh(volumeMesh)
+			drawLineMesh(mouseGridMesh)
+		end
+	end
+	glUseShader(0)
+
+	glBlending("reset")
+	glCulling(false)
+	glDepthTest(false)
 end
 
 function widget:DrawScreen()
@@ -1141,9 +1437,15 @@ end
 --------------------------------------------------------------------------------
 
 function widget:Initialize()
+	if not initLineRenderer() then
+		Spring.Echo("[Lasso Terraform GUI] Modern line rendering is unavailable; disabling the widget.")
+		widgetHandler:RemoveWidget(self)
+		return
+	end
+
 	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
-	    widget:PlayerChanged()
-  	end
+		widget:PlayerChanged()
+	end
 end
 
 function widget:PlayerChanged(playerID)
@@ -1157,11 +1459,5 @@ function widget:GameStart()
 end
 
 function widget:Shutdown()
-	if (volumeDraw) then 
-		gl.DeleteList(volumeDraw); volumeDraw=nil
-		gl.DeleteList(mouseGridDraw); mouseGridDraw=nil
-	end
-	if (groundGridDraw) then 
-		gl.DeleteList(groundGridDraw); groundGridDraw=nil 
-	end
+	destroyLineRenderer()
 end
