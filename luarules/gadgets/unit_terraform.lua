@@ -184,14 +184,16 @@ local function distance(x1,y1,x2,y2)
   return ((x1-x2)^2+(y1-y2)^2)^0.5
 end
 
-local function pointHeight(xs, ys, zs, x, z, m, h, xdis)
-
-  local xInt = (z-zs+m*xs+x/m)/(m+1/m)
-
-  local ratio = abs(xInt-xs)/xdis
-
-  return ratio*h+ys
-
+local function pointHeight(xs, ys, zs, xe, ze, x, z, heightDifference)
+	local directionX = xe - xs
+	local directionZ = ze - zs
+	local lengthSquared = directionX * directionX + directionZ * directionZ
+	local ratio = (
+		(x - xs) * directionX
+		+ (z - zs) * directionZ
+	) / lengthSquared
+	ratio = math.max(0, math.min(1, ratio))
+	return ratio * heightDifference + ys
 end
 
 local function checkPointCreation(terraform_type, volumeSelection, orHeight, newHeight)
@@ -266,7 +268,6 @@ local function TerraformRamp(x1, y1, z1, x2, y2, z2, rampWidth, unit, units, tea
 		return
 	end
 
-	local xdis = abs(x1-x2)
 	local heightDiff = y2-y1
 	if heightDiff/dis > maxRampGradient then
 		heightDiff = maxRampGradient*dis
@@ -284,7 +285,8 @@ local function TerraformRamp(x1, y1, z1, x2, y2, z2, rampWidth, unit, units, tea
 		m = 0.0001
 	end
 
-	local segLength = dis/(ceil(dis/maxRampLegth))
+	local segmentCount = ceil(dis/maxRampLegth)
+	local segLength = dis/segmentCount
 	local widthScale = rampWidth/dis
 	local lengthScale = segLength/dis
 
@@ -389,7 +391,7 @@ local function TerraformRamp(x1, y1, z1, x2, y2, z2, rampWidth, unit, units, tea
 	local n = 1
 
 	local i = 0
-	while i*segLength < dis do
+	while i < segmentCount do
 		segment[n] = {}
 		segment[n].along = i
 		segment[n].point = {}
@@ -422,7 +424,7 @@ local function TerraformRamp(x1, y1, z1, x2, y2, z2, rampWidth, unit, units, tea
 			local lz = segment[n].border.top
 			while lz <= zmax do
 				if zmin <= lz then
-					local h = pointHeight(x1, y1, z1, lx, lz, m, heightDiff, xdis)
+					local h = pointHeight(x1, y1, z1, x2, z2, lx, lz, heightDiff)
 					segment[n].point[pc] = {x = lx, y = h ,z = lz, orHeight = spGetGroundHeight(lx,lz), prevHeight = spGetGroundHeight(lx,lz)}
 
 					if checkPointCreation(4, volumeSelection, segment[n].point[pc].orHeight, h) then
