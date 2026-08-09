@@ -1265,12 +1265,107 @@ end
 
 function taskController.MakePublicTask(task)
 	local pointData = {}
+	local publicPointMap = {}
 	for i = 1, task.frozen.count do
 		local point = task.frozen.points[i]
 		local dataIndex = (i - 1) * 3
 		pointData[dataIndex + 1] = point.x
 		pointData[dataIndex + 2] = point.finalHeight
 		pointData[dataIndex + 3] = point.z
+		if not publicPointMap[point.x] then
+			publicPointMap[point.x] = {}
+		end
+		publicPointMap[point.x][point.z] = i
+	end
+
+	local pointCount = task.frozen.count
+	local lineCount = 0
+	local lineData = {}
+	local lineMap = {}
+	local cellOffsets = {
+		{x = -8, z = -8},
+		{x = -8, z = 0},
+		{x = 0, z = -8},
+		{x = 0, z = 0},
+	}
+	local cellCorners = {
+		{x = 0, z = 0},
+		{x = 8, z = 0},
+		{x = 8, z = 8},
+		{x = 0, z = 8},
+	}
+
+	local function getPublicPointIndex(x, z)
+		local column = publicPointMap[x]
+		local pointIndex = column and column[z]
+		if pointIndex then
+			return pointIndex
+		end
+
+		pointCount = pointCount + 1
+		local dataIndex = (pointCount - 1) * 3
+		pointData[dataIndex + 1] = x
+		pointData[dataIndex + 2] = spGetGroundHeight(x, z)
+		pointData[dataIndex + 3] = z
+		if not column then
+			column = {}
+			publicPointMap[x] = column
+		end
+		column[z] = pointCount
+		return pointCount
+	end
+
+	local function addLine(firstPointIndex, secondPointIndex)
+		local lowIndex = math.min(firstPointIndex, secondPointIndex)
+		local highIndex = math.max(firstPointIndex, secondPointIndex)
+		if not lineMap[lowIndex] then
+			lineMap[lowIndex] = {}
+		elseif lineMap[lowIndex][highIndex] then
+			return
+		end
+
+		lineMap[lowIndex][highIndex] = true
+		lineCount = lineCount + 1
+		local dataIndex = (lineCount - 1) * 2
+		lineData[dataIndex + 1] = firstPointIndex
+		lineData[dataIndex + 2] = secondPointIndex
+	end
+
+	for i = 1, task.frozen.count do
+		local point = task.frozen.points[i]
+		local xNeighborColumn = task.frozen.pointMap[point.x + 8]
+		local xNeighborIndex = xNeighborColumn and xNeighborColumn[point.z]
+		if xNeighborIndex then
+			addLine(i, xNeighborIndex)
+		end
+
+		local zNeighborColumn = task.frozen.pointMap[point.x]
+		local zNeighborIndex = zNeighborColumn and zNeighborColumn[point.z + 8]
+		if zNeighborIndex then
+			addLine(i, zNeighborIndex)
+		end
+
+		local hasHeightChange = abs(point.finalHeight - point.initialHeight) > 0.0001
+		if hasHeightChange then
+			for j = 1, #cellOffsets do
+				local cellX = point.x + cellOffsets[j].x
+				local cellZ = point.z + cellOffsets[j].z
+				if cellX >= 0 and cellX + 8 <= mapWidth
+						and cellZ >= 0 and cellZ + 8 <= mapHeight then
+					local cornerIndices = {}
+					for k = 1, #cellCorners do
+						cornerIndices[k] = getPublicPointIndex(
+							cellX + cellCorners[k].x,
+							cellZ + cellCorners[k].z
+						)
+					end
+					addLine(cornerIndices[1], cornerIndices[2])
+					addLine(cornerIndices[2], cornerIndices[3])
+					addLine(cornerIndices[3], cornerIndices[4])
+					addLine(cornerIndices[4], cornerIndices[1])
+				end
+			end
+		end
 	end
 
 	local publicTask = {
@@ -1285,8 +1380,10 @@ function taskController.MakePublicTask(task)
 		anchorZ = task.anchor.z,
 	}
 	local publicGeometry = {
-		pointCount = task.frozen.count,
+		pointCount = pointCount,
 		pointData = pointData,
+		lineCount = lineCount,
+		lineData = lineData,
 	}
 	return publicTask, publicGeometry
 end
@@ -2490,7 +2587,6 @@ else
 --------------------------------------------------------------------------------
 
 local previewCache = {}
-local GRID_SIZE = 8
 
 local function deletePreview(preview)
 	if preview.displayList then
@@ -2498,45 +2594,22 @@ local function deletePreview(preview)
 	end
 end
 
-local function drawPreviewGeometry(pointCount, pointData)
-	local pointMap = {}
-	for i = 1, pointCount do
-		local dataIndex = (i - 1) * 3
-		local x = pointData[dataIndex + 1]
-		local z = pointData[dataIndex + 3]
-		if not pointMap[x] then
-			pointMap[x] = {}
-		end
-		pointMap[x][z] = dataIndex
-	end
-
+local function drawPreviewGeometry(lineCount, lineData, pointData)
 	gl.BeginEnd(GL.LINES, function()
-		for i = 1, pointCount do
-			local dataIndex = (i - 1) * 3
-			local x = pointData[dataIndex + 1]
-			local y = pointData[dataIndex + 2]
-			local z = pointData[dataIndex + 3]
-			local xNeighborIndex = pointMap[x + GRID_SIZE]
-				and pointMap[x + GRID_SIZE][z]
-			if xNeighborIndex then
-				gl.Vertex(x, y + 2, z)
-				gl.Vertex(
-					pointData[xNeighborIndex + 1],
-					pointData[xNeighborIndex + 2] + 2,
-					pointData[xNeighborIndex + 3]
-				)
-			end
-
-			local zNeighborIndex = pointMap[x]
-				and pointMap[x][z + GRID_SIZE]
-			if zNeighborIndex then
-				gl.Vertex(x, y + 2, z)
-				gl.Vertex(
-					pointData[zNeighborIndex + 1],
-					pointData[zNeighborIndex + 2] + 2,
-					pointData[zNeighborIndex + 3]
-				)
-			end
+		for i = 1, lineCount do
+			local lineIndex = (i - 1) * 2
+			local firstDataIndex = (lineData[lineIndex + 1] - 1) * 3
+			local secondDataIndex = (lineData[lineIndex + 2] - 1) * 3
+			gl.Vertex(
+				pointData[firstDataIndex + 1],
+				pointData[firstDataIndex + 2] + 2,
+				pointData[firstDataIndex + 3]
+			)
+			gl.Vertex(
+				pointData[secondDataIndex + 1],
+				pointData[secondDataIndex + 2] + 2,
+				pointData[secondDataIndex + 3]
+			)
 		end
 	end)
 end
@@ -2545,7 +2618,8 @@ local function addPreview(taskID, syncedGeometry)
 	previewCache[taskID] = {
 		displayList = gl.CreateList(
 			drawPreviewGeometry,
-			syncedGeometry.pointCount,
+			syncedGeometry.lineCount,
+			syncedGeometry.lineData,
 			syncedGeometry.pointData
 		),
 	}
