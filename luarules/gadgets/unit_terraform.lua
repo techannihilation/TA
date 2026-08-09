@@ -135,7 +135,7 @@ local smoothCmdDesc = {
   cursor  = 'Repair',
   action  = 'smoothground',
   texture = 'luarules/images/commands/smooth.png',
-  tooltip = 'Smooths the ground in a rectangular area - drag or click 2 corners',
+  tooltip = 'Smooths the ground in a circular area - click center, move mouse, click to confirm',
 }
 
 local restoreCmdDesc = {

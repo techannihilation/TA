@@ -100,6 +100,10 @@ local maxRampGradient = 5
 local maxAreaSize = 1000 -- max width or length
 local generatedAreaPadding = Grid
 local maxRectangleSpan = floor((maxAreaSize - generatedAreaPadding) / Grid) * Grid
+local minSmoothRadius = Grid
+local maxSmoothRadius = floor(
+	(maxAreaSize - generatedAreaPadding) / (2 * Grid)
+) * Grid
 
 -- Ramp length and half-width limits. The gadget receives twice the half-width.
 -- These values MUST AGREE WITH GADGET VALUES.
@@ -134,6 +138,15 @@ local drawingRectangle = false
 local drawingRamp = false
 local setHeight = false
 local terraform_type = 0 -- 1 = level, 3 = smooth, 4 = ramp, 5 = restore
+
+local smoothCircle = {
+	active = false,
+	centerX = 0,
+	centerZ = 0,
+	radius = minSmoothRadius,
+	polygon = {},
+	outline = {},
+}
 
 local volumeSelection = 0
 
@@ -449,6 +462,9 @@ end
 
 local function stopCommand()
 	drawingRectangle = false
+	smoothCircle.active = false
+	smoothCircle.polygon = {}
+	smoothCircle.outline = {}
 	setHeight = false
 	clearLineMeshes()
 	volumeSelection = 0
@@ -467,6 +483,9 @@ local function completelyStopCommand()
 	spSetActiveCommand(-1)
 	originalCommandGiven = false
 	drawingRectangle = false
+	smoothCircle.active = false
+	smoothCircle.polygon = {}
+	smoothCircle.outline = {}
 	setHeight = false
 	clearLineMeshes()
 	drawingRamp = false
@@ -875,6 +894,191 @@ local function legalPos(pos)
 	return pos and pos[1] > 0 and pos[3] > 0 and pos[1] < Game.mapSizeX and pos[3] < Game.mapSizeZ
 end
 
+local function clipPolygonToBoundary(vertices, axis, limit, keepGreater)
+	if #vertices == 0 then
+		return vertices
+	end
+
+	local function isInside(vertex)
+		if keepGreater then
+			return vertex[axis] >= limit
+		end
+		return vertex[axis] <= limit
+	end
+
+	local output = {}
+	local previous = vertices[#vertices]
+	local previousInside = isInside(previous)
+
+	for i = 1, #vertices do
+		local current = vertices[i]
+		local currentInside = isInside(current)
+		if currentInside ~= previousInside then
+			local axisDistance = current[axis] - previous[axis]
+			local factor = axisDistance ~= 0
+				and (limit - previous[axis]) / axisDistance
+				or 0
+			local intersection = {
+				x = previous.x + (current.x - previous.x) * factor,
+				z = previous.z + (current.z - previous.z) * factor,
+			}
+			intersection[axis] = limit
+			output[#output + 1] = intersection
+		end
+		if currentInside then
+			output[#output + 1] = current
+		end
+		previous = current
+		previousInside = currentInside
+	end
+
+	return output
+end
+
+local function buildSmoothCirclePolygon(centerX, centerZ, radius)
+	local segmentCount = math.max(16, ceil(2 * math.pi * radius / Grid))
+	local vertices = {}
+	for i = 0, segmentCount - 1 do
+		local angle = 2 * math.pi * i / segmentCount
+		vertices[#vertices + 1] = {
+			x = centerX + math.cos(angle) * radius,
+			z = centerZ + math.sin(angle) * radius,
+		}
+	end
+
+	vertices = clipPolygonToBoundary(vertices, "x", 0, true)
+	vertices = clipPolygonToBoundary(vertices, "x", mapWidth, false)
+	vertices = clipPolygonToBoundary(vertices, "z", 0, true)
+	vertices = clipPolygonToBoundary(vertices, "z", mapHeight, false)
+
+	local snapped = {}
+	for i = 1, #vertices do
+		local x = floor(vertices[i].x / Grid + 0.5) * Grid
+		local z = floor(vertices[i].z / Grid + 0.5) * Grid
+		x = math.max(0, math.min(mapWidth, x))
+		z = math.max(0, math.min(mapHeight, z))
+		local previous = snapped[#snapped]
+		if not previous or previous.x ~= x or previous.z ~= z then
+			snapped[#snapped + 1] = {x = x, z = z}
+		end
+	end
+
+	if #snapped > 1 then
+		local first = snapped[1]
+		local last = snapped[#snapped]
+		if first.x == last.x and first.z == last.z then
+			snapped[#snapped] = nil
+		end
+	end
+
+	return snapped
+end
+
+local function rebuildSmoothCircleOutline()
+	local cells = {}
+	local selectedCells = {}
+	for i = 1, drawPoints do
+		local cell = drawPoint[i]
+		if cell.x >= 0 and cell.x < mapWidth
+				and cell.z >= 0 and cell.z < mapHeight then
+			if not cells[cell.x] then
+				cells[cell.x] = {}
+			end
+			cells[cell.x][cell.z] = true
+			selectedCells[#selectedCells + 1] = cell
+		end
+	end
+
+	local function hasCell(x, z)
+		return cells[x] and cells[x][z]
+	end
+
+	local outline = {}
+	local function addEdge(x1, z1, x2, z2)
+		outline[#outline + 1] = {x1 = x1, z1 = z1, x2 = x2, z2 = z2}
+	end
+
+	for i = 1, #selectedCells do
+		local cell = selectedCells[i]
+		if not hasCell(cell.x, cell.z - Grid) then
+			addEdge(cell.x, cell.z, cell.x + Grid, cell.z)
+		end
+		if not hasCell(cell.x + Grid, cell.z) then
+			addEdge(cell.x + Grid, cell.z, cell.x + Grid, cell.z + Grid)
+		end
+		if not hasCell(cell.x, cell.z + Grid) then
+			addEdge(cell.x + Grid, cell.z + Grid, cell.x, cell.z + Grid)
+		end
+		if not hasCell(cell.x - Grid, cell.z) then
+			addEdge(cell.x, cell.z + Grid, cell.x, cell.z)
+		end
+	end
+
+	smoothCircle.outline = outline
+end
+
+local function updateSmoothCircle(mx, my)
+	if spIsAboveMiniMap(mx, my) then
+		return false
+	end
+
+	local _, pos = spTraceScreenRay(mx, my, true)
+	if not legalPos(pos) then
+		return false
+	end
+
+	local dx = pos[1] - smoothCircle.centerX
+	local dz = pos[3] - smoothCircle.centerZ
+	local radius = floor(sqrt(dx * dx + dz * dz) / Grid + 0.5) * Grid
+	radius = math.max(minSmoothRadius, math.min(maxSmoothRadius, radius))
+	if radius ~= smoothCircle.radius or #smoothCircle.polygon == 0 then
+		smoothCircle.radius = radius
+		smoothCircle.polygon = buildSmoothCirclePolygon(
+			smoothCircle.centerX,
+			smoothCircle.centerZ,
+			radius
+		)
+		local previewPolygon = {}
+		for i = 1, #smoothCircle.polygon do
+			previewPolygon[i] = {
+				x = smoothCircle.polygon[i].x,
+				z = smoothCircle.polygon[i].z,
+			}
+		end
+		calculateAreaPoints(previewPolygon, #previewPolygon)
+		if smoothCircle.active then
+			rebuildSmoothCircleOutline()
+		end
+	end
+	return #smoothCircle.polygon >= 3
+end
+
+local function confirmSmoothCircle()
+	if #smoothCircle.polygon < 3 then
+		return false
+	end
+
+	point = {}
+	for i = 1, #smoothCircle.polygon do
+		point[i] = {
+			x = smoothCircle.polygon[i].x,
+			z = smoothCircle.polygon[i].z,
+		}
+	end
+	points = #point
+	loop = 1
+	terraformHeight = 0
+	volumeSelection = 0
+	calculateAreaPoints(point, points)
+	if points == 0 then
+		return false
+	end
+
+	SendCommand()
+	stopCommand()
+	return true
+end
+
 
 local function snapToHeight(heightArray, snapHeight, arrayCount)
 	local smallest = abs(heightArray[1] - snapHeight)
@@ -957,6 +1161,18 @@ local function updateRectangleEndpoint(mx, my)
 end
 
 function widget:MousePress(mx, my, button)
+	if smoothCircle.active then
+		if button == 1 then
+			if updateSmoothCircle(mx, my) then
+				confirmSmoothCircle()
+			end
+			return true
+		elseif button == 3 then
+			completelyStopCommand()
+			return true
+		end
+	end
+
 	if drawingRectangle then
 		if button == 1 then
 			updateRectangleEndpoint(mx, my)
@@ -974,8 +1190,34 @@ function widget:MousePress(mx, my, button)
 
 	local activeCmdIndex, activeid = spGetActiveCommand()
 	
-	if ((activeid == CMD_LEVEL) or (activeid == CMD_SMOOTH) or (activeid == CMD_RESTORE))
-			and not (setHeight or drawingRectangle or drawingRamp) then
+	if activeid == CMD_SMOOTH
+			and not (setHeight or drawingRectangle or drawingRamp or smoothCircle.active) then
+		if button == 1 then
+			if not spIsAboveMiniMap(mx, my) then
+				local _, pos = spTraceScreenRay(mx, my, true)
+				if legalPos(pos) then
+					widgetHandler:UpdateWidgetCallIn("DrawWorld", self)
+					smoothCircle.active = true
+					smoothCircle.centerX = floor(pos[1] / Grid) * Grid
+					smoothCircle.centerZ = floor(pos[3] / Grid) * Grid
+					smoothCircle.radius = minSmoothRadius
+					terraform_type = 3
+					terraformHeight = 0
+					volumeSelection = 0
+					loop = 1
+					points = 0
+					updateSmoothCircle(mx, my)
+					return true
+				end
+			end
+		else
+			spSetActiveCommand(-1)
+			originalCommandGiven = false
+			return true
+		end
+
+	elseif ((activeid == CMD_LEVEL) or (activeid == CMD_RESTORE))
+			and not (setHeight or drawingRectangle or drawingRamp or smoothCircle.active) then
 	
 		if button == 1 then
 			if not spIsAboveMiniMap(mx, my) then
@@ -1000,8 +1242,6 @@ function widget:MousePress(mx, my, button)
 						terraform_type = 1
 						terraformHeight = clampTerraformHeight(point[1].y)
 						storedHeight = terraformHeight
-					elseif (activeid == CMD_SMOOTH) then
-						terraform_type = 3
 					elseif (activeid == CMD_RESTORE) then
 						terraform_type = 5
 						terraformHeight = 0
@@ -1017,7 +1257,8 @@ function widget:MousePress(mx, my, button)
 			return true
 		end
 		
-	elseif (activeid == CMD_RAMP) and not (setHeight or drawingRectangle or drawingRamp) then
+	elseif (activeid == CMD_RAMP)
+			and not (setHeight or drawingRectangle or drawingRamp or smoothCircle.active) then
 		if button == 1 then
 			if not spIsAboveMiniMap(mx, my) then
 		
@@ -1057,7 +1298,7 @@ function widget:MousePress(mx, my, button)
 		return true
 	end
 	
-	if setHeight or drawingRamp or drawingRectangle then
+	if setHeight or drawingRamp or drawingRectangle or smoothCircle.active then
 		if button == 3 then
 			completelyStopCommand()
 			return true
@@ -1069,7 +1310,10 @@ end
 
 function widget:MouseMove(mx, my, dx, dy, button)
 
-	if drawingRectangle then
+	if smoothCircle.active then
+		updateSmoothCircle(mx, my)
+		return true
+	elseif drawingRectangle then
 		if not rectangleAwaitingSecondClick and button == 1
 				and rectangleStartMouseX and rectangleStartMouseY
 				and (abs(mx - rectangleStartMouseX) >= rectangleDragThreshold
@@ -1090,7 +1334,10 @@ end
 
 function widget:Update(n)
 
-	if drawingRectangle and rectangleAwaitingSecondClick then
+	if smoothCircle.active then
+		local mx, my = Spring.GetMouseState()
+		updateSmoothCircle(mx, my)
+	elseif drawingRectangle and rectangleAwaitingSecondClick then
 		local mx, my = Spring.GetMouseState()
 		updateRectangleEndpoint(mx, my)
 	elseif setHeight then
@@ -1139,8 +1386,10 @@ function widget:Update(n)
 end
 
 function widget:MouseRelease(mx, my, button)
-	
-	if drawingRectangle then
+
+	if smoothCircle.active and button == 1 then
+		return true
+	elseif drawingRectangle then
 	
 		if button == 1 then
 			updateRectangleEndpoint(mx, my)
@@ -1184,7 +1433,7 @@ function widget:MouseRelease(mx, my, button)
 				rebuildVolumeMesh()
 				rebuildMouseGridMesh()
 				
-			elseif terraform_type == 3 or terraform_type == 5 then
+			elseif terraform_type == 5 then
 			
 				local x = rectangleEndX
 					or (point[1].x + 16 <= mapWidth and point[1].x + 16 or point[1].x - 16)
@@ -1254,7 +1503,7 @@ end
 function widget:KeyPress(key)
 	
 	if key == KEYSYMS.ESCAPE then
-		if setHeight or drawingRamp or drawingRectangle then
+		if setHeight or drawingRamp or drawingRectangle or smoothCircle.active then
 			completelyStopCommand()
 			return true
 		end
@@ -1327,6 +1576,16 @@ local function rebuildTransientMesh()
 				endTopPlus,
 			}, color)
 		end
+	elseif smoothCircle.active then
+		for i = 1, #smoothCircle.outline do
+			local edge = smoothCircle.outline[i]
+			addLine(
+				data,
+				edge.x1, spGetGroundHeight(edge.x1, edge.z1) + 2, edge.z1,
+				edge.x2, spGetGroundHeight(edge.x2, edge.z2) + 2, edge.z2,
+				selectionColor
+			)
+		end
 	elseif drawingRectangle then
 		addLineStrip(data, {
 			{point[3].x, point[1].y, point[3].z},
@@ -1356,7 +1615,7 @@ end
 
 function widget:DrawWorld()
 
-	if not (setHeight or drawingRectangle or drawingRamp) then
+	if not (setHeight or drawingRectangle or drawingRamp or smoothCircle.active) then
 		widgetHandler:RemoveWidgetCallIn("DrawWorld", self)
 		return
 	end
@@ -1364,7 +1623,7 @@ function widget:DrawWorld()
 	if not initLineRenderer() then
 		return
 	end
-	if terraform_type == 4 or drawingRectangle then
+	if terraform_type == 4 or drawingRectangle or smoothCircle.active then
 		rebuildTransientMesh()
 	else
 		transientMesh.vertexCount = 0
@@ -1388,7 +1647,7 @@ function widget:DrawWorld()
 		glUniform(lineNegativeVolumeColorLoc, negVolume[1], negVolume[2], negVolume[3], negVolume[4])
 		glUniform(linePositiveVolumeColorLoc, posVolume[1], posVolume[2], posVolume[3], posVolume[4])
 
-		if terraform_type == 4 or drawingRectangle then
+		if terraform_type == 4 or drawingRectangle or smoothCircle.active then
 			drawLineMesh(transientMesh)
 		elseif setHeight then
 			drawLineMesh(groundGridMesh)
