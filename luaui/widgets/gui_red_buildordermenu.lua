@@ -665,6 +665,13 @@ local hiddencmds = {
 	[7] = true, --deathwait
 	[6] = true, --timewait
 }
+local CMD_AREA_MEX = 10100
+local terraformCommands = {
+	[39734] = true, -- ramp
+	[39736] = true, -- level
+	[39738] = true, -- smooth
+	[39739] = true, -- restore
+}
 local function GetCommands()
 	local buildcmds = {}
 	local othercmds = {}
@@ -703,6 +710,21 @@ local function GetCommands()
 	for i=1,othercmdsPendingCount do
 		othercmdscount = othercmdscount + 1
 		othercmds[othercmdscount] = othercmdsPending[i]
+	end
+
+	local areaMexIndex
+	local firstTerraformIndex
+	for i=1,othercmdscount do
+		local commandID = othercmds[i].id
+		if commandID == CMD_AREA_MEX then
+			areaMexIndex = i
+		elseif terraformCommands[commandID] and not firstTerraformIndex then
+			firstTerraformIndex = i
+		end
+	end
+	if areaMexIndex and firstTerraformIndex and areaMexIndex > firstTerraformIndex then
+		local areaMexCommand = table.remove(othercmds, areaMexIndex)
+		table.insert(othercmds, firstTerraformIndex, areaMexCommand)
 	end
 	
 	return buildcmds,othercmds
