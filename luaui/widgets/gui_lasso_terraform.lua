@@ -89,7 +89,7 @@ local originalCommandGiven = false
 -- max difference of height around terraforming, Makes Shraka Pyramids. Not used
 local maxHeightDifference = 100
 
--- Elmos per vertical mouse pixel while selecting terraform dimensions.
+-- Elmos per vertical mouse pixel while selecting terraform height.
 local mouseSensitivity = 2
 local rectangleDragThreshold = 4
 local minTerraformHeight = -2000
@@ -105,14 +105,10 @@ local maxSmoothRadius = floor(
 	(maxAreaSize - generatedAreaPadding) / (2 * Grid)
 ) * Grid
 
--- Ramp length and half-width limits. The gadget receives twice the half-width.
--- These values MUST AGREE WITH GADGET VALUES.
+-- Ramp dimensions. These values MUST AGREE WITH GADGET VALUES.
 local maxRampLength = 3000
-local maxRampWidth = 800
 local minRampLength = 32
-local minRampWidth = 12
-
-local startRampWidth = 60
+local fixedRampWidth = 100
 
 -- max slope of certain units, changes ramp colour
 local botPathingGrad = 1.375
@@ -462,6 +458,7 @@ end
 
 local function stopCommand()
 	drawingRectangle = false
+	drawingRamp = false
 	smoothCircle.active = false
 	smoothCircle.polygon = {}
 	smoothCircle.outline = {}
@@ -517,7 +514,7 @@ local function SendCommand()
 			params[1] = terraform_type -- 1 = level, 3 = smooth, 4 = ramp
 			params[2] = team -- teamID of the team doing the terraform
 			params[3] = loop -- true or false
-			params[4] = terraformHeight -- width of the ramp
+			params[4] = fixedRampWidth
 			params[5] = points -- number of selected points (2 for ramp)
 			params[6] = #constructor -- selected commander candidates
 			params[7] = volumeSelection -- 0 = none, 1 = only raise, 2 = only lower
@@ -1275,7 +1272,6 @@ function widget:MousePress(mx, my, button)
 					drawingRamp = 1
 					terraform_type = 4
 					loop = 0
-					terraformHeight = startRampWidth -- width
 					return true
 					
 				end
@@ -1293,7 +1289,8 @@ function widget:MousePress(mx, my, button)
 	
 	if drawingRamp == 2 and button == 1 then
 		if updateRampEndpoint(mx, my) then
-			drawingRamp = 3
+			SendCommand()
+			stopCommand()
 		end
 		return true
 	end
@@ -1324,7 +1321,7 @@ function widget:MouseMove(mx, my, dx, dy, button)
 		
 		return true
 		
-	elseif drawingRamp == 1 or drawingRamp == 3 then
+	elseif drawingRamp then
 		return true
 	
 	end
@@ -1342,40 +1339,28 @@ function widget:Update(n)
 		updateRectangleEndpoint(mx, my)
 	elseif setHeight then
 		local mx,my = Spring.GetMouseState()
-			
-		if terraform_type == 1 then
-			local a,c,m,s = spGetModKeyState()
-			if c then
-				local _, pos = spTraceScreenRay(mx, my, true)
-				if legalPos(pos) then	
-					terraformHeight = clampTerraformHeight(spGetGroundHeight(pos[1],pos[3]))
-					storedHeight = terraformHeight
-					mouseX = mx
-					mouseY = my
-				end
-			elseif a then
-				Spring.WarpMouse (mouseX,mouseY)
-				storedHeight = storedHeight + (my-mouseY)*mouseSensitivity
-				local heightArray = {
-					-2,
-					orHeight,
-					-23,
-				}
-				terraformHeight = clampTerraformHeight(heightArray[snapToHeight(heightArray,storedHeight,3)])
-			else
-				Spring.WarpMouse (mouseX,mouseY)
-				terraformHeight = clampTerraformHeight(terraformHeight + (my-mouseY)*mouseSensitivity)
+		local a,c = spGetModKeyState()
+		if c then
+			local _, pos = spTraceScreenRay(mx, my, true)
+			if legalPos(pos) then	
+				terraformHeight = clampTerraformHeight(spGetGroundHeight(pos[1],pos[3]))
 				storedHeight = terraformHeight
+				mouseX = mx
+				mouseY = my
 			end
-		elseif terraform_type == 4 then
+		elseif a then
 			Spring.WarpMouse (mouseX,mouseY)
-			terraformHeight = terraformHeight + (my-mouseY)*mouseSensitivity
-			if terraformHeight < minRampWidth then
-				terraformHeight = minRampWidth
-			end
-			if terraformHeight > maxRampWidth then
-				terraformHeight = maxRampWidth
-			end
+			storedHeight = storedHeight + (my-mouseY)*mouseSensitivity
+			local heightArray = {
+				-2,
+				orHeight,
+				-23,
+			}
+			terraformHeight = clampTerraformHeight(heightArray[snapToHeight(heightArray,storedHeight,3)])
+		else
+			Spring.WarpMouse (mouseX,mouseY)
+			terraformHeight = clampTerraformHeight(terraformHeight + (my-mouseY)*mouseSensitivity)
+			storedHeight = terraformHeight
 		end
 	
 	elseif drawingRamp == 2 then
@@ -1475,21 +1460,6 @@ function widget:MouseRelease(mx, my, button)
 			return true
 		end
 	
-	elseif drawingRamp == 3 then
-	
-		if button == 1 then
-			mouseX = mx
-			mouseY = my
-			setHeight = true
-			drawingRamp = false
-			return true
-		elseif button == 4 or button == 5 then
-			drawingRamp = false
-			points = 0
-		else
-			return true
-		end
-	
 	end
 	return false
 end
@@ -1511,7 +1481,7 @@ function widget:KeyPress(key)
 
 	if key == KEYSYMS.SPACE and ( 
 		(terraform_type == 1 and setHeight) or 
-		(terraform_type == 4 and (setHeight or drawingRamp))
+		(terraform_type == 4 and drawingRamp)
 	) then
 		volumeSelection = volumeSelection+1
 		if volumeSelection > 2 then
@@ -1548,8 +1518,9 @@ local function rebuildTransientMesh()
 				color = noPathingColor
 			end
 
-			local perpendicularX = terraformHeight * (point[1].z - point[2].z) / distance
-			local perpendicularZ = -terraformHeight * (point[1].x - point[2].x) / distance
+			local halfRampWidth = fixedRampWidth * 0.5
+			local perpendicularX = halfRampWidth * (point[1].z - point[2].z) / distance
+			local perpendicularZ = -halfRampWidth * (point[1].x - point[2].x) / distance
 			local startTopPlus = {point[1].x + perpendicularX, point[1].y, point[1].z + perpendicularZ}
 			local startGroundPlus = {point[1].x + perpendicularX, point[1].ground, point[1].z + perpendicularZ}
 			local startGroundMinus = {point[1].x - perpendicularX, point[1].ground, point[1].z - perpendicularZ}
@@ -1671,7 +1642,7 @@ function widget:DrawScreen()
 	elseif terraform_type == 4 then
 		if drawingRamp == 1 then
 			drawMouseText(0,floor(point[1].y))
-		elseif drawingRamp == 3 then
+		elseif drawingRamp == 2 then
 			if point[2].y == 0 then
 				drawMouseText(0,point[2].y .. " Water Level")
 			elseif point[2].y == point[1].y then
