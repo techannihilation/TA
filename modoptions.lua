@@ -155,17 +155,6 @@ local options = {
     section = "ta_options",
   },
   {
-    key = "mo_final_boss_spawn_minutes",
-    name = "Final Boss Spawn Time",
-    desc = "Minutes until the final boss spawns. Set to 0 to disable the Final Boss system. HUD warning appears 10 minutes before spawn\nAutoHost Usage :- mo_final_boss_spawn_minutes",
-    type = "number",
-    def = 0,
-    min = 0,
-    max = 120,
-    step = 1,
-    section = "ta_options",
-  },
-  {
     key = "tornados",
     name = "Tornados",
     desc = "Enables drifting tornados that lift units and wrecks\nAutoHost Usage :- tornados true|false",
