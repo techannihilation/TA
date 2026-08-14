@@ -269,6 +269,113 @@ local function BuilderDestroyed(unitID)
 	builders[#builders] = nil
 end
 
+local terraformerNanoPieces = VFS.Include("luarules/configs/terraformerNanoPieces.lua") or {}
+
+local function GetTerraformNanoPieces(unitID)
+	local pieceMap = Spring.GetUnitPieceMap(unitID) or {}
+	local nanoPieces = Spring.GetUnitNanoPieces(unitID)
+	if nanoPieces and #nanoPieces > 0 then
+		return nanoPieces
+	end
+
+	local unitDefID = Spring.GetUnitDefID(unitID)
+	local configuredPieceNames = unitDefID and terraformerNanoPieces[unitDefID]
+	if configuredPieceNames then
+		nanoPieces = {}
+		for i = 1, #configuredPieceNames do
+			local pieceName = configuredPieceNames[i]
+			local pieceID = pieceMap[pieceName]
+			if pieceID ~= nil then
+				nanoPieces[#nanoPieces + 1] = pieceID
+			end
+		end
+		if #nanoPieces > 0 then
+			return nanoPieces
+		end
+	end
+
+	local fallbackPiece = Spring.GetUnitRootPiece(unitID)
+	if fallbackPiece ~= nil then
+		nanoPieces = {fallbackPiece}
+		return nanoPieces
+	end
+	return {}
+end
+
+local function AddTerraformNanoEffect(task, frame, updateFramerate, totalNanoEmitters, myFullview)
+	if task.state ~= "working" then
+		return totalNanoEmitters
+	end
+
+	local unitID = tonumber(task.unitID)
+	if not unitID
+			or not Spring.ValidUnitID(unitID)
+			or ((unitID + frame) % updateFramerate >= 1) then
+		return totalNanoEmitters
+	end
+
+	local unitDefID = Spring.GetUnitDefID(unitID)
+	local teamID = Spring.GetUnitTeam(unitID)
+	local allyID = Spring.GetUnitAllyTeam(unitID)
+	if not unitDefID or not teamID or not allyID then
+		return totalNanoEmitters
+	end
+	if not myFullview and Spring.GetMyAllyTeamID() ~= allyID then
+		return totalNanoEmitters
+	end
+	if Spring.IsUnitIcon(unitID) then
+		return totalNanoEmitters
+	end
+
+	local cmdTag = GetCmdTag(unitID)
+	if cmdTag == 0 then
+		return totalNanoEmitters
+	end
+
+	local nanoPieces = GetTerraformNanoPieces(unitID)
+	totalNanoEmitters = totalNanoEmitters + #nanoPieces
+	if totalNanoEmitters > maxNewNanoEmitters then
+		return totalNanoEmitters
+	end
+
+	local strength = builderWorkTime[unitDefID] or 1
+	local teamColor = {Spring.GetTeamColor(teamID)}
+	local endpos = {task.anchorX, task.nanoY or task.anchorY, task.anchorZ}
+	for i = 1, #nanoPieces do
+		local nanoPieceID = nanoPieces[i]
+		local nanoParams = {
+			targetID = -1,
+			isFeature = false,
+			unitpiece = nanoPieceID,
+			unitID = unitID,
+			unitDefID = unitDefID,
+			teamID = teamID,
+			allyID = allyID,
+			nanopiece = nanoPieceID,
+			targetpos = endpos,
+			count = strength * updateFramerate,
+			streamThickness = 4 + strength * 0.34,
+			color = teamColor,
+			type = "restore",
+			targetradius = 30,
+			terraform = true,
+			inversed = false,
+			cmdTag = cmdTag,
+		}
+
+		local nanoSettings = CopyMergeTables(NanoFx.default, nanoParams)
+		ExecuteLuaCode(nanoSettings)
+		if not nanoParticles[unitID] then
+			nanoParticles[unitID] = {}
+		end
+		if Lups then
+			local unitFxs = nanoParticles[unitID]
+			unitFxs[#unitFxs + 1] = Lups.AddParticles(nanoSettings.fxtype, nanoSettings)
+		end
+	end
+	return totalNanoEmitters
+end
+
 function gadget:GameFrame(frame)
 	if currentNanoEffect == NanoFxNone then return end
 
@@ -278,6 +385,19 @@ function gadget:GameFrame(frame)
     local _, myFullview = Spring.GetSpectatingState()
 
     --Spring.Echo(currentNanoEffect,updateFramerate)
+	local terraformTasks = SYNCED.terraformPreviewTasks or {}
+	for _, task in pairs(terraformTasks) do
+		totalNanoEmitters = AddTerraformNanoEffect(
+			task,
+			frame,
+			updateFramerate,
+			totalNanoEmitters,
+			myFullview
+		)
+		if totalNanoEmitters > maxNewNanoEmitters then
+			break
+		end
+	end
 
 	for i=1,#builders do
         if totalNanoEmitters > maxNewNanoEmitters then

@@ -1379,6 +1379,7 @@ function taskController.MakePublicTask(task)
 		totalFrames = task.totalFrames,
 		anchorX = task.anchor.x,
 		anchorY = math.max(task.anchor.initialHeight, task.anchor.finalHeight) + 36,
+		nanoY = task.anchor.initialHeight + 5,
 		anchorZ = task.anchor.z,
 	}
 	local publicGeometry = {
