@@ -67,7 +67,7 @@ local maxRampLegth = 200 -- maximun length of ramp segment
 local maxHeightDifference = 100 -- max difference of height around terraforming, Makes Shraka Pyramids
 local maxAbsoluteHeight = 2000
 local maxRampGradient = 5
-local terraformSpeedMultiplier = 20
+local terraformSpeedMultiplier = 40
 
 --ramp dimensions
 local maxTotalRampLength = 3000
@@ -1379,6 +1379,7 @@ function taskController.MakePublicTask(task)
 		totalFrames = task.totalFrames,
 		anchorX = task.anchor.x,
 		anchorY = math.max(task.anchor.initialHeight, task.anchor.finalHeight) + 36,
+		nanoY = task.anchor.initialHeight + 5,
 		anchorZ = task.anchor.z,
 	}
 	local publicGeometry = {
