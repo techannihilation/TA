@@ -39,7 +39,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
-		sonardistance = 500,
+		sonardistance = 400,
 		sightdistance = 260,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -52,8 +52,7 @@ return {
 		upright = true,
 		customparams = {
 			buildpic = "gok_exorcist.dds",
-			faction = "ARM",
-			prioritytarget = "air",
+			faction = "GOK",
 			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
@@ -141,7 +140,7 @@ return {
 				weaponacceleration = 15,
 				weapontimer = 3,
 				weapontype = "TorpedoLauncher",
-				weaponvelocity = 100,
+				weaponvelocity = 200,
 				damage = {
 					default = 140,
 					subs = 280,
@@ -152,7 +151,7 @@ return {
 			{
 				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
-				onlytargetcategory = "SUB",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},
