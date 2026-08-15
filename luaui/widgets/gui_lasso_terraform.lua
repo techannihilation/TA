@@ -94,6 +94,7 @@ local maxHeightDifference = 100
 
 -- Elmos per vertical mouse pixel while selecting terraform height.
 local mouseSensitivity = 2
+local initialHeightSnapRange = mouseSensitivity * 10
 local rectangleDragThreshold = 4
 local minTerraformHeight = -2000
 local maxTerraformHeight = 2000
@@ -154,6 +155,8 @@ local mouseBuilding = false
 local terraformHeight = 0
 local orHeight = 0 -- store ground height
 local storedHeight = 0 -- for snap to height
+local modifierHeightSelection = false
+local initialHeightSnapped = false
 local loop = 0
 
 local point = {}
@@ -466,6 +469,8 @@ local function stopCommand()
 	smoothCircle.polygon = {}
 	smoothCircle.outline = {}
 	setHeight = false
+	modifierHeightSelection = false
+	initialHeightSnapped = false
 	clearLineMeshes()
 	volumeSelection = 0
 	points = 0
@@ -487,6 +492,8 @@ local function completelyStopCommand()
 	smoothCircle.polygon = {}
 	smoothCircle.outline = {}
 	setHeight = false
+	modifierHeightSelection = false
+	initialHeightSnapped = false
 	clearLineMeshes()
 	drawingRamp = false
 	volumeSelection = 0
@@ -1344,6 +1351,7 @@ function widget:Update(n)
 		local mx,my = Spring.GetMouseState()
 		local a,c = spGetModKeyState()
 		if c then
+			initialHeightSnapped = false
 			local _, pos = spTraceScreenRay(mx, my, true)
 			if legalPos(pos) then	
 				terraformHeight = clampTerraformHeight(spGetGroundHeight(pos[1],pos[3]))
@@ -1351,7 +1359,9 @@ function widget:Update(n)
 				mouseX = mx
 				mouseY = my
 			end
+			modifierHeightSelection = true
 		elseif a then
+			initialHeightSnapped = false
 			Spring.WarpMouse (mouseX,mouseY)
 			storedHeight = storedHeight + (my-mouseY)*mouseSensitivity
 			local heightArray = {
@@ -1360,10 +1370,22 @@ function widget:Update(n)
 				-23,
 			}
 			terraformHeight = clampTerraformHeight(heightArray[snapToHeight(heightArray,storedHeight,3)])
+			modifierHeightSelection = true
 		else
 			Spring.WarpMouse (mouseX,mouseY)
-			terraformHeight = clampTerraformHeight(terraformHeight + (my-mouseY)*mouseSensitivity)
-			storedHeight = terraformHeight
+			if modifierHeightSelection then
+				storedHeight = terraformHeight
+				modifierHeightSelection = false
+			end
+			storedHeight = clampTerraformHeight(storedHeight + (my-mouseY)*mouseSensitivity)
+			local initialHeight = clampTerraformHeight(orHeight)
+			if abs(storedHeight - initialHeight) <= initialHeightSnapRange then
+				terraformHeight = initialHeight
+				initialHeightSnapped = true
+			else
+				terraformHeight = storedHeight
+				initialHeightSnapped = false
+			end
 		end
 	
 	elseif drawingRamp == 2 then
@@ -1401,6 +1423,8 @@ function widget:MouseRelease(mx, my, button)
 			
 			if terraform_type == 1 then
 				setHeight = true
+				modifierHeightSelection = false
+				initialHeightSnapped = true
 				drawingRectangle = false
 				mouseX = mx
 				mouseY = my
@@ -1640,7 +1664,12 @@ function widget:DrawScreen()
 
 	if terraform_type == 1 then
 		if setHeight then
-			drawMouseText(0, string_format("%+.0f", terraformHeight - orHeight))
+			local relativeHeight = terraformHeight - orHeight
+			local relativeSign = relativeHeight >= 0 and "+" or ""
+			drawMouseText(0, string_format("%.0f (%s%.0f rel)", terraformHeight, relativeSign, relativeHeight))
+			if initialHeightSnapped then
+				drawMouseText(-30, "Snapped to first ground point")
+			end
 		end
 	elseif terraform_type == 4 then
 		if drawingRamp == 1 then
@@ -1657,10 +1686,11 @@ function widget:DrawScreen()
 	end
 	
 	if terraform_type == 1 or terraform_type == 4 then
+		local volumeTextY = initialHeightSnapped and -60 or -30
 		if volumeSelection == 1 then
-			drawMouseText(-30,"Only raise")
+			drawMouseText(volumeTextY,"Only raise")
 		elseif volumeSelection == 2 then
-			drawMouseText(-30,"Only lower")
+			drawMouseText(volumeTextY,"Only lower")
 		end
 	end
 
