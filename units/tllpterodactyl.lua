@@ -139,6 +139,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 380,
 				damage = {
+					commanders = 10.5,
 					default = 105,
 					subs = 5,
 				},
@@ -181,7 +182,7 @@ return {
 				weaponvelocity = 510,
 				wobble = 2000,
 				damage = {
-					commanders = 150,
+					commanders = 30,
 					default = 300,
 					subs = 5,
 				},

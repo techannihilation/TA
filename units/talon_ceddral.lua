@@ -140,7 +140,7 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1000,
 				damage = {
-					commanders = 900,
+					commanders = 180,
 					default = 1800,
 					subs = 5,
 				},
