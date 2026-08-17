@@ -104,12 +104,14 @@ for unitDefID in pairs(terraformerConfig.additionalDefs) do
 	terraformerConfig.defs[unitDefID] = true
 end
 local delayedTerraform = VFS.Include("luarules/gadgets/include/terraform_delayed.lua")
+local extendGeometry = VFS.Include("luarules/Utilities/terraform_extend.lua")
 
 --------------------------------------------------------------------------------
 -- Custom Commands
 --------------------------------------------------------------------------------
 
 CMD_RAMP = 39734
+CMD_EXTEND = 39735
 CMD_LEVEL = 39736
 CMD_SMOOTH = 39738
 CMD_RESTORE = 39739
@@ -157,6 +159,15 @@ local restoreCmdDesc = {
 
 local cmdDescsArray = {
   rampCmdDesc,
+  {
+    id      = CMD_EXTEND,
+    type    = CMDTYPE.ICON_MAP,
+    name    = 'Extend',
+    cursor  = 'Repair',
+    action  = 'extendground',
+    texture = 'luarules/images/commands/raise.png',
+    tooltip = 'Click two ground points, move perpendicular to copy the terrain profile, then click to confirm',
+  },
   levelCmdDesc,
   smoothCmdDesc,
   restoreCmdDesc,
@@ -951,7 +962,11 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 
 	if not taskController.IsFiniteNumber(terraformType)
 		or terraformType % 1 ~= 0
-		or (terraformType ~= 1 and terraformType ~= 3 and terraformType ~= 4 and terraformType ~= 5)
+		or (terraformType ~= 1
+			and terraformType ~= 2
+			and terraformType ~= 3
+			and terraformType ~= 4
+			and terraformType ~= 5)
 		or not taskController.IsFiniteNumber(loop)
 		or (loop ~= 0 and loop ~= 1)
 		or not taskController.IsFiniteNumber(terraformHeight)
@@ -966,7 +981,16 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 		return
 	end
 
-	if terraformType == 4 then
+	if terraformType == 2 then
+		if loop ~= 0
+			or volumeSelection ~= 0
+			or pointCount < 2
+			or pointCount > extendGeometry.MAX_PROFILE_SAMPLES
+			or terraformHeight % extendGeometry.GRID_SIZE ~= 0
+			or #cmdParams > extendGeometry.MAX_COMMAND_PARAMS then
+			return
+		end
+	elseif terraformType == 4 then
 		if pointCount ~= 2 or terraformHeight ~= fixedRampWidth then
 			return
 		end
@@ -986,8 +1010,17 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 	if terraformerCount < 1 then
 		return
 	end
-	local pointParameterCount = terraformType == 4 and pointCount * 3 or pointCount * 2
-	if #cmdParams < 7 + pointParameterCount + terraformerCount then
+	local minimumParameterCount
+	if terraformType == 2 then
+		minimumParameterCount = 11 + pointCount + terraformerCount
+	else
+		local pointParameterCount = terraformType == 4 and pointCount * 3 or pointCount * 2
+		minimumParameterCount = 7 + pointParameterCount + terraformerCount
+	end
+	if #cmdParams < minimumParameterCount then
+		return
+	end
+	if terraformType == 2 and #cmdParams ~= minimumParameterCount then
 		return
 	end
 
@@ -1003,31 +1036,83 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 	}
 
 	local parameterIndex = 8
-	for i = 1, pointCount do
-		local x = cmdParams[parameterIndex]
-		local y
-		local z
-		if terraformType == 4 then
-			y = cmdParams[parameterIndex + 1]
-			z = cmdParams[parameterIndex + 2]
-			parameterIndex = parameterIndex + 3
-		else
-			z = cmdParams[parameterIndex + 1]
-			parameterIndex = parameterIndex + 2
+	if terraformType == 2 then
+		local firstX = cmdParams[parameterIndex]
+		local firstZ = cmdParams[parameterIndex + 1]
+		local secondX = cmdParams[parameterIndex + 2]
+		local secondZ = cmdParams[parameterIndex + 3]
+		parameterIndex = parameterIndex + 4
+		local coordinates = {firstX, firstZ, secondX, secondZ}
+		for i = 1, #coordinates do
+			local coordinate = coordinates[i]
+			local maximum = i % 2 == 1 and mapWidth or mapHeight
+			if not taskController.IsFiniteNumber(coordinate)
+					or coordinate < 0
+					or coordinate > maximum
+					or coordinate % extendGeometry.GRID_SIZE ~= 0 then
+				return
+			end
 		end
 
-		if not taskController.IsFiniteNumber(x)
-			or not taskController.IsFiniteNumber(z)
-			or x < 0
-			or x > mapWidth
-			or z < 0
-			or z > mapHeight
-			or (terraformType == 4
-				and (not taskController.IsFiniteNumber(y) or abs(y) > maxAbsoluteHeight)) then
+		parsed.points[1] = {x = firstX, z = firstZ}
+		parsed.points[2] = {x = secondX, z = secondZ}
+		if pointCount ~= extendGeometry.GetProfileSampleCount(
+				parsed.points[1],
+				parsed.points[2]
+		) then
 			return
 		end
 
-		parsed.points[i] = {x = x, y = y, z = z}
+		local stripPoints = extendGeometry.BuildStripPoints(
+			parsed.points[1],
+			parsed.points[2],
+			terraformHeight,
+			mapWidth,
+			mapHeight,
+			maxAreaSize
+		)
+		if not stripPoints then
+			return
+		end
+		parsed.extendCorePoints = stripPoints
+		parsed.extendHeights = {}
+		for i = 1, pointCount do
+			local height = cmdParams[parameterIndex]
+			parameterIndex = parameterIndex + 1
+			if not taskController.IsFiniteNumber(height)
+					or abs(height) > maxAbsoluteHeight then
+				return
+			end
+			parsed.extendHeights[i] = height
+		end
+	else
+		for i = 1, pointCount do
+			local x = cmdParams[parameterIndex]
+			local y
+			local z
+			if terraformType == 4 then
+				y = cmdParams[parameterIndex + 1]
+				z = cmdParams[parameterIndex + 2]
+				parameterIndex = parameterIndex + 3
+			else
+				z = cmdParams[parameterIndex + 1]
+				parameterIndex = parameterIndex + 2
+			end
+
+			if not taskController.IsFiniteNumber(x)
+					or not taskController.IsFiniteNumber(z)
+					or x < 0
+					or x > mapWidth
+					or z < 0
+					or z > mapHeight
+					or (terraformType == 4
+						and (not taskController.IsFiniteNumber(y)
+							or abs(y) > maxAbsoluteHeight)) then
+				return
+			end
+
+			parsed.points[i] = {x = x, y = y, z = z}
+		end
 	end
 
 	local terraformerSeen = {}
@@ -1057,6 +1142,38 @@ function taskController.ParseCommand(unitID, teamID, cmdParams)
 	end
 
 	return parsed
+end
+
+function taskController.PrepareExtendFrozen(parsed)
+	local segment = {
+		point = {},
+		points = #parsed.extendCorePoints,
+	}
+
+	for i = 1, segment.points do
+		local corePoint = parsed.extendCorePoints[i]
+		local targetHeight = extendGeometry.InterpolateProfile(
+			parsed.extendHeights,
+			corePoint.ratio
+		)
+		if not taskController.IsFiniteNumber(targetHeight) then
+			return nil, "height"
+		end
+		local currentHeight = spGetGroundHeight(corePoint.x, corePoint.z)
+		segment.point[i] = {
+			x = corePoint.x,
+			z = corePoint.z,
+			orHeight = currentHeight,
+			prevHeight = currentHeight,
+			aimHeight = targetHeight,
+		}
+	end
+
+	return delayedTerraform.FreezeSegments(
+		{segment},
+		1,
+		maxHeightDifference
+	)
 end
 
 function taskController.DistanceToSegmentSquared(x, z, firstPoint, secondPoint)
@@ -1183,6 +1300,10 @@ function taskController.PrepareFrozen(unitID, teamID, cmdParams)
 	local parsed = taskController.ParseCommand(unitID, teamID, cmdParams)
 	if not parsed then
 		return nil, "invalid"
+	end
+
+	if parsed.terraformType == 2 then
+		return taskController.PrepareExtendFrozen(parsed)
 	end
 
 	if parsed.terraformType == 4 then

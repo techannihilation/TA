@@ -144,7 +144,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 180,
+					commanders = 36,
 					default = 360,
 				},
 				tracks = false,
@@ -185,7 +185,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 180,
+					commanders = 36,
 					default = 360,
 				},
 				tracks = false,
@@ -224,6 +224,7 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 1000,
 				damage = {
+					commanders = 300,
 					default = 3000,
 					subs = 5,
 				},

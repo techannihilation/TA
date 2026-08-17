@@ -138,7 +138,7 @@ return {
 				turret = false,
 				weapontype = "BeamLaser",
 				damage = {
-					commanders = 1800,
+					commanders = 360,
 					default = 3600,
 					subs = 5,
 				},
