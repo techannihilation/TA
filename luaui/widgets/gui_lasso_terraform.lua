@@ -72,9 +72,11 @@ local terraformerDefs = VFS.Include("luarules/configs/comDefIDs.lua") or {}
 for unitDefID in pairs(VFS.Include("luarules/configs/terraformerDefIDs.lua") or {}) do
 	terraformerDefs[unitDefID] = true
 end
+local extendGeometry = VFS.Include("luarules/Utilities/terraform_extend.lua")
 
 -- command IDs
 local CMD_RAMP = 39734
+local CMD_EXTEND = 39735
 local CMD_LEVEL = 39736
 local CMD_SMOOTH = 39738
 local CMD_RESTORE = 39739
@@ -137,7 +139,7 @@ local noPathingColor = {1.0, 0.2, 0.2, 1.0}
 local drawingRectangle = false
 local drawingRamp = false
 local setHeight = false
-local terraform_type = 0 -- 1 = level, 3 = smooth, 4 = ramp, 5 = restore
+local terraform_type = 0 -- 1 = level, 2 = extend, 3 = smooth, 4 = ramp, 5 = restore
 
 local smoothCircle = {
 	active = false,
@@ -146,6 +148,17 @@ local smoothCircle = {
 	radius = minSmoothRadius,
 	polygon = {},
 	outline = {},
+}
+
+local extend = {
+	phase = "idle",
+	firstPoint = nil,
+	secondPoint = nil,
+	profile = {},
+	stripPoints = {},
+	stripPointMap = {},
+	width = 0,
+	meshDirty = true,
 }
 
 local volumeSelection = 0
@@ -461,6 +474,128 @@ local function clampTerraformHeight(height)
 	return math.max(minTerraformHeight, math.min(maxTerraformHeight, height))
 end
 
+function extend.Reset()
+	extend.phase = "idle"
+	extend.firstPoint = nil
+	extend.secondPoint = nil
+	extend.profile = {}
+	extend.stripPoints = {}
+	extend.stripPointMap = {}
+	extend.width = 0
+	extend.meshDirty = true
+end
+
+function extend.StartLine(x, z)
+	local snapped = extendGeometry.SnapPoint(x, z, mapWidth, mapHeight)
+	extend.firstPoint = snapped
+	extend.secondPoint = {x = snapped.x, z = snapped.z}
+	extend.phase = "line"
+	extend.meshDirty = true
+end
+
+function extend.UpdateLine(x, z)
+	local snapped = extendGeometry.SnapPoint(x, z, mapWidth, mapHeight)
+	if snapped.x ~= extend.secondPoint.x or snapped.z ~= extend.secondPoint.z then
+		extend.secondPoint = snapped
+		extend.meshDirty = true
+	end
+end
+
+function extend.FinishLine()
+	local profile, errorReason = extendGeometry.SampleProfile(
+		extend.firstPoint,
+		extend.secondPoint,
+		spGetGroundHeight
+	)
+	if not profile then
+		return false, errorReason
+	end
+	for i = 1, #profile do
+		if profile[i] < minTerraformHeight or profile[i] > maxTerraformHeight then
+			return false, "height"
+		end
+	end
+	if not extendGeometry.IsStripValid(
+			extend.firstPoint,
+			extend.secondPoint,
+			extendGeometry.GRID_SIZE,
+			mapWidth,
+			mapHeight,
+			maxAreaSize
+		) and not extendGeometry.IsStripValid(
+			extend.firstPoint,
+			extend.secondPoint,
+			-extendGeometry.GRID_SIZE,
+			mapWidth,
+			mapHeight,
+			maxAreaSize
+		) then
+		return false, "too_large"
+	end
+
+	extend.profile = profile
+	extend.width = 0
+	extend.stripPoints = {}
+	extend.stripPointMap = {}
+	extend.phase = "width"
+	extend.meshDirty = true
+	return true
+end
+
+function extend.UpdateWidth(x, z)
+	local requestedWidth = extendGeometry.GetSignedWidth(
+		extend.firstPoint,
+		extend.secondPoint,
+		x,
+		z
+	)
+	local width = extendGeometry.ClampStripWidth(
+		extend.firstPoint,
+		extend.secondPoint,
+		requestedWidth,
+		mapWidth,
+		mapHeight,
+		maxAreaSize
+	)
+	if width == extend.width then
+		return true
+	end
+
+	extend.width = width
+	extend.stripPoints = {}
+	extend.stripPointMap = {}
+	if width ~= 0 then
+		local stripPoints = extendGeometry.BuildStripPoints(
+			extend.firstPoint,
+			extend.secondPoint,
+			width,
+			mapWidth,
+			mapHeight,
+			maxAreaSize
+		)
+		if not stripPoints then
+			extend.width = 0
+			extend.meshDirty = true
+			return false
+		end
+		extend.stripPoints = stripPoints
+		for i = 1, #stripPoints do
+			local stripPoint = stripPoints[i]
+			stripPoint.groundHeight = spGetGroundHeight(stripPoint.x, stripPoint.z)
+			stripPoint.targetHeight = extendGeometry.InterpolateProfile(
+				extend.profile,
+				stripPoint.ratio
+			)
+			if not extend.stripPointMap[stripPoint.x] then
+				extend.stripPointMap[stripPoint.x] = {}
+			end
+			extend.stripPointMap[stripPoint.x][stripPoint.z] = stripPoint
+		end
+	end
+	extend.meshDirty = true
+	return true
+end
+
 
 local function stopCommand()
 	drawingRectangle = false
@@ -471,6 +606,7 @@ local function stopCommand()
 	setHeight = false
 	modifierHeightSelection = false
 	initialHeightSnapped = false
+	extend.Reset()
 	clearLineMeshes()
 	volumeSelection = 0
 	points = 0
@@ -494,6 +630,7 @@ local function completelyStopCommand()
 	setHeight = false
 	modifierHeightSelection = false
 	initialHeightSnapped = false
+	extend.Reset()
 	clearLineMeshes()
 	drawingRamp = false
 	volumeSelection = 0
@@ -516,6 +653,53 @@ local function SendCommand()
 		if unitDefID and terraformerDefs[unitDefID] then
 			terraformers[#terraformers + 1] = selectedUnits[i]
 		end
+	end
+
+	if terraform_type == 2 then
+		if #terraformers == 0 then
+			return false
+		end
+		local parameterCount = 11 + #extend.profile + #terraformers
+		if parameterCount > extendGeometry.MAX_COMMAND_PARAMS then
+			Spring.Echo("Terraform Command Too Large")
+			return false
+		end
+
+		local params = {
+			terraform_type,
+			team,
+			0,
+			extend.width,
+			#extend.profile,
+			#terraformers,
+			0,
+		}
+		local parameterIndex = 8
+		params[parameterIndex] = extend.firstPoint.x
+		params[parameterIndex + 1] = extend.firstPoint.z
+		params[parameterIndex + 2] = extend.secondPoint.x
+		params[parameterIndex + 3] = extend.secondPoint.z
+		parameterIndex = parameterIndex + 4
+		for i = 1, #extend.profile do
+			params[parameterIndex] = extend.profile[i]
+			parameterIndex = parameterIndex + 1
+		end
+		for i = 1, #terraformers do
+			params[parameterIndex] = terraformers[i]
+			parameterIndex = parameterIndex + 1
+		end
+
+		local _, _, _, shift = spGetModKeyState()
+		if shift then
+			spGiveOrderToUnit(terraformers[1], CMD_TERRAFORM_INTERNAL, params, {"shift"})
+			originalCommandGiven = true
+		else
+			spGiveOrderToUnit(terraformers[1], CMD_TERRAFORM_INTERNAL, params, {})
+			spSetActiveCommand(-1)
+			originalCommandGiven = false
+		end
+		points = 0
+		return true
 	end
 
 	if terraform_type == 4 then
@@ -586,7 +770,8 @@ local function SendCommand()
 			end
 		end
 	end
-	points = 0		
+	points = 0
+	return true
 end
 
 ---------------
@@ -1168,6 +1353,50 @@ local function updateRectangleEndpoint(mx, my)
 end
 
 function widget:MousePress(mx, my, button)
+	if extend.phase == "line" then
+		if button == 1 then
+			local _, pos = spTraceScreenRay(mx, my, true)
+			if legalPos(pos) then
+				extend.UpdateLine(pos[1], pos[3])
+				local finished, errorReason = extend.FinishLine()
+				if not finished then
+					if errorReason == "too_large" then
+						Spring.Echo("Terraform Command Too Large")
+					elseif errorReason == "height" then
+						Spring.Echo("Terraform rejected: the terrain profile exceeds the height limit.")
+					else
+						Spring.Echo("Terraform line is too short")
+					end
+					completelyStopCommand()
+				end
+			end
+			return true
+		elseif button == 3 then
+			completelyStopCommand()
+			return true
+		end
+		return true
+	elseif extend.phase == "width" then
+		if button == 1 then
+			local _, pos = spTraceScreenRay(mx, my, true)
+			if legalPos(pos) then
+				extend.UpdateWidth(pos[1], pos[3])
+			end
+			if extend.width == 0 then
+				Spring.Echo("Terraform strip is too narrow")
+			elseif SendCommand() then
+				stopCommand()
+			else
+				completelyStopCommand()
+			end
+			return true
+		end
+		if button == 3 then
+			completelyStopCommand()
+		end
+		return true
+	end
+
 	if smoothCircle.active then
 		if button == 1 then
 			if updateSmoothCircle(mx, my) then
@@ -1197,7 +1426,30 @@ function widget:MousePress(mx, my, button)
 
 	local activeCmdIndex, activeid = spGetActiveCommand()
 	
-	if activeid == CMD_SMOOTH
+	if activeid == CMD_EXTEND
+			and extend.phase == "idle"
+			and not (setHeight or drawingRectangle or drawingRamp or smoothCircle.active) then
+		if button == 1 then
+			if not spIsAboveMiniMap(mx, my) then
+				local _, pos = spTraceScreenRay(mx, my, true)
+				if legalPos(pos) then
+					widgetHandler:UpdateWidgetCallIn("DrawWorld", self)
+					extend.Reset()
+					extend.StartLine(pos[1], pos[3])
+					terraform_type = 2
+					terraformHeight = 0
+					volumeSelection = 0
+					loop = 0
+					return true
+				end
+			end
+		else
+			spSetActiveCommand(-1)
+			originalCommandGiven = false
+			return true
+		end
+
+	elseif activeid == CMD_SMOOTH
 			and not (setHeight or drawingRectangle or drawingRamp or smoothCircle.active) then
 		if button == 1 then
 			if not spIsAboveMiniMap(mx, my) then
@@ -1305,7 +1557,8 @@ function widget:MousePress(mx, my, button)
 		return true
 	end
 	
-	if setHeight or drawingRamp or drawingRectangle or smoothCircle.active then
+	if setHeight or drawingRamp or drawingRectangle or smoothCircle.active
+			or extend.phase ~= "idle" then
 		if button == 3 then
 			completelyStopCommand()
 			return true
@@ -1316,6 +1569,9 @@ function widget:MousePress(mx, my, button)
 end
 
 function widget:MouseMove(mx, my, dx, dy, button)
+	if extend.phase ~= "idle" then
+		return true
+	end
 
 	if smoothCircle.active then
 		updateSmoothCircle(mx, my)
@@ -1341,7 +1597,17 @@ end
 
 function widget:Update(n)
 
-	if smoothCircle.active then
+	if extend.phase == "line" or extend.phase == "width" then
+		local mx, my = Spring.GetMouseState()
+		local _, pos = spTraceScreenRay(mx, my, true)
+		if legalPos(pos) then
+			if extend.phase == "line" then
+				extend.UpdateLine(pos[1], pos[3])
+			else
+				extend.UpdateWidth(pos[1], pos[3])
+			end
+		end
+	elseif smoothCircle.active then
 		local mx, my = Spring.GetMouseState()
 		updateSmoothCircle(mx, my)
 	elseif drawingRectangle and rectangleAwaitingSecondClick then
@@ -1396,6 +1662,9 @@ function widget:Update(n)
 end
 
 function widget:MouseRelease(mx, my, button)
+	if extend.phase ~= "idle" then
+		return true
+	end
 
 	if smoothCircle.active and button == 1 then
 		return true
@@ -1500,7 +1769,8 @@ end
 function widget:KeyPress(key)
 	
 	if key == KEYSYMS.ESCAPE then
-		if setHeight or drawingRamp or drawingRectangle or smoothCircle.active then
+		if setHeight or drawingRamp or drawingRectangle or smoothCircle.active
+				or extend.phase ~= "idle" then
 			completelyStopCommand()
 			return true
 		end
@@ -1525,7 +1795,86 @@ end
 local function rebuildTransientMesh()
 	local data = {}
 
-	if terraform_type == 4 then
+	if terraform_type == 2 then
+		if extend.phase == "line" then
+			local profile = extendGeometry.SampleProfile(
+				extend.firstPoint,
+				extend.secondPoint,
+				spGetGroundHeight
+			)
+			local vertices = {}
+			if profile then
+				for i = 1, #profile do
+					local ratio = (i - 1) / (#profile - 1)
+					vertices[i] = {
+						extend.firstPoint.x
+							+ (extend.secondPoint.x - extend.firstPoint.x) * ratio,
+						profile[i] + 2,
+						extend.firstPoint.z
+							+ (extend.secondPoint.z - extend.firstPoint.z) * ratio,
+					}
+				end
+			else
+				vertices[1] = {
+					extend.firstPoint.x,
+					spGetGroundHeight(extend.firstPoint.x, extend.firstPoint.z) + 2,
+					extend.firstPoint.z,
+				}
+			end
+			addLineStrip(data, vertices, selectionColor)
+		elseif extend.phase == "width" then
+			local profileVertices = {}
+			for i = 1, #extend.profile do
+				local ratio = (i - 1) / (#extend.profile - 1)
+				profileVertices[i] = {
+					extend.firstPoint.x
+						+ (extend.secondPoint.x - extend.firstPoint.x) * ratio,
+					extend.profile[i] + 2,
+					extend.firstPoint.z
+						+ (extend.secondPoint.z - extend.firstPoint.z) * ratio,
+				}
+			end
+			addLineStrip(data, profileVertices, selectionColor)
+
+			local gridSize = extendGeometry.GRID_SIZE
+			for i = 1, #extend.stripPoints do
+				local stripPoint = extend.stripPoints[i]
+				local groundHeight = stripPoint.groundHeight + 2
+				local targetHeight = stripPoint.targetHeight + 2
+				local targetColor = stripPoint.targetHeight < stripPoint.groundHeight
+					and noPathingColor or vehPathingColor
+				local xNeighbor = extend.stripPointMap[stripPoint.x + gridSize]
+					and extend.stripPointMap[stripPoint.x + gridSize][stripPoint.z]
+				local zNeighbor = extend.stripPointMap[stripPoint.x]
+					and extend.stripPointMap[stripPoint.x][stripPoint.z + gridSize]
+
+				if xNeighbor then
+					addLine(
+						data,
+						stripPoint.x, targetHeight, stripPoint.z,
+						xNeighbor.x, xNeighbor.targetHeight + 2, xNeighbor.z,
+						targetColor
+					)
+				end
+				if zNeighbor then
+					addLine(
+						data,
+						stripPoint.x, targetHeight, stripPoint.z,
+						zNeighbor.x, zNeighbor.targetHeight + 2, zNeighbor.z,
+						targetColor
+					)
+				end
+				if abs(stripPoint.targetHeight - stripPoint.groundHeight) > 0.0001 then
+					addLine(
+						data,
+						stripPoint.x, groundHeight, stripPoint.z,
+						stripPoint.x, targetHeight, stripPoint.z,
+						targetColor
+					)
+				end
+			end
+		end
+	elseif terraform_type == 4 then
 		local distance = sqrt((point[1].x - point[2].x)^2 + (point[1].z - point[2].z)^2)
 		if distance <= 0.0001 then
 			addLine(
@@ -1613,7 +1962,8 @@ end
 
 function widget:DrawWorld()
 
-	if not (setHeight or drawingRectangle or drawingRamp or smoothCircle.active) then
+	if not (setHeight or drawingRectangle or drawingRamp or smoothCircle.active
+			or extend.phase ~= "idle") then
 		widgetHandler:RemoveWidgetCallIn("DrawWorld", self)
 		return
 	end
@@ -1621,7 +1971,12 @@ function widget:DrawWorld()
 	if not initLineRenderer() then
 		return
 	end
-	if terraform_type == 4 or drawingRectangle or smoothCircle.active then
+	if terraform_type == 2 then
+		if extend.meshDirty then
+			rebuildTransientMesh()
+			extend.meshDirty = false
+		end
+	elseif terraform_type == 4 or drawingRectangle or smoothCircle.active then
 		rebuildTransientMesh()
 	else
 		transientMesh.vertexCount = 0
@@ -1645,7 +2000,8 @@ function widget:DrawWorld()
 		glUniform(lineNegativeVolumeColorLoc, negVolume[1], negVolume[2], negVolume[3], negVolume[4])
 		glUniform(linePositiveVolumeColorLoc, posVolume[1], posVolume[2], posVolume[3], posVolume[4])
 
-		if terraform_type == 4 or drawingRectangle or smoothCircle.active then
+		if terraform_type == 2 or terraform_type == 4
+				or drawingRectangle or smoothCircle.active then
 			drawLineMesh(transientMesh)
 		elseif setHeight then
 			drawLineMesh(groundGridMesh)
@@ -1670,6 +2026,13 @@ function widget:DrawScreen()
 			if initialHeightSnapped then
 				drawMouseText(-30, "Snapped to first ground point")
 			end
+		end
+	elseif terraform_type == 2 then
+		if extend.phase == "line" then
+			drawMouseText(0, "Click the second profile point")
+		elseif extend.phase == "width" then
+			drawMouseText(0, string_format("Extend width: %.0f", abs(extend.width)))
+			drawMouseText(-30, "Click to confirm")
 		end
 	elseif terraform_type == 4 then
 		if drawingRamp == 1 then

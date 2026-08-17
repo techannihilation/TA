@@ -668,6 +668,7 @@ local hiddencmds = {
 local CMD_AREA_MEX = 10100
 local terraformCommands = {
 	[39734] = true, -- ramp
+	[39735] = true, -- extend
 	[39736] = true, -- level
 	[39738] = true, -- smooth
 	[39739] = true, -- restore
