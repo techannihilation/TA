@@ -743,6 +743,30 @@ sparks = {
   priority   = 1,
   }
 
+  gok_sparks = {
+    speed        = 0,
+    speedSpread  = 0,
+    life         = 90,
+    lifeSpread   = 10,
+    partpos      = "x,0,0 | if(rand()*2>1) then x=0 else x=20 end",
+    colormap     = { {0.78, 0.08, 0.55, 0.01}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, },
+    rotSpeed     = 0.1,
+    rotFactor    = 1.0,
+    rotFactorSpread = -2.0,
+    rotairdrag   = 0.99,
+    rotSpread    = 360,
+    size         = 10,
+    sizeSpread   = 12,
+    sizeGrowth   = 0.4,
+    emitVector   = {0,0,0},
+    emitRotSpread = 70,
+    texture      = 'bitmaps/PD/Lightningball.TGA',
+    count        = 6,
+    repeatEffect = true,
+    noIconDraw = true,
+    priority   = 1,
+    }
+
 sparks1 = {
   speed        = 0,
   speedSpread  = 0,

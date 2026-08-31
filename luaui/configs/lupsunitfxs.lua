@@ -425,6 +425,9 @@ cafus = {
   armvengence = {
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
+   gok_pound = {
+     {class='SimpleParticles2', options=MergeTable({pos={0,55,0}, delay=60, lifeSpread=300},gok_sparks)},
+   },
 
   ---- OTHER ----------------------------
  cjuno = {

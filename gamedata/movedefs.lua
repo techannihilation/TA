@@ -584,6 +584,17 @@ local moveDatas = {
         maxwaterslope = 255,
         badwaterslope = 255
     },
+    TANKHOVER6 = {
+        allowterraincollisions = false,
+        crushstrength = 50,
+        depthmod = 0,
+        footprintx = 6,
+        footprintz = 6,
+        maxslope = 29,
+        badslope = 20,
+        maxwaterslope = 255,
+        badwaterslope = 255
+    },
     TANKHOVER8 = {
         allowterraincollisions = false,
         crushstrength = 1000,
