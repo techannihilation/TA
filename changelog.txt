@@ -5,6 +5,9 @@ Improvment :
 * Add Terraphorming
 * Add T3 Gok Hover Long Range
 
+Balance :
+* Air Gunship damage / 10 vs Commander
+
 4.98 => 4.99
 2026-01-28
 
