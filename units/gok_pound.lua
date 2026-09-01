@@ -71,6 +71,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:gok_muzzle",
+			},
 			pieceexplosiongenerators = {
 				"piecetrail0",
 				"piecetrail1",
@@ -104,12 +107,14 @@ return {
 		weapondefs = {
 			storm = {
 				areaofeffect = 24,
+				burst = 30,
+				burstrate = 0.01,
 				beamttl = 10,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 10,
-				energypershot = 450,
+				energypershot = 2500,
 				firestarter = 50,
 				firesubmersed = true,
 				impactonly = 1,
@@ -119,7 +124,7 @@ return {
 				name = "Storm Lightning",
 				noselfdamage = true,
 				range = 1300,
-				reloadtime = 0.5,
+				reloadtime = 8,
 				rgbcolor = "0.78 0.08 0.55",
 				soundhitdry = "lashit",
 				soundhitwet = "sizzle",
@@ -131,11 +136,9 @@ return {
 				thickness = 10,
 				turret = true,
 				weapontype = "LightningCannon",
-				weaponvelocity = 400,
 				damage = {
-					air = 300,
-					commanders = 300,
-					default = 600,
+					commanders = 200,
+					default = 400,
 					subs = 5,
 				},
 			},

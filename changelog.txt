@@ -1,4 +1,11 @@
- 4.98 => 4.99
+ 4.99 => 5.00
+2026-02-09
+
+Improvment :
+* Add Terraphorming
+* Add T3 Gok Hover Long Range
+
+4.98 => 4.99
 2026-01-28
 
 Improvment :

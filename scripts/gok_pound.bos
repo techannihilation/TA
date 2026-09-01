@@ -5,15 +5,34 @@
 
 piece  base, hull, body, gem1, gem2,
 		spinner1, spinner2, ring1, ring2,
-		sparkle1, sparkle2, lightning, vector,
+		lightning1, lightning2, lightning3, lightning4, lightning5,
+		vector, emits, q1, q2, q3, q4, q5,
 		wake1, wake2, wake3, wake4, wake5, wake6;
 
-static-var  Static_Var_1;
+static-var  Static_Var_1, bAiming, gun_1;
 
 // Signal definitions
 #define SIG_AIM				4
 #define SIG_MOVE			8
 
+lightning()
+{
+	While ( TRUE )
+	{
+		
+		if (!bAiming)
+		{
+			spin emits around y-axis speed <10.0>;
+			emit-sfx 1024 + 0 from q1;
+			emit-sfx 1024 + 0 from q2;
+			emit-sfx 1024 + 0 from q3;
+			emit-sfx 1024 + 0 from q4;
+			emit-sfx 1024 + 0 from q5;
+			sleep 2500;
+		}
+		sleep 250;
+	}	
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -22,6 +41,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep 400;
 	}
 	
+	start-script lightning();
 	spin spinner1 around y-axis speed <15.0>;
 	spin spinner2 around y-axis speed <-15.0>;
 	
@@ -84,14 +104,43 @@ setSFXoccupy(state)
 
 Create()
 {
-	hide lightning;
-	move lightning to y-axis [150.0] now;
+	hide lightning1;
+	hide lightning2;
+	hide lightning3;
+	hide lightning4;
+	hide lightning5;
+	hide q1;
+	hide q2;
+	hide q3;
+	hide q4;
+	hide q5;
+	gun_1 = 1;
+	move vector to y-axis [150.0] now;
 	start-script SmokeUnit();
 }
 
 QueryPrimary(PieceNum)
 {
-	PieceNum = lightning;
+	if( gun_1 == 1 )
+	{
+		piecenum = lightning1;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = lightning2;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = lightning3;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = lightning4;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = lightning5;
+	}
 }
 
 AimFromPrimary(PieceNum)
@@ -103,16 +152,146 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
 	turn vector to y-axis heading speed <600.0>;
 	wait-for-turn vector around y-axis;
-	move lightning to z-axis rand([200],[450]) now;
+	move lightning1 to z-axis rand([200],[450]) now;
+	move lightning2 to z-axis rand([200],[450]) now;
+	move lightning3 to z-axis rand([200],[450]) now;
+	move lightning4 to z-axis rand([200],[450]) now;
+	move lightning5 to z-axis rand([200],[450]) now;
+	move lightning1 to x-axis rand([-50],[50]) now;
+	move lightning2 to x-axis rand([-50],[50]) now;
+	move lightning3 to x-axis rand([-50],[50]) now;
+	move lightning4 to x-axis rand([-50],[50]) now;
+	move lightning5 to x-axis rand([-50],[50]) now;
 	sleep 50;
 	return(1);
 }
 
 FirePrimary()
 {
-	sleep 50;
+	emit-sfx 1024 + 0 from lightning2;
+	gun_1 = 2;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning3;
+	gun_1 = 3;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning4;
+	gun_1 = 4;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning5;
+	gun_1 = 5;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning1;
+	gun_1 = 1;
+	sleep 10;
+	
+	emit-sfx 1024 + 0 from lightning2;
+	gun_1 = 2;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning3;
+	gun_1 = 3;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning4;
+	gun_1 = 4;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning5;
+	gun_1 = 5;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning1;
+	gun_1 = 1;
+	sleep 10;
+	
+	emit-sfx 1024 + 0 from lightning2;
+	gun_1 = 2;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning3;
+	gun_1 = 3;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning4;
+	gun_1 = 4;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning5;
+	gun_1 = 5;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning1;
+	gun_1 = 1;
+	sleep 10;
+	
+	emit-sfx 1024 + 0 from lightning2;
+	gun_1 = 2;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning3;
+	gun_1 = 3;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning4;
+	gun_1 = 4;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning5;
+	gun_1 = 5;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning1;
+	gun_1 = 1;
+	sleep 10;
+	
+	emit-sfx 1024 + 0 from lightning2;
+	gun_1 = 2;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning3;
+	gun_1 = 3;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning4;
+	gun_1 = 4;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning5;
+	gun_1 = 5;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning1;
+	gun_1 = 1;
+	sleep 10;
+	
+	emit-sfx 1024 + 0 from lightning2;
+	gun_1 = 2;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning3;
+	gun_1 = 3;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning4;
+	gun_1 = 4;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning5;
+	gun_1 = 5;
+	sleep 10;
+		
+	emit-sfx 1024 + 0 from lightning1;
+	gun_1 = 1;
+	sleep 10;
+	
+	bAiming = FALSE;		
 }
 
 SweetSpot(PieceNum)
