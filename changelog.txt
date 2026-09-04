@@ -1,9 +1,10 @@
  4.99 => 5.00
-2026-02-09
+2026-04-09
 
 Improvment :
 * Add Terraphorming
 * Add T3 Gok Hover Long Range
+* Add T2 Sniper Gok
 
 Balance :
 * Air Gunship damage / 10 vs Commander
