@@ -625,7 +625,7 @@ local morphDefs = {
 	gok_asmodee = {
 		into = 'gok_darkarchonte',
 		tech = 4,
-		time = 60,		
+		time = 60,
 		xp = 0.10,
 	},
 	gok_ifrit = {
@@ -718,12 +718,6 @@ local morphDefs = {
 		tech = 4,
 		time = 120,
 		xp = 0.10,
-	},
-	cdevastator = {
-		into = 'core_core',
-		tech = 4,
-		time = 120,
-		xp = 0.25,
 	},
 	gok_octopus = {
 		into = 'gok_squid',

@@ -5,6 +5,7 @@ Improvment :
 * Add Terraphorming
 * Add T3 Gok Hover Long Range
 * Add T2 Sniper Gok
+* T6 Core unit can be constructed by T5 constructor. Unit restricted at 1.
 
 Balance :
 * Air Gunship damage / 10 vs Commander
