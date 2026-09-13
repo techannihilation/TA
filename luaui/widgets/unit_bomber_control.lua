@@ -22,7 +22,7 @@ local GetGameFrame         = Spring.GetGameFrame
 local GetMyTeamID          = Spring.GetMyTeamID
 local GetUnitTeam          = Spring.GetUnitTeam
 local GetGameFrame         = Spring.GetGameFrame
-local GetCommandQueue      = Spring.GetCommandQueue
+local GetUnitCommands      = Spring.GetUnitCommands
 local GetUnitStates        = Spring.GetUnitStates
 local GetTeamUnits         = Spring.GetTeamUnits
 
@@ -136,7 +136,7 @@ function widget:Update(dt)
 				bomber_data.reloaded=reloaded
 				bomber_data.reload_frame=reload_frame
 				if did_shot then
-					local commands=GetCommandQueue(bomber_id,50)
+					local commands=GetUnitCommands(bomber_id,50)
 					if commands and commands[1] and commands[1].id==CMD_ATTACK and commands[2] then
 						local got_next_orders=false
 						for i=2,#commands do

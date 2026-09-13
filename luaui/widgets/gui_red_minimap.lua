@@ -275,45 +275,62 @@ function widget:Initialize()
 end
 
 local lastPos = {}
+local lastResizeX, lastResizeY
+local stateCheckFrame = 0
+local stateCheckRate = 5
 
 function widget:Update()
-	local _,_,_,_,minimized,maximized = sGetMiniMapGeometry()
-	if (maximized) then
-		--hack to reset state minimap
-		glSlaveMiniMap(false) 
-		glSlaveMiniMap(true)
-		----
-	end
-	
-	if (minimized) then
-		rMinimap.active = false
-		--hack to reset state minimap
-		glSlaveMiniMap(false) 
-		glSlaveMiniMap(true)
-		----
-	else
-		rMinimap.active = nil
-	end
-	
-	local st = sGetCameraState()
-	if (st.name == "ov") then --overview camera
-		rMinimap.active = false
-	else
-		rMinimap.active = nil
+	stateCheckFrame = stateCheckFrame + 1
+	if stateCheckFrame >= stateCheckRate then
+		stateCheckFrame = 0
+
+		local _,_,_,_,minimized,maximized = sGetMiniMapGeometry()
+		if (maximized) then
+			--hack to reset state minimap
+			glSlaveMiniMap(false) 
+			glSlaveMiniMap(true)
+			----
+		end
+		
+		if (minimized) then
+			rMinimap.active = false
+			--hack to reset state minimap
+			glSlaveMiniMap(false) 
+			glSlaveMiniMap(true)
+			----
+		else
+			rMinimap.active = nil
+		end
+		
+		local st = sGetCameraState()
+		if (st.name == "ov") then --overview camera
+			rMinimap.active = false
+		elseif not minimized then
+			rMinimap.active = nil
+		end
 	end
 
-	AutoResizeObjects()
-	if ((lastPos.px ~= rMinimap.px) or (lastPos.py ~= rMinimap.py) or (lastPos.sx ~= rMinimap.sx) or (lastPos.sy ~= rMinimap.sy)) then
-		sSendCommands(sformat("minimap geometry %i %i %i %i",
-		rMinimap.px+0.5,
-		rMinimap.py+0.5,
-		rMinimap.sx+0.5,
-		rMinimap.sy+0.5))
+	if lastResizeX ~= Screen.vsx or lastResizeY ~= Screen.vsy then
+		AutoResizeObjects()
+		lastResizeX = Screen.vsx
+		lastResizeY = Screen.vsy
 	end
-	lastPos.px = rMinimap.px
-	lastPos.py = rMinimap.py
-	lastPos.sx = rMinimap.sx
-	lastPos.sy = rMinimap.sy
+
+	local px = rMinimap.px+0.5
+	local py = rMinimap.py+0.5
+	local sx = rMinimap.sx+0.5
+	local sy = rMinimap.sy+0.5
+	if ((lastPos.px ~= px) or (lastPos.py ~= py) or (lastPos.sx ~= sx) or (lastPos.sy ~= sy)) then
+		sSendCommands(sformat("minimap geometry %i %i %i %i",
+		px,
+		py,
+		sx,
+		sy))
+	end
+	lastPos.px = px
+	lastPos.py = py
+	lastPos.sx = sx
+	lastPos.sy = sy
 end
 
 function widget:DrawScreen()

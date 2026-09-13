@@ -130,7 +130,7 @@ return {
 		},
 		weapondefs = {
 			ultimate_psychic1 = {
-				areaofeffect = 8,
+				areaofeffect = 24,
 				beamttl = 10,
 				burst = 60,
 				burstrate = 0.01,
@@ -160,7 +160,6 @@ return {
 				thickness = 10,
 				turret = true,
 				weapontype = "LightningCannon",
-				weaponvelocity = 400,
 				damage = {
 					commanders = 150,
 					default = 300,

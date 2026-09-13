@@ -140,6 +140,7 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 250,
 				damage = {
+					commanders = 30,
 					default = 300,
 					subs = 600,
 				},

@@ -203,16 +203,24 @@ end
 -----------------------------------------------------------------------------------------------------------------
 
 function UnitSmoke:Update()
-  local vel = {Spring.GetUnitVelocity(self.unit)}
-  vel = Vmul( -1 , vel )
+  local vx,vy,vz = Spring.GetUnitVelocity(self.unit)
+  if not vx then
+    return
+  end
+  vx,vy,vz = -vx,-vy,-vz
 
   local x,y,z = Spring.GetWind()
-  local wind  = Vmul( 0.125 , {z,y,-x} )
+  local dx = vx + z*0.125
+  local dy = vy + y*0.125
+  local dz = vz - x*0.125
 
-  self.trailDirs[2] = Vadd( Vadd(vel,wind), {0,2,0})
+  local dir = self.trailDirs[2]
+  dir[1], dir[2], dir[3] = dx, dy + 2, dz
 
   for i=self.quads,3,-1 do
-    self.trailDirs[i] = Vadd( self.trailDirs[i-1], Vadd(vel,wind) )
+    local prev = self.trailDirs[i-1]
+    dir = self.trailDirs[i]
+    dir[1], dir[2], dir[3] = prev[1] + dx, prev[2] + dy, prev[3] + dz
   end
 
 --[[

@@ -188,7 +188,7 @@ return {
 				soundstart = "torpedo1",
 				startvelocity = 140,
 				tolerance = 1000,
-				tracks = false,
+				tracks = true,
 				turnrate = 8000,
 				turret = true,
 				waterweapon = true,

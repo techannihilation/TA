@@ -480,7 +480,20 @@ local function DrawMText(numberM, vOffset)
 	end
 end
 
+local function clampRatio(value)
+	if type(value) ~= "number" or value ~= value then
+		return 0
+	elseif value < 0 then
+		return 0
+	elseif value > 1 then
+		return 1
+	end
+	return value
+end
+
 local function DrawEBar(tE,tEp,vOffset)-- where tE = team Energy = [0,1]
+	tE = clampRatio(tE)
+	tEp = clampRatio(tEp)
 	local dx = 15*sizeMultiplier
 	local dy = tH-(36*sizeMultiplier)
 	local maxW = widgetWidth - (30*sizeMultiplier)
@@ -570,6 +583,8 @@ end
 
 
 local function DrawMBar(tM,tMp,vOffset) -- where tM = team Metal = [0,1]
+	tM = clampRatio(tM)
+	tMp = clampRatio(tMp)
 	local dx = 15*sizeMultiplier
 	local dy = tH-(26*sizeMultiplier)
 	local maxW = widgetWidth - (30*sizeMultiplier)
@@ -908,19 +923,24 @@ local function drawListStandard()
 				if not data["isAlive"] then
 					data["isAlive"] = isTeamAlive(aID)
 				end
+				local avg = avgData[aID]
 
 				local posy = tH*(drawpos)
 
 				--if data["isAlive"] then DrawBackground(posy, aID) end
 
 				local t = GetGameSeconds()
-				if data["isAlive"] and t > 0 and gamestarted and not gameover then
-					DrawEBar(avgData[aID]["tE"]/maxEnergy,(avgData[aID]["tE"]-avgData[aID]["tEr"])/maxEnergy,posy-1)
-					DrawEText(avgData[aID]["tE"],posy-1)
+				if data["isAlive"] and t > 0 and gamestarted and not gameover and avg then
+					if maxEnergy > 0 then
+						DrawEBar(avg["tE"]/maxEnergy,(avg["tE"]-avg["tEr"])/maxEnergy,posy-1)
+					end
+					DrawEText(avg["tE"],posy-1)
 				end
-				if data["isAlive"] and t > 5 and not gameover then
-					DrawMBar(avgData[aID]["tM"]/maxMetal,(avgData[aID]["tM"]-avgData[aID]["tMr"])/maxMetal,posy+2)
-					DrawMText(avgData[aID]["tM"],posy+2)
+				if data["isAlive"] and t > 5 and not gameover and avg then
+					if maxMetal > 0 then
+						DrawMBar(avg["tM"]/maxMetal,(avg["tM"]-avg["tMr"])/maxMetal,posy+2)
+					end
+					DrawMText(avg["tM"],posy+2)
 				end
 			end
 		end

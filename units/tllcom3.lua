@@ -97,7 +97,7 @@ return {
 			[16] = "tlledrag",
 			--[17] = "tlllft",
 			[18] = "tllpulaser",
-			[19] = "tllobliterator",
+			[19] = "tll_obliterator1",
 			[20] = "tllflak",
 			[21] = "tlluwfusion",
 			[22] = "tlluwefusion",

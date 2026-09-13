@@ -27,6 +27,8 @@ local usable = {}
 
 -- process unitdef
 function UnitDef_Post(name, uDef)
+	uDef.canrestore = false
+
 	-- Batch Processing of unitdefs leave alone
 	if FixUnitStats == true then
 		--Adjust los/radar emit heights

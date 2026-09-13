@@ -44,12 +44,31 @@ end
 --helper functions
 local type = type
 
+local function updateTextBoundsCache(o)
+	local caption = o.caption
+	local fontsize = o.fontsize
+	if ((o._boundsCaption ~= caption) or (o._boundsFontSize ~= fontsize)) then
+		o._boundsCaption = caption
+		o._boundsFontSize = fontsize
+		if (caption and fontsize) then
+			local linecount = getLineCount(caption)
+			o._boundsWidth = glGetTextWidth(caption)*fontsize
+			o._boundsHeight = linecount*fontsize
+		else
+			o._boundsWidth = 0
+			o._boundsHeight = 0
+		end
+	end
+end
+
 local function getTextWidth(o)
-	return glGetTextWidth(o.caption)*o.fontsize
+	updateTextBoundsCache(o)
+	return o._boundsWidth
 end
 
 local function getTextHeight(o)
-	return getLineCount(o.caption)*o.fontsize
+	updateTextBoundsCache(o)
+	return o._boundsHeight
 end
 
 local function isInRect(x,y,px,py,sx,sy)
@@ -81,6 +100,14 @@ end
 
 
 --Objects
+local function isVisibleColor(c, alpha)
+	return c and c[4] ~= 0 and ((alpha == nil) or (alpha > 0))
+end
+
+local function isVisibleTexture(texture, c, alpha)
+	return texture and ((c == nil) or (c[4] ~= 0)) and ((alpha == nil) or (alpha > 0))
+end
+
 local F = {
 [1] = function(o) --rectangle
 	if (o.draw == false) then
@@ -96,54 +123,63 @@ local F = {
 	local px,py,sx,sy = o.px,o.py,o.sx,o.sy	
 	
 	local alphamult = o.alphamult
-	if (alphamult~=nil) then
-		if (color) then
-			color = copytable(color)
-			color[4] = o.color[4]*alphamult
-		end
-		if (border) then
-			border = copytable(border)
-			border[4] = o.border[4]*alphamult
-		end
-		if (captioncolor) then
-			captioncolor = copytable(captioncolor)
-			captioncolor[4] = o.captioncolor[4]*alphamult
-		end
-		if (texturecolor) then
-			texturecolor = copytable(texturecolor)
-			texturecolor[4] = o.texturecolor[4]*alphamult
-		else
-			texturecolor = {1,1,1,alphamult}
-		end
+	local hasColor = isVisibleColor(color,alphamult)
+	local hasTexture = isVisibleTexture(texture,texturecolor,alphamult)
+	local hasCaption = o.caption and ((captioncolor == nil) or (captioncolor[4] ~= 0)) and ((alphamult == nil) or (alphamult > 0))
+	local hasBorder = isVisibleColor(border,alphamult)
+	if (not hasColor and not hasTexture and not hasCaption and not hasBorder) then
+		return
 	end
 	
-	if (color) then
-		Rect(px,py,sx,sy,color)
+	if (hasColor) then
+		Rect(px,py,sx,sy,color,alphamult)
 	end
 	
-	if (texture) then
-		TexRect(px,py,sx,sy,texture,texturecolor)
+	if (hasTexture) then
+		TexRect(px,py,sx,sy,texture,texturecolor,alphamult)
 	end
 	
-	if (o.caption) then
-		local px2,py2 = px,py
+	if (hasCaption) then
 		local text = o.caption
-		local width = glGetTextWidth(text)
-		local linecount = getLineCount(text)
-		local fontsize = sx/width
-		local height = linecount*fontsize
-		if (height > sy) then
-			fontsize = sy/linecount
-			px2 = px2 + (sx - width*fontsize) /2 --center
-		else
-			py2 = py2 + (sy - height) /2 --center
+		local drawCaption = true
+		if ((o._captionText ~= text) or (o._captionSx ~= sx) or (o._captionSy ~= sy) or (o._captionMaxFontSize ~= o.maxfontsize)) then
+			local width = glGetTextWidth(text)
+			if (width <= 0) then
+				drawCaption = false
+				o._captionText = nil
+			else
+				local linecount = getLineCount(text)
+				local fontsize = sx/width
+				local height = linecount*fontsize
+				local offsetx = 0
+				local offsety = 0
+				if (height > sy) then
+					fontsize = sy/linecount
+					offsetx = (sx - width*fontsize) /2 --center
+				else
+					offsety = (sy - height) /2 --center
+				end
+				if (o.maxfontsize and fontsize > o.maxfontsize) then
+					fontsize = o.maxfontsize
+					offsetx = (sx - width*fontsize) /2
+					offsety = (sy - linecount*fontsize) /2
+				end
+				o._captionText = text
+				o._captionSx = sx
+				o._captionSy = sy
+				o._captionMaxFontSize = o.maxfontsize
+				o._captionOffsetX = offsetx
+				o._captionOffsetY = offsety
+				o.autofontsize = fontsize
+			end
 		end
-		Text(px2,py2,fontsize,text,o.options,captioncolor)
-		o.autofontsize = fontsize
+		if (drawCaption and o.autofontsize) then
+			Text(px+o._captionOffsetX,py+o._captionOffsetY,o.autofontsize,text,o.options,captioncolor,alphamult)
+		end
 	end
 	
-	if (border) then --todo: border styles
-		Border(px,py,sx,sy,o.borderwidth,border)
+	if (hasBorder) then --todo: border styles
+		Border(px,py,sx,sy,o.borderwidth,border,alphamult)
 	end
 end,
 
@@ -156,20 +192,15 @@ end,
 	local captioncolor = o.captioncolor
 	
 	local alphamult = o.alphamult
-	if (alphamult~=nil) then
-		if (color) then
-			color = copytable(color)
-			color[4] = o.color[4]*alphamult
-		elseif (captioncolor) then
-			captioncolor = copytable(captioncolor)
-			captioncolor[4] = o.captioncolor[4]*alphamult
-		end
+	local drawcolor = color or captioncolor
+	if ((drawcolor and drawcolor[4] == 0) or (alphamult and alphamult <= 0)) then
+		return
 	end
 	
 	local px,py = o.px,o.py	
 	local fontsize = o.fontsize
 	
-	Text(px,py,fontsize,o.caption,o.options,color or captioncolor)
+	Text(px,py,fontsize,o.caption,o.options,drawcolor,alphamult)
 end,
 
 [3] = function(o) --area
@@ -239,6 +270,10 @@ end
 
 --Mouse handling
 local Mouse = {{},{},{}}
+for i=1,3 do
+	Mouse[i][4] = {0,0}
+	Mouse[i][5] = {0,0}
+end
 local sGetMouseState = Spring.GetMouseState
 
 local dropClick = false
@@ -275,6 +310,7 @@ function widget:MousePress(mx,my,mb)
 end
 
 local LastMouseState = {sGetMouseState()}
+local CurMouseState = {}
 local function handleMouse()
 	--reset status
 	dropClick = false
@@ -282,7 +318,7 @@ local function handleMouse()
 	useDefaultMouseCursor = false
 	----
 	
-	local CurMouseState = {sGetMouseState()} --{mx,my,m1,m2,m3}
+	CurMouseState[1], CurMouseState[2], CurMouseState[3], CurMouseState[4], CurMouseState[5] = sGetMouseState()
 	CurMouseState[2] = vsy-CurMouseState[2] --make 0,0 top left
 	
 	Mouse.hoverunused = true --used in mouseover
@@ -306,13 +342,19 @@ local function handleMouse()
 			Mouse[n][1] = true --isheld
 		elseif (CurMouseState[i] and (not LastMouseState[i])) then
 			Mouse[n][2] = true --waspressed
-			Mouse[n][4] = {Mouse.x,Mouse.y} --last press
+			Mouse[n][4][1] = Mouse.x
+			Mouse[n][4][2] = Mouse.y
 		elseif ((not CurMouseState[i]) and LastMouseState[i]) then
 			Mouse[n][3] = true --wasreleased
-			Mouse[n][5] = {Mouse.x,Mouse.y} --last release
+			Mouse[n][5][1] = Mouse.x
+			Mouse[n][5][2] = Mouse.y
 		end
 	end
-	LastMouseState = CurMouseState
+	LastMouseState[1] = CurMouseState[1]
+	LastMouseState[2] = CurMouseState[2]
+	LastMouseState[3] = CurMouseState[3]
+	LastMouseState[4] = CurMouseState[4]
+	LastMouseState[5] = CurMouseState[5]
 end
 
 local function mouseEvent(t,e,o)
@@ -575,6 +617,7 @@ end
 
 local hookedtodrawing = false
 local fc = 0 --framecount
+local deletionLists = {}
 function widget:Update()
 
   
@@ -633,14 +676,20 @@ function widget:Update()
 			end
 			--
 			
-			local dellst = {}
+			local dellst = deletionLists[j]
+			if (dellst == nil) then
+				dellst = {}
+				deletionLists[j] = dellst
+			end
+			local dellstCount = 0
 			local objlst = wl[j]
 			
 			for i=1,#objlst do
 				local o = objlst[i]
 				o.tempactive = nil
 				if (o.scheduledfordeletion) then
-					dellst[#dellst+1] = i
+					dellstCount = dellstCount + 1
+					dellst[dellstCount] = i
 				else
 					if (o.active ~= false) then
 						o.notfirstprocessing = true
@@ -673,13 +722,18 @@ function widget:Update()
 						if (ro.onupdate) then
 							ro.onupdate(ro)
 						end
-						processMouseEvents(ro)
+						if (ro.movable or ro.mousenotover or ro.overridecursor or ro.overrideclick
+						or ro.overridewheel or ro.mouseover or ro.mouseclick or ro.mouseheld
+						or ro.mouserelease or ro.mousewheel or ro[2] == 2) then
+							processMouseEvents(ro)
+						end
 					end
 				end
 			end
 			
-			for i=1,#dellst do
+			for i=dellstCount,1,-1 do
 				table.remove(objlst,dellst[i])
+				dellst[i] = nil
 			end
 		end
 	end

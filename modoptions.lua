@@ -154,6 +154,14 @@ local options = {
     def = false,
     section = "ta_options",
   },
+  {
+    key = "tornados",
+    name = "Tornados",
+    desc = "Enables drifting tornados that lift units and wrecks\nAutoHost Usage :- tornados true|false",
+    type = "bool",
+    def = false,
+    section = "ta_options",
+  },
   -- {
   --   key = "mo_dynamic",
   --   name = "Dynamic Lighting",

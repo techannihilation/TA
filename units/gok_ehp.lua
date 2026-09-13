@@ -53,8 +53,9 @@ return {
 			[3] = "gok_abyss",
 			[4] = "gok_mlrpt",
 			[5] = "gok_nahash",
-			[6] = "gok_diablo",
-			--[6] = "",
+			[6] = "gok_pound",
+			[7] = "gok_diablo",
+
 		},
 		customparams = {
 			buildpic = "gok_ehp.dds",

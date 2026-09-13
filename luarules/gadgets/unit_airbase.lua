@@ -243,7 +243,7 @@ if (gadgetHandler:IsSyncedCode()) then
         --
 
         -- if the unit has no orders, tell it to move a little away from the airbase
-        local q = Spring.GetUnitCommands(unitID, 0)
+        local q = Spring.GetUnitCommandCount(unitID)
         if q == 0 then
             local px, _, pz = Spring.GetUnitPosition(airbaseID)
             local theta = math.random() * 2 * math.pi

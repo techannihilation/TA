@@ -141,6 +141,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
+					commanders = 180,
 					default = 1800,
 					subs = 5,
 				},
@@ -181,6 +182,7 @@ return {
 				weaponvelocity = 1200,
 				damage = {
 					areoship = 20,
+					commanders = 0.5,
 					default = 5,
 					air = 80,
 				},

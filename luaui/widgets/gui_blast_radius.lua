@@ -147,7 +147,7 @@ function DrawBuildMenuBlastRange()
 	local cmdDesc = spGetActiveCmdDesc( idx )
 	
 	local units = spGetSelectedUnits()
-	--local cmdQ = Spring.GetCommandQueue( units[1], 3 )
+	--local cmdQ = Spring.GetUnitCommands( units[1], 3 )
 	
 	if ( cmdDesc["type"] ~= 20 ) then
 		--quit here if not a build command

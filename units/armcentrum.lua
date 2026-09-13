@@ -166,7 +166,7 @@ return {
 				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 150,
-				tracks = false,
+				tracks = true,
 				turnrate = 6000,
 				turret = true,
 				waterweapon = true,

@@ -7,9 +7,9 @@ return {
 		bankingAllowed = false,
 		blocking = false,
 		brakerate = 0.01,
-		buildcostenergy = 1700000000,
-		buildcostmetal = 34187000,
-		-- cost: 34187000 + 1700000000/1000 = 35.9 million
+		buildcostenergy = 5100000000,
+		buildcostmetal = 102561000,
+		-- cost: 102561000 + 5100000000/1000 = 107.7 million
 		builder = false,
 		buildpic = "talon_planetkiller.dds",
 		buildtime = 45000000,
@@ -38,7 +38,7 @@ return {
 		losemitheight = 25,
 		maneuverleashlength = 500,
 		mass = 910000,
-		maxdamage = 1450000,
+		maxdamage = 14500000,
 		maxslope = 10,
 		maxvelocity = 1,
 		maxwaterdepth = 0,

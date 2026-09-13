@@ -520,7 +520,7 @@ RestoreAfterDelay()
 	bAiming = FALSE;
 }
 
-AimSecondary(heading, pitch)
+AimWeapon1(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
@@ -540,7 +540,7 @@ AimSecondary(heading, pitch)
 	return (1);
 }
 
-AimPrimary(heading, pitch)
+AimWeapon2(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
@@ -552,7 +552,7 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-FireSecondary()
+FireWeapon1()
 {	
 	if( gun_1 == 0 )
 	{
@@ -575,7 +575,7 @@ FireSecondary()
 	}
 }
 
-FirePrimary()
+FireWeapon2()
 {
 	++gun_2;
 	if( gun_2 == 2 )
@@ -585,17 +585,17 @@ FirePrimary()
 	}
 }
 
-AimFromSecondary(piecenum)
+AimFromWeapon1(piecenum)
 {
 	piecenum = torso;
 }
 
-AimFromPrimary(piecenum)
+AimFromWeapon2(piecenum)
 {
 	piecenum = mpack;
 }
 
-QuerySecondary(piecenum)
+QueryWeapon1(piecenum)
 {
 	if( gun_1 == 0 )
 	{
@@ -609,7 +609,7 @@ QuerySecondary(piecenum)
 	}
 }
 
-QueryPrimary(piecenum)
+QueryWeapon2(piecenum)
 {
 	if( gun_2 == 0 )
 	{

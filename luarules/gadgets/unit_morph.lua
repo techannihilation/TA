@@ -127,7 +127,7 @@ local SpSetUnitHealth = Spring.SetUnitHealth
 local SpEditUnitCmdDesc = Spring.EditUnitCmdDesc
 local SpFindUnitCmdDesc = Spring.FindUnitCmdDesc
 local SpInsertUnitCmdDesc = Spring.InsertUnitCmdDesc
-local SpGetCommandQueue = Spring.GetCommandQueue
+local SpGetUnitCommands = Spring.GetUnitCommands
 local SpGiveOrderToUnit = Spring.GiveOrderToUnit
 local SpSetUnitResourcing = Spring.SetUnitResourcing
 local SpAddUnitResource = Spring.AddUnitResource
@@ -140,7 +140,6 @@ local SpSetUnitRotation = Spring.SetUnitRotation
 local SpSetUnitExperience = Spring.SetUnitExperience
 local SpGetUnitStates = Spring.GetUnitStates
 local SpGiveOrderArrayToUnitArray = Spring.GiveOrderArrayToUnitArray
-local SpGetUnitCommands = Spring.GetUnitCommands
 local SpGetAllUnits = Spring.GetAllUnits
 local SpGetUnitShieldState = Spring.GetUnitShieldState
 local SpSetUnitShieldState = Spring.SetUnitShieldState
@@ -582,7 +581,7 @@ local function ReAssignAssists(newUnit,oldUnit)
     local alliedUnits = SpGetTeamUnits(teamID)
     for i=1,#alliedUnits do
       local unitID = alliedUnits[i]
-      local cmds = SpGetCommandQueue(unitID,20)
+      local cmds = SpGetUnitCommands(unitID,20)
       for j=1,#cmds do
         local cmd = cmds[j]
         if (cmd.id == CMD_GUARD)and(cmd.params[1] == oldUnit) then
@@ -801,7 +800,7 @@ end
 local PROGRESS_SYNC_FREQUENCY = 5
 
 local function UpdateMorph(unitID, morphData, canfinish)
-  local cmdQueue = SpGetCommandQueue(unitID, 1)
+  local cmdQueue = SpGetUnitCommands(unitID, 1)
   if cmdQueue and cmdQueue[1] and cmdQueue[1].id == CMD.WAIT then return true end
   if SpGetUnitTransporter(unitID) then return true end
 

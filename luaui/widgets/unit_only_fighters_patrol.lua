@@ -33,7 +33,7 @@ stop_builders=true -- Whever to stop builders or not. Set to true if you dont us
 
 local OrderUnit = Spring.GiveOrderToUnit
 local GetMyTeamID = Spring.GetMyTeamID
-local GetCommandQueue = Spring.GetCommandQueue
+local GetUnitCommands = Spring.GetUnitCommands
 local GetUnitBuildFacing = Spring.GetUnitBuildFacing
 local GetUnitPosition = Spring.GetUnitPosition
 
@@ -78,7 +78,7 @@ local function UnitCanTargetAir(unitDefID)
 end
 ]]--
 local function UnitHasPatrolOrder(unitID)
-	local queue=GetCommandQueue(unitID,20)
+	local queue=GetUnitCommands(unitID,20)
 	for i,cmd in ipairs(queue) do
 		if cmd.id==CMD.PATROL then
 			return true

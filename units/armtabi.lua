@@ -1,8 +1,8 @@
 return {
 	armtabi = {
 		buildangle = 4096,
-		buildcostenergy = 612500000,
-		buildcostmetal = 39200000,
+		buildcostenergy = 4287500000,
+		buildcostmetal = 274400000,
 		builder = false,
 		buildpic = "armtabi.dds",
 		buildtime = 60000000,
@@ -25,7 +25,7 @@ return {
 		idletime = 2200,
 		losemitheight = 162,
 		mass = 30387146,
-		maxdamage = 1500000,
+		maxdamage = 15000000,
 		maxslope = 16,
 		maxwaterdepth = 0,
 		name = "Tabitha",

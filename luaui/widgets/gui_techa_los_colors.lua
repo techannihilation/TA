@@ -48,6 +48,18 @@ local losColorsWithoutRadars = {
 
 local spSendCommands = Spring.SendCommands
 local spSetLosViewColors = Spring.SetLosViewColors
+local spGetLosViewColors = Spring.GetLosViewColors
+
+local function StoreCurrentLosColors()
+    always, LOS, radar, jam, radar2 = spGetLosViewColors()
+end
+
+local function RestoreLosColors()
+    if always == nil or LOS == nil or radar == nil or jam == nil or radar2 == nil then
+        StoreCurrentLosColors()
+    end
+    spSetLosViewColors(always, LOS, radar, jam, radar2)
+end
 
 function setLosWithRadars()
     losWithRadarEnabled = true
@@ -86,9 +98,13 @@ function widget:PlayerChanged(playerID)
     return true
 end
 
+function widget:Initialize()
+    StoreCurrentLosColors()
+end
+
 function widget:Shutdown()
     spSendCommands('unbindkeyset Any+;')
-    spSetLosViewColors(always, LOS, radar, jam, radar2)
+    RestoreLosColors()
 end
 
 
@@ -137,7 +153,7 @@ function widget:SetConfigData(data)
     spSendCommands('unbindkeyset Any+;')
     spSendCommands('bind Any+; losradar')
 
-    always, LOS, radar, jam, radar2 = Spring.GetLosViewColors()
+    StoreCurrentLosColors()
 
     if data.losWithRadarEnabled ~= nil then
         losWithRadarEnabled = data.losWithRadarEnabled
@@ -157,4 +173,3 @@ function widget:SetConfigData(data)
         setLosWithoutRadars()
     end
 end
-

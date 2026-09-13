@@ -16,7 +16,7 @@ return {
 		category = "ALL MOBILE MINOR SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "MINOR Hovercraft",
+		description = "Scout Hovercraft",
 		downloadable = 1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,

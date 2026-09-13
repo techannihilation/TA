@@ -195,7 +195,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 10,
-				energypershot = 1500,
+				energypershot = 150,
 				firestarter = 50,
 				firesubmersed = true,
 				impactonly = 1,

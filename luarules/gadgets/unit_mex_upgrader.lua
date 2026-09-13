@@ -22,7 +22,7 @@ local GetUnitPosition = Spring.GetUnitPosition
 local GetUnitHealth = Spring.GetUnitHealth 
 local GetGroundHeight = Spring.GetGroundHeight 
 local GetUnitTeam = Spring.GetUnitTeam 
-local GetCommandQueue = Spring.GetCommandQueue 
+local GetUnitCommands = Spring.GetUnitCommands 
 local Echo = Spring.Echo 
 local FindUnitCmdDesc = Spring.FindUnitCmdDesc 
 local InsertUnitCmdDesc = Spring.InsertUnitCmdDesc 
@@ -206,7 +206,7 @@ function gadget:GameFrame(n)
   scheduledBuilders = {} 
 
   for unitID, _ in pairs(addFakeReclaim) do 
-    local commands = GetCommandQueue(unitID,20) 
+    local commands = GetUnitCommands(unitID,20) 
     for i, cmd in ipairs(commands) do 
       if cmd.id == CMD_UPGRADEMEX and not (commands[i+1] and commands[i+1].id == CMD_RECLAIM) then 
         GiveOrderToUnit(unitID, CMD_INSERT, {i, CMD_RECLAIM, CMD_OPT_INTERNAL+1, cmd.params[1]}, {"alt"}) 
@@ -436,7 +436,7 @@ end
 
 function getUnitPhase(unitID, teamID) 
 
-  local commands = GetCommandQueue(unitID,1) 
+  local commands = GetUnitCommands(unitID,1) 
   if #commands == 0 then 
     return IDLE 
   end 

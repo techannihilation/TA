@@ -1,9 +1,9 @@
 return {
 	rumad_parasite = {
 		buildangle = 4096,
-		buildcostenergy = 6805200000,
-		buildcostmetal = 31387000,
-		-- cost: 31387000 + 6805200000/1000 = 38.2 million
+		buildcostenergy = 20415600000,
+		buildcostmetal = 94161000,
+		-- cost: 94161000 + 20415600000/1000 = 114.6 million
 		builddistance = 8000,
 		builder = true,
 		buildpic = "rumad_parasite.dds",
@@ -32,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 2200,
 		losemitheight = 500,
-		maxdamage = 1250000,
+		maxdamage = 12500000,
 		maxslope = 16,
 		maxwaterdepth = 0,
 		name = "Parasite",

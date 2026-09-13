@@ -56,7 +56,7 @@ local spSetUnitRulesParam  = Spring.SetUnitRulesParam
 local spGetUnitRulesParam  = Spring.GetUnitRulesParam
 local spSetUnitNoMinimap   = Spring.SetUnitNoMinimap
 local spGetUnitIsStunned   = Spring.GetUnitIsStunned
-local spGetCommandQueue    = Spring.GetCommandQueue
+local spGetUnitCommands    = Spring.GetUnitCommands
 local spGiveOrderToUnit    = Spring.GiveOrderToUnit
 local spSetUnitVelocity    = Spring.SetUnitVelocity
 local spSetUnitNoSelect    = Spring.SetUnitNoSelect
@@ -412,7 +412,7 @@ local function Jump(unitID, goal, cmdTag, origCmdParams)
 		end
 		
 		--mcSetPosition(unitID, start[1] + vector[1],start[2] + vector[2]-6,start[3] + vector[3])
-		-- local oldQueue = spGetCommandQueue(unitID)
+		-- local oldQueue = spGetUnitCommands(unitID, -1)
 		-- ReloadQueue(unitID, oldQueue, cmdTag)
 		
 		if GG.wasMorphedTo[unitID] then
@@ -579,7 +579,7 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
 
 	if (distSqr < (range*range)) then
 
-		local cmdTag = spGetCommandQueue(unitID,1)[1].tag
+		local cmdTag = spGetUnitCommands(unitID,1)[1].tag
 		if (lastJump[unitID] and (t - lastJump[unitID]) >= reload) then
 			local coords = table.concat(cmdParams)
 			local currFrame = spGetGameFrame()

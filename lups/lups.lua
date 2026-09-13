@@ -853,7 +853,13 @@ function GetUnitLosState(unitID)
   if LocalAllyTeamID == 0 then
     UpdateAllyTeamStatus()
   end
-  return LocalAllyTeamID == Script.ALL_ACCESS_TEAM or (LocalAllyTeamID ~= Script.NO_ACCESS_TEAM and (Spring.GetUnitLosState(unitID, LocalAllyTeamID) or {}).los) or false
+  if LocalAllyTeamID == Script.ALL_ACCESS_TEAM then
+    return true
+  elseif LocalAllyTeamID == Script.NO_ACCESS_TEAM then
+    return false
+  end
+  local losState = spGetUnitLosState(unitID, LocalAllyTeamID, true)
+  return losState and (losState % 2 == 1) or false
 end
 
 local function IsUnitFXVisible(fx)
@@ -938,9 +944,10 @@ local function IsWorldFXVisible(fx)
 end
 
 
+local visibleRemoveFX = {}
 local function CreateVisibleFxList()
-  local removeFX = {}
-  local removeCnt = 1
+  local removeFX = visibleRemoveFX
+  local removeCnt = 0
 
   for _,fx in pairs(particles) do
     if ((fx.unit or -1) > -1) then
@@ -961,24 +968,26 @@ local function CreateVisibleFxList()
         if (not anyFXVisible) then anyFXVisible = true end
         if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
       elseif (fx.Valid and (not fx:Valid())) then
-        removeFX[removeCnt] = fx.id
         removeCnt = removeCnt + 1
+        removeFX[removeCnt] = fx.id
       end
     end
   end
    --Spring.Echo("Lups fx cnt", particles.GetIndexMax())
 
-  for i=1,removeCnt-1 do
+  for i=1,removeCnt do
     RemoveParticles(removeFX[i])
+    removeFX[i] = nil
   end
 end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+local invalidUnitRemoveFX = {}
 local function CleanInvalidUnitFX()
-  local removeFX = {}
-  local removeCnt = 1
+  local removeFX = invalidUnitRemoveFX
+  local removeCnt = 0
 
   for layerID,layer in pairs(RenderSequence) do
     for partClass,Units in pairs(layer) do
@@ -990,8 +999,8 @@ local function CleanInvalidUnitFX()
             if (not spValidUnitID(unitID)) then --// UnitID isn't valid anymore, remove all its effects
               for i=1,#UnitEffects do
                 local fx = UnitEffects[i]
-                removeFX[removeCnt] = fx.id
                 removeCnt = removeCnt + 1
+                removeFX[removeCnt] = fx.id
               end
               Units[unitID]=nil
             end
@@ -1001,8 +1010,9 @@ local function CleanInvalidUnitFX()
     end
   end
 
-  for i=1,removeCnt-1 do
+  for i=1,removeCnt do
     RemoveParticles(removeFX[i])
+    removeFX[i] = nil
   end
 end
 
@@ -1029,11 +1039,11 @@ local function GameFrame(_,n)
 
   --// create delayed FXs
   if (effectsInDelay[1]) then
-    local remaingFXs,cnt={},1
+    local cnt = 1
     for i=1,#effectsInDelay do
       local fx = effectsInDelay[i]
       if (fx.frame>thisGameFrame) then
-        remaingFXs[cnt]=fx
+        effectsInDelay[cnt]=fx
         cnt=cnt+1
       else
         AddParticles(fx.class,fx.options, fx.id)
@@ -1042,7 +1052,9 @@ local function GameFrame(_,n)
         end
       end
     end
-    effectsInDelay = remaingFXs
+    for i=cnt,#effectsInDelay do
+      effectsInDelay[i] = nil
+    end
   end
 
 	--// cleanup FX from dead/invalid units
@@ -1079,8 +1091,8 @@ local function GameFrame(_,n)
 	if (#fxRemoveList>0) then
 		for i=1,#fxRemoveList do
 			RemoveParticles(fxRemoveList[i])
+      fxRemoveList[i] = nil
     end
-    fxRemoveList = {}
   end
 end
 

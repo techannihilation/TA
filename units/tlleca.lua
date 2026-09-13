@@ -65,7 +65,7 @@ return {
 			[11] = "tllnanotc2",
 			[12] = "tlledrag",
 			[13] = "tllomni",
-			[14] = "tllobliterator1",
+			[14] = "tll_obliterator2",
 			[15] = "tlldb",
 			[16] = "tllgate4",
 			[17] = "tllantinuke1",

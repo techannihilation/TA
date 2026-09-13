@@ -88,6 +88,7 @@ local prevEnemyComCount		= 0
 local receiveCount			= (tostring(Spring.GetModOptions().mo_enemycomcount) == "1") or false
 local lastUpdateFrame = 0
 local currentUpdateFrame = 0
+local resbarHover
 
 local guishaderEnabled = false
 local guishaderCheckUpdateRate = 2
@@ -502,24 +503,31 @@ end
 
 local function updateResbarValues(res)
 
+    local cur, cap = spGetTeamResources(spGetMyTeamID(),res)
+    local barWidth = resbarDrawinfo[res].barArea[3] - resbarDrawinfo[res].barArea[1]
+
+    local cappedCurRes = cur	-- limit so when production dies the value wont be much larger than what you can store
+    if cur > cap*1.07 then
+        cappedCurRes = cap*1.07
+	end
+    local valueWidth = math.floor(((cappedCurRes/cap) * barWidth) + 0.5)
+    local currentText = short(cappedCurRes)
+    if dlistResbar[res][3] ~= nil and resbarDrawinfo[res].lastValueWidth == valueWidth and resbarDrawinfo[res].lastCurrentText == currentText then
+        return
+    end
+    resbarDrawinfo[res].lastValueWidth = valueWidth
+    resbarDrawinfo[res].lastCurrentText = currentText
+
     if dlistResbar[res][3] ~= nil then
         glDeleteList(dlistResbar[res][3])
     end
     dlistResbar[res][3] = glCreateList( function()
-        local r = {spGetTeamResources(spGetMyTeamID(),res)} -- 1 = cur, 2 = cap, 3 = pull, 4 = income, 5 = expense, 6 = share
-
-        local barWidth = resbarDrawinfo[res].barArea[3] - resbarDrawinfo[res].barArea[1]
         --local glowSize = (resbarDrawinfo[res].barArea[4] - resbarDrawinfo[res].barArea[2]) * 5
-
-        local cappedCurRes = r[1]	-- limit so when production dies the value wont be much larger than what you can store
-        if r[1] > r[2]*1.07 then
-            cappedCurRes = r[2]*1.07
-		end
 
 		-- Bar value
         glColor(resbarDrawinfo[res].barColor)
         glTexture(barbg)
-        glTexRect(resbarDrawinfo[res].barTexRect[1], resbarDrawinfo[res].barTexRect[2], resbarDrawinfo[res].barTexRect[1]+((cappedCurRes/r[2]) * barWidth), resbarDrawinfo[res].barTexRect[4])
+        glTexRect(resbarDrawinfo[res].barTexRect[1], resbarDrawinfo[res].barTexRect[2], resbarDrawinfo[res].barTexRect[1]+valueWidth, resbarDrawinfo[res].barTexRect[4])
 
         -- Bar value glow
         --[[
@@ -532,23 +540,33 @@ local function updateResbarValues(res)
 --]]
         -- Text: current
         glColor(1, 1, 1, 1)
-        glText(short(cappedCurRes), resbarDrawinfo[res].textCurrent[2], resbarDrawinfo[res].textCurrent[3], resbarDrawinfo[res].textCurrent[4], resbarDrawinfo[res].textCurrent[5])
+        glText(currentText, resbarDrawinfo[res].textCurrent[2], resbarDrawinfo[res].textCurrent[3], resbarDrawinfo[res].textCurrent[4], resbarDrawinfo[res].textCurrent[5])
    end)
 end
 
 local function updateResbarText(res)
 
+    local _, cap, pull, income = spGetTeamResources(spGetMyTeamID(),res)
+    local storageText = "\255\133\133\133"..short(cap)
+    local pullText = "\255\200\100\100"..short(pull)
+    local incomeText = "\255\100\200\100"..short(income)
+    if dlistResbar[res][4] ~= nil and resbarDrawinfo[res].lastStorageText == storageText and resbarDrawinfo[res].lastPullText == pullText and resbarDrawinfo[res].lastIncomeText == incomeText then
+        return
+    end
+    resbarDrawinfo[res].lastStorageText = storageText
+    resbarDrawinfo[res].lastPullText = pullText
+    resbarDrawinfo[res].lastIncomeText = incomeText
+
     if dlistResbar[res][4] ~= nil then
         glDeleteList(dlistResbar[res][4])
     end
     dlistResbar[res][4] = glCreateList( function()
-        local r = {spGetTeamResources(spGetMyTeamID(),res)} -- 1 = cur, 2 = cap, 3 = pull, 4 = income, 5 = expense, 6 = share
         -- Text: storage
-        glText("\255\133\133\133"..short(r[2]), resbarDrawinfo[res].textStorage[2], resbarDrawinfo[res].textStorage[3], resbarDrawinfo[res].textStorage[4], resbarDrawinfo[res].textStorage[5])
+        glText(storageText, resbarDrawinfo[res].textStorage[2], resbarDrawinfo[res].textStorage[3], resbarDrawinfo[res].textStorage[4], resbarDrawinfo[res].textStorage[5])
         -- Text: pull
-        glText("\255\200\100\100"..short(r[3]), resbarDrawinfo[res].textPull[2], resbarDrawinfo[res].textPull[3], resbarDrawinfo[res].textPull[4], resbarDrawinfo[res].textPull[5])
+        glText(pullText, resbarDrawinfo[res].textPull[2], resbarDrawinfo[res].textPull[3], resbarDrawinfo[res].textPull[4], resbarDrawinfo[res].textPull[5])
         -- Text: income
-        glText("\255\100\200\100"..short(r[4]), resbarDrawinfo[res].textIncome[2], resbarDrawinfo[res].textIncome[3], resbarDrawinfo[res].textIncome[4], resbarDrawinfo[res].textIncome[5])
+        glText(incomeText, resbarDrawinfo[res].textIncome[2], resbarDrawinfo[res].textIncome[3], resbarDrawinfo[res].textIncome[4], resbarDrawinfo[res].textIncome[5])
 
         -- display overflow notification
         --[[
@@ -578,7 +596,7 @@ end
 
 
 local function updateResbar(res)
-	local r = {spGetTeamResources(spGetMyTeamID(),res)} -- 1 = cur 2 = cap 3 = pull 4 = income 5 = expense 6 = share
+	local cur, cap, pull, income, _, share = spGetTeamResources(spGetMyTeamID(),res)
 	
 	local area = resbarArea[res]
 	
@@ -596,27 +614,30 @@ local function updateResbar(res)
 	local barWidth = barArea[3] - barArea[1]
 	--local glowSize = barHeight * 4
 
-	if resbarHover ~= nil and resbarHover == res then
-		sliderHeightAdd = barHeight/1.15
-		shareSliderWidth = barHeight + sliderHeightAdd + sliderHeightAdd
-	end
-
 	if res == 'metal' then
 		resbarDrawinfo[res].barColor = {1,1,1,1}
 	else
 		resbarDrawinfo[res].barColor = {1,1,0,1}
 	end
 	resbarDrawinfo[res].barArea = barArea
+	resbarDrawinfo[res].barWidth = barWidth
+	resbarDrawinfo[res].sliderHeightAdd = sliderHeightAdd
+	resbarDrawinfo[res].shareSliderWidth = shareSliderWidth
 	
-	resbarDrawinfo[res].barTexRect = {barArea[1], barArea[2], barArea[1]+((r[1]/r[2]) * barWidth), barArea[4]}
+	resbarDrawinfo[res].barTexRect = {barArea[1], barArea[2], barArea[1]+((cur/cap) * barWidth), barArea[4]}
 	--resbarDrawinfo[res].barGlowMiddleTexRect = {barArea[1], barArea[2] - glowSize, barArea[1]+((r[1]/r[2]) * barWidth), barArea[4] + glowSize}
 	--resbarDrawinfo[res].barGlowLeftTexRect = {barArea[1]-(glowSize*2), barArea[2] - glowSize, barArea[1], barArea[4] + glowSize}
 	--resbarDrawinfo[res].barGlowRightTexRect = {(barArea[1]+((r[1]/r[2]) * barWidth))+(glowSize*2), barArea[2] - glowSize, barArea[1]+((r[1]/r[2]) * barWidth), barArea[4] + glowSize}
 	
-	resbarDrawinfo[res].textCurrent = {short(r[1]), barArea[1]+barWidth/2, barArea[2]+barHeight*2, (height/2.75)*widgetScale, 'ocd'}
-	resbarDrawinfo[res].textStorage = {"\255\133\133\133"..short(r[2]), barArea[3], barArea[2]+barHeight*2, (height/3.2)*widgetScale, 'ord'}
-	resbarDrawinfo[res].textPull = {"\255\200\100\100"..short(r[3]), barArea[1]+((barArea[3]-barArea[1])*0.2), barArea[2]+barHeight*2, (height/3.2)*widgetScale, 'od'}
-	resbarDrawinfo[res].textIncome = {"\255\100\200\100"..short(r[4]), barArea[1], barArea[2]+barHeight*2, (height/3.2)*widgetScale, 'od'}
+	resbarDrawinfo[res].textCurrent = {short(cur), barArea[1]+barWidth/2, barArea[2]+barHeight*2, (height/2.75)*widgetScale, 'ocd'}
+	resbarDrawinfo[res].textStorage = {"\255\133\133\133"..short(cap), barArea[3], barArea[2]+barHeight*2, (height/3.2)*widgetScale, 'ord'}
+	resbarDrawinfo[res].textPull = {"\255\200\100\100"..short(pull), barArea[1]+((barArea[3]-barArea[1])*0.2), barArea[2]+barHeight*2, (height/3.2)*widgetScale, 'od'}
+	resbarDrawinfo[res].textIncome = {"\255\100\200\100"..short(income), barArea[1], barArea[2]+barHeight*2, (height/3.2)*widgetScale, 'od'}
+	resbarDrawinfo[res].lastValueWidth = nil
+	resbarDrawinfo[res].lastCurrentText = nil
+	resbarDrawinfo[res].lastStorageText = nil
+	resbarDrawinfo[res].lastPullText = nil
+	resbarDrawinfo[res].lastIncomeText = nil
 
 	dlistResbar[res][1] = glCreateList( function()
 
@@ -662,34 +683,18 @@ local function updateResbar(res)
             end
 			conversionIndicatorArea = {barArea[1]+(convValue * barWidth)-(shareSliderWidth/2), barArea[2]-sliderHeightAdd, barArea[1]+(convValue * barWidth)+(shareSliderWidth/2), barArea[4]+sliderHeightAdd}
 			glTexture(barbg)
-			if resbarHover ~= nil and resbarHover == res then
-				local padding = shareSliderWidth/8
-				glColor(0.8, 0.8, 0.5, 1)
-				RectRound(conversionIndicatorArea[1], conversionIndicatorArea[2], conversionIndicatorArea[3], conversionIndicatorArea[4],2.5*widgetScale)
-				glColor(0.7, 0.7, 0.47, 1)
-				RectRound(conversionIndicatorArea[1]+padding, conversionIndicatorArea[2]+padding, conversionIndicatorArea[3]-padding, conversionIndicatorArea[4]-padding,2.5*widgetScale)
-			else
-				glColor(0.85, 0.85, 0.55, 1)
-				glTexRect(conversionIndicatorArea[1], conversionIndicatorArea[2], conversionIndicatorArea[3], conversionIndicatorArea[4])
-			end
+			glColor(0.85, 0.85, 0.55, 1)
+			glTexRect(conversionIndicatorArea[1], conversionIndicatorArea[2], conversionIndicatorArea[3], conversionIndicatorArea[4])
 		end
 		-- Share slider
-        local value = r[6]
+        local value = share
         if draggingShareIndicator~= nil and draggingShareIndicator == res and draggingShareIndicatorValue ~= nil then
             value = draggingShareIndicatorValue
         end
 		shareIndicatorArea[res] = {barArea[1]+(value * barWidth)-(shareSliderWidth/2), barArea[2]-sliderHeightAdd, barArea[1]+(value * barWidth)+(shareSliderWidth/2), barArea[4]+sliderHeightAdd}
 		glTexture(barbg)
-		if resbarHover ~= nil and resbarHover == res then
-			local padding = shareSliderWidth/8
-			glColor(0.66, 0, 0, 1)
-			RectRound(shareIndicatorArea[res][1], shareIndicatorArea[res][2], shareIndicatorArea[res][3], shareIndicatorArea[res][4],2.5*widgetScale)
-			glColor(0.6, 0, 0, 1)
-			RectRound(shareIndicatorArea[res][1]+padding, shareIndicatorArea[res][2]+padding, shareIndicatorArea[res][3]-padding, shareIndicatorArea[res][4]-padding,2.5*widgetScale)
-		else
 			glColor(0.8, 0, 0, 1)
 			glTexRect(shareIndicatorArea[res][1], shareIndicatorArea[res][2], shareIndicatorArea[res][3], shareIndicatorArea[res][4])
-		end
 		glTexture(false)
 	end)
 	
@@ -776,6 +781,58 @@ function init()
 	end
 end
 
+local function GetExpandedSliderRect(res, indicatorArea)
+	local info = resbarDrawinfo[res]
+	if indicatorArea == nil or indicatorArea[1] == nil or info == nil or info.barArea == nil then
+		return
+	end
+	local barArea = info.barArea
+	local barHeight = height * widgetScale / 10
+	local sliderHeightAdd = barHeight / 1.15
+	local sliderWidth = barHeight + sliderHeightAdd + sliderHeightAdd
+	local center = (indicatorArea[1] + indicatorArea[3]) / 2
+	return center - (sliderWidth / 2), barArea[2] - sliderHeightAdd, center + (sliderWidth / 2), barArea[4] + sliderHeightAdd, sliderWidth
+end
+
+local function DrawExpandedSlider(x1, y1, x2, y2, sliderWidth, r, g, b, innerR, innerG, innerB)
+	local padding = sliderWidth / 8
+	glColor(r, g, b, 1)
+	RectRound(x1, y1, x2, y2, 2.5 * widgetScale)
+	glColor(innerR, innerG, innerB, 1)
+	RectRound(x1 + padding, y1 + padding, x2 - padding, y2 - padding, 2.5 * widgetScale)
+end
+
+local function DrawResbarHover(res)
+	if resbarHover ~= res then
+		return
+	end
+	glTexture(barbg)
+	if res == 'energy' and showConversionSlider then
+		local x1, y1, x2, y2, sliderWidth = GetExpandedSliderRect(res, conversionIndicatorArea)
+		if x1 ~= nil then
+			DrawExpandedSlider(x1, y1, x2, y2, sliderWidth, 0.8, 0.8, 0.5, 0.7, 0.7, 0.47)
+		end
+	end
+	local x1, y1, x2, y2, sliderWidth = GetExpandedSliderRect(res, shareIndicatorArea[res])
+	if x1 ~= nil then
+		DrawExpandedSlider(x1, y1, x2, y2, sliderWidth, 0.66, 0, 0, 0.6, 0, 0)
+	end
+	glTexture(false)
+end
+
+local function IsOnSliderIndicator(res, x, y, indicatorArea)
+	if indicatorArea == nil or indicatorArea[1] == nil then
+		return false
+	end
+	if resbarHover == res then
+		local x1, y1, x2, y2 = GetExpandedSliderRect(res, indicatorArea)
+		if x1 ~= nil then
+			return IsOnRect(x, y, x1, y1, x2, y2)
+		end
+	end
+	return IsOnRect(x, y, indicatorArea[1], indicatorArea[2], indicatorArea[3], indicatorArea[4])
+end
+
 function checkStatus()
 	myAllyTeamID = Spring.GetMyAllyTeamID()
 	myTeamID = Spring.GetMyTeamID()
@@ -833,24 +890,13 @@ function widget:Update(dt)
 	end
 
 	if not spec then
+		local hoveredRes
 		if isInBox(mx, my, resbarArea['energy']) then
-			if resbarHover == nil then
-				resbarHover = 'energy'
-				updateResbar('energy')
-			end
-		elseif resbarHover ~= nil and resbarHover == 'energy' then
-			resbarHover = nil
-			updateResbar('energy')
+			hoveredRes = 'energy'
+		elseif isInBox(mx, my, resbarArea['metal']) then
+			hoveredRes = 'metal'
 		end
-		if isInBox(mx, my, resbarArea['metal']) then
-			if resbarHover == nil then
-				resbarHover = 'metal'
-				updateResbar('metal')
-			end
-		elseif resbarHover ~= nil and resbarHover == 'metal' then
-			resbarHover = nil
-			updateResbar('metal')
-		end
+		resbarHover = hoveredRes
 	else
 		resbarHover = nil
 	end
@@ -953,6 +999,7 @@ function widget:DrawScreen()
         glCallList(dlistResbar[res][3])
         glCallList(dlistResbar[res][4])
 		glCallList(dlistResbar[res][2])
+		DrawResbarHover(res)
 		--if showOverflowTooltip[res] ~= nil and showOverflowTooltip[res] < now then
 		--	local text = 'Overflowing'
 		--	local textWidth = (8*2.66) + (glGetTextWidth(text) * 13) * widgetScale
@@ -966,6 +1013,7 @@ function widget:DrawScreen()
         glCallList(dlistResbar[res][3])
         glCallList(dlistResbar[res][4])
 		glCallList(dlistResbar[res][2])
+		DrawResbarHover(res)
 		--if showOverflowTooltip[res] ~= nil and showOverflowTooltip[res] < now then
 		--	local text = 'Overflowing'
 		--	local textWidth = (8*2.66) + (glGetTextWidth(text) * 13) * widgetScale
@@ -1209,15 +1257,15 @@ end
 function widget:MousePress(x, y, button)
 	if button == 1 then
 		if not spec then
-			if IsOnRect(x, y, shareIndicatorArea['metal'][1], shareIndicatorArea['metal'][2], shareIndicatorArea['metal'][3], shareIndicatorArea['metal'][4]) then
+			if IsOnSliderIndicator('metal', x, y, shareIndicatorArea['metal']) then
 				draggingShareIndicator = 'metal'
 				return true
 			end
-			if IsOnRect(x, y, shareIndicatorArea['energy'][1], shareIndicatorArea['energy'][2], shareIndicatorArea['energy'][3], shareIndicatorArea['energy'][4]) then
+			if IsOnSliderIndicator('energy', x, y, shareIndicatorArea['energy']) then
 				draggingShareIndicator = 'energy'
 				return true
 			end
-			if showConversionSlider and IsOnRect(x, y, conversionIndicatorArea[1], conversionIndicatorArea[2], conversionIndicatorArea[3], conversionIndicatorArea[4]) then
+			if showConversionSlider and IsOnSliderIndicator('energy', x, y, conversionIndicatorArea) then
 				draggingConversionIndicator = true
 				return true
 			end

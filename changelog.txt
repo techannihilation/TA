@@ -1,3 +1,25 @@
+ 4.99 => 5.00
+2026-04-09
+
+Improvment :
+* Add Terraphorming
+* Add T3 Gok Hover Long Range
+* Add T2 Sniper Gok
+* T6 Core unit can be constructed by T5 constructor. Unit restricted at 1.
+
+Balance :
+* Air Gunship damage / 10 vs Commander
+
+4.98 => 4.99
+2026-01-28
+
+Improvment :
+* Rework T3 Turret Obliterator TLL Model and Balance
+* Rework Core T4 Hover Artillery Model
+
+Balance :
+* Rework Tlldischarge T2 JetPack Kbot : Delete Bomb and decrease cost by 25%
+
 4.97 => 4.98
 2026-01-11
 
@@ -1474,7 +1496,7 @@ Fix :
 
 Balance :
  - Tll Lizard : Decrease speed 2.2 => 1.7. Decrease dmg/s 180=>170. Deacrease HP 1125=>1095
- - T2&T3 Tll tllobliterator : Decrease damage by 20%
+ - T2&T3 Tll tll_obliterator1 : Decrease damage by 20%
  - Decrease Xp 50% for all T1 ground AA morph into T2
  - Tllroaster : Decrease speed 1.5 => 1.35. Decrease spray lighting damage 200=>170 / shot. Increase metalcost 1535 => 1635
 
