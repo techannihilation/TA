@@ -12,20 +12,24 @@ return {
     desc = 'Empty AI for testing purposes'
   },
   {
-    name = 'Simple AI',
-    desc = 'EasyAI'
+    name = 'TechAI: Normal',
+    desc = 'Tech Annihilation Fog of War AI (Balanced)'
   },
   {
-    name = 'SimpleDefenderAI',
-    desc = 'EasyAI'
+    name = 'TechAI: Hard',
+    desc = 'Tech Annihilation Fog of War AI (Aggressive & High Tech)'
   },
   {
-    name = 'SimpleConstructorAI',
-    desc = 'EasyAI'
+    name = 'TechAI: Easy',
+    desc = 'Tech Annihilation Fog of War AI (Relaxed)'
   },
   {
-    name = 'SimpleCheaterAI',
-    desc = 'EasyAI'
+    name = 'TechAI',
+    desc = 'Tech Annihilation Fog of War AI (Default)'
+  },
+  {
+    name = 'BARb AI',
+    desc = 'Tech Annihilation BARb-enhanced Tactical AI'
   },
 }
 --------------------------------------------------------------------------------
