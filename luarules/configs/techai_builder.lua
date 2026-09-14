@@ -5,6 +5,11 @@ local M = {}
 function M.Create(api)
 	local S, metadata = Spring, api.metadata
 	local sharedSpots = {}
+	local function metalSpots()
+		if api.metalSpots then return api.metalSpots() end
+		local spots=GG.metalSpots or _G.metalSpots
+		return type(spots)=='table' and spots or {}
+	end
 	local function resource(team, kind, reserved)
 		local current, storage, pull, income, expense = S.GetTeamResources(team, kind)
 		return {current=math.max(0,(current or 0)-(reserved or 0)), storage=storage or 1,
@@ -25,7 +30,7 @@ function M.Create(api)
 		if ai.demand and ai.demand.frame == frame then return ai.demand end
 		local state = {frame=frame,metal=resource(team,'metal',ai.reservedMetal),energy=resource(team,'energy',ai.reservedEnergy),
 			counts={},pending={},committedMetal=0,committedEnergy=0,incomingEnergy=0,incomingEmergencyEnergy=0,pendingConverterDrain=0,
-			maxFactoryTier=0,factoryUtilization=0,enemyPressure=0,unfinished={},hasMetalSpots=#(GG.metalSpots or _G.metalSpots or {})>0}
+			maxFactoryTier=0,factoryUtilization=0,enemyPressure=0,unfinished={},hasMetalSpots=#metalSpots()>0}
 		local activeFactories, factories, converterCapacity = 0, 0, 0
 		local unfinishedByDef={}
 		for id in pairs(ai.registeredUnits or {}) do
@@ -84,7 +89,7 @@ function M.Create(api)
 
 	local function freeMex(ai,builder,defID,bx,bz,ally,frame,commander)
 		local best,bestScore
-		local spots=GG.metalSpots or _G.metalSpots or {}
+		local spots=metalSpots()
 		for _,spot in ipairs(spots) do
 			local key=math.floor(spot.x/32)..'_'..math.floor(spot.z/32)
 			local claim=sharedSpots[ally..':'..key]
@@ -99,7 +104,8 @@ function M.Create(api)
 			local nearBase=not commander or (spot.x-sx)^2+(spot.z-sz)^2 <= (ai.maxCommanderDist or 1100)^2
 			if not own and not claim and nearBase and (not bestScore or distance<bestScore) then
 				local y=spot.y or S.GetGroundHeight(spot.x,spot.z)
-				if api.threat(ai,spot.x,spot.z)<160 and S.TestBuildOrder(defID,spot.x,y,spot.z,0)>0 then
+				if api.threat(ai,spot.x,spot.z)<160 and S.TestBuildOrder(defID,spot.x,y,spot.z,0)>0
+					and (not api.layout or api.layout.Allowed(ai,defID,spot.x,spot.z,0)) then
 					local occupied=false
 					for _,id in ipairs(S.GetUnitsInCylinder(spot.x,spot.z,64) or {}) do
 						local ud=UnitDefs[S.GetUnitDefID(id)]
@@ -144,9 +150,11 @@ function M.Create(api)
 						local _,_,_,_,progress=S.GetUnitHealth(id)
 						if old and mx and not owner and old.tech<meta.tech and old.isWater==meta.isWater
 							and (not progress or progress>=1) and (mx-bx)^2+(mz-bz)^2<(commander and 900 or 2200)^2
-							and api.threat(ai,mx,mz)<100 then
+							and api.threat(ai,mx,mz)<100
+							and (not api.layout or api.layout.Allowed(ai,choice.defID,mx,mz,0,false,id)) then
 							S.GiveOrderToUnit(builder,CMD.RECLAIM,{id},0)
 							S.GiveOrderToUnit(builder,-choice.defID,{mx,my,mz,0},{'shift'})
+							if api.layout then api.layout.Reserve(ai,builder,choice.defID,mx,mz,0) end
 							ai.mexUpgrades[id]=builder
 							ai.builderTasks[builder]={defID=choice.defID,role='mex',reason='upgrade metal extraction',x=mx,z=mz,frame=frame,upgrading=true}
 							account(state,meta,1)
@@ -156,12 +164,14 @@ function M.Create(api)
 				end
 			else
 				x,y,z,facing=api.basePosition(choice.defID,ai,meta.role=='factory' and 120 or 48)
-				if not x then x,y,z,facing=api.safePosition(choice.defID,bx,bz,600,48) end
+				if not x then x,y,z,facing=api.safePosition(choice.defID,bx,bz,600,48,ai) end
 			end
-			if x and y and z and facing and api.threat(ai,x,z)<250 then
+			if x and y and z and facing and api.threat(ai,x,z)<250
+				and (not api.layout or api.layout.Allowed(ai,choice.defID,x,z,facing)) then
 				-- Reserve physical space before the next constructor makes its choice.
 				local radius=((UnitDefs[choice.defID].xsize or 4)+(UnitDefs[choice.defID].zsize or 4))*4+32
 				local function conflict(px,pz)
+					if api.layout then return false end -- shared rectangle reservations include allied builders
 					for id,other in pairs(ai.builderTasks) do
 						if id~=builder and other.x and other.defID and (other.x-px)^2+(other.z-pz)^2<(radius+(other.radius or 32))^2 then return true end
 					end
@@ -173,11 +183,11 @@ function M.Create(api)
 					local angle=(builder+attempt)*2.399963
 					local cx=(ai.spawnPos and ai.spawnPos.x or bx)+math.cos(angle)*(200+attempt*100)
 					local cz=(ai.spawnPos and ai.spawnPos.z or bz)+math.sin(angle)*(200+attempt*100)
-					local px,py,pz,pf=api.safePosition(choice.defID,cx,cz,350,48)
+					local px,py,pz,pf=api.safePosition(choice.defID,cx,cz,350,48,ai)
 					if px and api.threat(ai,px,pz)<250 and not conflict(px,pz) then x,y,z,facing=px,py,pz,pf;occupied=false end
 				end
-				if not occupied then
-					S.GiveOrderToUnit(builder,-choice.defID,{x,y,z,facing},0)
+				if not occupied and S.GiveOrderToUnit(builder,-choice.defID,{x,y,z,facing},0)~=false then
+					if api.layout then api.layout.Reserve(ai,builder,choice.defID,x,z,facing) end
 					ai.builderTasks[builder]={defID=choice.defID,role=meta.role,reason=choice.reason,x=x,z=z,radius=radius,frame=frame}
 					account(state,meta,1)
 					if spot then

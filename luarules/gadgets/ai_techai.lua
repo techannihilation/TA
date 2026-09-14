@@ -3,7 +3,7 @@
 --
 --  file:    ai_techai.lua
 --  brief:   Tech Annihilation Fog of War AI for Recoil Engine
---  author:  Antigravity
+--  author:  TechA Milisandia
 --
 --  Supports all 6 factions: ARM, CORE, TLL, TALON, GOK, RUMAD
 --  Features:
@@ -27,7 +27,7 @@
 --       * Stand-off artillery kiting micro against approaching hostiles.
 --       * Resurrector unit salvage: revives fallen combat units and commanders.
 --   - Coordinated wave assaults and tactical Commander D-Gun micro.
---
+--   BARB code is used under GNU General Public License v2 (GPLv2). This AI is modifiable under the same terms. If you make a deriative for a paid product. you must also provide the modified code under GPLv2 too.
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -273,6 +273,24 @@ local FactionUnitCatalog = {
 local Metadata = VFS.Include('LuaRules/Configs/techai_metadata.lua')
 local MakerDefs = VFS.FileExists('LuaRules/Configs/maker_defs.lua') and VFS.Include('LuaRules/Configs/maker_defs.lua') or {}
 local UnitMetadata = {} -- [unitDefID] = { faction = "...", role = "...", tech = 1..5, isWater = bool }
+
+local MetalScanner = VFS.Include('LuaRules/Configs/techai_metal.lua')
+local discoveredMetalSpots
+local function GetMetalSpots()
+	if discoveredMetalSpots then return discoveredMetalSpots end
+	local spots=GG.metalSpots or _G.metalSpots
+	return type(spots)=='table' and spots or {}
+end
+local BaseLayout = VFS.Include('LuaRules/Configs/techai_layout.lua').Create(UnitMetadata,aiTeams,GetMetalSpots)
+local rawGiveOrderToUnit=spGiveOrderToUnit
+spGiveOrderToUnit=function(unitID,command,params,options)
+	local result=rawGiveOrderToUnit(unitID,command,params,options)
+	if result~=false and command<0 and params and params[1] and params[3] then
+		local ai=aiTeams[spGetUnitTeam(unitID)]
+		if ai then BaseLayout.Reserve(ai,unitID,-command,params[1],params[3],params[4] or 0) end
+	end
+	return result
+end
 
 local function InferFaction(name, customParams)
 	-- Priority 1: Check unit name prefix, which is always authoritative in TA/BA/TechA!
@@ -640,7 +658,7 @@ local function InitMetalMap()
 	for sx = 1, SECTORS_X do
 		for sz = 1, SECTORS_Z do SectorGrid[sx][sz].metalSpots = 0 end
 	end
-	local metalSpots = GG.metalSpots or _G.metalSpots
+	local metalSpots = GetMetalSpots()
 	if metalSpots then
 		for _, spot in ipairs(metalSpots) do
 			local sx = math.min(SECTORS_X, math.max(1, math.ceil(spot.x / SECTOR_SIZE)))
@@ -784,7 +802,8 @@ end
 --------------------------------------------------------------------------------
 -- Placement & Pathfinding Helpers
 --------------------------------------------------------------------------------
-local function FindSafeBuildPosition(unitDefID, cx, cz, searchRadius, spacing)
+local function FindSafeBuildPosition(unitDefID, cx, cz, searchRadius, spacing, ai)
+	if ai then return BaseLayout.Find(ai,unitDefID) end
 	local udef = UnitDefs[unitDefID]
 	if not udef then return nil end
 	local footX = (udef.xsize or 4) * 8
@@ -840,113 +859,15 @@ local function FindSafeBuildPosition(unitDefID, cx, cz, searchRadius, spacing)
 end
 
 local function FindBaseExpansionBuildPosition(unitDefID, ai, searchSpacing)
-	local udef = UnitDefs[unitDefID]
-	if not udef then return nil end
-
-	local anchors = {}
-	if ai.spawnPos then
-		table.insert(anchors, { x = ai.spawnPos.x, z = ai.spawnPos.z })
-	end
-
-	if ai.baseStructures then
-		for uid, pos in pairs(ai.baseStructures) do
-			if ai.spawnPos then
-				local dx = pos.x - ai.spawnPos.x
-				local dz = pos.z - ai.spawnPos.z
-				if (dx * dx + dz * dz) <= 950 * 950 then
-					table.insert(anchors, pos)
-				end
-			else
-				table.insert(anchors, pos)
-			end
-		end
-	end
-
-	if ai.factories then
-		for _, facID in ipairs(ai.factories) do
-			local fx, _, fz = spGetUnitPosition(facID)
-			if fx then
-				table.insert(anchors, { x = fx, z = fz })
-			end
-		end
-	end
-
-	for i = #anchors, 2, -1 do
-		local j = math.random(i)
-		anchors[i], anchors[j] = anchors[j], anchors[i]
-	end
-
-	for _, anchor in ipairs(anchors) do
-		local bx, by, bz, facing = FindSafeBuildPosition(unitDefID, anchor.x, anchor.z, 280, searchSpacing or 48)
-		if bx then
-			return bx, by, bz, facing
-		end
-	end
-
-	if ai.spawnPos then
-		return FindSafeBuildPosition(unitDefID, ai.spawnPos.x, ai.spawnPos.z, 600, searchSpacing or 48)
-	end
-	return nil
+	return BaseLayout.Find(ai,unitDefID)
 end
 
 local function FindSafeCoreBuildPosition(unitDefID, ai, spacing)
-	if not ai.spawnPos then return nil end
-	local udef = UnitDefs[unitDefID]
-	if not udef then return nil end
-
-	local cx = ai.spawnPos.x
-	local cz = ai.spawnPos.z
-	local footX = (udef.xsize or 4) * 8
-	local footZ = (udef.zsize or 4) * 8
-	local footRadius = math.max(footX, footZ)
-
-	for radius = 80, 260, 40 do
-		local steps = math.max(8, math.floor((2 * math.pi * radius) / 64))
-		for s = 0, steps - 1 do
-			local angle = (s / steps) * 2 * math.pi
-			local testX = math.floor((cx + math.cos(angle) * radius) / 16) * 16 + 8
-			local testZ = math.floor((cz + math.sin(angle) * radius) / 16) * 16 + 8
-			local testY = spGetGroundHeight(testX, testZ)
-
-			for facing = 0, 3 do
-				local test = spTestBuildOrder(unitDefID, testX, testY, testZ, facing)
-				if test == 2 or test == 1 then
-					local blocked = false
-					local nearby = spGetUnitsInCylinder(testX, testZ, footRadius + 24)
-					for _, uid in ipairs(nearby) do
-						local oDefID = spGetUnitDefID(uid)
-						if oDefID then
-							local odef = UnitDefs[oDefID]
-							local meta = UnitMetadata[oDefID]
-							local isStructure = (odef and odef.isBuilding and not odef.canMove) or
-								(meta and (meta.role == "factory" or meta.role == "energy" or meta.role == "converter" or meta.role == "defense" or meta.role == "mex" or meta.role == "radar" or meta.role == "nanotower"))
-							if isStructure then
-								local ox, _, oz = spGetUnitPosition(uid)
-								if ox then
-									local oRad = math.max((odef.xsize or 4) * 8, (odef.zsize or 4) * 8)
-									local minDist = footRadius + oRad + 12
-									local dsq = (testX - ox) * (testX - ox) + (testZ - oz) * (testZ - oz)
-									if dsq < minDist * minDist then
-										blocked = true
-										break
-									end
-								end
-							end
-						end
-					end
-
-					if not blocked then
-						return testX, testY, testZ, facing
-					end
-				end
-			end
-		end
-	end
-	return nil
+	return BaseLayout.Find(ai,unitDefID)
 end
 
-local function GetClosestFreeMexSpot(ai, ux, uz, maxDist, centerPos)
-	local metalSpots = GG.metalSpots or _G.metalSpots
+local function GetClosestFreeMexSpot(ai, ux, uz, maxDist, centerPos, defID)
+	local metalSpots = GetMetalSpots()
 	if not metalSpots or #metalSpots == 0 then return nil end
 
 	local bestSpot = nil
@@ -966,7 +887,7 @@ local function GetClosestFreeMexSpot(ai, ux, uz, maxDist, centerPos)
 			local dist = dx * dx + dz * dz
 			if dist < bestDist then
 				local units = spGetUnitsInCylinder(spot.x, spot.z, 64)
-				if #units == 0 then
+				if #units == 0 and (not defID or BaseLayout.Allowed(ai,defID,spot.x,spot.z,0)) then
 					bestDist = dist
 					bestSpot = spot
 				end
@@ -980,7 +901,7 @@ end
 -- BARb Competitive Multi-Order Opening Builder (Recoil Shift-Queuing)
 --------------------------------------------------------------------------------
 local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
-	if #(GG.metalSpots or _G.metalSpots or {})==0 then return false end
+	if #GetMetalSpots()==0 then return false end
 	if not ai or not builderID or not udef then return false end
 	if ai.openingSequenceQueued or ai.factoryCount > 0 then return false end
 
@@ -1085,13 +1006,13 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 
 	-- 4. Find Local Base Metal Spots (Strictly within 420 elmos to avoid cross-map wandering)
 	local spots = {}
-	local spot1 = GetClosestFreeMexSpot(ai, cx, cz, 400, ai.spawnPos)
+	local spot1 = GetClosestFreeMexSpot(ai, cx, cz, 400, ai.spawnPos, mexDef)
 	if spot1 then
 		table.insert(spots, spot1)
 		local k1 = math.floor(spot1.x / 32) .. "_" .. math.floor(spot1.z / 32)
 		ai.claimedSpots[k1] = Spring.GetGameFrame() + 1800
 
-		local spot2 = GetClosestFreeMexSpot(ai, cx, cz, 450, ai.spawnPos)
+		local spot2 = GetClosestFreeMexSpot(ai, cx, cz, 450, ai.spawnPos, mexDef)
 		if spot2 then
 			table.insert(spots, spot2)
 			local k2 = math.floor(spot2.x / 32) .. "_" .. math.floor(spot2.z / 32)
@@ -1116,8 +1037,8 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 			builderID, teamID, UnitDefs[mexDef].name, s1.x, s1.z))
 
 		-- Order 2: Energy 1 (Adjacent to Mex 1 or Spawn)
-		local e1x, e1y, e1z, e1f = FindSafeBuildPosition(energyDef, s1.x, s1.z, 200, 36)
-		if not e1x then e1x, e1y, e1z, e1f = FindSafeBuildPosition(energyDef, cx, cz, 260, 36) end
+		local e1x, e1y, e1z, e1f = FindSafeBuildPosition(energyDef, s1.x, s1.z, 200, 36, ai)
+		if not e1x then e1x, e1y, e1z, e1f = FindSafeBuildPosition(energyDef, cx, cz, 260, 36, ai) end
 		if e1x then
 			QueueOrder(energyDef, e1x, e1y, e1z, e1f)
 			ai.commanderEnergyCount = 1
@@ -1135,7 +1056,7 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 				builderID, teamID, UnitDefs[mexDef].name, s2.x, s2.z))
 		else
 			-- If only 1 mex nearby, add second energy structure to power lab
-			local e2x, e2y, e2z, e2f = FindSafeBuildPosition(energyDef, cx, cz, 300, 36)
+			local e2x, e2y, e2z, e2f = FindSafeBuildPosition(energyDef, cx, cz, 300, 36, ai)
 			if e2x then
 				QueueOrder(energyDef, e2x, e2y, e2z, e2f)
 				ai.commanderEnergyCount = (ai.commanderEnergyCount or 0) + 1
@@ -1144,7 +1065,7 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 
 		-- Order 4: Second energy if solar (solar needs 2 for lab stability)
 		if not preferWind and (ai.commanderEnergyCount or 0) < 2 then
-			local e2x, e2y, e2z, e2f = FindSafeBuildPosition(energyDef, cx, cz, 320, 36)
+			local e2x, e2y, e2z, e2f = FindSafeBuildPosition(energyDef, cx, cz, 320, 36, ai)
 			if e2x then
 				QueueOrder(energyDef, e2x, e2y, e2z, e2f)
 				ai.commanderEnergyCount = (ai.commanderEnergyCount or 0) + 1
@@ -1152,7 +1073,7 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 		end
 
 		-- Order 5: T1 Factory (Placed compactly in base perimeter)
-		local fx, fy, fz, ff = FindSafeBuildPosition(facDef, cx, cz, 340, 64)
+		local fx, fy, fz, ff = FindSafeBuildPosition(facDef, cx, cz, 340, 64, ai)
 		if fx then
 			QueueOrder(facDef, fx, fy, fz, ff)
 			ai.openingFactoryOrdered = true
@@ -1163,10 +1084,10 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 		-- No local deposits: begin with power and production. Expansion builders
 		-- can seek distant deposits, or use conversion as demand permits.
 		for step=1,2 do
-			local x,y,z,f=FindSafeBuildPosition(energyDef,cx+step*80,cz,220,36)
+			local x,y,z,f=FindSafeBuildPosition(energyDef,cx+step*80,cz,220,36, ai)
 			if x then QueueOrder(energyDef,x,y,z,f); ai.commanderEnergyCount=(ai.commanderEnergyCount or 0)+1 end
 		end
-		local x,y,z,f=FindSafeBuildPosition(facDef,cx,cz,340,64)
+		local x,y,z,f=FindSafeBuildPosition(facDef,cx,cz,340,64, ai)
 		if x then QueueOrder(facDef,x,y,z,f);ai.openingFactoryOrdered=true end
 
 	end
@@ -1561,6 +1482,7 @@ local function HandleUnitCreated(unitID, unitDefID, unitTeam, builderID)
 		local cx, cy, cz = spGetUnitPosition(unitID)
 		if cx and cz and not ai.spawnPos then
 			ai.spawnPos = { x = cx, y = cy, z = cz }
+			ai.metalScanFrame = currentFrame + 90
 		end
 		if cy and cy < 0 then
 			ai.isWaterMap = true
@@ -1877,7 +1799,7 @@ end
 -- Builder Execution Logic (Tech Levels 1 through 5)
 --------------------------------------------------------------------------------
 local BuilderPlanner = VFS.Include('LuaRules/Configs/techai_builder.lua').Create({
-	metadata=UnitMetadata, threat=GetThreatAtPosition,
+	metadata=UnitMetadata, threat=GetThreatAtPosition, layout=BaseLayout, metalSpots=GetMetalSpots,
 	basePosition=FindBaseExpansionBuildPosition, safePosition=FindSafeBuildPosition,
 })
 
@@ -2032,7 +1954,7 @@ local function ManageBuilder(ai, builderID, bDefID, teamID, allyTeamID, currentF
 	end
 
 	-- 3. Commander Opening Sequence (BARb Style Shift-Queuing)
-	if #(GG.metalSpots or _G.metalSpots or {})==0 then
+	if #GetMetalSpots()==0 then
 		BuilderPlanner.Manage(ai,builderID,bDefID,teamID,allyTeamID,currentFrame)
 		return
 	end
@@ -2089,7 +2011,7 @@ local function ManageBuilder(ai, builderID, bDefID, teamID, allyTeamID, currentF
 			end
 
 			if targetMexDef then
-				local spot = GetClosestFreeMexSpot(ai, bx, bz, 450, ai.spawnPos)
+				local spot = GetClosestFreeMexSpot(ai, bx, bz, 450, ai.spawnPos, targetMexDef)
 				if spot then
 					local key = math.floor(spot.x / 32) .. "_" .. math.floor(spot.z / 32)
 					ai.claimedSpots[key] = currentFrame + 1800
@@ -2142,7 +2064,7 @@ local function ManageBuilder(ai, builderID, bDefID, teamID, allyTeamID, currentF
 			if energyDef then
 				local px, py, pz, facing = FindBaseExpansionBuildPosition(energyDef, ai, 36)
 				if not px then
-					px, py, pz, facing = FindSafeBuildPosition(energyDef, bx, bz, 350, 36)
+					px, py, pz, facing = FindSafeBuildPosition(energyDef, bx, bz, 350, 36, ai)
 				end
 				if px then
 					ai.commanderEnergyCount = (ai.commanderEnergyCount or 0) + 1
@@ -2187,7 +2109,7 @@ local function ManageBuilder(ai, builderID, bDefID, teamID, allyTeamID, currentF
 		if facDef then
 			local fx, fy, fz, ffacing = FindBaseExpansionBuildPosition(facDef, ai, 64)
 			if not fx then
-				fx, fy, fz, ffacing = FindSafeBuildPosition(facDef, bx, bz, 450, 64)
+				fx, fy, fz, ffacing = FindSafeBuildPosition(facDef, bx, bz, 450, 64, ai)
 			end
 			if fx then
 				ai.openingFactoryOrdered = true

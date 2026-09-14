@@ -86,6 +86,36 @@ local function weaponStats(udef, meta, weaponDefs)
     end
 end
 
+local function classifyConstructor(udef, meta, makerDefs)
+    if meta.role ~= 'constructor' then return end
+    local label = (tostring(udef.tooltip or udef.description or '') .. ' ' .. tostring(udef.humanName or '')):lower()
+    local hasMines = label:find('mine%s*layer') ~= nil
+    local usefulConstruction = false
+    for _, option in pairs(udef.buildOptions or {}) do
+        local target = UnitDefs and UnitDefs[option]
+        if target then
+            local cp = target.customParams or {}
+            local category = tostring(target.category or ''):lower()
+            local targetName = tostring(target.name or ''):lower()
+            hasMines = hasMines or category:find('%f[%w]mine%f[%W]') ~= nil
+                or targetName:find('mine') ~= nil or cp.detonaterange ~= nil
+            -- Mine layers also build walls and sensors. Only an economy,
+            -- production, storage or construction-support option makes one a
+            -- general constructor; a mixed mine/economy menu stays eligible.
+            usefulConstruction = usefulConstruction or target.isFactory
+                or number(target.extractsMetal) > 0 or cp.metal_extractor
+                or number(target.energyMake) > 10 or number(target.windGenerator) > 0
+                or number(target.tidalGenerator) > 0 or target.needGeo
+                or number(target.metalMake) > 0 or (makerDefs and makerDefs[option]) ~= nil
+                or number(target.energyStorage) > 0 or number(target.metalStorage) > 0
+                or (target.isBuilder and (target.isBuilding or not target.canMove))
+            if usefulConstruction then break end
+        end
+    end
+    meta.canBuildEconomy = not not usefulConstruction
+    if hasMines and not usefulConstruction then meta.role = 'minelayer' end
+end
+
 function Metadata.Enrich(defID, udef, meta, weaponDefs, makerDefs)
     local name = tostring(udef.name or ''):lower()
     local tier = declaredTier(udef) or specialTiers[name]
@@ -126,6 +156,7 @@ function Metadata.Enrich(defID, udef, meta, weaponDefs, makerDefs)
         meta.conversionEfficiency = number(cp.energy_conversion, 0.01)
         meta.metalOutput = max(meta.metalOutput, meta.converterDrain * meta.conversionEfficiency)
     end
+    classifyConstructor(udef, meta, makerDefs)
     if meta.role == 'combat' or meta.role == 'raider' or meta.role == 'artillery' or meta.role == 'aa' or meta.role == 'scout' then
         if meta.isArmed then
             if meta.canAttackAir and not meta.canAttackGround then meta.role = 'aa'
