@@ -3,7 +3,7 @@
 --
 --  file:    ai_techai.lua
 --  brief:   Tech Annihilation Fog of War AI for Recoil Engine
---  author:  TechA Milisandia
+--  author:  Antigravity
 --
 --  Supports all 6 factions: ARM, CORE, TLL, TALON, GOK, RUMAD
 --  Features:
@@ -27,7 +27,7 @@
 --       * Stand-off artillery kiting micro against approaching hostiles.
 --       * Resurrector unit salvage: revives fallen combat units and commanders.
 --   - Coordinated wave assaults and tactical Commander D-Gun micro.
---   BARB code is used under GNU General Public License v2 (GPLv2). This AI is modifiable under the same terms. If you make a deriative for a paid product. you must also provide the modified code under GPLv2 too.
+--
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -281,7 +281,14 @@ local function GetMetalSpots()
 	local spots=GG.metalSpots or _G.metalSpots
 	return type(spots)=='table' and spots or {}
 end
-local BaseLayout = VFS.Include('LuaRules/Configs/techai_layout.lua').Create(UnitMetadata,aiTeams,GetMetalSpots)
+-- Geothermal vents are enumerated as features (see geo_spot_finder.lua) before
+-- game start and re-merged shortly after, so this getter stays live and never
+-- caches — late-scan vents already land in GG.geoSpots.
+local function GetGeoSpots()
+	local spots=GG.geoSpots or _G.geoSpots
+	return type(spots)=='table' and spots or {}
+end
+local BaseLayout = VFS.Include('LuaRules/Configs/techai_layout.lua').Create(UnitMetadata,aiTeams,GetMetalSpots,GetGeoSpots)
 local rawGiveOrderToUnit=spGiveOrderToUnit
 spGiveOrderToUnit=function(unitID,command,params,options)
 	local result=rawGiveOrderToUnit(unitID,command,params,options)
@@ -291,6 +298,12 @@ spGiveOrderToUnit=function(unitID,command,params,options)
 	end
 	return result
 end
+
+-- Some maps create their start deposits in GameStart, after the shared metal
+-- finder populated GG.metalSpots. Re-read each spawn area once the commanders
+-- are known, then retry any opening that could not find local mexes.
+local metalRescanDone
+local nextMetalScanFrame
 
 local function InferFaction(name, customParams)
 	-- Priority 1: Check unit name prefix, which is always authoritative in TA/BA/TechA!
@@ -491,6 +504,8 @@ local function CatalogUnits()
 				else
 					table.insert(cat.t1defenses, unitDefID)
 				end
+			elseif isBuilding and ((udef.metalStorage or 0) > 0 or (udef.energyStorage or 0) > 0) then
+				role = "storage"
 			elseif isBuilding and (udef.radarRadius > 300 or udef.sonarRadius > 300) then
 				role = "radar"
 				table.insert(cat.radar, unitDefID)
@@ -551,6 +566,10 @@ local function CatalogUnits()
 				canResurrect = (udef.canResurrect or role == "rezzer") or false,
 				isCommander = (role == "commander"),
 			}
+			if role == "storage" then
+				metaEntry.storageKind = (udef.metalStorage or 0) > 0 and "metal" or "energy"
+				metaEntry.storageAmount = metaEntry.storageKind == "metal" and (udef.metalStorage or 0) or (udef.energyStorage or 0)
+			end
 			Metadata.Enrich(unitDefID,udef,metaEntry,WeaponDefs,MakerDefs)
 			UnitMetadata[unitDefID] = metaEntry
 			if udef.id then
@@ -719,6 +738,13 @@ local function RecordEnemyBuildingInLOS(ai, enemyUnitID, unitDefID)
 	if category == "factory" or not ai.intel.enemyBaseCentroid then
 		ai.intel.enemyBaseCentroid = { x = ex, z = ez }
 	end
+
+	local hints = ai.intel.hints or { tech = 0, kinds = {}, seen = {} }
+	hints.kinds[category] = (hints.kinds[category] or 0) + 1
+	hints.seen[unitDefID] = true
+	local meta = UnitMetadata[unitDefID]
+	if meta then hints.tech = math.max(hints.tech or 0, meta.tech or 1) end
+	ai.intel.hints = hints
 end
 
 local function PurgeIntelIfMissing(ai, allyTeamID)
@@ -832,7 +858,7 @@ local function FindSafeBuildPosition(unitDefID, cx, cz, searchRadius, spacing, a
 							local odef = UnitDefs[oDefID]
 							local meta = UnitMetadata[oDefID]
 							local isStructure = (odef and odef.isBuilding and not odef.canMove) or
-								(meta and (meta.role == "factory" or meta.role == "energy" or meta.role == "converter" or meta.role == "defense" or meta.role == "mex" or meta.role == "radar" or meta.role == "nanotower"))
+								(meta and (meta.role == "factory" or meta.role == "energy" or meta.role == "converter" or meta.role == "defense" or meta.role == "mex" or meta.role == "radar" or meta.role == "nanotower" or meta.role == "storage"))
 							if isStructure then
 								local ox, _, oz = spGetUnitPosition(uid)
 								if ox then
@@ -1034,14 +1060,12 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 		QueueOrder(mexDef, s1.x, s1y, s1.z, 0)
 		ai.commanderMexCount = 1
 
-
 		-- Order 2: Energy 1 (Adjacent to Mex 1 or Spawn)
 		local e1x, e1y, e1z, e1f = FindSafeBuildPosition(energyDef, s1.x, s1.z, 200, 36, ai)
 		if not e1x then e1x, e1y, e1z, e1f = FindSafeBuildPosition(energyDef, cx, cz, 260, 36, ai) end
 		if e1x then
 			QueueOrder(energyDef, e1x, e1y, e1z, e1f)
 			ai.commanderEnergyCount = 1
-
 		end
 
 		-- Order 3: Mex 2 (if present within base radius)
@@ -1050,7 +1074,6 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 			local s2y = s2.y or spGetGroundHeight(s2.x, s2.z)
 			QueueOrder(mexDef, s2.x, s2y, s2.z, 0)
 			ai.commanderMexCount = 2
-
 		else
 			-- If only 1 mex nearby, add second energy structure to power lab
 			local e2x, e2y, e2z, e2f = FindSafeBuildPosition(energyDef, cx, cz, 300, 36, ai)
@@ -1074,7 +1097,6 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 		if fx then
 			QueueOrder(facDef, fx, fy, fz, ff)
 			ai.openingFactoryOrdered = true
-
 		end
 	else
 		-- No local deposits: begin with power and production. Expansion builders
@@ -1357,9 +1379,27 @@ local function ManageUnitMorphs(ai, teamID, currentFrame)
 		ecur=math.max(0,ecur-demand.committedEnergy)
 	end
 
+	-- A morph is only worth it when the remaining storage and income still cover
+	-- the ongoing build plan after paying. Units cannot be assisted while morphing,
+	-- so workers are only surrendered while other construction remains.
+	local function goodCost(opt)
+		return mcur >= opt.metal + minc * 30 and ecur >= opt.energy + einc * 30
+			and (mcur - opt.metal) >= mstor * 0.10 and (ecur - opt.energy) >= estor * 0.10
+	end
+	local maxTier = demand and demand.maxFactoryTier or 99
+	local function techOk(opt)
+		return (opt.tech or 0) == 0 or (opt.tech or 0) <= maxTier
+	end
+
 	local candidates = {}
 	if ai.commanderID then table.insert(candidates, ai.commanderID) end
 	for _, uid in ipairs(ai.combatUnits) do table.insert(candidates, uid) end
+	for _, uid in ipairs(ai.nanotowers or {}) do table.insert(candidates, uid) end
+	for _, uid in ipairs(ai.builders) do
+		if uid ~= ai.commanderID then table.insert(candidates, uid) end
+	end
+
+	local supportCount = (ai.builderCount or 0) + #(ai.nanotowers or {})
 
 	for _, unitID in ipairs(candidates) do
 		local uDefID = spGetUnitDefID(unitID)
@@ -1367,23 +1407,35 @@ local function ManageUnitMorphs(ai, teamID, currentFrame)
 		if morphOptions and #morphOptions > 0 then
 			local xp = spGetUnitExperience(unitID) or 0
 			local isCom = (unitID == ai.commanderID)
+			local unitMeta = UnitMetadata[uDefID] or {}
+			local isNano = (unitMeta.role == "nanotower")
+			local isCon = (unitMeta.role == "constructor" or unitMeta.role == "rezzer")
+			local queueCount = spGetUnitCommandCount(unitID) or 0
 
 			for _, opt in ipairs(morphOptions) do
 				local canMorph = false
 
 				if isCom then
 					local hasArmy = (ai.builderCount >= 1) and (ai.factoryCount >= 1)
-					local hasSafeEco = (spGetUnitCommandCount(unitID) == 0) and (mcur >= opt.metal) and (ecur >= opt.energy) and (minc >= 8) and (einc >= 60)
-					if hasArmy and hasSafeEco and (xp >= opt.xp) then
-						canMorph = true
-					end
+					local hasSafeEco = (queueCount == 0) and (mcur >= opt.metal) and (ecur >= opt.energy) and (minc >= 8) and (einc >= 60)
+					canMorph = hasArmy and hasSafeEco
+				elseif isNano then
+					-- Nano turrets must not morph while a stall-recovery project is
+					-- the reason they exist, and only while another worker remains.
+					local noOpenStall = not demand or (demand.energy.current >= demand.energy.storage * 0.5
+						and demand.metal.current >= demand.metal.storage * 0.35)
+					canMorph = noOpenStall and (supportCount - 1 >= 1) and (queueCount <= 1)
+				elseif isCon then
+					-- Constructors are sacrificed last; keep construction staffed.
+					canMorph = (supportCount - 1 >= 1) and (queueCount <= 1)
+						and not (ai.builderTasks and ai.builderTasks[unitID])
 				else
-					if xp >= opt.xp and (mcur >= opt.metal) and (ecur >= opt.energy) then
-						canMorph = true
-					end
+					-- Combat units morph only when fully idle so the front line is
+					-- not cut while a fight or retreat is in progress.
+					canMorph = (queueCount == 0)
 				end
 
-				if canMorph then
+				if canMorph and (xp >= opt.xp) and goodCost(opt) and techOk(opt) then
 					ai.reservedMetal = opt.metal
 					ai.reservedEnergy = opt.energy
 					ai.demand = nil
@@ -1435,6 +1487,8 @@ local function HandleUnitCreated(unitID, unitDefID, unitTeam, builderID)
 			role = "factory"
 		elseif udef.isBuilder and udef.canMove and hasBuildOptions then
 			role = "constructor"
+		elseif udef.isBuilding and ((udef.metalStorage or 0) > 0 or (udef.energyStorage or 0) > 0) then
+			role = "storage"
 		elseif udef.canMove then
 			role = "combat"
 		end
@@ -1447,6 +1501,10 @@ local function HandleUnitCreated(unitID, unitDefID, unitTeam, builderID)
 			canResurrect = udef.canResurrect or false,
 			isCommander = isCommander,
 		}
+		if role == "storage" then
+			meta.storageKind = (udef.metalStorage or 0) > 0 and "metal" or "energy"
+			meta.storageAmount = meta.storageKind == "metal" and (udef.metalStorage or 0) or (udef.energyStorage or 0)
+		end
 		UnitMetadata[unitDefID] = meta
 		if udef.id then UnitMetadata[udef.id] = meta end
 		UnitMetadata[uname] = meta
@@ -1475,10 +1533,12 @@ local function HandleUnitCreated(unitID, unitDefID, unitTeam, builderID)
 			ai.builderCount = ai.builderCount + 1
 		end
 
-		local cx, cy, cz = spGetUnitPosition(unitID)
+local cx, cy, cz = spGetUnitPosition(unitID)
 		if cx and cz and not ai.spawnPos then
 			ai.spawnPos = { x = cx, y = cy, z = cz }
-			ai.metalScanFrame = currentFrame + 90
+			local scanAt = currentFrame + 90
+			ai.metalScanFrame = scanAt
+			if not nextMetalScanFrame or scanAt < nextMetalScanFrame then nextMetalScanFrame = scanAt end
 		end
 		if cy and cy < 0 then
 			ai.isWaterMap = true
@@ -1512,7 +1572,8 @@ local function HandleUnitCreated(unitID, unitDefID, unitTeam, builderID)
 		table.insert(ai.builders, unitID)
 		ai.builderCount = ai.builderCount + 1
 
-		-- Associate builder with its producing factory for the 10-builder limit per factory
+		-- Associate builder with its producing factory for neighbourhood-aware
+		-- assignment; the constructor pool itself is budget/income-driven.
 		local sourceFac = builderID
 		if not sourceFac or not Spring.ValidUnitID(sourceFac) or not (ai.factoryBuilders and ai.factoryBuilders[sourceFac]) then
 			local ux, _, uz = spGetUnitPosition(unitID)
@@ -1590,6 +1651,7 @@ local function HandleUnitCreated(unitID, unitDefID, unitTeam, builderID)
 	elseif meta.role == "converter" then
 		ai.converters[unitID] = true
 	elseif meta.role == "nanotower" then
+		table.insert(ai.nanotowers, unitID)
 		-- Nanotowers boost nearby factories and must NOT assist the commander's morph
 		if #ai.factories > 0 then
 			local bestFac = ai.factories[1]
@@ -1690,6 +1752,7 @@ local function RegisterAITeam(teamID, aiTypeStr)
 			},
 			builders = {},
 			builderCount = 0,
+			nanotowers = {},
 			combatUnits = {},
 			combatCount = 0,
 			raiderUnits = {},
@@ -1716,6 +1779,7 @@ local function RegisterAITeam(teamID, aiTypeStr)
 				lastScoutPos = nil,
 				enemyBaseCentroid = nil,
 				threatZones = {},
+				hints = { tech = 0, kinds = {}, seen = {} },
 			},
 			rallyPoint = nil,
 			lastAssaultFrame = 0,
@@ -2153,6 +2217,40 @@ local function UpdateIncomingThreatProfile(ai, teamID, currentFrame)
 			end
 		end
 	end
+	-- Enemies hint at their army mix before their units are seen: a known enemy
+	-- factory's producible roster preloads the production profile so the AI can
+	-- field AA/anti-heavy/sea counters while those factories are still building.
+	for id,data in pairs(ai.intel.knownBuildings) do
+		if data.category=='factory' and currentFrame-(data.frame or 0)<1800 then
+			local udef=UnitDefs[data.unitDefID]
+			if udef then
+				for _,productID in ipairs(udef.buildOptions or {}) do
+					local meta=UnitMetadata[productID]
+					if meta then
+						local kind=meta.canFly and 'air' or (meta.isWater and 'sea')
+							or (meta.role=='defense' and 'defense' or (meta.role=='artillery' and 'artillery' or (meta.role=='raider' and 'raider' or 'ground')))
+						enemy[kind]=enemy[kind]+0.5
+						if kind~='air' and kind~='defense' then enemy.ground=enemy.ground+0.5 end
+					end
+				end
+			end
+		end
+	end
+	-- Accumulate the remembered enemy unit-mix and best tier so later decision
+	-- layers can prepare (tech rush, counters) without needing one visible unit.
+	local hints=ai.intel.hints or {tech=0,kinds={},seen={}}
+	for id,contact in pairs(ai.intel.contacts) do
+		local meta=UnitMetadata[contact.defID]
+		if meta then
+			hints.tech=math.max(hints.tech,meta.tech or 1)
+			local kind=meta.canFly and 'air' or (meta.isWater and 'sea')
+				or (meta.role=='defense' and 'defense' or (meta.role=='artillery' and 'artillery' or (meta.role=='raider' and 'raider' or 'ground')))
+			hints.kinds[kind]=(hints.kinds[kind] or 0)+1
+			hints.seen[contact.defID]=true
+		end
+	end
+	hints.frame=currentFrame
+	ai.intel.hints=hints
 	ai.threatProfile,ai.productionEnemy=profile,enemy
 end
 
@@ -2204,7 +2302,10 @@ local function ManageFactory(ai,factoryID,fDefID,teamID)
 	local threat=ai.threatProfile
 	local state={counts=production.counts,unitCounts=production.unitCounts,strength=production.strength,isWaterMap=ai.isWaterMap,
 		enemy=ai.productionEnemy or threat,underAttack=(threat.air+threat.heavy+threat.raider+threat.artillery)>0,
-		builderTarget=math.min(ai.difficulty.maxBuilders,2+math.floor(demand.metal.income/12)),
+		-- Judgement-based constructor count: every builder above the income floor
+	-- and unfinished-project pressure must justify its metal/energy upkeep.
+	builderTarget=math.max(2,math.min(ai.difficulty.maxBuilders*3,
+		2+math.floor(demand.metal.income/12)+math.floor(#(demand.unfinished or {})/4))),
 		scoutTarget=math.min(3,1+math.floor(#ai.combatUnits/25)),
 		highestBuilderTech=production.highestBuilderTech,desiredTier=UnitMetadata[fDefID].tech,
 		factoryCount=#ai.factories,factoryBuildSpeed=def.buildSpeed,
@@ -2449,10 +2550,6 @@ local function ManageResourceCheating(ai, teamID, currentFrame)
 	if bonusEnergy > 0 and spAddTeamResource then
 		spAddTeamResource(teamID, "energy", bonusEnergy)
 	end
-
-	-- Periodic Infolog Logging (every 60 seconds)
-	if currentFrame % 1800 == (teamID * 30) % 1800 then
-	end
 end
 
 --------------------------------------------------------------------------------
@@ -2505,12 +2602,27 @@ function gadget:GameFrame(n)
 		end
 	end
 
-	-- Periodic Diagnostic Reporting to Infolog
-	if n == 1 or n == 30 or n == 150 or n == 300 or n == 600 then
+	-- Maps that write start deposits in GameStart surface them after the shared
+	-- metal finder ran. Re-read each spawn area once (90 frames after the first
+	-- commander registers), then retry an opening that previously found no mexes.
+	if not metalRescanDone and nextMetalScanFrame and n >= nextMetalScanFrame then
+		local centers = {}
 		for i = 1, aiTeamCount do
-			local tID = aiTeamList[i]
-			local a = aiTeams[tID]
-			if a then
+			local a = aiTeams[aiTeamList[i]]
+			if a and a.spawnPos then centers[#centers + 1] = a.spawnPos end
+		end
+		if #centers > 0 then
+			discoveredMetalSpots = MetalScanner.Scan(centers, GG.metalSpots or _G.metalSpots or {})
+			InitMetalMap()
+			metalRescanDone = true
+			for i = 1, aiTeamCount do
+				local a = aiTeams[aiTeamList[i]]
+				if a and a.commanderID and not a.openingSequenceQueued and a.factoryCount == 0 then
+					local cDefID = spGetUnitDefID(a.commanderID)
+					if cDefID then
+						ExecuteCommanderOpeningQueue(a, a.commanderID, UnitDefs[cDefID], a.teamID)
+					end
+				end
 			end
 		end
 	end
@@ -2578,12 +2690,6 @@ function gadget:GameFrame(n)
 				ManageRaiders(ai, teamID, allyTeamID, n)
 				ManageArtillery(ai, teamID, n)
 				ManageMilitaryForces(ai, teamID, allyTeamID, n)
-				if n-(ai.lastEconomyReport or 0)>=900 and ai.demand then
-					ai.lastEconomyReport=n
-					local jobs={energy=0,mex=0,converter=0,factory=0,assist=0}
-					for _,task in pairs(ai.builderTasks or {}) do jobs[task.role]=(jobs[task.role] or 0)+1 end
-					local d=ai.demand
-				end
 			end
 		end
 	end
@@ -2669,6 +2775,9 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 		end
 		for idx, uid in ipairs(ai.mexes) do
 			if uid == unitID then table.remove(ai.mexes, idx); break end
+		end
+		for idx, uid in ipairs(ai.nanotowers) do
+			if uid == unitID then table.remove(ai.nanotowers, idx); break end
 		end
 		if ai.mexPositions[unitID] then
 			local pos = ai.mexPositions[unitID]

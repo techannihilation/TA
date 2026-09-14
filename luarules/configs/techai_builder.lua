@@ -30,7 +30,8 @@ function M.Create(api)
 		if ai.demand and ai.demand.frame == frame then return ai.demand end
 		local state = {frame=frame,metal=resource(team,'metal',ai.reservedMetal),energy=resource(team,'energy',ai.reservedEnergy),
 			counts={},pending={},committedMetal=0,committedEnergy=0,incomingEnergy=0,incomingEmergencyEnergy=0,pendingConverterDrain=0,
-			maxFactoryTier=0,factoryUtilization=0,enemyPressure=0,unfinished={},hasMetalSpots=#metalSpots()>0}
+			maxFactoryTier=0,factoryUtilization=0,enemyPressure=0,unfinished={},hasMetalSpots=#metalSpots()>0,
+			fullFrames={metal=0,energy=0},storageCap={metal=0,energy=0},defenseGround=0,defenseAir=0,hintTech=0}
 		local activeFactories, factories, converterCapacity = 0, 0, 0
 		local unfinishedByDef={}
 		for id in pairs(ai.registeredUnits or {}) do
@@ -54,6 +55,11 @@ function M.Create(api)
 					state.maxFactoryTier=math.max(state.maxFactoryTier,meta.tech or 1)
 				elseif meta.role == 'converter' then
 					converterCapacity=converterCapacity+(meta.converterDrain or 0)
+				elseif meta.role == 'storage' then
+					local sk=meta.storageKind
+					if sk=='metal' or sk=='energy' then
+						state.storageCap[sk]=state.storageCap[sk]+(meta.storageAmount or 0)
+					end
 				end
 			end
 		end
@@ -83,6 +89,21 @@ function M.Create(api)
 		end
 		local threat=ai.threatProfile or {}
 		state.enemyPressure=(threat.heavy or 0)+(threat.raider or 0)+(threat.air or 0)+(threat.artillery or 0)
+		local hints=ai.intel and ai.intel.hints or {}
+		local kinds=hints.kinds or {}
+		-- Turrets are demanded by remembered enemy unit mixes, not by the single
+		-- momentarily-visible skirmish the threat profile is tracking.
+		state.defenseGround=(kinds.ground or 0)+(kinds.raider or 0)+(kinds.artillery or 0)
+			+(kinds.defense or 0)+(kinds.sea or 0)+(threat.heavy or 0)+(threat.raider or 0)
+		state.defenseAir=(kinds.air or 0)+(threat.air or 0)
+		state.hintTech=hints.tech or 0
+		-- Track how long each storage is almost full so reserves are only raised
+		-- after a sustained surplus instead of reacting to a single idle frame.
+		local full=ai.fullFrames or {}; full.metal, full.energy = full.metal or 0, full.energy or 0
+		full.metal=(state.metal.current>=state.metal.storage*0.9) and (full.metal+1) or 0
+		full.energy=(state.energy.current>=state.energy.storage*0.9) and (full.energy+1) or 0
+		ai.fullFrames=full
+		state.fullFrames={metal=full.metal,energy=full.energy}
 		ai.demand=state
 		return state
 	end

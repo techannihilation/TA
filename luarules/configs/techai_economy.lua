@@ -68,26 +68,70 @@ function M.Rank(options, metadata, state)
 					end
 				elseif role == 'factory' and not critical and (meta.tech or 1) <= 5 then
 					local factoryCount = counts.factory or 0
-					local higherTier = (meta.tech or 1) > maxFactoryTier
-					local capacityNeeded = factoryCount == 0 or
-						((state.factoryUtilization or 0) >= 0.75 and mRatio >= 0.35 and eRatio >= 0.35)
-					if (pending.factory or 0) == 0 and (higherTier or capacityNeeded) then
+					local tech = meta.tech or 1
+					local higherTier = tech > maxFactoryTier
+					local previousTier = not higherTier and tech == maxFactoryTier - 1
+					local busy = (state.factoryUtilization or 0) >= 0.75 and mRatio >= 0.35 and eRatio >= 0.35
+					local rich = m.income >= 45 and mRatio >= 0.5 and eRatio >= 0.5
+					-- A T2+ factory without sufficient build power spams idle shells:
+					-- only tier progression is ever allowed while the constructor
+					-- pool cannot actually staff the factories being duplicated.
+					local canSupport = (counts.constructor or 0) + (counts.commander or 0)
+						+ (counts.nanotower or 0) + (counts.rezzer or 0) >= factoryCount
+					-- Industrial scale: saturated factories expand same tier and a
+					-- T2+ base back-fills the previous tier, all throttled by how
+					-- many new factories the economy can actually feed.
+					local vote = higherTier or factoryCount == 0 or (canSupport and (busy or rich or previousTier))
+					local allowance = math.max(1, math.floor(m.income / 50))
+					if vote and (pending.factory or 0) < allowance then
 						-- Tier dominates within the factory choice once genuinely affordable.
-						score = (factoryCount == 0 and 1000 or 390) + (meta.tech or 1) * 45
+						score = (factoryCount == 0 and 1000 or 390) + tech * 45
 							+ (higherTier and 90 or 0) + (state.enemyPressure or 0) * 20
 						if energyNeed > e.income * 0.25 then score = score - 200 end
-						reason = higherTier and 'affordable tech progression' or 'production capacity'
+						reason = higherTier and 'affordable tech progression'
+							or (previousTier and 'expand lower-tier industrial capacity' or 'production capacity')
 					end
-				elseif (role == 'defense' or role == 'aa') and (state.enemyPressure or 0) > 0 then
-					if (counts.defense or 0) + (pending.defense or 0) < math.min(8, state.enemyPressure) then
-						score = 420 + math.min(200, state.enemyPressure * 25)
-						reason = 'base under threat'
+				elseif (role == 'defense' or role == 'aa') and not critical then
+					local threat = role == 'aa' and (state.defenseAir or 0) or (state.defenseGround or 0)
+					if threat > 0 then
+						local have = (counts[role] or 0) + (pending[role] or 0)
+						if have < math.min(6, threat) and (meta.tech or 1) <= math.max(1, (state.hintTech or 0) + 1) then
+							local tierDiff = math.max(0, (meta.tech or 1) - math.max(1, state.hintTech or 1))
+							score = 360 + math.min(150, threat * 25) - tierDiff * 12
+							reason = role == 'aa' and 'air defense' or 'base defense'
+						end
+					end
+				elseif role == 'storage' and not critical and (maxFactoryTier or 0) >= 1 then
+					local sk = meta.storageKind
+					if sk == 'metal' or sk == 'energy' then
+						local income = sk == 'metal' and m.income or e.income
+						local currCap = state.storageCap and state.storageCap[sk] or 0
+						local target = math.max(2000, income * 180)
+						local full = state.fullFrames and state.fullFrames[sk] or 0
+						local have = (counts.storage or 0) + (pending.storage or 0)
+						if full >= 300 and have < 2 and currCap < target and (meta.tech or 1) <= (maxFactoryTier or 0) + 1 then
+							score = 300 + (have == 0 and 30 or 0) - math.max(0, (meta.tech or 1) - 1) * 12
+							reason = sk == 'metal' and 'metal reserves' or 'energy reserves'
+						end
 					end
 				elseif role == 'radar' and not critical and (counts.radar or 0) + (pending.radar or 0) < 1 then
 					score, reason = 280, 'early warning'
-				elseif role == 'nanotower' and not critical and mRatio > 0.6 and eRatio > 0.6 then
-					if (counts.nanotower or 0) + (pending.nanotower or 0) < (counts.factory or 0) then
-						score, reason = 250, 'use surplus construction resources'
+				elseif role == 'nanotower' and not critical then
+					local nanoCount = (counts.nanotower or 0) + (pending.nanotower or 0)
+					local factoryCount = counts.factory or 0
+					-- Nano turrets accelerate the construction that ends a stall:
+					-- e-stall assists the fusion/power project and m-stall assists
+					-- the metal makers or mexes being raised to fix the deficit.
+					local supportPower = eRatio < 0.5 and energyNeed > 0
+					local supportMetal = mRatio < 0.6 and metalNeed > 0.15
+					local target = factoryCount + (supportPower and 1 or 0) + (supportMetal and 1 or 0)
+					if nanoCount < target and mRatio > 0.20 and eRatio > 0.20 then
+						if supportPower or supportMetal then
+							score = 620
+							reason = supportPower and 'accelerate power recovery' or 'accelerate metal recovery'
+						elseif mRatio > 0.6 and eRatio > 0.6 then
+							score, reason = 250, 'use surplus construction resources'
+						end
 					end
 				end
 			end
