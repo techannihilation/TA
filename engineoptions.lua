@@ -102,15 +102,6 @@ local options = {
     step   = 0.1,  -- quantization is aligned to the def value
                     -- (step <= 0) means that there is no quantization
   },
-
-  {
-    key    = 'DisableMapDamage',
-    name   = 'Undeformable Map',
-    desc   = 'Prevents the map shape from being changed by weapons\nAutoHost Usage :- DisableMapDamage',
-    type   = 'bool',
-    def    = false,
-    section= "ta_others",
-  },
 --[[
 -- the following options can create problems and were never used by interface programs, thus are commented out for the moment
 
