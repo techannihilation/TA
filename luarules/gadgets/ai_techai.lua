@@ -1033,8 +1033,7 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 		local s1y = s1.y or spGetGroundHeight(s1.x, s1.z)
 		QueueOrder(mexDef, s1.x, s1y, s1.z, 0)
 		ai.commanderMexCount = 1
-		Spring.Echo(string.format("[TechAI] Commander %d (Team %d) [BARb Opening] Shift-Queued %s at (%.0f, %.0f)",
-			builderID, teamID, UnitDefs[mexDef].name, s1.x, s1.z))
+
 
 		-- Order 2: Energy 1 (Adjacent to Mex 1 or Spawn)
 		local e1x, e1y, e1z, e1f = FindSafeBuildPosition(energyDef, s1.x, s1.z, 200, 36, ai)
@@ -1042,8 +1041,7 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 		if e1x then
 			QueueOrder(energyDef, e1x, e1y, e1z, e1f)
 			ai.commanderEnergyCount = 1
-			Spring.Echo(string.format("[TechAI] Commander %d (Team %d) [BARb Opening] Shift-Queued %s at (%.0f, %.0f)",
-				builderID, teamID, UnitDefs[energyDef].name, e1x, e1z))
+
 		end
 
 		-- Order 3: Mex 2 (if present within base radius)
@@ -1052,8 +1050,7 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 			local s2y = s2.y or spGetGroundHeight(s2.x, s2.z)
 			QueueOrder(mexDef, s2.x, s2y, s2.z, 0)
 			ai.commanderMexCount = 2
-			Spring.Echo(string.format("[TechAI] Commander %d (Team %d) [BARb Opening] Shift-Queued %s at (%.0f, %.0f)",
-				builderID, teamID, UnitDefs[mexDef].name, s2.x, s2.z))
+
 		else
 			-- If only 1 mex nearby, add second energy structure to power lab
 			local e2x, e2y, e2z, e2f = FindSafeBuildPosition(energyDef, cx, cz, 300, 36, ai)
@@ -1077,8 +1074,7 @@ local function ExecuteCommanderOpeningQueue(ai, builderID, udef, teamID)
 		if fx then
 			QueueOrder(facDef, fx, fy, fz, ff)
 			ai.openingFactoryOrdered = true
-			Spring.Echo(string.format("[TechAI] Commander %d (Team %d) [BARb Opening] Shift-Queued %s at (%.0f, %.0f)",
-				builderID, teamID, UnitDefs[facDef].name, fx, fz))
+
 		end
 	else
 		-- No local deposits: begin with power and production. Expansion builders
@@ -1488,8 +1484,6 @@ local function HandleUnitCreated(unitID, unitDefID, unitTeam, builderID)
 			ai.isWaterMap = true
 		end
 		if isNewCom then
-			Spring.Echo(string.format("[TechAI] Registered Commander for team %d: unitID %d (%s), faction=%s",
-				unitTeam, unitID, uname, tostring(ai.faction)))
 			ExecuteCommanderOpeningQueue(ai, unitID, udef, unitTeam)
 		end
 	elseif meta.role == "factory" then
@@ -2018,8 +2012,6 @@ local function ManageBuilder(ai, builderID, bDefID, teamID, allyTeamID, currentF
 					ai.commanderMexCount = (ai.commanderMexCount or 0) + 1
 					local sy = spot.y or spGetGroundHeight(spot.x, spot.z)
 					spGiveOrderToUnit(builderID, -targetMexDef, { spot.x, sy, spot.z, 0 }, orderOpt)
-					Spring.Echo(string.format("[TechAI] Commander %d (Team %d) ordered build %s at (%.0f, %.0f)",
-						builderID, teamID, UnitDefs[targetMexDef].name, spot.x, spot.z))
 					return
 				else
 					ai.commanderMexCount = 2
@@ -2114,8 +2106,6 @@ local function ManageBuilder(ai, builderID, bDefID, teamID, allyTeamID, currentF
 			if fx then
 				ai.openingFactoryOrdered = true
 				spGiveOrderToUnit(builderID, -facDef, { fx, fy, fz, ffacing }, orderOpt)
-				Spring.Echo(string.format("[TechAI] Commander %d (Team %d) ordered build %s at (%.0f, %.0f)",
-					builderID, teamID, UnitDefs[facDef].name, fx, fz))
 				return
 			end
 		end
@@ -2462,8 +2452,6 @@ local function ManageResourceCheating(ai, teamID, currentFrame)
 
 	-- Periodic Infolog Logging (every 60 seconds)
 	if currentFrame % 1800 == (teamID * 30) % 1800 then
-		Spring.Echo(string.format("[TechAI Cheat] Team %d (%s, Diff: %s): +%.1f M/s (+%d%%), +%.0f E/s (+%d%%) [Ramp: %.1f%%, TechBoost: %.2fx]",
-			teamID, ai.faction or "unknown", diff.name or "Medium", bonusMetal, math.floor(incPct * 100), bonusEnergy, math.floor(incPct * 100), ramp * 100, techBoost))
 	end
 end
 
@@ -2523,8 +2511,6 @@ function gadget:GameFrame(n)
 			local tID = aiTeamList[i]
 			local a = aiTeams[tID]
 			if a then
-				Spring.Echo(string.format("[TechAI] Frame %d: Team %d (%s) - Com: %s, Builders: %d, Facs: %d, Mexes: %d, ComMex: %d, ComE: %d",
-					n, tID, tostring(a.faction), tostring(a.commanderID), #a.builders, a.factoryCount, #a.mexes, a.commanderMexCount or 0, a.commanderEnergyCount or 0))
 			end
 		end
 	end
@@ -2597,9 +2583,6 @@ function gadget:GameFrame(n)
 					local jobs={energy=0,mex=0,converter=0,factory=0,assist=0}
 					for _,task in pairs(ai.builderTasks or {}) do jobs[task.role]=(jobs[task.role] or 0)+1 end
 					local d=ai.demand
-					Spring.Echo(string.format('[TechAI Economy] Team %d M %.0f (%+.1f/s) E %.0f (%+.1f/s); jobs energy=%d mex=%d makers=%d factory=%d assist=%d',
-						teamID,d.metal.current,d.metal.income-d.metal.expense,d.energy.current,d.energy.income-d.energy.expense,
-						jobs.energy,jobs.mex,jobs.converter,jobs.factory,jobs.assist))
 				end
 			end
 		end
