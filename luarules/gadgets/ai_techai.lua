@@ -3,7 +3,7 @@
 --
 --  file:    ai_techai.lua
 --  brief:   Tech Annihilation Fog of War AI for Recoil Engine
---  author:  Antigravity
+--  author:  TechA Team (AI Agents do not modify this author line)
 --
 --  Supports all 6 factions: ARM, CORE, TLL, TALON, GOK, RUMAD
 --  Features:
@@ -726,21 +726,31 @@ local function RecordEnemyBuildingInLOS(ai, enemyUnitID, unitDefID)
 		category = "energy"
 	end
 
-	ai.intel.knownBuildings[enemyUnitID] = {
-		unitDefID = unitDefID,
-		x = ex,
-		y = ey,
-		z = ez,
-		category = category,
-		frame = Spring.GetGameFrame(),
-	}
+	local curFrame = Spring.GetGameFrame()
+	local b = ai.intel.knownBuildings[enemyUnitID]
+	if b then
+		b.unitDefID = unitDefID
+		b.x = ex
+		b.y = ey
+		b.z = ez
+		b.category = category
+		b.frame = curFrame
+	else
+		ai.intel.knownBuildings[enemyUnitID] = {
+			unitDefID = unitDefID,
+			x = ex,
+			y = ey,
+			z = ez,
+			category = category,
+			frame = curFrame,
+		}
+	end
 
 	if category == "factory" or not ai.intel.enemyBaseCentroid then
 		ai.intel.enemyBaseCentroid = { x = ex, z = ez }
 	end
 
 	local hints = ai.intel.hints or { tech = 0, kinds = {}, seen = {} }
-	hints.kinds[category] = (hints.kinds[category] or 0) + 1
 	hints.seen[unitDefID] = true
 	local meta = UnitMetadata[unitDefID]
 	if meta then hints.tech = math.max(hints.tech or 0, meta.tech or 1) end
@@ -1272,12 +1282,37 @@ local function ManageRaiders(ai, teamID, allyTeamID, currentFrame)
 	end
 
 	if not bestTarget then
-		-- Early Game Fallback: Probe towards enemy map quadrant or unvisited metal sectors!
+		-- Player tactics (Senethril): patrol & harass forward metal spots along the expansion axis
+		local spots = GetMetalSpots() or {}
 		local comX = ai.spawnPos and ai.spawnPos.x or (MAP_SIZE_X / 2)
 		local comZ = ai.spawnPos and ai.spawnPos.z or (MAP_SIZE_Z / 2)
 		local enemyX = ai.intel.enemyBaseCentroid and ai.intel.enemyBaseCentroid.x or (MAP_SIZE_X - comX)
 		local enemyZ = ai.intel.enemyBaseCentroid and ai.intel.enemyBaseCentroid.z or (MAP_SIZE_Z - comZ)
-		bestTarget = { x = enemyX + math.random(-300, 300), y = spGetGroundHeight(enemyX, enemyZ), z = enemyZ + math.random(-300, 300) }
+		local dirX, dirZ = enemyX - comX, enemyZ - comZ
+		local dirLen = math.sqrt(dirX * dirX + dirZ * dirZ)
+		if dirLen > 0 then dirX, dirZ = dirX / dirLen, dirZ / dirLen end
+
+		local bestForwardScore = -math.huge
+		for _, spot in ipairs(spots) do
+			local dx, dz = spot.x - comX, spot.z - comZ
+			local dist = math.sqrt(dx * dx + dz * dz)
+			if dist > 450 and dist < dirLen * 0.85 then
+				local forwardDot = dx * dirX + dz * dirZ
+				if forwardDot > 0 then
+					local threat = GetThreatAtPosition(ai, spot.x, spot.z)
+				if threat < 180 then
+					local score = forwardDot - threat * 2
+					if score > bestForwardScore then
+						bestForwardScore = score
+						bestTarget = { x = spot.x, y = spGetGroundHeight(spot.x, spot.z), z = spot.z }
+					end
+				end
+				end
+			end
+		end
+		if not bestTarget then
+			bestTarget = { x = enemyX + math.random(-300, 300), y = spGetGroundHeight(enemyX, enemyZ), z = enemyZ + math.random(-300, 300) }
+		end
 	end
 
 	if bestTarget then
@@ -1319,8 +1354,54 @@ local function ManageArtillery(ai, teamID, currentFrame)
 						local q = spGetUnitCommandCount(artID)
 						if q and q <= 1 then
 							ai.microUntil = ai.microUntil or {}
-							ai.microUntil[artID] = currentFrame + 90
+						ai.microUntil[artID] = currentFrame + 90
 							GiveTacticalOrder(ai, artID, CMD_ATTACK, { enemy }, currentFrame)
+						end
+					end
+				end
+			else
+				-- Milisandia & aDarkBlueDiamond doctrine:
+				-- 1. Long-range bombardment against known enemy buildings and radar contacts in FOW
+				local ax, ay, az = spGetUnitPosition(artID)
+				if ax then
+					local bombX, bombZ = nil, nil
+					local maxDistSq = (maxRange * 0.95) * (maxRange * 0.95)
+					for _, bData in pairs(ai.intel.knownBuildings) do
+						local dsq = (bData.x - ax)^2 + (bData.z - az)^2
+						if dsq <= maxDistSq then
+							bombX, bombZ = bData.x, bData.z
+							maxDistSq = dsq
+						end
+					end
+					if not bombX and ai.intel.radarBlips then
+						for _, blip in pairs(ai.intel.radarBlips) do
+							local dsq = (blip.x - ax)^2 + (blip.z - az)^2
+							if dsq <= maxDistSq then
+								bombX, bombZ = blip.x, blip.z
+								maxDistSq = dsq
+								break
+							end
+						end
+					end
+					if bombX then
+						local q = spGetUnitCommandCount(artID)
+						if q and q <= 1 then
+							ai.microUntil = ai.microUntil or {}
+							ai.microUntil[artID] = currentFrame + 90
+							local by = spGetGroundHeight(bombX, bombZ)
+							GiveTacticalOrder(ai, artID, CMD_ATTACK, { bombX, by, bombZ }, currentFrame)
+						end
+					elseif ai.rallyPoint then
+						-- 2. Standoff echelon trail behind friendly frontline (aDarkBlueDiamond)
+						local rDist = math.sqrt((ai.rallyPoint.x - ax)^2 + (ai.rallyPoint.z - az)^2)
+						if rDist > maxRange * 0.70 then
+							local q = spGetUnitCommandCount(artID)
+							if q and q <= 1 then
+								local sx = ax + (ai.rallyPoint.x - ax) * 0.4
+								local sz = az + (ai.rallyPoint.z - az) * 0.4
+								local sy = spGetGroundHeight(sx, sz)
+								GiveTacticalOrder(ai, artID, CMD_FIGHT, { sx, sy, sz }, currentFrame)
+							end
 						end
 					end
 				end
@@ -2239,10 +2320,15 @@ local function UpdateIncomingThreatProfile(ai, teamID, currentFrame)
 	-- Accumulate the remembered enemy unit-mix and best tier so later decision
 	-- layers can prepare (tech rush, counters) without needing one visible unit.
 	local hints=ai.intel.hints or {tech=0,kinds={},seen={}}
+	hints.kinds = {}
+	for _, data in pairs(ai.intel.knownBuildings) do
+		local cat = data.category
+		if cat then hints.kinds[cat] = (hints.kinds[cat] or 0) + 1 end
+	end
 	for id,contact in pairs(ai.intel.contacts) do
 		local meta=UnitMetadata[contact.defID]
 		if meta then
-			hints.tech=math.max(hints.tech,meta.tech or 1)
+			hints.tech=math.max(hints.tech or 0,meta.tech or 1)
 			local kind=meta.canFly and 'air' or (meta.isWater and 'sea')
 				or (meta.role=='defense' and 'defense' or (meta.role=='artillery' and 'artillery' or (meta.role=='raider' and 'raider' or 'ground')))
 			hints.kinds[kind]=(hints.kinds[kind] or 0)+1
@@ -2340,7 +2426,7 @@ local function ManageMilitaryForces(ai, teamID, allyTeamID, currentFrame)
 	local readyCombat = {}
 	for _, uID in ipairs(ai.combatUnits) do
 		local meta = UnitMetadata[spGetUnitDefID(uID)]
-		if meta and meta.role ~= 'raider' and not ai.retreatingUnits[uID] and IsUnitReady(uID)
+		if meta and meta.role ~= 'raider' and meta.role ~= 'artillery' and not ai.retreatingUnits[uID] and IsUnitReady(uID)
 			and (not ai.activeMorphTarget or ai.activeMorphTarget.unitID ~= uID)
 			and not (ai.microUntil and (ai.microUntil[uID] or 0) > currentFrame) then
 			table.insert(readyCombat, uID)
@@ -2403,7 +2489,12 @@ local function ManageMilitaryForces(ai, teamID, allyTeamID, currentFrame)
 	end
 
 	-- 3. Staged Push / Coordinated Wave Assault against Scouted Intel Targets
-	if #readyCombat >= ai.difficulty.squadSize and (currentFrame - ai.lastAssaultFrame > 450) then
+	-- Player tactics (Senethril & Hakora): early strike waves launch with smaller groups of cheap units
+	local minSquad = ai.difficulty.squadSize
+	if currentFrame < 5400 then
+		minSquad = math.max(3, math.floor(ai.difficulty.squadSize * 0.45))
+	end
+	if #readyCombat >= minSquad and (currentFrame - ai.lastAssaultFrame > (currentFrame < 5400 and 300 or 450)) then
 		ai.lastAssaultFrame = currentFrame
 
 		local targetX, targetY, targetZ = nil, nil, nil
@@ -2459,9 +2550,29 @@ local function ManageMilitaryForces(ai, teamID, allyTeamID, currentFrame)
 			for _, unitID in ipairs(readyCombat) do
 				GiveTacticalOrder(ai, unitID, CMD_FIGHT, { targetX + math.random(-120, 120), targetY, targetZ + math.random(-120, 120) }, currentFrame)
 			end
-
+			-- aDarkBlueDiamond standoff battery trail behind assault wave
+			if #ai.artilleryUnits > 0 then
+				for _, artID in ipairs(ai.artilleryUnits) do
+					if not ai.retreatingUnits[artID] and IsUnitReady(artID) and not (ai.microUntil and (ai.microUntil[artID] or 0) > currentFrame) then
+						local ax, _, az = spGetUnitPosition(artID)
+						if ax then
+							local tdist = math.sqrt((targetX - ax)^2 + (targetZ - az)^2)
+							local udefID = spGetUnitDefID(artID)
+							local ameta = UnitMetadata[udefID]
+							local mRange = (ameta and ameta.maxRange and ameta.maxRange > 0) and ameta.maxRange or 750
+							if tdist > mRange * 0.70 then
+								local ratio = math.max(0.2, (tdist - mRange * 0.65) / tdist)
+								local sx = ax + (targetX - ax) * ratio
+								local sz = az + (targetZ - az) * ratio
+								local sy = spGetGroundHeight(sx, sz)
+								GiveTacticalOrder(ai, artID, CMD_FIGHT, { sx, sy, sz }, currentFrame)
+							end
+						end
+					end
+				end
+			end
 		end
-	elseif #readyCombat < ai.difficulty.squadSize and ai.rallyPoint then
+	elseif #readyCombat < minSquad and ai.rallyPoint then
 		local ry = spGetGroundHeight(ai.rallyPoint.x, ai.rallyPoint.z)
 		for _, unitID in ipairs(readyCombat) do
 			local q = spGetUnitCommandCount(unitID)
@@ -2519,6 +2630,8 @@ local function ManageResourceCheating(ai, teamID, currentFrame)
 
 	minc = math.max(0, minc or 0)
 	einc = math.max(0, einc or 0)
+	if not (minc < math.huge) then minc = 0 end
+	if not (einc < math.huge) then einc = 0 end
 
 	-- Multiplier based on ramp progress
 	local incPct = diff.cheatIncomePctStart + (diff.cheatIncomePctMax - diff.cheatIncomePctStart) * ramp
@@ -2544,10 +2657,10 @@ local function ManageResourceCheating(ai, teamID, currentFrame)
 	end
 
 	-- Inject cheated resources
-	if bonusMetal > 0 and spAddTeamResource then
+	if bonusMetal > 0 and bonusMetal < math.huge and spAddTeamResource then
 		spAddTeamResource(teamID, "metal", bonusMetal)
 	end
-	if bonusEnergy > 0 and spAddTeamResource then
+	if bonusEnergy > 0 and bonusEnergy < math.huge and spAddTeamResource then
 		spAddTeamResource(teamID, "energy", bonusEnergy)
 	end
 end
@@ -2713,6 +2826,9 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 		if ai.builderTasks then ai.builderTasks[unitID] = nil end
 		if ai.tacticalOrders then ai.tacticalOrders[unitID] = nil end
 		if ai.factoryRallySet then ai.factoryRallySet[unitID] = nil end
+		if ai.microUntil then ai.microUntil[unitID] = nil end
+		if ai.factoryChoices then ai.factoryChoices[unitID] = nil end
+		if ai.mexUpgrades then ai.mexUpgrades[unitID] = nil end
 		if unitID == ai.commanderID then
 			ai.commanderID = nil
 		end
@@ -2801,12 +2917,22 @@ end
 function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
 	local ai=aiTeams[unitTeam]
 	if not ai or not attackerID or not attackerTeam or spAreTeamsAllied(unitTeam,attackerTeam) then return end
-	local los=spGetUnitLosState(attackerID,select(6,spGetTeamInfo(unitTeam)))
+	local _,_,_,_,_,allyTeamID = spGetTeamInfo(unitTeam)
+	local los = allyTeamID and spGetUnitLosState(attackerID, allyTeamID)
 	if los and los.los then
 		local x,_,z=spGetUnitPosition(attackerID)
 		if x then
 			ai.intel.contacts=ai.intel.contacts or {}
-			ai.intel.contacts[attackerID]={defID=attackerDefID,x=x,z=z,frame=Spring.GetGameFrame()}
+			local curFrame = Spring.GetGameFrame()
+			local c = ai.intel.contacts[attackerID]
+			if c then
+				c.defID = attackerDefID
+				c.x = x
+				c.z = z
+				c.frame = curFrame
+			else
+				ai.intel.contacts[attackerID]={defID=attackerDefID,x=x,z=z,frame=curFrame}
+			end
 		end
 	end
 end
@@ -2822,12 +2948,22 @@ end
 
 function gadget:UnitEnteredLos(unitID, unitTeam, allyTeam, unitDefID)
 	for _,ai in pairs(aiTeams) do
-		if select(6,spGetTeamInfo(ai.teamID))==allyTeam and not spAreTeamsAllied(ai.teamID,unitTeam) then
+		local _,_,_,_,_,myAllyTeamID = spGetTeamInfo(ai.teamID)
+		if myAllyTeamID == allyTeam and not spAreTeamsAllied(ai.teamID,unitTeam) then
 			RecordEnemyBuildingInLOS(ai,unitID,unitDefID)
 			local x,_,z=spGetUnitPosition(unitID)
 			if x then
 				ai.intel.contacts=ai.intel.contacts or {}
-				ai.intel.contacts[unitID]={defID=unitDefID,x=x,z=z,frame=Spring.GetGameFrame()}
+				local curFrame = Spring.GetGameFrame()
+				local c = ai.intel.contacts[unitID]
+				if c then
+					c.defID = unitDefID
+					c.x = x
+					c.z = z
+					c.frame = curFrame
+				else
+					ai.intel.contacts[unitID]={defID=unitDefID,x=x,z=z,frame=curFrame}
+				end
 			end
 		end
 	end
@@ -2840,11 +2976,19 @@ function gadget:UnitEnteredRadar(unitID, unitTeam, allyTeam, unitDefID)
 			local rx, _, rz = spGetUnitPosition(unitID)
 			if rx then
 				local blipKey = math.floor(rx / 64) .. "_" .. math.floor(rz / 64)
-				ai.intel.radarBlips[blipKey] = {
-					x = rx,
-					z = rz,
-					frame = Spring.GetGameFrame(),
-				}
+				local curFrame = Spring.GetGameFrame()
+				local b = ai.intel.radarBlips[blipKey]
+				if b then
+					b.x = rx
+					b.z = rz
+					b.frame = curFrame
+				else
+					ai.intel.radarBlips[blipKey] = {
+						x = rx,
+						z = rz,
+						frame = curFrame,
+					}
+				end
 			end
 		end
 	end

@@ -121,33 +121,55 @@ function M.Create(metadata,teams,metalSpots,geoSpots)
 		end
 		return layout
 	end
+	local tempBox = {x1=0,x2=0,z1=0,z2=0}
 	local function Allowed(ai,defID,x,z,facing,ignoreZones,replacedUnit)
 		local def=UnitDefs[defID]
 		if not def or not ai then return false end
 		local layout=Refresh(ai)
-		local box=bounds(def,x,z,facing,12)
+		local hx,hz=(def.xsize or 4)*4,(def.zsize or 4)*4
+		if facing%2==1 then hx,hz=hz,hx end
+		local box=tempBox
+		box.x1=x-hx-12; box.x2=x+hx+12; box.z1=z-hz-12; box.z2=z+hz+12
 		if box.x1<16 or box.z1<16 or box.x2>Game.mapSizeX-16 or box.z2>Game.mapSizeZ-16 then return false end
 		local category=kind(defID)
 		if category and not ignoreZones then
-			for _,key in ipairs(cells(ai,box)) do
-				if layout.sectors[key] and layout.sectors[key]~=category then return false end
+			local origin=ai.spawnPos
+			if origin then
+				local minX=math.floor((box.x1-origin.x)/CELL)
+				local maxX=math.floor((box.x2-0.01-origin.x)/CELL)
+				local minZ=math.floor((box.z1-origin.z)/CELL)
+				local maxZ=math.floor((box.z2-0.01-origin.z)/CELL)
+				for ix=minX,maxX do
+					for iz=minZ,maxZ do
+						local sec=layout.sectors[ix..':'..iz]
+						if sec and sec~=category then return false end
+					end
+				end
 			end
 		end
 		local exit=def.isFactory and lane(def,x,z,facing)
 		if exit and (exit.x1<0 or exit.z1<0 or exit.x2>Game.mapSizeX or exit.z2>Game.mapSizeZ) then return false end
 		-- Leave known deposits available even before their extractors are ordered.
 		if category and metalSpots then
-			for _,spot in ipairs(metalSpots()) do
-				local patch={x1=spot.x-40,x2=spot.x+40,z1=spot.z-40,z2=spot.z+40}
-				if overlap(box,patch) or (exit and overlap(exit,patch)) then return false end
+			local spots=metalSpots()
+			for i=1,#spots do
+				local spot=spots[i]
+				if (box.x1<spot.x+40 and box.x2>spot.x-40 and box.z1<spot.z+40 and box.z2>spot.z-40)
+					or (exit and exit.x1<spot.x+40 and exit.x2>spot.x-40 and exit.z1<spot.z+40 and exit.z2>spot.z-40) then
+					return false
+				end
 			end
 		end
 		-- Same for geothermal vents: keep them free for the needGeo plant that
 		-- must sit on them, excluding the geo consumer itself.
 		if category and geoSpots and not def.needGeo then
-			for _,spot in ipairs(geoSpots()) do
-				local patch={x1=spot.x-40,x2=spot.x+40,z1=spot.z-40,z2=spot.z+40}
-				if overlap(box,patch) or (exit and overlap(exit,patch)) then return false end
+			local spots=geoSpots()
+			for i=1,#spots do
+				local spot=spots[i]
+				if (box.x1<spot.x+40 and box.x2>spot.x-40 and box.z1<spot.z+40 and box.z2>spot.z-40)
+					or (exit and exit.x1<spot.x+40 and exit.x2>spot.x-40 and exit.z1<spot.z+40 and exit.z2>spot.z-40) then
+					return false
+				end
 			end
 		end
 		for _,item in ipairs(layout.structures or {}) do
@@ -166,10 +188,10 @@ function M.Create(metadata,teams,metalSpots,geoSpots)
 		local layout=initialize(ai)
 		local def=UnitDefs[defID]
 		if not def then return end
-		if not def then return end
 		local box=bounds(def,x,z,facing,12)
 		local key=builder..':'..defID..':'..x..':'..z
 		layout.plans[key]={builder=builder,defID=defID,x=x,z=z,box=box,lane=def.isFactory and lane(def,x,z,facing),cat=kind(defID)}
+		layout.failedFind = nil
 		assign(ai,defID,box)
 	end
 	local function Find(ai,defID)
@@ -177,6 +199,13 @@ function M.Create(metadata,teams,metalSpots,geoSpots)
 		local def=UnitDefs[defID]
 		local category=kind(defID)
 		local layout=Refresh(ai)
+		local failed=layout.failedFind
+		if not failed or layout.failedStamp~=layout.stamp then
+			failed={}
+			layout.failedFind=failed
+			layout.failedStamp=layout.stamp
+		end
+		if failed[defID] then return end
 		local region=ai.spawnPos
 		local anchor=layout.zones and layout.zones[category]
 		local origin=anchor or ai.spawnPos
@@ -241,6 +270,7 @@ function M.Create(metadata,teams,metalSpots,geoSpots)
 				end
 			end
 		end
+		failed[defID]=true
 	end
 	return {Allowed=Allowed,Reserve=Reserve,Find=Find,Refresh=Refresh}
 end

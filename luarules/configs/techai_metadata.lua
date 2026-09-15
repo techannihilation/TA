@@ -78,7 +78,9 @@ local function weaponStats(udef, meta, weaponDefs)
                 meta.canAttackGround = meta.canAttackGround or not not ground
                 meta.isArmed = true
                 meta.maxRange = max(meta.maxRange, number(weapon.range))
-                meta.areaOfEffect = max(meta.areaOfEffect, number(weapon.damageAreaOfEffect, number(weapon.areaOfEffect)))
+                local aoe = weapon.damageAreaOfEffect
+                if aoe == nil then aoe = weapon.areaOfEffect end
+                meta.areaOfEffect = max(meta.areaOfEffect, number(aoe))
                 if air then meta.antiAir = meta.antiAir + dps end
                 if ground then meta.antiGround = meta.antiGround + dps end
             end

@@ -30,7 +30,7 @@ function M.Create(api)
 		if ai.demand and ai.demand.frame == frame then return ai.demand end
 		local state = {frame=frame,metal=resource(team,'metal',ai.reservedMetal),energy=resource(team,'energy',ai.reservedEnergy),
 			counts={},pending={},committedMetal=0,committedEnergy=0,incomingEnergy=0,incomingEmergencyEnergy=0,pendingConverterDrain=0,
-			maxFactoryTier=0,factoryUtilization=0,enemyPressure=0,unfinished={},hasMetalSpots=#metalSpots()>0,
+			maxFactoryTier=0,factoryUtilization=0,tierFactories={},enemyPressure=0,unfinished={},hasMetalSpots=#metalSpots()>0,
 			fullFrames={metal=0,energy=0},storageCap={metal=0,energy=0},defenseGround=0,defenseAir=0,hintTech=0}
 		local activeFactories, factories, converterCapacity = 0, 0, 0
 		local unfinishedByDef={}
@@ -46,6 +46,8 @@ function M.Create(api)
 					state.unfinished[#state.unfinished+1] = id
 				elseif meta.role == 'factory' then
 					factories = factories + 1
+					local tier = meta.tech or 1
+					state.tierFactories[tier] = (state.tierFactories[tier] or 0) + 1
 					local depth=ai.production and ai.production.depths[id]
 					if depth==nil then
 						depth=0
@@ -177,6 +179,7 @@ function M.Create(api)
 							S.GiveOrderToUnit(builder,-choice.defID,{mx,my,mz,0},{'shift'})
 							if api.layout then api.layout.Reserve(ai,builder,choice.defID,mx,mz,0) end
 							ai.mexUpgrades[id]=builder
+							ai.mexUpgrades[id]=builder
 							ai.builderTasks[builder]={defID=choice.defID,role='mex',reason='upgrade metal extraction',x=mx,z=mz,frame=frame,upgrading=true}
 							account(state,meta,1)
 							return
@@ -185,7 +188,7 @@ function M.Create(api)
 				end
 			else
 				x,y,z,facing=api.basePosition(choice.defID,ai,meta.role=='factory' and 120 or 48)
-				if not x then x,y,z,facing=api.safePosition(choice.defID,bx,bz,600,48,ai) end
+				if not x and not api.layout then x,y,z,facing=api.safePosition(choice.defID,bx,bz,600,48,ai) end
 			end
 			if x and y and z and facing and api.threat(ai,x,z)<250
 				and (not api.layout or api.layout.Allowed(ai,choice.defID,x,z,facing)) then
@@ -233,6 +236,50 @@ function M.Create(api)
 		if best then
 			if not task or task.target~=best then S.GiveOrderToUnit(builder,CMD.REPAIR,{best},0) end
 			ai.builderTasks[builder]={role='assist',target=best,reason='finish existing investment',frame=frame}
+			return
+		end
+		-- Active Field Repair (skyfall & Pepper doctrine: repair damaged combat forces,
+		-- retreating units, and damaged friendly/allied structures).
+		local repairTarget, repairDist
+		if ai.retreatingUnits then
+			for retID in pairs(ai.retreatingUnits) do
+				if S.ValidUnitID(retID) then
+					local rx, _, rz = S.GetUnitPosition(retID)
+					local rhp, rmax = S.GetUnitHealth(retID)
+					if rx and rhp and rmax and rmax > 0 and rhp < rmax * 0.92 then
+						local d = (rx - bx)^2 + (rz - bz)^2
+						if d < 1200^2 and (not repairDist or d < repairDist) then
+							repairTarget, repairDist = retID, d
+						end
+					end
+				end
+			end
+		end
+		if not repairTarget and (frame % 15 == (builder % 15)) then
+			local nearbyUnits = S.GetUnitsInCylinder(bx, bz, 800)
+			if nearbyUnits then
+				for _, uid in ipairs(nearbyUnits) do
+					if uid ~= builder and S.ValidUnitID(uid) then
+						local uTeam = S.GetUnitTeam(uid)
+						if uTeam == teamID or (uTeam and S.AreTeamsAllied and S.AreTeamsAllied(teamID, uTeam)) then
+							local hp, maxhp = S.GetUnitHealth(uid)
+							if hp and maxhp and maxhp > 0 and hp < maxhp * 0.88 then
+								local ux, _, uz = S.GetUnitPosition(uid)
+								if ux then
+									local d = (ux - bx)^2 + (uz - bz)^2
+									if not repairDist or d < repairDist then
+										repairTarget, repairDist = uid, d
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		if repairTarget then
+			if not task or task.target ~= repairTarget then S.GiveOrderToUnit(builder, CMD.REPAIR, { repairTarget }, 0) end
+			ai.builderTasks[builder] = { role = 'assist', target = repairTarget, reason = 'field repair damaged unit', frame = frame }
 			return
 		end
 		-- Reclaim only known nearby features when metal is scarce.

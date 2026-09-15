@@ -66,31 +66,43 @@ function M.Rank(options, metadata, state)
 							- (pending.converter or 0) * 150
 						reason = 'convert spare energy to metal'
 					end
-				elseif role == 'factory' and not critical and (meta.tech or 1) <= 5 then
-					local factoryCount = counts.factory or 0
-					local tech = meta.tech or 1
-					local higherTier = tech > maxFactoryTier
-					local previousTier = not higherTier and tech == maxFactoryTier - 1
-					local busy = (state.factoryUtilization or 0) >= 0.75 and mRatio >= 0.35 and eRatio >= 0.35
-					local rich = m.income >= 45 and mRatio >= 0.5 and eRatio >= 0.5
-					-- A T2+ factory without sufficient build power spams idle shells:
-					-- only tier progression is ever allowed while the constructor
-					-- pool cannot actually staff the factories being duplicated.
-					local canSupport = (counts.constructor or 0) + (counts.commander or 0)
-						+ (counts.nanotower or 0) + (counts.rezzer or 0) >= factoryCount
-					-- Industrial scale: saturated factories expand same tier and a
-					-- T2+ base back-fills the previous tier, all throttled by how
-					-- many new factories the economy can actually feed.
-					local vote = higherTier or factoryCount == 0 or (canSupport and (busy or rich or previousTier))
-					local allowance = math.max(1, math.floor(m.income / 50))
-					if vote and (pending.factory or 0) < allowance then
-						-- Tier dominates within the factory choice once genuinely affordable.
-						score = (factoryCount == 0 and 1000 or 390) + tech * 45
-							+ (higherTier and 90 or 0) + (state.enemyPressure or 0) * 20
-						if energyNeed > e.income * 0.25 then score = score - 200 end
-						reason = higherTier and 'affordable tech progression'
-							or (previousTier and 'expand lower-tier industrial capacity' or 'production capacity')
+			elseif role == 'factory' and not critical and (meta.tech or 1) <= 5 then
+				local factoryCount = counts.factory or 0
+				local tech = meta.tech or 1
+				local higherTier = tech > maxFactoryTier
+				local previousTier = not higherTier and tech == maxFactoryTier - 1
+				local tierHave = (state.tierFactories or {})[tech] or 0
+				local busy = (state.factoryUtilization or 0) >= 0.75 and mRatio >= 0.35 and eRatio >= 0.35
+				local rich = m.income >= 45 and mRatio >= 0.5 and eRatio >= 0.5
+				-- A T2+ factory without sufficient build power spams idle shells:
+				-- only tier progression is ever allowed while the constructor
+				-- pool cannot actually staff the factories being duplicated.
+				local canSupport = (counts.constructor or 0) + (counts.commander or 0)
+					+ (counts.nanotower or 0) + (counts.rezzer or 0) >= factoryCount
+				-- Same-tier duplication must be earned by real saturation, not by
+				-- banked income alone.
+				local tierCap = busy and 3 or 2
+				local vote
+				if factoryCount == 0 or higherTier then
+					vote = true
+				elseif previousTier then
+					vote = canSupport and (busy or rich) and tierHave < tierCap
+				else
+					vote = canSupport and busy and tierHave < tierCap
+				end
+				local allowance = math.max(1, math.min(3, math.floor(m.income / 50)))
+				if vote and (pending.factory or 0) < allowance then
+					-- Tier dominates within the factory choice once genuinely affordable.
+					score = (factoryCount == 0 and 1000 or 390) + tech * 45
+						+ (higherTier and 90 or 0) + (state.enemyPressure or 0) * 20
+					if energyNeed > e.income * 0.25 then score = score - 200 end
+					-- Player habit (Hakora): rapid next-tier transition once economy is established
+					if higherTier and tech == (maxFactoryTier or 1) + 1 and m.income >= 16 and eRatio >= 0.55 then
+						score = score + 35
 					end
+					reason = higherTier and 'affordable tech progression'
+						or (previousTier and 'expand lower-tier industrial capacity' or 'production capacity')
+				end
 				elseif (role == 'defense' or role == 'aa') and not critical then
 					local threat = role == 'aa' and (state.defenseAir or 0) or (state.defenseGround or 0)
 					if threat > 0 then
@@ -114,8 +126,16 @@ function M.Rank(options, metadata, state)
 							reason = sk == 'metal' and 'metal reserves' or 'energy reserves'
 						end
 					end
-				elseif role == 'radar' and not critical and (counts.radar or 0) + (pending.radar or 0) < 1 then
-					score, reason = 280, 'early warning'
+				elseif role == 'radar' and not critical then
+					local radarCount = (counts.radar or 0) + (pending.radar or 0)
+					local factoryCount = counts.factory or 0
+					-- Milisandia habit: early sensory warning once factory is established,
+					-- and secondary radar coverage as the base and tech level expand.
+					if radarCount == 0 and factoryCount >= 1 then
+						score, reason = 380, 'sensory early warning'
+					elseif radarCount < 1 + math.floor(factoryCount / 2) and (meta.tech or 1) <= math.max(1, maxFactoryTier or 1) and mRatio >= 0.4 and eRatio >= 0.4 then
+						score, reason = 310, 'expand sensory radar coverage'
+					end
 				elseif role == 'nanotower' and not critical then
 					local nanoCount = (counts.nanotower or 0) + (pending.nanotower or 0)
 					local factoryCount = counts.factory or 0
@@ -124,13 +144,22 @@ function M.Rank(options, metadata, state)
 					-- the metal makers or mexes being raised to fix the deficit.
 					local supportPower = eRatio < 0.5 and energyNeed > 0
 					local supportMetal = mRatio < 0.6 and metalNeed > 0.15
+					local earlyBoost = factoryCount >= 1 and nanoCount == 0 and m.income >= 7.5 and mRatio >= 0.35 and eRatio >= 0.35
 					local target = factoryCount + (supportPower and 1 or 0) + (supportMetal and 1 or 0)
+					-- skyfall habit: in surplus economic conditions, expand nanotower network around factories
+					if mRatio > 0.6 and eRatio > 0.6 and m.income >= 18 and e.income >= 80 then
+						target = math.max(target, math.min(10, factoryCount * 3))
+					end
 					if nanoCount < target and mRatio > 0.20 and eRatio > 0.20 then
-						if supportPower or supportMetal then
+						if earlyBoost then
+							score = 660
+							reason = 'boost primary factory throughput'
+						elseif supportPower or supportMetal then
 							score = 620
 							reason = supportPower and 'accelerate power recovery' or 'accelerate metal recovery'
 						elseif mRatio > 0.6 and eRatio > 0.6 then
-							score, reason = 250, 'use surplus construction resources'
+							score = (m.income >= 18 and e.income >= 80 and nanoCount >= factoryCount) and 310 or 250
+							reason = (m.income >= 18 and e.income >= 80 and nanoCount >= factoryCount) and 'expand industrial nanotower network' or 'use surplus construction resources'
 						end
 					end
 				end

@@ -79,6 +79,11 @@ local function Choose(options, metadata, state)
 						score = score + tech * 4 + min(12, number(meta.buildSpeed) / metalCost * 10)
 						reason = deficit > 0 and "expand construction capacity" or "unlock tier " .. tech .. " construction"
 						if underAttack then score = constructors == 0 and 85 or 18 end
+						-- Interleave early rush combat units: don't mass constructors before early army is fielded
+						if not underAttack and desiredTier <= 1 then
+							if constructors == 1 and army < 3 then score = score - 45
+							elseif constructors >= 2 and army < 6 then score = score - 35 end
+						end
 					end
 				elseif role == "scout" then
 					if scouts < scoutTarget and not underAttack then
@@ -105,6 +110,22 @@ local function Choose(options, metadata, state)
 						score = aaShortage > 0 and (110 + min(65, aaShortage * 12) + airShare * 20) or 22
 						reason = aaShortage > 0 and "counter observed air" or "maintain air cover"
 						if airThreat == 0 and aa >= desiredAA then score = -20 end
+					end
+					-- Player tactics: Early cheap combat/raider rush (Senethril)
+					if (role == "raider" or (role == "combat" and metalCost <= 95)) and not underAttack and desiredTier <= 1 then
+						if constructors >= 1 and army < 8 then
+							local rushBonus = (8 - army) * 8 + max(0, 95 - metalCost) * 0.4
+							score = score + rushBonus
+							reason = "early rush strike force"
+						end
+					end
+					-- Player tactics: Mobile missile/skirmisher affinity (Hakora)
+					if (role == "combat" or role == "raider") and number(meta.maxRange) >= 450 and metalCost <= 160 then
+						score = score + min(12, (number(meta.maxRange) - 300) * 0.04)
+					end
+					-- Player tactics: Standoff missile / artillery battery support (aDarkBlueDiamond)
+					if role == "artillery" and army >= 5 and metalCost <= 300 and (counts.artillery or 0) < math.max(1, math.floor(army * 0.25)) then
+						score = score + 12
 					end
 					if underAttack then
 						score = score + 24
