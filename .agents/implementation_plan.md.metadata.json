@@ -1,0 +1,6 @@
+{
+  "summary": "Implementation plan for factory unit prioritization (10 builder limit per individual factory, counter-production against incoming enemy units), commander anti-lingering behavior, and morph assistance prohibition.",
+  "updatedAt": "2026-09-11T13:12:00.047306500Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

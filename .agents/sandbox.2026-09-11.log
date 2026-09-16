@@ -1,0 +1,1336 @@
+[2026-09-11 17:57:38.407 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-ChildI
+[2026-09-11 17:57:38.700 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:57:39.360922800+00:00] granting write ACE to C:\Users\Shar\.codex\visualizations\2026\09\11\01a09167-2a5e-73d2-844b-299d1ab25497 for sandbox group and capability SID
+[2026-09-11T16:57:39.371660200+00:00] granting write ACE to C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd for sandbox group and capability SID
+[2026-09-11T16:57:39.383310900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:57:39.401196900+00:00] read ACL run completed
+[2026-09-11T16:57:41.592359400+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:57:41.592 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11 17:57:41.897 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:57:41.898 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:57:41.898 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:57:42.822 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:57:49.179 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 17:57:49.487 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:57:49.526471500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:57:49.526 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:57:49.554532+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:57:49.572210800+00:00] read ACL run completed
+[2026-09-11 17:57:49.828 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:57:49.829 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:57:49.887 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:57:55.338 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n '^lo
+[2026-09-11 17:57:55.647 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:57:55.685920400+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:57:55.685 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:57:55.714922700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:57:55.732250900+00:00] read ACL run completed
+[2026-09-11 17:57:55.984 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:57:55.985 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:57:56.045 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:58:03.291 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$p='luarul
+[2026-09-11 17:58:03.618 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:58:03.662411600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:58:03.662 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:58:03.692803900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:58:03.711071700+00:00] read ACL run completed
+[2026-09-11 17:58:03.978 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:03.979 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:04.043 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:58:11.361 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$s=Get-Con
+[2026-09-11 17:58:11.681 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:58:11.721336900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:58:11.721 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:58:11.751449500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:58:11.769626200+00:00] read ACL run completed
+[2026-09-11 17:58:12.034 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:12.034 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:12.096 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:58:18.363 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$s=Get-Con
+[2026-09-11 17:58:18.683 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:58:18.723369300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:58:18.723 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:58:18.751670100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:58:18.769338100+00:00] read ACL run completed
+[2026-09-11 17:58:19.023 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:19.024 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:19.084 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:58:27.403 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+& 'C:/User
+[2026-09-11 17:58:27.728 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:58:27.769442200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:58:27.769 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:58:27.800156+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:58:27.818571200+00:00] read ACL run completed
+[2026-09-11 17:58:28.095 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:28.095 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:28.161 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:58:35.691 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+& 'C:/User
+[2026-09-11 17:58:35.987 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:58:36.028017100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:58:36.028 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:58:36.057432+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:58:36.074951700+00:00] read ACL run completed
+[2026-09-11 17:58:36.332 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:36.333 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:36.393 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:58:46.898 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+New-Item -
+[2026-09-11 17:58:47.221 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:58:47.262293700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:58:47.262 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:58:47.291410700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:58:47.310340+00:00] read ACL run completed
+[2026-09-11 17:58:47.574 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:47.575 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:58:47.637 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:59:01.035 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 17:59:01.356 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T16:59:01.402602800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:59:01.402 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:59:01.431482900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:59:01.450430600+00:00] read ACL run completed
+[2026-09-11 17:59:01.719 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:01.720 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:01.721 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:01.783 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:59:02.835 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 17:59:03.152 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T16:59:03.198387+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:59:03.198 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:59:03.227626600+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:59:03.246849500+00:00] read ACL run completed
+[2026-09-11 17:59:03.534 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:03.535 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:03.535 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:03.602 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:59:03.763 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 17:59:04.067 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T16:59:04.114400300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:59:04.114 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:59:04.143723700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:59:04.162488700+00:00] read ACL run completed
+[2026-09-11 17:59:04.419 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:04.420 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:04.421 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:04.480 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:59:04.635 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 17:59:04.938 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T16:59:04.983904+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:59:04.983 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:59:05.012251800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:59:05.031391+00:00] read ACL run completed
+[2026-09-11 17:59:05.295 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:05.295 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:05.296 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:05.355 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:59:26.680 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 17:59:27.006 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T16:59:27.054395800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:59:27.054 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:59:27.084167400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:59:27.102657800+00:00] read ACL run completed
+[2026-09-11 17:59:27.382 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:27.383 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:27.383 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:27.447 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:59:27.615 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 17:59:27.948 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T16:59:27.997365500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:59:27.997 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:59:28.027540100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:59:28.045619+00:00] read ACL run completed
+[2026-09-11 17:59:28.309 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:28.310 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:28.310 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:28.372 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:59:28.528 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 17:59:28.846 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T16:59:28.896468200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:59:28.896 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:59:28.928909300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:59:28.948743200+00:00] read ACL run completed
+[2026-09-11 17:59:29.202 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:29.203 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:29.204 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:29.265 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:59:29.420 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 17:59:29.728 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T16:59:29.777000500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:59:29.777 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:59:29.806012700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:59:29.824860600+00:00] read ACL run completed
+[2026-09-11 17:59:30.086 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:30.087 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:30.088 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:30.147 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 17:59:30.384 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$s=Get-Con
+[2026-09-11 17:59:30.682 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T16:59:30.721983200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 17:59:30.722 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T16:59:30.750191300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T16:59:30.770419400+00:00] read ACL run completed
+[2026-09-11 17:59:31.037 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:31.038 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 17:59:31.100 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:19.669 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:00:19.986 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:00:20.035696300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:20.035 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:20.066060100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:20.084738800+00:00] read ACL run completed
+[2026-09-11 18:00:20.352 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:20.353 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:20.354 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:20.416 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:20.596 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:00:20.911 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:00:20.958287200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:20.958 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:20.987256800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:21.005983400+00:00] read ACL run completed
+[2026-09-11 18:00:21.266 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:21.267 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:21.267 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:21.329 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:21.477 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:00:21.779 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:00:21.826181300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:21.826 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:21.854231400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:21.873287600+00:00] read ACL run completed
+[2026-09-11 18:00:22.118 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:22.119 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:22.120 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:22.180 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:22.298 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+& 'C:/User
+[2026-09-11 18:00:22.633 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:00:22.677220800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:22.677 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:22.708511900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:22.730309500+00:00] read ACL run completed
+[2026-09-11 18:00:23.014 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:23.015 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:23.083 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:29.821 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$s=Get-Con
+[2026-09-11 18:00:30.115 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:00:30.153771200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:30.153 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:30.181583900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:30.200171700+00:00] read ACL run completed
+[2026-09-11 18:00:30.445 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:30.445 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:30.504 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:45.701 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:00:46.004 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:00:46.048951+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:46.049 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:46.075665400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:46.093362300+00:00] read ACL run completed
+[2026-09-11 18:00:46.344 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:46.345 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:46.346 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:46.403 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:46.550 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:00:46.852 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:00:46.898997900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:46.899 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:46.926961+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:46.945071600+00:00] read ACL run completed
+[2026-09-11 18:00:47.202 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:47.203 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:47.203 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:47.263 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:47.408 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:00:47.710 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:00:47.754742400+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:47.754 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:47.782930300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:47.800781900+00:00] read ACL run completed
+[2026-09-11 18:00:48.066 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:48.066 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:48.067 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:48.126 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:48.279 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:00:48.583 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:00:48.627176100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:48.627 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:48.655249300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:48.672984100+00:00] read ACL run completed
+[2026-09-11 18:00:48.922 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:48.923 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:48.923 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:48.983 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:49.101 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+& 'C:/User
+[2026-09-11 18:00:49.395 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:00:49.434056600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:49.434 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:49.461258+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:49.479114100+00:00] read ACL run completed
+[2026-09-11 18:00:49.730 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:49.730 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:49.789 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:00:58.198 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-ChildI
+[2026-09-11 18:00:58.500 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:00:58.538550700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:00:58.538 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:00:58.565470800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:00:58.583046400+00:00] read ACL run completed
+[2026-09-11 18:00:58.829 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:58.830 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:00:58.888 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:09.478 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:09.773 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:09.817730500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:09.817 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:09.845568300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:09.863486500+00:00] read ACL run completed
+[2026-09-11 18:02:10.110 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:10.111 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:10.111 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:10.170 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:10.314 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:10.617 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:10.662151+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:10.662 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:10.690638900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:10.707967900+00:00] read ACL run completed
+[2026-09-11 18:02:10.952 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:10.953 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:10.954 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:11.012 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:11.153 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:11.445 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:11.491532900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:11.491 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:11.520449700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:11.538921+00:00] read ACL run completed
+[2026-09-11 18:02:11.793 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:11.794 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:11.795 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:11.852 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:11.996 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:12.301 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:12.346499400+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:12.346 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:12.374241400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:12.391583900+00:00] read ACL run completed
+[2026-09-11 18:02:12.645 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:12.646 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:12.647 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:12.706 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:12.854 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:13.148 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:13.191805900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:13.191 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:13.220299100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:13.237728100+00:00] read ACL run completed
+[2026-09-11 18:02:13.480 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:13.481 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:13.481 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:13.540 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:13.694 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:13.993 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:14.037423600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:14.037 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:14.064374500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:14.081459500+00:00] read ACL run completed
+[2026-09-11 18:02:14.326 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:14.327 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:14.327 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:14.385 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:14.528 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:14.827 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:14.873911500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:14.873 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:14.903977600+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:14.921471100+00:00] read ACL run completed
+[2026-09-11 18:02:15.165 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:15.166 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:15.166 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:15.225 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:15.370 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:15.665 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:15.710225100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:15.710 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:15.738820300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:15.756918100+00:00] read ACL run completed
+[2026-09-11 18:02:15.999 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:16.000 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:16.000 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:16.059 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:16.200 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:16.494 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:16.545154900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:16.545 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:16.567852600+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:16.585408400+00:00] read ACL run completed
+[2026-09-11 18:02:16.842 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:16.843 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:16.843 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:16.902 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:40.445 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:40.752 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:40.797519900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:40.797 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:40.824268500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:40.841602800+00:00] read ACL run completed
+[2026-09-11 18:02:41.093 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:41.094 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:41.095 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:41.154 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:41.304 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:41.610 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:41.653570100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:41.653 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:41.680173200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:41.697725100+00:00] read ACL run completed
+[2026-09-11 18:02:41.951 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:41.952 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:41.953 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:42.010 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:42.159 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:42.472 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:42.517043+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:42.517 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:42.543424300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:42.561830200+00:00] read ACL run completed
+[2026-09-11 18:02:42.806 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:42.807 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:42.808 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:42.866 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:43.009 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:43.306 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:43.351261900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:43.351 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:43.380167800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:43.398659900+00:00] read ACL run completed
+[2026-09-11 18:02:43.645 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:43.646 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:43.647 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:43.704 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:43.844 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:44.140 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:44.191563600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:44.191 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:44.213113200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:44.231471800+00:00] read ACL run completed
+[2026-09-11 18:02:44.489 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:44.490 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:44.491 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:44.549 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:44.691 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:44.982 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:45.027188800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:45.027 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:45.055276300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:45.072915800+00:00] read ACL run completed
+[2026-09-11 18:02:45.316 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:45.316 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:45.317 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:45.383 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:45.539 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:45.830 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:45.875966200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:45.876 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:45.902141400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:45.919610300+00:00] read ACL run completed
+[2026-09-11 18:02:46.164 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:46.165 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:46.165 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:46.226 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:02:46.372 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:02:46.669 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:02:46.713198100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:02:46.713 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:02:46.739888700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:02:46.757000400+00:00] read ACL run completed
+[2026-09-11 18:02:46.998 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:46.999 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:46.999 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:02:47.058 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:00.784 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n 'cla
+[2026-09-11 18:03:01.087 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:03:01.126511+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:01.126 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:01.153616800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:01.171150+00:00] read ACL run completed
+[2026-09-11 18:03:01.427 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:01.428 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:01.486 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:17.127 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:03:17.432 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:03:17.479477300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:17.479 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:17.508129900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:17.525897300+00:00] read ACL run completed
+[2026-09-11 18:03:17.781 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:17.782 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:17.782 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:17.841 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:17.992 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:03:18.304 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:03:18.352106700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:18.352 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:18.379374+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:18.396658300+00:00] read ACL run completed
+[2026-09-11 18:03:18.653 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:18.654 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:18.654 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:18.714 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:18.860 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:03:19.162 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:03:19.209352900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:19.209 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:19.239936600+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:19.259016800+00:00] read ACL run completed
+[2026-09-11 18:03:19.511 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:19.512 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:19.513 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:19.574 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:19.720 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:03:20.013 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:03:20.058086100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:20.058 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:20.086475+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:20.104512700+00:00] read ACL run completed
+[2026-09-11 18:03:20.362 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:20.363 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:20.363 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:20.423 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:40.350 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:03:40.658 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:03:40.703882600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:40.703 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:40.731466500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:40.748827700+00:00] read ACL run completed
+[2026-09-11 18:03:41.003 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:41.004 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:41.004 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:41.066 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:41.215 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:03:41.531 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:03:41.579139500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:41.579 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:41.611804500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:41.630239400+00:00] read ACL run completed
+[2026-09-11 18:03:41.883 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:41.884 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:41.884 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:41.945 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:42.092 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:03:42.399 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:03:42.448880700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:42.448 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:42.481510500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:42.500667500+00:00] read ACL run completed
+[2026-09-11 18:03:42.755 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:42.756 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:42.756 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:42.816 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:42.960 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:03:43.259 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:03:43.303447600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:43.303 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:43.331335100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:43.349309200+00:00] read ACL run completed
+[2026-09-11 18:03:43.612 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:43.613 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:43.613 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:43.673 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:03:57.205 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$s=Get-Con
+[2026-09-11 18:03:57.510 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:03:57.551089200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:03:57.551 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:03:57.580727200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:03:57.599800500+00:00] read ACL run completed
+[2026-09-11 18:03:57.845 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:57.845 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:03:57.908 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:11.342 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+@'
+from pa
+[2026-09-11 18:04:11.647 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:04:11.687068500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:11.687 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:11.714215100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:11.731456700+00:00] read ACL run completed
+[2026-09-11 18:04:11.981 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:11.982 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:12.042 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:13.062 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:13.359 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:13.403790600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:13.403 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:13.431837400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:13.449752800+00:00] read ACL run completed
+[2026-09-11 18:04:13.698 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:13.699 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:13.699 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:13.762 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:13.922 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:14.225 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:14.271212+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:14.271 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:14.299025400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:14.317242900+00:00] read ACL run completed
+[2026-09-11 18:04:14.565 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:14.566 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:14.567 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:14.626 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:14.775 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:15.077 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:15.123257500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:15.123 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:15.150469700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:15.167964300+00:00] read ACL run completed
+[2026-09-11 18:04:15.416 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:15.417 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:15.417 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:15.477 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:15.627 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:15.933 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:15.980442200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:15.980 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:16.007979800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:16.026329300+00:00] read ACL run completed
+[2026-09-11 18:04:16.272 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:16.273 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:16.274 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:16.333 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:49.615 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:49.926 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:49.972384300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:49.972 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:50.000741+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:50.018873600+00:00] read ACL run completed
+[2026-09-11 18:04:50.278 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:50.279 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:50.280 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:50.341 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:50.490 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:50.806 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:50.854279900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:50.854 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:50.881564900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:50.899461+00:00] read ACL run completed
+[2026-09-11 18:04:51.159 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:51.160 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:51.160 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:51.220 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:51.369 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:51.674 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:51.720347800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:51.720 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:51.748480+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:51.767507700+00:00] read ACL run completed
+[2026-09-11 18:04:52.016 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:52.017 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:52.018 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:52.078 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:52.220 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:52.517 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:52.563074600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:52.563 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:52.593452900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:52.610540800+00:00] read ACL run completed
+[2026-09-11 18:04:52.864 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:52.865 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:52.866 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:52.926 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:53.070 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:53.365 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:53.410528900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:53.410 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:53.439504400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:53.456916100+00:00] read ACL run completed
+[2026-09-11 18:04:53.707 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:53.708 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:53.708 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:53.768 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:53.914 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:54.208 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:54.253787700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:54.253 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:54.281437+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:54.298831300+00:00] read ACL run completed
+[2026-09-11 18:04:54.547 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:54.548 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:54.549 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:54.608 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:54.758 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:04:55.058 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:04:55.104736400+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:55.104 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:55.140194600+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:55.162797600+00:00] read ACL run completed
+[2026-09-11 18:04:55.423 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:55.424 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:55.424 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:55.501 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:04:55.647 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Move-Item 
+[2026-09-11 18:04:55.966 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:04:56.006590900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:04:56.006 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:04:56.036631200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:04:56.055825800+00:00] read ACL run completed
+[2026-09-11 18:04:56.322 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:56.323 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:04:56.405 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:14:39.858 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 18:14:40.151 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:14:40.191478100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:14:40.191 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:14:40.220437500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:14:40.238529100+00:00] read ACL run completed
+[2026-09-11 18:14:40.489 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:14:40.489 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:14:40.558 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:14:46.573 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$s=Get-Con
+[2026-09-11 18:14:46.872 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:14:46.912110100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:14:46.912 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:14:46.938882200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:14:46.956746800+00:00] read ACL run completed
+[2026-09-11 18:14:47.207 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:14:47.208 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:14:47.268 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:14:56.482 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n 'loc
+[2026-09-11 18:14:56.779 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:14:56.818579300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:14:56.818 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:14:56.845173400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:14:56.863952600+00:00] read ACL run completed
+[2026-09-11 18:14:57.119 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:14:57.120 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:14:57.181 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:02.070 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n 'Giv
+[2026-09-11 18:15:02.360 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:15:02.400141900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:15:02.400 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:15:02.428141200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:15:02.445611400+00:00] read ACL run completed
+[2026-09-11 18:15:02.691 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:02.691 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:02.752 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:16.285 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Copy-Item 
+[2026-09-11 18:15:16.582 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:15:16.623057400+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:15:16.623 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:15:16.654929100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:15:16.672716100+00:00] read ACL run completed
+[2026-09-11 18:15:16.922 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:16.922 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:16.982 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:18.022 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:15:18.344 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:15:18.392817900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:15:18.392 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:15:18.422586800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:15:18.442310600+00:00] read ACL run completed
+[2026-09-11 18:15:18.722 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:18.723 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:18.723 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:18.782 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:18.934 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:15:19.233 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:15:19.279536300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:15:19.279 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:15:19.307311700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:15:19.324739200+00:00] read ACL run completed
+[2026-09-11 18:15:19.593 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:19.594 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:19.594 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:19.654 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:19.800 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:15:20.097 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:15:20.141737600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:15:20.141 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:15:20.169333300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:15:20.186727100+00:00] read ACL run completed
+[2026-09-11 18:15:20.438 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:20.439 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:20.439 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:20.500 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:20.649 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:15:20.943 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:15:20.988775+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:15:20.988 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:15:21.016118600+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:15:21.034056600+00:00] read ACL run completed
+[2026-09-11 18:15:21.279 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:21.280 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:21.281 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:21.341 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:21.463 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+@'
+from pa
+[2026-09-11 18:15:21.761 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c, payload_len=4964)
+[2026-09-11T17:15:21.799919600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:15:21.799 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:15:21.829228700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:15:21.846815800+00:00] read ACL run completed
+[2026-09-11 18:15:22.112 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:22.113 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:22.176 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:58.069 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:15:58.390 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:15:58.438887100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:15:58.438 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:15:58.469914600+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:15:58.489592400+00:00] read ACL run completed
+[2026-09-11 18:15:58.764 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:58.765 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:58.765 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:58.829 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:58.992 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:15:59.308 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:15:59.354735+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:15:59.354 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:15:59.382068800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:15:59.399124300+00:00] read ACL run completed
+[2026-09-11 18:15:59.655 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:59.656 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:59.657 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:15:59.716 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:15:59.863 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:00.174 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:00.220378300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:00.220 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:00.249072800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:00.267082900+00:00] read ACL run completed
+[2026-09-11 18:16:00.526 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:00.527 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:00.527 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:00.586 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:00.736 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:01.031 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:01.075417200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:01.075 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:01.104414300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:01.122315800+00:00] read ACL run completed
+[2026-09-11 18:16:01.377 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:01.378 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:01.378 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:01.437 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:01.582 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:01.878 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:01.923250600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:01.923 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:01.951164400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:01.969286100+00:00] read ACL run completed
+[2026-09-11 18:16:02.217 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:02.218 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:02.219 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:02.279 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:02.425 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:02.720 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:02.764749100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:02.764 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:02.791441600+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:02.809328100+00:00] read ACL run completed
+[2026-09-11 18:16:03.060 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:03.061 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:03.062 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:03.122 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:03.274 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:03.572 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:03.618334300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:03.618 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:03.650903100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:03.668404500+00:00] read ACL run completed
+[2026-09-11 18:16:03.905 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:03.906 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:03.906 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:03.968 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:04.123 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:04.430 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:04.474914300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:04.474 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:04.503280+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:04.521130500+00:00] read ACL run completed
+[2026-09-11 18:16:04.776 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:04.777 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:04.778 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:04.841 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:04.984 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:05.285 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:05.331919300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:05.331 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:05.362051200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:05.379481100+00:00] read ACL run completed
+[2026-09-11 18:16:05.625 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:05.626 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:05.626 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:05.687 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:05.830 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:06.123 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:06.170190600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:06.170 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:06.200593900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:06.219379100+00:00] read ACL run completed
+[2026-09-11 18:16:06.478 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:06.479 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:06.480 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:06.539 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:06.685 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:06.980 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:07.024354200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:07.024 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:07.051678600+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:07.069814200+00:00] read ACL run completed
+[2026-09-11 18:16:07.327 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:07.328 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:07.329 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:07.390 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:07.534 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:07.830 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:07.875529300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:07.875 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:07.902002400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:07.919464200+00:00] read ACL run completed
+[2026-09-11 18:16:08.164 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:08.165 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:08.165 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:08.226 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:08.376 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:08.674 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:08.719673300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:08.719 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:08.747304100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:08.765210900+00:00] read ACL run completed
+[2026-09-11 18:16:09.022 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:09.023 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:09.024 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:09.087 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:09.243 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:09.563 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:09.609561700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:09.609 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:09.636811800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:09.654250800+00:00] read ACL run completed
+[2026-09-11 18:16:09.910 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:09.911 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:09.912 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:09.972 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 18:16:10.125 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 18:16:10.448 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T17:16:10.494409500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 18:16:10.494 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T17:16:10.522932500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T17:16:10.543481200+00:00] read ACL run completed
+[2026-09-11 18:16:10.799 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:10.800 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\8e5b6932251c2c1c\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:10.800 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.153.4.exe
+[2026-09-11 18:16:10.861 codex-command-runner-0.153.4.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:05:54.206 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$s=Get-Con
+[2026-09-11 22:05:54.505 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:05:55.192871500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:05:55.192 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:05:55.221109200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:05:55.238585800+00:00] read ACL run completed
+[2026-09-11 22:05:55.470 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:05:55.488 codex.exe] helper copy: recopied command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:05:55.489 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:05:56.335 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:06:07.952 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:06:08.257 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:06:08.320126800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:06:08.320 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:06:08.355457300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:06:08.373687300+00:00] read ACL run completed
+[2026-09-11 22:06:08.623 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:08.624 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:08.625 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:08.681 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:06:09.600 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:06:09.881 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:06:09.937975700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:06:09.938 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:06:09.968621100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:06:09.988521400+00:00] read ACL run completed
+[2026-09-11 22:06:10.214 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:10.215 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:10.216 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:10.268 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:06:10.424 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:06:10.710 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:06:10.769729500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:06:10.769 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:06:10.802315200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:06:10.820141300+00:00] read ACL run completed
+[2026-09-11 22:06:11.051 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:11.051 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:11.052 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:11.104 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:06:11.265 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:06:11.542 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:06:11.601332700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:06:11.601 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:06:11.635203300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:06:11.654301+00:00] read ACL run completed
+[2026-09-11 22:06:11.901 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:11.902 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:11.902 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:11.955 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:06:38.059 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:06:38.344 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:06:38.400265300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:06:38.400 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:06:38.430765300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:06:38.448819900+00:00] read ACL run completed
+[2026-09-11 22:06:38.677 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:38.678 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:38.678 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:38.733 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:06:38.892 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:06:39.187 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:06:39.233395500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:06:39.233 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:06:39.264171+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:06:39.282154300+00:00] read ACL run completed
+[2026-09-11 22:06:39.512 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:39.513 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:39.513 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:39.559 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:06:39.702 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:06:39.975 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:06:40.023398200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:06:40.023 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:06:40.055894400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:06:40.076713100+00:00] read ACL run completed
+[2026-09-11 22:06:40.327 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:40.328 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:40.328 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:40.371 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:06:40.518 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:06:40.794 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:06:40.839525700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:06:40.839 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:06:40.868798400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:06:40.885597500+00:00] read ACL run completed
+[2026-09-11 22:06:41.107 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:41.108 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:41.108 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:41.151 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:06:41.379 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n 'fra
+[2026-09-11 22:06:41.653 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:06:41.693898600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:06:41.693 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:06:41.722627500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:06:41.741317200+00:00] read ACL run completed
+[2026-09-11 22:06:41.958 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:41.958 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:06:42.000 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:11:35.735 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg --files
+[2026-09-11 22:11:36.010 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:11:36.053792500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:11:36.053 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:11:36.089149900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:11:36.106209800+00:00] read ACL run completed
+[2026-09-11 22:11:36.335 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:11:36.336 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:11:36.396 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:11:53.088 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$s=Get-Con
+[2026-09-11 22:11:53.369 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:11:53.421186800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:11:53.421 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:11:53.454236500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:11:53.471882100+00:00] read ACL run completed
+[2026-09-11 22:11:53.697 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:11:53.698 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:11:53.750 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:11:54.360 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Locati
+[2026-09-11 22:11:54.648 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:11:54.690372200+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:11:54.690 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:11:54.720924500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:11:54.743272300+00:00] read ACL run completed
+[2026-09-11 22:11:54.984 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:11:54.985 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:11:55.026 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:11:56.991 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:11:57.271 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:11:57.310206800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:11:57.310 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:11:57.340468500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:11:57.360144200+00:00] read ACL run completed
+[2026-09-11 22:11:57.581 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:11:57.582 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:11:57.624 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:11:59.529 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg --files
+[2026-09-11 22:11:59.805 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:11:59.846312300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:11:59.846 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:11:59.874377300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:11:59.893838700+00:00] read ACL run completed
+[2026-09-11 22:12:00.119 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:00.120 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:00.166 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:03.656 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n "loc
+[2026-09-11 22:12:03.929 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:03.969803+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:03.969 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:03.997976+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:04.015511900+00:00] read ACL run completed
+[2026-09-11 22:12:04.259 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:04.260 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:04.303 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:05.478 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:05.763 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:05.804418700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:05.804 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:05.843114400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:05.861966200+00:00] read ACL run completed
+[2026-09-11 22:12:06.082 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:06.082 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:06.128 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:09.320 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:09.614 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg --files
+[2026-09-11 22:12:09.625 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:09.670022500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:09.670 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:09.705714200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:09.724668700+00:00] read ACL run completed
+[2026-09-11 22:12:09.937 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11 22:12:09.979 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:09.980 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11T21:12:09.984494700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:09.984 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:10.017317700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11 22:12:10.025 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11T21:12:10.037872200+00:00] read ACL run completed
+[2026-09-11 22:12:10.278 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:10.279 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:10.324 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:15.444 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:15.445 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg --files
+[2026-09-11 22:12:15.446 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:15.815 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:15.859944600+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:15.860 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:15.905191100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:15.926047900+00:00] read ACL run completed
+[2026-09-11 22:12:16.203 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:16.203 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:16.203 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:16.204 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:16.206 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:16.207 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:16.250 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:16.279 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:16.310 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:19.424 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$s=Get-Con
+[2026-09-11 22:12:19.730 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:19.773547300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:19.773 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:19.806265800+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:19.826995700+00:00] read ACL run completed
+[2026-09-11 22:12:20.066 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:20.067 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:20.111 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:21.304 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n -i "
+[2026-09-11 22:12:21.619 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:21.663481800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:21.663 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:21.695274100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:21.715712300+00:00] read ACL run completed
+[2026-09-11 22:12:21.814 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:21.815 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n 'loc
+[2026-09-11 22:12:21.815 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:22.013 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:22.014 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:22.060 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:22.178 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:22.219472300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:22.219 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:22.251699900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:22.270951100+00:00] read ACL run completed
+[2026-09-11 22:12:22.559 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:22.560 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:22.561 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:22.561 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:22.562 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:22.563 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:22.603 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:22.635 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:22.662 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:25.296 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:25.577 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:25.617489800+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:25.617 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:25.649404700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:25.669006+00:00] read ACL run completed
+[2026-09-11 22:12:25.896 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:25.896 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:25.938 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:28.443 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:28.719 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:28.759198300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:28.759 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:28.789709400+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:28.807134900+00:00] read ACL run completed
+[2026-09-11 22:12:29.033 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:29.034 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:29.076 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:33.791 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:33.792 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:33.791 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:34.117 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:34.158172500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:34.158 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:34.187900300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:34.206364+00:00] read ACL run completed
+[2026-09-11 22:12:34.479 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:34.480 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:34.483 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:34.483 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:34.484 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:34.484 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:34.523 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:34.549 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:34.577 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:35.040 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:35.369 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:35.410670400+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:35.410 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:35.444671300+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:35.462732200+00:00] read ACL run completed
+[2026-09-11 22:12:35.751 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:35.751 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:35.796 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:43.617 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n 'ene
+[2026-09-11 22:12:43.919 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:43.964307+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:43.964 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:43.999829+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:44.017347+00:00] read ACL run completed
+[2026-09-11 22:12:44.261 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:44.262 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:44.307 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:49.635 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:49.875 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:49.923 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:49.967836500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:49.967 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:49.999638900+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:50.018310900+00:00] read ACL run completed
+[2026-09-11 22:12:50.201 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:50.244813700+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:50.244 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:50.273878+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11 22:12:50.286 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:50.287 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11T21:12:50.291304500+00:00] read ACL run completed
+[2026-09-11 22:12:50.331 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:50.542 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:50.543 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:50.587 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:51.098 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:51.424 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:51.465146900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:51.465 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:51.495243100+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:51.513944600+00:00] read ACL run completed
+[2026-09-11 22:12:51.754 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:51.755 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:51.797 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:53.086 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:12:53.414 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:12:53.463730300+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:53.463 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:53.497102+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:53.515946900+00:00] read ACL run completed
+[2026-09-11 22:12:53.747 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:53.748 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:53.749 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:53.794 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:53.951 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:12:54.244 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:12:54.292902900+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:54.292 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:54.327044500+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:54.346125400+00:00] read ACL run completed
+[2026-09-11 22:12:54.596 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:54.597 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:54.597 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:54.642 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:54.797 codex.exe] START: C:\Users\Shar\.codex\.sandbox-bin\codex.exe --codex-run-as-fs-helper
+[2026-09-11 22:12:55.076 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\Documents\My Games\Spring\games\taaitest.sdd, payload_len=4964)
+[2026-09-11T21:12:55.125809400+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:55.125 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:55.159039200+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:55.177981800+00:00] read ACL run completed
+[2026-09-11 22:12:55.410 codex.exe] helper copy: validating command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:55.411 codex.exe] helper copy: reused command-runner source=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-command-runner.exe destination=C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:55.412 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:55.457 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:12:58.453 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Get-Conten
+[2026-09-11 22:12:58.726 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:12:58.766380100+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:12:58.766 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:12:58.794132+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:12:58.811423600+00:00] read ACL run completed
+[2026-09-11 22:12:59.042 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:59.042 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:12:59.086 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
+[2026-09-11 22:13:01.356 codex.exe] START: C:\Users\Shar\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+rg -n 'Cat
+[2026-09-11 22:13:01.633 codex.exe] setup refresh: spawning C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex-windows-sandbox-setup.exe (cwd=C:\Users\Shar\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421, payload_len=4964)
+[2026-09-11T21:13:01.671813500+00:00] setup refresh: processed 3 write roots (read roots delegated); errors=[]
+[2026-09-11 22:13:01.671 codex-windows-sandbox-setup.exe] setup binary completed
+[2026-09-11T21:13:01.698897700+00:00] read-acl-only mode: applying read ACLs
+[2026-09-11T21:13:01.715526+00:00] read ACL run completed
+[2026-09-11 22:13:01.930 codex.exe] helper copy: using in-memory cache for command-runner -> C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:13:01.931 codex.exe] helper launch resolution: using copied command-runner path C:\Users\Shar\.codex\.sandbox-bin\codex-command-runner-0.154.0-alpha.6.2.exe
+[2026-09-11 22:13:01.972 codex-command-runner-0.154.0-alpha.6.2.exe] hide users: failed to hide current user profile dir (C:\Users\Default): SetFileAttributesW failed for C:\Users\Default: 5 (Access is denied.)
