@@ -105,7 +105,7 @@ return {
 			[24] = "tllsy",
 			[25] = "tllusy",
 			[26] = "tllasonar",
-			[27] = "tlltrid",
+			[27] = "tll_fobliterator1",
 			[28] = "tllatorp",
 			[29] = "tllfflak",
 		},

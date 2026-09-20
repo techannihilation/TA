@@ -86,7 +86,7 @@ return {
 			[27] = "tllatorp",
 			[28] = "tlldcsta",
 			[29] = "tllkrak",
-			[30] = "tlltrid",
+			[30] = "tll_fobliterator1",
 			[31] = "tllnssam",
 			[32] = "tllfflak",
 			[33] = "tllfhmt",

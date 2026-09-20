@@ -68,7 +68,7 @@ return {
 			[8] = "tllfmine3",
 			[9] = "tllatorp",
 			[10] = "tllkrak",
-			[11] = "tlltrid",
+			[11] = "tll_fobliterator1",
 			[12] = "tllnssam",
 			[13] = "tllfflak",
 			[14] = "tllfhmt",

@@ -37,7 +37,7 @@ return {
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		movementclass = "HDBOAT8",
-		name = "DesMINOR",
+		name = "Desintegrator",
 		noautofire = false,
 		objectname = "tll/tllcaps.s3o",
 		radardistance = 2000,

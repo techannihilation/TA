@@ -162,10 +162,6 @@ local unitCollisionVolume = {					--dynamic collision volume definitions
 		on={60,28,60,0,2,0,1,1,1,0,0,0},
 		off={60,28,60,0,-39,0,1,1,1,0,-39,0},
 	},
-	[UnitDefNames["tlltrid"].id] = {
-		on={60,44,60,0,2,0,1,1,1,0,0,0},
-		off={60,44,60,0,-44,0,1,1,1,0,-44,0},
-	},
 	[UnitDefNames["tllsy"].id] = {
 		on={122,40,116,0,-3,2,2,1,0,0,24,0},
 		off={122,60,116,-11,7,2,2,1,0,0,24,0},
