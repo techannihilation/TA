@@ -142,7 +142,6 @@ return {
 					default = 2400,
 					subs = 5,
 				},
-				tracks = false,
 			},
 			armflak_gun = {
 				accuracy = 1000,
@@ -178,7 +177,6 @@ return {
 					default = 5,
 					air = 500,
 				},
-				tracks = false,
 			},
 		},
 		weapons = {

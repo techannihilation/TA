@@ -49,7 +49,7 @@ return {
 		sightdistance = 1250,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 0.6,
-		turnrate = 120,
+		turnrate = 100,
 		unitname = "core_core",
 		unitrestricted = 1,
 		customparams = {

@@ -713,12 +713,6 @@ local morphDefs = {
 		time = 120,
 		xp = 0.10,
 	},
-	arm_broadside = {
-		into = 'armarch',
-		tech = 4,
-		time = 120,
-		xp = 0.10,
-	},
 	gok_octopus = {
 		into = 'gok_squid',
 		tech = 4,
