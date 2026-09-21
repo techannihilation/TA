@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 2859000,
 		builder = false,
 		buildpic = "armarch.dds",
-		buildtime = 17500000,
+		buildtime = 22500000,
 		canattack = true,
 		canfly = true,
 		canguard = true,
@@ -49,6 +49,7 @@ return {
 		turninplacespeedlimit = 0.6,
 		turnrate = 90,
 		unitname = "armarch",
+		unitrestricted = 1,
 		customparams = {
 			buildpic = "armarch.dds",
 			faction = "ARM",
@@ -216,7 +217,6 @@ return {
 				weapontimer = 2.5,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 550,
-				unitrestricted = 1,
 				damage = {
 					default = 5000,
 					subs = 5,

@@ -725,12 +725,6 @@ local morphDefs = {
 		time = 120,
 		xp = 0.20,
 	},
-	tllcolossus = {
-		into = 'tll_tyranosaurus',
-		tech = 4,
-		time = 120,
-		xp = 0.10,
-	},
 	talon_boxer = {
 		into = 'talon_cerberus',
 		tech = 4,

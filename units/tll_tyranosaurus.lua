@@ -30,7 +30,7 @@ return {
 		losemitheight = 145,
 		maneuverleashlength = 640,
 		mass = 1085425,
-		maxdamage = 2485400,
+		maxdamage = 2500000,
 		maxslope = 12,
 		maxvelocity = 0.8,
 		maxwaterdepth = 255,
@@ -51,6 +51,7 @@ return {
 		turninplacespeedlimit = 0.66,
 		turnrate = 125,
 		unitname = "tll_tyranosaurus",
+		unitrestricted = 2,
 		customparams = {
 			buildpic = "tll_tyranosaurus.dds",
 			faction = "TLL",

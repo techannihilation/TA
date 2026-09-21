@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 3250000,
 		builder = false,
 		buildpic = "core_core.dds",
-		buildtime = 27200000,
+		buildtime = 25000000,
 		canattack = true,
 		canfly = true,
 		canguard = true,
