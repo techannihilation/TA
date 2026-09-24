@@ -725,12 +725,6 @@ local morphDefs = {
 		time = 120,
 		xp = 0.20,
 	},
-	talon_boxer = {
-		into = 'talon_cerberus',
-		tech = 4,
-		time = 120,
-		xp = 0.10,
-	},
 	rumad_mcv1 = {
 		into = 'rumad_mcv2',
 		tech = 4,

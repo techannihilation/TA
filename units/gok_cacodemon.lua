@@ -2,7 +2,7 @@ return {
 	gok_cacodemon = {
 		acceleration = 0.0287,
 		brakerate = 0.09,
-		buildcostenergy = 16441,
+		buildcostenergy = 16000,
 		buildcostmetal = 935,
 		builder = false,
 		buildpic = "gok_cacodemon.dds",

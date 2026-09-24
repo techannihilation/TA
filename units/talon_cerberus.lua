@@ -31,7 +31,7 @@ return {
 		losemitheight = 145,
 		maneuverleashlength = 640,
 		mass = 785425,
-		maxdamage = 2305100,
+		maxdamage = 2305000,
 		maxslope = 12,
 		maxvelocity = 1.25,
 		maxwaterdepth = 255,
@@ -52,6 +52,7 @@ return {
 		turninplacespeedlimit = 0.66,
 		turnrate = 155,
 		unitname = "talon_cerberus",
+		unitrestricted = 3,
 		customparams = {
 			buildpic = "talon_cerberus.dds",
 			faction = "TLL",
