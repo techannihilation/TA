@@ -132,7 +132,7 @@ return {
 				laserflaresize = 12,
 				name = "BeamLaser",
 				noselfdamage = true,
-				range = 230,
+				range = 350,
 				reloadtime = 0.5,
 				rgbcolor = "0.78 0.08 0.52",
 				soundhitdry = "",
@@ -149,7 +149,6 @@ return {
 					default = 20,
 					subs = 5,
 				},
-				tracks = false,
 			},
 		},
 		weapons = {
