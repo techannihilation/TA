@@ -2,8 +2,8 @@ return {
 	corabsolutor = {
 		acceleration = 0.15,
 		brakerate = 0.4,
-		buildcostenergy = 45021,
-		buildcostmetal = 2582,
+		buildcostenergy = 45000,
+		buildcostmetal = 2580,
 		builder = false,
 		buildpic = "corabsolutor.dds",
 		buildtime = 35000,

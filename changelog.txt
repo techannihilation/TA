@@ -1,5 +1,5 @@
  4.99 => 5.00
-2026-24-09
+2026-04-10
 
 Improvment :
 * Add Terraphorming
@@ -14,6 +14,8 @@ Improvment :
 
 Balance :
 * Air Gunship damage / 10 vs Commander
+* Gok Rocket T1 Turret / T2 Blackcoconut : reduce damage by 25%.
+* Tesla Tank TLL T3 : Reduce cost (5K=>3.7K), speed (1.7=>1.5), damage /s (700=>500) and range (800=>700)
 
 4.98 => 4.99
 2026-01-28

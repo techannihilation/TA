@@ -1,11 +1,11 @@
 return {
 	gok_blackpollen = {
 		buildangle = 32700,
-		buildcostenergy = 20852,
-		buildcostmetal = 1546,
+		buildcostenergy = 25000,
+		buildcostmetal = 1550,
 		builder = false,
 		buildpic = "gok_blackpollen.dds",
-		buildtime = 15000,
+		buildtime = 25000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
