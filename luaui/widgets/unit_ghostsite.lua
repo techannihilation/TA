@@ -163,7 +163,7 @@ function DrawGhostFeatures()
 		local _, b, _ = spGetPositionLosState(x, y, z)
 		local losState = b
 	
-		if ( losState == false ) then
+		if ( losState == false ) and Spring.GetFeatureRulesParam(unitID, "map_los_only") ~= 1 then
 			--glow effect?
 			--gl.Blending(GL.SRC_ALPHA, GL.ONE)
 			    
@@ -248,7 +248,8 @@ function ScanFeatures()
 	for _, fID in ipairs(features) do
 		local fDefId = spGetFeatureDefID(fID)
 		
-		if not ignoreFeature[fDefId] then
+		-- Do not remember generator wrecks with a map-specific LOS restriction.
+		if not ignoreFeature[fDefId] and Spring.GetFeatureRulesParam(fID, "map_los_only") ~= 1 then
 		
 			local fAllyID = spGetFeatureAllyTeam(fID)
 			local fTeamID = spGetFeatureTeam( fID )
