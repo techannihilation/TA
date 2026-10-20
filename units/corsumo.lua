@@ -2,7 +2,7 @@ return {
 	corsumo = {
 		acceleration = 0.048,
 		brakerate = 0.375,
-		buildcostenergy = 33034,
+		buildcostenergy = 33000,
 		buildcostmetal = 2305,
 		builder = false,
 		buildpic = "corsumo.dds",
@@ -158,7 +158,6 @@ return {
 					default = 275,
 					subs = 5,
 				},
-				tracks = false,
 			},
 		},
 		weapons = {

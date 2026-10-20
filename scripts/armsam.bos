@@ -73,8 +73,8 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <250.060440>;
-	turn launcher to x-axis <0.000000> - pitch speed <150.027473>;
+	turn turret to y-axis heading speed <300.0>;
+	turn launcher to x-axis <0.000000> - pitch speed <150.0>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn launcher around x-axis;
 	start-script RestoreAfterDelay();
@@ -137,16 +137,6 @@ Killed(severity, corpsetype)
 		explode flare2 type NOHEATCLOUD | FALL;
 		explode launcher type NOHEATCLOUD | SHATTER;
 		explode turret type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode flare1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flare2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode launcher type NOHEATCLOUD | SHATTER;
-		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;

@@ -308,12 +308,9 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	move gun to z-axis [-1.500000] speed [25.000000];
-	show firept;
-	wait-for-move gun along z-axis;
-	move gun to z-axis [0.000000] speed [1.000000];
-	sleep 15;
-	hide firept;
+
+	sleep 150;
+
 }
 
 Killed(severity, corpsetype)

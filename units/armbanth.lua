@@ -158,7 +158,6 @@ return {
 				tracks = false,
 			},
 			rave_missile = {
-				acceleration = 0.3,
 				areaofeffect = 96,
 				avoidfeature = false,
 				cegtag = "Arm_titan_trail",
@@ -190,7 +189,6 @@ return {
 				tracks = false,
 				turnrate = 35000,
 				weaponacceleration = 150,
-				weapontimer = 0.6,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 2100,
 				damage = {

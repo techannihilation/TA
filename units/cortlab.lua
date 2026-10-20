@@ -55,9 +55,10 @@ return {
 			[6] = "coraapod",
 			[7] = "coreverifier",
 			[8] = "corshieldgen",
-			[9] = "core_riptide",
-			[10] = "corhaboob",
-			[11] = "corejudgement",
+			[9] = "cormonsta",
+			[10] = "core_riptide",
+			[11] = "corhaboob",
+			[12] = "corejudgement",
 		},
 		customparams = {
 			buildpic = "cortlab.dds",

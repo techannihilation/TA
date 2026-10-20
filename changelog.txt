@@ -11,8 +11,7 @@ Improvment :
 * T6 TLL unit can be constructed by T5 constructor. Unit restricted at 2
 * Add new constructor vehicle engineer gok model
 * Add new model for TLL naval Obliterator
-* Delete Defiler T2 Core from Tortoise Lab
-* Repair model : Corbt, Corspun
+* Repair model : Corbt, Corspun, tllloki
 
 Balance :
 * Air Gunship damage / 10 vs Commander
