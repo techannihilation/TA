@@ -1,4 +1,18 @@
- 4.99 => 5.00
+ 5.00 => 5.01
+2026-18-10
+
+Improvment :
+* Rework Defiler
+
+Balance :
+* Corcan : Decrease damage and increase range
+* Defiler : Delete Plasma Gun by Beam. Increase damage. Increase cost. Decrease AA damge. Decrease Speed.
+
+Fix :
+* Repair model : Corbt, Corspun, tllloki
+* Repair All Depthcharge Launcher
+
+4.99 => 5.00
 2026-18-10
 
 Improvment :
@@ -11,7 +25,6 @@ Improvment :
 * T6 TLL unit can be constructed by T5 constructor. Unit restricted at 2
 * Add new constructor vehicle engineer gok model
 * Add new model for TLL naval Obliterator
-* Repair model : Corbt, Corspun, tllloki
 
 Balance :
 * Air Gunship damage / 10 vs Commander
