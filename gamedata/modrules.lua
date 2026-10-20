@@ -80,11 +80,11 @@ local modrules = {
     unitQuadPositionUpdateRate = 15;  -- default: 3, max 15
                                       -- affects collision accuracy (incl. with projectiles).
                                       -- rate in sim frames that a unit's position in the quad grid is updated
-                                      -- a lower number will increase CPU load, but increase accuracy of collision detection                    
+                                      -- a lower number will increase CPU load, but increase accuracy of collision detection
 
     groundUnitCollisionAvoidanceUpdateRate = 15;  -- default: 3,  max 15
-                                                  -- for controlling steering performance vs quality tradeoff load. 
-                                                  -- Reduce to get better quality at the cost of perf. 
+                                                  -- for controlling steering performance vs quality tradeoff load.
+                                                  -- Reduce to get better quality at the cost of perf.
                                                   -- Default value is 3 for cycling through all units over 3 sim frames.
   },
 
@@ -100,7 +100,7 @@ local modrules = {
     smoothMeshSmoothRadius = 40;  -- default: 40 -- Radius in heightmap squares to use the smooth the mesh gradients. Increasing value increases the area that a given point uses to find the local heighest point, and the distance of the slope. Default is 40.
 
     pathFinderSystem = 1, -- Which pathfinder does the game use? Can be 0 - The legacy default pathfinder, 1 - Quad-Tree Pathfinder System (QTPFS) or -1 - disabled.
-    pathFinderRawDistMult = 100000,   -- default: 1.25    Engine does raw move with a limited distance, this multiplier adjusts that  
+    pathFinderRawDistMult = 100000,   -- default: 1.25    Engine does raw move with a limited distance, this multiplier adjusts that
     pfRepathDelayInFrames = 90,       -- default: 60      How many frames at least must pass between checks for whether a unit is making enough progress to its current waypoint or whether a new path should be requested
     pfRepathMaxRateInFrames = 150,    -- default: 150     Controls the minimum amount of frames that must pass before a unit is allowed to request a new path. Mostly for rate limiting and prevent excessive CPU wastage
     pfUpdateRateScale = 1,            -- default: 1       Multiplier for the update rate
@@ -125,9 +125,9 @@ local modrules = {
 
   experience = {
     experienceMult = expEnabled * 1.0, -- defaults to 1.0
-    powerScale = 1.0, -- defaults to 1.0
-    healthScale = 0.85, -- defaults to 0.7
-    reloadScale = 2.75, -- defaults to 0.4
+    powerScale = 0, -- defaults to 1.0
+    healthScale = 0, -- defaults to 0.7
+    reloadScale = 0, -- defaults to 0.4
   },
 
   damage = {
