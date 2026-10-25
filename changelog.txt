@@ -1,6 +1,10 @@
  5.00 => 5.01
 2026-18-10
 
+Halloween event :
+* Added temporary Halloween skins for all Commanders T1
+* Added Pumpkin at Start
+
 Improvment :
 * Rework Defiler
 
