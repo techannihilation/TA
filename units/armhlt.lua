@@ -183,7 +183,6 @@ return {
 					subs = 5,
 				},
 			},
-
 		},
 		weapons = {
 			{

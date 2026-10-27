@@ -27,7 +27,7 @@ return {
 		maxdamage = 237000,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "rumad_utur",
+		name = "Pharaon",
 		noautofire = false,
 		objectname = "rumad/rumad_utur.s3o",
 		radardistance = 0,
