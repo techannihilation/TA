@@ -3,7 +3,7 @@ return {
 		acceleration = 0.1,
 		blocking = false,
 		brakerate = 0.5,
-		buildcostenergy = 150000,
+		buildcostenergy = 100000,
 		buildcostmetal = 2000,
 		buildpic = "halloween.dds",
 		buildtime = 500000,

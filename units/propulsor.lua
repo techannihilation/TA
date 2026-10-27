@@ -103,7 +103,7 @@ return {
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
 				explosiongenerator = "custom:SMALL_RED_BURN",
-				impulsefactor = 120,
+				impulsefactor = 60,
 				name = "Propel",
 				noselfdamage = true,
 				range = 500,
