@@ -36,7 +36,7 @@ return {
 		name = "Pumpkin",
 		noautofire = false,
 		objectname = "events/halloween2",
-		script = "halloween.cob",
+		script = "halloween1.cob",
 		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 0,
@@ -48,7 +48,7 @@ return {
 		turninplacespeedlimit = 5,
 		turnrate = 750,
 		unitname = "halloween2",
-		unitrestricted = 1,
+		unitrestricted = 2,
 		upright = true,
 		customparams = {
 			buildpic = "halloween.dds",

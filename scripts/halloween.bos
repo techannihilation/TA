@@ -13,6 +13,22 @@ Create()
 
 }
 
+
+StartBuilding()
+{
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = base;
+}
+
 SweetSpot(piecenum)
 {
 	piecenum = base;
