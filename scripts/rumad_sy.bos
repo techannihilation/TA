@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, building1, system1, lathe1, spray1, system2, lathe2, spray2, shield1, shield2,
-       decor1, decor2, decor3, decor4, decor5, decor6, buildpad, arrow, pillar1, pillar2, pillar3, building2;
+       decor1, decor2, decor3, decor4, decor5, decor6, buildpad, pillar1, pillar2, pillar3, building2;
 
 static-var  DesiredState, StateChanging, Spray;
 

@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, beam, plate, arm, nano, door1, door2, wake1, turret, turretbase, spray1, spray2;
+piece  base, hull, door1, door2, wake1, turret, turretbase, spray1, spray2;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
 
