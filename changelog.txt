@@ -1,10 +1,11 @@
  5.00 => 5.01
-2026-03-11
+2026-08-11
 
 End Hallowwen
 
 Improvment :
 * Rework Defiler
+* Add T1 Sea Structures for Rumad (Sea ship and hover in construction)
 
 Balance :
 * Corcan : Decrease damage and increase range

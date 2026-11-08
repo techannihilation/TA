@@ -49,7 +49,7 @@ local CONVERT_TABLE = {
 [14] = {[UnitDefNames["armllt"].id] = "ARM", 		[UnitDefNames["corllt"].id] = "CORE",		[UnitDefNames["tllllt"].id] = "TLL", 		[UnitDefNames["talon_llt"].id] = "TALON", 			[UnitDefNames["gok_llt"].id] = "GOK",		[UnitDefNames["rumad_llt"].id] = "RUMAD", 			},
 [15] = {[UnitDefNames["armdl"].id] = "ARM", 		[UnitDefNames["cordl"].id] = "CORE", 		[UnitDefNames["tllshoretorp"].id] = "TLL",  																								--[[ [UnitDefNames["rumad_dl"].id] = "RUMAD", ]]	},
 [16] = {[UnitDefNames["armrl"].id] = "ARM", 		[UnitDefNames["corrl"].id] = "CORE",		[UnitDefNames["tlllmt"].id] = "TLL",  		[UnitDefNames["talon_rl"].id] = "TALON", 			[UnitDefNames["gok_rl"].id] = "GOK",		[UnitDefNames["rumad_rl"].id] = "RUMAD", 			},
-[17] = {[UnitDefNames["armtide"].id] = "ARM", 		[UnitDefNames["cortide"].id] = "CORE",		[UnitDefNames["tlltide"].id] = "TLL", 		[UnitDefNames["talon_tide"].id] = "TALON", 			[UnitDefNames["gok_tide"].id] = "GOK",		--[[ [UnitDefNames["rumad_tide"].id] = "RUMAD", ]]	},
+[17] = {[UnitDefNames["armtide"].id] = "ARM", 		[UnitDefNames["cortide"].id] = "CORE",		[UnitDefNames["tlltide"].id] = "TLL", 		[UnitDefNames["talon_tide"].id] = "TALON", 			[UnitDefNames["gok_tide"].id] = "GOK",		[UnitDefNames["rumad_tide"].id] = "RUMAD", },
 [18] = {[UnitDefNames["armfmkr"].id] = "ARM", 		[UnitDefNames["corfmkr"].id] = "CORE", 		[UnitDefNames["tllwmconv"].id] = "TLL",		[UnitDefNames["talon_fmkr"].id] = "TALON", 			[UnitDefNames["gok_fmkr"].id] = "GOK",		--[[ [UnitDefNames["rumad_fmkr"].id] = "RUMAD", ]] 	},
 [19] = {[UnitDefNames["armsy"].id] = "ARM", 		[UnitDefNames["corsy"].id] = "CORE", 		[UnitDefNames["tllsy"].id] = "TLL", 		[UnitDefNames["talon_sy"].id] = "TALON", 			[UnitDefNames["gok_sy"].id] = "GOK",		--[[ [UnitDefNames["rumad_sy"].id] = "RUMAD", ]] 	},
 [20] = {[UnitDefNames["armsonar"].id] = "ARM", 		[UnitDefNames["corsonar"].id] = "CORE", 	[UnitDefNames["tllsonar"].id] = "TLL", 		[UnitDefNames["talon_sonar"].id] = "TALON", 		[UnitDefNames["gok_sonar"].id] = "GOK",		--[[ [UnitDefNames["rumad_sonar"].id] = "RUMAD", ]] },
@@ -151,7 +151,7 @@ end
 ------------------------------------------------------------
 local sDefID -- Starting unit def ID
 local sDef -- UnitDefs[sDefID]
-local selDefID = nil 
+local selDefID = nil
 local buildQueue = {}
 local buildNameToID = {}
 local gameStarted = false
@@ -370,7 +370,7 @@ function widget:Initialize()
 	end
 
 	-- Don"t run if start positions are random
-	-- Don"t run if game has already started -- Don"t run if i"m a newbie -- Don"t run if we are a spec 
+	-- Don"t run if game has already started -- Don"t run if i"m a newbie -- Don"t run if we are a spec
 	if (Game.startPosType == 1) or (Spring.GetGameFrame() > 0) or amNewbie or (Spring.GetSpectatingState()) then
 		widgetHandler:RemoveWidget(self)
 

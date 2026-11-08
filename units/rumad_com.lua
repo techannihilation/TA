@@ -86,6 +86,14 @@ return {
 			[13] = "rumad_drag",
 			[14] = "rumad_llt",
 			[15] = "rumad_rl",
+			[17] = "rumad_tide",
+			--[18] = "rumad_fmkr",
+			--[19] = "rumad_sy",
+			[20] = "rumad_frad",
+			[21] = "rumad_fdrag",
+			[22] = "rumad_tl",
+			[23] = "rumad_fllt",
+			[24] = "rumad_frl",
 		},
 		customparams = {
 			buildpic = "rumad_com.dds",
@@ -163,7 +171,7 @@ return {
 			canceldestruct = "cancel2",
 			repair = "repair1",
 			underattack = "warning2",
-			unitcomplete = "kcarmmov",
+			unitcomplete = "kcrumadmov",
 			working = "reclaim1",
 			cant = {
 				[1] = "cantdo4",

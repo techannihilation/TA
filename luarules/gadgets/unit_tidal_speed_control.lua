@@ -33,6 +33,7 @@ local tidalDefs = {
     [UnitDefNames['talon_tide1'].id ] = true,
     [UnitDefNames['gok_tide'].id ] = true,
     [UnitDefNames['gok_tide1'].id ] = true,
+    [UnitDefNames['rumad_tide'].id ] = true,
 }
 
 -------------------------------------------------------------------------------------
