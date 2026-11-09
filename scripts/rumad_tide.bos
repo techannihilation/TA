@@ -42,12 +42,14 @@ TidalSpeed(Func_Var_1)
 
 Go()
 {
-	spin wheel around z-axis speed tidal_Spd * <1.5>;
+	dont-cache wheel;
+	spin wheel around x-axis speed tidal_Spd * <1.000000>;
 }
 
 Stop()
 {
-	spin wheel around z-axis speed <0.000000>;
+	spin wheel around x-axis speed <0.000000>;
+	cache wheel;
 }
 
 InitState()
@@ -84,6 +86,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
+	dont-shade wheel;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -117,6 +120,13 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode base type NOHEATCLOUD;
 		explode wheel type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode wheel type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;

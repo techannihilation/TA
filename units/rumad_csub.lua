@@ -60,7 +60,7 @@ return {
 		buildoptions = {
 			[1] = "rumad_geo",
 			[2] = "rumad_tide",
-			--[3] = "",
+			[3] = "rumad_tide1",
 			[4] = "rumad_mex",
 			[5] = "rumad_mex1",
 			--[6] = "rumad_fmkr",

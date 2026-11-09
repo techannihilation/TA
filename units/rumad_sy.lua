@@ -48,7 +48,7 @@ return {
 		yardmap = "CCCCWW CCCCWW CCCCWW CCCCWW CCCCWW CCCCWW CCCCWW",
 		buildoptions = {
 			[1] = "rumad_csub",
-			--[2] = "rumadrecl",
+			[2] = "rumad_rsub",
 			--[3] = "rumadpt",
 			--[4] = "rumaddecade",
 			[5] = "rumad_sub",
