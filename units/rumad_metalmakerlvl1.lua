@@ -10,7 +10,7 @@ return {
 		builder = false,
 		buildpic = "rumad_metalmakerlvl1.dds",
 		buildtime = 2000,
-		canattack = true,
+		canattack = false,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
@@ -19,7 +19,6 @@ return {
 		collisionvolumeoffsets = "-2 0 0",
 		collisionvolumescales = "50 23 50",
 		collisionvolumetype = "CylY",
-		damagemodifier = 0.25,
 		description = "Converts upto 250 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",
 		footprintx = 3,
@@ -52,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "rumad_metalmakerlvl1.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

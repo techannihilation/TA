@@ -87,7 +87,7 @@ return {
 			[15] = "rumad_pt",
 			[16] = "rumad_sam",
 			[17] = "rumad_tide1",
-			--[18] = "rumad_fmkr",
+			[18] = "rumad_fmetalmakerlvl1",
 			[19] = "rumad_sy",
 			[20] = "rumad_frad",
 			[21] = "rumad_fdrag",

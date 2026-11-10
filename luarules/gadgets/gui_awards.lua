@@ -165,6 +165,7 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
   UnitDefNames.rumad_metalmakerlvl1.id,
   UnitDefNames.rumad_metalmakerlvl2.id,
   UnitDefNames.rumad_metalmakerlvl3.id,
+  UnitDefNames.rumad_fmetalmakerlvl1.id,
 }
 
 

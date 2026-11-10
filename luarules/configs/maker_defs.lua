@@ -60,6 +60,7 @@ local convertCapacities = {
 
   -- RUMAD
   [UnitDefNames.rumad_metalmakerlvl1.id] = { c = 250,   e = AC1 },
+  [UnitDefNames.rumad_fmetalmakerlvl1.id] = { c = 250,   e = AC1 },
   [UnitDefNames.rumad_metalmakerlvl2.id] = { c = 1000,  e = AC3 },
   [UnitDefNames.rumad_metalmakerlvl3.id] = { c = 10000, e = AC4 },
   [UnitDefNames.rumad_metalmakerlvl4.id] = { c = 35000, e = AC5 },

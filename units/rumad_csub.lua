@@ -63,7 +63,7 @@ return {
 			[3] = "rumad_tide1",
 			[4] = "rumad_mex",
 			[5] = "rumad_mex1",
-			--[6] = "rumad_fmkr",
+			[6] = "rumad_fmetalmakerlvl1",
 			[7] = "rumad_sy",
 			--[8] = "rumad_asy",
 			--[9] = "rumad_hpns",
