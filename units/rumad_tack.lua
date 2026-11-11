@@ -34,7 +34,7 @@ return {
 		maxvelocity = 1.8,
 		maxwaterdepth = 22,
 		mobilestandorders = 1,
-		movementclass = "HTKBOT2",
+		movementclass = "TKBOT2",
 		name = "Tack",
 		noautofire = false,
 		objectname = "rumad/rumad_tack.s3o",
