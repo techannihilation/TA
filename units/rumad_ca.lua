@@ -71,7 +71,7 @@ return {
 			[13] = "rumad_vp",
 			[14] = "rumad_ap",
 			[15] = "rumad_aap",
-			--[16] = "rumad_research_lvl1",
+			--[16] = "",
 			[17] = "rumad_nanotc",
 			[18] = "rumad_gate2",
 			[19] = "rumad_eyes",
@@ -85,6 +85,7 @@ return {
 			[27] = "rumad_rl",
 			[28] = "rumad_sam",
 			[29] = "rumad_cir",
+			[30] = "rumad_sy",
 		},
 		customparams = {
 			buildpic = "rumad_ca.dds",

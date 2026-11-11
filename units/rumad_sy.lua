@@ -50,10 +50,9 @@ return {
 			[1] = "rumad_csub",
 			[2] = "rumad_rsub",
 			[3] = "rumad_naval_puppy",
-			[4] = "rumad_hareng",
-			[5] = "rumad_sub",
-			--[6] = "rumadroy",
-			--[7] = "rumadtship",
+			[4] = "rumad_blob",
+			[5] = "rumad_hareng",
+			[6] = "rumad_sub",
 		},
 		customparams = {
 			buildpic = "rumad_sy.dds",

@@ -32,7 +32,7 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 610,
-		maxdamage = 1575,
+		maxdamage = 1675,
 		maxvelocity = 2.65,
 		minwaterdepth = 12,
 		mobilestandorders = 1,
@@ -101,7 +101,7 @@ return {
 				"count1",
 			},
 			ok = {
-				"shrumadmov",
+				"sharmmov",
 			},
 			select = {
 				"sharmsel",
