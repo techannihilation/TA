@@ -49,8 +49,8 @@ return {
 		buildoptions = {
 			[1] = "rumad_csub",
 			[2] = "rumad_rsub",
-			--[3] = "rumadpt",
-			--[4] = "rumaddecade",
+			[3] = "rumad_naval_puppy",
+			[4] = "rumad_hareng",
 			[5] = "rumad_sub",
 			--[6] = "rumadroy",
 			--[7] = "rumadtship",

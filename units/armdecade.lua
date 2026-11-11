@@ -4,8 +4,8 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0.057,
 		buildangle = 16384,
-		buildcostenergy = 2347,
-		buildcostmetal = 421,
+		buildcostenergy = 2340,
+		buildcostmetal = 420,
 		builder = false,
 		buildpic = "armdecade.dds",
 		buildtime = 6500,
@@ -141,7 +141,6 @@ return {
 					default = 8,
 					subs = 5,
 				},
-				tracks = false,
 			},
 		},
 		weapons = {

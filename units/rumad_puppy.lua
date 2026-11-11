@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "rumad_puppy.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		sfxtypes = {
 			explosiongenerators = {

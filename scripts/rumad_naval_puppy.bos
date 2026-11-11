@@ -1,0 +1,157 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, yaw, gun, fire, enginewake;
+
+static-var  bMoving, Shot;
+
+// Signal definitions
+#define SIG_MOVE		2
+#define SIG_AIM			4
+
+RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
+{
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
+	while( TRUE )
+	{
+		while( get ABS(Func_Var_2) < 238 )
+		{
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.021978>;
+			wait-for-turn base around x-axis;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
+		}
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	start-script RockOnWaves();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;
+	Shot = FALSE;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 1500;
+	turn yaw to y-axis <0> speed <75.000000>;
+	turn gun to x-axis <0> speed <75.000000>;
+}
+
+waveSplash()
+{
+	while( TRUE )
+	{
+		turn base to x-axis <-3.000000> speed <3.000000>;
+		move base to y-axis [0.319995] speed [0.319995];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <0.000000> speed <3.000000>;
+		move base to y-axis [0.000000] speed [0.319995];
+		wait-for-turn base around x-axis;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	var Func_Var_1;
+	start-script waveSplash();
+	while( TRUE )
+	{
+		emit-sfx 2 from enginewake;
+		
+		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
+		if( Func_Var_1 < 50 )
+		{
+			Func_Var_1 = 50;
+		}
+		sleep 10000 / Func_Var_1;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	turn base to x-axis <0.000000> speed <3.000000>;
+	move base to y-axis [0.000000] speed [0.319995];
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = yaw;
+}
+
+AimPrimary(heading, pitch)
+{	
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	if( Shot )
+	{
+		return (0);
+	} 	
+	turn yaw to y-axis heading speed <180.000000>;
+	turn gun to x-axis <-25.0> speed <120.0>;
+	wait-for-turn yaw around y-axis;
+	wait-for-turn gun around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fire;
+}
+
+FirePrimary()
+{
+	Shot = TRUE;
+	hide gun;
+	sleep 25;
+	get KILL_UNIT(0);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

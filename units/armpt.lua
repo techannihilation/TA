@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "MINOR Boat/Light Anti-Air Ship",
+		description = "Scout / Light Anti-Air Ship",
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		floater = true,

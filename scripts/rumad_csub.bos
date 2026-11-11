@@ -13,8 +13,8 @@ static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5
 
 activatescr()
 {
-	turn door1 to z-axis <-70.0> speed <120.000000>;
-	turn door2 to z-axis <70.0> speed <120.000000>;
+	turn door1 to z-axis <70.0> speed <120.000000>;
+	turn door2 to z-axis <-70.0> speed <120.000000>;
 	sleep 300;
 	move turretbase to y-axis [3.0] speed [9.000000];
 	sleep 300;
@@ -25,8 +25,8 @@ deactivatescr()
 	set INBUILDSTANCE to 0;
 	turn turret to y-axis <0.000000> speed <160.000000>;
 	wait-for-turn turret around y-axis;
-	move turretbase to y-axis [3.0] speed [9.000000];
-	sleep 150;
+	move turretbase to y-axis [0.0] speed [9.000000];
+	wait-for-move turretbase along y-axis;
 	turn door1 to z-axis <0.000000> speed <120.000000>;
 	turn door2 to z-axis <0.000000> speed <120.000000>;
 	sleep 300;

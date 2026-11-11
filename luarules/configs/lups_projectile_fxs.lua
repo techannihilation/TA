@@ -19,6 +19,9 @@ local lups_effects = {
   rumad_pt_rumad_gauss = {
      {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
   },
+  rumad_hareng_rumad_gauss = {
+     {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
+  },
   rumad_macross_rumad_gauss = {
      {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
   },
