@@ -59,7 +59,7 @@ return {
 			[1] = "rumad_nanotc",
 			--[2] = "",
 			--[3] = "",
-			[4] = "rumad_mine1",
+			[4] = "rumad_mine2",
 			[5] = "rumad_fort",
 			[6] = "rumad_wall",
 			[7] = "rumad_arad",
