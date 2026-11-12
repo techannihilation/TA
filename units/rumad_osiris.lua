@@ -158,7 +158,6 @@ return {
 					default = 180,
 					subs = 5,
 				},
-				tracks = false,
 			},
 		},
 		weapons = {

@@ -67,7 +67,7 @@ return {
 			[7] = "rumad_sy",
 			--[8] = "rumad_asy",
 			--[9] = "rumad_hpns",
-			--[10] = "rumad_ahpns",
+			[10] = "rumad_hpns",
 			--[11] = "rumad_plat",
 			--[12] = "",
 			--[13] = "",
