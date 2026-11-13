@@ -53,7 +53,7 @@ return {
 		buildoptions = {
 			[1] = "rumad_cv",
 			[2] = "rumad_mlv",
-			--[3] = "scout?",
+			--[3] = "",
 			[4] = "rumad_dragster",
 			[5] = "rumad_jeag",
 			[6] = "rumad_pasta",

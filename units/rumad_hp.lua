@@ -53,9 +53,9 @@ return {
 		yardmap = "occccccooccccccooccccccooccccccooccccccooccccccoocccccco",
 		buildoptions = {
 			[1] = "rumad_ch",
-			[2] = "rumad_hplasma",
-			--[3] = "",
-			--[4] = "",
+			[2] = "rumad_sh",
+			[3] = "rumad_hplasma",
+			[4] = "rumad_ah",
 			--[5] = "",
 		},
 		customparams = {
