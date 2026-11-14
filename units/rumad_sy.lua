@@ -53,6 +53,7 @@ return {
 			[4] = "rumad_blob",
 			[5] = "rumad_hareng",
 			[6] = "rumad_sub",
+			[7] = "rumad_destroyer",
 		},
 		customparams = {
 			buildpic = "rumad_sy.dds",

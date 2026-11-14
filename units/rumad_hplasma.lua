@@ -133,7 +133,7 @@ return {
 				name = "Plasma",
 				noselfdamage = true,
 				projectiles = 2,
-				range = 800,
+				range = 750,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.9 0.9",
 				separation = 0.45,
