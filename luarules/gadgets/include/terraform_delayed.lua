@@ -1,5 +1,9 @@
 local DelayedTerraform = {}
 
+DelayedTerraform.Cost = VFS.Include("luarules/Utilities/terraform_cost.lua").Create(
+	Spring.GetModOptions()
+)
+
 local abs = math.abs
 local max = math.max
 local min = math.min
@@ -337,6 +341,12 @@ local function addEdgePoint(edgeState, source, x, z)
 		edgeState.invalidHeight = true
 		return false
 	end
+	if not DelayedTerraform.Cost.IsHeightAllowed(
+			Spring.GetGroundOrigHeight(x, z), groundHeight, targetHeight
+	) then
+		edgeState.invalidDisplacement = true
+		return false
+	end
 
 	if existingIndex then
 		local existing = frozen.points[existingIndex]
@@ -406,7 +416,7 @@ local function buildEdgePoints(frozen, maxHeightDifference)
 
 	local queueIndex = 1
 	while queueIndex <= #edgeState.queue
-			and not edgeState.invalidHeight do
+			and not edgeState.invalidHeight and not edgeState.invalidDisplacement do
 		local pointIndex = edgeState.queue[queueIndex]
 		local source = frozen.points[pointIndex]
 		queueIndex = queueIndex + 1
@@ -427,7 +437,11 @@ local function calculateWork(frozen)
 	local work = 0
 	for i = 1, frozen.count do
 		local point = frozen.points[i]
-		work = work + abs(point.finalHeight - point.initialHeight)
+		work = work + DelayedTerraform.Cost.Work(
+			Spring.GetGroundOrigHeight(point.x, point.z),
+			point.initialHeight,
+			point.finalHeight
+		)
 	end
 	frozen.work = work
 end
@@ -452,14 +466,24 @@ function DelayedTerraform.FreezeSegments(segments, segmentCount, maxHeightDiffer
 	end
 
 	for i = 1, frozen.count do
-		if abs(frozen.points[i].finalHeight) > MAX_ABSOLUTE_HEIGHT then
+		local point = frozen.points[i]
+		if abs(point.finalHeight) > MAX_ABSOLUTE_HEIGHT then
 			return nil, "height"
+		end
+		if not DelayedTerraform.Cost.IsHeightAllowed(
+				Spring.GetGroundOrigHeight(point.x, point.z),
+				point.initialHeight, point.finalHeight
+		) then
+			return nil, "displacement"
 		end
 	end
 
 	local edgeState = buildEdgePoints(frozen, maxHeightDifference)
 	if edgeState.invalidHeight then
 		return nil, "height"
+	end
+	if edgeState.invalidDisplacement then
+		return nil, "displacement"
 	end
 	calculateWork(frozen)
 	if frozen.work <= HEIGHT_EPSILON then
@@ -529,8 +553,15 @@ end
 
 function DelayedTerraform.Apply(frozen, updateTexture)
 	for i = 1, frozen.count do
-		if abs(frozen.points[i].finalHeight) > MAX_ABSOLUTE_HEIGHT then
+		local point = frozen.points[i]
+		if abs(point.finalHeight) > MAX_ABSOLUTE_HEIGHT then
 			Spring.Log("Terraformers", LOG.WARNING, "Ignoring terraform with an unsafe frozen height")
+			return false
+		end
+		if not DelayedTerraform.Cost.IsHeightAllowed(
+				Spring.GetGroundOrigHeight(point.x, point.z),
+				Spring.GetGroundHeight(point.x, point.z), point.finalHeight
+		) then
 			return false
 		end
 	end

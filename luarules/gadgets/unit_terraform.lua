@@ -1227,7 +1227,8 @@ function taskController.DistanceToCommandSquared(x, z, parsed)
 	end
 
 	local closestDistance
-	local segmentCount = parsed.pointCount - 1
+	-- Extend pointCount counts profile samples; its command geometry has two endpoints.
+	local segmentCount = parsed.terraformType == 2 and 1 or parsed.pointCount - 1
 	for i = 1, segmentCount do
 		local distance = taskController.DistanceToSegmentSquared(
 			x,
@@ -1498,6 +1499,10 @@ function taskController.MakePublicTask(task)
 		state = "walking",
 		remainingFrames = task.remainingFrames,
 		totalFrames = task.totalFrames,
+		metalCost = task.metalCost,
+		remainingMetal = task.remainingMetal,
+		energyCost = task.energyCost,
+		remainingEnergy = task.remainingEnergy,
 		anchorX = task.anchor.x,
 		anchorY = math.max(task.anchor.initialHeight, task.anchor.finalHeight) + 36,
 		nanoY = task.anchor.initialHeight + 5,
@@ -1762,6 +1767,14 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 				teamID,
 				"Terraform rejected: the target height exceeds the limit."
 			)
+		elseif prepareError == "displacement" then
+			taskController.SendTeamMessage(
+				teamID,
+				string.format(
+					"Terraform rejected: maximum displacement from original terrain is %.1f height units.",
+					delayedTerraform.Cost.maxDisplacement
+				)
+			)
 		elseif prepareError ~= "nochange" then
 			taskController.SendTeamMessage(
 				teamID,
@@ -1801,6 +1814,8 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 
 	local durationSeconds = math.max(1, frozen.work / (buildSpeed * terraformSpeedMultiplier))
 	local durationFrames = math.ceil(durationSeconds * Game.gameSpeed)
+	local metalCost = frozen.work * delayedTerraform.Cost.metalPerWork
+	local energyCost = frozen.work * delayedTerraform.Cost.energyPerWork
 
 	taskController.nextTaskID = taskController.nextTaskID + 1
 	local task = {
@@ -1815,6 +1830,10 @@ function taskController.StartTask(unitID, unitDefID, teamID, cmdParams, cmdTag)
 		useBuildAnimation = unitDef and unitDef.isBuilder,
 		remainingFrames = durationFrames,
 		totalFrames = durationFrames,
+		metalCost = metalCost,
+		remainingMetal = metalCost,
+		energyCost = energyCost,
+		remainingEnergy = energyCost,
 		started = false,
 		building = false,
 		moveGoalSet = false,
@@ -1900,6 +1919,8 @@ end
 function taskController.SetState(task, state)
 	task.public.state = state
 	task.public.remainingFrames = task.remainingFrames
+	task.public.remainingMetal = task.remainingMetal
+	task.public.remainingEnergy = task.remainingEnergy
 end
 
 function taskController.RefreshAllyTeamTerrain(teamID)
@@ -1999,6 +2020,22 @@ function taskController.UpdateTask(task, gameFrame)
 		taskController.SetState(task, "paused")
 		return
 	end
+
+	local metalPayment = math.min(task.remainingMetal, task.metalCost / task.totalFrames)
+	local energyPayment = math.min(task.remainingEnergy, task.energyCost / task.totalFrames)
+	if task.remainingFrames == 1 then
+		metalPayment = task.remainingMetal
+		energyPayment = task.remainingEnergy
+	end
+	-- The table overload checks both resources before consuming either one.
+	if (metalPayment > 0 or energyPayment > 0)
+			and not Spring.UseTeamResource(task.teamID, {m = metalPayment, e = energyPayment}) then
+		taskController.StopBuilding(task)
+		taskController.SetState(task, "resources")
+		return
+	end
+	task.remainingMetal = math.max(0, task.remainingMetal - metalPayment)
+	task.remainingEnergy = math.max(0, task.remainingEnergy - energyPayment)
 
 	if not task.building then
 		taskController.StartBuilding(task)
@@ -2787,13 +2824,24 @@ local function getStatusText(task)
 	local remainingSeconds = math.ceil(
 		(task.remainingFrames or 0) / Game.gameSpeed
 	)
+	local resources = {}
+	if (task.metalCost or 0) > 0 then
+		resources[#resources + 1] = string.format("%.1f M", task.remainingMetal)
+	end
+	if (task.energyCost or 0) > 0 then
+		resources[#resources + 1] = string.format("%.1f E", task.remainingEnergy)
+	end
+	local resourceText = #resources > 0 and " • " .. table.concat(resources, " / ") .. " left" or ""
+	if task.state == "resources" then
+		return "Waiting for resources" .. resourceText
+	end
 	if task.state == "working" then
-		return "Terraform: " .. remainingSeconds .. "s"
+		return "Terraform: " .. remainingSeconds .. "s" .. resourceText
 	end
 	if task.state == "paused" then
-		return "Paused • " .. remainingSeconds .. "s"
+		return "Paused • " .. remainingSeconds .. "s" .. resourceText
 	end
-	return "Approaching • work: " .. remainingSeconds .. "s"
+	return "Approaching • work: " .. remainingSeconds .. "s" .. resourceText
 end
 
 local function handleTeamMessage(_, teamID, message)
