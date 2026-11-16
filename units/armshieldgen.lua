@@ -98,6 +98,27 @@ return {
 				[6] = "piecetrail6",
 			},
 		},
+		sounds = {
+			canceldestruct = "cancel2",
+			underattack = "warning1",
+			cant = {
+				"cantdo4",
+			},
+			count = {
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
+			},
+			ok = {
+				"arm-tnk-small-ok",
+			},
+			select = {
+				"arm-tnk-small-sel",
+			},
+		},
 		weapondefs = {
 			repulsor2 = {
 				craterareaofeffect = 0,

@@ -123,10 +123,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"tarmmove",
+				"arm-tnk-small-ok",
 			},
 			select = {
-				"tarmsel",
+				"arm-tnk-small-sel",
 			},
 		},
 		weapondefs = {

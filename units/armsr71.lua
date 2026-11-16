@@ -1,6 +1,6 @@
 return {
 	armsr71 = {
-		acceleration = 0.1,
+		acceleration = 0.5, -- 5x
 		altfromsealevel = 1,
 		bankscale = 1,
 		blocking = false,
@@ -17,7 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MINOR MOBILE VTOL",
 		collide = false,
-		cruisealt = 180,
+		cruisealt = 360, -- from 180, double height
 		defaultmissiontype = "VTOL_standby",
 		description = "Supersonic Radar Plane",
 		explodeas = "BIG_UNITEX",
@@ -31,22 +31,22 @@ return {
 		mass = 525,
 		maxdamage = 1190,
 		maxslope = 10,
-		maxvelocity = 18,
+		maxvelocity = 36, -- doubled
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "SR-71",
 		noautofire = false,
 		objectname = "arm/armsr71.s3o",
-		radardistance = 1400,
+		radardistance = 2000, -- was 1400
 		radaremitheight = 5,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		sightdistance = 800,
+		sightdistance = 1600, -- was 800
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 7.5,
-		turnrate = 500,
+		turnrate = 800, -- was 500
 		unitname = "armsr71",
 		customparams = {
 			buildpic = "armsr71.dds",
@@ -77,10 +77,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vtolarmv",
+				[1] = "arm-air-large-ok",
 			},
 			select = {
-				[1] = "aaradsel",
+				[1] = "radar-support",
 			},
 		},
 	},

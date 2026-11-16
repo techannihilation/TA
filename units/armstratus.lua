@@ -16,7 +16,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE VTOL FIGHTER",
+		category = "ALL MOBILE VTOL",
 		collide = false,
 		corpse = "heap",
 		cruisealt = 260,
@@ -93,10 +93,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vtolarmv",
+				[1] = "arm-air-large-ok",
 			},
 			select = {
-				[1] = "vtolarac",
+				[1] = "arm-air-large-sel",
 			},
 		},
 		weapondefs = {
