@@ -121,9 +121,11 @@ return {
 			},
 			ok = {
 				[1] = "necrok1",
+				[2] = "necrok2",
 			},
 			select = {
 				[1] = "necrsel1",
+				[2] = "necrsel2",
 			},
 		},
 	},

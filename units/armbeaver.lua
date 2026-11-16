@@ -168,7 +168,7 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			repair = "repair1",
 			underattack = "warning1",

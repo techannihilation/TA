@@ -111,7 +111,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "radadvn1",
+				[1] = "arm-bld-radar-t2",
 			},
 		},
 	},

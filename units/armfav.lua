@@ -120,17 +120,17 @@ return {
 				"count1",
 			},
 			ok = {
-				"varmmove",
+				[1] = "arm-veh-tiny-ok",
 			},
 			select = {
-				"varmsel",
+				[1] = "arm-veh-tiny-sel",
 			},
 		},
 		weapondefs = {
 			arm_laser = {
 				areaofeffect = 8,
 				beamtime = 0.12,
-				corethickness = 0.175,
+				corethickness = 0.1,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -145,7 +145,7 @@ return {
 				noselfdamage = true,
 				range = 180,
 				reloadtime = 0.75,
-				rgbcolor = "1 0 0",
+				rgbcolor = "0.6 0.6 1",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

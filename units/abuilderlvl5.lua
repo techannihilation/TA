@@ -107,7 +107,7 @@ return {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				[1] = "armshipstop",
+				[1] = "tllvtolstop3",
 			},
 			cant = {
 				[1] = "cantdo4",
@@ -121,10 +121,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "armshipgo",
+				[1] = "arm-air-transport-large-ok",
 			},
 			select = {
-				[1] = "armselect",
+				[1] = "arm-air-transport-large-sel",
 			},
 		},
 	},

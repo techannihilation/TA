@@ -114,10 +114,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"mavbok1",
+				[1] = "arm-bot-large-ok",
 			},
 			select = {
-				"mavbsel1",
+				[1] = "arm-bot-large-sel",
 			},
 		},
 		weapondefs = {
@@ -142,12 +142,12 @@ return {
 				proximitypriority = 1.1,
 				range = 475,
 				reloadtime = 0.15,
-				rgbcolor = "0.75 0 0",
-				rgbcolor2 = "0.9 0.9 0.6",
+				rgbcolor = "0.25 0 1",
+				rgbcolor2 = "0 0 1",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "lasfirerb",
+				soundstart = "laser_lvl1",
 				soundtrigger = 1,
 				tolerance = 4500,
 				thickness = 3.5,

@@ -116,10 +116,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"amphok1",
+				[1] = "arm-bot-small-ok",
 			},
 			select = {
-				"amphsel1",
+				[1] = "arm-bot-small-sel",
 			},
 		},
 		weapondefs = {
@@ -182,7 +182,7 @@ return {
 				noselfdamage = true,
 				range = 275,
 				reloadtime = 0.75,
-				rgbcolor = "1 0 0",
+				rgbcolor = "0.5 0.8 1",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

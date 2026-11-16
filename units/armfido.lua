@@ -114,21 +114,21 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbarmmov",
+				[1] = "arm-bot-small-ok",
 			},
 			select = {
-				"kbarmsel",
+				[1] = "arm-bot-small-sel",
 			},
 		},
 		weapondefs = {
 			bfido = {
 				areaofeffect = 48,
 				avoidfeature = false,
-				cegtag = "Trail_cannon",
+				cegtag = "Lblue_trail_cannon",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				explosiongenerator = "custom:FLASH2",
+				explosiongenerator = "custom:LBLUE_FLASH2",
 				gravityaffected = "TRUE",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
@@ -137,6 +137,7 @@ return {
 				noselfdamage = true,
 				range = 650,
 				reloadtime = 3,
+				rgbcolor = "0.5 0.5 1",
 				separation = 0.45,
 				size = 1.36,
 				sizedecay = -0.15,

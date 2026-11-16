@@ -117,10 +117,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"krogok1",
+				[1] = "arm-bot-large-ok",
 			},
 			select = {
-				"krogsel1",
+				[1] = "arm-bot-large-sel",
 			},
 		},
 		weapondefs = {
@@ -146,7 +146,7 @@ return {
 				soundhitdry = "xplomed3",
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.6,
-				soundstart = "Mavgun2",
+				soundstart = "ppc1",
 				sprayangle = 200,
 				turret = true,
 				weapontype = "Cannon",
@@ -217,7 +217,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "annigun1",
+				soundstart = "heatray2",
 				soundtrigger = 1,
 				sweepfire = false,
 				targetmoveerror = 0.2,

@@ -130,7 +130,7 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			capture = "capture1",
 			repair = "repair1",
@@ -148,10 +148,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kbarmmov",
+				[1] = "arm-bot-small-ok",
 			},
 			select = {
-				[1] = "kbarmsel",
+				[1] = "arm-bot-small-sel",
 			},
 		},
 	},

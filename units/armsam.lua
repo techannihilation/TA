@@ -124,10 +124,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "varmmove",
+				[1] = "arm-veh-tiny-ok",
 			},
 			select = {
-				[1] = "varmsel",
+				[1] = "arm-veh-tiny-sel",
 			},
 		},
 		weapondefs = {

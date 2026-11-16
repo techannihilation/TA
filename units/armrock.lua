@@ -116,10 +116,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbarmmov",
+				[1] = "arm-bot-tiny-ok",
 			},
 			select = {
-				"kbarmsel",
+				[1] = "arm-bot-tiny-sel",
 			},
 		},
 		weapondefs = {
@@ -145,11 +145,13 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 190,
+				targetable = 1,
 				texture1 = "null",
 				texture2 = "null",
 				texture3 = "null",
 				texture4 = "null",
 				trajectoryheight = 0.4,
+				turnrate = 2000,
 				turret = true,
 				weaponacceleration = 120,
 				weapontimer = 2,
@@ -164,7 +166,7 @@ return {
 					default = 120,
 					subs = 5,
 				},
-				tracks = false,
+				tracks = true,
 			},
 		},
 		weapons = {

@@ -115,8 +115,8 @@ return {
 			},
 		},
 		sounds = {
-			activate = "gantok2",
-			build = "gantok2",
+			activate = "arm-bld-gant-t3-ok",
+			build = "arm-bld-gant-t3-sel",
 			canceldestruct = "cancel2",
 			deactivate = "gantok2",
 			repair = "lathelrg",
@@ -132,7 +132,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "gantsel1",
+				[1] = "arm-bld-gant-t3-sel",
 			},
 		},
 	},

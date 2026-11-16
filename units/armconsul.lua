@@ -152,10 +152,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "tarmmove",
+				[1] = "arm-tnk-small-ok",
 			},
 			select = {
-				[1] = "tarmsel",
+				[1] = "arm-tnk-small-sel",
 			},
 		},
 	},

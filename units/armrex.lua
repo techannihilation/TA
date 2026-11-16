@@ -107,10 +107,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"tarmmove",
+				"arm-tnk-large-ok",
 			},
 			select = {
-				"tarmsel",
+				"arm-tnk-large-sel",
 			},
 		},
 		weapondefs = {
@@ -150,7 +150,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				explosiongenerator = "custom:popupcannon",
+				explosiongenerator = "custom:lblue_popupcannon",
 				name = "Electro-Magnetic Compression Cannon",
 				noselfdamage = true,
 				range = 750,

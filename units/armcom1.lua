@@ -180,14 +180,14 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			capture = "capture1",
 			cloak = "kloak1",
-			repair = "repair1",
+			repair = "conalt-small",
 			uncloak = "kloak1un",
 			underattack = "warning2",
-			unitcomplete = "kcarmmov",
+			unitcomplete = "arm-com-sel",
 			working = "reclaim1",
 			cant = {
 				[1] = "cantdo4",
@@ -201,10 +201,13 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kcarmmov",
+				[1] = "arm-com-ok-1",
+				[2] = "arm-com-ok-2",
+				[3] = "arm-com-ok-3",
+				[4] = "arm-com-ok-4",
 			},
 			select = {
-				[1] = "kcarmsel",
+				[1] = "arm-com-sel",
 			},
 		},
 		weapondefs = {
@@ -269,7 +272,7 @@ return {
 				noselfdamage = true,
 				range = 400,
 				reloadtime = 0.3,
-				rgbcolor = "1 0 0",
+				rgbcolor = "0.4 0.4 1",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

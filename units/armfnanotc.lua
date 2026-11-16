@@ -73,9 +73,9 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
-			repair = "repair1",
+			repair = "conalt-small",
 			underattack = "warning1",
 			working = "reclaim1",
 			cant = {
@@ -90,10 +90,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "varmmove",
+				[1] = "cmd-repair",
 			},
 			select = {
-				[1] = "varmsel",
+				[1] = "arm-bld-select-small",
 			},
 		},
 	},

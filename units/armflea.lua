@@ -113,17 +113,17 @@ return {
 				"count1",
 			},
 			ok = {
-				"servtny2",
+				"servtny2B",
 			},
 			select = {
-				"servtny2",
+				"servtny2B",
 			},
 		},
 		weapondefs = {
 			flea_laser = {
 				areaofeffect = 8,
 				beamtime = 0.12,
-				corethickness = 0.175,
+				corethickness = 0.1,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -138,7 +138,7 @@ return {
 				noselfdamage = true,
 				range = 150,
 				reloadtime = 0.6,
-				rgbcolor = "1 0 0",
+				rgbcolor = "1 1 1",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

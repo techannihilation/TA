@@ -55,7 +55,7 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "arm/armcom.s3o",
-		--objectname = "events/armcom_halloween.s3o", -- HALLOWEEN
+		--objectname = "armcom_halloween.s3o", -- HALLOWEEN
 		radardistance = 750,
 		radaremitheight = 55,
 		reclaimable = false,
@@ -182,15 +182,15 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			capture = "capture1",
-			cloak = "kloak1",
-			repair = "repair1",
+			cloak = "ability_cloak_on",
+			repair = "conalt-small",
 			uncloak = "kloak1un",
 			underattack = "warning2",
-			unitcomplete = "kcarmmov",
-			working = "reclaim1",
+			unitcomplete = "armcomsel",
+			working = "conalt-small",
 			cant = {
 				[1] = "cantdo4",
 			},
@@ -203,10 +203,13 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kcarmmov",
+				[1] = "arm-com-ok-1",
+				[2] = "arm-com-ok-2",
+				[3] = "arm-com-ok-3",
+				[4] = "arm-com-ok-4",
 			},
 			select = {
-				[1] = "kcarmsel",
+				[1] = "arm-com-sel",
 			},
 		},
 		weapondefs = {
@@ -275,7 +278,7 @@ return {
 				noselfdamage = true,
 				range = 300,
 				reloadtime = 0.4,
-				rgbcolor = "1 0 0",
+				rgbcolor = "0.4 0.9 0.9",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

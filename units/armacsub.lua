@@ -113,7 +113,7 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			capture = "capture1",
 			repair = "repair1",

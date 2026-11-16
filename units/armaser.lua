@@ -115,10 +115,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kbarmmov",
+				[1] = "arm-bot-small-ok",
 			},
 			select = {
-				[1] = "radjam1",
+				[1] = "jammer",
 			},
 		},
 	},
