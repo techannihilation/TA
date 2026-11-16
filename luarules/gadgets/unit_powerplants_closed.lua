@@ -1,7 +1,7 @@
 function gadget:GetInfo()
   return {
     name      = "Closed PowerPlants",
-    desc      = "Closed PowerPlantsar collectors don't produce energy",
+    desc      = "Closed PowerPlants or collectors don't produce energy",
     author    = "Bluestone",
     date      = "",
     license   = "Hats",

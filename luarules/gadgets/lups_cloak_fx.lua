@@ -77,21 +77,21 @@ local CloakedHitEffect = {
 local CloakEffect      = {
 	{ class='UnitCloaker',options={ life=50, priority=1 } },
 	{ class='UnitJitter',options={ delay=24, life=math.huge, priority=1 } },
-	{ class='Sound',options={ file="sounds/cloak.wav",volume=0.9 } },
+	{ class='Sound',options={ file="sounds/function/cloak.wav",volume=0.9 } },
 }
 local EnemyCloakEffect      = {
 	{ class='UnitCloaker',options={ life=20, priority=1 } },
-	{ class='Sound',options={ file="sounds/cloak.wav",volume=0.9 } },
+	{ class='Sound',options={ file="sounds/function/cloak.wav",volume=0.9 } },
 }
 
 local DecloakEffect    = {
 	{ class='UnitCloaker',options={ inverse=true, life=50, priority=1 } },
 	{ class='UnitJitter',options={ life=24, priority=1 } },
-	{ class='Sound',options={ file="sounds/cloak.wav",volume=0.9 } },
+	{ class='Sound',options={ file="sounds/function/cloak.wav",volume=0.9 } },
 }
 local EnemyDecloakEffect      = {
 	{ class='UnitCloaker',options={ inverse=true, life=60, priority=1 } },
-	{ class='Sound',options={ file="sounds/cloak.wav",volume=0.9 } },
+	{ class='Sound',options={ file="sounds/function/cloak.wav",volume=0.9 } },
 }
 
 

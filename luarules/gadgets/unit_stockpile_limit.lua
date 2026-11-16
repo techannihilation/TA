@@ -22,6 +22,8 @@ if (gadgetHandler:IsSyncedCode()) then
 		nuke = 4,
 		antinuke = 9,
 		tacticalnuke = 6,
+		mpl=2,
+		lpl=3
 	}
 
 	local unitCollections = {
@@ -53,7 +55,10 @@ if (gadgetHandler:IsSyncedCode()) then
 				'corfmd', 'corfmd1', 'corfmd2', 'corcarry',
 				'tllantinuke', 'tllantinuke1', 'tllantinuke2', 'tllcarry',
 				'talon_damascus', 'talon_damascus1', 'talon_damascus2', 'talon_carry',
-				'rumad_antinuke', 'rumad_antinuke1', 'rumad_antinuke2', 'rumad_mantinuke'}
+				'rumad_antinuke', 'rumad_antinuke1', 'rumad_antinuke2', 'rumad_mantinuke'},
+		mpl = {"armanni"},
+
+		lpl = {"armanni1"}
 			}
 
 	local unitDefsByName = {}
