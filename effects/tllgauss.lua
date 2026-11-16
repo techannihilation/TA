@@ -51,4 +51,22 @@ return {
     },
   },
 
+    ["gauss_hit_DMC"] = {
+    expand = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 1,
+      unit				       = true,
+      properties = {
+        heat               = 14,
+        heatfalloff        = 1,
+        maxheat            = 14,
+        size               = 8,
+        sizegrowth         = 10,
+        speed              = [[0, 0, 0]],
+        texture            = [[sonic_glow]],
+      },
+    },
+  },
+
 }

@@ -21,6 +21,25 @@ return {
     },
   },
 
+  ["lblue_trail_emg"] = {
+    usedefaultexplosions = false,
+    spikes = {
+      air                = true,
+      class              = [[explspike]],
+      count              = 3,
+      ground             = true,
+      water              = true,
+      properties = {
+        alpha              = 1,
+        alphadecay         = 0.26,
+        color              = [[0.6, 1, 1]],
+        dir                = [[-2 r4,-2 r4,-2 r4]],
+        length             = 1,
+        width              = 2,
+      },
+    },
+  },
+
   ["trail_emg_upg"] = {
     usedefaultexplosions = false,
     spikes = {

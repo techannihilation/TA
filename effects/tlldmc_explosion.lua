@@ -7,6 +7,7 @@ return {
       class              = [[CSimpleGroundFlash]],
       count              = 4,
       ground             = true,
+      unit               = 0,
       water              = false,
       properties = {
         colormap           = [[1 1 1 1    1 0.8 0.15 1     0 0 0 0.1]],
@@ -21,6 +22,7 @@ return {
       class              = [[CSimpleGroundFlash]],
       count              = 4,
       ground             = true,
+      unit               = 0,
       water              = false,
       properties = {
         colormap           = [[1 1 0.3 1      0 0 0 0.1]],
@@ -35,6 +37,7 @@ return {
       class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = true,
+       unit              = 1,
       water              = false,
       properties = {
         airdrag            = 1,
@@ -63,6 +66,7 @@ return {
       class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = true,
+      unit               = 0,
       underwater         = 0,
       water              = true,
       properties = {
@@ -92,6 +96,7 @@ return {
       class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = true,
+      unit               = 0,
       underwater         = 1,
       water              = true,
       properties = {
@@ -130,19 +135,42 @@ return {
         emitrot            = 0,
         emitrotspread      = [[0 r-360 r360]],
         emitvector         = [[0, 1, 0]],
+        emitrotspread      = 8,
+        emitvector         = [[dir]],
         gravity            = [[0, -.25 r0.15 r-1, 0]],
         numparticles       = 100,
+        numparticles       = 150,
         particlelife       = 40,
         particlelifespread = 50,
         particlesize       = 4,
         particlesizespread = 2,
         particlespeed      = 5,
+        particlespeed      = [[6 i0.5]],
         particlespeedspread = 3,
         pos                = [[0, 5, 0]],
+        pos                = [[dir]],
         sizegrowth         = [[-0.2 r.05]],
         sizemod            = 1.0,
         texture            = [[Plasma]],
         useairlos          = true,
+      },
+    },
+    exitflash = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 1,
+      ground             = false,
+      unit               = 1,
+      water              = false,
+      properties = {
+        heat               = 12,
+        heatfalloff        = 1,
+        maxheat            = 15,
+        pos                = [[dir]],
+        size               = 6,
+        sizegrowth         = 6,
+        speed              = [[dir]],
+        texture            = [[flare1]],
       },
     },
     spikesofhell1 = {
@@ -150,6 +178,7 @@ return {
       class              = [[explspike]],
       count              = 10,
       ground             = true,
+      unit               = 0,
       water              = false,
       properties = {
         alpha              = 1,
@@ -165,6 +194,7 @@ return {
       class              = [[CSpherePartSpawner]],
       count              = 1,
       ground             = true,
+      unit               = 0,
       water              = true,
       properties = {
         alpha              = 0.18,
@@ -178,6 +208,7 @@ return {
       class              = [[CExpGenSpawner]],
       count              = 1,
       ground             = true,
+      unit               = 0,
       water              = true,
       properties = {
         delay              = 0,
@@ -188,4 +219,3 @@ return {
   },
 
 }
-

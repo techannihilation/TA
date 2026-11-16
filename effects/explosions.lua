@@ -531,6 +531,22 @@ return {
     },
   },
 
+  ["lblue_flash64"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 4,
+      flashalpha         = 1.9,
+      flashsize          = 64,
+      ttl                = 6,
+      color = {
+        [1]  = 0.5,
+        [2]  = 0.7,
+        [3]  = 1,
+      },
+    },
+  },
+
   ["kargmissile_explosion"] = {
     groundflash = {
       air                = true,
@@ -628,6 +644,22 @@ return {
         [1]  = 1,
         [2]  = 0.89999997615814,
         [3]  = 0.85000002384186,
+      },
+    },
+  },
+
+  ["lblue_flash3"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 3,
+      flashalpha         = 1.6,
+      flashsize          = 40,
+      ttl                = 5,
+      color = {
+        [1]  = 0.5,
+        [2]  = 0.7,
+        [3]  = 1,
       },
     },
   },
@@ -1068,6 +1100,22 @@ return {
     },
   },
 
+  ["lblue_flash4"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 4,
+      flashalpha         = 1.9,
+      flashsize          = 55,
+      ttl                = 6,
+      color = {
+        [1]  = 0.5,
+        [2]  = 0.7,
+        [3]  = 1,
+      },
+    },
+  },
+
   ["flashbigunitex"] = {
     usedefaultexplosions = true,
     groundflash = {
@@ -1100,6 +1148,22 @@ return {
     },
   },
 
+  ["lblue_flash72"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 4,
+      flashalpha         = 1.9,
+      flashsize          = 72,
+      ttl                = 6,
+      color = {
+        [1]  = 0.5,
+        [2]  = 0.7,
+        [3]  = 1,
+      },
+    },
+  },
+
   ["flash1nd"] = {
     usedefaultexplosions = false,
     groundflash = {
@@ -1128,6 +1192,22 @@ return {
         [1]  = 1,
         [2]  = 0.89999997615814,
         [3]  = 0.85000002384186,
+      },
+    },
+  },
+
+  ["lblue_flash96"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 5,
+      flashalpha         = 1.9,
+      flashsize          = 96,
+      ttl                = 7,
+      color = {
+        [1]  = 0.5,
+        [2]  = 0.7,
+        [3]  = 1,
       },
     },
   },
@@ -1668,6 +1748,22 @@ return {
     },
   },
 
+  ["lblue_flash2"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 2,
+      flashalpha         = 1.3,
+      flashsize          = 25,
+      ttl                = 4,
+      color = {
+        [1]  = 0.5,
+        [2]  = 0.7,
+        [3]  = 1,
+      },
+    },
+  },
+
   ["flashjuno"] = {
     air                = true,
     ground             = true,
@@ -1761,6 +1857,22 @@ return {
         [1]  = 1,
         [2]  = 0.89999997615814,
         [3]  = 0.80000001192093,
+      },
+    },
+  },
+
+  ["lblue_flash224"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 3,
+      circlegrowth       = 14,
+      flashalpha         = 2.3,
+      flashsize          = 200,
+      ttl                = 14,
+      color = {
+        [1]  = 0.5,
+        [2]  = 0.7,
+        [3]  = 1,
       },
     },
   },
@@ -2034,6 +2146,22 @@ return {
         [1]  = 1,
         [2]  = 0.89999997615814,
         [3]  = 0.80000001192093,
+      },
+    },
+  },
+
+  ["lblue_flashsmallunit"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 7,
+      flashalpha         = 2.5,
+      flashsize          = 72,
+      ttl                = 7,
+      color = {
+        [1]  = 10.5,
+        [2]  = 0.7,
+        [3]  = 1,
       },
     },
   },
