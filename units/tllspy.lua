@@ -115,10 +115,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kbcormov",
+				[1] = "leg-bot-small-ok",
 			},
 			select = {
-				[1] = "kbcorsel",
+				[1] = "leg-bot-small-sel",
 			},
 		},
 	},

@@ -11,8 +11,8 @@ return {
 		corpse = "dead",
 		description = "Produces Metal and Energy/ Storage",
 		downloadable = 1,
-		energymake = 1000,
-		energyuse = 0,
+		energymake = 1200,
+		energyuse = 800,
 		explodeas = "CRAWL_BLAST",
 		footprintx = 6,
 		footprintz = 4,
@@ -20,7 +20,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 43,
-		makesmetal = 4,
+		makesmetal = 8,
 		mass = 4878,
 		maxdamage = 5500,
 		maxslope = 10,
@@ -78,7 +78,7 @@ return {
 		},
 		sounds = {
 			canceldestruct = "cancel2",
-			underattack = "tllwarning",
+			underattack = "warning1",
 			count = {
 				[1] = "tllcount",
 				[2] = "tllcount",

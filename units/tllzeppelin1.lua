@@ -84,7 +84,7 @@ return {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				"bigstop",
+				"tllvtolstop3",
 			},
 			cant = {
 				"cantdo4",
@@ -98,10 +98,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"biggo",
+				"arm-air-large-ok",
 			},
 			select = {
-				"bigsel",
+				"arm-air-large-sel",
 			},
 		},
 		weapondefs = {
@@ -126,7 +126,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				soundtrigger = 1,
 				texture1 = "spray",
 				thickness = 15,
@@ -163,7 +163,7 @@ return {
 				soundhitdry = "soft_crunch",
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,
-				soundstart = "tllgauss",
+				soundstart = "gauss6",
 				stages = 32,
 				turret = true,
 				weapontype = "Cannon",

@@ -3,10 +3,10 @@ return {
 		activatewhenbuilt = true,
 		buildangle = 8192,
 		buildcostenergy = 814,
-		buildcostmetal = 26,
+		buildcostmetal = 29,
 		builder = false,
 		buildpic = "tllwmconv.dds",
-		buildtime = 1500,
+		buildtime = 2200,
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "36 26 36",
@@ -65,9 +65,9 @@ return {
 			},
 		},
 		sounds = {
-			activate = "metlon1",
+			activate = "arm-bld-mm-activate",
 			canceldestruct = "cancel2",
-			deactivate = "metloff1",
+			deactivate = "arm-bld-mm-deactivate",
 			underattack = "warning1",
 			working = "metlrun1",
 			count = {
@@ -79,7 +79,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "metlon1",
+				[1] = "arm-bld-metalmaker-t2",
 			},
 		},
 	},

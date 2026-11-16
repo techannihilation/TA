@@ -29,6 +29,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 1,
+		metalmake = 6720,
 		name = "Adv Ultimate Fusion Reactor",
 		noautofire = false,
 		objectname = "tll/tllufus.s3o",
@@ -97,7 +98,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "fusion2",
+				[1] = "arm-bld-nrg-fusion-adv",
 			},
 		},
 	},

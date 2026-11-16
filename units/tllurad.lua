@@ -84,7 +84,7 @@ return {
 			canceldestruct = "cancel2",
 			deactivate = "radadde1",
 			underattack = "warning1",
-			working = "radar2",
+			working = "arm-bld-defense-action-t3",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -94,7 +94,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "radadvn1",
+				[1] = "arm-bld-radar-alt-t2",
 			},
 		},
 	},

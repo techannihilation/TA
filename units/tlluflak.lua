@@ -102,10 +102,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "twrturn3",
+				[1] = "arm-bld-defense-action-t2",
 			},
 			select = {
-				[1] = "twrturn3",
+				[1] = "arm-bld-defense-action-t2",
 			},
 		},
 		weapondefs = {
@@ -134,7 +134,7 @@ return {
 				soundhitdry = "flakhit",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
-				soundstart = "flakfire",
+				soundstart = "uac5",
 				turret = true,
 				weapontimer = 1,
 				weapontype = "Cannon",

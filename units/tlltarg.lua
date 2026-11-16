@@ -89,7 +89,7 @@ return {
 			canceldestruct = "cancel2",
 			deactivate = "targoff1",
 			underattack = "warning1",
-			working = "targsel1",
+			working = "arm-bld-defense-action-t1",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -99,7 +99,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "targsel1",
+				[1] = "arm-bld-defense-action-t1",
 			},
 		},
 	},

@@ -84,7 +84,7 @@ return {
 		sounds = {
 			canceldestruct = "cancel2",
 			deactivate = "tllwindstop",
-			underattack = "tllwarning",
+			underattack = "warning1",
 			working = "tllwind2",
 			count = {
 				[1] = "tllcount",

@@ -86,11 +86,11 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
-			repair = "repair1",
+			repair = "conalt-small",
 			underattack = "warning1",
-			working = "reclaim1",
+			working = "conalt-small",
 			cant = {
 				"cantdo4",
 			},
@@ -103,10 +103,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"vtolarmv",
+				"arm-air-small-ok",
 			},
 			select = {
-				"vtolarac",
+				"arm-air-small-sel",
 			},
 		},
 		weapondefs = {

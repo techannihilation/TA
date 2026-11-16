@@ -93,10 +93,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"vtolcrmv",
+				"arm-air-medium-ok",
 			},
 			select = {
-				"vtolcrac",
+				"arm-air-medium-sel",
 			},
 		},
 		weapondefs = {

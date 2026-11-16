@@ -93,10 +93,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kbarmmov",
+				[1] = "arm-bld-defense-action-t3",
 			},
 			select = {
-				[1] = "radjam1",
+				[1] = "jammer",
 			},
 		},
 	},
