@@ -97,10 +97,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "loadwtr2",
+				[1] = "arm-bld-defense-action-t2",
 			},
 			select = {
-				[1] = "loadwtr2",
+				[1] = "arm-bld-defense-action-t2",
 			},
 		},
 		weapondefs = {
@@ -130,7 +130,7 @@ return {
 				soundhitdry = "xplomed4",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
-				soundstart = "Rockhvy1",
+				soundstart = "srm41",
 				stockpile = true,
 				stockpiletime = 50,
 				tolerance = 4000,

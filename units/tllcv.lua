@@ -34,8 +34,8 @@ return {
 		maxslope = 16,
 		maxvelocity = 1.70,
 		maxwaterdepth = 18,
-		metalmake = 0.2,
-		metalstorage = 20,
+		metalmake = 0.24,
+		metalstorage = 50,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
@@ -142,11 +142,11 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-medium",
 			canceldestruct = "cancel2",
-			repair = "repair1",
+			repair = "conalt-small",
 			underattack = "warning1",
-			working = "reclaim1",
+			working = "conalt-small",
 			cant = {
 				[1] = "cantdo4",
 			},
@@ -159,10 +159,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "varmmove",
+				[1] = "leg-veh-small-ok",
 			},
 			select = {
-				[1] = "varmsel",
+				[1] = "leg-veh-small-sel",
 			},
 		},
 	},

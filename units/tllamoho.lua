@@ -112,7 +112,7 @@ return {
 				"count1",
 			},
 			ok = {
-				"twractv3",
+				"arm-bld-defense-action-water-t2",
 			},
 			select = {
 				"mohoon2",

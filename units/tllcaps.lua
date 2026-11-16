@@ -113,10 +113,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"sharmmov",
+				"arm-shp-large-ok",
 			},
 			select = {
-				"sharmsel",
+				"arm-shp-large-sel",
 			},
 		},
 		weapondefs = {
@@ -174,7 +174,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				soundtrigger = 1,
 				texture1 = "spray",
 				thickness = 8,

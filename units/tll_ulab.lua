@@ -103,14 +103,15 @@ return {
 			},
 		},
 		sounds = {
-			activate = "gantok2",
-			build = "gantok2",
+			activate = "arm-bld-gant-t3-ok",
+			build = "conalt-medium",
 			canceldestruct = "cancel2",
-			deactivate = "gantok2",
+			deactivate = "arm-bld-gant-t3-ok",
 			repair = "lathelrg",
 			underattack = "warning1",
-			unitcomplete = "gantok1",
+			unitcomplete = "arm-bld-gant-t3-ok",
 			working = "build",
+			ok = "arm-bld-gant-t3-ok",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -120,7 +121,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "gantsel1",
+				[1] = "arm-bld-gant-t3-sel",
 			},
 		},
 	},

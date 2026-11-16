@@ -107,10 +107,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"vcormove",
+				"leg-veh-small-ok",
 			},
 			select = {
-				"vcorsel",
+				"leg-veh-small-sel",
 			},
 		},
 		weapondefs = {

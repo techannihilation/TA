@@ -110,10 +110,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbcormov",
+				"leg-bot-medium-ok",
 			},
 			select = {
-				"kbcorsel",
+				"leg-bot-medium-sel",
 			},
 		},
 		weapondefs = {
@@ -139,7 +139,7 @@ return {
 				soundhitdry = "xplomed4",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
-				soundstart = "cannhvy2",
+				soundstart = "AC20",
 				stages = 20,
 				turret = true,
 				weapontype = "Cannon",
@@ -172,7 +172,7 @@ return {
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
-				soundstart = "rocklit1",
+				soundstart = "clrm1",
 				startvelocity = 220,
 				targetable = 16,
 				texture1 = "null",
@@ -191,7 +191,45 @@ return {
 					subs = 5,
 				},
 			},
-			tll_lightning = {
+			tll_lightning = { -- flame
+				areaofeffect = 186,
+				burst = 40,
+				burstrate = 0.01,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
+				firestarter = 300,
+				impactonly = true,
+				impulseboost = 0,
+				impulsefactor = 0,
+				name = "Heavy Flamer",
+				noselfdamage = true,
+				range = 750,
+				reloadtime = 2,
+				rgbcolor = "0.9 0.9 0.2",
+				soundhitdry = "",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
+				soundstart = "Flamer2",
+				soundtrigger = 1,
+				texture1 = "spray",
+				sprayangle = 1800,
+				tolerance = 2500,
+				turret = true,
+				weapontype = "Flame",
+				weaponvelocity = 300,
+				customparams = {
+					light_mult = 1.4,
+					light_radius_mult = 0.9,
+				},
+				damage = {
+					default = 50,
+					subs = 5,
+				},
+				tracks = false,
+			},
+		},
+			--[[ tll_lightning = {
 				areaofeffect = 10,
 				beamTTL = 10,
 				craterareaofeffect = 0,
@@ -228,7 +266,8 @@ return {
 				},
 				tracks = false,
 			},
-		},
+		}, --]]
+		
 		weapons = {
 			{
 				def = "COR_GOL",

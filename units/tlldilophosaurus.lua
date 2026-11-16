@@ -102,10 +102,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbcormov",
+				"leg-bot-medium-ok",
 			},
 			select = {
-				"kbcorsel",
+				"leg-bot-medium-sel",
 			},
 		},
 		weapondefs = {
@@ -206,7 +206,7 @@ return {
 				rgbcolor = "0.9 0.9 0.2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				texture1 = "spray",
 				thickness = 8,
 				turret = true,

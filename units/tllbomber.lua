@@ -87,7 +87,7 @@ return {
 				"tllvtolstop3",
 			},
 			cant = {
-				"wearoff",
+				"cantdo4",
 			},
 			count = {
 				"tllcount",
@@ -98,10 +98,10 @@ return {
 				"tllcount",
 			},
 			ok = {
-				"tllvtolgo3",
+				"arm-air-small-ok",
 			},
 			select = {
-				"vtolarac",
+				"arm-air-small-sel",
 			},
 		},
 		weapondefs = {

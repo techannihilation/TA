@@ -34,8 +34,8 @@ return {
 		maxslope = 16,
 		maxvelocity = 2.1,
 		maxwaterdepth = 0,
-		metalmake = 0.25,
-		metalstorage = 25,
+		metalmake = 0.3,
+		metalstorage = 50,
 		mobilestandorders = 1,
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
@@ -158,11 +158,11 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-medium",
 			canceldestruct = "cancel2",
-			repair = "repair1",
+			repair = "conalt-small",
 			underattack = "warning1",
-			working = "reclaim1",
+			working = "conalt-small",
 			cant = {
 				[1] = "cantdo4",
 			},
@@ -175,10 +175,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "hovmdok2",
+				[1] = "cor-hov-small-ok",
 			},
 			select = {
-				[1] = "hovmdsl2",
+				[1] = "cor-hov-small-sel",
 			},
 		},
 	},

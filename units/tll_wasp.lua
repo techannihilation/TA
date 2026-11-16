@@ -69,7 +69,7 @@ return {
 				"tllvtolstop2",
 			},
 			cant = {
-				"wearoff",
+				"cantdo4",
 			},
 			count = {
 				"tllcount",
@@ -80,10 +80,10 @@ return {
 				"tllcount",
 			},
 			ok = {
-				"tllvtolgo2",
+				"arm-air-small-ok",
 			},
 			select = {
-				"vtolarac",
+				"arm-air-small-sel",
 			},
 		},
 		weapondefs = {
@@ -107,7 +107,7 @@ return {
 				rgbcolor = "0.9 0.9 0.2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				texture1 = "spray",
 				thickness = 6,
 				tolerance = 6000,
@@ -118,7 +118,6 @@ return {
 					light_radius_mult = 0.9,
 				},
 				damage = {
-					commanders = 7.5,
 					default = 75,
 					subs = 5,
 				},

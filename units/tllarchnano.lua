@@ -35,7 +35,7 @@ return {
 		maxslope = 255,
 		maxvelocity = 1.5,
 		maxwaterdepth = 255,
-		metalmake = 0.2,
+		metalmake = 0.3,
 		metalstorage = 20,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
@@ -134,7 +134,7 @@ return {
 				[1] = "spider",
 			},
 			cant = {
-				[1] = "tllspidcant",
+				[1] = "cantdo4",
 			},
 			count = {
 				[1] = "tllcount",
@@ -145,10 +145,10 @@ return {
 				[6] = "tllcount",
 			},
 			ok = {
-				[1] = "spider",
+				[1] = "leg-bot-small-ok",
 			},
 			select = {
-				[1] = "tllspidsel",
+				[1] = "leg-bot-small-sel",
 			},
 		},
 	},

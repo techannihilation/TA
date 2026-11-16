@@ -26,7 +26,7 @@ return {
 		maxdamage = 1080,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Advanced Solar Generator",
+		name = "Advanced Solar/Wind Generator",
 		noautofire = false,
 		objectname = "tll/tlladvsolar.s3o",
 		onoffable = true,
@@ -35,6 +35,7 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 210,
 		unitname = "tlladvsolar",
+		windgenerator = 25,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "tlladvsolar.dds",
@@ -90,7 +91,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "windgen1",
+				[1] = "arm-bld-windgen",
 			},
 		},
 	},

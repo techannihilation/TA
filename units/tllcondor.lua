@@ -122,7 +122,7 @@ return {
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
-				soundstart = "Rocklit3",
+				soundstart = "srm2",
 				startvelocity = 650,
 				texture2 = "armsmoketrail",
 				tolerance = 8000,

@@ -105,10 +105,10 @@ return {
 			},
 		},
 		sounds = {
-			build = "hoverok1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			underattack = "warning1",
-			unitcomplete = "untdone",
+			unitcomplete = "arm-bld-factory-t2-uw",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -118,7 +118,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "hoversl1",
+				[1] = "arm-bld-factory-t2-uw",
 			},
 		},
 	},

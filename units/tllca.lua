@@ -36,8 +36,8 @@ return {
 		maxslope = 10,
 		maxvelocity = 7,
 		maxwaterdepth = 0,
-		metalmake = 0.1,
-		metalstorage = 10,
+		metalmake = 0.18,
+		metalstorage = 50,
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
@@ -111,11 +111,11 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
-			repair = "repair1",
+			repair = "conalt-small",
 			underattack = "warning1",
-			working = "reclaim1",
+			working = "conalt-small",
 			cant = {
 				[1] = "cantdo4",
 			},
@@ -128,10 +128,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vtolarmv",
+				[1] = "arm-air-small-ok",
 			},
 			select = {
-				[1] = "vtolarac",
+				[1] = "arm-air-small-sel",
 			},
 		},
 	},

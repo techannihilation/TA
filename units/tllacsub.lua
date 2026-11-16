@@ -34,7 +34,7 @@ return {
 		mass = 849,
 		maxdamage = 1850,
 		maxvelocity = 1.85,
-		metalmake = 0.5,
+		metalmake = 0.9,
 		metalstorage = 50,
 		minwaterdepth = 20,
 		mobilestandorders = 1,
@@ -123,12 +123,12 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			capture = "capture1",
-			repair = "repair1",
+			repair = "conalt-small",
 			underattack = "warning1",
-			working = "reclaim1",
+			working = "conalt-small",
 			cant = {
 				[1] = "cantdo4",
 			},
@@ -141,10 +141,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "suarmmov",
+				[1] = "arm-shp-medium-ok",
 			},
 			select = {
-				[1] = "suarmsel",
+				[1] = "arm-shp-medium-sel",
 			},
 		},
 	},

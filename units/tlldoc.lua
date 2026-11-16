@@ -32,7 +32,7 @@ return {
 		maxslope = 17,
 		maxvelocity = 1.35,
 		maxwaterdepth = 200,
-		metalmake = 0.65,
+		metalmake = 2.5,
 		metalstorage = 100,
 		mobilestandorders = 1,
 		movementclass = "HAKBOT4",
@@ -117,12 +117,12 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath2",
+			build = "conalt-medium",
 			canceldestruct = "cancel2",
 			capture = "capture2",
-			repair = "repair2",
+			repair = "conalt-small",
 			underattack = "warning1",
-			working = "reclaim1",
+			working = "conalt-small",
 			cant = {
 				[1] = "cantdo4",
 			},
@@ -135,10 +135,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kbcormov",
+				[1] = "leg-bot-medium-ok",
 			},
 			select = {
-				[1] = "kbcorsel",
+				[1] = "leg-bot-medium-sel",
 			},
 		},
 	},
