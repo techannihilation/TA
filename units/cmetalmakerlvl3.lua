@@ -68,7 +68,8 @@ return {
 			},
 		},
 		sounds = {
-			activate = "metlon1",
+			activate = "arm-bld-metal",
+			select = "arm-bld-metal",
 			canceldestruct = "cancel2",
 			deactivate = "metloff1",
 			underattack = "warning1",

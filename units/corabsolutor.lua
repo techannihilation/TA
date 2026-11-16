@@ -2,8 +2,8 @@ return {
 	corabsolutor = {
 		acceleration = 0.15,
 		brakerate = 0.4,
-		buildcostenergy = 45000,
-		buildcostmetal = 2580,
+		buildcostenergy = 45021,
+		buildcostmetal = 2582,
 		builder = false,
 		buildpic = "corabsolutor.dds",
 		buildtime = 35000,
@@ -116,10 +116,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"mavbok1",
+				"cor-tnk-large-ok",
 			},
 			select = {
-				"mavbsel1",
+				"cor-tnk-large-sel",
 			},
 		},
 		weapondefs = {

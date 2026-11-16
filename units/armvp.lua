@@ -119,7 +119,7 @@ return {
 			},
 		},
 		sounds = {
-			build = "pvehwork",
+			build = "arm-bld-vp",
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			unitcomplete = "untdone",

@@ -59,6 +59,7 @@ return {
 			},
 		},
 		sounds = {
+			select = "arm-bld-geo-t2",
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			count = {

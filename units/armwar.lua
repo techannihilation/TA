@@ -113,17 +113,17 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbarmmov",
+				[1] = "arm-bot-tiny-ok",
 			},
 			select = {
-				"kbarmsel",
+				[1] = "arm-bot-tiny-sel",
 			},
 		},
 		weapondefs = {
 			armwar_laser = {
 				areaofeffect = 8,
 				beamtime = 0.12,
-				corethickness = 0.175,
+				corethickness = 0.16,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -137,7 +137,7 @@ return {
 				noselfdamage = true,
 				range = 330,
 				reloadtime = 0.3,
-				rgbcolor = "1 0 0",
+				rgbcolor = "0.6 0.6 1",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

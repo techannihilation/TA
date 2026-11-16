@@ -83,10 +83,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"tarmmove",
+				"cor-tnk-medium-ok",
 			},
 			select = {
-				"tarmsel",
+				"cor-tnk-medium-sel",
 			},
 		},
 		weapondefs = {

@@ -121,7 +121,7 @@ return {
 			},
 		},
 		sounds = {
-			build = "pairwork",
+			build = "arm-bld-ap",
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			unitcomplete = "untdone",
@@ -134,7 +134,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "pairactv",
+				[1] = "arm-bld-ap",
 			},
 		},
 	},
