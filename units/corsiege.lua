@@ -112,10 +112,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"varmmove",
+				"cor-tnk-large-ok",
 			},
 			select = {
-				"varmsel",
+				"cor-tnk-large-sel",
 			},
 		},
 		weapondefs = {

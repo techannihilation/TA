@@ -101,10 +101,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vtolcrmv",
+				[1] = "arm-air-transport-large-ok",
 			},
 			select = {
-				[1] = "vtolcrac",
+				[1] = "arm-air-transport-large-sel",
 			},
 		},
 		weapondefs = {

@@ -108,10 +108,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "servtny1",
+				[1] = "cor-bot-tiny-ok",
 			},
 			select = {
-				[1] = "servtny1",
+				[1] = "cor-bot-tiny-ok",
 			},
 		},
 	},

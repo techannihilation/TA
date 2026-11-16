@@ -122,10 +122,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vcormove",
+				[1] = "arm-bld-defense-action",
 			},
 			select = {
-				[1] = "cvradsel",
+				[1] = "arm-bld-defense-action",
 			},
 		},
 	},

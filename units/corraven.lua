@@ -113,10 +113,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"mavbok1",
+				"cor-bot-medium-ok",
 			},
 			select = {
-				"mavbsel1",
+				"cor-bot-medium-sel",
 			},
 		},
 		weapondefs = {
@@ -124,8 +124,9 @@ return {
 				accuracy = 300,
 				areaofeffect = 220,
 				avoidfeature = false,
-				burst = 40,
-				burstrate = 0.1,
+				burst = 8,
+				burstrate = 0.5,
+				projectiles = 5, -- read corraven1 for more info
 				cegtag = "Core_Def_AA_Rocket",
 				craterareaofeffect = 330,
 				craterboost = 0,

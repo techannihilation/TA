@@ -19,7 +19,7 @@ return {
 		collisionvolumescales = "19 17 19",
 		collisionvolumetype = "CylY",
 		defaultmissiontype = "Standby",
-		description = "Advanced Crawling Bomb",
+		description = "All-Terrain Advanced Crawling Bomb",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		firestate = 2,
@@ -85,10 +85,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "servsml6",
+				[1] = "cor-bot-medium-ok",
 			},
 			select = {
-				[1] = "servsml6",
+				[1] = "cor-bot-medium-sel",
 			},
 		},
 	},

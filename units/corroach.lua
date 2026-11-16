@@ -82,10 +82,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "servsml6",
+				[1] = "cor-bot-medium-ok",
 			},
 			select = {
-				[1] = "servsml6",
+				[1] = "cor-bot-medium-sel",
 			},
 		},
 	},

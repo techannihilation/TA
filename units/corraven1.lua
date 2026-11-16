@@ -126,8 +126,9 @@ return {
 				areaofeffect = 375,
 				avoidfeature = false,
 				burnblow = true,
-				burst = 40,
-				burstrate = 0.1,
+				burst = 8,
+				burstrate = 1, -- from 0.1, shoots 5 missiles at a time for total 40, mirror battletech LRM40
+				projectiles = 5, -- new   
 				cegtag = "Core_Def_AA_Rocket",
 				craterareaofeffect = 375,
 				craterboost = 0,
@@ -149,9 +150,10 @@ return {
 				soundhitdry = "mlrsboom",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
-				soundstart = "rapidrocket3",
+				soundstart = "srm1",
+				soundTrigger = false,
 				sprayangle = 1500,
-				startvelocity = 175,
+				startvelocity = 250,
 				targetable = 16,
 				texture1 = "null",
 				texture2 = "coresmoketrail",
@@ -164,7 +166,7 @@ return {
 				weapontimer = 4,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 900,
-				wobble = 1800,
+				wobble = 900, -- decreased wobble from 1800
 				damage = {
 					commanders = 1500,
 					default = 3000,

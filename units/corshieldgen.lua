@@ -54,6 +54,27 @@ return {
 			shield_radius = 250,
 			normaltex = "unittextures/core_normals.dds",
 		},
+		sounds = {
+			canceldestruct = "cancel2",
+			underattack = "warning1",
+			cant = {
+				[1] = "cantdo4",
+			},
+			count = {
+				[1] = "count6",
+				[2] = "count5",
+				[3] = "count4",
+				[4] = "count3",
+				[5] = "count2",
+				[6] = "count1",
+			},
+			ok = {
+				[1] = "cor-bot-medium-ok",
+			},
+			select = {
+				[1] = "cor-bot-medium-sel",
+			},
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

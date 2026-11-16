@@ -111,10 +111,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "hovmdok2",
+				[1] = "cor-hov-large-ok",
 			},
 			select = {
-				[1] = "hovmdsl2",
+				[1] = "cor-hov-large-sel",
 			},
 		},
 	},

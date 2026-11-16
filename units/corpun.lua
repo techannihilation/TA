@@ -118,10 +118,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"twrturn3",
+				"arm-bld-defense-action-t3",
 			},
 			select = {
-				"twrturn3",
+				"arm-bld-defense-action-t3",
 			},
 		},
 		weapondefs = {

@@ -95,9 +95,9 @@ return {
 			},
 		},
 		sounds = {
-			activate = "solar2",
+			activate = "cor-bld-solar-activate",
 			canceldestruct = "cancel2",
-			deactivate = "solar2",
+			deactivate = "cor-bld-solar-deactivate",
 			underattack = "warning1",
 			count = {
 				[1] = "count6",
@@ -108,7 +108,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "solar2",
+				[1] = "cor-bld-mm-t2-activate",
 			},
 		},
 	},

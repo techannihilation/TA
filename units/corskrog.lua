@@ -112,10 +112,12 @@ return {
 				"count1",
 			},
 			ok = {
-				"krogok1",
+				[1] = "cor-korg-ok1",
+				[2] = "cor-korg-ok2",
+				[3] = "cor-korg-ok3",
 			},
 			select = {
-				"krogsel1",
+				"cor-korg-sel",
 			},
 		},
 		weapondefs = {

@@ -117,7 +117,7 @@ return {
 				[1] = "kbcormov",
 			},
 			select = {
-				[1] = "radjam2",
+				[1] = "jammer-t2",
 			},
 		},
 	},

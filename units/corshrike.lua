@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE VTOL FIGHTER",
+		category = "ALL MOBILE VTOL",
 		collide = false,
 		cruisealt = 200,
 		defaultmissiontype = "VTOL_standby",
@@ -77,10 +77,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vtolarmv",
+				[1] = "cor-air-gunship-large-ok",
 			},
 			select = {
-				[1] = "vtolarac",
+				[1] = "cor-air-gunship-large-sel",
 			},
 		},
 		weapondefs = {

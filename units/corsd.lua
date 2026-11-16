@@ -91,11 +91,11 @@ return {
 			},
 		},
 		sounds = {
-			activate = "targon2",
+			activate = "arm-bld-defense-action-t2",
 			canceldestruct = "cancel2",
 			deactivate = "targoff2",
 			underattack = "warning1",
-			working = "targsel2",
+			working = "arm-bld-defense-action-t2",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -105,7 +105,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "targsel2",
+				[1] = "arm-bld-defense-action-t2",
 			},
 		},
 	},

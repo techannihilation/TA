@@ -79,11 +79,11 @@ return {
 			},
 		},
 		sounds = {
-			activate = "radadvn1",
+			activate = "arm-bld-radar-t2",
 			canceldestruct = "cancel2",
 			deactivate = "radadde1",
 			underattack = "warning1",
-			working = "radar2",
+			working = "arm-bld-radar-t2",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -93,7 +93,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "radadvn1",
+				[1] = "arm-bld-radar-t2",
 			},
 		},
 	},

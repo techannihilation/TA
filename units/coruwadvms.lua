@@ -102,7 +102,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "stormtl2",
+				[1] = "arm-bld-storage-nrg",
 			},
 		},
 	},

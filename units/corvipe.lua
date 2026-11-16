@@ -130,10 +130,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"servmed1",
+				"arm-bld-defense-action-t2",
 			},
 			select = {
-				"servmed1",
+				"arm-bld-defense-action-t2",
 			},
 		},
 		weapondefs = {
@@ -151,13 +151,13 @@ return {
 				model = "weapon_missile.s3o",
 				name = "Sabot",
 				noselfdamage = true,
-				range = 700,
-				reloadtime = 0.5,
+				range = 1100, -- from 730
+				reloadtime = 1.5,
 				smoketrail = true,
 				soundhitdry = "SabotHit",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
-				soundstart = "SabotFire",
+				soundstart = "gauss1",
 				startvelocity = 700,
 				targetmoveerror = 0.2,
 				texture2 = "coresmoketrail",
@@ -169,7 +169,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1000,
 				damage = {
-					default = 300,
+					default = 900,
 					subs = 5,
 				},
 			},

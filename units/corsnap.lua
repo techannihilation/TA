@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL SMALL MOBILE SURFACE",
+		category = "ALL MEDIUM MOBILE SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "32 16 32",
 		collisionvolumetype = "CylY",
@@ -114,10 +114,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"hovmdok2",
+				"cor-hov-small-ok",
 			},
 			select = {
-				"hovmdsl2",
+				"cor-hov-small-sel",
 			},
 		},
 		weapondefs = {

@@ -114,7 +114,7 @@ return {
 				[1] = "vtolcrmv",
 			},
 			select = {
-				[1] = "vtolcrac",
+				[1] = "arm-air-medium-sel",
 			},
 		},
 	},

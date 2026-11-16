@@ -103,7 +103,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "windgen2",
+				[1] = "arm-bld-windgen",
 			},
 		},
 	},
