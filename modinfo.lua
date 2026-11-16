@@ -2,7 +2,7 @@ return {
   name='Tech Annihilation',
   description='The New Generation Of War',
   shortname='TA',
-  version='$VERSION',
+  version='recursive',
   mutator='',
   game='',
   shortGame='TA',
