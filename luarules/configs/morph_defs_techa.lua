@@ -797,6 +797,381 @@ local morphDefs = {
 			time = 10,
 		},
 	},
+
+	----Kura added----
+
+	--ARM Laser--
+	armllt = {
+		{
+			into = 'arm_beamer',
+			time = 15,
+		xp = 0.50,
+		},
+	},
+	arm_beamer = {
+		{
+			into = 'armhlt',
+			time = 30,
+		xp = 1.00,
+		},
+	},
+
+	--ARM Artillery
+	armguard = {
+		{
+			into = 'armamb',
+			time = 30,
+		xp = 0.50,
+		},
+	},
+	armbrtha2 = {
+		{
+			into = 'armbrtha',
+			time = 30,
+		xp = 1.00,
+		},
+	},
+	armvulc = {
+		{
+			into = 'armvulc2',
+			time = 30,
+		xp = 1.00,
+		},
+	},
+
+	--ARM AA Turret
+	armrl = {
+		{
+			into = 'armflak',
+			time = 20,
+		xp = 0.30,
+		},
+	},
+
+	--ARM Bots--
+	armpw = {
+		{
+			into = 'armwar',
+			time = 10,
+		xp = 0.30,
+		},
+		{
+			into = 'armfast',
+			time = 30,
+		xp = 0.50,
+		},
+		{
+			into = 'armmav',
+			time = 30,
+		xp = 0.50,
+		},
+		{
+			into = 'armzeus',
+			time = 30,
+		xp = 0.50,
+		},
+	},
+	armwar = {
+		{
+			into = 'armraz',
+			time = 30,
+		xp = 0.50,
+		},
+	},
+	
+	armzeus = {
+		{
+			into = 'armbanth',
+			time = 30,
+		xp = 0.50,
+		},
+	},
+
+	armham = {
+		{
+			into = 'armvengence',
+			time = 30,
+		xp = 1.50,
+		},
+		{
+			into = 'armfboy',
+			time = 30,
+		xp = 1.00,
+		},
+		{
+			into = 'armshock',
+			time = 30,
+		xp = 1.00,
+		},
+		{
+			into = 'armfido',
+			time = 30,
+		xp = 1.00,
+		},
+	},
+	
+	armmav = {
+		{
+			into = 'armmarauder',
+			time = 25,
+		xp = 1.00,
+		},
+	},
+	armfast = {
+		{
+			into = 'armjugg',
+			time = 25,
+		xp = 1.00,
+		},
+	},
+	armjugg = {
+		{
+			into = 'armorco',
+			time = 25,
+		xp = 1.00,
+		},
+	},
+	armfido = {
+		{
+			into = 'armfox',
+			time = 25,
+		xp = 1.00,
+		},
+	},
+	armrock = {
+		{
+			into = 'armtarantula',
+			time = 10,
+		xp = 0.25,
+		},
+	},
+	
+	armhobo = {
+		{
+			into = 'armpraet',
+			time = 60,
+		xp = 1.00,
+		},
+	},
+	armtarantula = {
+		{
+			into = 'armpraet',
+			time = 60,
+		xp = 1.00,
+		},
+	},
+	
+	armweaver = {
+		{
+			into = 'arm_bagheera',
+			time = 60,
+		xp = 1.00,
+		},
+	},
+	arm_bagheera = {
+		{
+			into = 'armmygalo',
+			time = 60,
+		xp = 1.00,
+		},
+	},
+	
+	--ARM VEHICLE--
+	armpincer = {
+		{
+			into = 'armcroc',
+			time = 10,
+		xp = 1.00,
+		},
+	},
+	armcroc = {
+		{
+			into = 'armrex',
+			time = 25,
+		xp = 1.00,
+		},
+	},
+	armjanus = {
+		{
+			into = 'armmerl',
+			time = 10,
+		xp = 1.00,
+		},
+	},
+	armjanus = {
+		{
+			into = 'armtankanotor',
+			time = 20,
+		xp = 1.00,
+		},
+	},
+	armtankanotor = {
+		{
+			into = 'armmlrs',
+			time = 25,
+		xp = 1.00,
+		},
+	},
+	armflash = {
+		{
+			into = 'armstump',
+			time = 10,
+		xp = 1.00,
+		},
+	},
+	armflash = {
+		{
+			into = 'armbull',
+			time = 10,
+		xp = 1.00,
+		},
+	},
+	armbull = {
+		{
+			into = 'armthor',
+			time = 35,
+		xp = 1.00,
+		},
+	},
+	armshellshocker = {
+		{
+			into = 'armmart',
+			time = 10,
+		xp = 1.00,
+		},
+	},
+	armmart = {
+		{
+			into = 'arm_avatar',
+			time = 35,
+		xp = 1.00,
+		},
+	},
+	arm_avatar = {
+		{
+			into = 'armolympus',
+			time = 50,
+		xp = 1.00,
+		},
+	},
+	armmart = {
+		{
+			into = 'armmcv',
+			time = 35,
+		xp = 1.00,
+		},
+	},
+	armmcv = {
+		{
+			into = 'armmcv1',
+			time = 50,
+		xp = 1.00,
+		},
+	},
+	armlatnk = {
+		{
+			into = 'armkrypto',
+			time = 35,
+		xp = 1.00,
+		},
+	},
+	armlatnk = {
+		{
+			into = 'armchimera',
+			time = 25,
+		xp = 1.00,
+		},
+	},
+	
+	--ARM HOVER--
+	armsh = {
+		{
+			into = 'armhanni',
+			time = 15,
+		xp = 1.00,
+		},
+	},
+	
+	armanac = {
+		{
+			into = 'armhplasma',
+			time = 15,
+		xp = 1.00,
+		},
+	},
+	armanac = {
+		{
+			into = 'armlhover',
+			time = 15,
+		xp = 1.00,
+		},
+	},
+	armhplasma = {
+		{
+			into = 'armtem',
+			time = 25,
+		xp = 1.00,
+		},
+	},
+	armlhover = {
+		{
+			into = 'armtem',
+			time = 25,
+		xp = 1.00,
+		},
+	},
+	
+	
+	--ARM AA
+	armjeth = {
+		{
+			into = 'armaak',
+			time = 30,
+		xp = 1.00,
+		},
+		{
+			into = 'armhuntsman',
+			time = 30,
+		xp = 1.00,
+		},
+	},
+	armaak = {
+		{
+			into = 'armeak',
+			time = 30,
+		xp = 1.00,
+		},
+	},
+	armhuntsman = {
+		{
+			into = 'armeak',
+			time = 30,
+		xp = 1.00,
+		},
+	},
+	
+	armsam = {
+		{
+			into = 'armyork',
+			time = 30,
+		xp = 1.00,
+		},
+	},
+	armyork = {
+		{
+			into = 'armeflak',
+			time = 30,
+		xp = 1.00,
+		},
+	},
+	
+	armah = {
+		{
+			into = 'armiguana',
+			time = 30,
+		xp = 1.00,
+		},
+	},
 }
 
 --

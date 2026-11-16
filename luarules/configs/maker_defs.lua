@@ -5,6 +5,7 @@ local AC3    = 1.1  / 100
 local AC4    = 1.2  / 100
 local AC5    = 1.3  / 100
 local AC6    = 1.4  / 100
+local AC7    = 1.5  / 100
 
 local convertCapacities = {
 
@@ -29,14 +30,15 @@ local convertCapacities = {
   [UnitDefNames.cmetalmakerlvl4.id] = { c = 245000, e = AC6 },
 
   -- TLL
-  [UnitDefNames.tllmm.id]              = { c = 45,     e = AC0 },
-  [UnitDefNames.tllwmconv.id]          = { c = 90,     e = AC0 },
+  [UnitDefNames.tllmm.id]              = { c = 100,     e = AC3 },
+  [UnitDefNames.tllwmconv.id]          = { c = 100,     e = AC4 },
   [UnitDefNames.tllmetalmakerlvl1.id]  = { c = 135,    e = AC2 },
-  [UnitDefNames.tllammaker.id]         = { c = 750,    e = AC3 },
-  [UnitDefNames.tllwmmohoconv.id]      = { c = 900,    e = AC3 },
+  [UnitDefNames.tllammaker.id]         = { c = 1000,    e = AC6 },
+  [UnitDefNames.tllwmmohoconv.id]      = { c = 1000,    e = AC7 },
   [UnitDefNames.tllmetalmakerlvl2.id]  = { c = 9000,   e = AC4 },
   [UnitDefNames.tllmetalmakerlvl3.id]  = { c = 36000,  e = AC5 },
   [UnitDefNames.tllmetalmakerlvl4.id]  = { c = 168000, e = AC6 },
+  [UnitDefNames.tllgen.id]  = { c = 160, e = AC2 },
 
   -- TALON
   [UnitDefNames.talon_makr.id]         = { c = 75,     e = AC0 },
