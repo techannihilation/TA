@@ -89,10 +89,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"servsml6",
+				"arm-bld-defense-action",
 			},
 			select = {
-				"minesel1",
+				"arm-mine-sel",
 			},
 		},
 		weapondefs = {

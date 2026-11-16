@@ -106,10 +106,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbcormov",
+				"leg-bot-medium-ok",
 			},
 			select = {
-				"kbcorsel",
+				"leg-bot-medium-sel",
 			},
 		},
 		weapondefs = {
@@ -175,7 +175,7 @@ return {
 				soundhitdry = "soft_crunch",
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,
-				soundstart = "tllgauss",
+				soundstart = "gauss4",
 				stages = 32,
 				turret = true,
 				weapontype = "Cannon",

@@ -100,10 +100,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"twrturn3",
+				"arm-bld-defense-action-t2",
 			},
 			select = {
-				"twrturn3",
+				"arm-bld-defense-action-t2",
 			},
 		},
 		weapondefs = {
@@ -128,7 +128,8 @@ return {
 				numbounce = 1,
 				range = 620,
 				reloadtime = 1,
-				soundhit = "xplodep2",
+				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 300,
 				tracks = true,

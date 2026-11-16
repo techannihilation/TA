@@ -81,9 +81,9 @@ return {
 			},
 		},
 		sounds = {
-			activate = "mohorun1",
+			activate = "arm-bld-mm-activate",
 			canceldestruct = "cancel2",
-			deactivate = "mohooff1",
+			deactivate = "arm-bld-mm-deactivate",
 			underattack = "warning1",
 			working = "mohorun1",
 			count = {
@@ -95,10 +95,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "twractv2",
+				[1] = "arm-bld-metal",
 			},
 			select = {
-				[1] = "mohoon1",
+				[1] = "arm-bld-metal",
 			},
 		},
 	},

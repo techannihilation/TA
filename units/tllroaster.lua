@@ -116,10 +116,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"tarmmove",
+				"leg-veh-small-ok",
 			},
 			select = {
-				"tarmsel",
+				"leg-veh-small-sel",
 			},
 		},
 		weapondefs = {
@@ -143,7 +143,7 @@ return {
 				rgbcolor = "0.9 0.9 0.2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				texture1 = "spray",
 				thickness = 6,
 				turret = true,
@@ -179,7 +179,7 @@ return {
 				soundhitdry = "soft_crunch",
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,
-				soundstart = "tllgauss",
+				soundstart = "gauss4",
 				stages = 32,
 				turret = true,
 				weapontype = "Cannon",

@@ -95,7 +95,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "stormtl1",
+				[1] = "arm-bld-storage-metal",
 			},
 		},
 	},

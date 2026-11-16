@@ -101,10 +101,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbarmmov",
+				"leg-bot-small-ok",
 			},
 			select = {
-				"kbarmsel",
+				"leg-bot-small-sel",
 			},
 		},
 		weapondefs = {

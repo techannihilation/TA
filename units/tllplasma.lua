@@ -102,10 +102,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"servmed1",
+				"arm-bld-defense-action",
 			},
 			select = {
-				"servmed1",
+				"arm-bld-defense-action",
 			},
 		},
 		weapondefs = {
@@ -135,7 +135,7 @@ return {
 				soundhitdry = "xplomed2",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
-				soundstart = "cannhvy5",
+				soundstart = "uac10",
 				stages = 20,
 				turret = true,
 				weapontype = "Cannon",

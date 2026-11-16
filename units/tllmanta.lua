@@ -101,7 +101,7 @@ return {
 				"tllsub2",
 			},
 			cant = {
-				"wearoff",
+				"cantdo4",
 			},
 			count = {
 				"tllcount",
@@ -112,10 +112,10 @@ return {
 				"tllcount",
 			},
 			ok = {
-				"tllsub",
+				"arm-shp-medium-ok",
 			},
 			select = {
-				"sucorsel",
+				"arm-shp-medium-sel",
 			},
 		},
 		weapondefs = {

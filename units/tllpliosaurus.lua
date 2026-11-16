@@ -104,10 +104,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"sharmmov",
+				"arm-shp-huge-ok",
 			},
 			select = {
-				"sharmsel",
+				"arm-shp-huge-sel",
 			},
 		},
 		weapondefs = {
@@ -163,7 +163,7 @@ return {
 				soundhitdry = "soft_crunch",
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,
-				soundstart = "tllgauss",
+				soundstart = "gauss4",
 				stages = 32,
 				turret = true,
 				weapontype = "Cannon",
@@ -194,7 +194,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				soundtrigger = 1,
 				texture1 = "spray",
 				thickness = 8,

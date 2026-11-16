@@ -77,11 +77,11 @@ return {
 			},
 		},
 		sounds = {
-			activate = "targon1",
+			activate = "jammer-t2",
 			canceldestruct = "cancel2",
-			deactivate = "targoff1",
+			deactivate = "jammer-t2",
 			underattack = "warning1",
-			working = "targsel1",
+			working = "jammer-t2",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -91,7 +91,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "targsel1",
+				[1] = "jammer-t2",
 			},
 		},
 	},

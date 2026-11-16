@@ -81,10 +81,10 @@ return {
 			},
 		},
 		sounds = {
-			build = "hoverok1",
+			build = "conalt-medium",
 			canceldestruct = "cancel2",
 			underattack = "warning1",
-			unitcomplete = "untdone",
+			unitcomplete = "arm-bld-factory-hover",
 			count = {
 				[1] = "count6",
 				[2] = "count5",

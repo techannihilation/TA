@@ -140,7 +140,7 @@ return {
 				soundhitdry = "xplomed3",
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.25,
-				soundstart = "saurus_gun",
+				soundstart = "ppc6",
 				sprayangle = 200,
 				turret = true,
 				weapontype = "Cannon",

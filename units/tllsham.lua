@@ -116,10 +116,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "necrok2",
+				[1] = "leg-bot-tiny-ok",
 			},
 			select = {
-				[1] = "necrsel2",
+				[1] = "leg-bot-tiny-sel",
 			},
 		},
 	},

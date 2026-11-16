@@ -106,10 +106,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "varmmove",
+				[1] = "leg-bot-small-ok",
 			},
 			select = {
-				[1] = "varmsel",
+				[1] = "leg-bot-small-sel",
 			},
 		},
 	},

@@ -68,9 +68,9 @@ return {
 			},
 		},
 		sounds = {
-			activate = "metlon1",
+			activate = "arm-bld-mm-activate",
 			canceldestruct = "cancel2",
-			deactivate = "metloff1",
+			deactivate = "arm-bld-mm-deactivate",
 			underattack = "warning1",
 			working = "metlrun1",
 			count = {
@@ -82,7 +82,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "metlon1",
+				[1] = "arm-bld-metalmaker-t2",
 			},
 		},
 	},

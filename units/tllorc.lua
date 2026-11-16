@@ -109,10 +109,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"sucormov",
+				"arm-shp-medium-ok",
 			},
 			select = {
-				"sucorsel",
+				"arm-shp-medium-sel",
 			},
 		},
 		weapondefs = {

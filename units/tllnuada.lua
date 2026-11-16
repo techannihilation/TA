@@ -95,10 +95,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"vtolcrmv",
+				"arm-air-large-ok",
 			},
 			select = {
-				"vtolcrac",
+				"arm-air-large-sel",
 			},
 		},
 		weapondefs = {
@@ -122,7 +122,7 @@ return {
 				rgbcolor = "0.9 0.9 0.2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc3",
 				texture1 = "spray",
 				thickness = 6,
 				tolerance = 6000,

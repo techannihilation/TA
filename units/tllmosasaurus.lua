@@ -109,10 +109,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"tcormove",
+				"cor-tnk-large-ok",
 			},
 			select = {
-				"tcorsel",
+				"cor-tnk-large-sel",
 			},
 		},
 		weapondefs = {
@@ -137,7 +137,7 @@ return {
 				soundhitdry = "soft_crunch",
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,
-				soundstart = "tllgauss",
+				soundstart = "gauss4",
 				stages = 32,
 				turret = true,
 				weapontype = "Cannon",
@@ -170,7 +170,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				soundtrigger = 1,
 				texture1 = "spray",
 				thickness = 8,

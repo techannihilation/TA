@@ -74,7 +74,7 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "servmed2",
+				[1] = "arm-bld-defense-action-t1",
 			},
 			select = {
 				[1] = "mexon1",

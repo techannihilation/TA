@@ -110,10 +110,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "twractv3",
+				[1] = "arm-bld-defense-action-water-t2",
 			},
 			select = {
-				[1] = "twractv3",
+				[1] = "arm-bld-defense-action-water-t2",
 			},
 		},
 		weapondefs = {
@@ -130,6 +130,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				interceptor = 16,
+				interceptSolo = true, -- from false -> true, now only one MDS can intercept a missile at a time
 				name = "Missile/Rocket Interceptor",
 				noselfdamage = true,
 				range = 1200,

@@ -100,7 +100,7 @@ return {
 			canceldestruct = "cancel2",
 			underattack = "tllwarning",
 			cant = {
-				"wearoff",
+				"cantdo4",
 			},
 			count = {
 				"tllcount",
@@ -111,10 +111,10 @@ return {
 				"tllcount",
 			},
 			ok = {
-				"tllkbotmove",
+				"leg-bot-tiny-ok",
 			},
 			select = {
-				"tllunitok",
+				"leg-bot-tiny-sel",
 			},
 		},
 		weapondefs = {
@@ -138,7 +138,7 @@ return {
 				rgbcolor = "0.9 0.9 0.2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				texture1 = "spray",
 				thickness = 4,
 				turret = true,

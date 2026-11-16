@@ -76,11 +76,12 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-medium",
 			canceldestruct = "cancel2",
-			repair = "repair1",
+			capture = "capture1",
+			repair = "conalt-medium",
 			underattack = "warning1",
-			working = "reclaim1",
+			working = "conalt-medium",
 			cant = {
 				[1] = "cantdo4",
 			},
@@ -93,10 +94,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "varmmove",
+				[1] = "arm-bld-select-medium",
 			},
 			select = {
-				[1] = "varmsel",
+				[1] = "arm-bld-select-medium",
 			},
 		},
 	},
