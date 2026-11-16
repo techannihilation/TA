@@ -109,10 +109,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"sharmmov",
+				"arm-air-medium-ok",
 			},
 			select = {
-				"sharmsel",
+				"arm-air-medium-sel",
 			},
 		},
 		weapondefs = {

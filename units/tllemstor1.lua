@@ -89,7 +89,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "storngy1",
+				[1] = "arm-bld-storage-nrg",
 			},
 		},
 	},

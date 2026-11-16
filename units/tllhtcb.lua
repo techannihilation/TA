@@ -35,8 +35,8 @@ return {
 		maxslope = 16,
 		maxvelocity = 1.5,
 		maxwaterdepth = 18,
-		metalmake = 0.3,
-		metalstorage = 30,
+		metalmake = 1,
+		metalstorage = 100,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Heavy Engineer Vehicle",
@@ -128,11 +128,11 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath1",
+			build = "conalt-medium",
 			canceldestruct = "cancel2",
-			repair = "repair1",
+			repair = "conalt-small",
 			underattack = "warning1",
-			working = "reclaim1",
+			working = "conalt-small",
 			cant = {
 				[1] = "cantdo4",
 			},
@@ -145,10 +145,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "varmmove",
+				[1] = "leg-veh-small-ok",
 			},
 			select = {
-				[1] = "varmsel",
+				[1] = "leg-veh-small-sel",
 			},
 		},
 	},

@@ -107,10 +107,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "servmed2",
+				[1] = "arm-bld-defense-action-t1",
 			},
 			select = {
-				[1] = "servmed2",
+				[1] = "arm-bld-defense-action-t1",
 			},
 		},
 		weapondefs = {
@@ -137,7 +137,7 @@ return {
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
-				soundstart = "rockhvy2",
+				soundstart = "srm42",
 				startvelocity = 900,
 				texture1 = "null",
 				texture2 = "armsmoketrail",

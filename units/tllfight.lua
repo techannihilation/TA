@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE VTOL FIGHTER",
+		category = "ALL MOBILE VTOL",
 		collide = false,
 		cruisealt = 140,
 		defaultmissiontype = "VTOL_standby",
@@ -71,7 +71,7 @@ return {
 				[1] = "tllvtolstop",
 			},
 			cant = {
-				[1] = "wearoff",
+				[1] = "cantdo4",
 			},
 			count = {
 				[1] = "tllcount",
@@ -82,10 +82,10 @@ return {
 				[6] = "tllcount",
 			},
 			ok = {
-				[1] = "tllvtolgo",
+				[1] = "arm-air-small-ok",
 			},
 			select = {
-				[1] = "vtolarac",
+				[1] = "arm-air-small-sel",
 			},
 		},
 		weapondefs = {

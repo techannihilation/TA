@@ -118,7 +118,7 @@ return {
 			},
 		},
 		sounds = {
-			build = "plabwork",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			unitcomplete = "untdone",
@@ -131,7 +131,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "plabactv",
+				[1] = "arm-bld-factory",
 			},
 		},
 	},

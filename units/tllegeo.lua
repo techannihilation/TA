@@ -26,6 +26,7 @@ return {
 		maxdamage = 14220,
 		maxslope = 10,
 		maxwaterdepth = 9999,
+		metalmake = 100,
 		name = "Experimental Geothermal Powerplant",
 		noautofire = false,
 		objectname = "tll/tllegeo.s3o",
@@ -67,7 +68,7 @@ return {
 			activate = "tllgeo",
 			canceldestruct = "cancel2",
 			deactivate = "tllgeooff",
-			underattack = "tllwarning",
+			underattack = "warning1",
 			count = {
 				[1] = "tllcount",
 				[2] = "tllcount",
@@ -77,7 +78,7 @@ return {
 				[6] = "tllcount",
 			},
 			select = {
-				[1] = "tllgeosel",
+				[1] = "arm-bld-geo",
 			},
 		},
 	},

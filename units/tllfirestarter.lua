@@ -98,7 +98,7 @@ return {
 			canceldestruct = "cancel2",
 			underattack = "tllwarning",
 			cant = {
-				[1] = "wearoff",
+				[1] = "cantdo4",
 			},
 			count = {
 				[1] = "tllcount",
@@ -109,10 +109,10 @@ return {
 				[6] = "tllcount",
 			},
 			ok = {
-				[1] = "tllkbotmove",
+				[1] = "leg-bot-tiny-ok",
 			},
 			select = {
-				[1] = "tllunitok",
+				[1] = "leg-bot-tiny-sel",
 			},
 		},
 		weapondefs = {

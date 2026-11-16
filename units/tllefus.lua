@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 160,
-		--makesmetal = 625,
+		makesmetal = 325, -- 625, was disabled, reenabled but lower number
 		mass = 593355,
 		maxdamage = 44505,
 		maxslope = 10,
@@ -101,7 +101,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "fusion1",
+				[1] = "arm-bld-nrg-fusion",
 			},
 		},
 	},

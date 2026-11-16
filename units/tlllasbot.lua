@@ -109,10 +109,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"mavbok1",
+				"leg-bot-tiny-ok",
 			},
 			select = {
-				"mavbsel1",
+				"leg-bot-tiny-sel",
 			},
 		},
 		weapondefs = {
@@ -136,7 +136,7 @@ return {
 				rgbcolor = "0.9 0.9 0.2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				texture1 = "spray",
 				thickness = 6,
 				turret = true,

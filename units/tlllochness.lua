@@ -96,10 +96,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"hovmdok1",
+				"cor-hov-medium-ok",
 			},
 			select = {
-				"hovmdsl1",
+				"cor-hov-medium-sel",
 			},
 		},
 		weapondefs = {
@@ -124,7 +124,7 @@ return {
 				soundhitdry = "soft_crunch",
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,
-				soundstart = "tllgauss",
+				soundstart = "gauss4",
 				stages = 32,
 				turret = true,
 				weapontype = "Cannon",

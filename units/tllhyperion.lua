@@ -116,10 +116,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"krogok1",
+				"leg-bot-medium-ok",
 			},
 			select = {
-				"krogsel1",
+				"leg-bot-medium-sel",
 			},
 		},
 		weapondefs = {
@@ -144,7 +144,7 @@ return {
 				soundhitdry = "soft_crunch",
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,
-				soundstart = "tllgauss",
+				soundstart = "lbx3",
 				stages = 32,
 				turret = true,
 				weapontype = "Cannon",
@@ -175,7 +175,7 @@ return {
 				soundhitdry = "vpulsehit",
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,
-				soundstart = "vpulsefire",
+				soundstart = "clrm2",
 				targetable = 16,
 				texture1 = "null",
 				texture2 = "null",

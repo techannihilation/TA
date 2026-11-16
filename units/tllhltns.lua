@@ -102,10 +102,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"twractv3",
+				"arm-bld-defense-action-water-t2",
 			},
 			select = {
-				"twractv3",
+				"arm-bld-defense-action-water-t2",
 			},
 		},
 		weapondefs = {
@@ -130,7 +130,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				soundtrigger = 1,
 				texture1 = "spray",
 				thickness = 8,

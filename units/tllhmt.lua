@@ -102,10 +102,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "twrturn3",
+				[1] = "arm-bld-defense-action-t2",
 			},
 			select = {
-				[1] = "twrturn3",
+				[1] = "arm-bld-defense-action-t2",
 			},
 		},
 		weapondefs = {
@@ -130,7 +130,7 @@ return {
 				reloadtime = 10,
 				smoketrail = true,
 				soundhitdry = "impact",
-				soundstart = "launch",
+				soundstart = "srm4",
 				startvelocity = 1000,
 				texture2 = "armsmoketrail",
 				tracks = true,

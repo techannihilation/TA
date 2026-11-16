@@ -113,10 +113,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"servmed2",
+				"arm-bld-defense-action-t1",
 			},
 			select = {
-				"servmed2",
+				"arm-bld-defense-action-t1",
 			},
 		},
 		weapondefs = {
@@ -141,7 +141,7 @@ return {
 				soundhitdry = "lashit2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "lppc1",
 				texture1 = "spray",
 				thickness = 8,
 				turret = true,
