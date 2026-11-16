@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "48 20 48",
 		collisionvolumetype = "CylY",
@@ -114,10 +114,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"hovlgok2",
+				"cor-hov-small-ok",
 			},
 			select = {
-				"hovlgsl2",
+				"cor-hov-small-sel",
 			},
 		},
 		weapondefs = {

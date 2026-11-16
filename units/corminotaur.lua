@@ -115,10 +115,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"krogok1",
+				"cor-tnk-large-ok",
 			},
 			select = {
-				"krogsel1",
+				"cor-tnk-large-sel",
 			},
 		},
 		weapondefs = {

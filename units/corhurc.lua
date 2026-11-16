@@ -32,9 +32,9 @@ return {
 		losemitheight = 15,
 		maneuverleashlength = 1380,
 		mass = 335,
-		maxdamage = 1275,
+		maxdamage = 1375,
 		maxslope = 10,
-		maxvelocity = 7.9,
+		maxvelocity = 9,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Hurricane",
@@ -95,10 +95,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"vtolcrmv",
+				"arm-air-medium-ok",
 			},
 			select = {
-				"vtolcrac",
+				"arm-air-medium-sel",
 			},
 		},
 		weapondefs = {

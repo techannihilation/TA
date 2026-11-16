@@ -96,7 +96,7 @@ return {
 			canceldestruct = "cancel2",
 			deactivate = "metloff2",
 			underattack = "warning1",
-			working = "metlrun2",
+			working = "arm-bld-metal-t2",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -106,7 +106,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "metlon2",
+				[1] = "arm-bld-metal-t2",
 			},
 		},
 	},

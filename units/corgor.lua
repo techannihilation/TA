@@ -111,10 +111,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"krogok1",
+				"cor-bot-medium-ok",
 			},
 			select = {
-				"krogsel1",
+				"cor-bot-medium-sel",
 			},
 		},
 		weapondefs = {

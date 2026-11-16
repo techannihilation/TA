@@ -99,10 +99,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kbcormov",
+				[1] = "arm-bld-radar",
 			},
 			select = {
-				[1] = "radjam2",
+				[1] = "arm-bld-radar",
 			},
 		},
 	},

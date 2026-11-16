@@ -113,10 +113,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"doom",
+				"cor-bot-medium-ok",
 			},
 			select = {
-				"doom",
+				"cor-bot-medium-sel",
 			},
 		},
 		weapondefs = {

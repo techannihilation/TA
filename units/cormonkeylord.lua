@@ -120,10 +120,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbcormov",
+				"cor-jugg-ok",
 			},
 			select = {
-				"kbcorsel",
+				"cor-jugg-sel",
 			},
 		},
 		weapondefs = {

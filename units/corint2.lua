@@ -109,10 +109,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbcormov",
+				"arm-bld-defense-action-t3",
 			},
 			select = {
-				"kbcorsel",
+				"arm-bld-defense-action-t3",
 			},
 		},
 		weapondefs = {

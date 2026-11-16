@@ -130,10 +130,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"servmed2",
+				"arm-bld-wall",
 			},
 			select = {
-				"servmed2",
+				"arm-bld-wall",
 			},
 		},
 		weapondefs = {

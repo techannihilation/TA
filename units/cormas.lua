@@ -58,11 +58,11 @@ return {
 			},
 		},
 		sounds = {
-			activate = "mexrun1",
+			activate = "arm-bld-metal-t2",
 			canceldestruct = "cancel2",
 			deactivate = "mexoff1",
 			underattack = "warning1",
-			working = "mexrun1",
+			working = "arm-bld-metal-t2",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -72,10 +72,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "servmed2",
+				[1] = "arm-bld-metal-t2",
 			},
 			select = {
-				[1] = "mexon1",
+				[1] = "arm-bld-metal-t2",
 			},
 		},
 	},

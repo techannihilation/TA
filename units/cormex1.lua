@@ -114,10 +114,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "servmed2",
+				[1] = "arm-bld-metal",
 			},
 			select = {
-				[1] = "mexon2",
+				[1] = "arm-bld-metal",
 			},
 		},
 	},
