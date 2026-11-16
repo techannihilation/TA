@@ -111,10 +111,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"servmed2",
+				"arm-bld-defense-action-t1",
 			},
 			select = {
-				"servmed2",
+				"arm-bld-defense-action-t1",
 			},
 		},
 		weapondefs = {
@@ -139,7 +139,8 @@ return {
 				numbounce = 1,
 				range = 580,
 				reloadtime = 2,
-				soundhit = "xplodep2",
+				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 300,
 				tracks = true,

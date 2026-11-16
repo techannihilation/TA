@@ -122,10 +122,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vcormove",
+				[1] = "cor-tnk-medium-ok",
 			},
 			select = {
-				[1] = "radjam2",
+				[1] = "cor-tnk-medium-sel",
 			},
 		},
 	},

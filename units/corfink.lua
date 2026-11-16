@@ -77,10 +77,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vtolcrmv",
+				[1] = "cor-air-tiny-ok",
 			},
 			select = {
-				[1] = "vtolcrac",
+				[1] = "cor-air-tiny-sel",
 			},
 		},
 	},

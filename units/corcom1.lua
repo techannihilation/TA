@@ -182,15 +182,15 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath2",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			capture = "capture2",
-			cloak = "kloak2",
+			cloak = "ability_cloak_on",
 			repair = "repair2",
 			uncloak = "kloak2un",
 			underattack = "warning2",
 			unitcomplete = "kccorsel",
-			working = "reclaim1",
+			working = "conalt-small",
 			cant = {
 				[1] = "cantdo4",
 			},
@@ -203,10 +203,14 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kcormov",
+				[1] = "cor-com-ok-1",
+				[2] = "cor-com-ok-2",
+				[3] = "cor-com-ok-3",
+				[4] = "cor-com-ok-4",
+				[5] = "cor-com-ok-5"
 			},
 			select = {
-				[1] = "kccorsel",
+				[1] = "cor-com-sel",
 			},
 		},
 		weapondefs = {

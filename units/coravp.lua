@@ -124,7 +124,7 @@ return {
 			},
 		},
 		sounds = {
-			build = "pvehwork",
+			build = "arm-bld-factory-t2",
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			unitcomplete = "untdone",
@@ -137,7 +137,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "pvehactv",
+				[1] = "arm-bld-factory-t2",
 			},
 		},
 	},

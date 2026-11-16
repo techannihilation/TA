@@ -123,10 +123,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"vcormove",
+				"cor-tnk-medium-ok",
 			},
 			select = {
-				"vcorsel",
+				"cor-tnk-medium-sel",
 			},
 		},
 		weapondefs = {

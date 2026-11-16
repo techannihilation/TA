@@ -95,12 +95,12 @@ return {
 			},
 		},
 		sounds = {
-			build = "nanlath2",
+			build = "conalt-small",
 			canceldestruct = "cancel2",
 			capture = "capture2",
-			repair = "repair2",
+			repair = "conalt-small",
 			underattack = "warning1",
-			working = "reclaim1",
+			working = "conalt-small",
 			cant = {
 				"cantdo4",
 			},
@@ -113,10 +113,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbcormov",
+				"cor-bot-medium-ok",
 			},
 			select = {
-				"kbcorsel",
+				"cor-bot-medium-sel",
 			},
 		},
 		weapondefs = {

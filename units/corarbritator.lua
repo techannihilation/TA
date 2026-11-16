@@ -116,10 +116,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"kbcormov",
+				"cor-bot-huge-ok",
 			},
 			select = {
-				"kbcorsel",
+				"cor-bot-huge-sel",
 			},
 		},
 		weapondefs = {

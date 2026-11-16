@@ -78,10 +78,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vtolcrmv",
+				[1] = "arm-air-medium-ok",
 			},
 			select = {
-				[1] = "caradsel",
+				[1] = "arm-air-medium-sel",
 			},
 		},
 	},

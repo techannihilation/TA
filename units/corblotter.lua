@@ -109,10 +109,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "kbcormov",
+				[1] = "cor-hov-large-ok",
 			},
 			select = {
-				[1] = "radjam2",
+				[1] = "cor-hov-large-sel",
 			},
 		},
 	},

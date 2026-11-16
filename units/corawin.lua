@@ -87,6 +87,7 @@ return {
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
+			select = "arm-bld-windgen",
 			count = {
 				[1] = "count6",
 				[2] = "count5",

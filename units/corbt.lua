@@ -108,10 +108,10 @@ return {
 				"count1",
 			},
 			ok = {
-				"tcormove",
+				"cor-tnk-large-ok",
 			},
 			select = {
-				"tcorsel",
+				"cor-tnk-large-sel",
 			},
 		},
 		weapondefs = {
@@ -155,6 +155,7 @@ return {
 					default = 1000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
