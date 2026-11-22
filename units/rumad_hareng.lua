@@ -37,7 +37,7 @@ return {
 		minwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "BOAT4",
-		name = "Decade",
+		name = "Hareng",
 		noautofire = false,
 		objectname = "rumad/rumad_hareng.s3o",
 		radaremitheight = 25,

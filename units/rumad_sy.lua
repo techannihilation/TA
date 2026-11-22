@@ -52,8 +52,9 @@ return {
 			[3] = "rumad_naval_puppy",
 			[4] = "rumad_blob",
 			[5] = "rumad_hareng",
-			[6] = "rumad_sub",
-			[7] = "rumad_destroyer",
+			[6] = "rumad_cod",
+			[7] = "rumad_sub",
+			[8] = "rumad_destroyer",
 		},
 		customparams = {
 			buildpic = "rumad_sy.dds",
